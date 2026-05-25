@@ -1,12 +1,12 @@
 # Tokenizer
 
 ## Objetivo
-transformar as palavras em numeros para identifição e embildding
+transformar as palavras em numeros para IDs depois para embedding
 
 ## Por que uma LLM precisa de tokenizer?
 A LLM nescesita de um tokenizer para ela entender e da contexto as palavras da forma que ela entende e depois então transforma para que o user entenda.
 ## Texto vs tokens
-
+textos é a forma da escrita que humanos entenden e compreendem e tokens é a forma que a LLM entende e comprende da forma dela.
 ## Tipos de tokenização
 Podem ser de varias forma desde caracteres, palavras e subpalavras.
 ## Tokenizer escolhido para o projeto
