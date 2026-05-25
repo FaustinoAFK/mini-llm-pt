@@ -9,3 +9,11 @@ def test_encode_decode_roundtrip():
     decoded = tokenizer.decode(ids)
 
     assert decoded == text
+
+
+def test_unknown_character_uses_unk_token():
+    tokenizer = CharTokenizer("porta")
+
+    ids = tokenizer.encode("portaria")
+
+    assert tokenizer.stoi[tokenizer.unk_token] in ids
