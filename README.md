@@ -1,16 +1,16 @@
-# mini-llm
+# mini-llm-pt
 ## objetivo.
-Criar uma pequena llm para fins de aprendizado e conhecimento da areá.
+Criar uma pequena llm para fins de aprendizado e conhecimento da área.
 ## Escopo da versão 0.
 -Dataset a principio em português com versões futuras afim de melhorar;
--Tokenizer própio;
+-Tokenizer próprio;
 -Modelo de Transformer decoder-only própio;
 -Treinamento para prever o próximo token;
 -Avaliação por loss;
 ## O que este  projeto não é.
 Este projeto "NÂO" está para fins de comercio ou competição com outros modelos.
 ## Trilha de aprendizado.
-## Modulos.
+## Módulos.
 1. Dataset
 2. Tokenizer
 3. Preparação dos dados
@@ -21,4 +21,4 @@ Este projeto "NÂO" está para fins de comercio ou competição com outros model
 8. Geração de texto
 ## Estado atual.
 Projeto iniciado no dia 25/05/2026.
-    Definindo objetivos e recursos que iremos ultilizar.
+    Definindo objetivos e recursos que iremos utilizar.
