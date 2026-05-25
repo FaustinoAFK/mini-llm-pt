@@ -3,11 +3,11 @@
 ## Ideia principal
 A ideia principal é separar as palavra em caracteres e identificar reptições e casos que diminuiria o numeros de tokens e mesmo assim conseguiria completar uma palavra com o menor numero de passo possivel.
 ## Por que não usar apenas caracteres?
-caracteres serião como tokens ou seja seria um numero enorme de tokens nescessarios para formar uma simples frase, isso deixaria muitas variações de vocabulario. 
+terião uma sequencia muit longa deixando o treinamento dos modelos mais caros. 
 ## Por que não usar apenas palavras?
 porque iria transforma varias palavras em tokens de forma desnecessarias.
 ## Como o BPE aprende subpalavras?
-com padrões que forem identificados durante os testes
+ele aprende fusões de pares que aparecem com mais frequencia durante o treinamento do tokenizer
 ## Exemplo manual
 casa
 casas
