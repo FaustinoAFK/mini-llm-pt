@@ -1,0 +1,32 @@
+Oque é uma llm:
+uma llm qque seria traduzido para modelo de linguagem grande. é um sistema de linguagem de IA treinada para lidar com grandes quantidadeds de dados e informações e identificar e entender perguntas criar resposta com base nos dados que ela possui de forma rapida 
+de uma forma simples uma llm aprende padrões e tenta colocar em seu contexto da forma mais clara possivel.
+durante o treinamento de llm pode ser visto muitos exeplos de textos para aprender relação como
+    "quando aparece esta sequencia de palavras , qual seria a proxima palavra ou pedaço de palvra viria depois?"
+por Exemplo "Océu esta muito..."
+A continuação mais provavel poderia ser:
+    "azul", "nublado","claro","escuro"
+no começo os modelos erram muito porem os treinamentos ajustam bilhões de "pesos" internos par que ele fiqeu acda vez melhor em prever continuações plausiveis 
+Importante: a LLM não aprende como as pessoas, com conciencia ou experiecias propias. ela aprender padroes estatisticos e conceituais presentes nos dados.
+TOKENS
+tokens são pedaçoes de testos que o modelo processa
+um tokem pode ser uma palvara 
+
+perte de uma palavra
+pontuação
+espaços ou combinações de caracteres
+em codigo, pedaços, como funcion{, return
+por exeplos
+    "eu gosto de IA"
+pode ser quebrada em algo parecido com:
+    EU|GOSTO|DE|IA|.
+modelos não leem exatamnte "palavras" eles leem tokens 
+O que é prever o proximo token ?
+é a tarefa basica de muitas LLMs.
+dado um contexto:
+    "A cor do Céu é?"
+o modelos ira procurar a palavra que mais faria sentido para se completar
+    "Azul"
+depois ele continua
+    "."
+então uma respostar
