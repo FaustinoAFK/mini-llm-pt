@@ -1,10 +1,9 @@
-# mini-llm-pt
-
-Projeto educacional para construir uma pequena LLM decoder-only do zero, em português, com foco em IA, programação e explicações técnicas.
-
-Objetivos:
-- montar um dataset limpo
-- treinar um tokenizer próprio
-- implementar um modelo Transformer decoder-only
-- treinar o modelo para prever o próximo token
-- avaliar loss, perplexity e qualidade de geração
+# mini-llm
+## objetivo.
+Criar uma pequena llm para fins de aprendizado e conhecimento da areá.
+## Escopo da versão 0.
+## O que este  projeto não é.
+Este projeto NÂO está para fins de comercio ou competição com outros modelos.
+## Trilha de aprendizado.
+## Modulos.
+## Estado atual.
