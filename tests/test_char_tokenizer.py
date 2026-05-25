@@ -17,3 +17,9 @@ def test_unknown_character_uses_unk_token():
     ids = tokenizer.encode("portaria")
 
     assert tokenizer.stoi[tokenizer.unk_token] in ids
+
+
+def test_vocab_size_matches_vocabulary_length():
+    tokenizer = CharTokenizer("porta")
+
+    assert tokenizer.vocab_size == len(tokenizer.stoi)
