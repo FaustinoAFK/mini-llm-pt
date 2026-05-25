@@ -1,0 +1,8 @@
+
+Por exemplo, “eu gosto de IA” pode ser quebrada em algo parecido com: `EU | GOSTO | DE | IA | .`. Modelos não leem exatamente “palavras”; eles leem tokens.
+
+Prever o próximo token é a tarefa básica de muitas LLMs. Dado um contexto, como “A cor do céu é”, o modelo irá procurar a palavra que mais faria sentido para completar a frase, como “azul”. Depois, ele continua com “.”.
+
+Então, uma resposta longa é gerada token por token. A cada passo, o modelo olha para tudo que já foi escrito e escolhe a palavra que faria mais sentido dado o contexto. Isso pode parecer simples, porém, com dados e informações boas o suficiente, ele pode aprender muitas coisas e ser utilizado de muitas maneiras.
+
+O dataset é o conjunto de dados usado para o treinamento e ajuste do modelo. Ele importa muito porque o modelo aprende a partir dele. Se o dataset tiver textos bons, variados e corretos, o modelo tende a ser melhor. Porém, se houver textos ruins, enviesados, desatualizados ou repetitivos, o modelo pode aprender esses problemas.

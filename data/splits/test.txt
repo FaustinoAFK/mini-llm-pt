@@ -1,0 +1,5 @@
+O dataset influencia no conhecimento, ou seja, quais assuntos o modelo conhece melhor; na qualidade de escrita, isto é, se ele escreve de forma mais clara, confusa, formal ou informal; no viés, pois ideias repetidas no dataset podem aparecer nas respostas; na atualidade, já que, se os dados são antigos, o modelo pode não saber acontecimentos atuais; na segurança, pois dados e filtros de treinamento ajudam o modelo a evitar respostas perigosas ou inadequadas; e na especialização, pois um modelo treinado com muitos códigos tende a programar melhor, enquanto um treinamento com textos médicos tende a entender melhor a linguagem médica, e assim por diante.
+
+Uma comparação simples: treinar uma LLM é como ensinar alguém lendo uma biblioteca gigante. A qualidade da biblioteca afeta muito o que essa pessoa vai saber, como vai escrever e quais erros pode repetir.
+
+Em resumo: uma LLM é um modelo que transforma texto em tokens, aprende padrões prevendo o próximo token e depende fortemente da qualidade, variedade e curadoria do dataset usado no treinamento.

@@ -1,0 +1,9 @@
+O que é uma LLM: uma LLM, que seria traduzida como modelo de linguagem grande, é um sistema de linguagem de IA treinado para lidar com grandes quantidades de dados e informações, identificar e entender perguntas e criar respostas com base nos dados que possui de forma rápida.
+
+De uma forma simples, uma LLM aprende padrões e tenta colocá-los em seu contexto da forma mais clara possível. Durante o treinamento de uma LLM, podem ser vistos muitos exemplos de textos para aprender relações, como: “quando aparece esta sequência de palavras, qual seria a próxima palavra ou pedaço de palavra que viria depois?”
+
+Por exemplo: “O céu está muito...”. A continuação mais provável poderia ser: “azul”, “nublado”, “claro” ou “escuro”. No começo, os modelos erram muito; porém, os treinamentos ajustam bilhões de “pesos” internos para que eles fiquem cada vez melhores em prever continuações plausíveis.
+
+Importante: a LLM não aprende como as pessoas, com consciência ou experiências próprias. Ela aprende padrões estatísticos e conceituais presentes nos dados.
+
+Tokens são pedaços de texto que o modelo processa. Um token pode ser uma palavra, parte de uma palavra, pontuação, espaços ou combinações de caracteres. Em código, pode ser pedaços como `function`, `{` ou `return`.
