@@ -11,4 +11,4 @@ Aqui estará os arquivos finais para treinos;
 - Os dados processados são derivados dos originais;
 - Os splits são os arquivos finais para treinamento do modelo, validações e testes;
 - Arquivos muito grandes poderá ficar fora do Git futuramente;
-- Cada fonte adicionada deve respeitar os critérios do Dataset v0.
+- Cada fonte adicionada deve respeitar os critérios do Dataset v0. 
