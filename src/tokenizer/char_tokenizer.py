@@ -3,16 +3,21 @@ class CharTokenizer:
         # 1. Descobre todos os caracteres únicos do texto
         chars = sorted(list(set(text)))
 
-        # 2. Cria o vocabulário
-        self.stoi = {ch: i for i, ch in enumerate(chars)}
-        self.itos = {i: ch for i, ch in enumerate(chars)}
-        
+        # 2. Cria o vocabulário com um token especial para caracteres desconhecidos
+        self.unk_token = "<unk>"
+        self.stoi = {self.unk_token: 0}
+
+        for ch in chars:
+            self.stoi[ch] = len(self.stoi)
+
+        self.itos = {i: ch for ch, i in self.stoi.items()}
+
     def encode(self, text):
         # Transforma texto em IDs
         ids = []
 
         for ch in text:
-            ids.append(self.stoi[ch])
+            ids.append(self.stoi.get(ch, self.stoi[self.unk_token]))
 
         return ids
 
