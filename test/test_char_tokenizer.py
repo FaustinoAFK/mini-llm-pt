@@ -1,5 +1,5 @@
 from src.tokenizer.char_tokenizer import CharTokenizer
-
+#teste
 text = "porta"
 
 tokenizer = CharTokenizer(text)
