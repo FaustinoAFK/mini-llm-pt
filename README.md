@@ -18,7 +18,7 @@ Este projeto "NÂO" está para fins de comercio ou competição com outros model
 5. Transformer
 6. Treinamento
 7. Avaliação
-8. Geração de texto
+8. Geração de texto.
 ## Estado atual.
 Projeto iniciado no dia 25/05/2026.
     Definindo objetivos e recursos que iremos utilizar.
