@@ -19,7 +19,6 @@ rodapés repetidos;
 ## Fontes possíveis
 Independende desde que esteja de acordo com os tipos aceitos e normas de copyrigth;
 ## Critérios de qualidade
-## Critérios de qualidade
 Um texto só deve entrar no Dataset v0 se:
     - estiver majoritariamente em português;
     - tiver relação com IA, programação, matemática básica ou explicações técnicas;
