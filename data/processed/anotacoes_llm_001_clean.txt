@@ -1,0 +1,23 @@
+O que é uma LLM: uma LLM, que seria traduzida como modelo de linguagem grande, é um sistema de linguagem de IA treinado para lidar com grandes quantidades de dados e informações, identificar e entender perguntas e criar respostas com base nos dados que possui de forma rápida.
+
+De uma forma simples, uma LLM aprende padrões e tenta colocá-los em seu contexto da forma mais clara possível. Durante o treinamento de uma LLM, podem ser vistos muitos exemplos de textos para aprender relações, como: “quando aparece esta sequência de palavras, qual seria a próxima palavra ou pedaço de palavra que viria depois?”
+
+Por exemplo: “O céu está muito...”. A continuação mais provável poderia ser: “azul”, “nublado”, “claro” ou “escuro”. No começo, os modelos erram muito; porém, os treinamentos ajustam bilhões de “pesos” internos para que eles fiquem cada vez melhores em prever continuações plausíveis.
+
+Importante: a LLM não aprende como as pessoas, com consciência ou experiências próprias. Ela aprende padrões estatísticos e conceituais presentes nos dados.
+
+Tokens são pedaços de textos que o modelo processa. Um token pode ser uma palavra, parte de uma palavra, pontuação, espaços ou combinações de caracteres. Em código, pode ser pedaços como `function`, `{` ou `return`.
+
+Por exemplo, “eu gosto de IA” pode ser quebrada em algo parecido com: `EU | GOSTO | DE | IA | .`. Modelos não leem exatamente “palavras”; eles leem tokens.
+
+Prever o próximo token é a tarefa básica de muitas LLMs. Dado um contexto, como “A cor do céu é”, o modelo irá procurar a palavra que mais faria sentido para completar a frase, como “azul”. Depois, ele continua com “.”.
+
+Então, uma resposta longa é gerada token por token. A cada passo, o modelo olha para tudo que já foi escrito e escolhe a palavra que faria mais sentido dado o contexto. Isso pode parecer simples, porém, com dados e informações boas o suficiente, ele pode aprender muitas coisas e ser utilizado de muitas maneiras.
+
+O dataset é o conjunto de dados usado para o treinamento e ajuste do modelo. Ele importa muito porque o modelo aprende a partir dele. Se o dataset tiver textos bons, variados e corretos, o modelo tende a ser melhor. Porém, se houver textos ruins, enviesados, desatualizados ou repetitivos, o modelo pode aprender esses problemas.
+
+O dataset influencia no conhecimento, ou seja, quais assuntos o modelo conhece melhor; na qualidade de escrita, isto é, se ele escreve de forma mais clara, confusa, formal ou informal; no viés, pois ideias repetidas no dataset podem aparecer nas respostas; na atualidade, já que, se os dados são antigos, o modelo pode não saber acontecimentos atuais; na segurança, pois dados e filtros de treinamento ajudam o modelo a evitar respostas perigosas ou inadequadas; e na especialização, pois um modelo treinado com muitos códigos tende a programar melhor, enquanto um treinamento com textos médicos tende a entender melhor a linguagem médica, e assim por diante.
+
+Uma comparação simples: treinar uma LLM é como ensinar alguém lendo uma biblioteca gigante. A qualidade da biblioteca afeta muito o que essa pessoa vai saber, como vai escrever e quais erros pode repetir.
+
+Em resumo: uma LLM é um modelo que transforma texto em tokens, aprende padrões prevendo o próximo token e depende fortemente da qualidade, variedade e curadoria do dataset usado no treinamento.
