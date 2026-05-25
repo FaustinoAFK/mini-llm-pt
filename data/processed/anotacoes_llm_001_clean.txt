@@ -6,7 +6,7 @@ Por exemplo: “O céu está muito...”. A continuação mais provável poderia
 
 Importante: a LLM não aprende como as pessoas, com consciência ou experiências próprias. Ela aprende padrões estatísticos e conceituais presentes nos dados.
 
-Tokens são pedaços de textos que o modelo processa. Um token pode ser uma palavra, parte de uma palavra, pontuação, espaços ou combinações de caracteres. Em código, pode ser pedaços como `function`, `{` ou `return`.
+Tokens são pedaços de texto que o modelo processa. Um token pode ser uma palavra, parte de uma palavra, pontuação, espaços ou combinações de caracteres. Em código, pode ser pedaços como `function`, `{` ou `return`.
 
 Por exemplo, “eu gosto de IA” pode ser quebrada em algo parecido com: `EU | GOSTO | DE | IA | .`. Modelos não leem exatamente “palavras”; eles leem tokens.
 
