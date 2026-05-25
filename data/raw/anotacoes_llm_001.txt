@@ -29,4 +29,18 @@ o modelos ira procurar a palavra que mais faria sentido para se completar
     "Azul"
 depois ele continua
     "."
-então uma respostar
+então uma resposta longa é gerada token por token. A cada passo, o modelo olha para tudo que ja foi escrito e escolhe a palavra que faria maior sentido dado o contexto.
+isso pode parecer simples porem com dados e informações boas o suficiente ele pode "aprender muitas coisas e ser ultilizados de muitas maneiras.
+Porque o dataset importa?
+o data set é o conjunto de dados usados para o treinamento e ajustar o modelos. ele importa muito porque os modelo aprende a partir dele.
+se o dataset tiver textos bons, variados e corretos, o modelo tende a ser melhor, porem entretanto se haver textos ruins, inviesados, desatulizados ou repetitivos, o modelo poode aprender esses poblemas.
+o dataset influencia:
+no conhecimento: quais asssutos o modelo conhece melhor.
+qualidade de escrita: se ele escreve de forma mais clara, confusa, formal, informal, etc.
+Viés: ideias repetidas no data set pode aparecer nas respostas.
+atualidade: se os dados são antigos o modelo pode não saber acontecimentos atuais.
+Segurança: dados e filtros de treinamento ajudam o modelo a evitar respostas perigosas ou inadequadas.
+ESpecialização: um modelo treinado com muitos codigos tenden a programar melhor, um treinamento com textos médicos tendem a entender melhor a linguagem médica, e assim por diante.
+uma comparação simples: 
+    Treinar uma LLM é como ensinar alguem lendo uma biblioteca gigante. a qualidade da biblioteca afeta muito oque essa pessoa vai saber, como vai escrever e quais erros pode repetir.
+    em resumo : UMa LLM é um modelo que transforma testo em tokens, aprende padrões prevendo o próximo token e depende fortemente da qualidade, veriedade e curadoria do data set usado no treinamento
