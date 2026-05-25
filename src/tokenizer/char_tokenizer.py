@@ -12,6 +12,11 @@ class CharTokenizer:
 
         self.itos = {i: ch for ch, i in self.stoi.items()}
 
+    @property
+    def vocab_size(self):
+        # Retorna o tamanho do vocabulário conhecido pelo tokenizer
+        return len(self.stoi)
+
     def encode(self, text):
         # Transforma texto em IDs
         ids = []
