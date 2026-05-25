@@ -1,9 +1,9 @@
 # Treinamento vs uso do tokenizer
 
 ## Treinar o tokenizer
-é contar os pares e aprender fusões e assim criar um vocabulario
+é contar os pares e aprender fusões e assim criar um vocabulário
 ## Usar o tokenizer
-é ultilizar o aprendizado do treinamento e colocar em pratica para converter palavras em tokens e os tokens em IDs posteriormente
+é utilizar o aprendizado do treinamento e colocar em prática para converter palavras em tokens e os tokens em IDs posteriormente
 ## exemplo 
 Corpus de treino:
 porta
