@@ -3,32 +3,26 @@ A
 :
 V
 V
-displaystyle A:V rightarrow V
 se existir um vetor x diferente de zero tal que
 A
 x
 x
-displaystyle A mathbf x lambda mathbf x
 . O vetor x é chamado vetor próprio, autovetor ou vetor característico.
 Os autovalores de uma dada matriz quadrada A de dimensão
 n
 n
-displaystyle n times n
 são os n números que resumem as propriedades essenciais daquela matriz. O autovalor de A é um número tal que, se for subtraído de cada entrada na diagonal de A, converte A numa matriz singular (ou não-invertível). Subtrair um escalar de cada entrada na diagonal de A é o mesmo que subtrair vezes a matriz identidade I de A. Portanto, é um autovalor se, e somente se, a matriz
 (
 A
 I
 )
-displaystyle (A- lambda I)
 for singular.
 Os autovalores são frequentemente introduzidos no contexto da álgebra linear ou da teoria das matrizes. Historicamente, no entanto, eles surgiram no estudo de formas quadráticas e equações diferenciais.
 No século XVIII, Leonhard Euler estudou o movimento rotacional de um corpo rígido, e descobriu a importância dos eixos principais. Joseph-Louis Lagrange percebeu que os eixos principais são os autovetores da matriz de inércia.
 No início do século XIX, Augustin-Louis Cauchy viu como seu trabalho poderia ser usado para classificar as superfícies quádricas, e generalizou-o para dimensões arbitrárias. Cauchy também cunhou o termo racine caractéristique (raiz característica), para o que agora é chamado de autovalor; seu termo sobrevive na equação característica.
-Mais tarde, Joseph Fourier usou o trabalho de Lagrange e Pierre-Simon Laplace para resolver a equação do calor por separação de variáveis em seu famoso livro de 1822, Théorie analytique de la chaleur. Charles-François Sturm desenvolveu ainda mais as ideias de Fourier e chamou a atenção de Cauchy, que as combinou com suas próprias ideias e chegou ao fato de que matrizes simétricas reais têm autovalores reais. Isso foi estendido por Charles Hermite em 1855 para o que hoje é chamado de matrizes hermitianas.
 Na mesma época, Francesco Brioschi provou que os autovalores de matrizes ortogonais estão no círculo unitário, e Alfred Clebsch encontrou o resultado correspondente para matrizes assimétricas. Finalmente, Karl Weierstrass esclareceu um aspecto importante na teoria da estabilidade iniciada por Laplace, ao perceber que matrizes defeituosas podem causar instabilidade.
 Nesse ínterim, Joseph Liouville estudou problemas de autovalor semelhantes aos de Sturm; a disciplina que surgiu de seu trabalho agora é chamada de teoria de Sturm-Liouville. Schwarz estudou o primeiro autovalor da equação de Laplace em domínios gerais no final do século XIX, enquanto Poincaré estudou a equação de Poisson alguns anos depois.
 No início do século 20, David Hilbert estudou os autovalores dos operadores integrais, visualizando os operadores como matrizes infinitas. Ele foi o primeiro a usar a palavra alemã eigen, que significa "próprio", para denotar autovalores e autovetores em 1904, embora possa ter seguido um uso relacionado por Hermann von Helmholtz. Por algum tempo, o termo padrão em inglês era "valor adequado", mas o termo mais distinto "valor próprio" é o padrão hoje.
-O primeiro algoritmo numérico para calcular autovalores e autovetores apareceu em 1929, quando Richard von Mises publicou o método da potência. Um dos métodos mais populares hoje, o algoritmo QR, foi proposto independentemente por John G. F. Francis e Vera Kublanovskaya em 1961.
 Se T é uma transformação linear de um espaço vetorial V sobre um corpo F em si mesmo e v é um vetor diferente de zero em V, então v é um autovetor de T se T(v) é um múltiplo escalar de v. Isso pode ser escrito como
 T
 (
@@ -36,7 +30,6 @@ v
 )
 v
 ,
-displaystyle T( mathbf v ) lambda mathbf v ,
 onde é um escalar em F, conhecido como autovalor, valor característico, ou raiz característica associada a v.
 Existe uma correspondência direta entre matrizes quadradas n-por-n e transformações lineares de um espaço vetorial n-dimensional para si mesmo, dada qualquer base do espaço vetorial. Portanto, em um espaço vetorial de dimensão finita, é equivalente a definir autovalores e autovetores usando a linguagem de matrizes, ou a linguagem de transformações lineares.
 Se V é de dimensão finita, a equação acima é equivalente a
@@ -44,7 +37,6 @@ A
 u
 u
 .
-displaystyle A mathbf u lambda mathbf u .
 onde A é a representação matricial de T e u é o vetor de coordenadas de v.
 Autovalores e autovetores são frequentemente apresentados aos alunos no contexto de cursos de álgebra linear focados em matrizes.
 Além disso, transformações lineares em um espaço vetorial de dimensão finita podem ser representadas usando matrizes, o que é especialmente comum em aplicações numéricas e computacionais.
@@ -63,23 +55,19 @@ y
 80
 ]
 .
-displaystyle mathbf x begin bmatrix 1 -3 4 end bmatrix quad mbox e quad mathbf y begin bmatrix -20 60 -80 end bmatrix .
 Esses vetores são ditos múltiplos escalares um do outro, ou paralelos ou colineares, se existe um escalar tal que
 x
 y
 .
-displaystyle mathbf x lambda mathbf y .
 Nesse caso
 1
 20
-displaystyle lambda - frac 1 20
 .
 Agora considere a transformação linear de vetores n-dimensionais definidos por uma matriz A n-por-n,
 A
 v
 w
 ,
-displaystyle A mathbf v mathbf w ,
 ou
 [
 A
@@ -122,7 +110,6 @@ w
 w
 n
 ]
-displaystyle begin bmatrix A 11 A 12 cdots A 1n A 21 A 22 cdots A 2n vdots vdots ddots vdots A n1 A n2 cdots A nn end bmatrix begin bmatrix v 1 v 2 vdots v n end bmatrix begin bmatrix w 1 w 2 vdots w n end bmatrix
 onde, para cada linha,
 w
 i
@@ -150,14 +137,11 @@ j
 v
 j
 .
-displaystyle w i A i1 v 1 A i2 v 2 cdots A in v n sum j 1 n A ij v j .
 Se ocorrer que v e w são múltiplos escalares, isto é, se
 então v é um autovetor da transformação linear A e o fator de escala é o autovalor correspondente a esse autovetor. A equação (1) é a equação de autovalor para a matriz A.
 A equação (1) pode ser expressa de forma equivalente como
 onde I é a matriz identidade n-por-n e 0 é o vetor zero.
 A equação (2) tem solução v diferente de zero se e somente se o determinante da matriz (A I) for zero. Portanto, os autovalores de A são valores de que satisfazem a equação
-Usando a fórmula de Leibniz para determinantes, o lado esquerdo da Equação (3) é uma função polinomial da variável e o grau deste polinômio é n, a ordem da matriz A. Seus coeficientes dependem das entradas de A, exceto que seu termo de grau n é sempre ( 1)n n. Este polinômio é chamado de polinômio característico de A. A equação (3) é chamada de equação característica ou equação secular de A.
-O teorema fundamental da álgebra implica que o polinômio característico de uma matriz A n-por-n, sendo um polinômio de grau n, pode ser fatorado no produto de n termos lineares,
 onde cada i pode ser real, mas em geral é um número complexo. Os números 1, 2, ..., n, que podem não ter valores distintos, são raízes do polinômio e são os autovalores de A. Uma matriz quadrada A é singular se, e somente se, 0 é um autovalor de A.
 Como um breve exemplo, que é descrito em mais detalhes na seção de exemplos mais adiante, considere a matriz
 A
@@ -168,7 +152,6 @@ A
 2
 ]
 .
-displaystyle A begin bmatrix 2 1 1 2 end bmatrix .
 Tomando o determinante de (A I), o polinômio característico de A é
 A
 I
@@ -180,15 +163,12 @@ I
 4
 2
 .
-displaystyle A- lambda I begin vmatrix 2- lambda 1 1 2- lambda end vmatrix 3-4 lambda lambda 2 .
-Definindo o polinômio característico igual a zero, ele tem raízes em 1 e 3, que são os dois autovalores de A. Os autovetores correspondentes a cada autovalor podem ser encontrados resolvendo os componentes de v na equação
 (
 A
 I
 )
 v
 0
-displaystyle left(A- lambda I right) mathbf v mathbf 0
 . Neste exemplo, os autovetores são quaisquer múltiplos escalares diferentes de zero de
 v
 1
@@ -204,17 +184,13 @@ v
 1
 ]
 .
-displaystyle mathbf v lambda 1 begin bmatrix 1 -1 end bmatrix , quad mathbf v lambda 3 begin bmatrix 1 1 end bmatrix .
 Se as entradas da matriz A forem todas números reais, então os coeficientes do polinômio característico também serão números reais, mas os autovalores ainda podem ter partes imaginárias diferentes de zero. As entradas dos autovetores correspondentes, portanto, também podem ter partes imaginárias diferentes de zero. Da mesma forma, os autovalores podem ser números irracionais, mesmo que todas as entradas de A sejam números racionais ou mesmo que sejam todos inteiros. No entanto, se as entradas de A são todos números algébricos, que incluem os racionais, os autovalores são números algébricos complexos.
-As raízes não reais de um polinômio real com coeficientes reais podem ser agrupadas em pares de conjugados complexos, ou seja, com os dois membros de cada par tendo partes imaginárias que diferem apenas em sinal e a mesma parte real. Se o grau for ímpar, pelo teorema do valor intermediário, pelo menos uma das raízes é real. Portanto, qualquer matriz real de ordem ímpar tem pelo menos um autovalor real, enquanto uma matriz real de ordem par pode não ter nenhum autovalor real. Os autovetores associados a esses autovalores complexos também são complexos e também aparecem em pares conjugados complexos.
 Geometricamente, a equação do valor próprio (autovalor)
 A
 x
 x
-displaystyle A mathbf x lambda mathbf x
 implica que numa transformação A, autovetores sofrem apenas mudança na sua magnitude e sinal a direção de Ax é a mesma direção de x. O autovalor indica apenas o quanto o vetor irá "encolher" ou "esticar" ao sofrer a transformação A. Se 1, o vetor permanece inalterado (não é afetado pela transformação). Se 1 o vetor passa a ter apenas o sentido oposto e a transformação é chamada reflexão. A transformação I sob a qual um vetor x permanece inalterado, Ix x é definida como transformação identidade.
 Seja i um autovalor de uma matriz A n-por-n. A multiplicidade algébrica A( i) do autovalor é sua multiplicidade como raiz do polinômio característico, ou seja, o maior inteiro k tal que ( i)k divide igualmente esse polinômio.
-Suponha que uma matriz A tenha dimensão n e d n autovalores distintos. Considerando que a Equação (4) fatora o polinômio característico de A no produto de n termos lineares com alguns termos potencialmente repetidos, o polinômio característico pode, em vez disso, ser escrito como o produto de d termos, cada um correspondendo a um autovalor distinto e elevado à potência do multiplicidade algébrica,
 A
 I
 (
@@ -239,7 +215,6 @@ A
 d
 )
 .
-displaystyle A- lambda I ( lambda 1 - lambda ) mu A ( lambda 1 ) ( lambda 2 - lambda ) mu A ( lambda 2 ) cdots ( lambda d - lambda ) mu A ( lambda d ) .
 Se d n então o lado direito é o produto de n termos lineares e isso é o mesmo que a Equação (4). O tamanho da multiplicidade algébrica de cada autovalor está relacionado com a dimensão n como
 1
 A
@@ -258,9 +233,7 @@ i
 )
 n
 .
-displaystyle begin aligned 1 leq mu A ( lambda i ) leq n, mu A sum i 1 d mu A left( lambda i right) n. end aligned
 Se A( i) 1, então i é um autovalor simples. Se A( i) é igual à multiplicidade geométrica de i, A( i), definida na próxima seção, então i é dito ser um autovalor semisimples.
-Dado um autovalor particular da matriz A n por n, defina o conjunto E como sendo todos os vetores v que satisfazem a Equação (2),
 E
 v
 :
@@ -271,14 +244,11 @@ I
 v
 0
 .
-displaystyle E left mathbf v : left(A- lambda I right) mathbf v mathbf 0 right .
 Por um lado, esse conjunto é justamente o núcleo ou espaço nulo da matriz (A I). Por outro lado, por definição, qualquer vetor diferente de zero que satisfaça esta condição é um autovetor de A associado a . Assim, o conjunto E é a união do vetor nulo com o conjunto de todos os autovetores de A associados a , e E é igual ao espaço nulo de (A I). E é chamado de autoespaço ou espaço característico de A associado a . Em geral é um número complexo e os autovetores são matrizes n por 1 complexas. Uma propriedade do espaço nulo é que ele é um subespaço linear, então E é um subespaço linear de
 C
 n
-displaystyle mathbb C n
 .
 Como o autoespaço E é um subespaço linear, ele é fechado sob adição. Ou seja, se dois vetores u e v pertencem ao conjunto E, escrito u, v E, então (u v) E ou equivalentemente A(u v) (u v). Isso pode ser verificado usando a propriedade distributiva da multiplicação de matrizes. Da mesma forma, como E é um subespaço linear, ele é fechado sob multiplicação escalar. Ou seja, se v E e é um número complexo, ( v) E ou equivalentemente A( v) ( v). Isso pode ser verificado observando que a multiplicação de matrizes complexas por números complexos é comutativa. Desde que u v e v não sejam zero, eles também são autovetores de A associados a .
-A dimensão do autoespaço E associado a , ou equivalentemente o número máximo de autovetores linearmente independentes associados a , é referido como a multiplicidade geométrica do autovalor A( ). Como E também é o espaço nulo de (A I), a multiplicidade geométrica de é a dimensão do espaço nulo de (A I), também chamada de nulidade de (A I), que se relaciona com a dimensão e o posto de (A I) como
 A
 (
 )
@@ -289,7 +259,6 @@ A
 I
 )
 .
-displaystyle gamma A ( lambda ) n- operatorname posto (A- lambda I).
 Devido à definição de autovalores e autovetores, a multiplicidade geométrica de um autovalor deve ser pelo menos um, ou seja, cada autovalor tem pelo menos um autovetor associado. Além disso, a multiplicidade geométrica de um autovalor não pode exceder sua multiplicidade algébrica. Além disso, lembre-se de que a multiplicidade algébrica de um autovalor não pode exceder n.
 1
 A
@@ -299,7 +268,6 @@ A
 (
 )
 n
-displaystyle 1 leq gamma A ( lambda ) leq mu A ( lambda ) leq n
 Para provar a desigualdade
 A
 (
@@ -307,12 +275,10 @@ A
 A
 (
 )
-displaystyle gamma A ( lambda ) leq mu A ( lambda )
 , considere como a definição de multiplicidade geométrica implica a existência de
 A
 (
 )
-displaystyle gamma A ( lambda )
 autovetores ortonormais
 v
 1
@@ -323,49 +289,39 @@ v
 A
 (
 )
-displaystyle boldsymbol v 1 , , ldots , , boldsymbol v gamma A ( lambda )
 , de tal modo que
 A
 v
 k
 v
 k
-displaystyle A boldsymbol v k lambda boldsymbol v k
 . Podemos, portanto, encontrar uma matriz (unitária)
 V
-displaystyle V
 cujo primeiro
 A
 (
 )
-displaystyle gamma A ( lambda )
 colunas são esses autovetores e cujas colunas restantes podem ser qualquer conjunto ortonormal de
 n
 A
 (
 )
-displaystyle n- gamma A ( lambda )
 vetores ortogonais a esses autovetores de
 A
-displaystyle A
 . Então
 V
-displaystyle V
 tem posto completo e, portanto, é invertível, e
 A
 V
 V
 D
-displaystyle AV VD
 com
 D
-displaystyle D
 uma matriz cujo bloco superior esquerdo é a matriz diagonal
 I
 A
 (
 )
-displaystyle lambda I gamma A ( lambda )
 . Isso implica que
 (
 A
@@ -377,15 +333,12 @@ V
 D
 I
 )
-displaystyle (A- xi I)V V(D- xi I)
 . Em outras palavras,
 A
 I
-displaystyle A- xi I
 é similar a
 D
 I
-displaystyle D- xi I
 , o que implica que
 det
 (
@@ -397,26 +350,21 @@ det
 D
 I
 )
-displaystyle det(A- xi I) det(D- xi I)
 . Mas a partir da definição de
 D
-displaystyle D
 nós sabemos isso
 det
 (
 D
 I
 )
-displaystyle det(D- xi I)
 contém um fator
 (
 )
 A
 (
 )
-displaystyle ( xi - lambda ) gamma A ( lambda )
 , o que significa que a multiplicidade algébrica de
-displaystyle lambda
 deve satisfazer
 A
 (
@@ -424,34 +372,27 @@ A
 A
 (
 )
-displaystyle mu A ( lambda ) geq gamma A ( lambda )
 .
 Suponha
 A
-displaystyle A
 tem
 d
 n
-displaystyle d leq n
 autovalores distintos
 1
 ,
 ...
 ,
 d
-displaystyle lambda 1 , ldots , lambda d
 , onde a multiplicidade geométrica de
 i
-displaystyle lambda i
 é
 A
 (
 i
 )
-displaystyle gamma A ( lambda i )
 . A multiplicidade geométrica total de
 A
-displaystyle A
 ,
 A
 i
@@ -466,75 +407,56 @@ d
 A
 n
 ,
-displaystyle begin aligned gamma A sum i 1 d gamma A ( lambda i ), d leq gamma A leq n, end aligned
 é a dimensão da soma de todos os autoespaços de autovalores de
 A
-displaystyle A
-, ou equivalentemente o número máximo de autovetores linearmente independentes de
 A
-displaystyle A
 . Se
 A
 n
-displaystyle gamma A n
 , então
 A soma direta dos autoespaços de todos os autovalores de
 A
-displaystyle A
 é todo o espaço vetorial
 C
 n
-displaystyle mathbb C n
 .
 Uma base de
 C
 n
-displaystyle mathbb C n
 pode ser formado a partir de
 n
-displaystyle n
-autovetores linearmente independentes de
 A
-displaystyle A
 ; tal base é chamada de autobase.
 Qualquer vetor em
 C
 n
-displaystyle mathbb C n
 pode ser escrita como uma combinação linear de autovetores de
 A
-displaystyle A
 .
 Deixar
 A
-displaystyle A
 ser um arbitrário
 n
 n
-displaystyle n times n
 matriz de números complexos com autovalores
 1
 ,
 ...
 ,
 n
-displaystyle lambda 1 , ldots , lambda n
 . Cada autovalor aparece
 A
 (
 i
 )
-displaystyle mu A ( lambda i )
 vezes nesta lista, onde
 A
 (
 i
 )
-displaystyle mu A ( lambda i )
 é a multiplicidade algébrica do autovalor. A seguir estão as propriedades desta matriz e seus autovalores:
 O traço de
 A
-displaystyle A
 , definido como a soma de seus elementos diagonais, é também a soma de todos os autovalores,
 tr
 (
@@ -554,10 +476,8 @@ i
 2
 n
 .
-displaystyle operatorname tr (A) sum i 1 n a ii sum i 1 n lambda i lambda 1 lambda 2 cdots lambda n .
 O determinante de
 A
-displaystyle A
 é o produto de todos os seus autovalores,
 det
 (
@@ -571,20 +491,15 @@ i
 2
 n
 .
-displaystyle det(A) prod i 1 n lambda i lambda 1 lambda 2 cdots lambda n .
 Os autovalores do
 k
-displaystyle k
 o poder de
 A
-displaystyle A
 ; ou seja, os autovalores de
 A
 k
-displaystyle A k
 , para qualquer inteiro positivo
 k
-displaystyle k
 , está
 1
 k
@@ -593,19 +508,15 @@ k
 ,
 n
 k
-displaystyle lambda 1 k , ldots , lambda n k
 .
 A matriz
 A
-displaystyle A
 é invertível se e somente se todo autovalor for diferente de zero.
 Se
 A
-displaystyle A
 é invertível, então os autovalores de
 A
 1
-displaystyle A -1
 são
 1
 1
@@ -614,51 +525,39 @@ são
 ,
 1
 n
-textstyle frac 1 lambda 1 , ldots , frac 1 lambda n
 e a multiplicidade geométrica de cada autovalor coincide. Além disso, como o polinômio característico da inversa é o polinômio recíproco do original, os autovalores compartilham a mesma multiplicidade algébrica.
 Se
 A
-displaystyle A
 é igual a sua transposta conjugada
 A
-displaystyle A
 , ou equivalente se
 A
-displaystyle A
 é hermitiana, então todo autovalor é real. O mesmo vale para qualquer matriz real simétrica.
 Se
 A
-displaystyle A
 não é apenas hermitiana, mas também positiva definida, semidefinida positiva, definida negativa ou semidefinida negativa, então todo autovalor é positivo, não negativo, negativo ou não positivo, respectivamente.
 Se
 A
-displaystyle A
 é unitário, todo autovalor tem valor absoluto
 i
 1
-displaystyle lambda i 1
 .
 E se
 A
-displaystyle A
 é um
 n
 n
-displaystyle n times n
 matriz e
 1
 ,
 ...
 ,
 k
-displaystyle lambda 1 , ldots , lambda k
 são seus autovalores, então os autovalores da matriz
 I
 A
-displaystyle I A
 (Onde
 I
-displaystyle I
 é a matriz identidade) são
 1
 1
@@ -667,30 +566,24 @@ displaystyle I
 ,
 k
 1
-displaystyle lambda 1 1, ldots , lambda k 1
 . Além disso, se
 C
-displaystyle alpha in mathbb C
 , os autovalores de
 I
 A
-displaystyle alpha I A
 são
 1
 ,
 ...
 ,
 k
-displaystyle lambda 1 alpha , ldots , lambda k alpha
 . Mais geralmente, para um polinômio
 P
-displaystyle P
 os autovalores da matriz
 P
 (
 A
 )
-displaystyle P(A)
 são
 P
 (
@@ -703,48 +596,34 @@ P
 (
 k
 )
-displaystyle P( lambda 1 ), ldots ,P( lambda k )
 .
 Muitas disciplinas tradicionalmente representam vetores como matrizes com uma única coluna em vez de matrizes com uma única linha. Por essa razão, a palavra "autovetor" no contexto de matrizes quase sempre se refere a um autovetor à direita, ou seja, um vetor coluna que multiplica à direita o
 n
 n
-displaystyle n times n
 matriz
 A
-displaystyle A
 na equação definidora, Equação (1),
 A
 v
 v
 .
-displaystyle A mathbf v lambda mathbf v .
 O problema de autovalor e autovetor também pode ser definido para vetores de linha que deixaram a matriz de multiplicação
 A
-displaystyle A
 . Nesta formulação, a equação definidora é
 u
 A
 u
 ,
-displaystyle mathbf u A kappa mathbf u ,
 Onde
-displaystyle kappa
 é um escalar e
 u
-displaystyle u
 é uma matriz
 1
 n
-displaystyle 1 times n
 . Qualquer vetor linha
 u
-displaystyle u
-satisfazendo esta equação é chamado de autovetor esquerdo de
 A
-displaystyle A
 e
-displaystyle kappa
-é o seu autovalor associado. Fazendo a transposta dessa equação,
 A
 T
 u
@@ -752,30 +631,22 @@ T
 u
 T
 .
-displaystyle A textsf T mathbf u textsf T kappa mathbf u textsf T .
 Comparando esta equação com a Equação (1), segue-se imediatamente que um autovetor esquerdo de
 A
-displaystyle A
 é o mesmo que a transposição de um autovetor à direita de
 A
 T
-displaystyle A textsf T
 , com o mesmo autovalor. Além disso, como o polinômio característico de
 A
 T
-displaystyle A textsf T
 é o mesmo que o polinômio característico de
 A
-displaystyle A
 , os autovalores dos autovetores esquerdos de
 A
-displaystyle A
 são os mesmos que os autovalores dos autovetores corretos de
 A
 T
-displaystyle A textsf T
 .
-Suponha que os autovetores de A formem uma base, ou equivalentemente A tem n autovetores linearmente independentes v1, v2, ..., vn com autovalores associados 1, 2, ..., n. Os autovalores não precisam ser distintos. Defina uma matriz quadrada Q cujas colunas são os n autovetores linearmente independentes de A,
 Q
 [
 v
@@ -786,7 +657,6 @@ v
 n
 ]
 .
-displaystyle Q begin bmatrix mathbf v 1 mathbf v 2 cdots mathbf v n end bmatrix .
 Como cada coluna de Q é um autovetor de A, a multiplicação à direita de A por Q escala cada coluna de Q por seu autovalor associado,
 A
 Q
@@ -802,29 +672,23 @@ v
 n
 ]
 .
-displaystyle AQ begin bmatrix lambda 1 mathbf v 1 lambda 2 mathbf v 2 cdots lambda n mathbf v n end bmatrix .
 Com isso em mente, defina uma matriz diagonal onde cada elemento diagonal ii é o autovalor associado à i-ésima coluna de Q. Então
 A
 Q
 Q
 .
-displaystyle AQ Q Lambda .
-Como as colunas de Q são linearmente independentes, Q é invertível. Multiplicando à direita ambos os lados da equação por Q 1,
 A
 Q
 Q
 1
 ,
-displaystyle A Q Lambda Q -1 ,
 ou, em vez disso, multiplicando ambos os lados por Q 1,
 Q
 1
 A
 Q
 .
-displaystyle Q -1 AQ Lambda .
 A pode, portanto, ser decomposto em uma matriz composta por seus autovetores, uma matriz diagonal com seus autovalores ao longo da diagonal e o inverso da matriz de autovetores. Isso é chamado de autodecomposição e é uma transformação de similaridade. Tal matriz A é dita similar à matriz diagonal ou diagonalizável. A matriz Q é a matriz de mudança de base da transformação de similaridade. Essencialmente, as matrizes A e representam a mesma transformação linear expressa em duas bases diferentes. Os autovetores são usados como base ao representar a transformação linear como .
-Reciprocamente, suponha que uma matriz A seja diagonalizável. Seja P uma matriz quadrada não singular tal que P 1AP seja alguma matriz diagonal D. Esquerda multiplicando ambos por P, AP PD. Cada coluna de P deve, portanto, ser um autovetor de A cujo autovalor é o elemento diagonal correspondente de D. Como as colunas de P devem ser linearmente independentes para que P seja invertível, existem n autovetores linearmente independentes de A. Segue-se então que o autovetores de A formam uma base se e somente se A é diagonalizável.
 Uma matriz que não é diagonalizável é dita defeituosa. Para matrizes defeituosas, a noção de autovetores generaliza para autovetores generalizados e a matriz diagonal de autovalores generaliza para a forma normal de Jordan. Sobre um corpo algebricamente fechado, qualquer matriz A tem uma forma normal de Jordan e, portanto, admite uma base de autovetores generalizados e uma decomposição em autoespaços generalizados.
 Considere a matriz
 A
@@ -835,7 +699,6 @@ A
 2
 ]
 .
-displaystyle A begin bmatrix 2 1 1 2 end bmatrix .
 A figura à direita mostra o efeito desta transformação nas coordenadas do ponto no plano. Os autovetores v desta transformação satisfazem a Equação (1), e os valores de para os quais o determinante da matriz (A I) é igual a zero são os autovalores.
 Tomando o determinante para encontrar o polinômio característico de A,
 A
@@ -866,7 +729,6 @@ I
 1
 )
 .
-displaystyle begin aligned A- lambda I left begin bmatrix 2 1 1 2 end bmatrix - lambda begin bmatrix 1 0 0 1 end bmatrix right begin vmatrix 2- lambda 1 1 2- lambda end vmatrix [6pt] 3-4 lambda lambda 2 [6pt] ( lambda -3)( lambda -1). end aligned
 Igualando o polinômio característico a zero, ele tem raízes em 1 e 3, que são os dois autovalores de A.
 Para 1, a Equação (2) torna-se,
 (
@@ -891,7 +753,6 @@ v
 0
 0
 ]
-displaystyle (A-I) mathbf v lambda 1 begin bmatrix 1 1 1 1 end bmatrix begin bmatrix v 1 v 2 end bmatrix begin bmatrix 0 0 end bmatrix
 1
 v
 1
@@ -899,7 +760,6 @@ v
 v
 2
 0
-displaystyle 1v 1 1v 2 0
 Qualquer vetor diferente de zero com v1 v2 resolve esta equação. Portanto,
 v
 1
@@ -913,7 +773,6 @@ v
 1
 1
 ]
-displaystyle mathbf v lambda 1 begin bmatrix v 1 -v 1 end bmatrix begin bmatrix 1 -1 end bmatrix
 é um autovetor de A correspondente a 1, assim como qualquer múltiplo escalar desse vetor.
 Para 3, a Equação (2) torna-se
 (
@@ -954,7 +813,6 @@ v
 v
 2
 0
-displaystyle begin aligned (A-3I) mathbf v lambda 3 begin bmatrix -1 1 1 -1 end bmatrix begin bmatrix v 1 v 2 end bmatrix begin bmatrix 0 0 end bmatrix -1v 1 1v 2 0; 1v 1 -1v 2 0 end aligned
 Qualquer vetor diferente de zero com v1 v2 resolve esta equação. Portanto,
 v
 3
@@ -968,7 +826,6 @@ v
 1
 1
 ]
-displaystyle mathbf v lambda 3 begin bmatrix v 1 v 1 end bmatrix begin bmatrix 1 1 end bmatrix
 é um autovetor de A correspondente a 3, assim como qualquer múltiplo escalar desse vetor.
 Assim, os vetores v 1 e v 3 são autovetores de A associados aos autovalores 1 e 3, respectivamente.
 Às vezes é possível descobrir um ou mais autovalores de uma matriz por inspeção. Seja, por exemplo, a matriz
@@ -979,7 +836,6 @@ A
 1
 3
 ]
-displaystyle A begin bmatrix 3 1 1 3 end bmatrix
 . Subtraindo 2 de cada entrada da diagonal principal, transformamos A em uma matriz singular:
 [
 1
@@ -987,7 +843,6 @@ displaystyle A begin bmatrix 3 1 1 3 end bmatrix
 1
 1
 ]
-displaystyle begin bmatrix 1 1 1 1 end bmatrix
 . Portanto, 2 é um autovalor da matriz A. Também subtraindo 4 de cada entrada da diagonal principal, transformamos A em uma matriz singular:
 [
 1
@@ -995,7 +850,6 @@ displaystyle begin bmatrix 1 1 1 1 end bmatrix
 1
 1
 ]
-displaystyle begin bmatrix -1 1 1 -1 end bmatrix
 . Portanto, 4 é o segundo autovalor da matriz A.
 Considere a matriz
 A
@@ -1011,7 +865,6 @@ A
 9
 ]
 .
-displaystyle A begin bmatrix 2 0 0 0 3 4 0 4 9 end bmatrix .
 O polinômio característico de A é
 A
 I
@@ -1064,7 +917,6 @@ I
 2
 35
 22.
-displaystyle begin aligned A- lambda I left begin bmatrix 2 0 0 0 3 4 0 4 9 end bmatrix - lambda begin bmatrix 1 0 0 0 1 0 0 0 1 end bmatrix right begin vmatrix 2- lambda 0 0 0 3- lambda 4 0 4 9- lambda end vmatrix , [6pt] (2- lambda ) bigl [ (3- lambda )(9- lambda )-16 bigr ] - lambda 3 14 lambda 2 -35 lambda 22. end aligned
 As raízes do polinômio característico são 2, 1 e 11, que são os únicos três autovalores de A. Esses autovalores correspondem aos autovetores
 [
 1
@@ -1072,7 +924,6 @@ As raízes do polinômio característico são 2, 1 e 11, que são os únicos tr�
 0
 ]
 T
-displaystyle begin bmatrix 1 0 0 end bmatrix textsf T
 ,
 [
 0
@@ -1080,7 +931,6 @@ displaystyle begin bmatrix 1 0 0 end bmatrix textsf T
 1
 ]
 T
-displaystyle begin bmatrix 0 -2 1 end bmatrix textsf T
 , e
 [
 0
@@ -1088,7 +938,6 @@ displaystyle begin bmatrix 0 -2 1 end bmatrix textsf T
 2
 ]
 T
-displaystyle begin bmatrix 0 1 2 end bmatrix textsf T
 , ou qualquer múltiplo diferente de zero.
 Considere a matriz de permutação cíclica
 A
@@ -1104,7 +953,6 @@ A
 0
 ]
 .
-displaystyle A begin bmatrix 0 1 0 0 0 1 1 0 0 end bmatrix .
 Esta matriz desloca as coordenadas do vetor para cima em uma posição e move a primeira coordenada para baixo. Seu polinômio característico é 1 3, cujas raízes são
 1
 1
@@ -1121,15 +969,12 @@ i
 i
 3
 2
-displaystyle begin aligned lambda 1 1 lambda 2 - frac 1 2 i frac sqrt 3 2 lambda 3 lambda 2 - frac 1 2 -i frac sqrt 3 2 end aligned
 onde
 i
-displaystyle i
 é uma unidade imaginária com
 i
 2
 1
-displaystyle i 2 -1
 .
 Para o autovalor real 1 1, qualquer vetor com três entradas iguais diferentes de zero é um autovetor. Por exemplo,
 A
@@ -1150,7 +995,6 @@ A
 5
 ]
 .
-displaystyle A begin bmatrix 5 5 5 end bmatrix begin bmatrix 5 5 5 end bmatrix 1 cdot begin bmatrix 5 5 5 end bmatrix .
 Para o par complexo conjugado de autovalores imaginários,
 2
 3
@@ -1164,7 +1008,6 @@ Para o par complexo conjugado de autovalores imaginários,
 2
 2
 .
-displaystyle lambda 2 lambda 3 1, quad lambda 2 2 lambda 3 , quad lambda 3 2 lambda 2 .
 Então
 A
 [
@@ -1184,7 +1027,6 @@ A
 3
 ]
 ,
-displaystyle A begin bmatrix 1 lambda 2 lambda 3 end bmatrix begin bmatrix lambda 2 lambda 3 1 end bmatrix lambda 2 cdot begin bmatrix 1 lambda 2 lambda 3 end bmatrix ,
 e
 A
 [
@@ -1204,7 +1046,6 @@ A
 2
 ]
 .
-displaystyle A begin bmatrix 1 lambda 3 lambda 2 end bmatrix begin bmatrix lambda 3 lambda 2 1 end bmatrix lambda 3 cdot begin bmatrix 1 lambda 3 lambda 2 end bmatrix .
 Portanto, os outros dois autovetores de A são complexos e são
 v
 2
@@ -1214,7 +1055,6 @@ v
 3
 ]
 T
-displaystyle mathbf v lambda 2 begin bmatrix 1 lambda 2 lambda 3 end bmatrix textsf T
 e
 v
 3
@@ -1224,14 +1064,12 @@ v
 2
 ]
 T
-displaystyle mathbf v lambda 3 begin bmatrix 1 lambda 3 lambda 2 end bmatrix textsf T
 com autovalores 2 e 3, respectivamente. Os dois autovetores complexos também aparecem em um par conjugado complexo,
 v
 2
 v
 3
 .
-displaystyle mathbf v lambda 2 mathbf v lambda 3 .
 Matrizes com entradas apenas ao longo da diagonal principal são chamadas de matrizes diagonais. Os autovalores de uma matriz diagonal são os próprios elementos diagonais. Considere a matriz
 A
 [
@@ -1246,7 +1084,6 @@ A
 3
 ]
 .
-displaystyle A begin bmatrix 1 0 0 0 2 0 0 0 3 end bmatrix .
 O polinômio característico de A é
 A
 I
@@ -1260,7 +1097,6 @@ I
 3
 )
 ,
-displaystyle A- lambda I (1- lambda )(2- lambda )(3- lambda ),
 que tem as raízes 1 1, 2 2 e 3 3. Essas raízes são os elementos diagonais, bem como os autovalores de A.
 Cada elemento da diagonal corresponde a um autovetor cujo único componente diferente de zero está na mesma linha daquele elemento da diagonal. No exemplo, os autovalores correspondem aos autovetores,
 v
@@ -1287,7 +1123,6 @@ v
 1
 ]
 ,
-displaystyle mathbf v lambda 1 begin bmatrix 1 0 0 end bmatrix , quad mathbf v lambda 2 begin bmatrix 0 1 0 end bmatrix , quad mathbf v lambda 3 begin bmatrix 0 0 1 end bmatrix ,
 respectivamente, bem como múltiplos escalares desses vetores.
 Uma matriz cujos elementos acima da diagonal principal são todos nulos é chamada de matriz triangular inferior, enquanto uma matriz cujos elementos abaixo da diagonal principal são todos nulos é chamada de matriz triangular superior. Assim como nas matrizes diagonais, os autovalores das matrizes triangulares são os elementos da diagonal principal.
 Considere a matriz triangular inferior,
@@ -1304,7 +1139,6 @@ A
 3
 ]
 .
-displaystyle A begin bmatrix 1 0 0 1 2 0 2 3 3 end bmatrix .
 O polinômio característico de A é
 A
 I
@@ -1318,7 +1152,6 @@ I
 3
 )
 ,
-displaystyle A- lambda I (1- lambda )(2- lambda )(3- lambda ),
 que tem as raízes 1 1, 2 2 e 3 3. Essas raízes são os elementos diagonais, bem como os autovalores de A.
 Esses autovalores correspondem aos autovetores,
 v
@@ -1346,7 +1179,6 @@ v
 1
 ]
 ,
-displaystyle mathbf v lambda 1 begin bmatrix 1 -1 frac 1 2 end bmatrix , quad mathbf v lambda 2 begin bmatrix 0 1 -3 end bmatrix , quad mathbf v lambda 3 begin bmatrix 0 0 1 end bmatrix ,
 respectivamente, bem como múltiplos escalares desses vetores.
 Como no exemplo anterior, a matriz triangular inferior
 A
@@ -1369,7 +1201,6 @@ A
 3
 ]
 ,
-displaystyle A begin bmatrix 2 0 0 0 1 2 0 0 0 1 3 0 0 0 1 3 end bmatrix ,
 tem um polinômio característico que é o produto de seus elementos diagonais,
 A
 I
@@ -1398,7 +1229,6 @@ I
 )
 2
 .
-displaystyle A- lambda I begin vmatrix 2- lambda 0 0 0 1 2- lambda 0 0 0 1 3- lambda 0 0 0 1 3- lambda end vmatrix (2- lambda ) 2 (3- lambda ) 2 .
 As raízes deste polinômio e, portanto, os autovalores, são 2 e 3. A multiplicidade algébrica de cada autovalor é 2; em outras palavras, ambas são raízes duplas. A soma das multiplicidades algébricas de todos os autovalores distintos é A 4 n, a ordem do polinômio característico e a dimensão de A.
 Por outro lado, a multiplicidade geométrica do autovalor 2 é apenas 1, porque seu autoespaço é gerado por apenas um vetor
 [
@@ -1408,7 +1238,6 @@ Por outro lado, a multiplicidade geométrica do autovalor 2 é apenas 1, porque 
 1
 ]
 T
-displaystyle begin bmatrix 0 1 -1 1 end bmatrix textsf T
 e é, portanto, unidimensional. Da mesma forma, a multiplicidade geométrica do autovalor 3 é 1 porque seu autoespaço é gerado por apenas um vetor
 [
 0
@@ -1417,7 +1246,6 @@ e é, portanto, unidimensional. Da mesma forma, a multiplicidade geométrica do 
 1
 ]
 T
-displaystyle begin bmatrix 0 0 0 1 end bmatrix textsf T
 . A multiplicidade geométrica total A é 2, que é a menor que poderia ser para uma matriz com dois autovalores distintos. Multiplicidades geométricas são definidas em uma seção posterior.
 Para uma matriz hermitiana, a norma ao quadrado do componente j-ésima de um autovetor normalizado pode ser calculada usando apenas os autovalores da matriz e os autovalores da matriz menor correspondente,
 v
@@ -1441,12 +1269,9 @@ i
 k
 )
 ,
-displaystyle v i,j 2 frac prod k ( lambda i - lambda k (M j )) prod k neq i ( lambda i - lambda k ) ,
 Onde
 M
 j
-textstyle M j
-é a submatriz formada pela remoção da j-ésima linha e coluna da matriz original. Essa identidade também se estende a matrizes diagonalizáveis e foi redescoberta muitas vezes na literatura.
 Vetor próprio
 Decomposição em Valores Singulares - valor singular e vetor singular (ideias semelhantes para matrizes retangulares)
 Forma canônica de Jordan

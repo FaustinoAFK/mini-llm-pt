@@ -1,9 +1,6 @@
-Em matemática, o produto vetorial é uma operação binária sobre dois vetores em um espaço vetorial tridimensional e é denotado por . Dados dois vetores independentes linearmente a e b, o produto vetorial a b é um vetor perpendicular ao vetor a e ao vetor b e é a normal do plano contendo os dois vetores. Seu resultado difere do produto escalar por ser também um vetor, ao invés de um escalar.
-Se dois vetores possuem a mesma direção (ou têm a exata direção oposta um ao outro, ou seja, não são linearmente independentes) ou um deles é o vetor 0, seu produto vetorial é o vetor 0. Genericamente, a magnitude do produto vetorial é igual a área do paralelogramo com os dois vetores como lados do paralelogramo. Assim, a magnitude da área do paralelogramo que possui dois vetores perpendiculares como lado é o produto do seu comprimento.
 A notação do produto vetorial entre dois vetores a e b do espaço vetorial
 R
 3
-displaystyle mathbf R 3
 é a b (em manuscritos, alguns matemáticos escrevem a b para evitar a confusão com a letra x).
 Podemos defini-lo como
 a
@@ -14,19 +11,11 @@ b
 s
 i
 n
-displaystyle mathbf a times mathbf b mathbf hat n left mathbf a right left mathbf b right sin theta
 onde é a medida do ângulo entre a e b (0 180 ) no plano definido pelos dois vetores, e
 n
-displaystyle mathbf hat n
-é o vetor unitário perpendicular tanto a a quanto a b.
-O problema com esta definição é que existem dois vetores unitários que são perpendiculares a a e b simultaneamente: se
 n
-displaystyle mathbf hat n
-é perpendicular, então
 n
-displaystyle - mathbf hat n
 também o é.
-O resultado correto depende da orientação do espaço vetorial, i.e. da quiralidade do sistema de coordenadas (i, j, k). O produto vetorial a b é definido de tal forma que (a, b, a b) se torna destro se (i, j, k) é destro ou canhoto se (i, j, k) é canhoto.
 Uma forma fácil de determinar o sentido do vetor resultante é a regra da mão direita. Se um sistema de coordenadas é destro, basta apontar o indicador na direção do primeiro operando e o dedo médio na direção do segundo operando. Desta forma, o vetor resultante é dado pela direção do polegar.
 O produto vetorial é classificado como um pseudovetor porque inverte frente à reflexão.
 O produto vetorial pode ser representado graficamente, com respeito a um sistema de coordenadas destro, como se segue:
@@ -37,13 +26,10 @@ a b -b a,
 distributivo sobre a adição,
 a (b c) a b a c,
 e compatível com a multiplicação escalar, tal que
-(ra) b a (rb) r(a b).
 Não é associativo, mas satisfaz a identidade de Jacobi:
-a (b c) b (c a) c (a b) 0
 A distributividade, linearidade e identidade de Jacobi mostram que R3 junto com a adição de vetores e o produto vetorial formam uma álgebra de Lie.
 Além disso, dois vetores não nulos a e b são paralelos se e somente se a b 0.
 Esta é uma fórmula útil e bem conhecida,
-a (b c) b(a c) c(a b),
 a qual é mais fácil de memorizar como “BAC menos CAB”. Esta fórmula é muito útil para simplificar cálculos com vetores na física. É importante notar, entretanto, que esta fórmula não se aplica quando do uso do operador nabla.
 Um caso especial com respeito a gradiente em cálculo vetorial é:
 (
@@ -63,11 +49,9 @@ f
 laplacian
 f
 .
-displaystyle begin matrix nabla times ( nabla times mathbf f ) nabla ( nabla cdot mathbf f )-( nabla cdot nabla ) mathbf f mbox grad ( mbox div mathbf f )- mbox laplacian mathbf f . end matrix
 Este é um caso especial da mais geral decomposição Hodge
 d
 d
-displaystyle Delta d partial partial d
 do Laplaciano Hodge.
 Outra identidade útil de Lagrange é
 a
@@ -81,23 +65,18 @@ a
 b
 2
 .
-displaystyle a times b 2 a cdot b 2 a 2 b 2 .
 Este é um caso especial da multiplicatividade
 v
 w
 v
 w
-displaystyle vw v w
 da norma na álgebra de quaternion.
 Os vetores unitários i, j e k, para uma dado sistema ortogonal de coordenadas, satisfazem as seguintes igualdades:
 i j k j k i k i j
 j i -k k j -i i k -j
 Com estas regras, as coordenadas do resultado do produto vetorial de dois vetores podem ser calculadas facilmente, sem a necessidade de se determinar qualquer ângulo. Seja:
-a a1i a2j a3k [a1, a2, a3]
 e
-b b1i b2j b3k [b1, b2, b3].
 Então
-a b [a2b3 a3b2, a3b1 a1b3, a1b2 a2b1].
 A notação acima também pode ser escrita formalmente como o determinante de uma matriz:
 a
 b
@@ -119,7 +98,6 @@ b
 b
 3
 ]
-displaystyle mathbf a times mathbf b det begin bmatrix mathbf i mathbf j mathbf k a 1 a 2 a 3 b 1 b 2 b 3 end bmatrix
 O determinante de três vetores pode ser recuperado como
 det (a, b, c) a (b c).
 Intuitivamente, o produto vetorial pode ser descrito pelo método de Sarrus, onde
@@ -148,7 +126,6 @@ b
 1
 b
 2
-displaystyle begin matrix mathbf i mathbf j mathbf k mathbf i mathbf j a 1 a 2 a 3 a 1 a 2 b 1 b 2 b 3 b 1 b 2 end matrix
 Para os primeiros três vetores unitários, multiplique os elementos na diagonal da direita (ex. a primeira diagonal conteria i, a2, e b3). Para os três últimos vetores unitários, multiplique os elementos na diagonal da esquerda e então os multiplique por -1 (ex. a última diagonal conteria k, a2, e b1). O produto vetorial seria definido pela soma destes produtos:
 i
 (
@@ -192,10 +169,8 @@ a
 b
 1
 )
-displaystyle mathbf i (a 2 b 3 ) mathbf j (a 3 b 1 ) mathbf k (a 1 b 2 )- mathbf i (a 3 b 2 )- mathbf j (a 1 b 3 )- mathbf k (a 2 b 1 )
 O produto vetorial também pode ser descrito em termos de quaternions. Note por exemplo que as relações entre produtos vetoriais acima i, j, e k concordam com a relação multiplicativa entre os quaternions i, j, e k. Em geral, se representamos um vetor [a1, a2, a3] como o quaternion a1i a2j a3k, obtemos o produto vetorial tomando seus produtos e descartando a parte real do resultado (a parte real será o negativo do produto escalar de dois vetores). Mais sobre a conexão entre multiplicação de quaternion, operações de vetores e geometria pode ser encontrado em quaternions e rotação espacial.
 O produto vetorial ocorre na fórmula do operador vetorial rotacional.
-É também utilizado para descrever a Força de Lorentz experimentada por uma carga elétrica movendo-se em um campo magnético. As definições de torque e momento angular também envolvem produto vetorial.
 O produto vetorial pode também ser utilizado para calcular a normal de um triângulo ou outro polígono, o que é importante no ramo da computação gráfica e do desenvolvimento de jogos eletrônicos, para permitir efeitos que simulam iluminação e assim obter gráficos mais realistas.
 O produto vetorial para vetores 7-dimensionais pode ser obtido da mesma maneira, porém usando-se os octônions em vez dos quatérnions.
 Esse produto vetorial 7-dimensional tem as seguintes propriedades em comum com o habitual produto vetorial tridimensional:
@@ -204,13 +179,10 @@ x (ay bz) ax y bx z
 (ay bz) x ay x bz x.
 É anticomutativo:
 x y y x 0
-É perpendicular a x e a y simultaneamente:
 x (x y) y (x y) 0
 Temos:
 Diferente do produto vetorial tridimensional, não satisfaz a identidade de Jacobi (a igualdade se manteria em 3 dimensões):
-x (y z) y (z x) z (x y) 0
 Os parágrafos a seguir contêm expressões em itálico que ainda necessitam tradução
-Para o caso geral (n-dimensional), não há análogo direto do produto vetorial. Entretanto existe o wedge product produto exterior (literalmente produto cunha), que possui propriedades semelhantes, exceto que o produto exterior de dois vetores passa a ser um 2-vector em vez de um vetor comum. O produto vetorial pode ser interpretado como sendo o produto exterior em três dimensões após usar-se a dualidade de Hodge para se identificar 2-vectores com vectores.
 O produto exterior e o produto escalar podem ser combinados para formarem o produto de Clifford.
 Produto escalar
 Regra da mão direita

@@ -1,6 +1,5 @@
 Refatoração (do inglês refactoring) é o processo de modificar um sistema de software para melhorar a estrutura interna do código sem alterar seu comportamento externo.
 O uso desta técnica aprimora a concepção (design) de um software e evita a deterioração tão comum durante o ciclo de vida de um código. Esta deterioração é geralmente causada por mudanças com objetivos de curto prazo ou por alterações realizadas sem a clara compreensão da concepção do sistema.
-Outra consequência é a melhora no entendimento do código, o que facilita a manutenção e evita a inclusão de defeitos. Esta melhora no entendimento vem da constante alteração do código com objetivo de facilitar a comunicação de motivações, intenções e objetivos por parte do programador.
 É fundamental que o sistema de software possua testes automatizados para realizar refatoração. Desta forma, será possível garantir que o comportamento externo não foi alterado.
 O livro mais importante sobre refatoração é Refactoring: Improving the Design of Existing Code (ISBN 0-201-48567-2) de Martin Fowler, onde são explicados os conceitos, motivações e uma série de refatorações descritas passo a passo.
 Programação extrema tem refatoração como uma de suas práticas.

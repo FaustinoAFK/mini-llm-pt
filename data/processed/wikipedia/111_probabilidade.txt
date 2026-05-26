@@ -1,6 +1,4 @@
-A palavra probabilidade deriva do Latim probare (provar ou testar). Informalmente, provável é uma das muitas palavras utilizadas para eventos incertos ou desconhecidos, sendo também substituída por algumas palavras como “sorte”, “risco”, “azar”, "chance", “incerteza”, “duvidoso”, dependendo do contexto inseridas à língua portuguesa e na linguagem matemática.
 Tal como acontece com a teoria da mecânica, onde encontramos definições precisas que atribuímos em termos de uso diário que praticamos em nosso dia a dia, como o trabalho e a força, também a teoria das probabilidades tenta quantificar a noção de provável em determinados eventos em que surgem possibilidades com probabilidades.
-Em essência, existe um conjunto de regras matemáticas onde pode-se prever a probabilidade de acertos, número de vezes, número de ocasiões entre outras situações que conseguimos calcular através de fórmulas e regras matemáticas, listado no tópico "Formalização da probabilidade" abaixo. Existem outras regras para quantificar a incerteza, como a teoria de Dempster-Shafer e a lógica difusa (em inglês, fuzzy logic), diferentes e compatíveis com as leis da probabilidade tal como são geralmente entendidas. No entanto, seguem com a metodologia matemática de Probabilidade, como são aplicadas as regras.
 A ideia geral da probabilidade é frequentemente dividida em dois conceitos relacionados:
 Probabilidade de frequência ou probabilidade aleatória, que representa uma série de eventos futuros cuja ocorrência é definida por alguns fenômenos físicos aleatórios. Este conceito pode ser dividido em fenômenos físicos que são previsíveis através de informação suficiente e fenômenos que são essencialmente imprevisíveis. Um exemplo para o primeiro tipo é uma roleta, e um exemplo para o segundo tipo é um decaimento radioativo.
 Probabilidade epistemológica ou probabilidade Bayesiana, que representa nossas incertezas sobre proposições quando não se tem conhecimento completo das circunstâncias causativas. Tais proposições podem ser sobre eventos passados ou futuros, mas não precisam ser. Alguns exemplos de probabilidade epistemológica são designar uma probabilidade à proposição de que uma lei da Física proposta seja verdadeira, e determinar o quão "provável" é que um suspeito cometeu um crime, baseado nas provas apresentadas.
@@ -14,24 +12,15 @@ y
 (
 x
 )
-displaystyle y phi (x)
 ,
 x
-displaystyle x
-sendo qualquer erro e
 y
-displaystyle y
 sua probabilidades, e estabeleceu três propriedades dessa curva: (1) Ela é simétrica no eixo
 y
-displaystyle y
 ; (2) ao eixo
 x
-displaystyle x
 , é assintótico; a probabilidade do erro quando
 x
-displaystyle x rightarrow infty
-é 0; (3) a área abaixo da curva da função é 1, sendo certo de que um erro existe. Ele deduziu uma fórmula para o significado das três observações. Ele também deu (1781) uma fórmula para a lei da facilidade de erros (um termo devido a Lagrange, 1774), mas que levava a equações não gerenciáveis. Daniel Bernoulli (1778) introduziu o princípio do produto máximo das probabilidades de um sistema de erros concorrentes.
-O método dos mínimos quadrados deve-se ao matemático alemão Johann Carl Friedrich Gauss (1777-1855). Gauss descreveu o método aos dezoito anos (1795), que hoje é indispensável nas mais diversas pesquisas. Adrien-Marie Legendre (1805), introduziu contribuições ao método em seu Nouvelles méthodes pour la détermination des orbites des comètes. Por ignorar o trabalho de Legendre, um escritor Americano-Irlandês, Robert Adrain, editor de "The Analyst" (1808), primeiro deduziu a lei da facilidade do erro,
 (
 x
 )
@@ -41,21 +30,15 @@ h
 2
 x
 2
-displaystyle phi (x) ce -h 2 x 2
 c
-displaystyle c
 e
 h
-displaystyle h
-sendo constantes dependendo da precisão da observação. Ele deu duas provas, sendo a segunda essencialmente a mesma de John Herschel (1850). Carl Friedrich Gauß deu a primeira prova que parece ser conhecida na Europa (a terceira após a de Adrain) em 1809. Provas posteriores foram dadas por Laplace (1810, 1812), Gauß (1823), James Ivory (1825, 1826), Hagen (1837), Friedrich Bessel (1838), Donkin (1844, 1856), e Morgan Crofton (1870). Outros que contribuíram foram Ellis (1844), De Morgan (1864), Glaisher (1872), e Giovanni Schiaparelli (1875). A fórmula de Peters (1856) para
 r
-displaystyle r
 , o erro provável de uma observação simples, é bem conhecida.
 No século XIX, os autores da teoria geral incluíam Laplace, Sylvestre Lacroix (1816), Littrow (1833), Adolphe Quetelet (1853), Richard Dedekind (1860), Helmert (1872), Hermann Laurent (1873), Liagre, Didion, e Karl Pearson. Augustus De Morgan e George Boole melhoraram a exibição da teoria.
 No lado geométricos, (veja geometria integral), os contribuidores da The Educational Times foram influentes (Miller, Crofton, McColl, Wolstenholme, Watson, e Artemas Martin).
 Como outras teorias, a teoria das probabilidades é uma representação dos conceitos probabilísticos em termos formais isso é, em termos que podem ser considerados separadamente de seus significados. Esses termos formais são manipulados pelas regras da matemática e da lógica, e quaisquer resultados são então interpretados ou traduzidos de volta ao domínio do problema.
 Houve pelo menos duas tentativas com sucesso de formalizar a probabilidade, que foram as formulações de Kolmogorov e a de Cox.
-Na formulação de Kolmogorov, conjuntos são interpretados como eventos e a probabilidade propriamente dita como uma medida numa classe de conjuntos. Na de Cox, a probabilidade é entendida como uma primitiva (isto é, não analisada posteriormente) e a ênfase está em construir uma associação consistente de valores de probabilidade a proposições. Em ambos os casos, as leis da probabilidade são as mesmas, exceto por detalhes técnicos:
 uma probabilidade é um número entre 0 e 1;
 a probabilidade de um evento ou proposição e seu complemento, se somados, valem até 1;
 a probabilidade condicionada ou conjunta de dois eventos ou proposições é o produto da probabilidade de um deles e a probabilidade do segundo, condicionado na primeira.
@@ -73,8 +56,6 @@ Uma distribuição é chamada de distribuição discreta se for definida em um c
 Dentre as distribuições discretas importantes, pode-se citar a distribuição uniforme discreta, a distribuição de Poisson, a distribuição binomial, a distribuição binomial negativa e a distribuição de Maxwell-Boltzmann. Dentre as distribuições contínuas, a distribuição normal, a distribuição gama, a distribuição t de Student e a distribuição exponencial.
 Os axiomas da probabilidade formam a base para a teoria da probabilidade matemática. O cálculo de probabilidades pode ser frequentemente determinado pelo uso da análise combinatória ou pela aplicação direta dos axiomas. As aplicações da probabilidade vão muito além da estatística, que é geralmente baseada na ideia de distribuições de probabilidade e do teorema do limite central.
 Para dar um significado matemático à probabilidade, considere um jogo de cara ou coroa. Intuitivamente, a probabilidade de dar cara, qualquer que seja a moeda, é "obviamente 50%"; porém, esta afirmação por si só deixa a desejar quanto ao rigor matemático - certamente, enquanto se pode esperar que, ao jogar essa moeda 10 vezes, teremos 5 caras e 5 coroas, não há garantias de que isso ocorrerá; é possível, por exemplo, conseguir 10 caras sucessivas. O que então o número "50%" significaria nesse contexto?
-Uma proposta é usar a lei dos grandes números. Neste caso, assumimos que é exequível fazer qualquer número de arremessos da moeda, com cada resultado sendo independente - isto é, o resultado de cada jogada não é afetado pelas jogadas anteriores. Se executarmos N jogadas, e seja NH o número de vezes que a moeda deu cara, então pode-se considerar, para qualquer N, a razão NH/N.
-Quando N se tornar cada vez maior, pode-se esperar que, em nosso exemplo, a razão NH/N chegará cada vez mais perto de 1/2. Isto nos permite "definir" a probabilidade Pr(H) das caras como o limite matemático, com N tendendo ao infinito, desta sequência de quocientes:
 Pr
 (
 H
@@ -84,7 +65,6 @@ N
 N
 H
 N
-displaystyle Pr(H) lim N to infty N H over N
 Na prática, obviamente, não se pode arremessar uma moeda uma infinidade de vezes; por isso, em geral, esta fórmula se aplica melhor a situações nas quais já se tem fixada uma probabilidade a priori para um resultado particular (no nosso caso, nossa convenção é a de que a moeda é uma moeda "honesta"). A lei dos grandes números diz que, dado Pr(H) e qualquer número arbitrariamente pequeno , existe um número n tal que para todo N n,
 Pr
 (
@@ -93,13 +73,10 @@ H
 N
 H
 N
-displaystyle left Pr(H)- N H over N right epsilon
 Em outras palavras, ao dizer que "a probabilidade de caras é 1/2", queremos dizer que, se jogarmos nossa moeda tantas vezes o bastante, eventualmente o número de caras em relação ao número total de jogadas tornar-se-á arbitrariamente próximo de 1/2; e permanecerá ao menos tão próximo de 1/2 enquanto se continuar a arremessar a moeda.
 Observe que uma definição apropriada requer a teoria da medida, que provê meios de cancelar aqueles casos nos quais o limite superior não dá o resultado "certo", ou é indefinido pelo fato de terem uma medida zero.
 O aspecto a priori desta proposta à probabilidade é algumas vezes problemática quando aplicado a situações do mundo real. Por exemplo, na peça Rosencrantz e Guildenstern estão mortos, de Tom Stoppard, uma personagem arremessa uma moeda que sempre dá caras, uma centena de vezes. Ele não pode decidir se isto é apenas um evento aleatório - além do mais, é possível, porém improvável, que uma moeda honesta pudesse dar tal resultado - ou se a hipótese de que a moeda é honesta seja falsa.
 A dificuldade nos cálculos de probabilidade se relacionam com determinar o número de eventos possíveis, contar as ocorrências de cada evento, contar o número total de eventos. O que é especialmente difícil é chegar a conclusões que tenham algum significado, a partir das probabilidades calculadas. Uma piada sobre probabilidade, o problema de Monty Hall, demonstra as armadilhas muito bem.
-Um efeito maior da teoria da probabilidade no cotidiano está na avaliação de riscos e no comércio nos mercado de matérias-primas. Governos geralmente aplicam métodos de probabilidade na regulação ambiental onde é chamada de "análise de caminho", e estão frequentemente medindo o bem-estar usando métodos que são estocásticos por natureza, e escolhendo projectos com os quais se comprometer baseados no seu efeito provável na população como um todo, estatisticamente. De fato, não é correto dizer que estatísticas estejam envolvidas na modelagem em si, dado que, normalmente, estimativas de risco são únicas (one-time) e, portanto, necessitam de modelos mais fundamentais como, por exemplo, para determinar "a probabilidade de ocorrência de outro atentado terrorista como o de 11 de setembro em Nova York". Uma lei de números pequenos tende a se aplicar a todas estas situações e à percepção dos efeitos relacionados a tais situações, o que faz de medidas de probabilidade uma questão política.
-Um bom exemplo é o efeito nos preços do petróleo da probabilidade percebida de qualquer conflito mais abrangente no Oriente Médio - o que contagia a economia como um todo. A estimativa feita por um comerciante de comodidades de que uma guerra é mais (ou menos) provável leva a um aumento (ou diminuição) de preços e sinaliza a outros comerciantes aquela opinião. Da mesma forma, as probabilidades não são estimadas de forma independente nem, necessariamente, racional. A teoria de finança comportamental surgiu para descrever o efeito de tal pensamento de grupo (groupthink) na definição de preços, política, paz e conflito.
 Uma aplicação importante da teoria das probabilidades no dia a dia é a questão da confiabilidade. No desenvolvimento de muitos produtos de consumo, tais como automóveis e eletro - eletrônicos, a teoria da confiabilidade é utilizada com o intuito de se reduzir a probabilidade de falha que, por sua vez, está estritamente relacionada à garantia do produto. Outro bom exemplo é a aplicação da teoria dos jogos, uma teoria rigorosamente baseada na teoria das probabilidades, à Guerra Fria e à doutrina de destruição mútua assegurada.
 Damon Runyon, "It may be that the race is not always to the swift, nor the battle to the strong - but that is the way to bet."
 - "pode ser que a corrida não seja sempre para o rápido nem a batalha para o forte - mas é assim que se deve apostar."

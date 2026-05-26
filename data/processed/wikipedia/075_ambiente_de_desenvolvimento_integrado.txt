@@ -9,7 +9,6 @@ Modelagem de dados (modeling) - criação do modelo de classes, objetos, interfa
 Geração de código - característica mais explorada em Ferramentas CASE, a geração de código também é encontrada em IDEs, contudo com um escopo mais direcionado a templates de código comumente utilizados para solucionar problemas rotineiros. Todavia, em conjunto com ferramentas de modelagem, a geração pode gerar praticamente todo o código-fonte do programa com base no modelo proposto, tornando muito mais rápido o processo de desenvolvimento e distribuição do software;
 Distribuição (deploy) - auxilia no processo de criação do instalador do software, ou outra forma de distribuição, seja discos ou via internet;
 Testes Automatizados (automated tests) - realiza testes no software de forma automatizada, com base em scripts ou programas de testes previamente especificados, gerando um relatório, assim auxiliando na análise do impacto das alterações no código-fonte. Ferramentas deste tipo mais comuns no mercado são chamadas robôs de testes;
-Refatoração (refactoring) - consiste na melhoria constante do código-fonte do software, seja na construção de código mais otimizado, mais limpo e/ou com melhor entendimento pelos envolvidos no desenvolvimento do software. A refatoração, em conjunto com os testes automatizados, é uma poderosa ferramenta no processo de erradicação de "bugs", tendo em vista que os testes "garantem" o mesmo comportamento externo do software ou da característica sendo reconstruída.
 Usar uma IDE pode trazer diversos benefícios para as pessoas envolvidas no projeto, como os Stakeholders, programadores, empresas e clientes. O uso de uma IDE adequada pode aumentar a produtividade, diminuindo gastos e aumentando o desempenho. Com ela é possível medir resultados, fazer a verificação e correção de erros e integrar tecnologias.
 Intellij IDEA- IDE da JetBrains para desenvolvimento em diversas linguagens, principalmente JAVA. Também fornece recursos para produtividade de desenvolvimento em tecnologias web como HTML5, AngularJS, NodeJS, GWT entre outros;
 Android Studio - IDE oficial da Google para desenvolvimento na plataforma Android;
@@ -35,7 +34,6 @@ MonoDevelop / Xamarin Studio - Baseado no SharpDevelop, para ambiente multi-plat
 DEV-C , Code::Blocks, Turbo C - Geram código para C e C ;
 Anjuta - Gera código para C e C ;
 Anubis - Gera código PHP-GTK;
-Zend Studio - Gera código PHP;
 WOL - Gera código Pascal (também é biblioteca);
 Xcode - Gera código Objective-C e Swift;
 IAR Embedded Workbench - Gera códigos em C e Assembly para programação de microcontroladores;

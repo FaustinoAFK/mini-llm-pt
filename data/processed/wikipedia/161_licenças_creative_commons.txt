@@ -7,12 +7,8 @@ Há dezesseis combinações possíveis, das quais onze são licenças válidas d
 Há sete grandes licenças da Creative Commons:
 Como exemplo, a licença de Atribuição do Creative Commons (BY) permite compartilhamento e remix (trabalhos derivativos), mesmo para uso comercial, desde que seja dada a atribuição.
 Atualmente todas as licenças requerem que se atribua o "autor original". Deve-se dar a atribuição da "melhor maneira possível, usando a informação disponível". Comumente isso implica:
-Incluir quaisquer avisos de direitos autorais (se aplicável). Se o próprio trabalho contém qualquer aviso de copyright lá colocado pelo detentor, deve-se deixá-lo intacto, ou reproduzi-lo de modo satisfatório à mídia de republicação da obra.
-Cite o nome, pseudônimo ou user ID do autor, etc. Se se publica a obra na internet, é recomendável colocar o link do nome para uma página de perfil, caso exista alguma.
-Cite o título ou nome da obra, caso haja algum. Se o trabalho é publicado na internet, recomenda-se um link direto para a obra original.
 Cite sob qual licença Creative Commons a obra se encontra. Se é uma publicação na internet, é bom que o link da citação conduza à página da licença no website da CC.
 Mencione se a obra é derivada ou adaptada, além disso, precisa-se deixar claro que um trabalho é derivativo, e.g, "Essa é uma tradução para o português de [nome da obra original], de [autor]." ou “Roteiro baseado em [obra original], de [autor].”
-Ao olhar para um documento de trabalho licenciado em Creative Commons ou particular, pode referir-se a licenças portadas (ported) ou a genérica (unported, não-portada, ou não-adaptada). Isso se refere ao código legal subjacente. O verbo "portar" aplica-se a adaptação dos dados para atender a uma jurisdição/ou território, ambiente tecnológico ou política particular.
 As licenças não-portadas são licenças não associados a qualquer jurisdição específica ou particular (por exemplo, país); são licenças que não foram escritas especificamente de acordo com as leis de um único país e são escritas de acordo com os tratados internacionais de direitos autorais e, portanto, teoricamente compatíveis com as leis de direitos autorais em vários países. Devido às diferenças sutis em ambos os sistemas legais e como vários países interpretam os tratados internacionais sobre direitos autorais, a versão portada pode incluir ou excluir cláusulas que são ou não juridicamente vinculativas ou legalmente sem sentido em uma jurisdição específica - e portanto, alguns aspectos da licença não podem ser perfeitamente alinhados com as leis de uma jurisdição particular.
 A partir da versão CC 3.0 de 2007, as seis licenças da Creative Commons passam a fazer parte de um conjunto genérico e internacionalmente reconhecido, chamado licenças unported. Termo em alusão à portabilidade entre licenças de diferentes países, baseada em textos de tratados internacionais como a Convenção de Berna e Trips, onde todos os países membros do projeto derivam suas licenças jurisdicionais das licenças unported. No Brasil a versão 3.0 está atualmente em vigor desde janeiro de 2010.
 A licença jurídica Creative Commons Atribuir e Compartilhar nos Mesmos Termos versão 3.0 Não-adaptada (do inglês Creative Commons Attribution-ShareAlike 3.0 Unported, abreviado como CC BY-SA 3.0 Unported), é uma das licenças jurídicas mais flexíveis, que permite qualquer pessoa: usar; copiar; distribuir de forma comercial ou não, e; modificar uma obra com a citação do autor original. Mas se a pessoa violar os termos (mesmo acidentalmente) ocorre o cancelamento imediato da licença.
@@ -20,7 +16,6 @@ A licença jurídica Creative Commons Atribuir e Compartilhar nos Mesmos Termos 
 para Compartilhar para copiar, distribuir e transmitir o trabalho, e
 para Remisturar para adaptar o trabalho
 Sobre as seguintes condições:
-Atribuição Deve atribuir o trabalho do modo especificado pelo autor ou titular da licença (mas não de qualquer modo que sugira que eles endossam-lhe ou a sua utilização do trabalho.)
 Compartilhar de Modo Idêntico Seu alterar, transformar, ou criar sob este trabalho, só poderá distribuir o trabalho resultante sob o mesmo, similar ou uma licença compatível.
 Com a interpretação disso:
 Renúncia Quaisquer das condições acima podem ser renunciadas se tiver permissão do detentor dos direitos de autor.
@@ -31,19 +26,15 @@ os direitos de outras pessoas poderão ter no seu próprio trabalho ou em como o
 Nota Para qualquer reutilização ou distribuição, deverá tornar claro aos outros os termos da licença deste trabalho. O melhor modo para o fazer, é adicionar a hiperligação https://creativecommons.org/licenses/by-sa/3.0/deed.pt
 A versão 4 (CC-BY-4.0) foi projetada para ser universal e auto-suficiente, e traz os direitos sobre banco de dados (SGDR), que não eram explicitamente cobertos na versão 3.0, garantindo o licenciamento eficaz em áreas científicas e de dados abertos e 30 dias para correção de violações acidentais ("mecanismo de cura").
 Há duas licenças Creative Commons no domínio público, ou seja, para que os trabalhos podem ser redistribuídos e manipulados completamente livremente e sem restrições, se comercialmente ou não comercialmente.
-Devido ao desuso ou a críticas, algumas licenças CC previamente oferecidas agora foram removidas, e não são mais recomendadas para novas obras. As licenças removidas não proviam o elemento "Atribuição" (BY).
-Obras sob licença CC são protegidas pelas leis aplicáveis de copyright. Isso permite que as licenças Creative Commons sejam aplicadas a todo e qualquer trabalho protegido por lei de direito autoral, tais como: livros, peças, filmes, músicas, artigos, fotografias, blogs e websites.
 Entretanto, a licença não deve modificar os direitos do fair use ou fair dealing ou exercer restrições que violem as exceções dos direitos autorais. Além disso, as licenças Creative Commons são não-exclusivas e irrevogáveis. Qualquer obra ou cópias da obra obtidos sob uma licença Creative Commons deve continuar a ser usado sob essa licença.
 No caso de obras protegidas por múltiplas licenças Creative Commons, o usuário pode optar por qualquer uma.
 Internet Archive (Várias)
 Anatomography (CC BY-SA)
 Association for Progressive Communications (CC BY-SA)
 ccMixter (mostly CC BY-NC)
-Citizendium (CC BY-SA)
 The Freesound Project (CC0, CC BY, CC BY-NC e Sampling Plus)
 Free Music Archive (Várias)
 Identi.ca (CC BY)
-Jamendo (Várias)
 Khan Academy (CC BY-NC-SA)
 knol (mostly, CC BY-SA ou CC BY-NC-SA)
 Mushroom Observer (CC BY-SA ou CC BY-NC-SA)
@@ -62,8 +53,6 @@ Fotos Públicas (fotojornalismo)
 Gamas de Cinza- Galeria Fotografia Preto e Branco
 Usina da Foto- Galeria de Imagens
 licença BSD
-Copyleft
-Copyright
 Cultura livre
 Free content
 Licença de software

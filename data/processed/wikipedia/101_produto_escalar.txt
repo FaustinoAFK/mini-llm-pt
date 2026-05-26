@@ -2,14 +2,12 @@ Em álgebra linear, o produto escalar é uma função binária definida entre do
 Algebricamente, o produto escalar de dois vetores é formado pela multiplicação de seus componentes correspondentes e pela soma dos produtos resultantes. Geometricamente, é o produto das magnitudes euclidianas dos dois vetores e o cosseno do ângulo entre eles.
 O produto vetorial, que é outra operação possível de ser definir para vetores fornece, por outro lado, um novo vetor.
 O produto escalar de dois vetores A e B, que se representa por
-displaystyle cdot
 ou ainda por um traço vertical é o resultado do produto do comprimento (também chamado de norma ou módulo) de B pela projeção escalar de A em B.
 A
 B
 A
 B
 cos
-displaystyle mathbf A cdot mathbf B left mathbf A right left mathbf B right cos theta
 Onde é o ângulo formado pelos vetores e A e B são seus comprimentos.
 Essa expressão somente contém uma definição do comprimento de um vetor como a raiz quadrada do seu produto escalar, mas não fornece meios de se calcular o comprimento do vetor.
 A
@@ -20,16 +18,12 @@ cos
 0
 A
 2
-displaystyle mathbf A cdot mathbf A left mathbf A right left mathbf A right cos 0 left mathbf A right 2
 Entretanto, essa expressão permite o cálculo do ângulo entre os vetores:
 arccos
 A
 B
 A
 B
-displaystyle theta arccos frac mathbf A cdot mathbf B left mathbf A right left mathbf B right
-Note que não é necessário mencionar nenhum sistema de coordenadas para se obter o valor do produto escalar. A formula acima é válida independente do sistema de coordenadas.
-Fisicamente, se A fosse uma força, o produto escalar mediria o quanto da força A estaria sendo aplicada na direção de B. Isto só é válido, entretanto, se o vetor B for unitário. Do contrário, a magnitude da projeção de A em B ("o quanto da força A está aplicado na direção de B") deve ser obtida por A (B / B ), visto que B / B representa o vetor unitário na direção de B.
 Em um sistema de coordenadas ortonormal de n dimensões, onde escrevemos os vetores A e B em termos de componentes como
 A
 (
@@ -43,7 +37,6 @@ a
 a
 n
 )
-displaystyle mathbf A left(a 1 ,a 2 , cdots ,a n right)
 e
 B
 (
@@ -58,7 +51,6 @@ b
 n
 )
 ,
-displaystyle mathbf B left(b 1 ,b 2 , cdots ,b n right),
 o produto escalar entre A e B é:
 A
 B
@@ -81,7 +73,6 @@ a
 n
 b
 n
-displaystyle mathbf A cdot mathbf B sum i 1 n a i b i a 1 b 1 a 2 b 2 cdots a n b n
 Note que a interpretação do produto escalar como a projeção do vetor na direção de outro, neste caso, está longe de ser óbvia. No entanto a expressão acima nos fornece uma forma de obter o comprimento de um vetor qualquer em termos de suas componentes:
 A
 A
@@ -95,30 +86,25 @@ a
 a
 n
 2
-displaystyle left mathbf A right sqrt mathbf A cdot mathbf A sqrt a 1 2 a 2 2 cdots a n 2
 A projeção escalar de um vetor a em direção a um vetor b é dada por:
 a
 b
 a
 cos
-displaystyle a b a cos theta
 ,
 onde
-displaystyle theta
 é o ângulo entre a e b.
 Em termos da definição geométrica do produto escalar, este pode ser reescrito como
 a
 b
 a
 b
-displaystyle a b a cdot widehat b
 ,
 onde
 b
 b
 /
 b
-displaystyle widehat b b/ lVert b rVert
 é o vetor unitário na direção de b.
 O produto escalar é, portanto, caracterizado geometricamente por
 a
@@ -129,7 +115,6 @@ b
 b
 a
 a
-displaystyle a cdot b a b lVert b rVert b a lVert a rVert
 .
 Sejam A e B dois vetores com "n" linhas e 1 coluna, ou seja, de dimensões iguais. O produto escalar de vetores tem as seguintes propriedades:
 Comutativa:
@@ -137,7 +122,6 @@ A
 B
 B
 A
-displaystyle mathbf A cdot mathbf B mathbf B cdot mathbf A
 .
 Distributiva em relação à soma de vetores:
 A
@@ -149,7 +133,6 @@ A
 B
 A
 C
-displaystyle mathbf A cdot left( mathbf B mathbf C right) mathbf A cdot mathbf B mathbf A cdot mathbf C
 .
 Multiplicação por escalar:
 (
@@ -172,7 +155,6 @@ n
 A
 B
 )
-displaystyle left(n 1 mathbf A right) cdot left(n 2 mathbf B right) left(n 1 n 2 right) left( mathbf A cdot mathbf B right)
 Soma de quadrados:
 A
 T
@@ -222,5 +204,4 @@ a
 i
 2
 )
-displaystyle mathbf A T cdot mathbf A begin bmatrix a 1 a 2 ... a n end bmatrix begin bmatrix a 1 a 2 ... a n end bmatrix a 1 cdot a 1 a 2 cdot a 2 ... a n cdot a n sum i 1 n bigl ( a i 2 bigr )
 , ou seja, a multiplicação de um vetor pelo seu transposto é igual à soma de seus elementos ao quadrado. Note que essa soma é um número escalar, ou, o que é equivalente, uma matriz de dimensões 1X1.

@@ -1,6 +1,5 @@
 Em estatística ou econometria, regressão linear é uma equação para se estimar a condicional (valor esperado) de uma variável y, dados os valores de algumas outras variáveis x.
 A regressão, em geral, tem como objetivo tratar de um valor que não se consegue estimar inicialmente.
-A regressão linear é chamada "linear" porque se considera que a relação da resposta às variáveis é uma função linear de alguns parâmetros. Os modelos de regressão que não são uma função linear dos parâmetros se chamam modelos de regressão não-linear. Sendo uma das primeiras formas de análise regressiva a ser estudada rigorosamente, é usada extensamente em aplicações práticas. Isso acontece porque modelos que dependem de forma linear dos seus parâmetros desconhecidos, são mais fáceis de ajustar que os modelos não-lineares aos seus parâmetros, e porque as propriedades estatísticas dos estimadores resultantes são fáceis de determinar.
 Modelos de regressão linear são frequentemente ajustados usando a abordagem dos mínimos quadrados, mas que também pode ser montada de outras maneiras, tal como minimizando a "falta de ajuste" em alguma outra norma (com menos desvios absolutos de regressão), ou através da minimização de uma penalização da versão dos mínimos quadrados. Por outro lado, a abordagem de mínimos quadrados pode ser utilizado para ajustar a modelos que não são modelos lineares. Assim, embora os termos "mínimos quadrados" e "modelo linear" estejam intimamente ligados, eles não são sinônimos. [carece de fontes?]
 Para se estimar o valor esperado, usa-se de uma equação, que determina a relação entre ambas as variáveis.
 y
@@ -8,68 +7,43 @@ i
 X
 i
 i
-displaystyle y i alpha beta ,X i varepsilon i
 , onde:
 y
 i
-displaystyle y i
-: Variável explicada (dependente); representa o que o modelo tentará prever
-displaystyle alpha
 : É uma constante, que representa a interceptação da reta com o eixo vertical;
-displaystyle beta
 : Representa a inclinação (coeficiente angular) em relação à variável explicativa;
 X
 i
-displaystyle X i
-: Variável explicativa (independente);
 i
-displaystyle varepsilon i
 : Representa todos os factores residuais mais os possíveis erros de medição. O seu comportamento é aleatório, devido à natureza dos factores que encerra. Para que essa fórmula possa ser aplicada, os erros devem satisfazer determinadas hipóteses, que são: terem distribuição normal, com a mesma variância
 2
-displaystyle sigma 2 ,
-, independentes e independentes da variável explicativa X, ou seja, i.i.d. (independentes e identicamente distribuídas).
 A equação acima pode ser reescrita em forma de matriz:
 y
 X
-displaystyle mathbf y mathbf X boldsymbol beta boldsymbol varepsilon
 Onde
 y
-displaystyle mathbf y
 é uma matriz de
 n
 1
-displaystyle n times 1
 observações,
 X
-displaystyle mathbf X
 é uma matriz de tamanho
 n
 p
 1
-displaystyle n times p 1
-(sendo a primeira coluna com valores sempre 1, representando a constante
-displaystyle alpha
 , e
 p
-displaystyle p
 é a quantidade de variáveis explicativas),
-displaystyle boldsymbol beta
 é uma matriz de
 p
 1
 1
-displaystyle p 1 times 1
-variáveis explicativas (sendo que
 0
-displaystyle beta 0
 representa a constante
-displaystyle alpha
 ) e
-displaystyle boldsymbol varepsilon
 é uma matriz de
 n
 1
-displaystyle n times 1
 de resíduos.
 y
 [
@@ -123,14 +97,9 @@ p
 2
 n
 ]
-displaystyle mathbf y begin bmatrix y 1 y 2 vdots y n end bmatrix , qquad mathbf X begin bmatrix 1 X 11 X 12 cdots X 1p 1 X 21 X 22 cdots X 2p vdots vdots ddots vdots 1 X n1 X n2 cdots X np end bmatrix , qquad boldsymbol beta begin bmatrix beta 0 beta 1 beta 2 vdots beta p end bmatrix , qquad boldsymbol varepsilon begin bmatrix varepsilon 1 varepsilon 2 vdots varepsilon n end bmatrix
-displaystyle alpha
 e
-displaystyle beta
 A técnica mais usual para estimativa dos parâmetros
-displaystyle alpha
 e
-displaystyle beta
 é o Método dos mínimos quadrados, mas também podem ser usados:
 Mínimos Quadrados Ponderados
 Mínimos quadrados generalizados
@@ -139,10 +108,8 @@ Regularização de Tikhonov
 Mínimo Desvio absoluto
 O chamado intercepto ou coeficiente linear (
 0
-displaystyle beta 0
 ) é utilizado para representar o ponto em que a reta da regressão corta o eixo Y quando X 0. Já o parâmetro representa a inclinação da reta (
 1
-displaystyle beta 1
 ) é denominado como coeficiente de regressão ou coeficiente angular. A interpretação geométrica dos coeficientes podem ser vistos na imagem abaixo.
 Com base no modelo representado na imagem assim, é possível identificar que :
 A relação matemática entre Y e X é linear
@@ -153,7 +120,6 @@ E
 i
 )
 0
-displaystyle E( varepsilon i ) 0
 .
 E
 (
@@ -180,7 +146,6 @@ i
 1
 x
 i
-displaystyle E(Y i ) E( beta 0 beta 1 x i epsilon i ) beta 0 beta 1 x i E( epsilon i ) beta 0 beta 1 x i
 Dado isto, temos que a regressão do modelo acima e dado por:
 E
 [
@@ -190,13 +155,9 @@ x
 0
 1
 x
-displaystyle E[Y x] beta 0 beta 1 x
-Sabendo que para cada valor de X, a variação de
 i
-displaystyle varepsilon i
 será sempre
 2
-displaystyle sigma 2
 , teremos que:
 V
 a
@@ -222,7 +183,6 @@ i
 2
 )
 2
-displaystyle Var( epsilon i ) E( epsilon i 2 )-[E( epsilon i ) 2 ] E( epsilon i 2 ) sigma 2
 Assim temos que :
 V
 a
@@ -250,9 +210,7 @@ i
 2
 )
 2
-displaystyle Var(Y i ) E[Y i -E(Y i x i ) 2 ] E( epsilon i 2 ) sigma 2
 Quando deparamos com casos como este, dizemos que o erro é homocedástico, ou seja, a variância é constante.
-Em casos como esse, esta hipótese não implica que os erros sejam independentes. Se a distribuição dos erros for normal, esta hipótese é equivalente a independência dos erros.
 C
 o
 v
@@ -281,10 +239,8 @@ i
 j
 )
 0
-displaystyle Cov( epsilon i , epsilon j ) E( epsilon i epsilon j )-E( epsilon i )E( epsilon j ) E( epsilon i , epsilon j ) 0
 i
 j
-displaystyle i neq j
 Método dos mínimos quadrados
 Regressão não linear
 Regressão

@@ -1,5 +1,4 @@
 Interpretadores são programas de computador que leem um código fonte de uma linguagem de programação interpretada e o converte em código executável. Seu funcionamento pode variar de acordo com a implementação. Em alguns casos, o interpretador lê o código fonte linha a linha e o converte em código objeto (ou bytecode) à medida que o executa, em outros casos, converte o código fonte por inteiro e depois o executa.
-Na verdade, em princípio, pode-se implementar compiladores e interpretadores para qualquer linguagem de programação. Mas, dependendo da necessidade, pode ser melhor criar um interpretador ou um compilador.
 BASIC
 Bash
 Perl

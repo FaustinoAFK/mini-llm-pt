@@ -4,24 +4,19 @@ f
 (
 x
 )
-displaystyle y f(x)
 representa a taxa de variação instantânea de
 y
-displaystyle y
 em relação a
 x
-displaystyle x
 neste ponto. Um exemplo típico é a função velocidade que representa a taxa de variação (derivada) da função espaço. Do mesmo modo, a função aceleração é a derivada da função velocidade. Geometricamente, a derivada no ponto
 x
 a
-displaystyle x a
 de
 y
 f
 (
 x
 )
-displaystyle y f(x)
 representa a inclinação da reta tangente ao gráfico desta função no ponto
 (
 a
@@ -31,16 +26,13 @@ f
 a
 )
 )
-displaystyle (a, f(a))
 . A função que a cada ponto
 x
-displaystyle x
 associa a derivada neste ponto de
 f
 (
 x
 )
-displaystyle f(x)
 é chamada de função derivada de f(x).
 Duas distintas notações são comumente utilizadas para a derivada, o resultante de Leibniz e o outro a partir de Joseph Louis Lagrange.
 Na notação de Leibniz, uma mudança infinitesimal em x é denotada por dx, e a derivada de y em relação a x é escrito
@@ -48,42 +40,34 @@ d
 y
 d
 x
-displaystyle frac mathrm d y mathrm d x , !
 .
 sugerindo que a razão de duas quantidades infinitesimais (A expressão acima é lido como "a derivada de y em relação a x", "dy por dx", ou "dy sobre dx". A forma oral dydx é usado frequentemente em tom de conversa, embora possa levar à confusão).
 Na notação de Lagrange, a derivada em relação a x de uma função F(x) é denotada f'(x) ou fx'(x), em caso de ambiguidade da variável implicada pela derivação. A notação de Lagrange é por vezes incorretamente atribuída a Newton.
 Seja
 I
-displaystyle I
 um intervalo aberto não-vazio e seja
 f
 :
 I
 R
-displaystyle f:I to mathbb R
 ,
 y
 f
 (
 x
 )
-displaystyle y f(x)
 , uma função de
 I
-displaystyle I
 em
 R
-displaystyle mathbb R
 . Diz-se que função
 f
 (
 x
 )
-displaystyle f(x)
 é derivável no ponto
 a
 I
-displaystyle a in I
 se existir o seguinte limite:
 f
 (
@@ -102,20 +86,16 @@ a
 )
 x
 a
-displaystyle f'(a) lim x rightarrow a frac f(x)-f(a) x-a
 .
 Se for esse o caso, o número real
 f
 (
 a
 )
-displaystyle f'(a)
 é chamado de derivada da função
 f
-displaystyle f
 no ponto
 a
-displaystyle a
 . Notações equivalentes são:
 f
 (
@@ -134,7 +114,6 @@ d
 x
 x
 a
-displaystyle f'(a) frac mathrm d f mathrm d x (a) left. frac mathrm d f mathrm d x right x a
 .
 Equivalentemente, escrevemos:
 f
@@ -154,18 +133,14 @@ f
 a
 )
 h
-displaystyle f'(a) lim h to 0 frac f(a h)-f(a) h
-o que é obtido fazendo
 h
 x
 a
-displaystyle h x-a
 no limite acima. Desta forma, define-se a função derivada de
 f
 (
 x
 )
-displaystyle f(x)
 por:
 f
 (
@@ -184,10 +159,8 @@ f
 x
 )
 h
-displaystyle f'(x) lim h to 0 frac f(x h)-f(x) h
 para todo
 x
-displaystyle x
 para o qual este limite existe.
 Uma função é dita derivável (ou diferenciável) quando sua derivada existe em cada ponto do seu domínio.
 Seja f uma função real definida em uma vizinhança aberta de um número real a.
@@ -203,7 +176,6 @@ f
 x
 )
 h
-displaystyle frac f(x h)-f(x) h
 .
 Uma definição alternativa é: a função f é derivável em a se existir uma função a de I em R contínua em a tal que
 (
@@ -227,31 +199,22 @@ x
 x
 a
 )
-displaystyle ( forall x in I):f(x) f(a) varphi a (x) cdot (x-a)
 .
-Então define-se a derivada de f em a como sendo a(a).
 Funções com valores em R
 n
-displaystyle n
 Se
 I
-displaystyle I
 for um intervalo de
 R
-displaystyle mathbb R
 com mais do que um ponto e se
 f
-displaystyle f
 for uma função de
 I
-displaystyle I
 em
 R
 n
-displaystyle mathbb R n
 , para algum número natural
 n
-displaystyle n
 , as definições anteriores continuam a fazer sentido. Assim, por exemplo a função
 f
 :
@@ -270,14 +233,11 @@ sen
 x
 )
 )
-displaystyle begin array rccc f colon mathbb R longrightarrow mathbb R 2 x mapsto ( cos(x), operatorname sen (x)) end array
 (ou seja: uma função que a cada x do domínio em
 R
-displaystyle mathbb R
 responde com uma coordenada no contradomínio em
 R
 n
-displaystyle mathbb R n
 . Esta coordenada é
 (
 cos
@@ -290,7 +250,6 @@ sen
 x
 )
 )
-displaystyle ( cos(x), operatorname sen (x))
 .
 é derivável e
 (
@@ -314,78 +273,55 @@ x
 )
 )
 .
-displaystyle ( forall x in mathbb R ):f'(x) (- operatorname sen (x), cos(x)).
 De fato, as propriedades acima descritas para o caso real continuam válidas, exceto, naturalmente, as que dizem respeito à monotonia de funções.
 Seja
 I
-displaystyle I
 um intervalo de R com mais do que um ponto, seja
 a
-displaystyle a
 I
-displaystyle I
 e seja
 f
-displaystyle f
 uma função de
 I
-displaystyle I
 em R derivável em
 a
-displaystyle a
 . Então
 f
-displaystyle f
 é contínua em
 a
-displaystyle a
 . O recíproco não é verdadeiro, como se pode ver pela função módulo.
 Seja
 I
-displaystyle I
 um intervalo de R com mais do que um ponto, seja
 a
-displaystyle a
 I
-displaystyle I
 e sejam
 f
-displaystyle f
 e
 g
-displaystyle g
 funções de
 I
-displaystyle I
 em R deriváveis em
 a
-displaystyle a
 . Então as funções
 f
-displaystyle f
 g
-displaystyle g
 ,
 f
 .
 g
-displaystyle f.g
 e (caso
 g
 (
 a
 )
-displaystyle g(a)
 0
-displaystyle 0
 )
 f
 /
 g
-displaystyle f/g
 também são deriváveis em
 a
-displaystyle a
 e:
 (
 f
@@ -402,7 +338,6 @@ g
 (
 a
 )
-displaystyle (f pm g)'(a) f'(a) pm g'(a)
 (
 f
 .
@@ -427,7 +362,6 @@ g
 (
 a
 )
-displaystyle (f.g)'(a) f'(a)g(a) f(a)g'(a)
 (
 f
 /
@@ -457,10 +391,8 @@ g
 a
 )
 2
-displaystyle (f/g)'(a) frac f'(a)g(a)-f(a)g'(a) g(a) 2
 Em particular, se
 c
-displaystyle c
 R, então
 (
 c
@@ -470,7 +402,6 @@ f
 c
 .
 f
-displaystyle (c.f)' c.f'
 . Resulta daqui e de se ter
 (
 f
@@ -478,52 +409,37 @@ g
 )
 f
 g
-displaystyle (f g)' f' g'
 que a derivação é uma aplicação linear.
 Sejam
 I
-displaystyle I
 e
 J
-displaystyle J
 intervalos de R com mais do que um ponto, seja
 a
-displaystyle a
 I
-displaystyle I
 , seja
 f
-displaystyle f
 uma função de
 I
-displaystyle I
 em
 J
-displaystyle J
 derivável em
 a
-displaystyle a
 e seja seja
 g
-displaystyle g
 uma função de
 J
-displaystyle J
 em R derivável em
 f
 (
 a
 )
-displaystyle f(a)
 . Então
 g
-displaystyle g
 o
 f
-displaystyle f
 é derivável em
 a
-displaystyle a
 e
 (
 g
@@ -544,36 +460,27 @@ f
 (
 a
 )
-displaystyle (g circ f)'(a) g'(f(a)).f'(a)
 .
 Esta propriedade é conhecida por regra da cadeia.
 Seja
 I
-displaystyle I
 um intervalo de R com mais do que um ponto, seja
 a
-displaystyle a
 I
-displaystyle I
 e seja
 f
-displaystyle f
 uma função contínua de
 I
-displaystyle I
 em R derivável em
 a
-displaystyle a
 com derivada não nula. Então a função inversa
 f
 1
-displaystyle f -1
 é derivável em
 f
 (
 a
 )
-displaystyle f(a)
 e
 (
 f
@@ -590,23 +497,18 @@ f
 (
 a
 )
-displaystyle (f -1 )'(f(a)) frac 1 f'(a) cdot
 Outra maneira de formular este resultado é: se
 a
-displaystyle a
 está na imagem de
 f
-displaystyle f
 e se
 f
-displaystyle f
 for derivável em
 f
 1
 (
 a
 )
-displaystyle f -1 (a)
 com derivada não nula, então
 (
 f
@@ -624,36 +526,27 @@ f
 a
 )
 )
-displaystyle (f -1 )'(a) frac 1 f' bigl ( f -1 (a) bigr ) cdot
 Assim, por exemplo, se considerarmos a função f de R em R definida por f(x) x2 x 1, esta é diferenciável em 0. Podem ver-se na imagem abaixo os gráficos das restrições daquela função aos intervalos [ 1,1] e [ 1/10,1/10] e é claro que, enquanto que o primeiro é bastante curvo (e, portanto, f(x) f(0) está aí longe de ser linear), o segundo é praticamente indistinguível de um segmento de reta (de declive 1). De facto, quanto mais se for ampliando o gráfico próximo de (0,f(0)) mais perto estará este de ser linear.
 Em contrapartida, a função módulo de R em R não é derivável em 0, pois, por mais que se amplie o gráfico perto de (0,0), este tem sempre o aspecto da figura abaixo.
 Diz-se que f é derivável ou diferenciável se o for em todos os pontos do domínio.
 Uma função derivável
 f
-displaystyle f
 de
 I
-displaystyle I
 em R é constante se e só se a derivada for igual a
 0
-displaystyle 0
 em todos os pontos. Isto é uma consequência do teorema da média.
 Uma função derivável
 f
-displaystyle f
 de
 I
-displaystyle I
 em R é crescente se e só se a derivada for maior ou igual a
 0
-displaystyle 0
 em todos os pontos. Isto também é uma consequência do teorema da média.
 Uma função cuja derivada seja sempre maior que
 0
-displaystyle 0
 é estritamente crescente. Uma observação importante é que existem funções estritamente crescentes em que a derivada assume o valor
 0
-displaystyle 0
 em alguns pontos. É o que acontece, por exemplo com a função de R em R definida por
 f
 (
@@ -661,110 +554,84 @@ x
 )
 x
 3
-displaystyle f(x) x 3
 . Naturalmente, existem enunciados análogos para funções decrescentes.
 Se
 f
-displaystyle f
 for uma função derivável de
 I
-displaystyle I
-em R, sendo
 I
-displaystyle I
 um intervalo de R com mais do que um ponto, então
 f
 (
 I
 )
-displaystyle f'(I)
 também é um intervalo de R. Outra maneira de formular este resultado é: se
 f
-displaystyle f
 for uma função derivável de
 [
 a
 ,
 b
 ]
-displaystyle [a,b]
 em R e se
 y
-displaystyle y
 for um número real situado entre
 f
 (
 a
 )
-displaystyle f'(a)
 e
 f
 (
 b
 )
-displaystyle f'(b)
 (isto é,
 f
 (
 a
 )
-displaystyle f'(a)
 y
-displaystyle y
 f
 (
 b
 )
-displaystyle f'(b)
 ou
 f
 (
 a
 )
-displaystyle f'(a)
 y
-displaystyle y
 f
 (
 b
 )
-displaystyle f'(b)
 ), então existe algum
 c
-displaystyle c
 [
 a
 ,
 b
 ]
-displaystyle [a,b]
 tal que
 f
 (
 c
 )
 y
-displaystyle f'(c) y
 . Este resultado é conhecido por teorema de Darboux.
 Seja
 I
-displaystyle I
 um intervalo de R com mais do que um ponto e seja
 f
-displaystyle f
 uma função de
 I
-displaystyle I
 em R. Diz-se que
 f
-displaystyle f
 é continuamente derivável ou de classe
 C
 1
-displaystyle C 1
 se
 f
-displaystyle f
 for derivável e, além disso, a sua derivada for contínua. Todas as funções deriváveis que foram vistas acima são continuamente deriváveis. Um exemplo de uma função derivável que não é continuamente derivável é
 f
 :
@@ -788,7 +655,6 @@ se
 x
 0
 ,
-displaystyle begin array rccc f colon mathbb R longrightarrow mathbb R x mapsto begin cases x 2 mathop mathrm sen ( frac 1 x ) text se x neq 0 0 text se x 0 text , end cases end array
 pois o limite
 lim
 x
@@ -797,10 +663,8 @@ f
 (
 x
 )
-displaystyle lim x rightarrow 0 f'(x)
 não existe; em particular, f' não é contínua em
 0
-displaystyle 0
 .
 Quando obtemos a derivada de uma função o resultado é também uma função de x e como tal também pode ser diferenciada. Calculando-se a derivada novamente obtemos então a segunda derivada da função f. De forma semelhante, a derivada da segunda derivada é chamada de terceira derivada e assim por diante. Podemos nos referir às derivadas subsequentes de f por:
 d
@@ -832,7 +696,6 @@ d
 x
 )
 )
-displaystyle frac mathrm d f mathrm d x , quad frac mathrm d mathrm d x left( frac mathrm d f mathrm d x right), quad frac mathrm d mathrm d x left( frac mathrm d mathrm d x left( frac mathrm d f mathrm d x right) right)
 e assim sucessivamente. No entanto, a notação mais empregada é:
 d
 f
@@ -852,7 +715,6 @@ f
 d
 x
 3
-displaystyle frac mathrm d f mathrm d x , quad frac mathrm d 2 f mathrm d x 2 , quad frac mathrm d 3 f mathrm d x 3
 ou alternativamente,
 f
 (
@@ -868,7 +730,6 @@ f
 (
 x
 )
-displaystyle f'(x), quad f''(x), quad f'''(x)
 ou ainda
 f
 (
@@ -893,28 +754,22 @@ f
 (
 x
 )
-displaystyle f (1) (x), quad f (2) (x), quad f (3) (x)
 Se, para algum k N, f for k vezes derivável e, além disso, f(k) for uma função contínua, diz-se que f é de classe Ck.
 Se a função f tiver derivadas de todas as ordens, diz-se que f é infinitamente derivável ou indefinidamente derivável ou ainda de classe C .
 Se
 c
-displaystyle c
 R, a função
 f
-displaystyle f
 de R em R definida por
 f
 (
 x
 )
 c
-displaystyle f(x) c
 é derivável em todos os pontos de R e a sua derivada é igual a
 0
-displaystyle 0
 em todos os pontos, pois, para cada
 a
-displaystyle a
 R:
 lim
 x
@@ -924,27 +779,21 @@ c
 x
 a
 0
-displaystyle lim x rightarrow a frac c-c x-a 0
 .
 Usando a definição alternativa, basta ver que se se definir
 a
-displaystyle phi a
 de R em R por
 a
 (
 x
 )
 0
-displaystyle phi a (x) 0
 , então
 a
-displaystyle phi a
 é contínua e, para cada
 x
-displaystyle x
 e cada
 a
-displaystyle a
 reais, tem-se
 c
 c
@@ -963,7 +812,6 @@ x
 x
 a
 )
-displaystyle c c 0.(x-a) c varphi a (x).(x-a)
 ;
 além disso,
 f
@@ -975,24 +823,19 @@ a
 a
 )
 0
-displaystyle f'(a) phi a (a) 0
 .
 A função
 f
-displaystyle f
 de R em R definida por
 f
 (
 x
 )
 x
-displaystyle f(x) x
 é derivável em todos os pontos de R e a sua derivada é igual a
 1
-displaystyle 1
 em todos os pontos, pois, para cada
 a
-displaystyle a
 R:
 lim
 x
@@ -1002,27 +845,21 @@ a
 x
 a
 1
-displaystyle lim x rightarrow a frac x-a x-a 1
 .
 Usando a definição alternativa, basta ver que se se definir
 a
-displaystyle phi a
 de R em R por
 a
 (
 x
 )
 1
-displaystyle phi a (x) 1
 , então
 a
-displaystyle phi a
 é contínua e, para cada
 x
-displaystyle x
 e cada
 a
-displaystyle a
 reais, tem-se
 x
 a
@@ -1041,7 +878,6 @@ x
 x
 a
 )
-displaystyle x a 1.(x-a) a varphi a (x).(x-a)
 ;
 além disso,
 f
@@ -1053,11 +889,9 @@ a
 a
 )
 1
-displaystyle f'(a) phi a (a) 1
 .
 A função
 f
-displaystyle f
 de R em R definida por
 f
 (
@@ -1065,14 +899,11 @@ x
 )
 x
 2
-displaystyle f(x) x 2
 é derivável em todos os pontos de R e a sua derivada no ponto
 a
-displaystyle a
 R é igual a
 2
 a
-displaystyle 2a
 , pois:
 lim
 x
@@ -1103,11 +934,9 @@ x
 a
 2
 a
-displaystyle lim x rightarrow a frac x 2 -a 2 x-a lim x rightarrow a frac (x-a)(x a) x-a lim x rightarrow a x a 2a
 .
 Usando a definição alternativa, basta ver que se se definir
 a
-displaystyle phi a
 de R em R por
 a
 (
@@ -1115,16 +944,12 @@ x
 )
 x
 a
-displaystyle phi a (x) x a
 , então
 a
-displaystyle phi a
 é contínua e, para cada
 x
-displaystyle x
 e cada
 a
-displaystyle a
 reais, tem-se
 x
 2
@@ -1147,7 +972,6 @@ x
 x
 a
 )
-displaystyle x 2 a 2 (x 2 -a 2 ) a 2 varphi a (x).(x-a)
 ;
 além disso,
 f
@@ -1160,11 +984,9 @@ a
 )
 2
 a
-displaystyle f'(a) phi a (a) 2a
 .
 A função módulo de R em R não é derivável em
 0
-displaystyle 0
 pois
 (
 x
@@ -1183,37 +1005,28 @@ x
 se
 x
 0
-displaystyle ( forall x in mathbb R ): frac x - 0 x-0 begin cases 1 text se x 0 -1 text se x 0 end cases
 No entanto, é derivável em todos os outros pontos de R: a derivada em
 a
-displaystyle a
 é igual a
 1
-displaystyle 1
 quando
 a
 0
-displaystyle a 0
 e é igual a
 1
-displaystyle -1
 quando
 a
 0
-displaystyle a 0
 .
 Um ponto em que a segunda derivada de uma função muda de sinal é chamado de um ponto de inflexão. Em um ponto de inflexão, a segunda derivada pode ser zero, como no caso do ponto de inflexão x 0 da função y x3, ou ele pode deixar de existir, como é o caso do ponto de inflexão x 0 da função y
 x
 1
 3
-displaystyle x frac 1 3 , !
 . Em um ponto de inflexão, uma função convexa passa a ser uma função côncava, ou vice-versa.
 Pontos onde a derivada da função é igual a
 0
-displaystyle 0
 chamam-se normalmente de pontos críticos. Existem cinco tipos de pontos onde isto pode acontecer em uma função. Como a derivada é igual ao declive da tangente em um dado ponto, estes pontos acontecem onde a reta tangente é paralela ao eixo dos
 x
-displaystyle x
 . Estes pontos podem acontecer:
 onde a função atinge um valor máximo e depois começa a diminuir, chamados máximos locais da função
 onde ela atinge um valor mínimo e começa a aumentar, chamados de mínimos locais da função
@@ -1224,11 +1037,9 @@ x
 )
 x
 3
-displaystyle f(x) x 3
 : no ponto
 x
 0
-displaystyle x 0
 a função tem um ponto de inflexão (horizontal).
 em pontos onde a função oscila indefinidamente entre valores acima ou abaixo, um exemplo típico é a função
 f
@@ -1245,8 +1056,6 @@ n
 /
 x
 )
-displaystyle f(x) x 2 sin(1/x)
-em pontos onde a função é localmente constante, ou seja, existe um intervalo contendo o ponto para o qual a restrição da função ao intervalo é a função constante. Um exemplo típico é a função f(x) x 1 x - 1 no ponto x 0.
 Os pontos críticos são ferramentas úteis para examinar e desenhar gráficos de funções.
 A derivada de uma função pode, em princípio, ser calculado a partir da definição, considerando o quociente de diferença, e computar o seu limite. Na prática, uma vez que as derivadas de algumas funções simples são conhecidos, as derivadas de outras funções são mais facilmente calculado usando regras para a obtenção de derivadas de funções mais complicadas das mais simples.
 A maioria dos cálculos de derivadas, eventualmente, exige a tomada da derivada de algumas funções comuns. A seguinte lista incompleta é de algumas das funções mais frequentemente utilizadas de uma única variável real e seus derivados.
@@ -1260,7 +1069,6 @@ x
 e
 x
 .
-displaystyle frac mathrm d mathrm d x e x e x .
 A função logaritmo natural y ln(x):
 d
 d
@@ -1274,8 +1082,6 @@ x
 ,
 x
 0.
-displaystyle frac mathrm d mathrm d x ln(x) frac 1 x , quad x 0.
-Estes dois fatos não são independentes. De fato, como o logaritmo natural é a inversa da função exponencial, resulta da igualdade
 d
 d
 x
@@ -1283,7 +1089,6 @@ e
 x
 e
 x
-displaystyle frac mathrm d mathrm d x e x e x
 e da fórmula para a derivada da inversa que
 (
 x
@@ -1320,11 +1125,9 @@ x
 )
 1
 x
-displaystyle ( forall x 0): log '(x) ( exp -1 )'(x) frac 1 exp ' bigl ( exp -1 (x) bigr ) frac 1 exp( log(x)) frac 1 x cdot
 Reciprocamente, supondo-se que, para cada
 x
 0
-displaystyle x 0
 ,
 log
 (
@@ -1333,7 +1136,6 @@ x
 1
 /
 x
-displaystyle log '(x) 1/x
 , então
 exp
 (
@@ -1367,7 +1169,6 @@ exp
 x
 )
 .
-displaystyle exp '(x) ( log -1 )'(x) frac 1 log ' bigl ( log -1 (x) bigr ) frac 1 1/ exp(x) exp(x).
 Também são notáveis as derivadas das funções trigonométricas:
 d
 d
@@ -1381,7 +1182,6 @@ cos
 x
 )
 .
-displaystyle frac mathrm d mathrm d x sin(x) cos(x).
 d
 d
 x
@@ -1394,7 +1194,6 @@ sin
 x
 )
 .
-displaystyle frac mathrm d mathrm d x cos(x) - sin(x).
 d
 d
 x
@@ -1420,7 +1219,6 @@ tan
 x
 )
 .
-displaystyle frac mathrm d mathrm d x tan(x) sec 2 (x) frac 1 cos 2 (x) 1 tan 2 (x).
 d
 d
 x
@@ -1436,7 +1234,6 @@ csc
 (
 x
 )
-displaystyle frac mathrm d mathrm d x csc(x) - cot(x) csc(x)
 d
 d
 x
@@ -1452,7 +1249,6 @@ tan
 (
 x
 )
-displaystyle frac mathrm d mathrm d x sec(x) sec(x) tan(x)
 d
 d
 x
@@ -1465,7 +1261,6 @@ csc
 (
 x
 )
-displaystyle frac mathrm d mathrm d x cot(x) - csc 2 (x)
 E funções Funções trigonométricas inversas:
 d
 d
@@ -1482,7 +1277,6 @@ x
 1
 x
 1.
-displaystyle frac mathrm d mathrm d x arcsin(x) frac 1 sqrt 1-x 2 ,-1 x 1.
 d
 d
 x
@@ -1498,7 +1292,6 @@ x
 1
 x
 1.
-displaystyle frac mathrm d mathrm d x arccos(x) - frac 1 sqrt 1-x 2 ,-1 x 1.
 d
 d
 x
@@ -1510,13 +1303,11 @@ x
 1
 x
 2
-displaystyle frac mathrm d mathrm d x arctan(x) frac 1 1 x 2
 Neste último caso, as derivadas resultam das fórmulas para as derivadas das funções trigonométricas juntamente com a fórmula para a derivada da inversa e a fórmula fundamental da trigonometria.
 Em muitos casos, a aplicação direta do quociente de diferença de Newton pode ser evitado usando regras de diferenciação, evitando complicados cálculos de limite. Algumas das regras mais básicas são as seguintes:
 Regra da constante: se f(x) é constante, então:
 f
 0.
-displaystyle f' 0. ,
 Regra da soma:
 (
 f
@@ -1524,15 +1315,12 @@ g
 )
 f
 g
-displaystyle ( alpha f beta g)' alpha f' beta g' ,
 para todas as funções f e g e todos os números reais
-displaystyle alpha
 e
 b
 e
 t
 a
-displaystyle beta
 Regra do produto:
 (
 f
@@ -1542,7 +1330,6 @@ f
 g
 f
 g
-displaystyle (fg)' f'g fg' ,
 para todas as funções f e g. Por conseguinte, isso significa que a derivada de uma constante vezes uma função é a constante vezes a derivada da função
 d
 d
@@ -1552,7 +1339,6 @@ r
 2
 r
 .
-displaystyle frac mathrm d mathrm d r pi r 2 2 pi r. ,
 Regra do quociente:
 (
 f
@@ -1564,7 +1350,6 @@ f
 g
 g
 2
-displaystyle left( frac f g right)' frac f'g-fg' g 2
 para todas as funções f e g, em que g 0.
 Regra da cadeia:
 Se
@@ -1580,7 +1365,6 @@ x
 )
 )
 ,
-displaystyle f(x) h(g(x)),
 então:
 f
 (
@@ -1598,7 +1382,6 @@ g
 x
 )
 .
-displaystyle f'(x) h'(g(x)) cdot g'(x). ,
 A derivada de
 f
 (
@@ -1618,7 +1401,6 @@ x
 e
 x
 7
-displaystyle f(x) x 4 sin(x 2 )- ln(x)e x 7 ,
 é
 f
 (
@@ -1682,7 +1464,6 @@ x
 e
 x
 .
-displaystyle begin aligned f'(x) 4x (4-1) frac mathrm d left(x 2 right) mathrm d x cos(x 2 )- frac d left( ln x right) dx e x - ln x frac mathrm d left(e x right) mathrm d x 0 4x 3 2x cos(x 2 )- frac 1 x e x - ln(x)e x . end aligned
 As derivadas conhecidas de funções elementares
 x
 2
@@ -1690,7 +1471,6 @@ x
 x
 4
 ,
-displaystyle x 2 ,x 4 ,
 sen(x) e
 e
 x
@@ -1700,7 +1480,6 @@ x
 )
 e
 x
-displaystyle exp(x) e x
 , assim como a constante 7, também foram usadas.
 Se A for um conjunto de números complexos, se f for uma função de A em C e se a for um ponto não isolado de A (isto é, se tão perto quanto se queira de a houver outros elementos de A), então as duas definições da derivada de f no ponto a continuam a fazer sentido. De facto, as propriedades acima descritas para o caso real continuam válidas, excepto, mais uma vez, as que dizem respeito à monotonia de funções.
 Uma das mais importantes aplicações da Análise à Física (senão a mais importante), é o conceito de derivada temporal a taxa de mudança ao longo do tempo que é necessária para a definição precisa de vários importantes conceitos. Em particular, as derivadas temporais da posição s de um objeto são importantes na física newtoniana:
@@ -1729,24 +1508,18 @@ s
 d
 t
 2
-displaystyle begin aligned v(t) frac mathrm d s mathrm d t a(t) frac mathrm d v mathrm d t frac mathrm d 2 s mathrm d t 2 end aligned
 Por exemplo, se a posição de um objeto é s(t) 16t2 16t 32, então a velocidade do objeto é s (t) 32t 16 e a aceleração do objeto é s (t) 32.
-Uma forma de enunciar a segunda lei de Newton é F dp/dt , sendo p o momento linear do objeto.
 Em dimensão 1, as derivadas são pensadas como números pois, nesta dimensão, um número e uma transformação linear são a mesma coisa. Entretanto, para dimensões maiores, as derivadas necessitam ser tratadas como transformações lineares.
 Uma função vetorial y(t) de uma variável real de uma variável real envia números reais de vetores em
 R
 n
-displaystyle R n
 algum espaço vetorial. A função vetorial pode ser dividido em suas funções coordenadas y1(t), y2(t),...,yn(t), significando que y(t) (
 y
 1
-displaystyle y 1
 (t), ...,
 y
 n
-displaystyle y n
 (t)). Isto inclui, por exemplo, curvas paramétricas em R2 ou R3.
-As funções de coordenadas são funções de valores reais, de modo que a definição acima de derivada aplica-se a eles. A derivada de y (t) é definida como sendo o vetor, chamado o vetor tangente, cujas coordenadas são as derivadas das funções de coordenadas. Isto é,
 y
 (
 t
@@ -1767,7 +1540,6 @@ t
 )
 )
 .
-displaystyle mathbf y '(t) (y' 1 (t), ldots ,y' n (t)).
 equivalentemente,
 y
 (
@@ -1787,37 +1559,29 @@ t
 )
 h
 ,
-displaystyle mathbf y '(t) lim h to 0 frac mathbf y (t h)- mathbf y (t) h ,
 se o limite existe.
 A subtração no numerador é a subtração de vetores, não escalares. Se a derivada de y existe para cada valor de t, então y' é outra função vetorial.
 Se
 e
 1
-displaystyle e 1
 , ...,
 e
 n
-displaystyle e n
 é a base padrão para
 R
 n
-displaystyle R n
 , então y (t) também pode ser escrito como
 y
 1
-displaystyle y 1
 (t)
 e
 1
-displaystyle e 1
 ...
 y
 n
-displaystyle y n
 (t)
 e
 n
-displaystyle e n
 . Se assumirmos que a derivada de uma função vetorial mantém a propriedade da linearidade, então a derivada de y (t) deve ser
 y
 1
@@ -1833,12 +1597,8 @@ t
 )
 e
 n
-displaystyle y' 1 (t) mathbf e 1 cdots y' n (t) mathbf e n
 porque cada um dos vetores de base é uma constante.
 Esta generalização é útil, por exemplo, se y (t) é o vetor de posição de uma partícula no tempo t; em seguida, o derivado y '(t) é o vetor de velocidade da partícula no tempo t.
-Quando uma função depende de mais do que uma variável, podemos usar o conceito de derivada parcial. Podemos entender as derivadas parciais como a derivada de uma função para uma determinada variável, enquanto as outras se mantêm fixadas. No gráfico, é usada para determinar a variação da função em um determinado eixo.
-Derivadas parciais são representadas como, por exemplo, z/ x, sendo x a variável fixada sobre uma função em z.
-Suponha que f é uma função que depende mais de uma variável, por exemplo,
 f
 (
 x
@@ -1852,7 +1612,6 @@ y
 y
 2
 .
-displaystyle f(x,y) x 2 xy y 2 . ,
 f pode ser reinterpretado como uma família de funções de uma variável indexada pelas outras variáveis:
 f
 (
@@ -1872,17 +1631,14 @@ y
 y
 2
 .
-displaystyle f(x,y) f x (y) x 2 xy y 2 . ,
 Em outras palavras, cada valor de x escolhe uma função, denotando
 f
 x
-displaystyle f x
 , que é uma função de um número real. Ou seja,
 x
 f
 x
 ,
-displaystyle x mapsto f x , ,
 f
 x
 (
@@ -1895,11 +1651,9 @@ y
 y
 2
 .
-displaystyle f x (y) x 2 xy y 2 . ,
 Uma vez que um valor de x é escolhido, digamos a, então f(x,y) determina a função
 f
 a
-displaystyle f a
 que envia y a a2 ay y2:
 f
 a
@@ -1913,11 +1667,9 @@ y
 y
 2
 .
-displaystyle f a (y) a 2 ay y 2 . ,
 Nesta expressão, a é uma constante, e não uma variável, de modo que
 f
 a
-displaystyle f a
 é uma função de uma única variável real. Consequentemente, a definição da derivada para uma função de uma variável aplica-se:
 f
 a
@@ -1928,7 +1680,6 @@ a
 2
 y
 .
-displaystyle f a '(y) a 2y. ,
 O procedimento acima pode ser realizada por qualquer escolha de a. Montando as derivadas juntas em uma função, dá uma função que descreve a variação de f na direção y:
 f
 y
@@ -1941,29 +1692,22 @@ x
 2
 y
 .
-displaystyle frac partial f partial y (x,y) x 2y.
 Esta é a derivada parcial de f em relação a y. Aqui, é o símbolo derivada parcial.
 Em geral, a derivada parcial de uma função f (
 x
 1
-displaystyle x 1
 , ...,
 x
 n
-displaystyle x n
 ) na direção de
 x
 i
-displaystyle x i
 , no ponto (
 a
 1
-displaystyle a 1
 ...,
 a
 n
-displaystyle a n
-) é definido como sendo:
 f
 x
 i
@@ -2012,11 +1756,9 @@ n
 )
 h
 .
-displaystyle frac partial f partial x i (a 1 , ldots ,a n ) lim h to 0 frac f(a 1 , ldots ,a i h, ldots ,a n )-f(a 1 , ldots ,a i , ldots ,a n ) h .
 Na diferença de quociente acima, todas as variáveis, exceto
 x
 i
-displaystyle x i
 , são mantidos fixos. Essa escolha de valores fixos determina uma função de uma variável.
 f
 a
@@ -2064,7 +1806,6 @@ a
 n
 )
 ,
-displaystyle f a 1 , ldots ,a i-1 ,a i 1 , ldots ,a n (x i ) f(a 1 , ldots ,a i-1 ,x i ,a i 1 , ldots ,a n ),
 e por definição,
 d
 f
@@ -2105,24 +1846,19 @@ a
 n
 )
 .
-displaystyle frac mathrm d f a 1 , ldots ,a i-1 ,a i 1 , ldots ,a n dx i (a i ) frac partial f partial x i (a 1 , ldots ,a n ).
 Em outras palavras, as diferentes opções de classificar uma família de funções de uma variável tal como no exemplo acima. Esta expressão também mostra que o cálculo das derivadas parciais reduz para o cálculo dos derivados de uma variável.
 Um exemplo importante de uma função de várias variáveis é o caso de uma função de valor escalar f (
 x
 1
-displaystyle x 1
 , ...,
 x
 n
-displaystyle x n
 ) em um domínio no espaço Euclidiano
 R
 n
-displaystyle R n
 (por exemplo, em R2 ou R2). Neste caso, f tem uma derivada parcial f / xj em relação a cada variável
 x
 j
-displaystyle x j
 . No ponto a, estas derivadas parciais definem o vetor
 f
 (
@@ -2146,13 +1882,11 @@ a
 )
 )
 .
-displaystyle nabla f(a) left( frac partial f partial x 1 (a), ldots , frac partial f partial x n (a) right).
 Este vetor é denominado gradiente de f em a. Se f é diferenciável em todos os pontos em algum domínio, então o gradiente é uma função vetorial f que leva o ponto a para o vetor f(a).
 Consequentemente, o gradiente determina um campo vetorial.
 Se f é uma função com valores reais em
 R
 n
-displaystyle R n
 , então a derivada parcial de f mede a sua variação na direção dos eixos das coordenadas. Por exemplo, se f é uma função de x e y, então sua derivada parcial mede a variação em f na direção x e na direção y. Contudo, elas (derivadas parciais) não medem diretamente a variação de f em qualquer outra direção, tal como aquela ao longo da linha diagonal y x. Estas são medidas usando-se as derivadas direcionais. Escolha um vetor:
 v
 (
@@ -2165,7 +1899,6 @@ v
 n
 )
 .
-displaystyle mathbf v (v 1 , ldots ,v n ).
 A derivada direcional de f na direção de v no ponto x é o limite
 D
 v
@@ -2188,7 +1921,6 @@ x
 )
 h
 .
-displaystyle D mathbf v f ( mathbf x ) lim h rightarrow 0 frac f( mathbf x h mathbf v )-f( mathbf x ) h .
 Em alguns casos pode ser mais fácil computar ou estimar a derivada direcional depois de mudar o comprimento do vetor. Frequentemente isso é feito para transformar o problema numa computação de uma derivada direcional na direção de um vetor unitário. Para ver como isso funciona, suponha v u. Substitua h k/ no quociente da diferença.
 O quociente da diferença torna-se:
 f
@@ -2220,8 +1952,6 @@ x
 )
 k
 .
-displaystyle frac f( mathbf x (k/ lambda )( lambda mathbf u ))-f( mathbf x ) k/ lambda lambda cdot frac f( mathbf x k mathbf u )-f( mathbf x ) k .
-Isso é vezes o quociente da diferença para a derivada direcional de f no que diz respeito a u. Além disso, tomar o limite como h tendendo a zero é o mesmo que tomar o limite como k tendendo a zero, pois h e k são múltiplos um do outro.
 Portanto, Dv(f) Du(f). Devido a essa propriedade de redirecionamento, derivadas direcionais são frequentemente consideradas apenas para vetores unitários.
 Se todas as derivadas parciais de f existem e são contínuas em x, então elas determinam a derivada direcional de f na direção de v pela fórmula:
 D
@@ -2239,50 +1969,38 @@ f
 x
 j
 .
-displaystyle D mathbf v f ( boldsymbol x ) sum j 1 n v j frac partial f partial x j .
 Essa é a consequência da definição de derivada total. Diz-se que a derivada direcional é linear em v, significando que D
 V
-displaystyle V
 W
-displaystyle W
 (f) D
 V
-displaystyle V
 (f) D
 W
-displaystyle W
 (f).
 A mesma definição também é aplicável quando f é a função com valores em
 R
 m
-displaystyle R m
 . . A definição acima é aplicada a cada componente dos vetores. Nesse caso, a derivada direcional é um vetor em
 R
 m
-displaystyle R m
 .
 Sejam
 U
-displaystyle U
 um aberto de
 R
 m
-displaystyle mathbb R m
 ,
 z
 0
 U
-displaystyle z 0 in U
 e
 f
 :
 U
 R
 n
-displaystyle f:U rightarrow mathbb R n
 uma função. Dizemos que
 f
-displaystyle f
 é diferenciável quando existem uma transformação linear
 T
 :
@@ -2290,7 +2008,6 @@ R
 m
 R
 n
-displaystyle T: mathbb R m rightarrow mathbb R n
 e uma função
 r
 :
@@ -2302,7 +2019,6 @@ z
 U
 R
 n
-displaystyle r: z-z 0 :z in U rightarrow mathbb R n
 dada por
 r
 (
@@ -2322,7 +2038,6 @@ z
 T
 .
 h
-displaystyle r(h) f(z 0 h)-f(z 0 )-T.h
 tais que
 lim
 h
@@ -2333,18 +2048,14 @@ h
 )
 h
 0
-displaystyle lim h rightarrow 0 frac r(h) h 0
 .
 Neste caso, a aplicação
 T
-displaystyle T
 é chamada de derivada da função
 f
-displaystyle f
 no ponto
 z
 0
-displaystyle z 0
 e denotada por
 D
 f
@@ -2352,7 +2063,6 @@ f
 z
 0
 )
-displaystyle Df(z 0 )
 . Em outras palavras
 D
 f
@@ -2376,23 +2086,19 @@ x
 )
 t
 .
-displaystyle Df(z 0 ) lim t rightarrow 0 frac f(x tz 0 )-f(x) t .
 Se
 f
 :
 U
 R
 R
-displaystyle f:U subset mathbb R rightarrow mathbb R
 ,
 z
 0
 U
-displaystyle z 0 in U
 e
 h
 R
-displaystyle h in mathbb R
 , então
 D
 f
@@ -2409,7 +2115,6 @@ z
 0
 )
 .
-displaystyle Df(z 0 )h h.f'(z 0 ).
 Se
 f
 :
@@ -2417,17 +2122,14 @@ U
 R
 R
 n
-displaystyle f:U subset mathbb R rightarrow mathbb R n
 ,
 z
 0
 U
-displaystyle z 0 in U
 e
 h
 R
 ,
-displaystyle h in mathbb R ,
 então
 D
 f
@@ -2472,12 +2174,10 @@ U
 R
 m
 R
-displaystyle f:U subset mathbb R m rightarrow mathbb R
 ,
 z
 0
 U
-displaystyle z 0 in U
 e
 h
 (
@@ -2491,7 +2191,6 @@ m
 R
 m
 ,
-displaystyle h (h 1 , cdots ,h m ) in mathbb R m ,
 então
 D
 f
@@ -2520,7 +2219,6 @@ m
 z
 0
 )
-displaystyle Df(z 0 )h h 1 . partial f over partial x 1 (z 0 ) cdots h m . partial f over partial x m (z 0 )
 Se
 f
 :
@@ -2529,18 +2227,15 @@ R
 m
 R
 n
-displaystyle f:U subset mathbb R m rightarrow mathbb R n
 ,
 z
 0
 U
-displaystyle z 0 in U
 e
 h
 R
 n
 ,
-displaystyle h in mathbb R n ,
 então
 D
 f
@@ -2569,8 +2264,6 @@ z
 0
 )
 )
-displaystyle Df(z 0 )h (h. nabla f 1 (z 0 ), cdots ,h. nabla f n (z 0 ))
-Nesta definição, podemos considerar a derivada parcial de uma aplicação como sendo
 f
 x
 j
@@ -2585,28 +2278,22 @@ x
 e
 j
 .
-displaystyle frac partial f partial x j (x) Df(x)e j .
 Podemos repensar nessa igualdade. Se observarmos que
 e
 j
 x
-displaystyle e j x
 corresponde à
 j
-displaystyle j
 -ésima coordenada de
 x
-displaystyle x
 e que a
 j
-displaystyle j
 -ésima coordenada de
 f
 (
 z
 0
 )
-displaystyle nabla f(z 0 )
 é
 f
 x
@@ -2615,7 +2302,6 @@ j
 z
 0
 )
-displaystyle frac partial f partial x j (z 0 )
 segue que
 f
 x
@@ -2644,13 +2330,10 @@ z
 0
 )
 )
-displaystyle frac partial f partial x j (z 0 ) left( frac partial f 1 partial x j (z 0 ), cdots , frac partial f n partial x j (z 0 ) right)
 Agudo, F. R. Dias, Análise Real (3 volumes), Lisboa: Escolar Editora, 1994
 Lima, Elon Lages (1981). Curso de análise, Volume 2. Instituto de Matemática Pura e Aplicada. Rio de Janeiro: Instituto de Matemática Pura e Aplicada
 Ostrowski, A., Lições de Cálculo Diferencial e Integral (3 volumes), Lisboa: Fundação Calouste Gulbenkian, 1981
-Ricieri, A. P., Derivada Fracionária, Transformada de Laplace e outros bichos, Prandiano, 1993, S. José dos Campos - SP - Brasil.
 Cálculo Diferencial e Integral
-Cálculo fracionário
 Derivada simétrica, Diferenciação automática, Diferenciação numérica
 Diferintegral
 Classe de diferenciabilidade
@@ -2659,7 +2342,5 @@ Tabela de derivadas
 Técnicas para diferenciação
 «Rei da Derivada - Torneio inventado pelo prof. Ricardo Fragelli para ensino de derivadas»
 «Cálculo diferencial para funções trigonométricas» (PDF)
-«tese de Engenharia Mecânica aplicando derivadas fracionárias» (PDF)
-«Equações generalizadas de difusão (aplica derivadas parciais fracionárias)»
 «Calculadora de derivadas com soluções detalhadas passo a passo e gráficos»
 «Calcular derivada passo a passo» (em inglês)

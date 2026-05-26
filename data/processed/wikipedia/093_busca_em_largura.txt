@@ -1,44 +1,34 @@
 Na teoria dos grafos, busca em largura (ou busca em amplitude, também conhecido em inglês por Breadth-First Search - BFS) é um algoritmo de busca em grafos utilizado para realizar uma busca ou travessia num grafo e estrutura de dados do tipo árvore. Intuitivamente, você começa pelo vértice raiz e explora todos os vértices vizinhos. Então, para cada um desses vértices mais próximos, exploramos os seus vértices vizinhos inexplorados e assim por diante, até que ele encontre o alvo da busca.
-Formalmente, uma busca em largura é um método de busca não-informada (ou desinformada) que expande e examina sistematicamente todos os vértices de um grafo direcionado ou não-direcionado. Em outras palavras, podemos dizer que o algoritmo realiza uma busca exaustiva num grafo passando por todas as arestas e vértices do grafo. Sendo assim, o algoritmo deve garantir que nenhum vértice ou aresta será visitado mais de uma vez e, para isso, utiliza uma estrutura de dados fila para garantir a ordem de chegada dos vértices. Dessa maneira, as visitas aos vértices são realizadas através da ordem de chegada na estrutura fila e um vértice que já foi marcado não pode entrar novamente a esta estrutura.
 Uma analogia muito conhecida (figura ao lado) para demonstrar o funcionamento do algoritmo é pintando os vértices de branco, cinza e preto. Os vértices na cor branca ainda não foram marcados e nem enfileirados, os da cor cinza são os vértices que estão na estrutura fila e os pretos são aqueles que já tiveram todos os seus vértices vizinhos enfileirados e marcados pelo algoritmo.
-Tal mecanismo permite que se descubra todos os vértices a uma distância n do vértice raiz antes de qualquer outro vértice de distancia maior que n, sendo n o número de arestas para atingir qualquer outro vértice no grafo considerado. Essa característica do algoritmo permite construir uma árvore de distâncias mínimas (menor número de arestas) entre o vértice raiz e os demais, sendo que o vértice responsável por enfileirar o seu vizinho na cor branca que será o vértice pai deste na representação em árvore gerada.
 Considerando um grafo representado em listas de adjacência, o pior caso, aquele em que todos os vértices e arestas são explorados pelo algoritmo, a complexidade de tempo pode ser representada pela seguinte expressão
 O
 (
 E
 V
 )
-displaystyle O( E V )
 , onde
 E
-displaystyle E
 significa o tempo total gasto nas operações sobre todas as arestas do grafo onde cada operação requer um tempo constante
 O
 (
 1
 )
-displaystyle O(1)
 sobre uma aresta, e
 V
-displaystyle V
 que significa o número de operações sobre todos os vértices que possui uma complexidade constante
 O
 (
 1
 )
-displaystyle O(1)
 para cada vértice uma vez que todo vértice é enfileirado e desenfileirado uma única vez.
 Quando o número de vértices no grafo é conhecido e supondo-se a representação deste em listas de adjacência, a complexidade de espaço do algoritmo pode ser representada por
 O
 (
 V
 )
-displaystyle O( V )
 onde
 V
-displaystyle V
 representa o número total de vértices no grafo.
-O algoritmo de busca em largura foi inventado pela primeira vez por Konrad Zuse em sua tese de doutorado sobre a linguagem de programação Plankalkül, mas como sua tese rejeitada porque Zuse esqueceu de pagar a taxa de matrícula, ela acabou esquecida e só foi publicada inteira em 1972. O algoritmo acabou sendo reinventado novamente em 1959 por Edward F. Moore, que o utilizou para encontrar o caminho mais curto para sair de um labirinto.
 A seguir é apresentado um pseudocódigo do algoritmo busca em largura para uma estrutura de dados grafo com lista de adjacência. A letra F representa uma fila (FIFO) inicialmente vazia, G é o grafo em questão e s, v, w representam vértices do grafo onde listaDeAdjacência representa a lista de adjacência de um vértice.
 Seguindo os passos do pseudocódigo acima e iniciando no vértice 6 da figura ao lado, o algoritmo estará com a sequência de vértices marcados e a fila assim:
 Vértices Marcados ; Fila(F) .

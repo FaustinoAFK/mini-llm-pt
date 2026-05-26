@@ -5,39 +5,29 @@ Por exemplo, o gradiente da topografia H de um terreno, também chamado de decli
 H
 distância vertical
 distância horizontal
-displaystyle nabla H frac text distância vertical text distância horizontal
 O símbolo
-displaystyle nabla
 , isto é, nabla, é a notação do operador gradiente.
-Suponha que tenhamos uma viga retilínea cujas extremidades estão em contato com duas paredes a temperaturas diferentes, uma à esquerda e outra à direita, sendo a parede à direita a mais quente. Observamos que a temperatura da viga não é constante em relação ao espaço, e que cresce da esquerda para a direita ao longo de seu comprimento. Definindo a coordenada
 x
 0
-displaystyle x 0
 para a extremidade à esquerda e
 x
 L
-displaystyle x L
 para a extremidade à direita, definimos a temperatura
 T
-displaystyle T
 em uma posição qualquer (variável
 x
-displaystyle x
 ) da viga como uma função
 T
 (
 x
 )
-displaystyle T(x)
 .
 Entre dois pontos muito próximos, distantes de um comprimento
 d
 x
-displaystyle dx
 , teremos uma respectiva variação de temperatura
 d
 T
-displaystyle dT
 . Em uma situação unidimensional, a razão entre essas grandezas fornece o gradiente, denotado por:
 T
 d
@@ -45,7 +35,6 @@ T
 d
 x
 i
-displaystyle overrightarrow nabla T dT over dx overrightarrow i
 Note que, para apenas uma dimensão, a noção de derivada e gradiente convergem.
 Em condução térmica, o gradiente de temperatura é responsável pelo surgimento de um fluxo de calor, segundo a Lei de Fourier, que, para condução unidimensional, é representada por:
 q
@@ -55,29 +44,23 @@ d
 T
 d
 x
-displaystyle q x '' -k dT over dx
 onde
 q
 x
-displaystyle q x ''
 corresponde ao fluxo de calor, em
 W
 /
 m
 2
-displaystyle W/m 2
 , e
 k
-displaystyle k
 corresponde à condutividade térmica do material, em
 W
 /
 m
 .
 K
-displaystyle W/m.K
 . O sinal negativo indica que o calor fluirá do corpo mais quente em direção ao corpo mais frio.
-Na prática, a temperatura da viga varia em função das coordenadas no espaço. Estabelecendo um ponto qualquer
 M
 (
 x
@@ -86,7 +69,6 @@ y
 ,
 z
 )
-displaystyle M (x,y,z)
 , teremos, em uma situação mais próxima da realidade, uma função
 T
 (
@@ -96,17 +78,13 @@ y
 ,
 z
 )
-displaystyle T(x,y,z)
 que descreve a temperatura nas coordenadas de
 M
-displaystyle M
 .
 Se nos deslocarmos em apenas um eixo do espaço, podemos escrever a função
 T
-displaystyle T
 considerando esse deslocamento. Para uma variação da coordenada
 y
-displaystyle y
 , por exemplo, teremos a relação:
 T
 (
@@ -130,13 +108,10 @@ T
 y
 d
 y
-displaystyle T(x,y dy,z) T(x,y,z) partial T over partial y dy
 Seguindo a mesma lógica, para um deslocamento entre um ponto qualquer
 M
-displaystyle M
 e outro que chamaremos de
 M
-displaystyle M'
 , teremos um vetor
 h
 M
@@ -151,8 +126,6 @@ y
 h
 z
 )
-displaystyle overrightarrow h overrightarrow MM' (h x ,h y ,h z )
-, havendo mudança da temperatura de
 T
 (
 x
@@ -161,7 +134,6 @@ y
 ,
 z
 )
-displaystyle T(x,y,z)
 para
 T
 (
@@ -177,7 +149,6 @@ z
 h
 z
 )
-displaystyle T(x h x ,y h y ,z h z )
 . Assim, teremos a relação:
 T
 (
@@ -234,10 +205,8 @@ z
 )
 h
 z
-displaystyle T(x h x ,y h y ,z h z ) T(x,y,z) partial T over partial x (x,y,z)h x partial T over partial y (x,y,z)h y partial T over partial z (x,y,z)h z
 É possível simplificar essa relação definindo um vetor gradiente de temperatura
 T
-displaystyle overrightarrow nabla T
 , no qual cada componente indica a variação da temperatura em cada coordenada:
 T
 (
@@ -278,13 +247,10 @@ y
 z
 )
 )
-displaystyle overrightarrow nabla T(x,y,z) biggl ( partial T over partial x (x,y,z), partial T over partial y (x,y,z), partial T over partial z (x,y,z) biggr )
 Assim, podemos representar a mudança de temperatura da posição
 M
-displaystyle M
 para
 M
-displaystyle M'
 por:
 T
 (
@@ -300,30 +266,23 @@ T
 M
 )
 h
-displaystyle T(M overrightarrow h ) T(M) overrightarrow nabla T(M) cdot overrightarrow h
-sendo
 T
 (
 M
 )
 h
-displaystyle overrightarrow nabla T(M) cdot overrightarrow h
 o produto escalar entre o vetor gradiente e o vetor
 h
-displaystyle overrightarrow h
 .
 Da mesma forma que no caso unidimensional, o vetor gradiente de temperatura terá orientação partindo do mais frio em direção ao mais quente.
 Assim, no contexto de transferência de calor, teremos a Lei de Fourier aplicada ao sistema tridimensional, representada por:
 q
 k
 T
-displaystyle overrightarrow q'' -k overrightarrow nabla T
 Novamente,
 q
-displaystyle overrightarrow q''
 corresponde ao fluxo de calor e
 k
-displaystyle k
 corresponde à condutividade térmica do material. Perceba que, como o calor flui da região de temperatura mais alta para uma de temperatura mais baixa, os vetores fluxo de calor e gradiente de temperatura terão sentidos contrários.
 O vetor gradiente ou simplesmente gradiente de um campo escalar
 f
@@ -338,7 +297,6 @@ x
 x
 n
 )
-displaystyle f (x 1 ,x 2 , cdots ,x n )
 é determinado via ênupla ordenada definida por:
 grad
 f
@@ -354,7 +312,6 @@ x
 f
 x
 n
-displaystyle mbox grad ,f left langle frac partial f partial x 1 , frac partial f partial x 2 , cdots , frac partial f partial x n right rangle
 ou, via notação de soma de Euler, por:
 grad
 f
@@ -364,22 +321,18 @@ x
 i
 e
 i
-displaystyle mbox grad ,f sum i frac partial f partial x i hat e i
 onde
 e
 i
-displaystyle hat e i
 são os vetores unitários ortogonais que definem a base a partir da qual se coordena o espaço e
 x
 i
-displaystyle frac partial partial x i
 representa o respectivo operador derivada parcial.
 Já na notação de soma de Einstein, onde índices repetidos no mesmo fator implicam somatório, para o campo escalar :
 grad
 i
 e
 i
-displaystyle mbox grad , varphi partial i varphi cdot hat e i
 O símbolo nabla foi introduzido por William Hamilton e rapidamente assimilado pela comunidade científica:
 f
 (
@@ -393,14 +346,12 @@ n
 )
 grad
 f
-displaystyle overrightarrow nabla f (x 1 , dots ,x n ) mbox grad ,f
 No entanto, por abuso de linguagem, é comum não se indicar a "seta" de vector e a notação poderá torna-se em:
 f
 grad
 f
 D
 f
-displaystyle nabla f mbox grad ,f D f
 O gradiente também pode ser generalizado em ordem se fornecemos um campo vectorial obtemos um campo tensorial.
 Para a função escalar
 f
@@ -418,14 +369,12 @@ y
 2
 sin
 z
-displaystyle f ! left(x,y,z right) 4x 10y 2 - sin z
 tem-se, na base cartesiana
 i
 ,
 j
 ,
 k
-displaystyle hat i , hat j , hat k
 grad
 f
 (
@@ -461,7 +410,6 @@ z
 )
 z
 k
-displaystyle mbox grad ,f frac partial (4x 10y 2 - sin z) partial x hat i frac partial (4x 10y 2 - sin z) partial y hat j frac partial (4x 10y 2 - sin z) partial z hat k
 que fornece por resposta a ênupla
 f
 4
@@ -471,7 +419,6 @@ y
 ;
 cos
 z
-displaystyle vec nabla f left langle 4;20y;- cos z right rangle
 ou explicitamente
 f
 (
@@ -488,7 +435,6 @@ cos
 z
 )
 k
-displaystyle vec nabla f (4) hat i (20y) hat j (- cos z) hat k
 para qualquer ponto definido pelas coordenadas
 (
 x
@@ -497,11 +443,9 @@ y
 ,
 z
 )
-displaystyle left(x,y,z right)
 , restando apenas a substituição dos respectivos valores x, y e z na expressão acima.
 Para todo campo escalar
 f
-displaystyle f
 diferenciável em função do espaço cartesiano
 r
 x
@@ -509,7 +453,6 @@ x
 y
 ,
 z
-displaystyle vec r left langle x,y,z right rangle
 temos que:
 f
 f
@@ -520,19 +463,15 @@ y
 ,
 f
 z
-displaystyle nabla f left langle frac partial f partial x , frac partial f partial y , frac partial f partial z right rangle
 O gradiente é a derivada de um campo em função do espaço:
 f
 f
 r
-displaystyle nabla f frac partial f partial vec r
-Em uma só dimensão o gradiente de uma função que só depende do espaço:
 f
 d
 f
 d
 x
-displaystyle nabla f frac df dx
 O gradiente é linear:
 (
 f
@@ -545,10 +484,8 @@ g
 F
 2
 )
-displaystyle nabla left( alpha f beta g right) alpha nabla f beta nabla g qquad left( forall alpha , beta in mathbb F 2 right)
 Onde
 F
-displaystyle mathbb F
 é um corpo constante.
 O gradiente segue a Lei de Leibniz na multiplicação:
 (
@@ -559,7 +496,6 @@ f
 g
 g
 f
-displaystyle nabla left(f cdot g right) f nabla g g nabla f
 E na divisão:
 (
 f
@@ -576,7 +512,6 @@ g
 g
 0
 )
-displaystyle nabla left(f/g right) frac g nabla f-f nabla g g 2 qquad left(g neq 0 right)
 O vetor gradiente sempre será ortogonal às curvas de nível (veja no artigo "Conjunto de nível").
 Seja
 f
@@ -585,12 +520,10 @@ x
 ,
 y
 )
-displaystyle f(x ,,y)
 uma função definida em
 D
 R
 2
-displaystyle D subset mathbb R 2
 e diferenciável em todo seu domínio.
 Seja o conjunto
 C
@@ -608,7 +541,6 @@ x
 y
 )
 k
-displaystyle C: (x,y) in D f(x,y) k
 onde x e y são funções de um parâmetro t tal que
 x
 (
@@ -623,7 +555,6 @@ y
 )
 y
 0
-displaystyle x(0) x 0 ,,y(0) y 0
 .
 Então, temos:
 f
@@ -639,7 +570,6 @@ t
 )
 )
 k
-displaystyle f(x(t) ,,y(t)) k
 (diferenciando com relação a t pela regra da cadeia)
 f
 x
@@ -654,7 +584,6 @@ y
 d
 t
 0
-displaystyle frac partial f partial x frac dx dt frac partial f partial y frac dy dt 0
 A equação final pode ser interpretada como o produto escalar do gradiente de f por um vector tangente a f em
 (
 x
@@ -663,8 +592,6 @@ x
 y
 0
 )
-displaystyle (x 0 ,,y 0 )
-, logo os dois são perpendiculares entre si.
 O gradiente é revertido pela integral de linha de acordo com o teorema do gradiente, que é análogo ao teorema fundamental do cálculo:
 f
 f
@@ -675,13 +602,10 @@ P
 Q
 f
 d
-displaystyle Delta f f Q -f P int gamma P gamma Q nabla f cdot vec d gamma
 A derivada direcional é um escalar que representa a derivada de um campo escalar ao longo de um versor (no caso abaixo,
 u
-displaystyle hat u
 ). Analiticamente, a derivada direcional de dada f(x,y,z) (função escalar), é a taxa de variação instantânea de f em relação à distância na direção e sentido
 u
-displaystyle hat u
 .
 u
 D
@@ -689,17 +613,13 @@ u
 f
 u
 f
-displaystyle forall hat u quad D ! hat u ,f hat u cdot vec nabla f
 Assim, podemos tirar algumas observações a partir do produto escalar entre o gradiente de f e o versor
 u
-displaystyle hat u
 :
 1. Se o ângulo entre os vetores
 f
-displaystyle vec nabla f
 e
 u
-displaystyle hat u
 , denotado por , for igual a zero. então teremos que a derivada direcional é máxima, e será igual ao módulo do gradiente de f(x,y,z), já que:
 D
 u
@@ -719,11 +639,9 @@ m
 a
 x
 f
-displaystyle D ! hat u ,f hat u vec nabla f cos(0) D hat u ,f max vec nabla f
 2. Se o ângulo for igual a
 180
 o
-displaystyle 180 o
 , então a derivada direcional terá seu valor mínimo e igual a menos o módulo do gradiente de f(x,y,z):
 D
 u
@@ -743,16 +661,11 @@ m
 i
 n
 f
-displaystyle D ! hat u ,f hat u vec nabla f cos(180) D hat u ,f min - vec nabla f
 3. Se f(x,y,z) representar uma curva de nível em que f(x,y,z) k, onde k é uma constante, e se o vetor
 u
-displaystyle hat u
 for tangente à tal curva de nível, então o valor da derivada direcional é nula, pois
 f
-displaystyle vec nabla f
-será perpendicular a
 u
-displaystyle hat u
 , e normal à curva de nível. Neste caso:
 D
 u
@@ -760,7 +673,6 @@ f
 u
 f
 0
-displaystyle D hat u f hat u cdot vec nabla f 0
 O gradiente é escrito nos diferentes sistemas de coordenadas tridimensionais nas seguintes formas:
 f
 f
@@ -775,7 +687,6 @@ f
 z
 e
 z
-displaystyle nabla ,f frac partial f partial x hat e x frac partial f partial y hat e y frac partial f partial z hat e z
 Para coordenadas espaciais x, y e z.
 f
 f
@@ -787,11 +698,8 @@ f
 z
 e
 z
-displaystyle nabla ,f frac partial f partial rho hat e rho frac 1 rho frac partial f partial phi hat e phi frac partial f partial z hat e z
 Onde
-displaystyle rho
 representa a distância ao eixo z,
-displaystyle phi
 é o ângulo (tomado, em geral sobre o plano z 0 em relação ao eixo x) e z.
 f
 f
@@ -809,30 +717,22 @@ e
 n
 f
 e
-displaystyle nabla ,f frac partial f partial r hat e r frac 1 r frac partial f partial theta hat e theta frac 1 rsen theta frac partial f partial phi hat e phi
 Onde
 r
-displaystyle r
 representa a distância à origem,
-displaystyle theta
 é o ângulo entre a reta que liga o ponto à origem e o eixo z e
-displaystyle phi
 é o ângulo formado pela projeção da reta que liga o ponto à origem no plano z 0 e o eixo x.
 O conceito de gradiente na física está fortemente relacionado aos conceitos de campo conservativo e de função potencial, de tal forma que também na matemática se define campo vetorial conservativo.
 Na física campos conservativos são campos que conservam a energia do sistema, isto é, campos onde não há dissipação de energia.
 A função vetorial
 F
-displaystyle overrightarrow F
 é um campo vetorial conservativo se existe uma função escalar
-displaystyle varphi
 , chamada função potencial, tal que:
 F
 c
 o
 n
 s
-displaystyle overrightarrow F cons nabla varphi
-. Sendo assim, dada uma função potencial
 (
 x
 ,
@@ -840,17 +740,13 @@ y
 ,
 z
 )
-displaystyle varphi (x,y,z)
 ou uma função potencial do tipo
 (
 r
 )
-displaystyle varphi (r)
 , basta calcular o gradiente para encontrar o campo vetorial conservativo associado a
-displaystyle varphi
 .
 Como
-displaystyle varphi
 é uma função de x, y, z então:
 F
 c
@@ -870,9 +766,7 @@ y
 j
 z
 k
-displaystyle overrightarrow F cons (x,y,z) partial varphi over partial x vec i partial varphi over partial y vec j partial varphi over partial z vec k
 Se
-displaystyle varphi
 é uma função implícita de x, y, z através de
 r
 x
@@ -881,7 +775,6 @@ y
 2
 z
 2
-textstyle r sqrt x 2 y 2 z 2
 , ou seja,
 (
 r
@@ -896,9 +789,7 @@ y
 z
 )
 )
-displaystyle varphi (r) varphi (r(x,y,z))
 é necessário usar a regra da cadeia para calcular o respectivo gradiente. Potenciais deste tipo são chamados de potenciais centrais.
-Muitos modelos de potenciais físicos são centrais, sendo assim de grande importância saber como realizar o cálculo deste tipo.
 Através da regra da cadeia é possível ver que:
 (
 r
@@ -941,7 +832,6 @@ z
 2
 x
 ]
-displaystyle partial varphi (r) over partial x d varphi over dr partial r over partial x varphi prime (r) partial over partial x sqrt (x 2 y 2 z 2 ) varphi prime (r) left[ frac 1 2 (x 2 y 2 z 2 ) -1/2 2x right]
 Levando em conta que
 r
 x
@@ -950,7 +840,6 @@ y
 2
 z
 2
-textstyle r sqrt x 2 y 2 z 2
 tem-se que:
 (
 r
@@ -961,7 +850,6 @@ r
 )
 r
 x
-displaystyle partial varphi (r) over partial x varphi prime (r) over r x
 Igualmente para as outras variáveis do gradiente:
 (
 r
@@ -972,7 +860,6 @@ r
 )
 r
 y
-displaystyle partial varphi (r) over partial y varphi prime (r) over r y
 e
 (
 r
@@ -983,7 +870,6 @@ r
 )
 r
 z
-displaystyle partial varphi (r) over partial z varphi prime (r) over r z
 ;
 Assim, com a soma das três derivadas, temos que :
 (
@@ -993,9 +879,7 @@ r
 r
 )
 r
-displaystyle vec nabla varphi (r) varphi prime (r) hat r
 Esta última fórmula é a preferencial para quando se tem potenciais centrais, pois ela nos fornece o campo gradiente com apenas uma derivação.
-Há três leis empíricas conhecidas como Lei de Fick, Lei de Fourier e Lei de Ohm ás quais são expressas em termos de campos gradientes. A leis citadas regem os chamados "fenômenos de transporte" da Física. Sendo que a Lei de Fick rege o transporte de massa, a Lei de Fourier o do calor e a Lei de Ohm o de cargo.
 São expressas como:
 (
 1
@@ -1020,7 +904,6 @@ z
 ,
 t
 )
-displaystyle (1) , vec J (X,Y,Z,T) -D bar nabla rho (x,y,z,t)
 (
 2
 )
@@ -1045,7 +928,6 @@ z
 ,
 t
 )
-displaystyle (2) , vec q (X,Y,Z,T) -k bar nabla T(x,y,z,t)
 (
 3
 )
@@ -1068,18 +950,14 @@ z
 ,
 t
 )
-displaystyle (3) , vec J (X,Y,Z,T) - sigma bar nabla varphi (x,y,z,t)
 Ao observar percebe-se que as três leis relacionam um campo vetorial com o gradiente de um campo escalar.
 A (1) é a Lei de Fick que rege a difusão de substâncias em meios contínuos. A função vetorial indicada por
 J
-displaystyle bar J
 é chamada de densidade do fluido.
 J
-displaystyle bar J
 é um vetor na direção do escoamento e de módulo igual à quantidade de substâncias que atravessam uma unidade de área normal à direção do escoamento, na unidade de tempo.
 Definição matemática:
 J
-displaystyle bar J rho bar nu
 , em que
 (
 x
@@ -1090,7 +968,6 @@ z
 ,
 t
 )
-displaystyle rho rho (x,y,z,t)
 é o campo escalar que descreve a densidade do fluido,
 (
 x
@@ -1101,11 +978,8 @@ z
 ,
 t
 )
-displaystyle bar nu bar nu (x,y,z,t)
-o campo vetorial que representa a velocidade do fluido. A constante D é chamada de constante de difusão e depende do meio.
 A (2) expressão é chamada de Lei de Fourier e rege a condução térmica. A função vetorial indicada por
 q
-textstyle bar q
 é chamada densidade de corrente de calor.
 Definição matemática:
 q
@@ -1113,25 +987,15 @@ q
 Q
 V
 )
-displaystyle bar q (Q div V) bar nu
 , onde Q é a quantidade de calor, V o volume e
-displaystyle bar nu
-a velocidade de escoamento do calor. Sendo todas grandezas em função das coordenadas espaciais e e do tempo. A constante
 k
-textstyle k
 é a condutividade térmica do meio.
-A (3) expressão traduz a Lei de Ohm, sendo
 J
-textstyle bar J
 a densidade de corrente elétrica,
-displaystyle sigma
 a condutividade elétrica e
-textstyle varphi
 o potencial elétrico. A definição da função vetorial
 J
-displaystyle bar J
 é análoga à definição de densidade de corrente usada na Lei de Fick, só que aqui ao invés de ter transporte de massa temos transporte de carga.
-Sendo estas leis, juntamente com a equação de continuidade, base para deduzir as equações de difusão, do calor e, no caso do escoamento estacionário, a equação de Laplace .
 O gradiente é o vetor que aponta para onde a grandeza resultante da função tem seu maior crescimento.
 Os gradientes de tensão em redes elétricas são, depois dos transientes, os maiores causadores de danos em circuitos eletro-eletrônicos.
 O retorno da energia elétrica numa linha de transmissão longa, após uma interrupção da mesma, faz-se acompanhar por transientes de tensão elevada até à estabilização do circuito. Simultaneamente, manifesta-se na rede um movimento oscilatório de baixa frequência, composto por gradientes positivos e negativos, denominados harmônicos, que fazem elevar e reduzir a tensão, acima e abaixo do seu valor nominal.

@@ -2,7 +2,6 @@ Em matemática, uma derivada parcial de uma função de várias variáveis é a 
 A derivada parcial de uma função em relação ao seu argumento
 x
 i
-displaystyle x i
 é representada
 f
 (
@@ -18,7 +17,6 @@ n
 )
 x
 i
-displaystyle frac partial f(x 1 ,...,x n ) partial x i
 .
 Suponha-se que é uma função de mais de uma variável. Para obter-se uma instância,
 z
@@ -35,7 +33,6 @@ y
 y
 2
 .
-displaystyle z f(x,y) , !x 2 xy y 2 . ,
 O gráfico desta função define uma superfície no espaço euclidiano. Para cada ponto sobre esta superfície, há um número infinito de linhas tangenciais. Diferenciação parcial é o ato de escolher uma dessas linhas e encontrar o seu declive. Normalmente, as linhas de maior interesse são aquelas que são paralelas ao plano xz, e aquelas que são paralelos ao plano yz(que resultam da exploração ou y ou x constante, respectivamente.)
 Para determinar o declive da linha tangente à função de P (1, 1, 3) que é paralela ao plano xz, o y variável é tratado como constante. O gráfico e este plano são mostrados à direita. No gráfico abaixo, vemos a forma como a função se comporta y 1. Ao encontrar a derivada da equação assumindo que y é uma constante, e o declive no ponto(x, y, z) é:
 z
@@ -43,12 +40,10 @@ x
 2
 x
 y
-displaystyle frac partial z partial x 2x y
 Então, em (1, 1, 3), por substituição, o declive é de 3. Portanto
 z
 x
 3
-displaystyle frac partial z partial x 3
 no ponto (1, 1, 3). Ou seja, a derivada parcial de z com relação a x em (1, 1, 3) é 3.
 A derivada parcial de uma função de n argumentos
 (
@@ -62,8 +57,6 @@ x
 x
 n
 )
-displaystyle (x 1 ,...,x n )
-pode ser representada através de um limite como sendo
 f
 x
 i
@@ -107,7 +100,6 @@ n
 )
 h
 .
-displaystyle frac partial f partial x i (x 1 , ldots ,x n ) lim h to 0 frac f(x 1 , ldots ,x i h, ldots ,x n )-f(x 1 , ldots ,x n ) h .
 A função f pode ser reinterpretada como uma família de funções de uma variável indexada pelas outras variáveis :
 Em outras palavras, a cada valor de x define uma função, denotada fx, que é uma função de uma variável. Isto é,
 f
@@ -122,7 +114,6 @@ y
 y
 2
 .
-displaystyle f x (y) x 2 xy y 2 . ,
 Uma vez que o valor de x é escolhido, em seguida, f ( x, y) determina a função fa que envia y para a 2 ay y 2
 f
 a
@@ -136,8 +127,6 @@ y
 y
 2
 .
-displaystyle f a (y) a 2 ay y 2 . ,
-Nesta expressão, a é uma constante, e não uma variável, então fa é uma função de uma única variável real, sendo y. Consequentemente, a definição da derivada para uma função de uma variável aplica-se:
 f
 a
 (
@@ -147,7 +136,6 @@ a
 2
 y
 .
-displaystyle f a '(y) a 2y. ,
 O procedimento acima pode ser realizada por qualquer escolha de a. Organizando as derivadas juntas em uma função dá uma função que descreve a variação de f na direção de y:
 f
 y
@@ -160,9 +148,7 @@ x
 2
 y
 .
-displaystyle frac partial f partial y (x,y) x 2y. ,
 Este é o derivado parcial de f em relação a y. Aqui é um d arredondado, chamado o símbolo derivado parcial. Para distingui-la da letra d, às vezes é pronunciado "del" ou "parcial" em vez de "dê".
-Em geral, a derivada parcial de uma função f(x1,...,xn) na direção no ponto xi (a1, ..., a) é definida como sendo:
 f
 x
 i
@@ -211,7 +197,6 @@ n
 )
 h
 .
-displaystyle frac partial f partial x i (a 1 , ldots ,a n ) lim h to 0 frac f(a 1 , ldots ,a i h, ldots ,a n )-f(a 1 , ldots ,a i , dots ,a n ) h .
 No diferença quociente acima, todas as variáveis, exceto xi são mantidas fixas. Essa escolha de valores fixos determina uma função de uma variável
 f
 a
@@ -258,7 +243,6 @@ i
 a
 n
 )
-displaystyle f a 1 , ldots ,a i-1 ,a i 1 , ldots ,a n (x i ) f(a 1 , ldots ,a i-1 ,x i ,a i 1 , ldots ,a n )
 , e, por definição,
 d
 f
@@ -299,7 +283,6 @@ a
 n
 )
 .
-displaystyle frac df a 1 , ldots ,a i-1 ,a i 1 , ldots ,a n dx i (a i ) frac partial f partial x i (a 1 , ldots ,a n ).
 Em outras palavras, as diferentes opções de a indica uma família de funções de uma variável, assim como no exemplo acima. Esta expressão também mostra que o cálculo das derivadas parciais se reduz ao cálculo de uma variável derivada.
 Um exemplo importante de uma função de várias variáveis é o caso de um campo escalar f(x1,...xn) em um domínio no espaço Euclidiano Rn (e.g., on R2 or R3). Neste caso f tem uma derivada parcial f/ xj com relação a cada variável xj. No ponto a, estas derivadas parciais definem o vector
 f
@@ -324,7 +307,6 @@ a
 )
 )
 .
-displaystyle nabla f(a) left( frac partial f partial x 1 (a), ldots , frac partial f partial x n (a) right).
 Este vector é denominado gradiente de f em a. Se f é diferenciável em todos os pontos de algum domínio, então o gradiente é uma função vetorial de valor f que leva o ponto a para o vetor f(a). Consequentemente, o gradiente produz um campo vetorial.
 Um problema comum de notação é definir o operador nabla ( ) ,como se apresenta em três dimensões espaciais euclidianas R3 com vetores unitários
 i
@@ -332,7 +314,6 @@ i
 j
 ,
 k
-displaystyle mathbf hat i , mathbf hat j , mathbf hat k
 :
 [
 x
@@ -346,7 +327,6 @@ j
 z
 ]
 k
-displaystyle nabla bigg [ frac partial partial x bigg ] mathbf hat i bigg [ frac partial partial y bigg ] mathbf hat j bigg [ frac partial partial z bigg ] mathbf hat k
 Ou, mais geralmente, para o espaço euclidiano de n- dimensões Rn com coordenadas (x1, x2, x3,...,xn) e vetores unitários (
 e
 1
@@ -361,7 +341,6 @@ e
 ,
 e
 n
-displaystyle mathbf hat e 1 , mathbf hat e 2 , mathbf hat e 3 , dots , mathbf hat e n
 ):
 j
 1
@@ -396,8 +375,6 @@ n
 ]
 e
 n
-displaystyle nabla sum j 1 n bigg [ frac partial partial x j bigg ] mathbf hat e j bigg [ frac partial partial x 1 bigg ] mathbf hat e 1 bigg [ frac partial partial x 2 bigg ] mathbf hat e 2 bigg [ frac partial partial x 3 bigg ] mathbf hat e 3 dots bigg [ frac partial partial x n bigg ] mathbf hat e n
-Como derivadas comuns, a derivada parcial é definida como sendo um limite. Sendo U um conjunto aberto de Rn e f : U R uma função. A derivada parcial de f no ponto a (a1, ..., an) U com relação à i- a variável ai é definida como
 a
 i
 f
@@ -447,14 +424,12 @@ a
 n
 )
 h
-displaystyle frac partial partial a i f( mathbf a ) lim h rightarrow 0 f(a 1 , dots ,a i-1 ,a i h,a i 1 , dots ,a n )-f(a 1 , dots ,a i , dots ,a n ) over h
 Mesmo se todas as derivados parciais f/ ai(a) existirem em um determinado ponto a, a função não necessita de ser contínua.
 No entanto, se todos as derivadas parciais existirem numa vizinhança de a e são contínuas, então f é o total derivado em que a derivada da vizinhança total é contínua. Neste caso, diz-se que f é uma C1 função.
 Isto pode ser utilizado para generalizar funções vetoriais (f : U R'm) com cuidado usando um argumento componente a componente.
 A derivada parcial
 f
 x
-displaystyle frac partial f partial x
 pode ser vista como uma outra função definida em U e pode ser novamente parcialmente diferenciada.
 Se todas as derivadas parciais de segunda ordem mistas são contínuas em um ponto (ou um conjunto), f é denominado C2 função naquele ponto (ou no conjunto); neste caso, as derivadas parciais podem ser trocadas pelo Teorema de Clairaut-Schwarz:
 2
@@ -470,14 +445,11 @@ j
 x
 i
 .
-displaystyle frac partial 2 f partial x i , partial x j frac partial 2 f partial x j , partial x i .
-Considere-se o volume V de um cone; ele depende da altura do cone h e do seu raio r de acordo com a fórmula
 V
 r
 2
 h
 3
-displaystyle V frac r 2 h pi 3
 A derivada parcial de V com relação a r é
 V
 r
@@ -485,14 +457,12 @@ r
 r
 h
 3
-displaystyle frac partial V partial r frac 2rh pi 3
 e descreve a taxa com que o volume de um cone aumenta à medida que o seu raio também aumenta e a sua altura é mantida constante. A derivada parcial relativamente a h é
 V
 h
 r
 2
 3
-displaystyle frac partial V partial h frac r 2 pi 3
 Em contraste, a derivada total de V em relação à r e h são respectivamente
 d
 V
@@ -513,7 +483,6 @@ d
 h
 d
 r
-displaystyle frac operatorname d V operatorname d r overbrace frac 2 pi rh 3 frac partial V partial r overbrace frac pi r 2 3 frac partial V partial h frac operatorname d h operatorname d r
 e
 d
 V
@@ -534,8 +503,6 @@ d
 r
 d
 h
-displaystyle frac operatorname d V operatorname d h overbrace frac pi r 2 3 frac partial V partial h overbrace frac 2 pi rh 3 frac partial V partial r frac operatorname d r operatorname d h
-A diferença entre a derivada total e parcial é a eliminação de dependências indiretas entre as variáveis nas derivadas parciais.
 Se (por alguma razão arbitrária) proporções do cone têm de permanecer as mesmas, e a altura e raio estando em uma relação fixa k, temos
 k
 h
@@ -545,7 +512,6 @@ h
 d
 r
 .
-displaystyle k frac h r frac operatorname d h operatorname d r .
 Isto dá a derivada total no que se relaciona a r:
 d
 V
@@ -559,7 +525,6 @@ r
 2
 3
 k
-displaystyle frac operatorname d V operatorname d r frac 2 pi rh 3 frac pi r 2 3 k
 Que simplifica para:
 d
 V
@@ -568,7 +533,6 @@ r
 k
 r
 2
-displaystyle frac operatorname d V operatorname d r k pi r 2
 Do mesmo modo, a derivada total no que refere a h é:
 d
 V
@@ -576,10 +540,7 @@ d
 h
 r
 2
-displaystyle frac operatorname d V operatorname d h pi r 2
-Equações envolvendo derivadas parciais de uma função desconhecida são chamadas de equação diferencial parcial e são comuns em física, engenharia e outras ciências e disciplinas aplicadas.
 As derivadas parciais aparecem em qualquer problema de otimização baseada em cálculos com mais de uma variável de escolha. Por exemplo, em economia, uma empresa pode desejar maximizar o lucro (x, y) com relação à escolha das quantidades x e y de dois tipos diferentes de produção. As condições de primeira ordem para esta otimização são x 0 y. Como ambas as derivadas parciais x e y serão geralmente funções de ambos os argumentos x e y, estas duas condições de primeira ordem formam um sistema de duas equações em duas incógnitas.
-Derivados parciais aparecem em equações termodinâmicas como a Relação de Gibbs-Duhem, em mecânica quântica como a equação da onda de Schrodinger, assim como em outras equações da física matemática. Aqui as variáveis sendo mantidas constantes em derivadas parciais podem ser razão de variáveis simples como frações molares xi no seguinte exemplo envolvendo as energias de Gibbs em um sistema de mistura ternária:
 G
 2
 G
@@ -597,7 +558,6 @@ x
 1
 x
 3
-displaystyle displaystyle bar G 2 G (1-x 2 ) left( frac partial G partial x 2 right) frac x 1 x 3
 Expressar as frações molares de um componente como funções da fração molar de outros componentes e rácios molares binários:
 x
 1
@@ -609,7 +569,6 @@ x
 3
 x
 1
-displaystyle displaystyle x 1 frac 1-x 2 1 frac x 3 x 1
 x
 3
 1
@@ -620,7 +579,6 @@ x
 1
 x
 3
-displaystyle displaystyle x 3 frac 1-x 2 1 frac x 1 x 3
 Os quocientes diferenciais podem ser formados em proporções constantes como os acima:
 (
 x
@@ -637,7 +595,6 @@ x
 1
 x
 2
-displaystyle displaystyle left( frac partial x 1 partial x 2 right) frac x 1 x 3 - frac x 1 1-x 2
 (
 x
 3
@@ -653,7 +610,6 @@ x
 1
 x
 2
-displaystyle displaystyle left( frac partial x 3 partial x 2 right) frac x 1 x 3 - frac x 3 1-x 2
 As proporções X, Y, Z das frações molares podem ser escritas para sistemas ternários e multicomponentes:
 X
 x
@@ -662,7 +618,6 @@ x
 1
 x
 3
-displaystyle displaystyle X frac x 3 x 1 x 3
 Y
 x
 3
@@ -670,7 +625,6 @@ x
 2
 x
 3
-displaystyle displaystyle Y frac x 3 x 2 x 3
 Z
 x
 2
@@ -678,7 +632,6 @@ x
 1
 x
 2
-displaystyle displaystyle Z frac x 2 x 1 x 2
 que pode ser usado para resolver equações diferenciais parciais como:
 (
 2
@@ -700,22 +653,16 @@ n
 ,
 n
 3
-displaystyle displaystyle left( frac partial mu 2 partial n 1 right) n 2 ,n 3 left( frac partial mu 1 partial n 2 right) n 1 ,n 3
 Esta igualdade pode ser reordenada para ter um quociente diferencial de frações moles em um dos lados.
-As derivadas parciais são a chave para algoritmos de redimensionamento de imagem com consciência de alvo. Amplamente conhecidos como escultura em costura, estes algoritmos exigem que cada pixel de uma imagem receba uma 'energia' numérica para descrever sua disparidade em relação aos pixels ortogonais adjacentes. O algoritmo então remove progressivamente as linhas ou colunas com a menor energia. A fórmula estabelecida para determinar a energia de um pixel (magnitude de gradiente em um pixel) depende muito das construções de derivadas parciais.
-Os derivados parciais desempenham um papel proeminente na economia, na qual a maioria das funções que descrevem o comportamento econômico postula que o comportamento depende de mais de uma variável. Por exemplo, uma função de consumo social pode descrever o montante gasto em bens de consumo como dependendo tanto da renda quanto da riqueza; a propensão marginal ao consumo é então a derivada parcial da função de consumo com relação à renda.
 Mais informações:
 Para os exemplos a seguir, deixe
 f
-displaystyle displaystyle f
 ser uma função em
 x
 ,
 y
-displaystyle displaystyle x,y
 e
 z
-displaystyle displaystyle z
 .
 Derivadas parciais de primeira ordem:
 f
@@ -725,7 +672,6 @@ x
 x
 f
 .
-displaystyle displaystyle frac partial f partial x f x partial x f.
 Derivadas parciais de segunda ordem:
 2
 f
@@ -741,7 +687,6 @@ x
 2
 f
 .
-displaystyle displaystyle frac partial 2 f partial x 2 f xx partial xx f partial x 2 f.
 Derivadas mistas de segunda ordem:
 2
 f
@@ -767,7 +712,6 @@ y
 x
 f
 .
-displaystyle displaystyle frac partial 2 f partial y , partial x frac partial partial y left( frac partial f partial x right) (f x ) y f xy partial yx f partial y partial x f.
 Derivadas parciais e mistas de ordem superior:
 i
 j
@@ -795,19 +739,12 @@ z
 k
 f
 .
-displaystyle displaystyle frac partial i j k f partial x i partial y j partial z k f (i,j,k) partial x i partial y j partial z k f.
-Ao lidar com funções de múltiplas variáveis, algumas destas variáveis podem estar relacionadas entre si, portanto pode ser necessário especificar explicitamente quais variáveis estão sendo mantidas constantes para evitar ambigüidade. Em campos como a mecânica estatística, a derivada parcial
 f
-displaystyle displaystyle f
 em relação a
 x
-displaystyle displaystyle x
-mantendo
 y
-displaystyle displaystyle y
 e
 z
-displaystyle displaystyle z
 contantes é freqüentemente expressa como
 (
 f
@@ -817,7 +754,6 @@ y
 ,
 z
 .
-displaystyle displaystyle left( frac partial f partial x right) y,z .
 Convencionalmente, para clareza e simplicidade da notação, a função derivada parcial e o valor da função em um ponto específico são conflacionados pela inclusão dos argumentos da função quando o símbolo da derivada parcial (notação Leibniz) é usado. Assim, uma expressão como
 f
 (
@@ -828,7 +764,6 @@ y
 z
 )
 x
-displaystyle displaystyle frac partial f(x,y,z) partial x
 é usado para a função, enquanto
 f
 (
@@ -839,7 +774,6 @@ v
 w
 )
 u
-displaystyle displaystyle frac partial f(u,v,w) partial u
 pode ser usado para o valor da função no ponto
 (
 x
@@ -855,7 +789,6 @@ v
 ,
 w
 )
-displaystyle displaystyle (x,y,z) (u,v,w)
 Entretanto, esta convenção se quebra quando queremos avaliar a derivada parcial em um ponto como
 (
 x
@@ -873,7 +806,6 @@ v
 v
 2
 )
-displaystyle displaystyle (x,y,z) (17,u v,v 2 )
 . Neste caso, a avaliação da função deve ser expressa de uma maneira pouco prática, como:
 f
 (
@@ -893,7 +825,6 @@ v
 v
 2
 )
-displaystyle displaystyle frac partial f(x,y,z) partial x (17,u v,v 2 )
 ou
 f
 (
@@ -920,11 +851,9 @@ v
 v
 2
 )
-displaystyle displaystyle left. frac partial f(x,y,z) partial x right (x,y,z) (17,u v,v 2 )
 a fim de utilizar a notação Leibniz. Assim, nestes casos, pode ser preferível usar a notação do operador diferencial Euler com
 D
 i
-displaystyle displaystyle D i
 como o símbolo derivado parcial em relação à
 i-ésima variável.
 Por exemplo, poderíamos escrever
@@ -940,18 +869,15 @@ v
 v
 2
 )
-displaystyle displaystyle D 1 f(17,u v,v 2 )
 para o exemplo descrito acima, enquanto a expressão
 D
 1
 f
-displaystyle displaystyle D 1 f
 representa a função derivada parcial em relação à 1a variável
 Para derivadas parciais de ordem superior, a derivada parcial (função) do estilo
 D
 i
 f
-displaystyle displaystyle D i f
 com relação à variável j é designada como
 D
 j
@@ -965,7 +891,6 @@ i
 ,
 j
 f
-displaystyle displaystyle D j (D i f) D i,j f
 . Ou seja,
 D
 j
@@ -975,7 +900,6 @@ D
 i
 ,
 j
-displaystyle displaystyle D j circ D i D i,j
 , para que as variáveis sejam listadas na ordem em que as derivadas são tomadas, e assim, em ordem inversa de como a composição dos operadores é normalmente anotada. Naturalmente, o teorema de Clairaut implica que
 D
 i
@@ -985,7 +909,6 @@ D
 j
 ,
 i
-displaystyle displaystyle D i,j D j,i
 desde que as condições de regularidade comparativamente suaves em f sejam satisfeitas.
 Existe um conceito para derivadas parciais que é análogo às antiderivadas para derivadas regulares. Dada uma derivada parcial, ela permite a recuperação parcial da função original.
 Considere o exemplo de
@@ -995,7 +918,6 @@ x
 x
 y
 .
-displaystyle displaystyle frac partial z partial x 2x y.
 A integral "parcial" pode ser tomada com respeito a x (tratando y como constante, de maneira semelhante à diferenciação parcial):
 z
 z
@@ -1010,10 +932,8 @@ g
 (
 y
 )
-displaystyle displaystyle z int frac partial z partial x ,dx x 2 xy g(y)
 Aqui, a constante de integração não é mais uma constante, mas uma função de todas as variáveis da função original, exceto x. A razão disso é que todas as outras variáveis são tratadas como constantes quando se toma a derivada parcial, portanto, qualquer função que não envolva
 x
-displaystyle displaystyle x
 desaparecerá quando se toma a derivada parcial, e temos que levar isso em conta quando tomamos o antiderivado. A forma mais geral de representar isto é ter a "constante" representando uma função desconhecida de todas as outras variáveis.
 Assim, o conjunto de funções
 x
@@ -1024,12 +944,10 @@ g
 (
 y
 )
-displaystyle displaystyle x 2 xy g(y)
 , onde g é qualquer função de um documento, representa o conjunto inteiro de funções nas variáveis x,y que poderiam ter produzido a derivada parcial
 2
 x
 y
-displaystyle displaystyle 2x y
 .
 Se todas as derivadas parciais de uma função são conhecidas (por exemplo, com o gradiente), então as antiderivadas podem ser combinadas através do processo acima para reconstruir a função original até uma constante. Ao contrário do caso de uma única variável, no entanto, nem todo conjunto de funções pode ser o conjunto de todas as (primeiras) derivadas parciais de uma única função. Em outras palavras, nem todos os campos vetoriais são conservativos.
 As derivadas parciais de segunda e maior ordem são definidas de forma análoga às derivadas de ordem superior de funções univariadas. Para a função
@@ -1043,7 +961,6 @@ y
 .
 .
 )
-displaystyle displaystyle f(x,y,...)
 a "própria" segunda derivada parcial com respeito a x é simplesmente a derivada parcial da derivada parcial (ambas com respeito a x)
 2
 f
@@ -1060,7 +977,6 @@ f
 x
 x
 .
-displaystyle displaystyle frac partial 2 f partial x 2 equiv partial frac partial f/ partial x partial x equiv frac partial f x partial x equiv f xx .
 A derivada parcial cruzada em relação a x e y é obtida tomando a derivada parcial de f em relação a x, e depois tomando a derivada parcial do resultado em relação a y, para obter
 2
 f
@@ -1077,7 +993,6 @@ f
 x
 y
 .
-displaystyle displaystyle frac partial 2 f partial y , partial x equiv partial frac partial f/ partial x partial y equiv frac partial f x partial y equiv f xy .
 O teorema de Schwarz afirma que se a segunda derivada é contínua, a expressão para a derivada parcial cruzada não é afetada por qual variável a derivada parcial é tomada em relação à primeira e qual é tomada em segundo lugar. Isto é, a segunda derivada,
 2
 f
@@ -1087,7 +1002,6 @@ y
 f
 y
 x
-displaystyle displaystyle frac partial 2 f partial x , partial y frac partial 2 f partial y , partial x
 ou equivalente
 f
 x
@@ -1096,5 +1010,4 @@ f
 y
 x
 .
-displaystyle displaystyle f xy f yx .
 Derivadas parciais próprias e cruzadas aparecem na matriz de Hessian que é usada em condições de segunda ordem em problemas de otimização.

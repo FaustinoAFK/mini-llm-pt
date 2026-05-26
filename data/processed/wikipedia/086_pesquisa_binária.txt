@@ -5,45 +5,35 @@ log
 2
 n
 )
-displaystyle Theta ( log 2 n)
 , em que
 n
-displaystyle n
 é o tamanho do vetor de busca. Apresenta-se mais eficiente que a Busca linear cuja ordem é
 O
 (
 n
 )
-displaystyle O(n)
 .
 Dado uma lista
 A
-displaystyle A
 de
 n
-displaystyle n
 elementos com os valores
 A
 0
-displaystyle A 0
 ,
 A
 1
-displaystyle A 1
 ,
 A
 2
-displaystyle A 2
 ,
 .
 .
 .
-displaystyle ...
 ,
 A
 n
 1
-displaystyle A n-1
 ordenada de tal modo que
 A
 0
@@ -57,78 +47,59 @@ A
 A
 n
 1
-displaystyle A 0 leq A 1 leq A 2 leq ... leq A n-1
 , e um valor para pesquisa
 T
-displaystyle T
 , a seguinte rotina usa pesquisa binária para achar o índice de
 T
-displaystyle T
 em
 A
-displaystyle A
 .
 Defina
 L
-displaystyle L
 para 0 e
 R
-displaystyle R
 para
 n
 1
-displaystyle n-1
 Se
 L
 R
-displaystyle L R
 a pesquisa termina sem sucesso
 Defina
 m
-displaystyle m
 (o índice do meio da lista) para
 L
 R
 2
-displaystyle frac L R 2
 arredondado
 Se
 A
 m
 T
-displaystyle A m T
 , defina
 L
-displaystyle L
 para
 m
 1
-displaystyle m 1
 e volte ao segundo passo
 Se
 A
 m
 T
-displaystyle A m T
 , defina
 R
-displaystyle R
 para
 m
 1
-displaystyle m-1
 e volte ao segundo passo.
 Se
 A
 m
 T
-displaystyle A m T
 , a pesquisa está feita, o índice de
 T
-displaystyle T
 é
 m
-displaystyle m
 Um pseudo-código recursivo para esse algoritmo, dados V o vetor com elementos comparáveis e e o elemento que se deseja encontrar:
 BUSCA-BINÁRIA(V[], início, fim, e)
 i recebe o índice do meio entre início e fim

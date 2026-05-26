@@ -1,4 +1,3 @@
-Lógica (do grego logos) tem dois significados principais: refere-se tanto ao uso do raciocínio em alguma atividade quanto ao estudo normativo e filosófico do raciocínio válido. No segundo sentido, é um campo dedicado à análise da validade dos argumentos, sendo estudado principalmente nas disciplinas de filosofia, matemática e ciência da computação. Ambos os sentidos têm foco comum referente a harmonia de raciocínio, a proporcionalidade formal entre argumentos.
 A lógica examina de forma genérica as formas e estruturas do pensamento, distinguindo argumentos válidos de falaciosos. Em filosofia, o estudo da lógica permeia áreas como metafísica, ontologia, epistemologia e ética. Na matemática, estudam-se as formas válidas de inferência de uma linguagem formal, enquanto na ciência da computação, constitui uma ferramenta essencial para a representação de conhecimento e raciocínio automatizado. Por fim, a lógica também é estudada na teoria da argumentação.
 A lógica foi estudada em várias civilizações da Antiguidade. Na Índia, a recursão silogística, Nyaya remonta há 1900 anos. Na China, o Moísmo e a Escola dos Nomes datam de há 2200 anos. Na Grécia Antiga a lógica foi estabelecida como disciplina por Aristóteles, em a sua obra Organon, ele dividiu a lógica em formal e material. O estudo da lógica era parte do Trivium clássico, juntamente com a gramática e a retórica (ver: Artes liberais).
 A lógica é frequentemente dividida em três partes: o raciocínio indutivo, o raciocínio abdutivo e o raciocínio dedutivo.
@@ -18,14 +17,11 @@ p
 1
 2
 3
-displaystyle p:1 2 3
 Esta declaração define que p é 1 2 3 e que isso é verdadeiro.
 Duas ou mais proposições podem ser combinadas por meio dos chamados operadores lógicos binários , formando conjunções, disjunções ou condicionais. Essas proposições combinadas são chamadas proposições compostas. Por exemplo:
 p: 1 1 2 e "Lógica é o estudo do raciocínio."
 E Neste caso, e é uma conjunção. As duas proposições podem diferir totalmente uma da outra!
-Na matemática e na ciência da computação, pode ser necessário enunciar uma proposição dependendo de variáveis:
 p: n é um inteiro ímpar.
-Essa proposição pode ser ou verdadeira ou falsa, a depender do valor assumido pela variável n.
 Uma fórmula com variáveis livres é chamada função proposicional com domínio de discurso D. Para formar uma proposição , devem ser usados quantificadores. "Para todo n", ou "para algum n" podem ser especificados por quantificadores: o quantificador universal, ou o quantificador existencial, respectivamente. Por exemplo:
 para todo n em D, P(n).
 Isto pode ser escrito como:
@@ -36,14 +32,11 @@ P
 (
 n
 )
-displaystyle forall n in D,P(n)
 Quando existem algumas variáveis livres, a situação padrão na análise matemática desde Weierstrass, as quantificações para todos ... então existe ou então existe ... isto para todos (e analogias mais complexas) podem ser expressadas.
 Trata da aplicação das operações do pensamento, e sua relação com fatos da realidade, segundo a matéria ou natureza do objeto a conhecer. Neste caso, a lógica é a própria metodologia de cada ciência. É, portanto, somente no campo da lógica material que se pode falar da verdade: o argumento é válido quando as premissas são verdadeiras e se relacionam adequadamente à conclusão.
 Lógica Matemática é o uso da lógica formal para estudar o raciocínio matemático ou, como propõe Alonzo Church, 'lógica tratada pelo método matemático' . No início do século XX, lógicos e filósofos tentaram provar que a matemática, ou parte da matemática, poderia ser reduzida à lógica.(Gottlob Frege, p.ex., tentou reduzir a aritmética à lógica; Bertrand Russell e Alfred North Whitehead, no clássico Principia Mathematica, tentaram reduzir toda a matemática então conhecida à lógica a chamada 'lógica de segunda ordem' ). Uma das suas doutrinas lógico-semânticas era que a descoberta da forma lógica de uma frase, na verdade, revela a forma adequada de dizê-la, ou revela alguma essência previamente escondida. Há um certo consenso que a redução falhou ou que precisaria de ajustes , assim como há um certo consenso de que a lógica ou alguma lógica é uma maneira precisa de representar o raciocínio matemático. Ciência que tem por objeto o estudo dos métodos e princípios que permitem distinguir raciocínios válidos de outros não válidos.
 A lógica estuda e sistematiza a argumentação válida. A lógica tornou-se uma disciplina praticamente autónoma em relação à filosofia, graças ao seu elevado grau de precisão e tecnicismo. Hoje em dia, é uma disciplina acadêmica que recorre a métodos matemáticos, e os lógicos contemporâneos têm em geral formação matemática. Todavia, a lógica elementar que se costuma estudar nos cursos de filosofia é tão básica como a aritmética elementar e não tem elementos matemáticos. A lógica elementar é usada como instrumento pela filosofia, para garantir a validade da argumentação.
 Quando a filosofia tem a lógica como objecto de estudo, entramos na área da filosofia da lógica, que estuda os fundamentos das teorias lógicas e os problemas não estritamente técnicos levantados pelas diferentes lógicas. Hoje em dia há muitas lógicas além da teoria clássica da dedução de Russell e Frege (como as lógicas livres, modais, temporais, paraconsistentes, difusas, intuicionistas, etc. ver: Lógica intuicionista), o que levanta novos problemas à filosofia da lógica.
-A filosofia da lógica distingue-se da lógica filosófica aristotélica, que não estuda problemas levantados por lógicas particulares, mas problemas filosóficos gerais, que se situam na intersecção da metafísica, da epistemologia e da lógica. São problemas centrais de grande abrangência, correspondendo à disciplina medieval conhecida por "Lógica Metafísica", e abrangendo uma parte dos temas presentes na própria Metafísica, de Aristóteles: a identidade de objetos, a natureza da Necessidade, a natureza da verdade, o conhecimento a prioridade, etc. Precisamente por ser uma "subdisciplina transdisciplinar", o domínio da lógica filosófica é ainda mais difuso do que o das outras disciplinas. Para agravar as incompreensões, alguns filósofos chamam "lógica filosófica" à filosofia da lógica (e vice-versa). Em qualquer caso, o importante é não pensar que a lógica filosófica é um gênero de lógica, a par da lógica clássica, mas "mais filosófica"; pelo contrário, e algo paradoxalmente, a lógica filosófica, não é uma lógica no sentido em que a lógica clássica é uma lógica, isto é, no sentido de uma articulação sistemática das regras da argumentação válida.
-A lógica informal estuda os aspectos da argumentação válida que não dependem exclusivamente da forma lógica. O tema introdutório mais comum no que respeita à lógica é a teoria clássica da dedução (lógica proposicional e de predicados, incluindo formalizações elementares da linguagem natural); a lógica aristotélica é por vezes ensinada, a nível universitário, como complemento histórico e não como alternativa à lógica clássica.» (Desidério Murcho)
 "Lógica", depois ela foi substituída pela invenção da Lógica Matemática. Relaciona-se com a elucidação de ideias como referência, previsão, identidade, verdade, quantificação, existência, e outras. A Lógica filosófica está muito mais preocupada com a conexão entre a Linguagem Natural e a Lógica.
 Gottlob Frege, em sua Conceitografia (Begriffsschrift), descobriu uma maneira de reordenar várias orações para tornar sua forma lógica clara, com a intenção de mostrar como as orações se relacionam em certos aspectos. Antes de Frege, a lógica formal não obteve sucesso além do nível da lógica de orações: ela podia representar a estrutura de orações compostas de outras orações, usando palavras como "e", "ou" e "não", mas não podia quebrar orações em partes menores. Não era possível mostrar como "Vacas são animais" leva a concluir que "Partes de vacas são partes de animais".
 A lógica de orações explica como funcionam palavras como "e", "mas", "ou", "não", "se-então", "se e somente se", e "nem-ou". Frege expandiu a lógica para incluir palavras como "todos", "alguns", e "nenhum". Ele mostrou como podemos introduzir variáveis e quantificadores para reorganizar orações.
@@ -60,7 +53,6 @@ M
 x
 )
 )
-displaystyle forall x(H(x) to M(x))
 "Alguns humanos são vegetarianos" se torna "Existe algum (ao menos um) x tal que x é humano e x é vegetariano", o que pode ser escrito simbolicamente como:
 :
 x
@@ -74,7 +66,6 @@ V
 x
 )
 )
-displaystyle exists x(H(x) wedge V(x))
 .
 Frege trata orações simples sem substantivos como predicados e aplica a eles to "dummy objects" (x). A estrutura lógica na discussão sobre objetos pode ser operada de acordo com as regras da lógica de orações, com alguns detalhes adicionais para adicionar e remover quantificadores. O trabalho de Frege foi um dos que deram início à lógica formal contemporânea.
 Frege adiciona à lógica de orações:
@@ -92,16 +83,10 @@ Nas décadas de 50 e 60, pesquisadores previram que quando o conhecimento humano
 Na lógica simbólica e lógica matemática, demonstrações feitas por humanos podem ser auxiliadas por computador. Usando prova automática de teoremas os computadores podem achar e verificar demonstrações, assim como trabalhar com demonstrações muito extensas.
 Na ciência da computação, a álgebra booleana é a base do projeto de hardware.
 De uma maneira geral, pode-se considerar que a lógica, tal como é usada na filosofia e na matemática, observa sempre os mesmos princípios básicos: a lei do terceiro excluído, a lei da não contradição e a lei da identidade. A esse tipo de lógica pode-se chamar "lógica clássica", ou "lógica aristotélica".
-Além desta lógica, existem outros tipos de lógica que podem ser mais apropriadas dependendo da circunstância onde são utilizadas. Podem ser divididas em dois tipos:
-Complementares da lógica clássica: além dos três princípios da lógica clássica, essas formas de lógica têm ainda outros princípios que as regem, estendendo o seu domínio. Alguns exemplos:
 Lógica modal: agrega à lógica clássica o princípio das possibilidades. Enquanto na lógica clássica existem orações como: "se amanhã chover, vou viajar", "minha avó é idosa e meu pai é jovem", na lógica modal as orações são formuladas como "é possível que eu viaje se não chover", "minha avó necessariamente é idosa e meu pai não pode ser jovem", etc.
-Lógica epistêmica: também chamada "lógica do conhecimento", agrega o princípio da certeza, ou da incerteza (ver: Indeterminismo). Alguns exemplos de oração: "pode ser que haja vida em outros planetas, mas não se pode provar", "é impossível a existência de gelo a 100 C", "não se pode saber se duendes existem ou não", etc.
 Lógica deôntica: forma de lógica vinculada à moral, agrega os princípios dos direitos, proibições e obrigações. É o sistema de lógica usado para indicar condutas e comportamentos, e que inclui as relações de poder entre indivíduos. Enquanto a lógica clássica trata do que "é ou não é", a lógica deôntica trata do que "se deve ou não fazer". As orações na lógica deôntica são da seguinte forma: "é proibido fumar mas é permitido beber", "se você é obrigado a pagar impostos, você é proibido de sonegar", etc.
 Lógica Temporal: Há situações em que os atributos de "Verdadeiro" e "Falso" não bastam, e é preciso determinar se algo é "Verdadeiro no período de tempo A", ou "Falso após o evento B". Para isso, é utilizado um sistema lógico específico que inclui novos operadores para tratar dessas situações.
 Anticlássicas: são formas de lógica que derrogam pelo menos um dos três princípios fundamentais da lógica clássica. Alguns exemplos incluem:
-Lógica paraconsistente: É uma forma de lógica onde não existe o princípio da contradição. Nesse tipo de lógica, tanto as orações afirmativas quanto as negativas podem ser falsas ou verdadeiras, dependendo do contexto. Uma das aplicações desse tipo de lógica é o estudo da semântica, especialmente em se tratando dos paradoxos. Um exemplo: "fulano é cego, mas vê". Pelo princípio da lógica clássica, o indivíduo que vê, um "não cego", não pode ser cego. Na lógica paraconsistente, ele pode ser cego para ver algumas coisas, e não cego para ver outras coisas.
-Lógica paracompleta: Esta lógica derroga o princípio do terceiro excluído, isto é, uma oração pode não ser totalmente verdadeira, nem totalmente falsa. Um exemplo de oração que pode ser assim classificada é: "fulano conhece a China". Se ele nunca esteve lá, essa oração não é verdadeira. Mas se mesmo nunca tendo estado lá ele estudou a história da China por livros, fez amigos chineses, viu muitas fotos da China, etc; essa oração também não é falsa.
-Lógica difusa: Mais conhecida como "lógica fuzzy", trabalha com o conceito de graus de pertinência. Assim como a lógica paracompleta, derroga o princípio do terceiro excluído, mas de maneira comparativa, valendo-se de um elemento chamado conjunto fuzzy. Enquanto na lógica clássica supõe-se verdadeira uma oração do tipo "se algo é quente, não é frio" e na lógica paracompleta pode ser verdadeira a oração "algo pode não ser quente nem frio", na lógica difusa poder-se-ia dizer: "algo é 30% quente, 25% morno e 45% frio". Esta lógica tem grande aplicação na informática e na estatística, sendo inclusive a base para indicadores como o coeficiente de Gini e o IDH.
 Lógica de base n: uma das forma de lógica de base n era um tipo de lógica difusa. No entanto podemos fazer enumerações de zero a n ou usar um alfabeto n-ário numa máquina de Turing, relacioná-las e com base nisso tirar vantagens. Esta lógica pode ainda relacionar-se com muitos assuntos em informática.
 Vejam alguns testes simples de lógica:
 1.Você está numa cela onde existem duas portas, cada uma vigiada por um guarda. Existe uma porta que dá para a liberdade, e outra para a morte. Você está livre para escolher a porta que quiser e por ela sair. Poderá fazer apenas uma pergunta a um dos dois guardas que vigiam as portas. Um dos guardas sempre fala a verdade, e o outro sempre mente e você não sabe quem é o mentiroso e quem fala a verdade. Que pergunta você faria?
@@ -109,19 +94,12 @@ Vejam alguns testes simples de lógica:
 3. Epiménides era um grego da cidade de Minos. Dizem que ele tinha a fama de mentir muito.
 Certa vez, ele citou esta passagem:
 Era uma vez um bode que disse:
-- Quando a mentira nunca é desvendada, quem está mentindo sou eu.
 Em seguida o leão disse:
 - Se o bode for um mentiroso, o que o dragão diz também é mentira.
 Por fim o dragão disse:
-- Quem for capaz de desvendar a minha mentira, então, ele estará dizendo a verdade.
 Qual deles está mentindo?
 Este teste é mais conhecido como paradoxo de Epiménides.
-1. Pergunte a qualquer um deles: Qual a porta que o seu companheiro apontaria como sendo a porta da liberdade?
-Explicação: O mentiroso apontaria a porta da morte como sendo a porta que o seu companheiro (o sincero) diria que é a porta da liberdade, já que se trata de uma mentira da afirmação do sincero. E o sincero, sabendo que seu companheiro sempre mente, diria que ele apontaria a porta da morte como sendo a porta da liberdade.
-Conclusão: os dois apontariam a porta da morte como sendo a porta que o seu companheiro diria ser a porta da liberdade. Portanto, é só seguir pela outra porta.
 Uma outra opção de resposta seria perguntar a qualquer um deles: A porta que está o guarda que diz a verdade é a porta da liberdade?
-Explicação: Se você perguntar ao verdadeiro e ele estiver na porta da liberdade dirá que "sim" e se você perguntar ao mentiroso e ele estiver na porta da liberdade também dirá que "sim" pois seria uma mentira já que a verdade seria que ele está na porta da liberdade. Se o guarda que diz a verdade responder "não" seria porque a porta da liberdade estaria com o mentiroso, ou seja a outra porta, e o mentiroso dizendo "não" é porque o verdadeiro estaria na porta da liberdade que também seria a porta oposta.
-Conclusão: Independente a qual guarda perguntar sempre saia pela mesma porta se a resposta for "sim", e saia pela outra porta se a resposta for "não".
 2. Afirme que você morrerá na fogueira.
 Explicação: Se você realmente morrer na fogueira, isto é uma verdade, então você deveria morrer afogado, mas se você for afogado a afirmação seria uma mentira, e você teria que morrer na fogueira.
 Conclusão: Mesmo que eles pudessem prever o futuro, cairiam neste impasse e você seria libertado.

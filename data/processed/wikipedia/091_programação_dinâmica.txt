@@ -24,12 +24,10 @@ n
 2
 )
 caso contrário
-displaystyle F(n) left lbrace begin matrix 1 text se n leq 1 F(n-1) F(n-2) text caso contrário end matrix right rbrace
 Quando implementada recursivamente sem maiores cuidados e sem memorização, a dupla chamada a F na segunda linha causa a necessidade da repetição de cálculos, que faz com que o tempo cresça exponencialmente.
 Para implementar em PD, têm-se os seguintes pseudocódigos:Esse primeiro irá inicializar as posições 1 e 2 com o valor 1 e o resto com “-1”. Esse primeiro algoritmo somente cria e inicializa o vetor, e ao final chama o algoritmo que de fato irá calcular os valores de Fibonacci:Este segundo algoritmo, a princípio, irá ir até à posição 1 e 2 e, então, somar o valor de ambas (1 1). Em segunda, o algoritmo recursivo irá adicionar esse valor ao valor da posição 3. Observe que, ao tentar calcular F[3], o algoritmo irá calcular F[1] e F[2], mas F[1] e F[2] já foram calculados, e a primeira linha do pseudocódigo verifica se F[n] já existe e, caso seja verdadeiro, irá somente retornar seu valor. Com isso, o tempo de execução será (n).
 Imaginemos o processo de multiplicação de
 n
-displaystyle n
 matrizes
 M
 M
@@ -39,7 +37,6 @@ M
 ...
 M
 n
-displaystyle M M 1 times M 2 times ldots times M n
 com dimensões
 m
 0
@@ -58,14 +55,12 @@ n
 1
 m
 n
-displaystyle m 0 times m 1 ,m 1 times m 2 , dotsc ,m n-1 times m n
 , respectivamente. O problema em essência é trivial, pois se multiplicarmos sequencialmente as matrizes obteremos facilmente o resultado esperado.
 É interessante lembrar que a multiplicação de matrizes não é comutativa (em geral,
 A
 B
 B
 A
-displaystyle A times B neq B times A
 ), mas associativa, o que significa que
 A
 (
@@ -77,22 +72,18 @@ A
 B
 )
 C
-displaystyle A times (B times C) (A times B) times C
 .
 O maior desafio que reside neste problema é, então, otimizar o desempenho do programa que o resolve, ou seja, aproveitar-se da propriedade associativa para encontrar a ordem ótima de se realizar a multiplicação das matrizes, de modo que o número de multiplicações escalares seja mínimo.
 Podemos observar que, em geral, multiplicar uma matriz
 m
 n
-displaystyle m times n
 por uma matriz
 n
 p
-displaystyle n times p
 exige
 m
 n
 p
-displaystyle m times n times p
 operações de multiplicação. As matrizes são multiplicadas aos pares.
 Multiplicar
 M
@@ -104,29 +95,23 @@ M
 3
 M
 4
-displaystyle M M 1 times M 2 times M 3 times M 4
 com dimensões
 200
 2
-displaystyle 200 times 2
 ,
 2
 30
-displaystyle 2 times 30
 ,
 30
 20
-displaystyle 30 times 20
 e
 20
 5
-displaystyle 20 times 5
 , respectivamente. Quantas multiplicações são realizadas nessa sequência?
 Vamos exemplificar algumas maneiras de realizarmos esta operação:
 Como podemos observar, a ordem da multiplicação faz uma grande diferença no tempo de execução final.
 Para resolver este problema, tudo que precisamos é saber qual o melhor índice
 k
-displaystyle k
 tal que
 M
 (
@@ -149,10 +134,8 @@ k
 M
 n
 )
-displaystyle M (M 1 times M 2 times ldots times M k ) times (M k 1 times M k 2 times ldots times M n )
 onde
 k
-displaystyle k
 varia de 1 até (n 1).
 Note que esse problema foi decomposto em dois subproblemas. Mais precisamente defina
 C
@@ -161,7 +144,6 @@ i
 ,
 j
 )
-displaystyle C(i,j)
 como o número mínimo de multiplicações (ou o custo mínimo) para realizar o produto
 M
 i
@@ -171,7 +153,6 @@ i
 ...
 M
 j
-displaystyle M i times M i 1 times ldots times M j
 .
 Portanto,
 C
@@ -203,11 +184,9 @@ m
 k
 m
 j
-displaystyle C(i,j) min left lbrace C(i,k) C(k 1,j) m i-1 m k m j right rbrace
 ,
 onde
 k
-displaystyle k
 varia de i até (j -1), fornece o custo mínimo de multiplicações. Daí, note que:
 C
 (
@@ -223,13 +202,10 @@ i
 ...
 M
 k
-displaystyle C(i,k) M i times M i 1 times ldots times M k
 é o número mínimo de operações para realizar de
 i
-displaystyle i
 até
 k
-displaystyle k
 ;
 C
 (
@@ -247,16 +223,13 @@ k
 ...
 M
 j
-displaystyle C(k 1,j) M k 1 times M k 2 times ldots times M j
 é o número mínimo de operações para realizar de
 (
 k
 1
 )
-displaystyle (k 1)
 até
 j
-displaystyle j
 ;
 m
 i
@@ -265,7 +238,6 @@ m
 k
 m
 j
-displaystyle m i-1 m k m j
 é o número mínimo de operações para realizar esse produto.
 Esta expressão constitui uma recorrência típica do método de programação dinâmica. Ela sugere um algoritmo recursivo, mas, uma implementação “bottom up” (de baixo para cima) é mais eficiente. Um algoritmo nesta fórmula tem os seguintes passos iterativos:
 Os
@@ -275,12 +247,10 @@ i
 ,
 i
 )
-displaystyle C(i,i)
 são calculados para
 1
 i
 n
-displaystyle 1 leq i leq n
 . Claramente,
 C
 (
@@ -289,7 +259,6 @@ i
 i
 )
 0
-displaystyle C(i,i) 0
 ;
 Os
 C
@@ -299,13 +268,11 @@ i
 i
 1
 )
-displaystyle C(i,i 1)
 são calculados para
 1
 i
 n
 1
-displaystyle 1 leq i leq n-1
 ;
 Os
 C
@@ -315,30 +282,23 @@ i
 i
 2
 )
-displaystyle C(i,i 2)
 são calculados para
 1
 i
 n
 2
-displaystyle 1 leq i leq n-2
 ; e assim por diante
 Assim, vamos aplicar o algoritmo acima para resolver o exemplo dado anteriormente. Observe que devemos calcular o custo mínimo na ordem crescente da diferença entre
 i
-displaystyle i
 e
 j
-displaystyle j
 . Então, no primeiro passo iterativo, a diferença entre
 i
-displaystyle i
 e
 j
-displaystyle j
 é zero, pois,
 i
 j
-displaystyle i j
 , o que implica:
 C
 (
@@ -365,7 +325,6 @@ C
 4
 )
 0
-displaystyle C(1,1) C(2,2) C(3,3) C(4,4) 0
 .
 No segundo passo, temos i - j 1, logo,
 C
@@ -379,7 +338,6 @@ M
 M
 2
 12000
-displaystyle C(1,2) M 1 times M 2 12000
 C
 (
 2
@@ -391,7 +349,6 @@ M
 M
 3
 1200
-displaystyle C(2,3) M 2 times M 3 1200
 C
 (
 3
@@ -403,10 +360,8 @@ M
 M
 4
 3000
-displaystyle C(3,4) M 3 times M 4 3000
 No terceiro passo, j - i 2 e com isso, o
 k
-displaystyle k
 varia de 1 a 2. Utilizando a fórmula recursiva:
 C
 (
@@ -437,7 +392,6 @@ m
 m
 3
 ;
-displaystyle C(1,3) min(C(1,1) C(2,3) m 0 m 1 m 3 ;
 C
 (
 1
@@ -467,7 +421,6 @@ n
 )
 Para
 k
-displaystyle k
 variando de 2 a 3 temos:
 C
 (
@@ -532,7 +485,6 @@ k
 2
 ,
 3
-displaystyle k 1,2,3
 .
 C
 (
@@ -626,14 +578,11 @@ M
 4
 )
 3.400
-displaystyle M M 1 times ((M 2 times M 3 ) times M 4 ) to 3.400
 operações.
 Tentar todas as ordens possíveis de multiplicações para avaliar o produto de
 n
-displaystyle n
 matrizes é um processo ordem exponencial em
 n
-displaystyle n
 .
 Usando programação dinâmica é possível resolver este problema na ordem polinomial, ou seja
 O
@@ -641,7 +590,6 @@ O
 n
 3
 )
-displaystyle O(n 3 )
 .
 Problema da Mochila
 Algoritmo guloso

@@ -1,15 +1,8 @@
-Aprendizado ou apredizagem por reforço (AR) é uma área interdisciplinar de aprendizado de máquina e controle ótimo que se preocupa com a forma como um agente inteligente deve tomar ações em um ambiente dinâmico para maximizar um sinal de recompensa. É um dos três paradigmas básicos de aprendizado de máquina, juntamente com o aprendizado supervisionado e o aprendizado não supervisionado.
-O Q-learning, em sua forma mais simples, armazena dados em tabelas. Essa abordagem se torna inviável à medida que o número de estados/ações aumenta (por exemplo, se o espaço de estados ou o espaço de ações fosse contínuo), pois a probabilidade do agente visitar um estado específico e executar uma ação específica diminui. O aprendizado por reforço difere do aprendizado supervisionado por não precisar que pares de entrada-saída rotulados sejam apresentados e por não precisar que ações subótimas sejam explicitamente corrigidas. Em vez disso, o foco está em encontrar um equilíbrio entre a exploração (de território desconhecido) e a exploração (do conhecimento atual) com o objetivo de maximizar a recompensa cumulativa (cujo feedback pode ser incompleto ou atrasado).
-O ambiente é normalmente declarado na forma de um processo de decisão de Markov (PDM), já que muitos algoritmos de aprendizagem por reforço usam técnicas de programação dinâmica. A principal diferença entre os métodos clássicos de programação dinâmica e os algoritmos de aprendizagem por reforço é que estes últimos não pressupõem o conhecimento de um modelo matemático exato do processo de decisão de Markov e têm como alvo grandes PDMs onde os métodos exatos se tornam inviáveis.
-Devido à sua generalidade, o aprendizado por reforço é estudado em muitas disciplinas, como teoria dos jogos, teoria de controle, pesquisa operacional, teoria da informação, otimização baseada em simulação, sistemas multiagente, inteligência de enxame e estatística. Na pesquisa operacional e na literatura de controle, o AR é chamado de programação dinâmica aproximada ou programação neuro-dinâmica. Os problemas de interesse em AR também são estudados na teoria de controle ótimo, que se preocupa principalmente com a existência e caracterização de soluções ótimas e algoritmos para seu cálculo exato, e menos com aprendizado ou aproximação (particularmente na ausência de um modelo matemático do ambiente).
-O aprendizado por reforço básico é modelado como um processo de decisão de Markov:
 Um conjunto de estados do ambiente e do agente (o espaço de estados),
 S
-displaystyle mathcal S
 ;
 Um conjunto de ações (o espaço de ações),
 A
-displaystyle mathcal A
 , do agente;
 P
 a
@@ -32,19 +25,14 @@ A
 t
 a
 )
-displaystyle P a (s,s') Pr(S t 1 s' mid S t s,A t a)
 , a probabilidade de transição (no tempo
 t
-displaystyle t
 ) de estado
 s
-displaystyle s
 para estado
 s
-displaystyle s'
 sob a ação
 a
-displaystyle a
 .
 R
 a
@@ -53,40 +41,29 @@ s
 ,
 s
 )
-displaystyle R a (s,s')
 , a recompensa imediata após a transição de
 s
-displaystyle s
 para
 s
-displaystyle s'
 sob a ação
 a
-displaystyle a
 .
-O objetivo do aprendizado por reforço é levar o agente a aprender uma política ótima (ou próxima do ótimo) que maximize a função de recompensa ou outro sinal de reforço fornecido pelo usuário, acumulado a partir de recompensas imediatas. Isso é semelhante a processos que parecem ocorrer na psicologia animal. Por exemplo, cérebros biológicos são programados para interpretar sinais como dor e fome como reforços negativos e interpretar prazer e consumo de alimentos como reforços positivos. Em algumas circunstâncias, animais aprendem a adotar comportamentos que otimizam essas recompensas, sugerindo que animais são capazes de aprendizado por reforço.
-Um agente básico de aprendizado por reforço interage com seu ambiente em passos de tempo discretos. A cada passo de tempo t, o agente recebe o estado atual
 S
 t
-displaystyle S t
 e a recompensa
 R
 t
-displaystyle R t
 . Em seguida, escolhe uma ação
 A
 t
-displaystyle A t
 dentre as ações disponíveis, que então é enviada ao ambiente. O ambiente passa para um novo estado
 S
 t
 1
-displaystyle S t 1
 e a recompensa
 R
 t
 1
-displaystyle R t 1
 associada à transição
 (
 S
@@ -99,8 +76,6 @@ S
 t
 1
 )
-displaystyle (S t ,A t ,S t 1 )
-é determinada. O objetivo de um agente de aprendizado por reforço é aprender uma política:
 :
 S
 A
@@ -109,7 +84,6 @@ A
 ,
 1
 ]
-displaystyle pi : mathcal S times mathcal A rightarrow [0,1]
 ,
 (
 s
@@ -125,31 +99,20 @@ S
 t
 s
 )
-displaystyle pi (s,a) Pr(A t a mid S t s)
 que maximize a recompensa acumulada esperada.
 Formular o problema como um processo de decisão de Markov pressupõe que o agente observa diretamente o estado atual do ambiente; nesse caso, diz-se que o problema tem observabilidade completa. Se o agente só tem acesso a um subconjunto de estados ou se os estados observados são corrompidos por ruído, o agente tem observabilidade parcial, e formalmente o problema deve ser definido como um processo de decisão de Markov parcialmente observável. Em ambos os casos, o conjunto de ações disponíveis ao agente pode ser restringido. Por exemplo, o estado de um saldo bancário pode ser restrito a ser positivo; se o valor atual do estado é 3 e a transição de estado tenta reduzir o valor em 4, essa transição não será permitida.
-Quando o desempenho do agente é comparado ao de um agente que atua de modo ótimo, a diferença de desempenho resulta no conceito de arrependimento (regret). Para agir de forma quase ótima, o agente deve raciocinar sobre as consequências de longo prazo de suas ações (isto é, maximizar recompensas futuras), embora a recompensa imediata associada possa ser negativa.
-Assim, o aprendizado por reforço é particularmente adequado para problemas que envolvem a troca entre recompensas de longo e curto prazo. Ele já foi aplicado com sucesso a diversos problemas, incluindo armazenamento de energia, controle de robôs, geradores fotovoltaicos, backgammon, damas, Go (AlphaGo) e sistemas de direção autônoma.
-Dois elementos tornam o aprendizado por reforço poderoso: o uso de amostras para otimizar desempenho e o uso de aproximação de função para lidar com ambientes grandes. Graças a esses dois componentes, o AR pode ser usado em ambientes grandes nas seguintes situações:
 Um modelo do ambiente é conhecido, mas não se dispõe de uma solução analítica;
 Somente um modelo de simulação do ambiente é fornecido (assunto de otimização baseada em simulação);
 A única forma de coletar informações sobre o ambiente é interagindo com ele.
-Os dois primeiros problemas poderiam ser considerados problemas de planejamento (já que algum tipo de modelo está disponível), enquanto o último poderia ser considerado realmente um problema de aprendizado. Entretanto, o aprendizado por reforço converte ambos os problemas de planejamento em problemas de aprendizado de máquina.
 A troca entre exploração e exploração foi estudada principalmente através do problema multi-armed bandit e para processos de decisão de Markov com espaço de estados finito em Burnetas e Katehakis (1997).
-O aprendizado por reforço exige mecanismos de exploração inteligentes; selecionar ações aleatoriamente, sem referência a uma distribuição de probabilidade estimada, apresenta baixo desempenho. O caso de processos de decisão de Markov finitos (pequenos) é relativamente bem compreendido. Entretanto, devido à falta de algoritmos que escalem bem com o número de estados (ou que escalem para problemas com espaço de estados infinito), métodos simples de exploração são os mais práticos.
 Um desses métodos é
-displaystyle varepsilon
 -ganancioso ( varepsilon-greedy), onde
 0
 1
-displaystyle 0 varepsilon 1
 é um parâmetro que controla a quantidade de exploração vs. exploração. Com probabilidade
 1
-displaystyle 1- varepsilon
 , escolhe-se a exploração, e o agente escolhe a ação que acredita ter o melhor efeito de longo prazo (desempates entre ações são escolhidos uniformemente ao acaso). Por outro lado, com probabilidade
-displaystyle varepsilon
 , a exploração é escolhida, e a ação é selecionada uniformemente ao acaso. Normalmente,
-displaystyle varepsilon
 é um parâmetro fixo, mas pode ser ajustado de acordo com um cronograma (levando o agente a explorar cada vez menos) ou adaptado com base em heurísticas.
 Mesmo desconsiderando a questão da exploração e assumindo que o estado é observável (assumido daqui em diante), o problema ainda é usar a experiência passada para descobrir quais ações levam a maiores recompensas acumuladas.
 A seleção de ação do agente é modelada como um mapeamento chamado política:
@@ -161,7 +124,6 @@ S
 ,
 1
 ]
-displaystyle pi : mathcal A times mathcal S rightarrow [0,1]
 (
 a
 ,
@@ -176,40 +138,30 @@ S
 t
 s
 )
-displaystyle pi (a,s) Pr(A t a mid S t s)
 O mapa de política fornece a probabilidade de realizar a ação
 a
-displaystyle a
 ao estar no estado
 s
-displaystyle s
 . Também existem políticas determinísticas
-displaystyle pi
 , para as quais
 (
 s
 )
-displaystyle pi (s)
 denota a ação que deve ser executada no estado
 s
-displaystyle s
 .
 A função de valor de estado
 V
 (
 s
 )
-displaystyle V pi (s)
 é definida como o retorno descontado esperado a partir do estado
 s
-displaystyle s
 , ou seja,
 S
 0
 s
-displaystyle S 0 s
 , seguindo sucessivamente a política
-displaystyle pi
 . Em termos gerais, a função de valor estima "o quão bom" é estar em um estado dado.
 V
 (
@@ -235,10 +187,8 @@ S
 s
 ]
 ,
-displaystyle V pi (s) operatorname mathbb E [G mid S 0 s] operatorname mathbb E left[ sum t 0 infty gamma t R t 1 mid S 0 s right],
 onde a variável aleatória
 G
-displaystyle G
 denota o retorno descontado, definido como a soma de recompensas futuras descontadas:
 G
 t
@@ -256,44 +206,34 @@ R
 3
 ...
 ,
-displaystyle G sum t 0 infty gamma t R t 1 R 1 gamma R 2 gamma 2 R 3 dots ,
 onde
 R
 t
 1
-displaystyle R t 1
 é a recompensa pela transição do estado
 S
 t
-displaystyle S t
 para
 S
 t
 1
-displaystyle S t 1
 , e
 0
 1
-displaystyle 0 leq gamma 1
 é a taxa de desconto.
-displaystyle gamma
 é menor que 1, de modo que recompensas distantes no futuro têm peso menor do que recompensas imediatas.
-O algoritmo deve encontrar uma política que maximize o retorno descontado esperado. A partir da teoria de processos de decisão de Markov, sabe-se que, sem perda de generalidade, a busca pode ser restringida ao conjunto de políticas chamadas estacionárias. Uma política é estacionária se a distribuição de ações retornada por ela depende apenas do último estado visitado (considerado o histórico de observações do agente). A busca pode ser ainda mais restringida a políticas determinísticas estacionárias. Uma política estacionária determinística seleciona ações de forma determinística com base no estado atual. Como toda política desse tipo pode ser identificada com um mapeamento do conjunto de estados para o conjunto de ações, nenhuma generalidade é perdida ao restringir a busca a esses mapeamentos.
 A abordagem de força bruta envolve dois passos:
 Para cada política possível, amostrar retornos enquanto a segue
 Escolher a política com o maior retorno descontado esperado
 Um problema é que o número de políticas pode ser muito grande, ou mesmo infinito. Outro é que a variância dos retornos pode ser grande, exigindo muitas amostras para estimar precisamente o retorno descontado de cada política.
 Esses problemas podem ser amenizados se assumirmos alguma estrutura e permitirmos que as amostras geradas a partir de uma política influenciem as estimativas feitas para outras. As duas abordagens principais para alcançar isso são estimação de função de valor e busca direta por política.
-Abordagens baseadas em função de valor tentam encontrar uma política que maximize o retorno descontado, mantendo um conjunto de estimativas de retornos descontados esperados
 E
 [
 G
 ]
-displaystyle operatorname mathbb E [G]
 para alguma política (geralmente a "atual" [on-policy] ou a ótima [off-policy]).
 Esses métodos se baseiam na teoria de processos de decisão de Markov, em que a otimalidade é definida de maneira mais forte do que a definição acima: Uma política é ótima se atinge o melhor retorno descontado esperado a partir de qualquer estado inicial (isto é, distribuições iniciais não influenciam essa definição). Novamente, uma política ótima sempre pode ser encontrada entre as políticas estacionárias.
 Para definir a otimalidade formalmente, define-se o valor de estado de uma política
-displaystyle pi
 por
 V
 (
@@ -306,29 +246,22 @@ s
 ,
 ]
 ,
-displaystyle V pi (s) operatorname mathbb E [G mid s, pi ],
 onde
 G
-displaystyle G
 representa o retorno descontado associado a seguir
-displaystyle pi
 a partir do estado inicial
 s
-displaystyle s
 . Definindo
 V
 (
 s
 )
-displaystyle V (s)
 como o valor de estado máximo possível de
 V
 (
 s
 )
-displaystyle V pi (s)
 , onde
-displaystyle pi
 pode mudar,
 V
 (
@@ -340,7 +273,6 @@ V
 s
 )
 .
-displaystyle V (s) max pi V pi (s).
 Uma política que atinge esses valores de estado ótimos em cada estado é chamada ótima. Claramente, uma política ótima nesse sentido também é ótima no sentido de que maximiza o retorno descontado esperado, pois
 V
 (
@@ -353,12 +285,9 @@ G
 s
 ,
 ]
-displaystyle V (s) max pi mathbb E [G mid s, pi ]
 , em que
 s
-displaystyle s
 é um estado amostrado aleatoriamente da distribuição
-displaystyle mu
 de estados iniciais (de modo que
 (
 s
@@ -369,25 +298,19 @@ S
 0
 s
 )
-displaystyle mu (s) Pr(S 0 s)
 ).
 Embora valores de estado sejam suficientes para definir a otimalidade, é útil definir valores de ação. Dado um estado
 s
-displaystyle s
 , uma ação
 a
-displaystyle a
 e uma política
-displaystyle pi
 , o valor de ação do par
 (
 s
 ,
 a
 )
-displaystyle (s,a)
 sob
-displaystyle pi
 é definido por
 Q
 (
@@ -404,42 +327,30 @@ a
 ,
 ]
 ,
-displaystyle Q pi (s,a) operatorname mathbb E [G mid s,a, pi ], ,
 onde
 G
-displaystyle G
 agora representa o retorno descontado associado a tomar primeiro a ação
 a
-displaystyle a
 no estado
 s
-displaystyle s
 e então seguir
-displaystyle pi
 dali em diante.
 A teoria de processos de decisão de Markov afirma que, se
-displaystyle pi
-é uma política ótima, podemos agir de forma ideal (tomar a ação ótima) escolhendo a ação de
 Q
 (
 s
 ,
 )
-displaystyle Q pi (s, cdot )
 com o maior valor de ação em cada estado
 s
-displaystyle s
 . A função de valor de ação dessa política ótima (
 Q
-displaystyle Q pi
 ) é chamada de função de valor de ação ótima e geralmente denotada por
 Q
-displaystyle Q
 . Em resumo, conhecer a função de valor de ação ótima basta para saber como agir de forma ótima.
 Assumindo conhecimento completo do processo de decisão de Markov, as duas abordagens básicas para calcular a função de valor de ação ótima são iteração de valor e iteração de política. Ambos os algoritmos calculam uma sequência de funções
 Q
 k
-displaystyle Q k
 (
 k
 0
@@ -449,41 +360,27 @@ k
 2
 ,
 ...
-displaystyle k 0,1,2, ldots
 ) que converge para
 Q
-displaystyle Q
-. Calcular essas funções envolve computar expectativas em todo o espaço de estados, o que é impraticável para a maioria dos processos de decisão de Markov (finitos, mas grandes). Em métodos de aprendizado por reforço, as expectativas são aproximadas por médias de amostras, e usam-se técnicas de aproximação de função para lidar com a necessidade de representar funções de valor em espaços grandes de estado-ação.
-Métodos de Monte Carlo são usados para resolver problemas de aprendizado por reforço por meio de médias de amostras de retornos. Diferentemente de métodos que exigem conhecimento completo da dinâmica do ambiente, os métodos de Monte Carlo dependem apenas de experiência real ou simulada sequências de estados, ações e recompensas obtidas da interação com um ambiente. Isso os torna aplicáveis em situações em que a dinâmica completa é desconhecida. Aprender a partir de experiência real não requer conhecimento prévio do ambiente e ainda pode levar a comportamento ótimo. Ao usar experiência simulada, só é necessário um modelo capaz de gerar transições de amostra, em vez de especificar completamente as probabilidades de transição, como exigido por métodos de programação dinâmica.
-Métodos de Monte Carlo se aplicam a tarefas episódicas, em que a experiência é dividida em episódios que terminam eventualmente. Atualizações da política e da função de valor ocorrem somente após a conclusão de um episódio, tornando esses métodos incrementais em nível de episódio, mas não passo a passo (online). O termo "Monte Carlo" em geral se refere a qualquer método envolvendo amostragem aleatória; contudo, neste contexto, refere-se especificamente a métodos que computam médias a partir de retornos completos, em vez de retornos parciais.
-Eles funcionam de forma semelhante aos algoritmos para bandits, em que retornos são promediados para cada par estado-ação. A diferença crucial é que ações tomadas em um estado afetam os retornos de estados subsequentes no mesmo episódio, tornando o problema não-estacionário. Para lidar com essa não-estacionaridade, métodos de Monte Carlo usam a estrutura de general policy iteration (GPI). Enquanto a programação dinâmica calcula funções de valor tendo conhecimento completo do MDP, métodos de Monte Carlo aprendem essas funções por meio de retornos de amostra. As funções de valor e políticas interagem de maneira semelhante à da programação dinâmica para alcançar otimalidade, primeiro resolvendo o problema de predição e depois estendendo para melhoria de política e controle, tudo baseado em experiência amostrada.
 O primeiro problema é corrigido permitindo que o procedimento mude a política (em alguns ou todos os estados) antes que os valores se estabilizem. Isso pode ser problemático, pois pode impedir a convergência. A maioria dos algoritmos atuais faz isso, dando origem à classe de algoritmos de generalized policy iteration. Muitos métodos ator-crítico pertencem a essa categoria.
 O segundo problema pode ser corrigido permitindo que trajetórias contribuam para qualquer par estado-ação nelas. Isso também pode ajudar em certa medida com o terceiro problema, embora uma solução melhor quando os retornos têm alta variância seja o uso de métodos de temporal difference (TD) de Sutton, que se baseiam na recursiva equação de Bellman. O cálculo em métodos TD pode ser incremental (quando, após cada transição, a memória é atualizada e a transição descartada) ou em lotes (quando as transições são agrupadas e as estimativas são computadas uma vez com base no lote). Métodos em lotes, como o método de mínimos quadrados em diferença temporal, podem usar melhor as informações das amostras, enquanto métodos incrementais são a única escolha quando métodos em lotes são inviáveis devido ao alto custo computacional ou de memória. Alguns métodos tentam combinar ambas as abordagens. Métodos baseados em diferenças temporais também superam o quarto problema.
-Outro problema específico de TD vem de sua dependência na equação de Bellman recursiva. A maioria dos métodos TD tem um parâmetro
-displaystyle lambda
 (
 0
 1
-displaystyle 0 leq lambda leq 1
-) que pode interpolar continuamente entre métodos de Monte Carlo que não dependem das equações de Bellman e os métodos TD básicos que dependem totalmente delas. Isso pode ser eficaz para atenuar esse problema.
 Para lidar com o quinto problema, são usados métodos de aproximação de função. A aproximação linear de função começa com um mapeamento
-displaystyle phi
 que atribui um vetor de dimensão finita a cada par estado-ação. Então, os valores de ação de um par
 (
 s
 ,
 a
 )
-displaystyle (s,a)
 são obtidos combinando linearmente os componentes de
 (
 s
 ,
 a
 )
-displaystyle phi (s,a)
 com certos pesos
-displaystyle theta
 :
 Q
 (
@@ -502,71 +399,42 @@ s
 a
 )
 .
-displaystyle Q(s,a) sum i 1 d theta i phi i (s,a).
 Os algoritmos, então, ajustam esses pesos, em vez de ajustar os valores associados a cada par estado-ação. Métodos baseados em ideias de estatística não paramétrica (que podem ser vistos como construindo suas próprias características) foram explorados.
 A iteração de valor também pode ser usada como ponto de partida, dando origem ao Q-learning e suas muitas variantes. Incluindo métodos de Deep Q-learning, quando uma rede neural é usada para representar Q, com várias aplicações em problemas de busca estocástica.
 O problema de usar valores de ação é que podem exigir estimativas altamente precisas de valores de ação concorrentes, o que pode ser difícil de obter quando os retornos são ruidosos, embora esse problema seja mitigado até certo ponto por métodos de diferença temporal. Usar o chamado método de aproximação de função compatível compromete a generalidade e a eficiência.
 Uma abordagem alternativa é buscar diretamente (em algum subconjunto) no espaço de políticas, caso em que o problema se torna um caso de otimização estocástica. Há duas abordagens disponíveis: métodos baseados em gradiente e métodos sem gradiente.
 Métodos baseados em gradiente (policy gradient methods) começam com um mapeamento de um espaço (de parâmetros) de dimensão finita para o espaço de políticas: dado o vetor de parâmetros
-displaystyle theta
 , seja
-displaystyle pi theta
 a política associada a
-displaystyle theta
 . Definindo a função de desempenho por
 (
 )
-displaystyle rho ( theta ) rho pi theta
 , sob condições suaves essa função será diferenciável como função do vetor
-displaystyle theta
 . Se o gradiente de
-displaystyle rho
 fosse conhecido, poderíamos usar ascenso de gradiente. Como não se dispõe de uma expressão analítica para o gradiente, apenas uma estimativa ruidosa está disponível. Essa estimativa pode ser construída de várias maneiras, dando origem a algoritmos como o método REINFORCE de Williams (conhecido como método de razão de verossimilhança na literatura de otimização baseada em simulação).
-Uma grande classe de métodos evita depender de informações de gradiente. Isso inclui simulated annealing, busca por entropia cruzada ou métodos de computação evolucionária. Muitos métodos sem gradiente podem, em teoria e no limite, alcançar um ótimo global.
-Métodos de busca por política podem convergir lentamente se os dados forem ruidosos. Por exemplo, isso ocorre em problemas episódicos quando as trajetórias são longas e a variância dos retornos é grande. Métodos baseados em função de valor que dependem de diferenças temporais podem ajudar nesse caso. Nos últimos anos, métodos ator-crítico foram propostos e tiveram bom desempenho em vários problemas.
 Métodos de busca por política têm sido usados no contexto de robótica. Muitos métodos de busca por política podem ficar presos em ótimos locais (pois se baseiam em busca local).
-Por fim, todos os métodos acima podem ser combinados com algoritmos que primeiro aprendem um modelo do processo de decisão de Markov, ou seja, a probabilidade de cada próximo estado, dada uma ação tomada a partir de um estado existente. Por exemplo, o algoritmo Dyna aprende um modelo a partir da experiência e o utiliza para fornecer mais transições modeladas para uma função de valor, além das transições reais. Em alguns casos, isso pode ser estendido para uso de modelos não paramétricos, como quando as transições são simplesmente armazenadas e "reexecutadas" para o algoritmo de aprendizado.
-Métodos baseados em modelo podem ser mais intensivos computacionalmente do que abordagens sem modelo, e sua utilidade pode ser limitada pelo grau em que o processo de decisão de Markov pode ser aprendido.
 Existem outras formas de usar modelos além de atualizar uma função de valor. Por exemplo, em controle preditivo baseado em modelo (MPC), o modelo é usado para ajustar o comportamento diretamente.
-Tanto o comportamento assintótico quanto o comportamento de amostra finita da maioria dos algoritmos são bem compreendidos. Existem algoritmos com bom desempenho online demonstrável (lidando com o problema de exploração).
-A exploração eficiente em processos de decisão de Markov é apresentada em Burnetas e Katehakis (1997). Limites de desempenho em tempo finito também apareceram para muitos algoritmos, mas espera-se que sejam pouco precisos, sendo necessário mais trabalho para compreender melhor as vantagens e limitações relativas.
 Para algoritmos incrementais, questões de convergência assintótica foram resolvidas. Algoritmos baseados em diferenças temporais convergem sob um conjunto mais amplo de condições do que era possível antes (por exemplo, quando usados com aproximação de função arbitrária e suave).
 Tópicos de pesquisa incluem:
 arquitetura ator-crítico
 arquitetura ator-crítico-cenário
 métodos adaptativos que funcionem com poucos (ou nenhuns) parâmetros em um grande número de condições
 detecção de bugs em projetos de software
-aprendizado contínuo
 combinações com estruturas baseadas em lógica
 exploração em processos de decisão de Markov grandes
 feedback humano
-interação entre aprendizado implícito e explícito na aquisição de habilidades
-motivação intrínseca que diferencia comportamentos de busca de informação (curiosidade) de comportamentos orientados por metas dependentes de tarefas
 avaliações empíricas em grande escala
 espaços de ação grandes (ou contínuos)
-aprendizado por reforço modular e hierárquico
-aprendizado por reforço multiagente/distribuído é um tópico de interesse. As aplicações estão se expandindo.
 controle centrado em ocupante
 otimização de recursos de computação
 informação parcial (por exemplo, usando representação de estado preditivo)
 função de recompensa baseada em maximizar informação nova
 planejamento baseado em amostragem (por exemplo, baseado em busca em árvore de Monte Carlo).
 negociação de títulos
-transferência de aprendizado
-aprendizagem TD modelando aprendizado baseado em dopamina no cérebro. Projeções dopaminérgicas da substantia nigra para o gânglio basal funcionam como o sinal de erro de predição.
 métodos de função de valor e busca por política
-A tabela a seguir lista os algoritmos principais para aprender uma política, dependendo de vários critérios:
 O algoritmo pode ser on-policy (realiza atualizações de política usando trajetórias amostradas via a política atual) (cf. Seção 5.4, p. 100 em ) ou off-policy.
 O espaço de ações pode ser discreto (por exemplo: "subir", "esquerda", "direita", "descer", "ficar parado") ou contínuo (por exemplo, mover o braço em determinado ângulo).
 O espaço de estados pode ser discreto (por exemplo, o agente pode estar numa célula de uma grade) ou contínuo (por exemplo, o agente pode estar em determinada posição no plano).
-Tarefas de aprendizado por reforço associativo combinam elementos de tarefas de autômatos de aprendizado estocástico e tarefas de classificação em aprendizado supervisionado. Em tarefas de aprendizado por reforço associativo, o sistema de aprendizado interage em loop fechado com seu ambiente.
-Essa abordagem estende o aprendizado por reforço usando uma rede neural profunda e sem projetar explicitamente o espaço de estados. O trabalho sobre aprender jogos de ATARI pelo Google DeepMind aumentou a atenção em aprendizado por reforço profundo ou aprendizado por reforço de ponta a ponta.
-Aprendizado por reforço profundo adversário é uma área de pesquisa ativa em aprendizado por reforço que se concentra em vulnerabilidades de políticas aprendidas. Nessa área, alguns estudos iniciais mostraram que políticas de aprendizado por reforço são suscetíveis a manipulações adversárias imperceptíveis. Embora alguns métodos tenham sido propostos para superar essas vulnerabilidades, em estudos mais recentes foi demonstrado que essas soluções propostas ainda estão longe de representar adequadamente as vulnerabilidades das políticas de aprendizado por reforço profundo.
-Ao introduzir inferência fuzzy no aprendizado por reforço, aproximar a função de valor estado-ação com regras fuzzy em espaço contínuo se torna possível. A forma IF - THEN das regras fuzzy torna essa abordagem adequada para expressar resultados em uma forma próxima à linguagem natural. Estender o FRL com Interpolação de Regras Fuzzy permite o uso de bases de regras fuzzy esparsas de tamanho reduzido para enfatizar regras cardinais (valores de estado-ação mais importantes).
-Em aprendizado por reforço inverso (IRL), nenhuma função de recompensa é dada. Em vez disso, a função de recompensa é inferida a partir de um comportamento observado de um especialista. A ideia é imitar o comportamento observado, que muitas vezes é ótimo ou próximo do ótimo. Um paradigma IRL popular é chamado máximo de entropia (MaxEnt IRL). O MaxEnt IRL estima os parâmetros de um modelo linear da função de recompensa maximizando a entropia da distribuição de probabilidade de trajetórias observadas, sujeita a restrições relacionadas ao ajuste das contagens de características esperadas. Recentemente, foi mostrado que o MaxEnt IRL é um caso particular de uma estrutura mais geral chamada random utility inverse reinforcement learning (RU-IRL). RU-IRL baseia-se na teoria da utilidade aleatória e em processos de decisão de Markov. Enquanto abordagens anteriores de IRL presumem que o comportamento aleatório aparente de um agente observado se deve a ele seguir uma política aleatória, o RU-IRL presume que o agente observado segue uma política determinística, mas a aleatoriedade no comportamento observado se deve ao fato de um observador ter acesso apenas parcial às características que o agente observado utiliza na tomada de decisão. A função de utilidade é modelada como uma variável aleatória para explicar a ignorância do observador a respeito das características que o agente observado realmente considera em sua função de utilidade.
-Aprendizado por reforço multiobjetivo (MORL) é uma forma de aprendizado por reforço que envolve alternativas em conflito. É distinta de otimização multiobjetivo pelo fato de lidar com agentes atuando em ambientes.
-Aprendizado por reforço seguro (safe reinforcement learning, SRL) pode ser definido como o processo de aprendizagem de políticas que maximizem a esperança do retorno em problemas nos quais é importante garantir desempenho razoável do sistema e/ou respeitar restrições de segurança durante o processo de aprendizagem e/ou implantação. Uma abordagem alternativa é o aprendizado por reforço avesso a risco, em que, em vez do retorno esperado, otimiza-se uma medida de risco do retorno, como o valor em risco condicional (CVaR). Além de mitigar risco, o objetivo CVaR aumenta a robustez a incertezas de modelo. No entanto, a otimização de CVaR em AR avesso a risco requer cuidado especial para evitar viés de gradiente e “cegueira ao sucesso”.
-Aprendizado por auto-reforço (ou self-learning) é um paradigma de aprendizagem que não utiliza o conceito de recompensa imediata
 R
 a
 (
@@ -574,17 +442,12 @@ s
 ,
 s
 )
-displaystyle R a (s,s')
 após a transição de
 s
-displaystyle s
 para
 s
-displaystyle s'
 com ação
 a
-displaystyle a
-. Ele não usa reforço externo, apenas o auto-reforço interno do agente. O auto-reforço interno é fornecido por um mecanismo de sentimentos e emoções. No processo de aprendizagem, as emoções são retropropagadas por um mecanismo de reforço secundário. A equação de aprendizado não inclui a recompensa imediata, apenas a avaliação do estado.
 O algoritmo de auto-reforço atualiza uma matriz de memória
 W
 w
@@ -593,28 +456,21 @@ a
 ,
 s
 )
-displaystyle W w(a,s)
-de modo que, em cada iteração, executa a seguinte rotina de aprendizado de máquina:
 Na situação
 s
-displaystyle s
 , executa a ação
 a
-displaystyle a
 .
 Recebe uma situação consequente
 s
-displaystyle s'
 .
 Calcula a avaliação do estado
 v
 (
 s
 )
-displaystyle v(s')
 , indicando quão bom é estar na situação consequente
 s
-displaystyle s'
 .
 Atualiza a memória cruzada
 w
@@ -633,20 +489,16 @@ v
 (
 s
 )
-displaystyle w'(a,s) w(a,s) v(s')
 .
 As condições iniciais da memória são fornecidas como entrada pelo ambiente genético. É um sistema com apenas uma entrada (situação) e apenas uma saída (ação ou comportamento).
-O auto-reforço (self-learning) foi introduzido em 1982 juntamente com uma rede neural capaz de aprendizado por auto-reforço, chamada Crossbar Adaptive Array (CAA). A CAA computa, de forma cruzada, tanto decisões sobre ações quanto emoções (sentimentos) sobre estados consequentes. O sistema é conduzido pela interação entre cognição e emoção.
 Comparar algoritmos de AR de maneira eficiente é essencial para pesquisa, implantação e monitoramento de sistemas de AR. Para comparar algoritmos diferentes em um determinado ambiente, pode-se treinar um agente para cada algoritmo. Como o desempenho é sensível a detalhes de implementação, todos os algoritmos devem ser implementados o mais próximo possível uns dos outros. Após o treinamento, os agentes podem ser executados em uma amostra de episódios de teste, e suas pontuações (retornos) podem ser comparadas. Como episódios costumam ser assumidos como i.i.d, métodos estatísticos padrão podem ser usados para teste de hipóteses, como Teste t e teste de permutação. Isso exige acumular todas as recompensas dentro de um episódio em um único número o retorno episódico. Contudo, isso causa perda de informação, pois diferentes passos de tempo são agregados, possivelmente com diferentes níveis de ruído. Sempre que o nível de ruído varia ao longo do episódio, o poder estatístico pode melhorar significativamente, ponderando as recompensas de acordo com seu nível de ruído estimado.
 Annaswamy, Anuradha M. (3 de maio de 2023). «Adaptive Control and Intersections with Reinforcement Learning». Annual Review of Control, Robotics, and Autonomous Systems (em inglês). 6 (1): 65 93. ISSN 2573-5144. doi:10.1146/annurev-control-062922-090153
 Auer, Peter; Jaksch, Thomas; Ortner, Ronald (2010). «Near-optimal regret bounds for reinforcement learning». Journal of Machine Learning Research. 11: 1563 1600
 Bertsekas, Dimitri P. (2023). REINFORCEMENT LEARNING AND OPTIMAL CONTROL 1st ed. [S.l.]: Athena Scientific. ISBN 978-1-886-52939-7
 Busoniu, Lucian; Babuska, Robert; De Schutter, Bart; Ernst, Damien (2010). Reinforcement Learning and Dynamic Programming using Function Approximators. [S.l.]: Taylor Francis CRC Press. ISBN 978-1-4398-2108-4
-François-Lavet, Vincent; Henderson, Peter; Islam, Riashat; Bellemare, Marc G.; Pineau, Joelle (2018). «An Introduction to Deep Reinforcement Learning». Foundations and Trends in Machine Learning. 11 (3 4): 219 354. Bibcode:2018arXiv181112560F. arXiv:1811.12560. doi:10.1561/2200000071
 Li, Shengbo Eben (2023). Reinforcement Learning for Sequential Decision and Optimal Control 1st ed. [S.l.]: Springer Verlag, Singapore. ISBN 978-9-811-97783-1. doi:10.1007/978-981-19-7784-8
 Powell, Warren (2011). Approximate dynamic programming: solving the curses of dimensionality. [S.l.]: Wiley-Interscience. Consultado em 8 de setembro de 2010. Arquivado do original em 31 de julho de 2016
 Sutton, Richard S. (1988). «Learning to predict by the method of temporal differences». Machine Learning. 3: 9 44. doi:10.1007/BF00115009
 Sutton, Richard S.; Barto, Andrew G. (2018). Reinforcement Learning: An Introduction 2nd ed. [S.l.]: MIT Press. ISBN 978-0-262-03924-6
 Szita, Istvan; Szepesvari, Csaba (2010). «Model-based Reinforcement Learning with Nearly Tight Exploration Complexity Bounds» (PDF). ICML 2010. Omnipress. pp. 1031 1038. Arquivado do original (PDF) em 14 de julho de 2010
-Dissecting Reinforcement Learning Série de postagens em blog sobre aprendizado por reforço com código em Python
 A (Long) Peek into Reinforcement Learning
