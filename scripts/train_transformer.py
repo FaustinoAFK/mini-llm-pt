@@ -14,7 +14,7 @@ from src.training_data import create_training_examples
 TRAIN_PATH = "data/splits/train.txt"
 VAL_PATH = "data/splits/val.txt"
 CHECKPOINT_PATH = "checkpoints/transformer.pt"
-BLOCK_SIZE = 32
+BLOCK_SIZE = 64
 BATCH_SIZE = 16
 EVAL_BATCH_SIZE = 16
 EVAL_NUM_BATCHES = 20
