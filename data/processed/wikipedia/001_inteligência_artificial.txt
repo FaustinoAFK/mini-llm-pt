@@ -1,0 +1,124 @@
+Inteligência artificial (abreviado IA) genericamente é a inteligência, o raciocínio e o aprendizado exibida por máquinas semelhante ao raciocino humano; busca desenvolver máquinas autônomas ou sistemas especialistas capazes de simular o pensamento humano e realizar várias tarefas complexas de forma independente. É o sistema que permite aos computadores executar funções avançadas, como a capacidade de analisar dados em grande escala e fazer previsões/recomendações; É um campo de pesquisa em ciência da computação que desenvolve e estuda métodos e softwares que permitem que as máquinas percebam seu ambiente e usem o aprendizado e a inteligência para tomar ações que maximizem suas chances de atingir objetivos definidos. A IA iniciou na década de 1950 com os pesquisadores Alan Turing e Herbert Simon baseado no conceito do filósofo grego Aristóteles. Em 1950, o matemático inglês Allan Turing escreveu sobre ser possível uma máquina pensar, e imitar o comportamento humano inteligente. Também esboçou uma proposta de pesquisa para tornar isto possível.
+Aplicações de IA incluem mecanismos avançados de busca na web (por exemplo, Google Search); sistemas de recomendação (usados pelo YouTube, Amazon e Netflix); assistentes virtuais (por exemplo, Google Assistant, Siri e Alexa ); veículos autônomos (por exemplo, Waymo); ferramentas generativas e criativas (por exemplo, ChatGPT, DeepSeek e AI art); e jogo e análise sobre-humanos em jogos de estratégia (por exemplo, xadrez e Go). No entanto, muitas aplicações de IA não são percebidas como IA porque já se tornaram comuns o suficiente no cotidiano das pessoas. Como por exemplo, o reconhecimento óptico de caracteres (OCR) que extrai o texto de imagens; transforma conteúdo não estruturado em dados estruturados com insights prontos para negócios; tradução de textos em idiomas estrangeiros e tradução de voz.
+A IA é um campo que abrange muitas disciplinas, como: ciência da computação, estatísticas, engenharia de hardware e de software, linguística, neurociência e, filosofia. Vários subcampos da pesquisa em IA são centrados em objetivos específicos e no uso de ferramentas específicas. Os objetivos tradicionais da pesquisa em IA incluem raciocínio, representação de conhecimento, planejamento, aprendizagem, processamento de linguagem natural, percepção e suporte à robótica. A inteligência geral — a capacidade de completar qualquer tarefa realizada por um humano em um nível pelo menos igual — está entre os objetivos de longo prazo do campo. Para atingir esses objetivos, os pesquisadores de IA adaptaram e integraram uma ampla gama de técnicas, incluindo otimização matemática e de busca, lógica formal, redes neurais artificiais e métodos baseados em estatística, pesquisa operacional e economia. A IA também se baseia na psicologia, linguística, filosofia, neurociência e em outros campos.
+A inteligência artificial foi fundada como disciplina acadêmica em 1956 e o campo passou por múltiplos ciclos de otimismo ao longo de sua história, seguidos por períodos de decepção e perda de financiamento. Os recursos e o interesse aumentaram enormemente após 2012, quando a aprendizagem profunda superou as técnicas de IA anteriores. Este crescimento acelerou ainda mais depois de 2017 e no início da década de 2020 muitos milhares de milhões de dólares estavam a ser investidos em IA e o campo experimentou um rápido progresso contínuo no que ficou conhecido como o boom da IA. O surgimento da IA generativa avançada e sua capacidade de criar e modificar conteúdo expôs diversas consequências e danos não intencionais no presente e levantou preocupações sobre os riscos da IA e seus efeitos de longo prazo no futuro, gerando discussões sobre políticas regulatórias para garantir a segurança e os benefícios da tecnologia.
+
+== História ==
+
+O interesse no desenvolvimento de máquinas autônomas capazes de simular o pensamento humano e de realizar varias tarefas cresceu vertiginosamente nas últimas décadas, da segunda metade do século XX, realizando assim os primeiros estudos sobre inteligência artificial (IA) a um propósito comum, a partir de iniciativas de cientistas de diversas áreas, como: psicologia, ciência cognitiva, ciência da computação e, robótica. Ferramentas eficientes em analisar problemas e oferecer soluções e planejamentos (tomada de decisão), automatização de tarefas no cotidiano das pessoas.
+Mas apesar dos estudos serem modernos, o conceito de inteligência artificial não é contemporâneo; Aristóteles (professor de Alexandre, o Grande) sonhava em substituir a mão-de-obra escrava por ferramentas autônomas, sendo esta possivelmente a primeira ideia de Inteligência Artificial relatada, que a ciência da computação exploraria muito tempo depois. O desenvolvimento dessa ideia ocorreu plenamente no século XX, principalmente na década de 1950, com pensadores como Allan Turing, Herbert Simon e, John McCarthy. Turing escreveu o artigo "Computing Machinery and InteIligence" sobre a possibilidade de uma máquina pensar e imitar o comportamento humano inteligente com tal perfeição, de forma que pudesse confundir ate um juiz humano. Turing também esboçou uma proposta de pesquisa para tornar possível. Inicialmente os teste em IA foram repletos de sucessos – porém limitados devido o desempenho reduzido dos primeiros computadores - oque causava surpresa, foi o fato de um computador realizar atividade remotamente inteligente.
+O sucesso inicial prosseguiu em 1957 com o General Problem Solver (GPS, Solucionador de problemas gerais) desenvolvido por Herbert Simon e Allen Newell, um programa foi projetado para imitar protocolos humanos de resolução de problemas. Dentro da classe limitada de quebra-cabeças com a qual podia lidar, verificou-se que a ordem em que os seres humanos abordavam os mesmos problemas. Desse modo, o GPS talvez tenha sido o primeiro programa a incorporar a abordagem de “pensar de forma humana”.
+Em 1961, a proposta de Turing voltou no artigo de Herbert Simon e Allen Newell no artigo "The Simulation of Human Thought" sobre o teste de uma teoria de resolução humana de problemas. Esta teoria tenta explicar alguns aspectos dos processos mentais responsáveis pela inteligencia humana, um projeto de estudos conhecido pelo nome de Projeto de Simulação Cognitiva.
+Atualmente, a IA abrange uma enorme variedade de subcampos. Dentre esses subcampos está o estudo de modelos conexionistas ou redes neurais. Uma rede neural pode ser vista como um modelo matemático simplificado do funcionamento do cérebro humano.
+
+=== Investigação na IA experimental ===
+A inteligência artificial começou como um campo experimental na década de 1950 com pioneiros como Allen Newell e Herbert Simon, que fundaram o primeiro laboratório de inteligência artificial na Universidade Carnegie Mellon, e McCarty que juntamente com Marvin Minsky, que fundaram o MIT AI Lab em 1959. Foram eles alguns dos participantes na famosa conferência de verão de 1956 em Darthmouth College.
+
+== Abordagens principais ==
+Existem duas abordagens principais para a criação de Sistemas de Inteligência Artificial: O Simbolismo e o Conexionismo.
+O Simbolismo ou IA Simbólica, propõe a representação de conhecimento por meio da manipulação de símbolos, isto é, na forma de estruturas construídas por seres humanos, normalmente baseadas em noções de Lógica. Ela teve grande impulso durante uma fase onde foram criados muitos Sistemas Especialistas, muitos deles baseados em Lógica de Primeira Ordem, implementados em Prolog, ou em linguagens de programação derivadas desta ou especializadas, como CLIPS. Normalmente programas desse tipo têm o conhecimento programado diretamente por seres humanos, o que levou a trabalhos de elicitação de conhecimento. Apesar do sucesso inicial dos Sistemas Especialistas, a grande dificuldade de levantar e registrar conhecimento a partir de humanos e o sucesso dos processos de aprendizado de máquina a partir de dados levou a dimimuição da importância dessa vertente.
+O Conexionismo ou IA Conexionista, se baseia em um modelo matemático inspirado no funcionamento dos neurônios, e depende do aprendizado de máquina baseado em grandes massas de dados para calibrar esse modelo, que normalmente começa com parâmetros aleatórios. Essa abordagem, apesar de proposta muito cedo, não encontrou computadores capazes de modelar problemas complexos, apesar de ter sucesso com problemas restritos de reconhecimento de padrão, o que só acontece a partir da década de 2010, com resultados extramemente fortes no final dessa década e no início da década de 2020, a partir de modelos contendo bilhões de parametros, como o GPT-3 e conceitos como Redes Neurais Profundas, Transformers, e Atenção.
+
+== Campo de estudo ==
+Os principais pesquisadores e livros didáticos definem o campo como "o estudo e projeto de agentes inteligentes", onde um agente inteligente é um sistema que percebe seu ambiente e toma atitudes que maximizam suas chances de sucesso. Andreas Kaplan e Michael Haenlein definem a inteligência artificial como “uma capacidade do sistema para interpretar corretamente dados externos, aprender a partir desses dados e utilizar essas aprendizagens para atingir objetivos e tarefas específicas através de adaptação flexível”. John McCarthy, quem cunhou o termo em 1956 ("numa conferência de especialistas celebrada em Darmouth Colege" Gubern, Román: O Eros Eletrónico), a define como "a ciência e engenharia de produzir sistemas inteligentes". É uma área de pesquisa da computação dedicada a buscar métodos ou dispositivos computacionais que possuam ou multipliquem a capacidade racional do ser humano de resolver problemas, pensar ou, de forma ampla, ser inteligente.
+Nas últimas décadas, o campo exoandiu-se para incluir subáreas como aprendizado de máquina, redes neurais artificiais, processamento de linguagem natural e visão computacional, com ênfase crescente em técnicas estatísticas, métodos conexionistas e abordagens híbridas que combinam modelos simbólicos e aprendizagem profunda.. Também pode ser definida como o ramo da ciência da computação que se ocupa do comportamento inteligente ou ainda, o estudo de como fazer os computadores realizarem coisas que, atualmente, os humanos fazem melhor.
+
+== Abordagens filosóficas ==
+Não existe uma teoria ou paradigma unificador que orienta a pesquisa de IA. Pesquisadores discordam sobre várias questões. Algumas das perguntas constantes mais longas que ficaram sem resposta são as seguintes: a inteligência artificial deve simular inteligência natural, estudando psicologia ou neurociência? Ou será que a biologia humana é tão irrelevante para a pesquisa de IA como a biologia das aves é para a engenharia aeronáutica? O comportamento inteligente pode ser descrito usando princípios simples e elegantes (como lógica ou otimização)? Ou ela necessariamente requer que se resolva um grande número de problemas completamente não relacionados? A inteligência pode ser reproduzida usando símbolos de alto nível, similares às palavras e ideias? Ou ela requer processamento "sub-simbólico"? John Haugeland, que cunhou o termo GOFAI (Good Old-Fashioned Artificial Intelligence - Boa Inteligência Artificial à Moda Antiga), também propôs que a IA deve ser mais apropriadamente chamada de inteligência sintética, um termo que já foi adotado por alguns pesquisadores não-GOFAI.
+
+== Tipos ==
+
+=== Tipo fraca ou inteligência artificial limitada (ANI) ===
+A IA tipo fraca, limitada, ou estreita (em inglês Narrow AI) são máquinas ou sistemas inteligentes que não fazem raciocínio; é limitada porque foi projetada para fazer uma tarefa específica, após ser treinado por um humano. Ou seja, não aprende de forma autônoma. Como por exemplo reconhecer comandos de voz e encontrar a rota mais rápida.
+
+=== Tipo forte ou inteligência artificial geral (AGI) ===
+A AGI possui a habilidade de compreender e adaptar-se a vários contextos (e desafios) de forma autônoma sem a necessidade de ser treinada; são máquinas com inteligência versátil semelhante à humana, aprende de forma autônoma.
+Embora a AGI busque replicar as ações e atitudes semelhante à humana em todos os domínios, ela continua sendo ainda teórica e possivelmente longe de ser implementada na realidade. As tecnologias atuais de IA ainda não atingiram o nível de generalização e flexibilidade para serem classificadas como AGI. Os futuristas dizendo que a AGI deve ser viável a partir de 2300.
+
+=== Tipo agêntica ===
+A IA agêntica (Agentic -AI) trabalha usando agentes de IA autônomos que executam tarefas interpretando o contexto e objetivo; esta toma decisões e executa ações de acordo com objetivos predefinidos semelhante a AGI. E permite a automação de fluxos de trabalho complexos de várias etapas em escala usando raciocínio (avalia as opções) e planejamento iterativo. Assim esta IA se otimiza automaticamente em tempo real sem intervenção humana constante.
+Agêntica vai além da capacidade de transformar dados em conhecimento, também transforma este conhecimento em ação sem intervenção humana constante. Embora mais avançada que a IA convencional, seu objetivo não é alcançar os recursos cognitivos da AGI, pois se concentra na automação autônoma de fluxos de trabalho complexos em contextos específicos.
+
+=== Superinteligência artificial (ASI) ===
+Considerada o futuro da IA (especulação), com a criação de máquinas com capacidade de tomar decisões e analisar dados de forma extremamente rápida, superando a IA forte.
+
+=== Tipo reativa ou reacionária ===
+Conseguem responder rapidamente as tarefas imediatas, mas não conseguem armazenar memória, não melhoraram sua funcionalidade com a experiência (não aprendem). Como por exemplo o mecanismo de recomendação da Netflix, que analisa o histórico do usuário para sugerir um filme/série.
+
+=== Aprendizado de máquina (Machine Learning) ===
+É um subcampo da inteligência artificial, na qual uma máquina aprende, ou seja, é ensinada a partir de algoritmos a realizar uma tarefa determinada, entendendo um padrão.
+
+=== Redes neurais artificiais ===
+Uma estrutura computacional inspirado na estrutura neural do ser humano para simular o cérebro humano, como por exemplo o algoritmo usado no buscador do Google; esta reconhece os termos pesquisados, busca os sinônimos e, assuntos relacionados para assim gerar melhores resultados.
+
+=== Teoria da mente em IA ===
+É um sistema inteligente com habilidade de interpretar as emoções de pessoas e animais. Um termo emprestado da psicologia, que é a habilidade dos humanos de ler as emoções dos outros e prever ações.
+
+=== Tipo autoconsciente ===
+Autoconsciente ou ponto de singularidade da IA ou, como defende a academia, senciência da IA, é um estágio hipotético da inteligência artificial em que as máquinas possuem autoconsciência. Um estágio além da teoria da mente e é um dos objetivos finais no desenvolvimento da IA.
+A investigação recente destaca também os impactos económicos e sociais associados a sistemas de IA avançados, incluindo a automatização de empregos, a concentração de poder tecnológico e riscos éticos ligados a uma eventual senciência. Estes fatores têm motivado debates académicos sobre regulação, governança e segurança no desenvolvimento da inteligência artificial.
+
+=== Processamento de linguagem natural (NLP) ===
+Permite que as máquinas/sistemas conversem com os humanos usando a linguagem humana, como por exemplo o uso da Alexa e da Siri. Os assistentes pessoais fazem parte da Inteligência Artificial Estreita (ANI), limitação da IA de executar um conjunto de tarefas específicas. Os sistemas de navegação fazem tarefas bem definidas, como encontrar a rota mais rápida de um ponto a outro.
+
+=== Visão computacional ===
+Faz analise e descreve imagens e vídeos, podendo reconhecer objetos e detectar movimentos, mapear um ambiente físico.
+
+=== Robótica autônoma ===
+São máquinas ou sistemas inteligentes usados na indústria , que possuem a capacidade de tomar decisões/fazer ações programadas a partir da coleta de informações do ambiente (como por exemplo a umidade e a temperatura). Capacidade de identificar objetos e capacidade de navegar em diferentes ambientes de forma autônoma, como por exemplo a Figure AI que está construindo robôs humanoides bípedes para trabalharem com os humanos.
+
+== IA forte e IA fraca ==
+Entre os pesquisadores da área de inteligência artificial existe um debate sobre os limites e possibilidades da tecnologia, frequentemente dividido entre duas posições conhecidas como inteligência artificial forte e inteligência artificial fraca.: uma conhecida como "forte" e outra conhecida como "fraca". A hipótese da inteligência artificial forte sustenta que é possível criar máquinas conscientes, capazes de replicar aspectos da mente humana, ou seja, afirma que os sistemas artificiais devem replicar a mentalidade humana.
+
+=== Inteligência artificial forte ===
+A investigação em Inteligência Artificial Forte aborda a criação da forma de inteligência baseada em computador que consiga raciocinar e resolver problemas; uma forma de IA forte é classificada como auto-consciente. A IA forte é tema bastante controverso, pois envolve temas como consciência e fortes problemas éticos ligados ao que fazer com uma entidade que seja cognitivamente indistinguível de seres humanos. A ficção científica tratou de muitos problemas desse tipo. Isaac Asimov, por exemplo, escreveu O Homem Bicentenário, onde um robô consciente e inteligente luta para possuir um status semelhante ao de um humano na sociedade. E Steven Spielberg dirigiu "A.I. Inteligência Artificial" onde um garoto-robô procura conquistar o amor de sua "mãe", procurando uma maneira de se tornar real. Por outro lado, o mesmo Asimov reduz os robôs a servos dos seres humanos ao propor as três leis da robótica. Stephen Hawking alertou sobre os perigos da inteligência artificial e considerou uma ameaça à sobrevivência da humanidade (ver: Rebelião das máquinas).
+
+=== Inteligência artificial fraca ===
+Trata-se da noção de como lidar com problemas não determinísticos. Uma contribuição prática de Alan Turing foi o que se chamou depois de Teste de Turing (TT), de 1950: em lugar de responder à pergunta "podem-se ter computadores inteligentes?" ele formulou seu teste, que se tornou praticamente o ponto de partida da pesquisa em "Inteligência Artificial".
+O teste consiste em se fazer perguntas a uma pessoa e um computador escondidos. Um computador e seus programas passam no TT se, pelas respostas, for impossível a alguém distinguir qual interlocutor é a máquina e qual é a pessoa. No seu artigo original ele fez a previsão de que até 2000 os computadores passariam seu teste.
+A inteligência artificial fraca centra a sua investigação na criação de inteligência artificial que não é capaz de verdadeiramente raciocinar e resolver problemas. Uma tal máquina com esta característica de inteligência agiria como se fosse inteligente, mas não tem autoconsciência ou noção de si. O teste clássico para aferição da inteligência em máquinas é o Teste de Turing.
+
+=== IA forte: críticas filosóficas e polêmicas ===
+
+Muitos filósofos, sobretudo John Searle e Hubert Dreyfus, inseriram no debate questões de ordem filosófica e epistemológica, questionando qualquer possibilidade efetiva da IA forte. Seriam falsos, assim, os próprios pressupostos da construção de uma inteligência ou consciência semelhante à humana em uma máquina.
+Searle é bastante conhecido por seu contra-argumento sobre o Quarto Chinês (ou Sala Chinesa), que inverte a questão colocada por Minsky a respeito do Teste de Turing. Seu argumento diz que ainda que uma máquina possa parecer falar chinês por meio de recursos de exame comparativo com mostras e tabelas de referência, binárias, isso não implica que tal máquina fale e entenda efetivamente a língua. Ou seja, demonstrar que uma máquina possa passar no Teste de Turing não necessariamente implica um ser consciente, tal como entendido em seu sentido humano. Dreyfus, em seu livro O que os computadores ainda não conseguem fazer: Uma crítica ao raciocínio artificial, argumenta que a consciência não pode ser adquirida por sistemas baseados em regras ou lógica; tampouco por sistemas que não façam parte de um corpo físico. No entanto, este último autor deixa aberta a possibilidade de um sistema robótico baseado em Redes Neuronais, ou em mecanismos semelhantes, alcançar a inteligência artificial.
+Mas já não seria a referida IA forte, mas sim um correlato bem mais próximo do que se entende por IA fraca. Os revezes que a acepção primeira de Inteligência Artificial vem levando nos últimos tempos contribuíram para a imediata relativização de todo seu legado. O papel de Marvin Minsky, figura proeminente do MIT e autor de Sociedade da Mente, fora central para a acepção de uma IA linear que imitaria com perfeição a mente humana, mas seu principal feito foi construir o primeiro computador baseado em redes neurais, conhecido como Snark.
+É argumentado também que a inteligência artificial ainda não é desenvolvida ao ponto de atuar como o cérebro humano, de forma criativa. Ademais, o cérebro humano ainda não é suficientemente compreendido. Portanto, a ideia de replicar funções do cérebro humano é atualmente intangível.
+A IA pode ser uma arma quando usada por pessoas mal-intencionadas, como por exemplo o uso da ferramenta deepfake para golpe. A criação destes sistemas podem gerar vazamento de dados ou acidentes com veículos autônomos.
+
+=== Impossibilidade de Simulação Qualitativa ===
+Foi provado que um simulador qualitativo, completo e robusto não pode existir, ou seja, desde que o vocabulário entrada-saída seja usado (como num algoritmo QSIM), haverá sempre modelos de entrada que causam predições erradas na sua saída. Por exemplo, a noção de infinito é impossível ser tida por uma máquina finita (computador ou neurónios se produzirem apenas um número finito de resultados num número finito de tempo). Neste caso é um simples paradoxo matemático, porque são em número finito as combinações saídas de qualquer conjunto finito. Se a noção de infinito pudesse ser obtida por uma certa combinação finita, isso significaria que o infinito seria equivalente a essa sequência finita, o que é obviamente uma contradição. Por isso, o infinito e outras noções abstratas têm que ser pré-adquiridas numa máquina finita, não são aí programáveis.
+
+== Aplicações ==
+
+== Ética ==
+
+=== Riscos socioeconômicos ===
+
+A adoção generalizada da inteligência artificial levanta preocupações quanto ao seu impacto no emprego e na distribuição de riqueza. Vários estudos recentes indicam que a automação de tarefas cognitivas e rotineiras pode levar ao deslocamento de trabalhadores em setores como transporte, serviços financeiros, atendimento ao cliente entre outros.
+Entre as funções com maior probabilidade de extinção, a literatura destaca tarefas como produção de conteúdo padronizado, atendimento e vendas roteirizadas, backoffice administrativo, contabilidade simples, análise repetitiva de risco, programação elementar, design baseadado em modelos, mediação transacional, formação padronizada, suporte técnico básico, revisão e formatação textual, pesquisa documental simples, edição de imagem para comércio eletrónico e até memdo o comércio electrónico na parte da fixação de preços, descrições automáticas de produtos, relatórios de gestão recorrentes, prospeção de leads genéricos, curadoria de catálogos e auditorias baseadas em listas de verificação.
+A concentração de capacidades tecnológicas em poucas empresas e países também é alvo de debate, dado o risco de aprofundar desigualdades económicas e sociais.
+Estas questões têm impulsionado propostas para políticas de requalificação profissional, regulação de algoritmos e desenvolvimento ético da IA, de modo a equilibrar eficiência tecnológica e justiça social.
+No âmbito da normalização técnica internacional, a Organização Internacional de Normalização publicou em dezembro de 2023 a ISO/IEC 42001, primeira norma para Sistemas de Gestão de Inteligência Artificial (SGAI). Ela estabelece requisitos para que organizações desenvolvam, implantem e operem sistemas de IA de forma responsável e rastreável, sendo adotada no Brasil como ABNT NBR ISO/IEC 42001:2024.
+
+== Ver também ==
+Ablação (inteligência artificial)
+Alinhamento da inteligência artificial
+Lista de projetos de inteligência artificial
+Segurança da inteligência artificial
+OpenAI
+OpenAI Codex
+Realidade simulada
+Robocode
+Transferência de energia sem fio
+ISO/IEC 42001
+
+== Referências ==
+
+=== Bibliografia ===
+
+== Ligações externas ==
+
+«Programa do governo para defender suas questões». (em português)
+«American Association for Artificial Intelligence» (em inglês)
+História da IA no YouTube

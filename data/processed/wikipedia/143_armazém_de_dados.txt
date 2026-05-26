@@ -1,0 +1,98 @@
+Armazém de dados, ou ainda depósito de dados, é utilizado para armazenar informações relativas às atividades de uma organização em bancos de dados, de forma consolidada. O desenho da base de dados favorece os relatórios, a análise de grandes volumes de dados e a obtenção de informações estratégicas que podem facilitar a tomada de decisão.
+O data warehouse possibilita a análise de grandes volumes de dados, coletados dos sistemas transacionais (OLTP). São as chamadas séries históricas que possibilitam uma melhor análise de eventos passados, oferecendo suporte às tomadas de decisões presentes e a previsão de eventos futuros. Por definição, os dados em um data warehouse não são voláteis, ou seja, eles não mudam, salvo quando é necessário fazer correções de dados previamente carregados. Os dados estão disponíveis somente para leitura e não podem ser alterados.
+A ferramenta mais popular para exploração de um data warehouse é a Online Analytical Processing OLAP ou Processo Analítico em Tempo Real, mas muitas outras podem ser usadas.
+Os data warehouse surgiram como conceito acadêmico na década de 80. Com o amadurecimento dos sistemas de informação empresariais, as necessidades de análise dos dados cresceram paralelamente. Os sistemas OLTP não conseguiam cumprir a tarefa de análise com a simples geração de relatórios. Nesse contexto, a implementação do data warehouse passou a se tornar realidade nas grandes corporações. O mercado de ferramentas de data warehouse, que faz parte do mercado de Business Intelligence, cresceu então, e ferramentas melhores e mais sofisticadas foram desenvolvidas para apoiar a estrutura do data warehouse e sua utilização.
+Atualmente, por sua capacidade de sumarizar e analisar grandes volumes de dados,o data warehouse é o núcleo dos sistemas de informações gerenciais e apoio à decisão das principais soluções de business intelligence do mercado.
+Data Warehouse, pode ser definido como um Banco de Dados especializado, o qual gerencia o fluxo de informações a partir dos bancos de dados corporativos e fontes de dados externas à empresa. Ele é construído para que os dados possam ser armazenados e acessados de forma que não seja limitados por tabelas e linhas, sua função é tornar as informações acessíveis para o seu entendimento, gerenciamento e uso.
+
+== Vantagens ==
+Simplicidade, qualidade de dados, acesso rápido, facilidade de uso, separa as operações de decisão das operações de produção, vantagem competitiva, custo de operação, administração do fluxo da informação, habilita o processo paralelo, infra-estrutura computacional, valores quantitativos e segurança.
+
+== Desvantagens ==
+Complexidade de desenvolvimento, tempo de desenvolvimento, alto custo de desenvolvimento, administração e treinamento.
+
+== Arquitetura data warehouse ==
+
+=== O armazenamento ===
+O armazenamento se dá num depósito único, que seja de rápido acesso para as análises. Tal armazenamento conterá dados históricos advindos de bancos de dados transacionais que servem como backend de sistemas como ERPs e CRMs. Quanto mais dados do histórico das operações da empresa, melhor será para que a análise destas informações reflita o momento da empresa.
+
+=== Modelagem multidimensional ===
+Os sistemas de base de dados tradicionais utilizam a normalização do formato de dados para garantir consistência dos dados, minimização do espaço de armazenamento necessário e diminuição (redução) de redundâncias, que devem ser verificadas antes da conclusão do modelo de dados. Entretanto, algumas transações e consultas em bases de dados normalizadas podem se tornar lentas devido às operações de junção entre tabelas (JOIN).
+Um data warehouse utiliza dados em formato de-normalizados. Isto aumenta o desempenho das consultas e como benefício adicional, o processo torna-se mais intuitivo para os utilizadores comuns. Essa maneira de reordenar os dados chama-se Modelagem Dimensional, e o resultado da modelagem é o Modelo Dimensional, ou MD.
+
+== Metadado ==
+O conceito metadado é considerado como sendo os "dados sobre dados", isto é, os dados sobre os sistemas que operam com estes dados. Um repositório de metadados é uma ferramenta essencial para o gerenciamento de um Data Warehouse no momento de converter dados em informações para o negócio. Entre outras coisas, um repositório de metadados bem construído deve conter informações sobre a origem dos dados, regras de transformação, nomes e alias, formatos de dados, etc. Ou seja, esse "dicionário" deve conter muito mais do que as descrições de colunas e tabelas: deve conter informações que adicionem valor aos dados.
+Tipo de informação considerada metadado
+Os metadados são utilizados normalmente como um dicionário de informações e, sendo assim, devem incluir:
+
+origem dos dados - todo elemento de dado precisa de identificação, sua origem ou o processo que o gera; esta identificação é muito importante no caso da necessidade de saber informações sobre a fonte geradora do dado; esta informação deve ser única, ou seja, cada dado deve ter uma e somente uma fonte de origem;
+fluxo de dados - todo elemento de dado precisa ter identificado os fluxos nos quais sofre transformações; é importante saber que dados servem de base para que processos sejam executados;
+formato dos dados - todo elemento de dados deve ter identificado seu tamanho e tipo de dado;
+nomes e alias - todo elemento de dados deve ser identificado por um nome; este nome pode ser da área de negócios ou um nome técnico; no caso de serem usados alias para os nomes, pode-se ter os dois; devem existir padrões para criação de nomes e alias (ex.: convenções para abreviações), evitando assim ambiguidades;
+definições de negócio - estas definições são as informações mais importantes contidas nos metadados; cada elemento de dado deve ser suportado por uma definição do mesmo no contexto da área de negócio; o método de manutenção destas informações também deve ser muito consistente, de forma que o usuário possa obter facilmente definições para as informações desejadas; nestas definições devem ser evitadas referências a outros metadados que necessitem de uma segunda pesquisa para melhor entendimento;
+regras de transformação - são consideradas como sendo as regras de negócio codificadas; estas regras são geradas no momento da extração, limpeza e agrupamento dos dados dos sistemas operacionais; cada regra de transformação codificada deve estar associada a um elemento de metadado; se mais de uma aplicação contiver a mesma regra de transformação, deverá ser garantido que estas sejam idênticas;
+atualização de dados - o histórico das atualizações normalmente é mantido pelo próprio banco de dados, mas definir um elemento de metadado, indicando as datas de atualização dos dados, pode ajudar o usuário no momento de verificar a atualidade dos dados e a consistência da dimensão tempo do data warehouse;
+requisitos de teste - identifica os critérios de julgamento de cada elemento de dado; valores possíveis e intervalos de atuação; deve conter também padrões para procedimentos de teste destes dados;
+indicadores de qualidade de dados - podem ser criados índices de qualidade baseados na origem do dado, número de processamentos feito sobre este dado, valores atômicos X valores sumariados, nível de utilização do dado, etc;
+triggers automáticos - podem existir processos automáticos associados aos metadados definidos; estes processos ou triggers devem estar definidos de forma que possam ser consultados por usuário e desenvolvedores, para que os mesmos não venham a criar situações conflitantes entre as regras definidas nestes processos;
+responsabilidade sobre informações - deve ser identificado o responsável por cada elemento de dados do data warehouse e também o responsável pela entrada de metadados;
+acesso e segurança - os metadados devem conter informação suficiente para que sejam determinados os perfis de acesso aos dados; deve-se poder identificar que usuários podem ler, atualizar, excluir ou inserir dados na base; deve haver, também, informações sobre quem gerencia estes perfis de acesso e como se fazer contato com o administrador da base de dados.
+Data marts
+O data warehouse é normalmente acessado através de data marts, que são pontos específicos de acesso a subconjuntos do data warehouse. Os data marts são construídos para responder prováveis perguntas de um tipo específico de usuário. Por exemplo: um data mart financeiro poderia armazenar informações consolidadas dia a dia para um usuário gerencial e em periodicidades maiores (semana, mês, ano) para um usuário no nível da diretoria. Um data mart pode ser composto por um ou mais cubos de dados.
+Hoje em dia, os conceitos de data warehouse e data mart fazem parte de um conceito muito maior chamado de Corporate Performance Management.
+
+== Extração de dados ==
+Os dados introduzidos num data warehouse geralmente passam por uma área conhecida como área de stage. O stage de dados ocorre quando existem processos periódicos de leitura de dados de fontes como sistemas OLTP. Os dados podem passar então por um processo de qualidade, de normalização e gravação dos dados no data warehouse. Esse processo geralmente é realizado por ferramentas ETL e outras ferramentas.
+
+== Ferramentas ==
+
+=== OLTP ===
+Sistemas OLTP (do inglês, Online Transaction Processing): são sistemas que têm a tarefa de monitorar e processar as funções básicas e rotineiras de uma organização, tais como processamento da folha de pagamento, faturamento, estoque, etc.
+Os fatores críticos de sucesso para este tipo de sistema são: alto grau de precisão, integridade a nível transacional e produção de documentos em tempo hábil.
+Os dados transacionais OLTP são usados pelos usuários em geral no dia-a-dia em seus processos e transações, gravação e leitura.Ex: consulta de estoque, registro de vendas.
+O principal objetivo da modelagem relacional em um sistema OLTP é eliminar ao máximo a redundância, de tal forma que uma transação que promova mudanças no estado do banco de dados, atue o mais pontualmente possível. Com isso, nas metodologias de projeto usuais, os dados são fragmentados por diversas tabelas (normalizados), o que traz uma considerável complexidade à formulação de uma consulta por um usuário final. Por isso, esta abordagem não parece ser a mais adequada para o projeto de um data warehouse, onde estruturas mais simples, com menor grau de normalização devem ser buscadas. (KIMBALL,2002).
+
+=== OLAP ===
+As ferramentas OLAP (do inglês, Online Analytical Processing) são geralmente desenvolvidas para trabalhar com banco de dados normalizados,embora existam ferramentas que trabalham com esquemas especiais de armazenamento, com dados (informações) normalizados.
+Essas ferramentas são capazes de navegar pelos dados de um Data Warehouse, possuindo uma estrutura adequada tanto para a realização de pesquisas como para a apresentação de informações.
+Nas ferramentas de navegação OLAP, é possível navegar entre diferentes níveis de granularidades (detalhamento) de um cubo de dados. Através de um processo chamado Drill o usuário pode diminuir (Drill up) ou aumentar (Drill down) o nível de detalhamento dos dados. Por exemplo, se um relatório estiver consolidado por países, fazendo um Drill down, os dados passarão a ser apresentados por estados, cidades, bairros e assim sucessivamente até o maior nível de detalhamento possível. O processo contrário, o Drill up, faz com que os dados sejam consolidados em níveis superiores de informação.
+Outra possibilidade apresentada pela maioria das ferramentas de navegação OLAP é o recurso chamado Slice and dice. Esse recurso é usado para criar visões dos dados por meio de sua reorganização, de forma que eles possam ser examinados sob diferentes perspectivas.
+O uso de recursos para manipular, formatar e apresentar os dados de modo rápido e flexível é um dos pontos fortes de um data warehouse. Essa característica faz com que a apresentação de relatórios na tela seja mais comum do que imprimi-los. Além disso, o usuário tem liberdade para examinar as informações que quiser de diversas maneiras e, ao final, pode imprimir e até mesmo salvar as visões mais importantes para uma futura consulta.
+
+=== Data mining ===
+Data mining, ou mineração de dados, é o processo de descoberta de padrões existentes em grandes massas de dados. Apesar de existirem ferramentas que ajudam na execução do processo, o data mining não tem automatização simples (muitos discutem se é sequer factível) e precisa ser conduzido por uma pessoa, preferencialmente com formação em Estatística ou áreas afins. O data mining diferentemente do OLAP, fornece informações de dados corporativos ocultos em grandes bancos de dados,podendo prever comportamentos futuros, se tornando uma importante ferramenta para tomada de decisão dos gestores. Os tipos de informações obtidos com o data mining abrangem associações, sequências, classificações, aglomerações e prognósticos.
+
+=== BI ===
+BI, É um meio de traduzir dados em conhecimento. Coleta-se informações de bases operacionais, armazena-se isso de forma modelada e depois realiza-se consultas através de ferramentas para prover informações que traduzam em vantagem competitiva, onde diversas ferramentas e metodologias são empregadas.
+
+== Exemplo teórico ==
+Um site de vendas quer que o seu cliente, ao entrar no site, veja produtos similares aos que ele já havia comprado ou olhado.
+Então ele deverá armazenar a trajetória do cliente pelo site para que consiga traçar o perfil do cliente.
+
+== Notas ==
+
+== Referências ==
+
+Kimball, Ross. "The Data Warehouse Toolkit: The Complete Guide to Dimensional Modeling (Second Edition)", Wiley, 2002. ISBN 0471200247.
+Kimball, et al. "The Data Warehouse Lifecycle Toolkit", Wiley, 1998. ISBN 0471255475.
+Kimball, Caserta. "The Data Warehouse ETL Toolkit", Wiley. 2004. ISBN 0764567578.
+Oliveira, Wilson Jose. "Data Warehouse", 2002, Ed. Bookstore Livraria Ltda.
+
+== Ver também ==
+Sistemas de informação
+Banco de Dados
+Business intelligence
+OLAP
+Arquitetura de dados
+Administração de dados
+Modelagem de dados
+Apache Hive
+Data mining
+Ciência da Computação
+Planejamento de recursos empresariais ou ERP
+Formas de armazenamento de dados
+
+== Ligações externas ==
+Implementação de Data Warehouse para Pequenas Empresas: Estudo de Caso para o Setor de Distribuição de Medicamentos
+[1] Uma definição Live de DW Data Warehouse
+[2] Curso de Data Warehouse

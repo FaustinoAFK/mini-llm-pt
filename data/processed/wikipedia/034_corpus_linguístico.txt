@@ -1,0 +1,4 @@
+Corpus linguístico é o conjunto de textos escritos e registros orais em uma determinada língua e que serve como base de análise.
+O estudo de corpora (plural de corpus) apresenta muitas vantagens. Em vez de consultar nossas intuições, ou de ‘extrair’ informações dos falantes, penosamente, uma a uma, podemos examinar um vasto material que foi produzido espontaneamente na fala ou na escrita das pessoas, e portanto podemos fazer observações precisas sobre o real comportamento linguístico de gente real. Portanto os corpora podem nos proporcionar informações altamente confiáveis e isentas de opiniões e de julgamentos prévios, sobre os fatos de uma língua. O uso de corpora está associado à linguística de corpus.
+
+== Referências ==

@@ -1,0 +1,17 @@
+Yann LeCun (8 de julho de 1960) é um cientista da computação francês, que trabalha principalmente nas áreas de aprendizado de máquina, visão computacional, robótica móvel e neurociência computacional. É Silver Professor do Instituto Courant de Ciências Matemáticas da Universidade de Nova Iorque e vice-presidente e chefe cientista de inteligência artificial (AI) no Facebook.
+Em março de 2019 recebeu o Prêmio Turing de 2018, compartilhado com Yoshua Bengio e Geoffrey Hinton.
+
+== Referências ==
+
+== Ligações externas ==
+Yann LeCun's personal website
+Yann LeCun's lab website at NYU
+Yann LeCun's website at Collège de France
+Yann LeCun's List of PhD Students[ligação inativa]
+Yann LeCun's publications
+Convolutional Neural Networks
+DjVuLibre website
+Lush website
+AMA: Yann LeCun (self.MachineLearning) www.reddit.com Ask Me Anything : Yann LeCun
+IEEE Spectrum Article
+Technology Review article

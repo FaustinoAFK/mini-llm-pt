@@ -1,0 +1,13 @@
+Geoffrey Everest Hinton (Wimbledon, Londres, 6 de dezembro de 1947) é um psicólogo cognitivo, cientista cognitivo e cientista da computação anglo-canadense, conhecido por seu trabalho sobre redes neurais artificiais. Desde 2013 dividiu seu tempo trabalhando para o Google (Google Brain) e a Universidade de Toronto. Em 2024, ele deixou o Google.
+Recebeu o Prêmio Turing de 2018 juntamente com Yoshua Bengio e Yann LeCun, por seu trabalho sobre aprendizagem profunda.
+Foi distinguido em 2024 com o Prémio Nobel de Física, conjuntamente com John Hopfield, por "descobertas fundamentais e invenções que permitem aprendizagem automática com redes neuronais artificiais”.
+
+== Carreira ==
+A pesquisa de Hinton aborda maneiras de usar redes neurais para aprendizado de máquina, memória, percepção e processamento de símbolos. Ele escreveu ou coescreveu mais de 200 publicações revisadas por pares.
+
+== Vida pessoal ==
+Hinton é tataraneto da matemática e educadora Mary Everest Boole e de seu marido, o lógico George Boole. O trabalho de George Boole eventualmente se tornou um dos fundamentos da ciência da computação moderna. Outro tataravô dele foi o cirurgião e autor James Hinton, que foi pai do matemático Charles Howard Hinton.
+
+O pai de Hinton era o entomologista Howard Hinton. Seu nome do meio vem de outro parente, George Everest, o Inspetor Geral da Índia, que deu nome ao Monte Everest. Ele é sobrinho do economista Colin Clark, e da física nuclear Joan Hinton, uma das duas físicas do Projeto Manhattan, que era sua prima em primeiro grau.
+
+== Referências ==

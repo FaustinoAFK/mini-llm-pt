@@ -1,0 +1,25 @@
+Em Ciência da Computação, algoritmo de fila simples, FIFO (do inglês: first in, first out, "primeiro a entrar, primeiro a sair", "PEPS") ou FCFS (do inglês: first come, first served, "primeiro a chegar, primeiro a ser servido") é um algoritmo de escalonamento para estruturas de dados do tipo fila. Apresenta o seguinte critério: o primeiro elemento a ser retirado é o primeiro que tiver sido inserido, é um algoritmo de escalonamento não preemptivo que entrega a CPU os processos pela ordem de chegada. Ele executa o processo como um todo do inicio ao fim não interrompendo o processo executado até ser finalizado, então quando um novo processo chega e existe um ainda em execução ele vai para uma fila de espera. Esta fila de espera nada mais é do que uma fila que organiza os processos que chegam até eles serem atendidos pela CPU.
+Neste escalonamento todos os processos tendem a serem atendidos (por isso evita o fenômeno do starvation) ao menos que um processo possua um erro ou loop infinito. O loop infinito irá parar a máquina, pois com o FIFO não terá como dar continuidade a execução dos processos que estão aguardando na fila de espera.
+O algoritmo FIFO não garante um tempo de resposta rápido pois é extremamente sensível a ordem de chegada de cada processo e dos antecessores (se existirem) e se processos que tendem a demorar mais tempo chegarem primeiro o tempo médio de espera e o turnaround acabam sendo aumentados.
+
+Pelo critério do primeiro a entrar é o primeiro a ser servido, faz o agendamento de tarefas do sistema operacional dando a cada processo tempo de CPU na ordem em que as demandas são feitas. O oposto de FIFO é LIFO (Last-In, First-Out), que significa "o último a entrar é o primeiro a sair", aonde a entrada mais recente, ou o topo da pilha de processos, é processado primeiro. Já uma fila prioritária não é nem FIFO, nem LIFO, mas pode adotar comportamento similar temporariamente, ou mesmo por padrão.
+As listas são amplamente utilizadas em programação para implementar filas de espera. Em uma fila de tipo FIFO os elementos vão sendo colocados na fila e retirados (ou processados) por ordem de chegada. A ideia fundamental da fila é que só podemos inserir um novo elemento no final da fila e só podemos retirar o elemento do início.
+É vantajoso por ser o mais simples entre os processos de escalonamento; e todos os processos tendem a serem atendidos. Dentre as desvantagens estão: muito sensível a ordem de chegada; se processos maiores chegarem primeiro aumentarão o tempo médio de espera; não garante um tempo de resposta rápido; não é eficiente em sistemas de tempo compartilhado; e não é eficiente em sistemas em tempo real.
+
+== Aplicações ==
+FIFO são comumente usados em circuitos eletrônicos de buffer e controle de fluxo, que vai desde o hardware até o software. Na forma de um hardware o FIFO consiste basicamente de um conjunto de ler e escrever ponteiros, armazenamento e lógica de controle. Armazenamento pode ser SRAM, flip-flops, fechos ou qualquer outra forma adequada de armazenamento. Para o FIFO, de tamanho não trivial, uma SRAM de porta dupla geralmente é utilizada quando uma porta é usada para a escrita e a outra para leitura.
+O FIFO síncrono aonde o mesmo clock é usado para leitura e escrita. Um FIFO assíncrono utiliza diferentes relógios para leitura e escrita. Uma aplicação comum de um FIFO assíncrono utiliza um código de Gray (código binário refletido), ou qualquer unidade de código a distância, para a ler e escrever os ponteiros para garantir a geração de bandeira confiável. Uma nota mais preocupante é que se deve necessariamente usar a aritmética de ponteiro para gerar bandeiras para implementações assíncronas FIFO. Por outro lado, pode-se usar a abordagem de um balde "de fuga" ou a aritmética de ponteiro para gerar bandeiras nas implementações síncronas FIFO.
+
+== Ver também ==
+Lista de termos relacionados aos algoritmos e estruturas de dados
+Escalonamento de processos
+LIFO
+Autómato
+Árvore (estrutura de dados)
+Árvore B
+Grafo
+
+== Referências ==
+
+== Ligações externas ==
+Filas

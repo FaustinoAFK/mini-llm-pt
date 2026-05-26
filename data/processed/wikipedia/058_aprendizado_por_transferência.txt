@@ -1,0 +1,30 @@
+O aprendizado por transferência (TL) é uma técnica de aprendizado de máquina (ML) na qual o conhecimento aprendido em uma tarefa é reutilizado para aumentar o desempenho em uma tarefa relacionada. Por exemplo, na classificação de imagens, o conhecimento adquirido ao aprender a reconhecer carros pode ser aplicado ao tentar reconhecer caminhões. Esse tópico está relacionado à literatura psicológica sobre transferência de aprendizado, embora os vínculos práticos entre os dois campos sejam limitados. A reutilização/transferência de informações de tarefas aprendidas anteriormente para novas tarefas tem o potencial de melhorar significativamente a eficiência do aprendizado.
+Como o aprendizado por transferência faz uso do treinamento com várias funções de objetivo, ele está relacionado ao aprendizado de máquina sensível ao custo e à otimização multiobjetivo.
+
+== História ==
+Em 1976, Bozinovski e Fulgosi publicaram um artigo abordando o aprendizado por transferência no treinamento de redes neurais. O artigo apresenta um modelo matemático e geométrico do tópico. Em 1981, um relatório considerou a aplicação do aprendizado de transferência a um conjunto de dados de imagens que representam letras de terminais de computador, demonstrando experimentalmente o aprendizado de transferência positivo e negativo.
+Em 1992, Lorien Pratt formulou o algoritmo de transferência baseada em discriminabilidade (DBT).
+Em 1998, o campo havia avançado para incluir o aprendizado multitarefa, juntamente com fundamentos teóricos mais formais. Publicações influentes sobre aprendizagem por transferência incluem o livro Learning to Learn em 1998, uma pesquisa de 2009 e uma pesquisa de 2019.
+Andrew Ng disse em seu tutorial do NIPS 2016 que o TL se tornaria o próximo impulsionador do sucesso comercial do aprendizado de máquina depois da aprendizagem supervisionada.
+No artigo de 2020, "Rethinking Pre-Training and self-training", Zoph et al. relataram que o pré-treinamento pode prejudicar a precisão e, em vez disso, defendem o autotreinamento.
+
+== Usos ==
+Há algoritmos disponíveis para o aprendizado por transferência em redes lógicas de Markov e redes bayesianas. O aprendizado por transferência foi aplicado à descoberta de subtipos de câncer, utilização de edifícios, jogos em geral, classificação de textos, reconhecimento de dígitos, imagens médicas e filtragem de spam.
+Em 2020, descobriu-se que, devido às suas naturezas físicas semelhantes, é possível transferir o aprendizado entre os sinais eletromiográficos (EMG) dos músculos e classificar os comportamentos das ondas cerebrais eletroencefalográficas (EEG), do domínio de reconhecimento de gestos para o domínio de reconhecimento de estado mental. Observou-se que essa relação funcionou em ambas as direções, mostrando que o eletroencefalograma também pode ser usado para classificar o EMG. Os experimentos observaram que a precisão das redes neurais e das redes neurais convolucionais foi aprimorada por meio da aprendizagem por transferência antes de qualquer aprendizagem (em comparação com a distribuição de peso aleatório padrão) e no final do processo de aprendizagem (assíntota). Ou seja, os resultados são aprimorados pela exposição a outro domínio. Além disso, o usuário final de um modelo pré-treinado pode alterar a estrutura das camadas totalmente conectadas para melhorar o desempenho.
+
+== Software ==
+
+Várias compilações de aprendizado de transferência e algoritmos de adaptação de domínio foram implementadas:
+
+ADAPT (Python)
+TLlib (Python)
+Domain-Adaptation-Toolbox (Matlab)
+
+== Ver também ==
+Recombinação (computação evolutiva)
+Aprendizagem de características
+
+== Referências ==
+
+== Fontes ==
+Thrun, Sebastian; Pratt, Lorien (6 de dezembro de 2012). Learning to Learn (em inglês). [S.l.]: Springer Science & Business Media. ISBN 978-1-4615-5529-2

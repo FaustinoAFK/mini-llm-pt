@@ -1,0 +1,2517 @@
+No cálculo vetorial o gradiente (ou vetor gradiente) é um vetor que indica o sentido e a direção na qual, por deslocamento a partir do ponto especificado, obtém-se o maior incremento possível no valor de uma grandeza a partir da qual se define um campo escalar para o espaço em consideração. Constrói-se assim, a partir do campo escalar e de um operador denominado operador gradiente, um campo vetorial, que atrela a cada ponto do espaço o correspondente vetor gradiente para a grandeza em consideração.
+O módulo do vetor gradiente indica a taxa de variação da grandeza escalar com relação à distância movida quando desloca-se na direção e sentido do vetor gradiente (deslocamentos infinitesimais).
+O campo vetorial e o operador gradiente possuem diversas aplicações em matemática e ciências naturais, indo desde o cálculo de derivadas direcionais à maximização das mesmas. A exemplo, a partir do gradiente do potencial elétrico determina-se o campo elétrico; e a partir do gradiente da energia potencial determina-se o campo de força associado.
+Por exemplo, o gradiente da topografia H de um terreno, também chamado de declividade, é dado por:
+
+∇
+H
+=
+
+distância vertical
+distância horizontal
+
+{\displaystyle \nabla H={\frac {\text{distância vertical}}{\text{distância horizontal}}}}
+
+O símbolo
+
+∇
+
+{\displaystyle \nabla }
+
+, isto é, nabla, é a notação do operador gradiente.
+
+== Motivação: gradiente de temperatura ==
+
+=== Gradiente em uma única direção (derivada) ===
+Suponha que tenhamos uma viga retilínea cujas extremidades estão em contato com duas paredes a temperaturas diferentes, uma à esquerda e outra à direita, sendo a parede à direita a mais quente. Observamos que a temperatura da viga não é constante em relação ao espaço, e que cresce da esquerda para a direita ao longo de seu comprimento. Definindo a coordenada
+
+x
+=
+0
+
+{\displaystyle x=0}
+
+para a extremidade à esquerda e
+
+x
+=
+L
+
+{\displaystyle x=L}
+
+para a extremidade à direita, definimos a temperatura
+
+T
+
+{\displaystyle T}
+
+em uma posição qualquer (variável
+
+x
+
+{\displaystyle x}
+
+) da viga como uma função
+
+T
+(
+x
+)
+
+{\displaystyle T(x)}
+
+.
+Entre dois pontos muito próximos, distantes de um comprimento
+
+d
+x
+
+{\displaystyle dx}
+
+, teremos uma respectiva variação de temperatura
+
+d
+T
+
+{\displaystyle dT}
+
+. Em uma situação unidimensional, a razão entre essas grandezas fornece o gradiente, denotado por:
+
+∇
+→
+
+T
+=
+
+d
+T
+
+d
+x
+
+i
+→
+
+{\displaystyle {\overrightarrow {\nabla }}T={dT \over dx}{\overrightarrow {i}}}
+
+Note que, para apenas uma dimensão, a noção de derivada e gradiente convergem.
+Em condução térmica, o gradiente de temperatura é responsável pelo surgimento de um fluxo de calor, segundo a Lei de Fourier, que, para condução unidimensional, é representada por:
+
+q
+
+x
+
+″
+
+=
+−
+k
+
+d
+T
+
+d
+x
+
+{\displaystyle q_{x}''=-k{dT \over dx}}
+
+onde
+
+q
+
+x
+
+″
+
+{\displaystyle q_{x}''}
+
+corresponde ao fluxo de calor, em
+
+W
+
+/
+
+m
+
+2
+
+{\displaystyle W/m^{2}}
+
+, e
+
+k
+
+{\displaystyle k}
+
+corresponde à condutividade térmica do material, em
+
+W
+
+/
+
+m
+.
+K
+
+{\displaystyle W/m.K}
+
+. O sinal negativo indica que o calor fluirá do corpo mais quente em direção ao corpo mais frio.
+
+=== Gradiente de temperatura no espaço tridimensional ===
+Na prática, a temperatura da viga varia em função das coordenadas no espaço. Estabelecendo um ponto qualquer
+
+M
+=
+(
+x
+,
+y
+,
+z
+)
+
+{\displaystyle M=(x,y,z)}
+
+, teremos, em uma situação mais próxima da realidade, uma função
+
+T
+(
+x
+,
+y
+,
+z
+)
+
+{\displaystyle T(x,y,z)}
+
+que descreve a temperatura nas coordenadas de
+
+M
+
+{\displaystyle M}
+
+.
+Se nos deslocarmos em apenas um eixo do espaço, podemos escrever a função
+
+T
+
+{\displaystyle T}
+
+considerando esse deslocamento. Para uma variação da coordenada
+
+y
+
+{\displaystyle y}
+
+, por exemplo, teremos a relação:
+
+T
+(
+x
+,
+y
++
+d
+y
+,
+z
+)
+=
+T
+(
+x
+,
+y
+,
+z
+)
++
+
+∂
+T
+
+∂
+y
+
+d
+y
+
+{\displaystyle T(x,y+dy,z)=T(x,y,z)+{\partial T \over \partial y}dy}
+
+Seguindo a mesma lógica, para um deslocamento entre um ponto qualquer
+
+M
+
+{\displaystyle M}
+
+e outro que chamaremos de
+
+M
+′
+
+{\displaystyle M'}
+
+, teremos um vetor
+
+h
+→
+
+=
+
+M
+
+M
+′
+
+→
+
+=
+(
+
+h
+
+x
+
+,
+
+h
+
+y
+
+,
+
+h
+
+z
+
+)
+
+{\displaystyle {\overrightarrow {h}}={\overrightarrow {MM'}}=(h_{x},h_{y},h_{z})}
+
+, havendo mudança da temperatura de
+
+T
+(
+x
+,
+y
+,
+z
+)
+
+{\displaystyle T(x,y,z)}
+
+para
+
+T
+(
+x
++
+
+h
+
+x
+
+,
+y
++
+
+h
+
+y
+
+,
+z
++
+
+h
+
+z
+
+)
+
+{\displaystyle T(x+h_{x},y+h_{y},z+h_{z})}
+
+. Assim, teremos a relação:
+
+T
+(
+x
++
+
+h
+
+x
+
+,
+y
++
+
+h
+
+y
+
+,
+z
++
+
+h
+
+z
+
+)
+=
+T
+(
+x
+,
+y
+,
+z
+)
++
+
+∂
+T
+
+∂
+x
+
+(
+x
+,
+y
+,
+z
+)
+
+h
+
+x
+
++
+
+∂
+T
+
+∂
+y
+
+(
+x
+,
+y
+,
+z
+)
+
+h
+
+y
+
++
+
+∂
+T
+
+∂
+z
+
+(
+x
+,
+y
+,
+z
+)
+
+h
+
+z
+
+{\displaystyle T(x+h_{x},y+h_{y},z+h_{z})=T(x,y,z)+{\partial T \over \partial x}(x,y,z)h_{x}+{\partial T \over \partial y}(x,y,z)h_{y}+{\partial T \over \partial z}(x,y,z)h_{z}}
+
+É possível simplificar essa relação definindo um vetor gradiente de temperatura
+
+∇
+→
+
+T
+
+{\displaystyle {\overrightarrow {\nabla }}T}
+
+, no qual cada componente indica a variação da temperatura em cada coordenada:
+
+∇
+→
+
+T
+(
+x
+,
+y
+,
+z
+)
+=
+
+(
+
+∂
+T
+
+∂
+x
+
+(
+x
+,
+y
+,
+z
+)
+,
+
+∂
+T
+
+∂
+y
+
+(
+x
+,
+y
+,
+z
+)
+,
+
+∂
+T
+
+∂
+z
+
+(
+x
+,
+y
+,
+z
+)
+
+)
+
+{\displaystyle {\overrightarrow {\nabla }}T(x,y,z)={\biggl (}{\partial T \over \partial x}(x,y,z),{\partial T \over \partial y}(x,y,z),{\partial T \over \partial z}(x,y,z){\biggr )}}
+
+Assim, podemos representar a mudança de temperatura da posição
+
+M
+
+{\displaystyle M}
+
+para
+
+M
+′
+
+{\displaystyle M'}
+
+por:
+
+T
+(
+M
++
+
+h
+→
+
+)
+=
+T
+(
+M
+)
++
+
+∇
+→
+
+T
+(
+M
+)
+⋅
+
+h
+→
+
+{\displaystyle T(M+{\overrightarrow {h}})=T(M)+{\overrightarrow {\nabla }}T(M)\cdot {\overrightarrow {h}}}
+
+sendo
+
+∇
+→
+
+T
+(
+M
+)
+⋅
+
+h
+→
+
+{\displaystyle {\overrightarrow {\nabla }}T(M)\cdot {\overrightarrow {h}}}
+
+o produto escalar entre o vetor gradiente e o vetor
+
+h
+→
+
+{\displaystyle {\overrightarrow {h}}}
+
+.
+Da mesma forma que no caso unidimensional, o vetor gradiente de temperatura terá orientação partindo do mais frio em direção ao mais quente.
+Assim, no contexto de transferência de calor, teremos a Lei de Fourier aplicada ao sistema tridimensional, representada por:
+
+q
+″
+
+→
+
+=
+−
+k
+
+∇
+→
+
+T
+
+{\displaystyle {\overrightarrow {q''}}=-k{\overrightarrow {\nabla }}T}
+
+Novamente,
+
+q
+″
+
+→
+
+{\displaystyle {\overrightarrow {q''}}}
+
+corresponde ao fluxo de calor e
+
+k
+
+{\displaystyle k}
+
+corresponde à condutividade térmica do material. Perceba que, como o calor flui da região de temperatura mais alta para uma de temperatura mais baixa, os vetores fluxo de calor e gradiente de temperatura terão sentidos contrários.
+
+== Definição ==
+
+O vetor gradiente ou simplesmente gradiente de um campo escalar
+
+f
+
+(
+
+x
+
+1
+
+,
+
+x
+
+2
+
+,
+⋯
+,
+
+x
+
+n
+
+)
+
+{\displaystyle f_{(x_{1},x_{2},\cdots ,x_{n})}}
+
+é determinado via ênupla ordenada definida por:
+
+grad
+
+f
+=
+
+⟨
+
+∂
+f
+
+∂
+
+x
+
+1
+
+,
+
+∂
+f
+
+∂
+
+x
+
+2
+
+,
+⋯
+,
+
+∂
+f
+
+∂
+
+x
+
+n
+
+⟩
+
+{\displaystyle {\mbox{grad}}\,f=\left\langle {\frac {\partial f}{\partial x_{1}}},{\frac {\partial f}{\partial x_{2}}},\cdots ,{\frac {\partial f}{\partial x_{n}}}\right\rangle }
+
+ou, via notação de soma de Euler, por:
+
+grad
+
+f
+=
+
+∑
+
+i
+
+∂
+f
+
+∂
+
+x
+
+i
+
+e
+^
+
+i
+
+{\displaystyle {\mbox{grad}}\,f=\sum ^{i}{\frac {\partial f}{\partial x_{i}}}{\hat {e}}_{i}}
+
+onde
+
+e
+^
+
+i
+
+{\displaystyle {\hat {e}}_{i}}
+
+são os vetores unitários ortogonais que definem a base a partir da qual se coordena o espaço e
+
+∂
+
+∂
+
+x
+
+i
+
+{\displaystyle {\frac {\partial }{\partial x_{i}}}}
+
+representa o respectivo operador derivada parcial.
+Já na notação de soma de Einstein, onde índices repetidos no mesmo fator implicam somatório, para o campo escalar φ:
+
+grad
+
+φ
+=
+
+∂
+
+i
+
+φ
+⋅
+
+e
+^
+
+i
+
+{\displaystyle {\mbox{grad}}\,\varphi =\partial _{i}\varphi \cdot {\hat {e}}_{i}}
+
+O símbolo nabla foi introduzido por William Hamilton e rapidamente assimilado pela comunidade científica:
+
+∇
+→
+
+f
+
+(
+
+x
+
+1
+
+,
+…
+,
+
+x
+
+n
+
+)
+
+=
+
+grad
+
+f
+
+{\displaystyle {\overrightarrow {\nabla }}f_{(x_{1},\dots ,x_{n})}={\mbox{grad}}\,f}
+
+No entanto, por abuso de linguagem, é comum não se indicar a "seta" de vector e a notação poderá torna-se em:
+
+∇
+f
+=
+
+grad
+
+f
+=
+
+D
+
+f
+
+{\displaystyle \nabla f={\mbox{grad}}\,f=D_{f}}
+
+O gradiente também pode ser generalizado em ordem – se fornecemos um campo vectorial obtemos um campo tensorial.
+
+=== Exemplo ===
+Para a função escalar
+
+f
+
+(
+
+x
+,
+y
+,
+z
+
+)
+
+=
+4
+x
++
+10
+
+y
+
+2
+
+−
+sin
+⁡
+z
+
+{\displaystyle f_{\!\left(x,y,z\right)}=4x+10y^{2}-\sin z}
+
+tem-se, na base cartesiana
+
+i
+^
+
+,
+
+j
+^
+
+,
+
+k
+^
+
+{\displaystyle {\hat {i}},{\hat {j}},{\hat {k}}}
+
+grad
+
+f
+=
+
+∂
+(
+4
+x
++
+10
+
+y
+
+2
+
+−
+sin
+⁡
+z
+)
+
+∂
+x
+
+i
+^
+
++
+
+∂
+(
+4
+x
++
+10
+
+y
+
+2
+
+−
+sin
+⁡
+z
+)
+
+∂
+y
+
+j
+^
+
++
+
+∂
+(
+4
+x
++
+10
+
+y
+
+2
+
+−
+sin
+⁡
+z
+)
+
+∂
+z
+
+k
+^
+
+{\displaystyle {\mbox{grad}}\,f={\frac {\partial (4x+10y^{2}-\sin z)}{\partial x}}{\hat {i}}+{\frac {\partial (4x+10y^{2}-\sin z)}{\partial y}}{\hat {j}}+{\frac {\partial (4x+10y^{2}-\sin z)}{\partial z}}{\hat {k}}}
+
+que fornece por resposta a ênupla
+
+∇
+→
+
+f
+=
+
+⟨
+
+4
+;
+20
+y
+;
+−
+cos
+⁡
+z
+
+⟩
+
+{\displaystyle {\vec {\nabla }}f=\left\langle 4;20y;-\cos z\right\rangle }
+
+ou explicitamente
+
+∇
+→
+
+f
+=
+(
+4
+)
+
+i
+^
+
++
+(
+20
+y
+)
+
+j
+^
+
++
+(
+−
+cos
+⁡
+z
+)
+
+k
+^
+
+{\displaystyle {\vec {\nabla }}f=(4){\hat {i}}+(20y){\hat {j}}+(-\cos z){\hat {k}}}
+
+para qualquer ponto definido pelas coordenadas
+
+(
+
+x
+,
+y
+,
+z
+
+)
+
+{\displaystyle \left(x,y,z\right)}
+
+, restando apenas a substituição dos respectivos valores x, y e z na expressão acima.
+
+== Expressões ==
+Para todo campo escalar
+
+f
+
+{\displaystyle f}
+
+diferenciável em função do espaço cartesiano
+
+r
+→
+
+=
+
+⟨
+
+x
+,
+y
+,
+z
+
+⟩
+
+{\displaystyle {\vec {r}}=\left\langle x,y,z\right\rangle }
+
+temos que:
+
+∇
+f
+=
+
+⟨
+
+∂
+f
+
+∂
+x
+
+,
+
+∂
+f
+
+∂
+y
+
+,
+
+∂
+f
+
+∂
+z
+
+⟩
+
+{\displaystyle \nabla f=\left\langle {\frac {\partial f}{\partial x}},{\frac {\partial f}{\partial y}},{\frac {\partial f}{\partial z}}\right\rangle }
+
+O gradiente é a derivada de um campo em função do espaço:
+
+∇
+f
+=
+
+∂
+f
+
+∂
+
+r
+→
+
+{\displaystyle \nabla f={\frac {\partial f}{\partial {\vec {r}}}}}
+
+Em uma só dimensão o gradiente de uma função que só depende do espaço:
+
+∇
+f
+=
+
+d
+f
+
+d
+x
+
+{\displaystyle \nabla f={\frac {df}{dx}}}
+
+== Propriedades ==
+
+=== Linearidade ===
+O gradiente é linear:
+
+∇
+
+(
+
+α
+f
++
+β
+g
+
+)
+
+=
+α
+∇
+f
++
+β
+∇
+g
+
+(
+
+∀
+α
+,
+β
+∈
+
+F
+
+2
+
+)
+
+{\displaystyle \nabla \left(\alpha f+\beta g\right)=\alpha \nabla f+\beta \nabla g\qquad \left(\forall \alpha ,\beta \in \mathbb {F} ^{2}\right)}
+
+Onde
+
+F
+
+{\displaystyle \mathbb {F} }
+
+é um corpo constante.
+
+=== Lei de Leibniz ===
+O gradiente segue a Lei de Leibniz na multiplicação:
+
+∇
+
+(
+
+f
+⋅
+g
+
+)
+
+=
+f
+∇
+g
++
+g
+∇
+f
+
+{\displaystyle \nabla \left(f\cdot g\right)=f\nabla g+g\nabla f}
+
+E na divisão:
+
+∇
+
+(
+
+f
+
+/
+
+g
+
+)
+
+=
+
+g
+∇
+f
+−
+f
+∇
+g
+
+g
+
+2
+
+(
+
+g
+≠
+0
+
+)
+
+{\displaystyle \nabla \left(f/g\right)={\frac {g\nabla f-f\nabla g}{g^{2}}}\qquad \left(g\neq 0\right)}
+
+=== Ortogonalidade às curvas de nível ===
+O vetor gradiente sempre será ortogonal às curvas de nível (veja no artigo "Conjunto de nível").
+Seja
+
+f
+(
+x
+
+,
+y
+)
+
+{\displaystyle f(x\,,y)}
+
+uma função definida em
+
+D
+⊂
+
+R
+
+2
+
+{\displaystyle D\subset \mathbb {R} ^{2}}
+
+e diferenciável em todo seu domínio.
+Seja o conjunto
+
+C
+:
+{
+(
+x
+,
+y
+)
+∈
+D
+
+|
+
+f
+(
+x
+,
+y
+)
+=
+k
+}
+
+{\displaystyle C:\{(x,y)\in D|f(x,y)=k\}}
+
+onde x e y são funções de um parâmetro t tal que
+
+x
+(
+0
+)
+=
+
+x
+
+0
+
+,
+y
+(
+0
+)
+=
+
+y
+
+0
+
+{\displaystyle x(0)=x_{0}\,,y(0)=y_{0}}
+
+.
+Então, temos:
+
+f
+(
+x
+(
+t
+)
+
+,
+y
+(
+t
+)
+)
+=
+k
+
+{\displaystyle f(x(t)\,,y(t))=k}
+
+(diferenciando com relação a t pela regra da cadeia)
+
+∂
+f
+
+∂
+x
+
+d
+x
+
+d
+t
+
++
+
+∂
+f
+
+∂
+y
+
+d
+y
+
+d
+t
+
+=
+0
+
+{\displaystyle {\frac {\partial f}{\partial x}}{\frac {dx}{dt}}+{\frac {\partial f}{\partial y}}{\frac {dy}{dt}}=0}
+
+A equação final pode ser interpretada como o produto escalar do gradiente de f por um vector tangente a f em
+
+(
+
+x
+
+0
+
+,
+
+y
+
+0
+
+)
+
+{\displaystyle (x_{0}\,,y_{0})}
+
+, logo os dois são perpendiculares entre si.
+
+=== Teorema do gradiente ===
+O gradiente é revertido pela integral de linha de acordo com o teorema do gradiente, que é análogo ao teorema fundamental do cálculo:
+
+Δ
+f
+=
+
+f
+
+Q
+
+−
+
+f
+
+P
+
+=
+
+∫
+
+γ
+
+P
+
+γ
+
+Q
+
+∇
+f
+⋅
+
+d
+γ
+
+→
+
+{\displaystyle \Delta f=f_{Q}-f_{P}=\int _{\gamma _{P}}^{\gamma _{Q}}\nabla f\cdot {\vec {d\gamma }}}
+
+=== Derivada direcional ===
+A derivada direcional é um escalar que representa a derivada de um campo escalar ao longo de um versor (no caso abaixo,
+
+u
+^
+
+{\displaystyle {\hat {u}}}
+
+). Analiticamente, a derivada direcional de dada f(x,y,z) (função escalar), é a taxa de variação instantânea de f em relação à distância na direção e sentido
+
+u
+^
+
+{\displaystyle {\hat {u}}}
+
+.
+
+∀
+
+u
+^
+
+D
+
+u
+^
+
+f
+=
+
+u
+^
+
+⋅
+
+∇
+→
+
+f
+
+{\displaystyle \forall {\hat {u}}\quad D\!_{\hat {u}}\,f={\hat {u}}\cdot {\vec {\nabla }}f}
+
+Assim, podemos tirar algumas observações a partir do produto escalar entre o gradiente de f e o versor
+
+u
+^
+
+{\displaystyle {\hat {u}}}
+
+:
+1. Se o ângulo entre os vetores
+
+∇
+→
+
+f
+
+{\displaystyle {\vec {\nabla }}f}
+
+e
+
+u
+^
+
+{\displaystyle {\hat {u}}}
+
+, denotado por θ, for igual a zero. então teremos que a derivada direcional é máxima, e será igual ao módulo do gradiente de f(x,y,z), já que:
+
+|
+
+D
+
+u
+^
+
+f
+
+|
+
+=
+
+|
+
+u
+^
+
+|
+
+|
+
+∇
+→
+
+f
+
+|
+
+c
+o
+s
+(
+0
+)
+=
+
+D
+
+u
+^
+
+f
+
+|
+
+m
+a
+x
+
+=
+
+|
+
+∇
+→
+
+f
+
+|
+
+{\displaystyle |D\!_{\hat {u}}\,f|=|{\hat {u}}||{\vec {\nabla }}f|cos(0)=D_{\hat {u}}\,f|_{max}=|{\vec {\nabla }}f|}
+
+2. Se o ângulo θ for igual a
+
+180
+
+o
+
+{\displaystyle 180^{o}}
+
+, então a derivada direcional terá seu valor mínimo e igual a menos o módulo do gradiente de f(x,y,z):
+
+|
+
+D
+
+u
+^
+
+f
+
+|
+
+=
+
+|
+
+u
+^
+
+|
+
+|
+
+∇
+→
+
+f
+
+|
+
+c
+o
+s
+(
+180
+)
+=
+
+D
+
+u
+^
+
+f
+
+|
+
+m
+i
+n
+
+=
+−
+
+|
+
+∇
+→
+
+f
+
+|
+
+{\displaystyle |D\!_{\hat {u}}\,f|=|{\hat {u}}||{\vec {\nabla }}f|cos(180)=D_{\hat {u}}\,f|_{min}=-|{\vec {\nabla }}f|}
+
+3. Se f(x,y,z) representar uma curva de nível em que f(x,y,z) = k, onde k é uma constante, e se o vetor
+
+u
+^
+
+{\displaystyle {\hat {u}}}
+
+for tangente à tal curva de nível, então o valor da derivada direcional é nula, pois
+
+∇
+→
+
+f
+
+{\displaystyle {\vec {\nabla }}f}
+
+será perpendicular a
+
+u
+^
+
+{\displaystyle {\hat {u}}}
+
+, e normal à curva de nível. Neste caso:
+
+D
+
+u
+^
+
+f
+=
+
+u
+^
+
+⋅
+
+∇
+→
+
+f
+=
+0
+
+{\displaystyle D_{\hat {u}}f={\hat {u}}\cdot {\vec {\nabla }}f=0}
+
+== Sistemas de coordenadas ==
+O gradiente é escrito nos diferentes sistemas de coordenadas tridimensionais nas seguintes formas:
+
+=== Coordenadas cartesianas ===
+
+∇
+
+f
+=
+
+∂
+f
+
+∂
+x
+
+e
+^
+
+x
+
++
+
+∂
+f
+
+∂
+y
+
+e
+^
+
+y
+
++
+
+∂
+f
+
+∂
+z
+
+e
+^
+
+z
+
+{\displaystyle \nabla \,f={\frac {\partial f}{\partial x}}{\hat {e}}_{x}+{\frac {\partial f}{\partial y}}{\hat {e}}_{y}+{\frac {\partial f}{\partial z}}{\hat {e}}_{z}}
+
+Para coordenadas espaciais x, y e z.
+
+=== Coordenadas cilíndricas circulares ===
+
+∇
+
+f
+=
+
+∂
+f
+
+∂
+ρ
+
+e
+^
+
+ρ
+
++
+
+1
+ρ
+
+∂
+f
+
+∂
+ϕ
+
+e
+^
+
+ϕ
+
++
+
+∂
+f
+
+∂
+z
+
+e
+^
+
+z
+
+{\displaystyle \nabla \,f={\frac {\partial f}{\partial \rho }}{\hat {e}}_{\rho }+{\frac {1}{\rho }}{\frac {\partial f}{\partial \phi }}{\hat {e}}_{\phi }+{\frac {\partial f}{\partial z}}{\hat {e}}_{z}}
+
+Onde
+
+ρ
+
+{\displaystyle \rho }
+
+representa a distância ao eixo z,
+
+ϕ
+
+{\displaystyle \phi }
+
+é o ângulo (tomado, em geral sobre o plano z=0 em relação ao eixo x) e z.
+
+=== Coordenadas esféricas ===
+
+∇
+
+f
+=
+
+∂
+f
+
+∂
+r
+
+e
+^
+
+r
+
++
+
+1
+r
+
+∂
+f
+
+∂
+θ
+
+e
+^
+
+θ
+
++
+
+1
+
+r
+s
+e
+n
+θ
+
+∂
+f
+
+∂
+ϕ
+
+e
+^
+
+ϕ
+
+{\displaystyle \nabla \,f={\frac {\partial f}{\partial r}}{\hat {e}}_{r}+{\frac {1}{r}}{\frac {\partial f}{\partial \theta }}{\hat {e}}_{\theta }+{\frac {1}{rsen\theta }}{\frac {\partial f}{\partial \phi }}{\hat {e}}_{\phi }}
+
+Onde
+
+r
+
+{\displaystyle r}
+
+representa a distância à origem,
+
+θ
+
+{\displaystyle \theta }
+
+é o ângulo entre a reta que liga o ponto à origem e o eixo z e
+
+ϕ
+
+{\displaystyle \phi }
+
+é o ângulo formado pela projeção da reta que liga o ponto à origem no plano z=0 e o eixo x.
+
+== Gradiente na física ==
+O conceito de gradiente na física está fortemente relacionado aos conceitos de campo conservativo e de função potencial, de tal forma que também na matemática se define campo vetorial conservativo.
+Na física campos conservativos são campos que conservam a energia do sistema, isto é, campos onde não há dissipação de energia.
+A função vetorial
+
+F
+→
+
+{\displaystyle {\overrightarrow {F}}}
+
+é um campo vetorial conservativo se existe uma função escalar
+
+φ
+
+{\displaystyle \varphi }
+
+, chamada função potencial, tal que:
+
+F
+→
+
+c
+o
+n
+s
+
+=
+∇
+φ
+
+{\displaystyle {\overrightarrow {F}}_{cons}=\nabla \varphi }
+
+. Sendo assim, dada uma função potencial
+
+φ
+(
+x
+,
+y
+,
+z
+)
+
+{\displaystyle \varphi (x,y,z)}
+
+ou uma função potencial do tipo
+
+φ
+(
+r
+)
+
+{\displaystyle \varphi (r)}
+
+, basta calcular o gradiente para encontrar o campo vetorial conservativo associado a
+
+φ
+
+{\displaystyle \varphi }
+
+.
+Como
+
+φ
+
+{\displaystyle \varphi }
+
+é uma função de x, y, z então:
+
+F
+→
+
+c
+o
+n
+s
+
+(
+x
+,
+y
+,
+z
+)
+=
+
+∂
+φ
+
+∂
+x
+
+i
+→
+
++
+
+∂
+φ
+
+∂
+y
+
+j
+→
+
++
+
+∂
+φ
+
+∂
+z
+
+k
+→
+
+{\displaystyle {\overrightarrow {F}}_{cons}(x,y,z)={\partial \varphi \over \partial x}{\vec {i}}+{\partial \varphi \over \partial y}{\vec {j}}+{\partial \varphi \over \partial z}{\vec {k}}}
+
+Se
+
+φ
+
+{\displaystyle \varphi }
+
+é uma função implícita de x, y, z através de
+
+r
+=
+
+x
+
+2
+
++
+
+y
+
+2
+
++
+
+z
+
+2
+
+{\textstyle r={\sqrt {x^{2}+y^{2}+z^{2}}}}
+
+, ou seja,
+
+φ
+(
+r
+)
+=
+φ
+(
+r
+(
+x
+,
+y
+,
+z
+)
+)
+
+{\displaystyle \varphi (r)=\varphi (r(x,y,z))}
+
+é necessário usar a regra da cadeia para calcular o respectivo gradiente. Potenciais deste tipo são chamados de potenciais centrais.
+
+=== Cálculo do gradiente de potenciais centrais ===
+Muitos modelos de potenciais físicos são centrais, sendo assim de grande importância saber como realizar o cálculo deste tipo.
+Através da regra da cadeia é possível ver que:
+
+∂
+φ
+(
+r
+)
+
+∂
+x
+
+=
+
+d
+φ
+
+d
+r
+
+∂
+r
+
+∂
+x
+
+=
+φ
+′
+(
+r
+)
+
+∂
+
+∂
+x
+
+(
+
+x
+
+2
+
++
+
+y
+
+2
+
++
+
+z
+
+2
+
+)
+
+=
+φ
+′
+(
+r
+)
+
+[
+
+1
+2
+
+(
+
+x
+
+2
+
++
+
+y
+
+2
+
++
+
+z
+
+2
+
+)
+
+−
+1
+
+/
+
+2
+
+2
+x
+
+]
+
+{\displaystyle {\partial \varphi (r) \over \partial x}={d\varphi \over dr}{\partial r \over \partial x}=\varphi \prime (r){\partial \over \partial x}{\sqrt {(x^{2}+y^{2}+z^{2})}}=\varphi \prime (r)\left[{\frac {1}{2}}(x^{2}+y^{2}+z^{2})^{-1/2}2x\right]}
+
+Levando em conta que
+
+r
+=
+
+x
+
+2
+
++
+
+y
+
+2
+
++
+
+z
+
+2
+
+{\textstyle r={\sqrt {x^{2}+y^{2}+z^{2}}}}
+
+tem-se que:
+
+∂
+φ
+(
+r
+)
+
+∂
+x
+
+=
+
+φ
+′
+(
+r
+)
+
+r
+
+x
+
+{\displaystyle {\partial \varphi (r) \over \partial x}={\varphi \prime (r) \over r}x}
+
+Igualmente para as outras variáveis do gradiente:
+
+∂
+φ
+(
+r
+)
+
+∂
+y
+
+=
+
+φ
+′
+(
+r
+)
+
+r
+
+y
+
+{\displaystyle {\partial \varphi (r) \over \partial y}={\varphi \prime (r) \over r}y}
+
+e
+
+∂
+φ
+(
+r
+)
+
+∂
+z
+
+=
+
+φ
+′
+(
+r
+)
+
+r
+
+z
+
+{\displaystyle {\partial \varphi (r) \over \partial z}={\varphi \prime (r) \over r}z}
+
+;
+Assim, com a soma das três derivadas, temos que :
+
+∇
+→
+
+φ
+(
+r
+)
+=
+φ
+′
+(
+r
+)
+
+r
+^
+
+{\displaystyle {\vec {\nabla }}\varphi (r)=\varphi \prime (r){\hat {r}}}
+
+Esta última fórmula é a preferencial para quando se tem potenciais centrais, pois ela nos fornece o campo gradiente com apenas uma derivação.
+
+== Aplicabilidade em campos escalares ==
+Há três leis empíricas conhecidas como Lei de Fick, Lei de Fourier e Lei de Ohm ás quais são expressas em termos de campos gradientes. A leis citadas regem os chamados "fenômenos de transporte" da Física. Sendo que a Lei de Fick rege o transporte de massa, a Lei de Fourier o do calor e a Lei de Ohm o de cargo.
+São expressas como:
+
+(
+1
+)
+
+J
+→
+
+(
+X
+,
+Y
+,
+Z
+,
+T
+)
+=
+−
+D
+
+∇
+¯
+
+ρ
+(
+x
+,
+y
+,
+z
+,
+t
+)
+
+{\displaystyle (1)\,{\vec {J}}(X,Y,Z,T)=-D{\bar {\nabla }}\rho (x,y,z,t)}
+
+(
+2
+)
+
+q
+→
+
+(
+X
+,
+Y
+,
+Z
+,
+T
+)
+=
+−
+k
+
+∇
+¯
+
+T
+(
+x
+,
+y
+,
+z
+,
+t
+)
+
+{\displaystyle (2)\,{\vec {q}}(X,Y,Z,T)=-k{\bar {\nabla }}T(x,y,z,t)}
+
+(
+3
+)
+
+J
+→
+
+(
+X
+,
+Y
+,
+Z
+,
+T
+)
+=
+−
+σ
+
+∇
+¯
+
+φ
+(
+x
+,
+y
+,
+z
+,
+t
+)
+
+{\displaystyle (3)\,{\vec {J}}(X,Y,Z,T)=-\sigma {\bar {\nabla }}\varphi (x,y,z,t)}
+
+Ao observar percebe-se que as três leis relacionam um campo vetorial com o gradiente de um campo escalar.
+A (1) é a Lei de Fick que rege a difusão de substâncias em meios contínuos. A função vetorial indicada por
+
+J
+¯
+
+{\displaystyle {\bar {J}}}
+
+é chamada de densidade do fluido.
+
+J
+¯
+
+{\displaystyle {\bar {J}}}
+
+é um vetor na direção do escoamento e de módulo igual à quantidade de substâncias que atravessam uma unidade de área normal à direção do escoamento, na unidade de tempo.
+Definição matemática:
+
+J
+¯
+
+=
+ρ
+
+ν
+¯
+
+{\displaystyle {\bar {J}}=\rho {\bar {\nu }}}
+
+, em que
+
+ρ
+=
+ρ
+(
+x
+,
+y
+,
+z
+,
+t
+)
+
+{\displaystyle \rho =\rho (x,y,z,t)}
+
+é o campo escalar que descreve a densidade do fluido,
+
+ν
+¯
+
+=
+
+ν
+¯
+
+(
+x
+,
+y
+,
+z
+,
+t
+)
+
+{\displaystyle {\bar {\nu }}={\bar {\nu }}(x,y,z,t)}
+
+o campo vetorial que representa a velocidade do fluido. A constante D é chamada de constante de difusão e depende do meio.
+A (2) expressão é chamada de Lei de Fourier e rege a condução térmica. A função vetorial indicada por
+
+q
+¯
+
+{\textstyle {\bar {q}}}
+
+é chamada densidade de corrente de calor.
+Definição matemática:
+
+q
+¯
+
+=
+(
+Q
+÷
+V
+)
+
+ν
+¯
+
+{\displaystyle {\bar {q}}=(Q\div V){\bar {\nu }}}
+
+, onde Q é a quantidade de calor, V o volume e
+
+ν
+¯
+
+{\displaystyle {\bar {\nu }}}
+
+a velocidade de escoamento do calor. Sendo todas grandezas em função das coordenadas espaciais e e do tempo. A constante
+
+k
+
+{\textstyle k}
+
+é a condutividade térmica do meio.
+A (3) expressão traduz a Lei de Ohm, sendo
+
+J
+¯
+
+{\textstyle {\bar {J}}}
+
+a densidade de corrente elétrica,
+
+σ
+
+{\displaystyle \sigma }
+
+a condutividade elétrica e
+
+φ
+
+{\textstyle \varphi }
+
+o potencial elétrico. A definição da função vetorial
+
+J
+¯
+
+{\displaystyle {\bar {J}}}
+
+é análoga à definição de densidade de corrente usada na Lei de Fick, só que aqui ao invés de ter transporte de massa temos transporte de carga.
+Sendo estas leis, juntamente com a equação de continuidade, base para deduzir as equações de difusão, do calor e, no caso do escoamento estacionário, a equação de Laplace .
+
+== Noção intuitiva de gradiente ==
+O gradiente é o vetor que aponta para onde a grandeza resultante da função tem seu maior crescimento.
+
+== Gradientes de tensão ==
+Os gradientes de tensão em redes elétricas são, depois dos transientes, os maiores causadores de danos em circuitos eletro-eletrônicos.
+O retorno da energia elétrica numa linha de transmissão longa, após uma interrupção da mesma, faz-se acompanhar por transientes de tensão elevada até à estabilização do circuito. Simultaneamente, manifesta-se na rede um movimento oscilatório de baixa frequência, composto por gradientes positivos e negativos, denominados harmônicos, que fazem elevar e reduzir a tensão, acima e abaixo do seu valor nominal.
+
+== Ver também ==
+Teorema do gradiente
+Divergente
+Rotacional
+Degradê (Arte)
+Laplaciano
+
+== Referências ==
+
+== Bibliografia ==
+Cálculo, George B. Thomas, (décima edição), Volume 2; Addison Wesley/Pearson Education do Brasil, São Paulo, (2002).
+Matemática para pais e filhos, Carol Vordeman, PubliFolha; Barry Lewis/Andrew Jeffrey/Marcus Weeks, São Paulo, (2011).

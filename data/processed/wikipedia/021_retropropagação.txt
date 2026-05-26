@@ -1,0 +1,3532 @@
+No aprendizado de máquina, a retropropagação (backpropagation) é um método de computação de gradiente comumente usado para treinar uma rede neural no cálculo de atualizações de parâmetros.
+É uma aplicação eficiente da regra da cadeia em redes neurais. A retropropagação calcula o gradiente de uma função de perda em relação aos pesos da rede para um único exemplo de entrada-saída, e o faz de forma eficiente, calculando o gradiente uma camada de cada vez, iterando para trás a partir da última camada para evitar cálculos redundantes de termos intermediários na regra da cadeia; isso pode ser derivado por meio da programação dinâmica.
+A rigor, o termo retropropagação refere-se apenas a um algoritmo para calcular eficientemente o gradiente, e não a como o gradiente é usado; mas o termo é frequentemente usado de forma livre para se referir a todo o algoritmo de aprendizado. Isso inclui a alteração de parâmetros do modelo na direção negativa do gradiente, como pela descida de gradiente estocástico, ou como um passo intermediário em um otimizador mais complicado, como a Estimativa de Momento Adaptativo (Adam).
+A retropropagação teve múltiplas descobertas e descobertas parciais, com uma história e terminologia emaranhadas. Veja a seção de história para mais detalhes. Alguns outros nomes para a técnica incluem "modo reverso da diferenciação automática" ou "acumulação reversa".
+
+== Visão geral ==
+A retropropagação calcula o gradiente no espaço de pesos de uma rede neural feedforward (de alimentação direta), em relação a uma função de perda. Denota-se:
+
+x
+
+{\displaystyle x}
+
+: entrada (vetor de características)
+
+y
+
+{\displaystyle y}
+
+: saída alvo
+Para classificação, a saída será um vetor de probabilidades de classe (por exemplo,
+
+(
+0.1
+,
+0.7
+,
+0.2
+)
+
+{\displaystyle (0.1,0.7,0.2)}
+
+, e a saída alvo é uma classe específica, codificada pela one-hot/variável dummy (por exemplo,
+
+(
+0
+,
+1
+,
+0
+)
+
+{\displaystyle (0,1,0)}
+
+).
+
+C
+
+{\displaystyle C}
+
+: função de perda ou "função de custo"
+Para classificação, esta é geralmente a entropia cruzada (XC, perda logarítmica), enquanto para regressão é geralmente a perda de erro quadrático (SEL).
+
+L
+
+{\displaystyle L}
+
+: o número de camadas
+
+W
+
+l
+
+=
+(
+
+w
+
+j
+k
+
+l
+
+)
+
+{\displaystyle W^{l}=(w_{jk}^{l})}
+
+: os pesos entre a camada
+
+l
+−
+1
+
+{\displaystyle l-1}
+
+e
+
+l
+
+{\displaystyle l}
+
+, onde
+
+w
+
+j
+k
+
+l
+
+{\displaystyle w_{jk}^{l}}
+
+é o peso entre o
+
+k
+
+{\displaystyle k}
+
+-ésimo nó na camada
+
+l
+−
+1
+
+{\displaystyle l-1}
+
+e o
+
+j
+
+{\displaystyle j}
+
+-ésimo nó na camada
+
+l
+
+{\displaystyle l}
+
+f
+
+l
+
+{\displaystyle f^{l}}
+
+: funções de ativação na camada
+
+l
+
+{\displaystyle l}
+
+Para classificação, a última camada é geralmente a função logística para classificação binária, e softmax (softargmax) para classificação multiclasse, enquanto para as camadas ocultas isso era tradicionalmente uma função sigmoide (função logística ou outras) em cada nó (coordenada), mas hoje é mais variado, com o retificador (rampa, ReLU) sendo comum.
+
+a
+
+j
+
+l
+
+{\displaystyle a_{j}^{l}}
+
+: ativação do
+
+j
+
+{\displaystyle j}
+
+-ésimo nó na camada
+
+l
+
+{\displaystyle l}
+
+.
+Na derivação da retropropagação, outras quantidades intermediárias são usadas, sendo introduzidas conforme necessário abaixo. Os termos de viés (bias) não são tratados de forma especial, uma vez que correspondem a um peso com uma entrada fixa de 1. Para a retropropagação, a função de perda específica e as funções de ativação não importam, desde que elas e suas derivadas possam ser avaliadas de forma eficiente. Funções de ativação tradicionais incluem sigmoide, tanh e ReLU. Swish, Mish, e muitas outras.
+A rede em geral é uma combinação de composição de funções e multiplicação de matrizes:
+
+g
+(
+x
+)
+:=
+
+f
+
+L
+
+(
+
+W
+
+L
+
+f
+
+L
+−
+1
+
+(
+
+W
+
+L
+−
+1
+
+⋯
+
+f
+
+1
+
+(
+
+W
+
+1
+
+x
+)
+⋯
+)
+)
+
+{\displaystyle g(x):=f^{L}(W^{L}f^{L-1}(W^{L-1}\cdots f^{1}(W^{1}x)\cdots ))}
+
+Para um conjunto de treinamento, haverá um conjunto de pares de entrada-saída,
+
+{
+
+(
+
+x
+
+i
+
+,
+
+y
+
+i
+
+)
+
+}
+
+{\displaystyle \left\{(x_{i},y_{i})\right\}}
+
+. Para cada par de entrada-saída
+
+(
+
+x
+
+i
+
+,
+
+y
+
+i
+
+)
+
+{\displaystyle (x_{i},y_{i})}
+
+no conjunto de treinamento, a perda do modelo naquele par é o custo da diferença entre a saída prevista
+
+g
+(
+
+x
+
+i
+
+)
+
+{\displaystyle g(x_{i})}
+
+e a saída alvo
+
+y
+
+i
+
+{\displaystyle y_{i}}
+
+:
+
+C
+(
+
+y
+
+i
+
+,
+g
+(
+
+x
+
+i
+
+)
+)
+
+{\displaystyle C(y_{i},g(x_{i}))}
+
+Note a distinção: durante a avaliação do modelo, os pesos são fixos enquanto as entradas variam (e a saída alvo pode ser desconhecida), e a rede termina com a camada de saída (não inclui a função de perda). Durante o treinamento do modelo, o par de entrada-saída é fixo enquanto os pesos variam, e a rede termina com a função de perda.
+A retropropagação calcula o gradiente para um par de entrada-saída fixo
+
+(
+
+x
+
+i
+
+,
+
+y
+
+i
+
+)
+
+{\displaystyle (x_{i},y_{i})}
+
+, onde os pesos
+
+w
+
+j
+k
+
+l
+
+{\displaystyle w_{jk}^{l}}
+
+podem variar. Cada componente individual do gradiente,
+
+∂
+C
+
+/
+
+∂
+
+w
+
+j
+k
+
+l
+
+,
+
+{\displaystyle \partial C/\partial w_{jk}^{l},}
+
+pode ser calculado pela regra da cadeia; mas fazer isso separadamente para cada peso é ineficiente. A retropropagação calcula o gradiente de forma eficiente evitando cálculos duplicados e não calculando valores intermediários desnecessários, calculando o gradiente de cada camada – especificamente o gradiente da entrada ponderada de cada camada, denotado por
+
+δ
+
+l
+
+{\displaystyle \delta ^{l}}
+
+– de trás para frente.
+Informalmente, o ponto-chave é que, como a única maneira de um peso em
+
+W
+
+l
+
+{\displaystyle W^{l}}
+
+afetar a perda é através do seu efeito na próxima camada, e o faz linearmente,
+
+δ
+
+l
+
+{\displaystyle \delta ^{l}}
+
+são os únicos dados de que você precisa para calcular os gradientes dos pesos na camada
+
+l
+
+{\displaystyle l}
+
+, e então os gradientes dos pesos da camada anterior podem ser calculados por
+
+δ
+
+l
+−
+1
+
+{\displaystyle \delta ^{l-1}}
+
+e repetidos recursivamente. Isso evita a ineficiência de duas maneiras. Primeiro, evita a duplicação porque, ao calcular o gradiente na camada
+
+l
+
+{\displaystyle l}
+
+, é desnecessário recalcular todas as derivadas nas camadas posteriores
+
+l
++
+1
+,
+l
++
+2
+,
+…
+
+{\displaystyle l+1,l+2,\ldots }
+
+a cada vez. Segundo, evita cálculos intermediários desnecessários, porque em cada estágio calcula diretamente o gradiente dos pesos em relação à saída final (a perda), em vez de calcular desnecessariamente as derivadas dos valores das camadas ocultas em relação às mudanças nos pesos
+
+∂
+
+a
+
+j
+′
+
+l
+′
+
+/
+
+∂
+
+w
+
+j
+k
+
+l
+
+{\displaystyle \partial a_{j'}^{l'}/\partial w_{jk}^{l}}
+
+.
+A retropropagação pode ser expressa para redes feedforward simples em termos de multiplicação de matrizes, ou mais geralmente em termos do grafo adjunto.
+
+== Multiplicação de matrizes ==
+Para o caso básico de uma rede feedforward (de alimentação direta), onde os nós em cada camada estão conectados apenas aos nós da camada imediatamente seguinte (sem pular nenhuma camada), e há uma função de perda que calcula uma perda escalar para a saída final, a retropropagação pode ser entendida simplesmente por multiplicação de matrizes. Essencialmente, a retropropagação avalia a expressão para a derivada da função de custo como um produto de derivadas entre cada camada da direita para a esquerda – "para trás" (backwards) – com o gradiente dos pesos entre cada camada sendo uma simples modificação dos produtos parciais (o "erro retropropagado").
+Dado um par de entrada-saída
+
+(
+x
+,
+y
+)
+
+{\displaystyle (x,y)}
+
+, a perda é:
+
+C
+(
+y
+,
+
+f
+
+L
+
+(
+
+W
+
+L
+
+f
+
+L
+−
+1
+
+(
+
+W
+
+L
+−
+1
+
+⋯
+
+f
+
+2
+
+(
+
+W
+
+2
+
+f
+
+1
+
+(
+
+W
+
+1
+
+x
+)
+)
+⋯
+)
+)
+)
+
+{\displaystyle C(y,f^{L}(W^{L}f^{L-1}(W^{L-1}\cdots f^{2}(W^{2}f^{1}(W^{1}x))\cdots )))}
+
+Para calcular isso, começa-se com a entrada
+
+x
+
+{\displaystyle x}
+
+e trabalha-se para a frente; denote a entrada ponderada de cada camada oculta como
+
+z
+
+l
+
+{\displaystyle z^{l}}
+
+e a saída da camada oculta
+
+l
+
+{\displaystyle l}
+
+como a ativação
+
+a
+
+l
+
+{\displaystyle a^{l}}
+
+. Para a retropropagação, a ativação
+
+a
+
+l
+
+{\displaystyle a^{l}}
+
+, bem como as derivadas
+
+(
+
+f
+
+l
+
+)
+′
+
+{\displaystyle (f^{l})'}
+
+(avaliadas em
+
+z
+
+l
+
+{\displaystyle z^{l}}
+
+), devem ser armazenadas em cache para uso durante a passagem para trás.
+A derivada da perda em termos das entradas é dada pela regra da cadeia; note que cada termo é uma derivada total, avaliada no valor da rede (em cada nó) na entrada
+
+x
+
+{\displaystyle x}
+
+:
+
+d
+C
+
+d
+
+a
+
+L
+
+⋅
+
+d
+
+a
+
+L
+
+d
+
+z
+
+L
+
+⋅
+
+d
+
+z
+
+L
+
+d
+
+a
+
+L
+−
+1
+
+⋅
+
+d
+
+a
+
+L
+−
+1
+
+d
+
+z
+
+L
+−
+1
+
+⋅
+
+d
+
+z
+
+L
+−
+1
+
+d
+
+a
+
+L
+−
+2
+
+⋅
+…
+⋅
+
+d
+
+a
+
+1
+
+d
+
+z
+
+1
+
+⋅
+
+∂
+
+z
+
+1
+
+∂
+x
+
+,
+
+{\displaystyle {\frac {dC}{da^{L}}}\cdot {\frac {da^{L}}{dz^{L}}}\cdot {\frac {dz^{L}}{da^{L-1}}}\cdot {\frac {da^{L-1}}{dz^{L-1}}}\cdot {\frac {dz^{L-1}}{da^{L-2}}}\cdot \ldots \cdot {\frac {da^{1}}{dz^{1}}}\cdot {\frac {\partial z^{1}}{\partial x}},}
+
+onde
+
+d
+
+a
+
+L
+
+d
+
+z
+
+L
+
+{\displaystyle {\frac {da^{L}}{dz^{L}}}}
+
+é uma matriz diagonal.
+Esses termos são: a derivada da função de perda; as derivadas das funções de ativação; e as matrizes de pesos:
+
+d
+C
+
+d
+
+a
+
+L
+
+∘
+(
+
+f
+
+L
+
+)
+′
+
+⋅
+
+W
+
+L
+
+∘
+(
+
+f
+
+L
+−
+1
+
+)
+′
+
+⋅
+
+W
+
+L
+−
+1
+
+∘
+⋯
+∘
+(
+
+f
+
+1
+
+)
+′
+
+⋅
+
+W
+
+1
+
+.
+
+{\displaystyle {\frac {dC}{da^{L}}}\circ (f^{L})'\cdot W^{L}\circ (f^{L-1})'\cdot W^{L-1}\circ \cdots \circ (f^{1})'\cdot W^{1}.}
+
+O gradiente
+
+∇
+
+{\displaystyle \nabla }
+
+é a transposta da derivada da saída em termos da entrada, de modo que as matrizes são transpostas e a ordem de multiplicação é invertida, mas as entradas são as mesmas:
+
+∇
+
+x
+
+C
+=
+(
+
+W
+
+1
+
+)
+
+T
+
+⋅
+(
+
+f
+
+1
+
+)
+′
+
+∘
+…
+∘
+(
+
+W
+
+L
+−
+1
+
+)
+
+T
+
+⋅
+(
+
+f
+
+L
+−
+1
+
+)
+′
+
+∘
+(
+
+W
+
+L
+
+)
+
+T
+
+⋅
+(
+
+f
+
+L
+
+)
+′
+
+∘
+
+∇
+
+a
+
+L
+
+C
+.
+
+{\displaystyle \nabla _{x}C=(W^{1})^{T}\cdot (f^{1})'\circ \ldots \circ (W^{L-1})^{T}\cdot (f^{L-1})'\circ (W^{L})^{T}\cdot (f^{L})'\circ \nabla _{a^{L}}C.}
+
+A retropropagação consiste então essencialmente em avaliar essa expressão da direita para a esquerda (equivalentemente, multiplicar a expressão anterior para a derivada da esquerda para a direita), calculando o gradiente em cada camada ao longo do caminho; há uma etapa adicional, porque o gradiente dos pesos não é apenas uma subexpressão: há uma multiplicação extra.
+Introduzindo a quantidade auxiliar
+
+δ
+
+l
+
+{\displaystyle \delta ^{l}}
+
+para os produtos parciais (multiplicando da direita para a esquerda), interpretada como o "erro no nível
+
+l
+
+{\displaystyle l}
+
+" e definida como o gradiente dos valores de entrada no nível
+
+l
+
+{\displaystyle l}
+
+:
+
+δ
+
+l
+
+:=
+(
+
+f
+
+l
+
+)
+′
+
+∘
+(
+
+W
+
+l
++
+1
+
+)
+
+T
+
+⋅
+(
+
+f
+
+l
++
+1
+
+)
+′
+
+∘
+⋯
+∘
+(
+
+W
+
+L
+−
+1
+
+)
+
+T
+
+⋅
+(
+
+f
+
+L
+−
+1
+
+)
+′
+
+∘
+(
+
+W
+
+L
+
+)
+
+T
+
+⋅
+(
+
+f
+
+L
+
+)
+′
+
+∘
+
+∇
+
+a
+
+L
+
+C
+.
+
+{\displaystyle \delta ^{l}:=(f^{l})'\circ (W^{l+1})^{T}\cdot (f^{l+1})'\circ \cdots \circ (W^{L-1})^{T}\cdot (f^{L-1})'\circ (W^{L})^{T}\cdot (f^{L})'\circ \nabla _{a^{L}}C.}
+
+Note que
+
+δ
+
+l
+
+{\displaystyle \delta ^{l}}
+
+é um vetor, de comprimento igual ao número de nós no nível
+
+l
+
+{\displaystyle l}
+
+; cada componente é interpretado como o "custo atribuível a (ao valor de) esse nó".
+O gradiente dos pesos na camada
+
+l
+
+{\displaystyle l}
+
+é então:
+
+∇
+
+W
+
+l
+
+C
+=
+
+δ
+
+l
+
+(
+
+a
+
+l
+−
+1
+
+)
+
+T
+
+.
+
+{\displaystyle \nabla _{W^{l}}C=\delta ^{l}(a^{l-1})^{T}.}
+
+O fator de
+
+a
+
+l
+−
+1
+
+{\displaystyle a^{l-1}}
+
+deve-se ao fato de que os pesos
+
+W
+
+l
+
+{\displaystyle W^{l}}
+
+entre o nível
+
+l
+−
+1
+
+{\displaystyle l-1}
+
+e
+
+l
+
+{\displaystyle l}
+
+afetam o nível
+
+l
+
+{\displaystyle l}
+
+proporcionalmente às entradas (ativações): as entradas são fixas, os pesos variam.
+O
+
+δ
+
+l
+
+{\displaystyle \delta ^{l}}
+
+pode ser facilmente calculado recursivamente, indo da direita para a esquerda, como:
+
+δ
+
+l
+−
+1
+
+:=
+(
+
+f
+
+l
+−
+1
+
+)
+′
+
+∘
+(
+
+W
+
+l
+
+)
+
+T
+
+⋅
+
+δ
+
+l
+
+.
+
+{\displaystyle \delta ^{l-1}:=(f^{l-1})'\circ (W^{l})^{T}\cdot \delta ^{l}.}
+
+Os gradientes dos pesos podem, portanto, ser calculados usando algumas multiplicações de matrizes para cada nível; isto é a retropropagação.
+Comparado a computar ingenuamente para a frente (usando o
+
+δ
+
+l
+
+{\displaystyle \delta ^{l}}
+
+para ilustração):
+
+δ
+
+1
+
+=
+(
+
+f
+
+1
+
+)
+′
+
+∘
+(
+
+W
+
+2
+
+)
+
+T
+
+⋅
+(
+
+f
+
+2
+
+)
+′
+
+∘
+⋯
+∘
+(
+
+W
+
+L
+−
+1
+
+)
+
+T
+
+⋅
+(
+
+f
+
+L
+−
+1
+
+)
+′
+
+∘
+(
+
+W
+
+L
+
+)
+
+T
+
+⋅
+(
+
+f
+
+L
+
+)
+′
+
+∘
+
+∇
+
+a
+
+L
+
+C
+
+δ
+
+2
+
+=
+(
+
+f
+
+2
+
+)
+′
+
+∘
+⋯
+∘
+(
+
+W
+
+L
+−
+1
+
+)
+
+T
+
+⋅
+(
+
+f
+
+L
+−
+1
+
+)
+′
+
+∘
+(
+
+W
+
+L
+
+)
+
+T
+
+⋅
+(
+
+f
+
+L
+
+)
+′
+
+∘
+
+∇
+
+a
+
+L
+
+C
+
+⋮
+
+δ
+
+L
+−
+1
+
+=
+(
+
+f
+
+L
+−
+1
+
+)
+′
+
+∘
+(
+
+W
+
+L
+
+)
+
+T
+
+⋅
+(
+
+f
+
+L
+
+)
+′
+
+∘
+
+∇
+
+a
+
+L
+
+C
+
+δ
+
+L
+
+=
+(
+
+f
+
+L
+
+)
+′
+
+∘
+
+∇
+
+a
+
+L
+
+C
+,
+
+{\displaystyle {\begin{aligned}\delta ^{1}&=(f^{1})'\circ (W^{2})^{T}\cdot (f^{2})'\circ \cdots \circ (W^{L-1})^{T}\cdot (f^{L-1})'\circ (W^{L})^{T}\cdot (f^{L})'\circ \nabla _{a^{L}}C\\\delta ^{2}&=(f^{2})'\circ \cdots \circ (W^{L-1})^{T}\cdot (f^{L-1})'\circ (W^{L})^{T}\cdot (f^{L})'\circ \nabla _{a^{L}}C\\&\vdots \\\delta ^{L-1}&=(f^{L-1})'\circ (W^{L})^{T}\cdot (f^{L})'\circ \nabla _{a^{L}}C\\\delta ^{L}&=(f^{L})'\circ \nabla _{a^{L}}C,\end{aligned}}}
+
+Existem duas diferenças principais na retropropagação:
+
+Calcular
+
+δ
+
+l
+−
+1
+
+{\displaystyle \delta ^{l-1}}
+
+em termos de
+
+δ
+
+l
+
+{\displaystyle \delta ^{l}}
+
+evita a óbvia multiplicação duplicada das camadas
+
+l
+
+{\displaystyle l}
+
+e posteriores.
+Multiplicar começando de
+
+∇
+
+a
+
+L
+
+C
+
+{\displaystyle \nabla _{a^{L}}C}
+
+– propagando o erro para trás – significa que cada passo simplesmente multiplica um vetor (
+
+δ
+
+l
+
+{\displaystyle \delta ^{l}}
+
+) pelas matrizes de pesos
+
+(
+
+W
+
+l
+
+)
+
+T
+
+{\displaystyle (W^{l})^{T}}
+
+e derivadas das ativações
+
+(
+
+f
+
+l
+−
+1
+
+)
+′
+
+{\displaystyle (f^{l-1})'}
+
+. Em contrapartida, multiplicar para a frente, começando das alterações numa camada anterior, significa que cada multiplicação multiplica uma matriz por uma matriz. Isso é muito mais custoso e corresponde a rastrear cada caminho possível de uma mudança em uma camada
+
+l
+
+{\displaystyle l}
+
+para a frente até as mudanças na camada
+
+l
++
+2
+
+{\displaystyle l+2}
+
+(para multiplicar
+
+W
+
+l
++
+1
+
+{\displaystyle W^{l+1}}
+
+por
+
+W
+
+l
++
+2
+
+{\displaystyle W^{l+2}}
+
+, com multiplicações adicionais para as derivadas das ativações), o que calcula desnecessariamente as quantidades intermediárias de como as mudanças de peso afetam os valores dos nós ocultos.
+
+== Grafo adjunto ==
+Para grafos mais gerais, e outras variações avançadas, a retropropagação pode ser entendida em termos de diferenciação automática, onde a retropropagação é um caso especial de acumulação reversa (ou "modo reverso").
+
+== Intuição ==
+
+=== Motivação ===
+O objetivo de qualquer algoritmo de aprendizado supervisionado é encontrar uma função que melhor mapeie um conjunto de entradas para sua saída correta. A motivação para a retropropagação é treinar uma rede neural de múltiplas camadas de modo que ela possa aprender as representações internas apropriadas para permitir o aprendizado de qualquer mapeamento arbitrário de entrada para saída.
+
+=== O aprendizado como um problema de otimização ===
+Para entender a derivação matemática do algoritmo de retropropagação, ajuda primeiro desenvolver alguma intuição sobre a relação entre a saída real de um neurônio e a saída correta para um exemplo de treinamento específico. Considere uma rede neural simples com duas unidades de entrada, uma unidade de saída e nenhuma unidade oculta, e na qual cada neurônio usa uma saída linear (ao contrário da maioria dos trabalhos em redes neurais, nos quais o mapeamento das entradas para as saídas é não linear) que é a soma ponderada de sua entrada.
+
+Inicialmente, antes do treinamento, os pesos serão definidos aleatoriamente. Em seguida, o neurônio aprende a partir de exemplos de treinamento, que neste caso consistem em um conjunto de tuplas
+
+(
+
+x
+
+1
+
+,
+
+x
+
+2
+
+,
+t
+)
+
+{\displaystyle (x_{1},x_{2},t)}
+
+onde
+
+x
+
+1
+
+{\displaystyle x_{1}}
+
+e
+
+x
+
+2
+
+{\displaystyle x_{2}}
+
+são as entradas para a rede e t é a saída correta (a saída que a rede deve produzir dadas essas entradas, quando tiver sido treinada). A rede inicial, dados
+
+x
+
+1
+
+{\displaystyle x_{1}}
+
+e
+
+x
+
+2
+
+{\displaystyle x_{2}}
+
+, calculará uma saída y que provavelmente difere de t (dados os pesos aleatórios). Uma função de perda
+
+L
+(
+t
+,
+y
+)
+
+{\displaystyle L(t,y)}
+
+é usada para medir a discrepância entre a saída alvo t e a saída calculada y. Para problemas de análise de regressão, o erro quadrático pode ser usado como uma função de perda; para classificação, a entropia cruzada categórica pode ser usada.
+Como exemplo, considere um problema de regressão usando o erro quadrático como perda:
+
+L
+(
+t
+,
+y
+)
+=
+(
+t
+−
+y
+
+)
+
+2
+
+=
+E
+,
+
+{\displaystyle L(t,y)=(t-y)^{2}=E,}
+
+onde E é a discrepância ou erro.
+Considere a rede em um único caso de treinamento:
+
+(
+1
+,
+1
+,
+0
+)
+
+{\displaystyle (1,1,0)}
+
+. Assim, as entradas
+
+x
+
+1
+
+{\displaystyle x_{1}}
+
+e
+
+x
+
+2
+
+{\displaystyle x_{2}}
+
+são 1 e 1, respectivamente, e a saída correta, t, é 0. Agora, se a relação for plotada entre a saída da rede y no eixo horizontal e o erro E no eixo vertical, o resultado é uma parábola. O mínimo da parábola corresponde à saída y que minimiza o erro E. Para um único caso de treinamento, o mínimo também toca o eixo horizontal, o que significa que o erro será zero e a rede pode produzir uma saída y que corresponda exatamente à saída alvo t. Portanto, o problema de mapeamento de entradas para saídas pode ser reduzido a um problema de otimização de encontrar uma função que produza o erro mínimo.
+
+No entanto, a saída de um neurônio depende da soma ponderada de todas as suas entradas:
+
+y
+=
+
+x
+
+1
+
+w
+
+1
+
++
+
+x
+
+2
+
+w
+
+2
+
+,
+
+{\displaystyle y=x_{1}w_{1}+x_{2}w_{2},}
+
+onde
+
+w
+
+1
+
+{\displaystyle w_{1}}
+
+e
+
+w
+
+2
+
+{\displaystyle w_{2}}
+
+são os pesos na conexão das unidades de entrada para a unidade de saída. Portanto, o erro também depende dos pesos de entrada para o neurônio, que é, em última análise, o que precisa ser alterado na rede para permitir o aprendizado.
+Neste exemplo, ao injetar os dados de treinamento
+
+(
+1
+,
+1
+,
+0
+)
+
+{\displaystyle (1,1,0)}
+
+, a função de perda torna-se
+
+E
+=
+(
+t
+−
+y
+
+)
+
+2
+
+=
+
+y
+
+2
+
+=
+(
+
+x
+
+1
+
+w
+
+1
+
++
+
+x
+
+2
+
+w
+
+2
+
+)
+
+2
+
+=
+(
+
+w
+
+1
+
++
+
+w
+
+2
+
+)
+
+2
+
+.
+
+{\displaystyle E=(t-y)^{2}=y^{2}=(x_{1}w_{1}+x_{2}w_{2})^{2}=(w_{1}+w_{2})^{2}.}
+
+Então, a função de perda
+
+E
+
+{\displaystyle E}
+
+assume a forma de um cilindro parabólico com sua base direcionada ao longo de
+
+w
+
+1
+
+=
+−
+
+w
+
+2
+
+{\displaystyle w_{1}=-w_{2}}
+
+. Como todos os conjuntos de pesos que satisfazem
+
+w
+
+1
+
+=
+−
+
+w
+
+2
+
+{\displaystyle w_{1}=-w_{2}}
+
+minimizam a função de perda, neste caso restrições adicionais são necessárias para convergir para uma solução única. Restrições adicionais podem ser geradas estabelecendo condições específicas para os pesos ou injetando dados de treinamento adicionais.
+Um algoritmo comumente usado para encontrar o conjunto de pesos que minimiza o erro é a descida de gradiente. Pela retropropagação, a direção de descida mais íngreme é calculada a partir da função de perda em relação aos pesos sinápticos atuais. Então, os pesos podem ser modificados ao longo da direção de descida mais íngreme, e o erro é minimizado de forma eficiente.
+
+== Derivação ==
+O método de descida de gradiente envolve o cálculo da derivada da função de perda em relação aos pesos da rede. Isto é normalmente feito usando a retropropagação. Assumindo um neurônio de saída, a função de erro quadrático é
+
+E
+=
+L
+(
+t
+,
+y
+)
+
+{\displaystyle E=L(t,y)}
+
+onde
+
+L
+
+{\displaystyle L}
+
+é a perda para a saída
+
+y
+
+{\displaystyle y}
+
+e o valor alvo
+
+t
+
+{\displaystyle t}
+
+,
+
+t
+
+{\displaystyle t}
+
+é a saída alvo para uma amostra de treinamento, e
+
+y
+
+{\displaystyle y}
+
+é a saída real do neurônio de saída.
+Nesta seção, a ordem dos índices de peso é invertida em relação à seção anterior:
+
+w
+
+i
+j
+
+{\displaystyle w_{ij}}
+
+é o peso da
+
+i
+
+{\displaystyle i}
+
+-ésima para a
+
+j
+
+{\displaystyle j}
+
+-ésima unidade. Para cada neurônio
+
+j
+
+{\displaystyle j}
+
+, sua saída
+
+o
+
+j
+
+{\displaystyle o_{j}}
+
+é definida como
+
+o
+
+j
+
+=
+φ
+(
+
+net
+
+j
+
+)
+=
+φ
+
+(
+
+∑
+
+k
+=
+1
+
+n
+
+w
+
+k
+j
+
+x
+
+k
+
+)
+
+,
+
+{\displaystyle o_{j}=\varphi ({\text{net}}_{j})=\varphi \left(\sum _{k=1}^{n}w_{kj}x_{k}\right),}
+
+onde a função de ativação
+
+φ
+
+{\displaystyle \varphi }
+
+é não linear e diferenciável sobre a região de ativação (a ReLU não é diferenciável em um ponto). Uma função de ativação historicamente usada é a função logística:
+
+φ
+(
+z
+)
+=
+
+1
+
+1
++
+
+e
+
+−
+z
+
+{\displaystyle \varphi (z)={\frac {1}{1+e^{-z}}}}
+
+que tem uma derivada conveniente de:
+
+d
+φ
+
+d
+z
+
+=
+φ
+(
+z
+)
+(
+1
+−
+φ
+(
+z
+)
+)
+
+{\displaystyle {\frac {d\varphi }{dz}}=\varphi (z)(1-\varphi (z))}
+
+A entrada
+
+net
+
+j
+
+{\displaystyle {\text{net}}_{j}}
+
+para um neurônio é a soma ponderada das saídas
+
+o
+
+k
+
+{\displaystyle o_{k}}
+
+dos neurônios anteriores. Se o neurônio estiver na primeira camada após a camada de entrada, as
+
+o
+
+k
+
+{\displaystyle o_{k}}
+
+da camada de entrada são simplesmente as entradas
+
+x
+
+k
+
+{\displaystyle x_{k}}
+
+para a rede. O número de unidades de entrada para o neurônio é
+
+n
+
+{\displaystyle n}
+
+. A variável
+
+w
+
+k
+j
+
+{\displaystyle w_{kj}}
+
+denota o peso entre o neurônio
+
+k
+
+{\displaystyle k}
+
+da camada anterior e o neurônio
+
+j
+
+{\displaystyle j}
+
+da camada atual.
+
+=== Encontrando a derivada do erro ===
+
+O cálculo da derivada parcial do erro em relação a um peso
+
+w
+
+i
+j
+
+{\displaystyle w_{ij}}
+
+é feito usando a regra da cadeia duas vezes:
+No último fator do lado direito da equação acima, apenas um termo na soma
+
+net
+
+j
+
+{\displaystyle {\text{net}}_{j}}
+
+depende de
+
+w
+
+i
+j
+
+{\displaystyle w_{ij}}
+
+, de modo que
+Se o neurônio estiver na primeira camada após a camada de entrada,
+
+o
+
+i
+
+{\displaystyle o_{i}}
+
+é apenas
+
+x
+
+i
+
+{\displaystyle x_{i}}
+
+.
+A derivada da saída do neurônio
+
+j
+
+{\displaystyle j}
+
+em relação à sua entrada é simplesmente a derivada parcial da função de ativação:
+que para a função de ativação logística
+
+∂
+
+o
+
+j
+
+∂
+
+net
+
+j
+
+=
+
+∂
+
+∂
+
+net
+
+j
+
+φ
+(
+
+net
+
+j
+
+)
+=
+φ
+(
+
+net
+
+j
+
+)
+(
+1
+−
+φ
+(
+
+net
+
+j
+
+)
+)
+=
+
+o
+
+j
+
+(
+1
+−
+
+o
+
+j
+
+)
+
+{\displaystyle {\frac {\partial o_{j}}{\partial {\text{net}}_{j}}}={\frac {\partial }{\partial {\text{net}}_{j}}}\varphi ({\text{net}}_{j})=\varphi ({\text{net}}_{j})(1-\varphi ({\text{net}}_{j}))=o_{j}(1-o_{j})}
+
+Esta é a razão pela qual a retropropagação exige que a função de ativação seja diferenciável. (No entanto, a função de ativação ReLU, que é não diferenciável em 0, tornou-se bastante popular, por exemplo, na AlexNet)
+
+O primeiro fator é simples de avaliar se o neurônio estiver na camada de saída, porque então
+
+o
+
+j
+
+=
+y
+
+{\displaystyle o_{j}=y}
+
+e
+Se a metade do erro quadrático for usada como função de perda, podemos reescrevê-la como
+
+∂
+E
+
+∂
+
+o
+
+j
+
+=
+
+∂
+E
+
+∂
+y
+
+=
+
+∂
+
+∂
+y
+
+1
+2
+
+(
+t
+−
+y
+
+)
+
+2
+
+=
+y
+−
+t
+
+{\displaystyle {\frac {\partial E}{\partial o_{j}}}={\frac {\partial E}{\partial y}}={\frac {\partial }{\partial y}}{\frac {1}{2}}(t-y)^{2}=y-t}
+
+No entanto, se
+
+j
+
+{\displaystyle j}
+
+estiver em uma camada interna arbitrária da rede, encontrar a derivada de
+
+E
+
+{\displaystyle E}
+
+em relação a
+
+o
+
+j
+
+{\displaystyle o_{j}}
+
+é menos óbvio.
+Considerando
+
+E
+
+{\displaystyle E}
+
+como uma função cujas entradas são todos os neurônios
+
+L
+=
+{
+u
+,
+v
+,
+…
+,
+w
+}
+
+{\displaystyle L=\{u,v,\dots ,w\}}
+
+que recebem entrada do neurônio
+
+j
+
+{\displaystyle j}
+
+,
+
+∂
+E
+(
+
+o
+
+j
+
+)
+
+∂
+
+o
+
+j
+
+=
+
+∂
+E
+(
+
+n
+e
+t
+
+u
+
+,
+
+net
+
+v
+
+,
+…
+,
+
+n
+e
+t
+
+w
+
+)
+
+∂
+
+o
+
+j
+
+{\displaystyle {\frac {\partial E(o_{j})}{\partial o_{j}}}={\frac {\partial E(\mathrm {net} _{u},{\text{net}}_{v},\dots ,\mathrm {net} _{w})}{\partial o_{j}}}}
+
+e calculando a derivada total em relação a
+
+o
+
+j
+
+{\displaystyle o_{j}}
+
+, obtém-se uma expressão recursiva para a derivada:
+Portanto, a derivada em relação a
+
+o
+
+j
+
+{\displaystyle o_{j}}
+
+pode ser calculada se todas as derivadas em relação às saídas
+
+o
+
+ℓ
+
+{\displaystyle o_{\ell }}
+
+da próxima camada – aquelas mais próximas do neurônio de saída – forem conhecidas. [Nota: se algum dos neurônios no conjunto
+
+L
+
+{\displaystyle L}
+
+não estivesse conectado ao neurônio
+
+j
+
+{\displaystyle j}
+
+, eles seriam independentes de
+
+w
+
+i
+j
+
+{\displaystyle w_{ij}}
+
+e a derivada parcial correspondente sob o somatório desapareceria para 0.]
+Substituindo a Eq. 2, Eq. 3, Eq. 4 e a Eq. 5 na Eq. 1, obtemos:
+
+∂
+E
+
+∂
+
+w
+
+i
+j
+
+=
+
+∂
+E
+
+∂
+
+o
+
+j
+
+∂
+
+o
+
+j
+
+∂
+
+net
+
+j
+
+∂
+
+net
+
+j
+
+∂
+
+w
+
+i
+j
+
+=
+
+∂
+E
+
+∂
+
+o
+
+j
+
+∂
+
+o
+
+j
+
+∂
+
+net
+
+j
+
+o
+
+i
+
+{\displaystyle {\frac {\partial E}{\partial w_{ij}}}={\frac {\partial E}{\partial o_{j}}}{\frac {\partial o_{j}}{\partial {\text{net}}_{j}}}{\frac {\partial {\text{net}}_{j}}{\partial w_{ij}}}={\frac {\partial E}{\partial o_{j}}}{\frac {\partial o_{j}}{\partial {\text{net}}_{j}}}o_{i}}
+
+∂
+E
+
+∂
+
+w
+
+i
+j
+
+=
+
+o
+
+i
+
+δ
+
+j
+
+{\displaystyle {\frac {\partial E}{\partial w_{ij}}}=o_{i}\delta _{j}}
+
+com
+
+δ
+
+j
+
+=
+
+∂
+E
+
+∂
+
+o
+
+j
+
+∂
+
+o
+
+j
+
+∂
+
+net
+
+j
+
+=
+
+{
+
+∂
+L
+(
+t
+,
+
+o
+
+j
+
+)
+
+∂
+
+o
+
+j
+
+d
+φ
+(
+
+net
+
+j
+
+)
+
+d
+
+net
+
+j
+
+se
+
+j
+
+for um neurônio de saída,
+
+(
+
+∑
+
+ℓ
+∈
+L
+
+w
+
+j
+ℓ
+
+δ
+
+ℓ
+
+)
+
+d
+φ
+(
+
+net
+
+j
+
+)
+
+d
+
+net
+
+j
+
+se
+
+j
+
+for um neurônio interno.
+
+{\displaystyle \delta _{j}={\frac {\partial E}{\partial o_{j}}}{\frac {\partial o_{j}}{\partial {\text{net}}_{j}}}={\begin{cases}{\frac {\partial L(t,o_{j})}{\partial o_{j}}}{\frac {d\varphi ({\text{net}}_{j})}{d{\text{net}}_{j}}}&{\text{se }}j{\text{ for um neurônio de saída,}}\\(\sum _{\ell \in L}w_{j\ell }\delta _{\ell }){\frac {d\varphi ({\text{net}}_{j})}{d{\text{net}}_{j}}}&{\text{se }}j{\text{ for um neurônio interno.}}\end{cases}}}
+
+se
+
+φ
+
+{\displaystyle \varphi }
+
+for a função logística e o erro for o erro quadrático:
+
+δ
+
+j
+
+=
+
+∂
+E
+
+∂
+
+o
+
+j
+
+∂
+
+o
+
+j
+
+∂
+
+net
+
+j
+
+=
+
+{
+
+(
+
+o
+
+j
+
+−
+
+t
+
+j
+
+)
+
+o
+
+j
+
+(
+1
+−
+
+o
+
+j
+
+)
+
+se
+
+j
+
+for um neurônio de saída,
+
+(
+
+∑
+
+ℓ
+∈
+L
+
+w
+
+j
+ℓ
+
+δ
+
+ℓ
+
+)
+
+o
+
+j
+
+(
+1
+−
+
+o
+
+j
+
+)
+
+se
+
+j
+
+for um neurônio interno.
+
+{\displaystyle \delta _{j}={\frac {\partial E}{\partial o_{j}}}{\frac {\partial o_{j}}{\partial {\text{net}}_{j}}}={\begin{cases}(o_{j}-t_{j})o_{j}(1-o_{j})&{\text{se }}j{\text{ for um neurônio de saída,}}\\(\sum _{\ell \in L}w_{j\ell }\delta _{\ell })o_{j}(1-o_{j})&{\text{se }}j{\text{ for um neurônio interno.}}\end{cases}}}
+
+Para atualizar o peso
+
+w
+
+i
+j
+
+{\displaystyle w_{ij}}
+
+usando a descida de gradiente, deve-se escolher uma taxa de aprendizado,
+
+η
+>
+0
+
+{\displaystyle \eta >0}
+
+. A mudança no peso precisa refletir o impacto sobre
+
+E
+
+{\displaystyle E}
+
+de um aumento ou diminuição em
+
+w
+
+i
+j
+
+{\displaystyle w_{ij}}
+
+. Se
+
+∂
+E
+
+∂
+
+w
+
+i
+j
+
+>
+0
+
+{\displaystyle {\frac {\partial E}{\partial w_{ij}}}>0}
+
+, um aumento em
+
+w
+
+i
+j
+
+{\displaystyle w_{ij}}
+
+aumenta
+
+E
+
+{\displaystyle E}
+
+; inversamente, se
+
+∂
+E
+
+∂
+
+w
+
+i
+j
+
+<
+0
+
+{\displaystyle {\frac {\partial E}{\partial w_{ij}}}<0}
+
+, um aumento em
+
+w
+
+i
+j
+
+{\displaystyle w_{ij}}
+
+diminui
+
+E
+
+{\displaystyle E}
+
+. O novo
+
+Δ
+
+w
+
+i
+j
+
+{\displaystyle \Delta w_{ij}}
+
+é adicionado ao peso antigo, e o produto da taxa de aprendizado pelo gradiente, multiplicado por
+
+−
+1
+
+{\displaystyle -1}
+
+, garante que
+
+w
+
+i
+j
+
+{\displaystyle w_{ij}}
+
+mude de forma a sempre diminuir
+
+E
+
+{\displaystyle E}
+
+. Em outras palavras, na equação imediatamente abaixo,
+
+−
+η
+
+∂
+E
+
+∂
+
+w
+
+i
+j
+
+{\displaystyle -\eta {\frac {\partial E}{\partial w_{ij}}}}
+
+sempre altera
+
+w
+
+i
+j
+
+{\displaystyle w_{ij}}
+
+de tal modo que
+
+E
+
+{\displaystyle E}
+
+seja diminuído:
+
+Δ
+
+w
+
+i
+j
+
+=
+−
+η
+
+∂
+E
+
+∂
+
+w
+
+i
+j
+
+=
+−
+η
+
+o
+
+i
+
+δ
+
+j
+
+{\displaystyle \Delta w_{ij}=-\eta {\frac {\partial E}{\partial w_{ij}}}=-\eta o_{i}\delta _{j}}
+
+== Descida de gradiente de segunda ordem ==
+
+Usando uma matriz hessiana de derivadas de segunda ordem da função de erro, o algoritmo de Levenberg-Marquardt frequentemente converge mais rápido do que a descida de gradiente de primeira ordem, especialmente quando a topologia da função de erro é complicada. Ele também pode encontrar soluções em contagens menores de nós para as quais outros métodos poderiam não convergir. A matriz hessiana pode ser aproximada pela matriz de informação de Fisher.
+Como exemplo, considere uma rede feedforward simples. Na
+
+l
+
+{\displaystyle l}
+
+-ésima camada, temos
+
+x
+
+i
+
+(
+l
+)
+
+,
+
+a
+
+i
+
+(
+l
+)
+
+=
+f
+(
+
+x
+
+i
+
+(
+l
+)
+
+)
+,
+
+x
+
+i
+
+(
+l
++
+1
+)
+
+=
+
+∑
+
+j
+
+W
+
+i
+j
+
+a
+
+j
+
+(
+l
+)
+
+{\displaystyle x_{i}^{(l)},\quad a_{i}^{(l)}=f(x_{i}^{(l)}),\quad x_{i}^{(l+1)}=\sum _{j}W_{ij}a_{j}^{(l)}}
+
+onde
+
+x
+
+{\displaystyle x}
+
+são as pré-ativações,
+
+a
+
+{\displaystyle a}
+
+são as ativações e
+
+W
+
+{\displaystyle W}
+
+é a matriz de pesos. Dada uma função de perda
+
+L
+
+{\displaystyle L}
+
+, a retropropagação de primeira ordem estabelece que
+
+∂
+L
+
+∂
+
+a
+
+j
+
+(
+l
+)
+
+=
+
+∑
+
+j
+
+W
+
+i
+j
+
+∂
+L
+
+∂
+
+x
+
+i
+
+(
+l
++
+1
+)
+
+,
+
+∂
+L
+
+∂
+
+x
+
+j
+
+(
+l
+)
+
+=
+
+f
+′
+
+(
+
+x
+
+j
+
+(
+l
+)
+
+)
+
+∂
+L
+
+∂
+
+a
+
+j
+
+(
+l
+)
+
+{\displaystyle {\frac {\partial L}{\partial a_{j}^{(l)}}}=\sum _{j}W_{ij}{\frac {\partial L}{\partial x_{i}^{(l+1)}}},\quad {\frac {\partial L}{\partial x_{j}^{(l)}}}=f'(x_{j}^{(l)}){\frac {\partial L}{\partial a_{j}^{(l)}}}}
+
+e a retropropagação de segunda ordem estabelece que
+
+∂
+
+2
+
+L
+
+∂
+
+a
+
+j
+
+1
+
+(
+l
+)
+
+∂
+
+a
+
+j
+
+2
+
+(
+l
+)
+
+=
+
+∑
+
+j
+
+1
+
+j
+
+2
+
+W
+
+i
+
+1
+
+j
+
+1
+
+W
+
+i
+
+2
+
+j
+
+2
+
+∂
+
+2
+
+L
+
+∂
+
+x
+
+i
+
+1
+
+(
+l
++
+1
+)
+
+∂
+
+x
+
+i
+
+2
+
+(
+l
++
+1
+)
+
+,
+
+∂
+
+2
+
+L
+
+∂
+
+x
+
+j
+
+1
+
+(
+l
+)
+
+∂
+
+x
+
+j
+
+2
+
+(
+l
+)
+
+=
+
+f
+′
+
+(
+
+x
+
+j
+
+1
+
+(
+l
+)
+
+)
+
+f
+′
+
+(
+
+x
+
+j
+
+2
+
+(
+l
+)
+
+)
+
+∂
+
+2
+
+L
+
+∂
+
+a
+
+j
+
+1
+
+(
+l
+)
+
+∂
+
+a
+
+j
+
+2
+
+(
+l
+)
+
++
+
+δ
+
+j
+
+1
+
+j
+
+2
+
+f
+″
+
+(
+
+x
+
+j
+
+1
+
+(
+l
+)
+
+)
+
+∂
+L
+
+∂
+
+a
+
+j
+
+1
+
+(
+l
+)
+
+{\displaystyle {\frac {\partial ^{2}L}{\partial a_{j_{1}}^{(l)}\partial a_{j_{2}}^{(l)}}}=\sum _{j_{1}j_{2}}W_{i_{1}j_{1}}W_{i_{2}j_{2}}{\frac {\partial ^{2}L}{\partial x_{i_{1}}^{(l+1)}\partial x_{i_{2}}^{(l+1)}}},\quad {\frac {\partial ^{2}L}{\partial x_{j_{1}}^{(l)}\partial x_{j_{2}}^{(l)}}}=f'(x_{j_{1}}^{(l)})f'(x_{j_{2}}^{(l)}){\frac {\partial ^{2}L}{\partial a_{j_{1}}^{(l)}\partial a_{j_{2}}^{(l)}}}+\delta _{j_{1}j_{2}}f''(x_{j_{1}}^{(l)}){\frac {\partial L}{\partial a_{j_{1}}^{(l)}}}}
+
+onde
+
+δ
+
+{\displaystyle \delta }
+
+é o símbolo delta de Dirac (neste contexto discreto, o Delta de Kronecker).
+Derivadas de ordem arbitrária em grafos computacionais arbitrários podem ser calculadas com a retropropagação, mas com expressões mais complexas para ordens superiores.
+
+== Função de perda ==
+
+A função de perda é uma função que mapeia valores de uma ou mais variáveis para um número real representando intuitivamente algum "custo" associado a esses valores. Para a retropropagação, a função de perda calcula a diferença entre a saída da rede e a sua saída esperada, depois que um exemplo de treinamento se propagou pela rede.
+
+=== Pressupostos ===
+A expressão matemática da função de perda deve satisfazer duas condições para que possa ser usada na retropropagação. O primeiro é que ela pode ser escrita como uma média
+
+E
+=
+
+1
+n
+
+∑
+
+x
+
+E
+
+x
+
+{\textstyle E={\frac {1}{n}}\sum _{x}E_{x}}
+
+sobre as funções de erro
+
+E
+
+x
+
+{\textstyle E_{x}}
+
+, para
+
+n
+
+{\textstyle n}
+
+exemplos de treinamento individuais,
+
+x
+
+{\textstyle x}
+
+. A razão para este pressuposto é que o algoritmo de retropropagação calcula o gradiente da função de erro para um único exemplo de treinamento, o qual precisa ser generalizado para a função de erro geral. O segundo pressuposto é que ela pode ser escrita como uma função das saídas da rede neural.
+
+=== Exemplo de função de perda ===
+Sejam
+
+y
+,
+
+y
+′
+
+{\displaystyle y,y'}
+
+vetores em
+
+R
+
+n
+
+{\displaystyle \mathbb {R} ^{n}}
+
+.
+Selecione uma função de erro
+
+E
+(
+y
+,
+
+y
+′
+
+)
+
+{\displaystyle E(y,y')}
+
+que meça a diferença entre duas saídas. A escolha padrão é o quadrado da distância euclidiana entre os vetores
+
+y
+
+{\displaystyle y}
+
+e
+
+y
+′
+
+{\displaystyle y'}
+
+:
+
+E
+(
+y
+,
+
+y
+′
+
+)
+=
+
+1
+2
+
+‖
+y
+−
+
+y
+′
+
+‖
+
+2
+
+{\displaystyle E(y,y')={\tfrac {1}{2}}\lVert y-y'\rVert ^{2}}
+
+A função de erro sobre
+
+n
+
+{\textstyle n}
+
+exemplos de treinamento pode então ser escrita como uma média das perdas sobre exemplos individuais:
+
+E
+=
+
+1
+
+2
+n
+
+∑
+
+x
+
+‖
+(
+y
+(
+x
+)
+−
+
+y
+′
+
+(
+x
+)
+)
+
+‖
+
+2
+
+{\displaystyle E={\frac {1}{2n}}\sum _{x}\lVert (y(x)-y'(x))\rVert ^{2}}
+
+== Limitações ==
+
+A descida de gradiente com retropropagação não tem garantia de encontrar o mínimo global da função de erro, mas apenas um mínimo local; além disso, tem dificuldade em cruzar platôs na paisagem da função de erro. Este problema, causado pela não convexidade das funções de erro nas redes neurais, foi por muito tempo considerado uma grande desvantagem, mas Yann LeCun et al. argumentam que, em muitos problemas práticos, não é.
+O aprendizado por retropropagação não requer a normalização dos vetores de entrada; no entanto, a normalização pode melhorar o desempenho.
+A retropropagação requer que as derivadas das funções de ativação sejam conhecidas no momento do projeto da rede.
+
+== História ==
+
+=== Precursores ===
+A retropropagação foi derivada repetidamente, pois é essencialmente uma aplicação eficiente da regra da cadeia (escrita pela primeira vez por Gottfried Wilhelm Leibniz em 1676) para as redes neurais.
+A terminologia "correção de erro de retropropagação" foi introduzida em 1962 por Frank Rosenblatt, mas ele não sabia como implementá-la. De qualquer forma, ele apenas estudou neurônios cujas saídas eram níveis discretos, que tinham apenas derivadas nulas, tornando a retropropagação impossível.
+Precursores da retropropagação apareceram na teoria do controle ótimo desde a década de 1950. Yann LeCun et al creditam o trabalho da década de 1950 de Pontryagin e outros na teoria do controle ótimo, especialmente o método do estado adjunto, por ser uma versão em tempo contínuo da retropropagação. Hecht-Nielsen credita o algoritmo de Robbins-Monro (1951) e o Applied Optimal Control (1969) de Arthur Bryson e Yu-Chi Ho como presságios da retropropagação. Outros precursores foram Henry J. Kelley em 1960, e Arthur E. Bryson (1961). Em 1962, Stuart Dreyfus publicou uma derivação mais simples baseada apenas na regra da cadeia. Em 1973, ele adaptou parâmetros de controladores proporcionalmente aos gradientes de erro. Ao contrário da retropropagação moderna, esses precursores usaram cálculos de matriz Jacobiana padrão de um estágio para o anterior, não abordando ligações diretas por vários estágios nem os potenciais ganhos de eficiência adicionais devido à esparsidade da rede.
+O algoritmo de aprendizado ADALINE (1960) consistia na descida de gradiente com perda de erro quadrático para uma única camada. O primeiro perceptron de múltiplas camadas (MLP) com mais de uma camada treinado pela descida de gradiente estocástico foi publicado em 1967 por Shun'ichi Amari. O MLP tinha 5 camadas, com 2 camadas treináveis, e aprendeu a classificar padrões não separáveis linearmente.
+
+=== Retropropagação moderna ===
+A retropropagação moderna foi publicada pela primeira vez por Seppo Linnainmaa como "modo reverso da diferenciação automática" (1970) para redes conectadas discretas de funções aninhadas diferenciáveis.
+Em 1982, Paul Werbos aplicou a retropropagação a MLPs da maneira que se tornou padrão. Werbos descreveu como desenvolveu a retropropagação em uma entrevista. Em 1971, durante o seu doutorado, desenvolveu a retropropagação para matematizar o "fluxo de energia psíquica" de Freud. Ele enfrentou repetidas dificuldades em publicar o trabalho, conseguindo apenas em 1981. Ele também afirmou que "a primeira aplicação prática da retropropagação foi para estimar um modelo dinâmico para prever o nacionalismo e as comunicações sociais em 1974" por ele.
+Por volta de 1982, David E. Rumelhart desenvolveu de forma independente a retropropagação e ensinou o algoritmo a outros no seu círculo de pesquisa. Ele não citou os trabalhos anteriores pois não os conhecia. Ele publicou o algoritmo primeiro num artigo de 1985 e depois num artigo da Nature em 1986 apresentando uma análise experimental da técnica. Estes artigos tornaram-se altamente citados, contribuíram para a popularização da retropropagação e coincidiram com o ressurgimento do interesse em pesquisas em redes neurais durante a década de 1980.
+Em 1985, o método também foi descrito por David Parker. Yann LeCun propôs uma forma alternativa de retropropagação para redes neurais na sua tese de doutorado em 1987.
+A descida de gradiente demorou bastante tempo a alcançar aceitação. Algumas objeções iniciais foram: não havia garantias de que a descida de gradiente pudesse alcançar um mínimo global, apenas um mínimo local; os neurônios eram "conhecidos" pelos fisiologistas por produzirem sinais discretos (0/1), e não contínuos, e com sinais discretos não há gradiente a ser calculado. Veja a entrevista com Geoffrey Hinton, que recebeu o Prémio Nobel de Física de 2024 pelas suas contribuições na área.
+
+=== Sucessos iniciais ===
+Várias aplicações no treinamento de redes neurais através da retropropagação contribuíram para a sua aceitação, por vezes alcançando popularidade fora dos círculos de pesquisa.
+Em 1987, a NETtalk aprendeu a converter texto em inglês em pronúncia. Sejnowski tentou treiná-la tanto com a retropropagação quanto com a máquina de Boltzmann, mas concluiu que a retropropagação era significativamente mais rápida e, por isso, utilizou-a para a NETtalk final. O programa NETtalk tornou-se um sucesso popular, aparecendo no programa Today.
+Em 1989, Dean A. Pomerleau publicou o ALVINN, uma rede neural treinada para conduzir autonomamente usando a retropropagação.
+A LeNet foi publicada em 1989 para reconhecer códigos postais escritos à mão.
+Em 1992, o TD-Gammon alcançou o nível mais alto de jogo humano no gamão. Era um agente de aprendizagem por reforço com uma rede neural de duas camadas, treinado pela retropropagação.
+Em 1993, Eric Wan venceu um concurso internacional de reconhecimento de padrões através da retropropagação.
+
+=== Após a retropropagação ===
+Durante a década de 2000 o método perdeu popularidade, mas retornou na década de 2010, beneficiando de sistemas de computação baseados em GPUs que eram potentes e baratos. Isto verificou-se especialmente na identificação de voz, visão computacional, processamento de linguagem natural e em pesquisas de aprendizagem de estrutura linguística (onde tem sido utilizado para explicar uma variedade de fenómenos relacionados com a aprendizagem da primeira e segunda língua.)
+Sugeriu-se que a retropropagação de erros explica os componentes do potencial relacionado a eventos (ERP) do cérebro humano, como o N400 e o P600.
+Em 2023, um algoritmo de retropropagação foi implementado num processador fotônico por uma equipa da Universidade de Stanford.
+
+== Notas ==
+
+== Referências ==
+
+== Leitura adicional ==
+Goodfellow, Ian; Bengio, Yoshua; Courville, Aaron (2016). «Back-Propagation and Other Differentiation Algorithms». Deep Learning. [S.l.]: MIT Press. pp. 200–220. ISBN 978-0-262-03561-3
+Nielsen, Michael A. (2015). «How the backpropagation algorithm works». Neural Networks and Deep Learning. [S.l.]: Determination Press
+McCaffrey, James (outubro de 2012). «Neural Network Back-Propagation for Programmers». MSDN Magazine. Cópia arquivada em 21 de agosto de 2022
+Rojas, Raúl (1996). «The Backpropagation Algorithm» (PDF). Neural Networks: A Systematic Introduction. Berlim: Springer. ISBN 3-540-60505-3
+
+== Ligações externas ==
+Tutorial de redes neurais com backpropagation na Wikiversity
+Bernacki, Mariusz; Włodarczyk, Przemysław (2004). «Principles of training multi-layer neural network using backpropagation»
+Karpathy, Andrej (2016). «Lecture 4: Backpropagation, Neural Networks 1». CS231n. Stanford University. Cópia arquivada em 17 de outubro de 2025 – via YouTube
+3Blue1Brown (3 de novembro de 2017). «What is Backpropagation Really Doing?» – via YouTube
+Putta, Sudeep Raja (2022). «Yet Another Derivation of Backpropagation in Matrix Form»

@@ -1,0 +1,186 @@
+Inteligência computacional (IC) é o ramo da inteligência artificial (IA) que lida com computação macia ou computação flexível (CM, ou SC do inglês soft computing), i.e. que explora imprecisão no projeto de algoritmos e sistemas.
+Uma conceitualização mais cuidadosa é apresentada na próxima sessão deste artigo.
+A IC é marcada pela ênfase em algumas técnicas e áreas do conhecimento, como explicitado nos 5 princípios da IC, de forma que um sistema (paradigmático) de
+IC é bioinspirado, complexo, e explora imprecisão (e.g. utiliza ruído para a varredura do espaço, lógica fuzzy para representar imprecisão semântica, e/ou estatística para eventos incertos), com aplicação na resolução de problemas (ou suporte à computação).
+As vantagens oferecidas por estes sistemas incluem (potencialmente):
+a simplicidade de aplicação, a otimização em espaços muito amplos para métodos tradicionais (e.g. em problemas NP-completos e NP-difíceis, quando gradientes e derivadas nulas encontram extremos locais, ou na inaptidão de aproximações polinomiais por minimização de distância euclidiana), a modelagem de fenômenos reais e imprecisos, análise de dados empíricos, e a exploração de sistemas complexos para fins científicos e estéticos.
+
+== Base teórica e conceitual ==
+
+A IC é um conceito (ainda) sem definição consensual, assim como a IA e a própria inteligência.
+As bases teóricas destas áreas são transdisciplinares e carregadas de conceitos advindos da computação, cognição, e filosofia, além de inspiração recorrente nas ciências naturais e biológicas.
+Desta forma, segue uma apresentação elementar dos principais conceitos atualmente vinculados à IC e suas interrelações.
+
+=== IC, Computação Macia, Inteligência Artificial, Computação Natural ===
+IC é um quasi-sinônimo de duas áreas: computação macia (CM ou soft computing)
+e inteligência artificial.
+A IC é um termo com definição menos consensual que CM, sendo esta última simplesmente definida como computação com exploração de soluções inexatas.
+Ambas a IC e a CM são subáreas da computação natural (CN): o modelo/paradigma básico é a mente ou o raciocínio humano.
+A inteligência é geralmente atribuída aos humanos, mas em IC qualquer forma de vida, ou mesmo de sistema complexo ou de algum modo "inteligênte", pode ser usada, como formigas.
+A inteligência, neste contexto, está diretamente ligada à tomada de decisão e ao raciocínio.
+A IC é considerada subárea da IA ou, conforme alguns trabalhos sugerem, oposta à IA pela exploração da imprecisão (e.g. do erro, aproximação, indefinição semântica), e observando a IA como trabalhando sistemas que utilizam também (ou principalmente)
+aspectos booleanos.
+Neste sentido, a IA é aproximada do conceito de computação dura (em que há ênfase no paradigma booleano de verdade absoluta), enquanto a IC é aproximada do conceito de computação macia (com ênfase na lógica difusa e em problemas mal definidos, e.g. que difere de um problema bem-posto de Hadamard).
+A IC também é conceituada como sinônimo de IA e até como termo preferido ao termo IA por refetir melhor o fato de que a inteligência não é criada, mas imitada de sistemas considerados inteligentes, e de forma simplificada.
+De fato, a definição de IC usada por é a rigor a mesma que a utilizada por (o clássico de IA, por Russel e Norvig): "inteligência computacional é o estudo do projeto de agentes inteligentes".
+O aprendizado de máquina tem sobreposição, mas difere da área de IC:
+um sistema fuzzy não necessariamente aprende, e se um sistema de IC aprende, em geral ocorre por técnicas bioinspiradas.
+Pode-se considerar que o termo IC será usado para designar a área que trata de comportamento inteligente (no sentido metafórico, amplo, quase arbitrário de inteligência) em software; ou com exploração de imprecisão; ou automatizada (caso em que IC se torna sinônimo de IA).
+Alguns autores argumentam pelo termo inteligência sintética.
+Por extensão dos resultantes (potenciais) sinônimos IC, IA, e inteligência sintética, em alguns contextos também podem ser usadas variantes como inteligência mecânica, automatizada, ou programada.
+Reconhecidamente, o termo inteligência é bastante ambíguo e sua aplicação para o comportamento de sistemas computacionais gera questões filosóficas severas.
+
+=== Os 5 princípios da IC ===
+A literatura reporta 5 princípios historicamente estabelecidos na IC:
+
+Lógica difusa/nebulosa/fuzzy (LD): para lidar com imprecisão semântica (indefinição conceitual).
+Redes neurais artificiais (RNA): tradicionalmente fornecem capacidades de processamento distribuído, cognitivo, bioinspirado, de aprendizado, potencialmente úteis para a lidar com dados empíricos/reais, aos sistemas de IC.
+Computação evolutiva (CE): utiliza o princípio da evolução natural para derivar métodos computacionais. Um exemplo paradigmático é o dos algoritmos genéticos. Exemplos menos óbvios (e menos consensuais) relacionados à CE incluem: otimização por colônia de formigas, algoritmos imunológicos (imunoinspirados), inteligência de enxame (e.g. particle swarm optimization/PSO, artificial bee colony (ABC), etc...).
+Teoria do aprendizado (TA): área dedicada à análise e projeto de algoritmos de aprendizado de máquina.
+Métodos estatísticos (ME): para a lida com imprecisão de ocorrência (verdadeiro/falso, existência), chamada incerteza crispy no contexto da lógica difusa.
+
+==== Reflexão sobre os 5 princípios da IC ====
+Estes 5 princípios comportam o colapso de alguns itens:
+a CE e RN estão dentro da computação natural, ou computação bioinspirada, conceito que abriga com maior coerência e consenso a utilização de algoritmos imunológicos
+ou de inteligência de enxame, por exemplo.
+Lógica crispy (probabilidade) e difusa são também coerentemente colapsadas em um item único para lidar com imprecisão/ignorância.
+Por outro lado, a prática da IC sugere que dois princípios sejam adicionados à lista principal:
+mineração de dados, e a inteligência artificial, e os cinco princípios podem ser descritos da seguinte forma:
+
+Imprecisão difusa e probabilística: com os devidos tratamentos para ignorância ou imprecisão inerente à semântica e ocorrências, para modelagem, análise, otimização e aprendizado em geral.
+Computação natural, ou computação bioinspirada: reunindo RNA e CE, principalmente para realização de aprendizado e inspiração de modelos.
+TA.
+Mineração de dados: para a lida com armazenamento de dados, relatoria, e ferramentas em software, por exemplo.
+Inteligência artificial: um quasi-sinônimo de IC (veja a apresentação terminológica), fornece contexto e base teórica, filosófica e histórica.
+
+=== Aplicação da IC ===
+Dentre as principais aplicações da IC estão: biomedicina, engenharia, análise de dados, ciência da computação, e sistemas complexos.
+
+=== Demais questões conceituais ===
+Navalha de Occam: estabelece prioridade para a concepção mais simples. Contrasta, mas não conflita com o fenômeno da complexidade.
+Inserção de ruído para exploração do espaço de soluções VS obtenção determinística de regras.
+Sistemas complexos, propriedades emergentes
+Não-linearidade, lei de potência, exponencial, lei de Stevens, lei de Weber-Fechner.
+Algoritmos de otimização e aprendizado bioinspirados VS derivados de formalismos matemáticos.
+Reconhecimento de padrões.
+Noção primitiva/primeiros princípios, axioma.
+Teoria ingênua (construída sobre formalismos inexatos).
+Conceitos mal definidos (fuzzy) e problemas mal definidos.
+Linguística, PLN, mineração de texto, linguística computacional.
+Cálculo estocástico
+Streaming (para exemplo de sistema em constante alteração)
+Processamento de sinais
+Problemas inversos
+Inteligência coletiva
+Teoria do caos
+Lógica polivalente
+Entropia de Tsallis e termodinâmica associada
+Teoria dos padrões (Pattern theory)
+Automato celular, sistema L (L-systems), fractal
+Teoria das evidências/de Dempster-Shafer/de funções de crença (DST), Medidas monotônicas (monotone measures), crença, plausibilidade, possibilidade, necessidade.
+Generalizações da lógica fuzzy.
+
+== Metodologias que constituem a IC ==
+Várias metodologias foram e ainda estão sendo desenvolvidas, mas as principais são:
+
+Redes Neurais Artificiais;
+Lógica Nebulosa (Lógica Fuzzy);
+Computação Natural;
+Computação Evolucionária;
+Métodos Bayesianos;
+Máquinas de vetores de suporte;
+Aprendizado de máquina;
+Aprendizado profundo (Deep Learning)
+
+== O Brasil e a IC ==
+Em 2013, durante uma mesa redonda foi aberta (BRICS-CCI, Recife, Brasil) para discutir os caminhos da IC. Uma das conclusões é que a inteligência artificial precisa ser melhor conceitualizada principalmente em seus objetivos, problemática já reportada anteriormente.
+O impacto da área refletiu na mudança do nome do encontro de redes neurais no Brasil para inteligência computacional, e na premiação em 2013 de um artigo de IC no SIMEP.
+Em 2015, foi criada a Associação Brasileira de Inteligência Computacional (ABRICOM) que sucedeu a Sociedade Brasileira de Inteligência Computacional (SBIC) e a Sociedade Brasileira de Redes Neurais (SBRN). A ABRICOM é uma organização sem fins lucrativos, que tem como sua missão promover a ciência e a tecnologia nos mais diversos ramos da Inteligência Computacional, destacando-se (mas não restrito a) Redes Neurais Artificiais, Computação Evolucionária, Sistemas Fuzzy e Otimização Metaheurística.
+
+== Criatividade computacional ==
+As possibilidades artísticas são reconhecidamente amplas, de forma condizente, o espaço de busca da arte (sons, imagens, discursos, etc)
+é amplo.
+Os critérios estéticos são usualmente imprecisos semanticamente.
+Aspectos imateriais e materiais da criação artística são então convenientemente tratados pela IC.
+Por exemplo, parâmetros sonoros de estruturas musicais constituem um espaço amplo, cuja IC é apta a explorar via ruído ou computação natural.
+Já os critérios de estridência, sentimento, metáfora visual, etc., são adequadamente inseridos no sistema via lógica difusa.
+Idealizado, tal sistema permite ao usuário definir critérios próprios de classificação (fuzzy)
+e parâmetros sonoros que constituem o espaço de busca.
+
+== Reflexão conceitual e lúdica sobre as IA, IB, IC, e as IM, IN, IP, IT ==
+Considere computador qualquer sistema que computa.
+Os fenômenos reais são em geral complexos (alguns diriam fundamentalmente complexos, veja complexidade, sistema complexo, rede complexa), e uma das propriedades mais estudadas em sistemas complexos são os processamentos de informação de que realizam e de que são capazes.
+Neste sentido, em que a máquina é apenas um caso muito especial de sistema capaz de computar, pode-se pensar um tripé principal na exploração tecnológica de inteligência:
+
+IA: mais consensual se admitidos conceitos imprecisos e generalistas de inteligência e artificial.
+IB: inteligência Bayesiana, neste caso um sinônimo, ou quase, de inferência Bayesiana, fornece estatísticas simples e informativas sobre o sistema, e.g. sobre o aprendizado.
+IC: trata da inteligência, e.g. tomada racional de decisões, no contexto computacional.
+Outros conceitos relacionados: IM (de máquina), IT (tecnológica), IP (primária, primitiva, de primata)
+Considere esta ontologia como o (I)ABC da IT, i.e. da tecnologia em inteligência, da inteligência em tecnologia, ou variante.
+Observe o hiato entre IC e IM.
+Reitere a reflexão sobre o computador não ser necessariamente eletrônico, ou com transístores de silício.
+Pense ao seu redor em todos os sistemas complexos, que (potencialmente) computam:
+nas nuvens (com seus ciclos de evaporação e chuva e dinâmicas com o vento), nos seus próprios órgãos internos (estômago, intestino, cérebro).
+Uma pia cheia de louças é um sistema complexo? computa? de que forma?
+Inteligências inspiradas em formigas, cupins, pássaros (e.g. PSO), cérebro, sistemas imunológicos, foram formalizadas, consideradas analiticamente, e constituem há décadas sistemas de IC com fins teóricos e práticos.
+Pode-se argumentar que a tomada de decisão e a otimização são capacidades inerentes a estes sistemas, implicadas pela evolução natural.
+A evolução natural é potencialmente válida para além dos reinos animal e vegetal, ou mesmo na taxonomia biológica.
+Pode-se considerar vivo o reino mineral e as estruturas estelares?
+Em que sentido?
+E inteligentes?
+Há uma teoria do Roger Penrose (um dos físicos mais importantes vivos), em colaboração com a psiquiatria, que descreve a mente humana espelhada em estruturas cósmicas via espelhamento quântico.
+É apenas uma teoria exótica, sem comprovação alguma, mas há reconhecidamente algo de glamuroso na consideração da inteligência
+em sistemas naturais, sejam eles biológicos
+(e.g. insetos, como formigas, abelhas, aranhas; o sistema imunológico humano; peixes individuais ou em cardume; etc), ou não biológicos (e.g. galáxias, em geral espiraladas, com um buraco negro massivo central, e diversos sistemas solares ou centrados em buracos negros secundários; água na forma de nuvens ou de rios superficiais, lençóis freáticos e mares).
+Por exemplo, como pode ser explorada, para computar, a propriedade natural (física) de campo nulo no interior de um material condutor eletrizado? É possível? Seria com isso possível realizar, com a alta velocidade da acomodação da carga elétrica na superfície do metal, procedimentos hoje impraticáveis?
+Esta é a discussão central da computação natural ou computação bioinspirada, e seu uso na IC complementa a precisão da estatística Bayesiana no reconhecimento de padrões e outros aspectos considerados inteligentes.
+IM pode também significar inteligência molhada, se considerado o conceito de wetware.
+Ironicamente, IP pode significar inteligência de primata, ou primitiva, ou primária, ou primeira.
+Dada esta útil ambiguidade, neste vocabulário lúdico
+( modelo de brinquedo),
+problema de brinquedo [en]), o termo preferencial é 'inteligência prima'.
+Conceitos que ampliam esta reflexão: panspermia, neuroastronomia.
+
+== Nota mitológica ==
+A singularidade tecnológica é em geral concebida em termos de unificação da humanidade, transformação radical da realidade objetiva, e aprofundamento da conquista da realidade, o que, no contexto atual, sugere que máquinas, potencialmente inteligentes, estarão zelando pelo bem estar coletivo e individual, e facilitando transporte e comunicação. A visão distópica preve decadência, subserviência à IA e aniquilação da espécie humana. Estas ideações influenciam o desenvolvimento tecnológico (vide a recorrência ética e até filantrópica do software livre, da W3C, da GNOME, da GNU), a literatura, e os padrões sociais de consumo.
+
+== Ver também ==
+Redes neurais
+Lógica nebulosa
+Controle inteligente
+Agentes Inteligentes
+Aprendizado de máquina
+Inteligência artificial
+Bioinformática e bioengenharia
+Economia computacional
+Robótica epigenética
+Mineração de dados
+Computação bioinspirada
+
+== Referências ==
+
+== Bibliografia adicional ==
+Computational Intelligence: An Introduction by Andries Engelbrecht. Wiley & Sons. ISBN 0-470-84870-7
+Computational intelligence in complex decision systems Intelligência computacional em sistemas de decisão complexos. Da Ruan. Belgian Nuclear Research Centre (SCK—CEN). Atlantis Press. ISSN: 1875-7650
+
+== Ligações externas ==
+«Associação Brasileira de Inteligência Computacional (ABRICOM)»
+«Inteligência Computacional (Scholarpedia)»
+«Blog de Sistemas Inteligentes en Madri+D»
+Conscious Robots, blog sobre robótica cognitiva
+Grupo de investigacion - Sistemas Inteligentes
+Computação inteligente
+
+=== Revistas científicas ===
+«Learning and Nonlinear Models». Jornal de inteligência computacional
+«Computational Intelligence Journal». Arquivado em 22 de setembro de 2012, no Wayback Machine.Jornal de inteligência computacional
+International Journal of Computational IntelligenceJornal internacional de inteligência computacional
+International Journal of Computational Intelligence ResearchJornal internacional de pesquisa em inteligência computacional
+
+=== Software ===
+Computational Intelligence Library (CILib)
+«OAT (Optimization Algorithm Toolkit)». Arquivado em 24 de dezembro de 2008, no Wayback Machine.: A set of standard computational intelligence optimization algorithms and problems in Java. Um conjunto de otimizações em algoritmos e problemas em Java.
+
+=== Organizações ===
+IEEE Computational Intelligence SocietySociedade de inteligência computacional IEEE
+The Computational Intelligence and Machine Learning Virtual CommunityA comunidade de inteligência computacional e aprendizagem virtual

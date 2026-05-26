@@ -1,0 +1,4 @@
+O modelo saco-de-palavras é uma representação simplificada utilizada no processamento de linguagem natural e na recuperação de informações. Neste modelo, o texto (uma frase ou documento) é representado como um multiconjunto de suas palavras (o "saco"), desconsiderando a estrutura gramatical e até mesmo a ordenação delas, mas mantendo sua multiplicidade.
+O modelo saco-de-palavras é frequentemente utilizado em métodos de classificação de documentos, onde a frequência de ocorrência de cada palavra é vista como uma característica utilizada para treinar o classificador. No entanto, já foram registrados usos do modelo em estudos na área de visão computacional.
+
+== Referências ==

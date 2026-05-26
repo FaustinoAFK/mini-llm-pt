@@ -1,0 +1,230 @@
+Representações de codificador bidirecional de transformadores (do inglês, Bidirectional encoder representations from transformers - BERT) é um modelo de linguagem introduzido em outubro de 2018 por pesquisadores do Google. Ele aprende a representar o texto como uma sequência de vetores usando aprendizado autossupervisionado. Ele usa a arquitetura transformer apenas com codificador (encoder-only). O BERT melhorou drasticamente o estado da arte para grandes modelos de linguagem. A partir de 2020, o BERT é uma linha de base onipresente em experimentos de processamento de linguagem natural (PLN).
+O BERT é treinado pela previsão de tokens mascarados e pela previsão da próxima frase. Com este treinamento, o BERT aprende representações latentes contextuais de tokens em seu contexto, de forma semelhante ao ELMo e ao GPT-2. Ele encontrou aplicações para muitas tarefas de processamento de linguagem natural, como resolução de correferência e resolução de polissemia. Ele aprimorou o ELMo e gerou o estudo da "BERTologia" (BERTology), que tenta interpretar o que é aprendido pelo BERT.
+O BERT foi originalmente implementado no idioma inglês em dois tamanhos de modelo, BERTBASE (110 milhões de parâmetros) e BERTLARGE (340 milhões de parâmetros). Ambos foram treinados no Toronto BookCorpus (800 milhões de palavras) e na Wikipédia em inglês (2.500 milhões de palavras). Os pesos foram lançados no GitHub. Em 11 de março de 2020, 24 modelos menores foram lançados, sendo o menor deles o BERTTINY, com apenas 4 milhões de parâmetros.
+
+== Arquitetura ==
+
+O BERT é uma arquitetura transformer "apenas com codificador" (encoder-only). Em alto nível, o BERT consiste em 4 módulos:
+
+Tokenizador: Este módulo converte um trecho de texto em inglês em uma sequência de números inteiros ("tokens").
+Incorporação (Embedding): Este módulo converte a sequência de tokens em uma matriz de vetores de valor real que representam os tokens. Representa a conversão de tipos de tokens discretos num espaço euclidiano de dimensão inferior.
+Codificador: uma pilha de blocos Transformer com autoatenção (self-attention), mas sem mascaramento causal.
+Cabeça de tarefa (Task head): Este módulo converte os vetores de representação finais novamente em tokens codificados one-hot, produzindo uma distribuição de probabilidade prevista sobre os tipos de tokens. Pode ser visto como um decodificador simples, que decodifica a representação latente em tipos de tokens, ou como uma "camada de desincorporação" (un-embedding).
+A cabeça de tarefa é necessária para o pré-treinamento, mas muitas vezes é desnecessária para as chamadas "tarefas a jusante" (downstream tasks), como resposta a perguntas ou classificação de sentimentos. Em vez disso, a cabeça de tarefa é removida e substituída por um módulo recém-inicializado e adequado à tarefa, e faz-se o ajuste fino (finetune) do novo módulo. A representação do vetor latente do modelo é alimentada diretamente neste novo módulo, permitindo uma transferência de aprendizado eficiente em termos de amostragem.
+
+=== Incorporação (Embedding) ===
+Esta seção descreve a incorporação usada pelo BERTBASE. O outro modelo, BERTLARGE, é semelhante, apenas maior.
+O tokenizador do BERT é o WordPiece, que é uma estratégia de subpalavras como a codificação de par de bytes. O tamanho do seu vocabulário é 30.000, e qualquer token que não apareça no seu vocabulário é substituído por [UNK] ("desconhecido").
+
+A primeira camada é a camada de incorporação, que contém três componentes: incorporações de tipo de token, incorporações de posição e incorporações de tipo de segmento.
+
+Tipo de token: O tipo de token é uma camada de incorporação padrão, que traduz um vetor one-hot num vetor denso com base no seu tipo de token.
+Posição: As incorporações de posição baseiam-se na posição de um token na sequência. O BERT usa incorporações de posição absolutas, onde cada posição numa sequência é mapeada para um vetor de valor real. Cada dimensão do vetor consiste numa função senoidal que recebe a posição na sequência como entrada.
+Tipo de segmento: Usando um vocabulário de apenas 0 ou 1, esta camada de incorporação produz um vetor denso baseado em se o token pertence ao primeiro ou ao segundo segmento de texto nessa entrada. Por outras palavras, os tokens do tipo 1 são todos os tokens que aparecem depois do token especial [SEP]. Todos os tokens anteriores são do tipo 0.
+Os três vetores de incorporação são somados, representando a representação inicial do token como uma função dessas três informações. Após a incorporação, a representação vetorial é normalizada usando uma operação LayerNorm, gerando um vetor de 768 dimensões para cada token de entrada. Depois disso, os vetores de representação são passados adiante por 12 blocos de codificadores Transformer, e são decodificados de volta para o espaço de vocabulário de 30.000 dimensões usando uma camada de transformação afim básica.
+
+=== Família arquitetônica ===
+A pilha de codificadores do BERT tem 2 parâmetros livres:
+
+L
+
+{\displaystyle L}
+
+, o número de camadas, e
+
+H
+
+{\displaystyle H}
+
+, o tamanho oculto (hidden size). Existem sempre cabeças de autoatenção
+
+H
+
+/
+
+64
+
+{\displaystyle H/64}
+
+, e o tamanho do feed-forward/filtro é sempre
+
+4
+H
+
+{\displaystyle 4H}
+
+. Ao variar esses dois números, obtém-se toda uma família de modelos BERT.
+Para o BERT:
+
+O tamanho do feed-forward e o tamanho do filtro são sinônimos. Ambos denotam o número de dimensões na camada intermediária da rede feed-forward.
+O tamanho oculto e o tamanho da incorporação são sinônimos. Ambos denotam a quantidade de números reais usados para representar um token.
+A notação para a pilha de codificadores é escrita como L/H. Por exemplo, BERTBASE é escrito como 12L/768H, BERTLARGE como 24L/1024H e BERTTINY como 2L/128H.
+
+== Treinamento ==
+
+=== Pré-treinamento ===
+O BERT foi pré-treinado simultaneamente em duas tarefas:
+
+Modelagem de linguagem mascarada (MLM): Nesta tarefa, o BERT ingere uma sequência de palavras, onde uma palavra pode ser alterada aleatoriamente ("mascarada"), e o BERT tenta prever as palavras originais que foram alteradas. Por exemplo, na frase "O gato sentou no [MASK]," o BERT precisaria prever "tapete." Isso ajuda o BERT a aprender o contexto bidirecional, o que significa que ele entende as relações entre as palavras não apenas da esquerda para a direita ou da direita para a esquerda, mas de ambas as direções ao mesmo tempo.
+Previsão da próxima frase (NSP): Nesta tarefa, o BERT é treinado para prever se uma frase se segue logicamente a outra. Por exemplo, dadas duas frases, "O gato sentou no tapete" e "Estava um dia ensolarado", o BERT deve decidir se a segunda frase é uma continuação válida da primeira. Isso ajuda o BERT a compreender as relações entre as frases, o que é importante para tarefas como responder a perguntas ou classificação de documentos.
+
+==== Modelagem de linguagem mascarada ====
+
+Na modelagem de linguagem mascarada, 15% dos tokens seriam selecionados aleatoriamente para a tarefa de previsão mascarada, e o objetivo do treinamento era prever o token mascarado dado seu contexto. Em mais detalhes, o token selecionado é:
+
+substituído por um token [MASK] com probabilidade de 80%,
+substituído por um token de palavra aleatória com probabilidade de 10%,
+não substituído com probabilidade de 10%.
+O motivo pelo qual nem todos os tokens selecionados são mascarados é para evitar o problema de mudança no conjunto de dados (dataset shift). O problema de mudança no conjunto de dados surge quando a distribuição das entradas vistas durante o treinamento difere significativamente da distribuição encontrada durante a inferência. Um modelo BERT treinado pode ser aplicado à representação de palavras (como o Word2Vec), onde seria executado sobre frases que não contêm nenhum token [MASK]. Descobriu-se posteriormente que objetivos de treinamento mais diversos são geralmente melhores.
+Como exemplo ilustrativo, considere a frase "meu cachorro é fofo". Ela seria primeiro dividida em tokens como "meu1 cachorro2 é3 fofo4". Em seguida, um token aleatório na frase seria escolhido. Digamos que seja o 4º, "fofo4". A seguir, haveria três possibilidades:
+
+com probabilidade de 80%, o token escolhido é mascarado, resultando em "meu1 cachorro2 é3 [MASK]4";
+com probabilidade de 10%, o token escolhido é substituído por um token aleatório amostrado uniformemente, como "feliz", resultando em "meu1 cachorro2 é3 feliz4";
+com probabilidade de 10%, nada é feito, resultando em "meu1 cachorro2 é3 fofo4".
+Após processar o texto de entrada, o 4º vetor de saída do modelo é passado para a sua camada decodificadora, que gera uma distribuição de probabilidade em seu espaço de vocabulário de 30.000 dimensões.
+
+==== Previsão da próxima frase ====
+
+Dadas duas frases, o modelo prevê se elas aparecem sequencialmente no corpus de treinamento, gerando [IsNext] (É o próximo) ou [NotNext] (Não é o próximo). Durante o treinamento, o algoritmo às vezes extrai duas frases de um único trecho contínuo no corpus de treinamento, enquanto em outras vezes, ele extrai duas frases de dois trechos descontínuos.
+A primeira frase começa com um token especial, [CLS] (para "classificar"). As duas frases são separadas por outro token especial, [SEP] (para "separar"). Após processar as duas frases, o vetor final para o token [CLS] é passado para uma camada linear para classificação binária em [IsNext] e [NotNext].
+Por exemplo:
+
+Dado "[CLS] meu cachorro é fofo [SEP] ele gosta de brincar [SEP]", o modelo deve prever [IsNext].
+Dado "[CLS] meu cachorro é fofo [SEP] como funcionam os ímãs [SEP]", o modelo deve prever [NotNext].
+
+=== Ajuste fino (Fine-tuning) ===
+
+O BERT tem como objetivo ser um modelo pré-treinado geral para várias aplicações no processamento de linguagem natural. Ou seja, após o pré-treinamento, o BERT pode sofrer um ajuste fino (fine-tuning) com menos recursos em conjuntos de dados menores para otimizar o seu desempenho em tarefas específicas, como inferência em linguagem natural (como em Implicação textual) e classificação de texto, e tarefas de geração de linguagem baseadas em sequência para sequência, como resposta a perguntas e geração de respostas conversacionais.
+O artigo original do BERT publicou resultados demonstrando que uma pequena quantidade de ajuste fino (para o BERTLARGE, 1 hora em 1 Cloud TPU) permitiu que ele alcançasse um desempenho no estado da arte em uma série de tarefas de compreensão de linguagem natural:
+
+Conjunto de tarefas GLUE (General Language Understanding Evaluation) (consistindo em 9 tarefas);
+SQuAD (Stanford Question Answering Dataset) v1.1 e v2.0;
+SWAG (Situations With Adversarial Generations).
+No artigo original, todos os parâmetros do BERT sofrem ajuste fino, e recomendou-se que, para aplicações a jusante (downstream) que são classificações de texto, o token de saída no token de entrada [CLS] seja alimentado numa camada linear softmax para produzir as saídas de rótulo.
+A base de código original definiu a camada linear final como uma "camada de agrupamento" (pooler layer), em analogia com o agrupamento global na visão computacional, embora ela simplesmente descarte todos os tokens de saída, exceto aquele correspondente a [CLS].
+
+=== Custo ===
+O BERT foi treinado no BookCorpus (800 milhões de palavras) e em uma versão filtrada da Wikipédia em inglês (2.500 milhões de palavras) sem listas, tabelas e cabeçalhos.
+O treinamento do BERTBASE em 4 TPUs de nuvem (16 chips TPU no total) levou 4 dias, a um custo estimado de 500 dólares americanos. O treinamento do BERTLARGE em 16 TPUs de nuvem (64 chips TPU no total) levou 4 dias.
+
+== Interpretação ==
+Modelos de linguagem como ELMo, GPT-2 e BERT geraram o estudo da "BERTologia", que tenta interpretar o que é aprendido por esses modelos. Seu desempenho nessas tarefas de compreensão de linguagem natural ainda não é bem compreendido. Diversas publicações de pesquisa em 2018 e 2019 focaram em investigar o relacionamento por trás da saída do BERT como resultado de sequências de entrada cuidadosamente escolhidas, análise de representações vetoriais internas por meio de classificadores de sondagem (probing), e os relacionamentos representados por pesos de atenção.
+O alto desempenho do modelo BERT também pode ser atribuído ao fato de ele ser treinado bidirecionalmente. Isso significa que o BERT, baseado na arquitetura do modelo Transformer, aplica seu mecanismo de autoatenção para aprender informações de um texto a partir do lado esquerdo e direito durante o treinamento e, consequentemente, obtém uma compreensão profunda do contexto. Por exemplo, a palavra manga pode ter dois significados diferentes dependendo do contexto (Eu comi uma manga hoje, A manga da camisa está suja). O BERT considera as palavras que cercam a palavra alvo manga pelo lado esquerdo e direito.
+No entanto, isso tem um custo: devido à arquitetura apenas com codificador não possuir um decodificador, o BERT não pode receber comandos de prompt e não pode gerar texto, enquanto os modelos bidirecionais em geral não funcionam efetivamente sem o lado direito, sendo, portanto, difíceis de comandar. Como exemplo ilustrativo, se alguém desejar usar o BERT para continuar um fragmento de frase "Hoje, eu fui ao", então ingenuamente seria necessário mascarar todos os tokens como "Hoje, eu fui ao [MASK] [MASK] [MASK] ... [MASK] ." onde o número de [MASK] é o comprimento da frase que se deseja estender. Contudo, isso constitui uma mudança no conjunto de dados, pois durante o treinamento, o BERT nunca viu frases com tantos tokens mascarados. Consequentemente, o seu desempenho degrada-se. Técnicas mais sofisticadas permitem a geração de texto, mas com um alto custo computacional.
+
+== História ==
+O BERT foi originalmente publicado pelos pesquisadores do Google Jacob Devlin, Ming-Wei Chang, Kenton Lee e Kristina Toutanova. O projeto tem suas origens no pré-treinamento de representações contextuais, incluindo aprendizado de sequência semissupervisionado, pré-treinamento gerativo, ELMo, e ULMFit. Diferente de modelos anteriores, o BERT é uma representação de linguagem profundamente bidirecional e não supervisionada, pré-treinada usando apenas um corpus de texto simples. Modelos livres de contexto, como word2vec ou GloVe, geram uma única representação de incorporação de palavras para cada palavra no vocabulário, enquanto o BERT leva em consideração o contexto para cada ocorrência de uma dada palavra. Por exemplo, enquanto o vetor para "banco" terá a mesma representação de vetor word2vec para ambas as suas ocorrências nas frases "Ele sentou no banco" e "Ele abriu conta no banco", o BERT fornecerá uma incorporação contextualizada que será diferente de acordo com a frase.
+Em 25 de outubro de 2019, o Google anunciou que havia começado a aplicar modelos BERT às consultas de pesquisa em idioma inglês na Pesquisa Google nos EUA. Em 9 de dezembro de 2019, foi relatado que o BERT havia sido adotado pela Pesquisa Google para mais de 70 idiomas. Em outubro de 2020, quase todas as consultas baseadas em inglês foram processadas por um modelo BERT.
+
+== Variantes ==
+Os modelos BERT foram influentes e inspiraram muitas variantes.
+RoBERTa (2019) foi uma melhoria de engenharia. Ele preserva a arquitetura do BERT (ligeiramente maior, com 355 milhões de parâmetros), mas melhora seu treinamento, alterando hiperparâmetros-chave, removendo a tarefa de previsão da próxima frase e usando tamanhos de minilote muito maiores.
+XLM-RoBERTa (2019) foi um modelo RoBERTa multilíngue. Foi um dos primeiros trabalhos de modelagem de linguagem multilíngue em grande escala.
+DistilBERT (2019) destila o BERTBASE para um modelo com apenas 60% de seus parâmetros (66M), enquanto preserva 95% de suas pontuações de referência (benchmark). Da mesma forma, o TinyBERT (2019) é um modelo destilado com apenas 28% de seus parâmetros.
+ALBERT (2019) usou parâmetros compartilhados entre as camadas, e experimentou com a variação independente do tamanho oculto e do tamanho de saída da camada de incorporação de palavras como dois hiperparâmetros. Eles também substituíram a tarefa de previsão da próxima frase pela tarefa de previsão de ordem de frases (SOP), onde o modelo deve distinguir a ordem correta de dois segmentos de texto consecutivos de sua ordem invertida.
+ELECTRA (2020) aplicou a ideia de redes adversárias generativas à tarefa MLM. Em vez de mascarar tokens, um pequeno modelo de linguagem gera substituições plausíveis aleatórias e uma rede maior identifica esses tokens substituídos. O modelo pequeno visa enganar o modelo grande.
+DeBERTa (2020) é uma variante arquitetônica significativa, com atenção desembaraçada (disentangled attention). A sua ideia principal é tratar as codificações posicionais e de token separadamente através do mecanismo de atenção. Em vez de combinar a codificação posicional (
+
+x
+
+p
+o
+s
+i
+t
+i
+o
+n
+
+{\displaystyle x_{\mathrm {position} }}
+
+) e a codificação de token (
+
+x
+
+t
+o
+k
+e
+n
+
+{\displaystyle x_{\mathrm {token} }}
+
+) num único vetor de entrada (
+
+x
+
+i
+n
+p
+u
+t
+
+=
+
+x
+
+p
+o
+s
+i
+t
+i
+o
+n
+
++
+
+x
+
+t
+o
+k
+e
+n
+
+{\displaystyle x_{\mathrm {input} }=x_{\mathrm {position} }+x_{\mathrm {token} }}
+
+), o DeBERTa os mantém separados como uma tupla:
+
+(
+
+x
+
+p
+o
+s
+i
+t
+i
+o
+n
+
+,
+
+x
+
+t
+o
+k
+e
+n
+
+)
+
+{\displaystyle (x_{\mathrm {position} },x_{\mathrm {token} })}
+
+. Em seguida, em cada camada de autoatenção, o DeBERTa calcula três matrizes de atenção distintas, em vez da matriz de atenção única usada no BERT:
+
+As três matrizes de atenção são somadas elemento a elemento, em seguida passadas por uma camada softmax e multiplicadas por uma matriz de projeção.
+A codificação de posição absoluta é incluída na camada final de autoatenção como entrada adicional.
+
+== Notas ==
+
+== Referências ==
+
+== Leitura adicional ==
+Rogers, Anna; Kovaleva, Olga; Rumshisky, Anna (2020). «A Primer in BERTology: What we know about how BERT works». arXiv:2002.12327 [cs.CL]
+
+== Ligações externas ==
+Repositório oficial no GitHub

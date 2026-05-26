@@ -1,0 +1,5128 @@
+No cálculo, a derivada em um ponto de uma função
+
+y
+=
+f
+(
+x
+)
+
+{\displaystyle y=f(x)}
+
+representa a taxa de variação instantânea de
+
+y
+
+{\displaystyle y}
+
+em relação a
+
+x
+
+{\displaystyle x}
+
+neste ponto. Um exemplo típico é a função velocidade que representa a taxa de variação (derivada) da função espaço. Do mesmo modo, a função aceleração é a derivada da função velocidade. Geometricamente, a derivada no ponto
+
+x
+=
+a
+
+{\displaystyle x=a}
+
+de
+
+y
+=
+f
+(
+x
+)
+
+{\displaystyle y=f(x)}
+
+representa a inclinação da reta tangente ao gráfico desta função no ponto
+
+(
+a
+,
+
+f
+(
+a
+)
+)
+
+{\displaystyle (a,~f(a))}
+
+. A função que a cada ponto
+
+x
+
+{\displaystyle x}
+
+associa a derivada neste ponto de
+
+f
+(
+x
+)
+
+{\displaystyle f(x)}
+
+é chamada de função derivada de f(x).
+
+== Notação ==
+Duas distintas notações são comumente utilizadas para a derivada, o resultante de Leibniz e o outro a partir de Joseph Louis Lagrange.
+Na notação de Leibniz, uma mudança infinitesimal em x é denotada por dx, e a derivada de y em relação a x é escrito
+
+d
+
+y
+
+d
+
+x
+
+{\displaystyle {\frac {\mathrm {d} y}{\mathrm {d} x}}\,\!}
+
+.
+sugerindo que a razão de duas quantidades infinitesimais (A expressão acima é lido como "a derivada de y em relação a x", "dy por dx", ou "dy sobre dx". A forma oral dydx é usado frequentemente em tom de conversa, embora possa levar à confusão).
+Na notação de Lagrange, a derivada em relação a x de uma função F(x) é denotada f'(x) ou fx'(x), em caso de ambiguidade da variável implicada pela derivação. A notação de Lagrange é por vezes incorretamente atribuída a Newton.
+
+== Definição ==
+
+Seja
+
+I
+
+{\displaystyle I}
+
+um intervalo aberto não-vazio e seja
+
+f
+:
+I
+→
+
+R
+
+{\displaystyle f:I\to \mathbb {R} }
+
+,
+
+y
+=
+f
+(
+x
+)
+
+{\displaystyle y=f(x)}
+
+, uma função de
+
+I
+
+{\displaystyle I}
+
+em
+
+R
+
+{\displaystyle \mathbb {R} }
+
+. Diz-se que função
+
+f
+(
+x
+)
+
+{\displaystyle f(x)}
+
+é derivável no ponto
+
+a
+∈
+I
+
+{\displaystyle a\in I}
+
+se existir o seguinte limite:
+
+f
+′
+
+(
+a
+)
+=
+
+lim
+
+x
+→
+a
+
+f
+(
+x
+)
+−
+f
+(
+a
+)
+
+x
+−
+a
+
+{\displaystyle f'(a)=\lim _{x\rightarrow a}{\frac {f(x)-f(a)}{x-a}}}
+
+.
+Se for esse o caso, o número real
+
+f
+′
+
+(
+a
+)
+
+{\displaystyle f'(a)}
+
+é chamado de derivada da função
+
+f
+
+{\displaystyle f}
+
+no ponto
+
+a
+
+{\displaystyle a}
+
+. Notações equivalentes são:
+
+f
+′
+
+(
+a
+)
+=
+
+d
+
+f
+
+d
+
+x
+
+(
+a
+)
+=
+
+d
+
+f
+
+d
+
+x
+
+|
+
+x
+=
+a
+
+{\displaystyle f'(a)={\frac {\mathrm {d} f}{\mathrm {d} x}}(a)=\left.{\frac {\mathrm {d} f}{\mathrm {d} x}}\right|_{x=a}}
+
+.
+Equivalentemente, escrevemos:
+
+f
+′
+
+(
+a
+)
+=
+
+lim
+
+h
+→
+0
+
+f
+(
+a
++
+h
+)
+−
+f
+(
+a
+)
+
+h
+
+{\displaystyle f'(a)=\lim _{h\to 0}{\frac {f(a+h)-f(a)}{h}}}
+
+o que é obtido fazendo
+
+h
+=
+x
+−
+a
+
+{\displaystyle h=x-a}
+
+no limite acima. Desta forma, define-se a função derivada de
+
+f
+(
+x
+)
+
+{\displaystyle f(x)}
+
+por:
+
+f
+′
+
+(
+x
+)
+=
+
+lim
+
+h
+→
+0
+
+f
+(
+x
++
+h
+)
+−
+f
+(
+x
+)
+
+h
+
+{\displaystyle f'(x)=\lim _{h\to 0}{\frac {f(x+h)-f(x)}{h}}}
+
+para todo
+
+x
+
+{\displaystyle x}
+
+para o qual este limite existe.
+Uma função é dita derivável (ou diferenciável) quando sua derivada existe em cada ponto do seu domínio.
+
+Seja f uma função real definida em uma vizinhança aberta de um número real a.
+Na geometria clássica, a linha tangente ao gráfico da função f em a foi a única linha que passou pelo ponto (a, f(a)) que não encontrou o gráfico de f transversalmente, significando que a linha não passou diretamente pelo gráfico.
+O declive da secante ao gráfico de f, na imagem acima, que passa pelos pontos (x,f(x)) e (x + h,f(x + h)) é dado pelo quociente de Newton:
+
+f
+(
+x
++
+h
+)
+−
+f
+(
+x
+)
+
+h
+
+{\displaystyle {\frac {f(x+h)-f(x)}{h}}}
+
+.
+Uma definição alternativa é: a função f é derivável em a se existir uma função φa de I em R contínua em a tal que
+
+(
+∀
+x
+∈
+I
+)
+:
+f
+(
+x
+)
+=
+f
+(
+a
+)
++
+
+φ
+
+a
+
+(
+x
+)
+⋅
+(
+x
+−
+a
+)
+
+{\displaystyle (\forall x\in I):f(x)=f(a)+\varphi _{a}(x)\cdot (x-a)}
+
+.
+Então define-se a derivada de f em a como sendo φa(a).
+Funções com valores em R
+
+n
+
+{\displaystyle ^{n}}
+
+Se
+
+I
+
+{\displaystyle I}
+
+for um intervalo de
+
+R
+
+{\displaystyle \mathbb {R} }
+
+com mais do que um ponto e se
+
+f
+
+{\displaystyle f}
+
+for uma função de
+
+I
+
+{\displaystyle I}
+
+em
+
+R
+
+n
+
+{\displaystyle \mathbb {R} ^{n}}
+
+, para algum número natural
+
+n
+
+{\displaystyle n}
+
+, as definições anteriores continuam a fazer sentido. Assim, por exemplo a função
+
+f
+:
+
+R
+
+⟶
+
+R
+
+2
+
+x
+
+↦
+
+(
+cos
+⁡
+(
+x
+)
+,
+sen
+⁡
+(
+x
+)
+)
+
+{\displaystyle {\begin{array}{rccc}f\colon &\mathbb {R} &\longrightarrow &\mathbb {R} ^{2}\\&x&\mapsto &(\cos(x),\operatorname {sen} (x))\end{array}}}
+
+(ou seja: uma função que a cada x do domínio em
+
+R
+
+{\displaystyle \mathbb {R} }
+
+responde com uma coordenada no contradomínio em
+
+R
+
+n
+
+{\displaystyle \mathbb {R} ^{n}}
+
+. Esta coordenada é
+
+(
+cos
+⁡
+(
+x
+)
+,
+sen
+⁡
+(
+x
+)
+)
+
+{\displaystyle (\cos(x),\operatorname {sen} (x))}
+
+.
+é derivável e
+
+(
+∀
+x
+∈
+
+R
+
+)
+:
+
+f
+′
+
+(
+x
+)
+=
+(
+−
+sen
+⁡
+(
+x
+)
+,
+cos
+⁡
+(
+x
+)
+)
+.
+
+{\displaystyle (\forall x\in \mathbb {R} ):f'(x)=(-\operatorname {sen} (x),\cos(x)).}
+
+De fato, as propriedades acima descritas para o caso real continuam válidas, exceto, naturalmente, as que dizem respeito à monotonia de funções.
+
+== Diferenciabilidade ==
+
+=== Derivabilidade em um ponto ===
+Seja
+
+I
+
+{\displaystyle I}
+
+um intervalo de R com mais do que um ponto, seja
+
+a
+
+{\displaystyle a}
+
+∈
+
+I
+
+{\displaystyle I}
+
+e seja
+
+f
+
+{\displaystyle f}
+
+uma função de
+
+I
+
+{\displaystyle I}
+
+em R derivável em
+
+a
+
+{\displaystyle a}
+
+. Então
+
+f
+
+{\displaystyle f}
+
+é contínua em
+
+a
+
+{\displaystyle a}
+
+. O recíproco não é verdadeiro, como se pode ver pela função módulo.
+Seja
+
+I
+
+{\displaystyle I}
+
+um intervalo de R com mais do que um ponto, seja
+
+a
+
+{\displaystyle a}
+
+∈
+
+I
+
+{\displaystyle I}
+
+e sejam
+
+f
+
+{\displaystyle f}
+
+e
+
+g
+
+{\displaystyle g}
+
+funções de
+
+I
+
+{\displaystyle I}
+
+em R deriváveis em
+
+a
+
+{\displaystyle a}
+
+. Então as funções
+
+f
+
+{\displaystyle f}
+
+±
+
+g
+
+{\displaystyle g}
+
+,
+
+f
+.
+g
+
+{\displaystyle f.g}
+
+e (caso
+
+g
+(
+a
+)
+
+{\displaystyle g(a)}
+
+≠
+
+0
+
+{\displaystyle 0}
+
+)
+
+f
+
+/
+
+g
+
+{\displaystyle f/g}
+
+também são deriváveis em
+
+a
+
+{\displaystyle a}
+
+e:
+
+(
+f
+±
+g
+
+)
+′
+
+(
+a
+)
+=
+
+f
+′
+
+(
+a
+)
+±
+
+g
+′
+
+(
+a
+)
+
+{\displaystyle (f\pm g)'(a)=f'(a)\pm g'(a)}
+
+(
+f
+.
+g
+
+)
+′
+
+(
+a
+)
+=
+
+f
+′
+
+(
+a
+)
+g
+(
+a
+)
++
+f
+(
+a
+)
+
+g
+′
+
+(
+a
+)
+
+{\displaystyle (f.g)'(a)=f'(a)g(a)+f(a)g'(a)}
+
+(
+f
+
+/
+
+g
+
+)
+′
+
+(
+a
+)
+=
+
+f
+′
+
+(
+a
+)
+g
+(
+a
+)
+−
+f
+(
+a
+)
+
+g
+′
+
+(
+a
+)
+
+g
+(
+a
+
+)
+
+2
+
+{\displaystyle (f/g)'(a)={\frac {f'(a)g(a)-f(a)g'(a)}{g(a)^{2}}}}
+
+Em particular, se
+
+c
+
+{\displaystyle c}
+
+∈ R, então
+
+(
+c
+.
+f
+
+)
+′
+
+=
+c
+.
+
+f
+′
+
+{\displaystyle (c.f)'=c.f'}
+
+. Resulta daqui e de se ter
+
+(
+f
++
+g
+
+)
+′
+
+=
+
+f
+′
+
++
+
+g
+′
+
+{\displaystyle (f+g)'=f'+g'}
+
+que a derivação é uma aplicação linear.
+
+Sejam
+
+I
+
+{\displaystyle I}
+
+e
+
+J
+
+{\displaystyle J}
+
+intervalos de R com mais do que um ponto, seja
+
+a
+
+{\displaystyle a}
+
+∈
+
+I
+
+{\displaystyle I}
+
+, seja
+
+f
+
+{\displaystyle f}
+
+uma função de
+
+I
+
+{\displaystyle I}
+
+em
+
+J
+
+{\displaystyle J}
+
+derivável em
+
+a
+
+{\displaystyle a}
+
+e seja seja
+
+g
+
+{\displaystyle g}
+
+uma função de
+
+J
+
+{\displaystyle J}
+
+em R derivável em
+
+f
+(
+a
+)
+
+{\displaystyle f(a)}
+
+. Então
+
+g
+
+{\displaystyle g}
+
+o
+
+f
+
+{\displaystyle f}
+
+é derivável em
+
+a
+
+{\displaystyle a}
+
+e
+
+(
+g
+∘
+f
+
+)
+′
+
+(
+a
+)
+=
+
+g
+′
+
+(
+f
+(
+a
+)
+)
+.
+
+f
+′
+
+(
+a
+)
+
+{\displaystyle (g\circ f)'(a)=g'(f(a)).f'(a)}
+
+.
+Esta propriedade é conhecida por regra da cadeia.
+
+Seja
+
+I
+
+{\displaystyle I}
+
+um intervalo de R com mais do que um ponto, seja
+
+a
+
+{\displaystyle a}
+
+∈
+
+I
+
+{\displaystyle I}
+
+e seja
+
+f
+
+{\displaystyle f}
+
+uma função contínua de
+
+I
+
+{\displaystyle I}
+
+em R derivável em
+
+a
+
+{\displaystyle a}
+
+com derivada não nula. Então a função inversa
+
+f
+
+−
+1
+
+{\displaystyle f^{-1}}
+
+é derivável em
+
+f
+(
+a
+)
+
+{\displaystyle f(a)}
+
+e
+
+(
+
+f
+
+−
+1
+
+)
+′
+
+(
+f
+(
+a
+)
+)
+=
+
+1
+
+f
+′
+
+(
+a
+)
+
+⋅
+
+{\displaystyle (f^{-1})'(f(a))={\frac {1}{f'(a)}}\cdot }
+
+Outra maneira de formular este resultado é: se
+
+a
+
+{\displaystyle a}
+
+está na imagem de
+
+f
+
+{\displaystyle f}
+
+e se
+
+f
+
+{\displaystyle f}
+
+for derivável em
+
+f
+
+−
+1
+
+(
+a
+)
+
+{\displaystyle f^{-1}(a)}
+
+com derivada não nula, então
+
+(
+
+f
+
+−
+1
+
+)
+′
+
+(
+a
+)
+=
+
+1
+
+f
+′
+
+(
+
+f
+
+−
+1
+
+(
+a
+)
+
+)
+
+⋅
+
+{\displaystyle (f^{-1})'(a)={\frac {1}{f'{\bigl (}f^{-1}(a){\bigr )}}}\cdot }
+
+Assim, por exemplo, se considerarmos a função f de R em R definida por f(x) = x² + x − 1, esta é diferenciável em 0. Podem ver-se na imagem abaixo os gráficos das restrições daquela função aos intervalos [−1,1] e [−1/10,1/10] e é claro que, enquanto que o primeiro é bastante curvo (e, portanto, f(x) − f(0) está aí longe de ser linear), o segundo é praticamente indistinguível de um segmento de reta (de declive 1). De facto, quanto mais se for ampliando o gráfico próximo de (0,f(0)) mais perto estará este de ser linear.
+
+Em contrapartida, a função módulo de R em R não é derivável em 0, pois, por mais que se amplie o gráfico perto de (0,0), este tem sempre o aspecto da figura abaixo.
+
+=== Derivabilidade em todo o domínio ===
+Diz-se que f é derivável ou diferenciável se o for em todos os pontos do domínio.
+
+Uma função derivável
+
+f
+
+{\displaystyle f}
+
+de
+
+I
+
+{\displaystyle I}
+
+em R é constante se e só se a derivada for igual a
+
+0
+
+{\displaystyle 0}
+
+em todos os pontos. Isto é uma consequência do teorema da média.
+Uma função derivável
+
+f
+
+{\displaystyle f}
+
+de
+
+I
+
+{\displaystyle I}
+
+em R é crescente se e só se a derivada for maior ou igual a
+
+0
+
+{\displaystyle 0}
+
+em todos os pontos. Isto também é uma consequência do teorema da média.
+Uma função cuja derivada seja sempre maior que
+
+0
+
+{\displaystyle 0}
+
+é estritamente crescente. Uma observação importante é que existem funções estritamente crescentes em que a derivada assume o valor
+
+0
+
+{\displaystyle 0}
+
+em alguns pontos. É o que acontece, por exemplo com a função de R em R definida por
+
+f
+(
+x
+)
+=
+
+x
+
+3
+
+{\displaystyle f(x)=x^{3}}
+
+. Naturalmente, existem enunciados análogos para funções decrescentes.
+
+Se
+
+f
+
+{\displaystyle f}
+
+for uma função derivável de
+
+I
+
+{\displaystyle I}
+
+em R, sendo
+
+I
+
+{\displaystyle I}
+
+um intervalo de R com mais do que um ponto, então
+
+f
+′
+
+(
+I
+)
+
+{\displaystyle f'(I)}
+
+também é um intervalo de R. Outra maneira de formular este resultado é: se
+
+f
+
+{\displaystyle f}
+
+for uma função derivável de
+
+[
+a
+,
+b
+]
+
+{\displaystyle [a,b]}
+
+em R e se
+
+y
+
+{\displaystyle y}
+
+for um número real situado entre
+
+f
+′
+
+(
+a
+)
+
+{\displaystyle f'(a)}
+
+e
+
+f
+′
+
+(
+b
+)
+
+{\displaystyle f'(b)}
+
+(isto é,
+
+f
+′
+
+(
+a
+)
+
+{\displaystyle f'(a)}
+
+≤
+
+y
+
+{\displaystyle y}
+
+≤
+
+f
+′
+
+(
+b
+)
+
+{\displaystyle f'(b)}
+
+ou
+
+f
+′
+
+(
+a
+)
+
+{\displaystyle f'(a)}
+
+≥
+
+y
+
+{\displaystyle y}
+
+≥
+
+f
+′
+
+(
+b
+)
+
+{\displaystyle f'(b)}
+
+), então existe algum
+
+c
+
+{\displaystyle c}
+
+∈
+
+[
+a
+,
+b
+]
+
+{\displaystyle [a,b]}
+
+tal que
+
+f
+′
+
+(
+c
+)
+=
+y
+
+{\displaystyle f'(c)=y}
+
+. Este resultado é conhecido por teorema de Darboux.
+
+=== Funções continuamente deriváveis ===
+Seja
+
+I
+
+{\displaystyle I}
+
+um intervalo de R com mais do que um ponto e seja
+
+f
+
+{\displaystyle f}
+
+uma função de
+
+I
+
+{\displaystyle I}
+
+em R. Diz-se que
+
+f
+
+{\displaystyle f}
+
+é continuamente derivável ou de classe
+
+C
+
+1
+
+{\displaystyle C^{1}}
+
+se
+
+f
+
+{\displaystyle f}
+
+for derivável e, além disso, a sua derivada for contínua. Todas as funções deriváveis que foram vistas acima são continuamente deriváveis. Um exemplo de uma função derivável que não é continuamente derivável é
+
+f
+:
+
+R
+
+⟶
+
+R
+
+x
+
+↦
+
+{
+
+x
+
+2
+
+s
+e
+n
+
+⁡
+(
+
+1
+x
+
+)
+
+se
+
+x
+≠
+0
+
+0
+
+se
+
+x
+=
+0
+
+,
+
+{\displaystyle {\begin{array}{rccc}f\colon &\mathbb {R} &\longrightarrow &\mathbb {R} \\&x&\mapsto &{\begin{cases}x^{2}\mathop {\mathrm {sen} } ({\frac {1}{x}})&{\text{ se }}x\neq 0\\0&{\text{ se }}x=0{\text{,}}\end{cases}}\end{array}}}
+
+pois o limite
+
+lim
+
+x
+→
+0
+
+f
+′
+
+(
+x
+)
+
+{\displaystyle \lim _{x\rightarrow 0}f'(x)}
+
+não existe; em particular, f' não é contínua em
+
+0
+
+{\displaystyle 0}
+
+.
+
+=== Derivadas de ordem superior ===
+Quando obtemos a derivada de uma função o resultado é também uma função de x e como tal também pode ser diferenciada. Calculando-se a derivada novamente obtemos então a segunda derivada da função f. De forma semelhante, a derivada da segunda derivada é chamada de terceira derivada e assim por diante. Podemos nos referir às derivadas subsequentes de f por:
+
+d
+
+f
+
+d
+
+x
+
+,
+
+d
+
+d
+
+x
+
+(
+
+d
+
+f
+
+d
+
+x
+
+)
+
+,
+
+d
+
+d
+
+x
+
+(
+
+d
+
+d
+
+x
+
+(
+
+d
+
+f
+
+d
+
+x
+
+)
+
+)
+
+{\displaystyle {\frac {\mathrm {d} f}{\mathrm {d} x}},\quad {\frac {\mathrm {d} }{\mathrm {d} x}}\left({\frac {\mathrm {d} f}{\mathrm {d} x}}\right),\quad {\frac {\mathrm {d} }{\mathrm {d} x}}\left({\frac {\mathrm {d} }{\mathrm {d} x}}\left({\frac {\mathrm {d} f}{\mathrm {d} x}}\right)\right)}
+
+e assim sucessivamente. No entanto, a notação mais empregada é:
+
+d
+
+f
+
+d
+
+x
+
+,
+
+d
+
+2
+
+f
+
+d
+
+x
+
+2
+
+,
+
+d
+
+3
+
+f
+
+d
+
+x
+
+3
+
+{\displaystyle {\frac {\mathrm {d} f}{\mathrm {d} x}},\quad {\frac {\mathrm {d} ^{2}f}{\mathrm {d} x^{2}}},\quad {\frac {\mathrm {d} ^{3}f}{\mathrm {d} x^{3}}}}
+
+ou alternativamente,
+
+f
+′
+
+(
+x
+)
+,
+
+f
+″
+
+(
+x
+)
+,
+
+f
+‴
+
+(
+x
+)
+
+{\displaystyle f'(x),\quad f''(x),\quad f'''(x)}
+
+ou ainda
+
+f
+
+(
+1
+)
+
+(
+x
+)
+,
+
+f
+
+(
+2
+)
+
+(
+x
+)
+,
+
+f
+
+(
+3
+)
+
+(
+x
+)
+
+{\displaystyle f^{(1)}(x),\quad f^{(2)}(x),\quad f^{(3)}(x)}
+
+Se, para algum k ∈ N, f for k vezes derivável e, além disso, f(k) for uma função contínua, diz-se que f é de classe Ck.
+Se a função f tiver derivadas de todas as ordens, diz-se que f é infinitamente derivável ou indefinidamente derivável ou ainda de classe C∞.
+
+=== Exemplos ===
+Se
+
+c
+
+{\displaystyle c}
+
+∈ R, a função
+
+f
+
+{\displaystyle f}
+
+de R em R definida por
+
+f
+(
+x
+)
+=
+c
+
+{\displaystyle f(x)=c}
+
+é derivável em todos os pontos de R e a sua derivada é igual a
+
+0
+
+{\displaystyle 0}
+
+em todos os pontos, pois, para cada
+
+a
+
+{\displaystyle a}
+
+∈ R:
+
+lim
+
+x
+→
+a
+
+c
+−
+c
+
+x
+−
+a
+
+=
+0
+
+{\displaystyle \lim _{x\rightarrow a}{\frac {c-c}{x-a}}=0}
+
+.
+Usando a definição alternativa, basta ver que se se definir
+
+ϕ
+
+a
+
+{\displaystyle \phi _{a}}
+
+de R em R por
+
+ϕ
+
+a
+
+(
+x
+)
+=
+0
+
+{\displaystyle \phi _{a}(x)=0}
+
+, então
+
+ϕ
+
+a
+
+{\displaystyle \phi _{a}}
+
+é contínua e, para cada
+
+x
+
+{\displaystyle x}
+
+e cada
+
+a
+
+{\displaystyle a}
+
+reais, tem-se
+
+c
+=
+c
++
+0.
+(
+x
+−
+a
+)
+=
+c
++
+
+φ
+
+a
+
+(
+x
+)
+.
+(
+x
+−
+a
+)
+
+{\displaystyle c=c+0.(x-a)=c+\varphi _{a}(x).(x-a)}
+
+;
+além disso,
+
+f
+′
+
+(
+a
+)
+=
+
+ϕ
+
+a
+
+(
+a
+)
+=
+0
+
+{\displaystyle f'(a)=\phi _{a}(a)=0}
+
+.
+A função
+
+f
+
+{\displaystyle f}
+
+de R em R definida por
+
+f
+(
+x
+)
+=
+x
+
+{\displaystyle f(x)=x}
+
+é derivável em todos os pontos de R e a sua derivada é igual a
+
+1
+
+{\displaystyle 1}
+
+em todos os pontos, pois, para cada
+
+a
+
+{\displaystyle a}
+
+∈ R:
+
+lim
+
+x
+→
+a
+
+x
+−
+a
+
+x
+−
+a
+
+=
+1
+
+{\displaystyle \lim _{x\rightarrow a}{\frac {x-a}{x-a}}=1}
+
+.
+Usando a definição alternativa, basta ver que se se definir
+
+ϕ
+
+a
+
+{\displaystyle \phi _{a}}
+
+de R em R por
+
+ϕ
+
+a
+
+(
+x
+)
+=
+1
+
+{\displaystyle \phi _{a}(x)=1}
+
+, então
+
+ϕ
+
+a
+
+{\displaystyle \phi _{a}}
+
+é contínua e, para cada
+
+x
+
+{\displaystyle x}
+
+e cada
+
+a
+
+{\displaystyle a}
+
+reais, tem-se
+
+x
+=
+a
++
+1.
+(
+x
+−
+a
+)
+=
+a
++
+
+φ
+
+a
+
+(
+x
+)
+.
+(
+x
+−
+a
+)
+
+{\displaystyle x=a+1.(x-a)=a+\varphi _{a}(x).(x-a)}
+
+;
+além disso,
+
+f
+′
+
+(
+a
+)
+=
+
+ϕ
+
+a
+
+(
+a
+)
+=
+1
+
+{\displaystyle f'(a)=\phi _{a}(a)=1}
+
+.
+A função
+
+f
+
+{\displaystyle f}
+
+de R em R definida por
+
+f
+(
+x
+)
+=
+
+x
+
+2
+
+{\displaystyle f(x)=x^{2}}
+
+é derivável em todos os pontos de R e a sua derivada no ponto
+
+a
+
+{\displaystyle a}
+
+∈ R é igual a
+
+2
+a
+
+{\displaystyle 2a}
+
+, pois:
+
+lim
+
+x
+→
+a
+
+x
+
+2
+
+−
+
+a
+
+2
+
+x
+−
+a
+
+=
+
+lim
+
+x
+→
+a
+
+(
+x
+−
+a
+)
+(
+x
++
+a
+)
+
+x
+−
+a
+
+=
+
+lim
+
+x
+→
+a
+
+x
++
+a
+=
+2
+a
+
+{\displaystyle \lim _{x\rightarrow a}{\frac {x^{2}-a^{2}}{x-a}}=\lim _{x\rightarrow a}{\frac {(x-a)(x+a)}{x-a}}=\lim _{x\rightarrow a}x+a=2a}
+
+.
+Usando a definição alternativa, basta ver que se se definir
+
+ϕ
+
+a
+
+{\displaystyle \phi _{a}}
+
+de R em R por
+
+ϕ
+
+a
+
+(
+x
+)
+=
+x
++
+a
+
+{\displaystyle \phi _{a}(x)=x+a}
+
+, então
+
+ϕ
+
+a
+
+{\displaystyle \phi _{a}}
+
+é contínua e, para cada
+
+x
+
+{\displaystyle x}
+
+e cada
+
+a
+
+{\displaystyle a}
+
+reais, tem-se
+
+x
+
+2
+
+=
+
+a
+
+2
+
++
+(
+
+x
+
+2
+
+−
+
+a
+
+2
+
+)
+=
+
+a
+
+2
+
++
+
+φ
+
+a
+
+(
+x
+)
+.
+(
+x
+−
+a
+)
+
+{\displaystyle x^{2}=a^{2}+(x^{2}-a^{2})=a^{2}+\varphi _{a}(x).(x-a)}
+
+;
+além disso,
+
+f
+′
+
+(
+a
+)
+=
+
+ϕ
+
+a
+
+(
+a
+)
+=
+2
+a
+
+{\displaystyle f'(a)=\phi _{a}(a)=2a}
+
+.
+A função módulo de R em R não é derivável em
+
+0
+
+{\displaystyle 0}
+
+pois
+
+(
+∀
+x
+∈
+
+R
+
+)
+:
+
+|
+
+x
+
+|
+
+−
+
+|
+
+0
+
+|
+
+x
+−
+0
+
+=
+
+{
+
+1
+
+se
+
+x
+>
+0
+
+−
+1
+
+se
+
+x
+<
+0
+
+{\displaystyle (\forall x\in \mathbb {R} ):{\frac {|x|-|0|}{x-0}}={\begin{cases}1&{\text{ se }}x>0\\-1&{\text{ se }}x<0\end{cases}}}
+
+No entanto, é derivável em todos os outros pontos de R: a derivada em
+
+a
+
+{\displaystyle a}
+
+é igual a
+
+1
+
+{\displaystyle 1}
+
+quando
+
+a
+>
+0
+
+{\displaystyle a>0}
+
+e é igual a
+
+−
+1
+
+{\displaystyle -1}
+
+quando
+
+a
+<
+0
+
+{\displaystyle a<0}
+
+.
+
+=== Ponto de inflexão ===
+Um ponto em que a segunda derivada de uma função muda de sinal é chamado de um ponto de inflexão. Em um ponto de inflexão, a segunda derivada pode ser zero, como no caso do ponto de inflexão x = 0 da função y = x³, ou ele pode deixar de existir, como é o caso do ponto de inflexão x = 0 da função y =
+
+x
+
+1
+3
+
+{\displaystyle x^{\frac {1}{3}}\,\!}
+
+. Em um ponto de inflexão, uma função convexa passa a ser uma função côncava, ou vice-versa.
+
+== Pontos críticos, estacionários ou singulares ==
+
+Pontos onde a derivada da função é igual a
+
+0
+
+{\displaystyle 0}
+
+chamam-se normalmente de pontos críticos. Existem cinco tipos de pontos onde isto pode acontecer em uma função. Como a derivada é igual ao declive da tangente em um dado ponto, estes pontos acontecem onde a reta tangente é paralela ao eixo dos
+
+x
+
+{\displaystyle x}
+
+. Estes pontos podem acontecer:
+
+onde a função atinge um valor máximo e depois começa a diminuir, chamados máximos locais da função
+onde ela atinge um valor mínimo e começa a aumentar, chamados de mínimos locais da função
+em pontos de inflexão (horizontais) da função, que ocorrem onde a concavidade da função muda. Um exemplo típico é a função
+
+f
+(
+x
+)
+=
+
+x
+
+3
+
+{\displaystyle f(x)=x^{3}}
+
+: no ponto
+
+x
+=
+0
+
+{\displaystyle x=0}
+
+a função tem um ponto de inflexão (horizontal).
+em pontos onde a função oscila indefinidamente entre valores acima ou abaixo, um exemplo típico é a função
+
+f
+(
+x
+)
+=
+
+x
+
+2
+
+s
+i
+n
+(
+1
+
+/
+
+x
+)
+
+{\displaystyle f(x)=x^{2}sin(1/x)}
+
+em pontos onde a função é localmente constante, ou seja, existe um intervalo contendo o ponto para o qual a restrição da função ao intervalo é a função constante. Um exemplo típico é a função f(x) = |x + 1| + |x - 1| no ponto x=0.
+Os pontos críticos são ferramentas úteis para examinar e desenhar gráficos de funções.
+
+== Derivadas notáveis ==
+
+A derivada de uma função pode, em princípio, ser calculado a partir da definição, considerando o quociente de diferença, e computar o seu limite. Na prática, uma vez que as derivadas de algumas funções simples são conhecidos, as derivadas de outras funções são mais facilmente calculado usando regras para a obtenção de derivadas de funções mais complicadas das mais simples.
+A maioria dos cálculos de derivadas, eventualmente, exige a tomada da derivada de algumas funções comuns. A seguinte lista incompleta é de algumas das funções mais frequentemente utilizadas de uma única variável real e seus derivados.
+Alguns exemplos de derivadas notáveis são:
+
+A função exponencial natural y = ex = exp(x) cuja derivada é igual a si mesma, isto é:
+
+d
+
+d
+
+x
+
+e
+
+x
+
+=
+
+e
+
+x
+
+.
+
+{\displaystyle {\frac {\mathrm {d} }{\mathrm {d} x}}e^{x}=e^{x}.}
+
+A função logaritmo natural y = ln(x):
+
+d
+
+d
+
+x
+
+ln
+⁡
+(
+x
+)
+=
+
+1
+x
+
+,
+
+x
+>
+0.
+
+{\displaystyle {\frac {\mathrm {d} }{\mathrm {d} x}}\ln(x)={\frac {1}{x}},\quad x>0.}
+
+Estes dois fatos não são independentes. De fato, como o logaritmo natural é a inversa da função exponencial, resulta da igualdade
+
+d
+
+d
+
+x
+
+e
+
+x
+
+=
+
+e
+
+x
+
+{\displaystyle {\frac {\mathrm {d} }{\mathrm {d} x}}e^{x}=e^{x}}
+
+e da fórmula para a derivada da inversa que
+
+(
+∀
+x
+>
+0
+)
+:
+
+log
+′
+
+⁡
+(
+x
+)
+=
+(
+
+exp
+
+−
+1
+
+)
+′
+
+(
+x
+)
+=
+
+1
+
+exp
+′
+
+⁡
+
+(
+
+exp
+
+−
+1
+
+⁡
+(
+x
+)
+
+)
+
+=
+
+1
+
+exp
+⁡
+(
+log
+⁡
+(
+x
+)
+)
+
+=
+
+1
+x
+
+⋅
+
+{\displaystyle (\forall x>0):\log '(x)=(\exp ^{-1})'(x)={\frac {1}{\exp '{\bigl (}\exp ^{-1}(x){\bigr )}}}={\frac {1}{\exp(\log(x))}}={\frac {1}{x}}\cdot }
+
+Reciprocamente, supondo-se que, para cada
+
+x
+>
+0
+
+{\displaystyle x>0}
+
+,
+
+log
+′
+
+⁡
+(
+x
+)
+=
+1
+
+/
+
+x
+
+{\displaystyle \log '(x)=1/x}
+
+, então
+
+exp
+′
+
+⁡
+(
+x
+)
+=
+(
+
+log
+
+−
+1
+
+)
+′
+
+(
+x
+)
+=
+
+1
+
+log
+′
+
+⁡
+
+(
+
+log
+
+−
+1
+
+⁡
+(
+x
+)
+
+)
+
+=
+
+1
+
+1
+
+/
+
+exp
+⁡
+(
+x
+)
+
+=
+exp
+⁡
+(
+x
+)
+.
+
+{\displaystyle \exp '(x)=(\log ^{-1})'(x)={\frac {1}{\log '{\bigl (}\log ^{-1}(x){\bigr )}}}={\frac {1}{1/\exp(x)}}=\exp(x).}
+
+Também são notáveis as derivadas das funções trigonométricas:
+
+d
+
+d
+
+x
+
+sin
+⁡
+(
+x
+)
+=
+cos
+⁡
+(
+x
+)
+.
+
+{\displaystyle {\frac {\mathrm {d} }{\mathrm {d} x}}\sin(x)=\cos(x).}
+
+d
+
+d
+
+x
+
+cos
+⁡
+(
+x
+)
+=
+−
+sin
+⁡
+(
+x
+)
+.
+
+{\displaystyle {\frac {\mathrm {d} }{\mathrm {d} x}}\cos(x)=-\sin(x).}
+
+d
+
+d
+
+x
+
+tan
+⁡
+(
+x
+)
+=
+
+sec
+
+2
+
+⁡
+(
+x
+)
+=
+
+1
+
+cos
+
+2
+
+⁡
+(
+x
+)
+
+=
+1
++
+
+tan
+
+2
+
+⁡
+(
+x
+)
+.
+
+{\displaystyle {\frac {\mathrm {d} }{\mathrm {d} x}}\tan(x)=\sec ^{2}(x)={\frac {1}{\cos ^{2}(x)}}=1+\tan ^{2}(x).}
+
+d
+
+d
+
+x
+
+csc
+⁡
+(
+x
+)
+=
+−
+cot
+⁡
+(
+x
+)
+csc
+⁡
+(
+x
+)
+
+{\displaystyle {\frac {\mathrm {d} }{\mathrm {d} x}}\csc(x)=-\cot(x)\csc(x)}
+
+d
+
+d
+
+x
+
+sec
+⁡
+(
+x
+)
+=
+sec
+⁡
+(
+x
+)
+tan
+⁡
+(
+x
+)
+
+{\displaystyle {\frac {\mathrm {d} }{\mathrm {d} x}}\sec(x)=\sec(x)\tan(x)}
+
+d
+
+d
+
+x
+
+cot
+⁡
+(
+x
+)
+=
+−
+
+csc
+
+2
+
+⁡
+(
+x
+)
+
+{\displaystyle {\frac {\mathrm {d} }{\mathrm {d} x}}\cot(x)=-\csc ^{2}(x)}
+
+E funções Funções trigonométricas inversas:
+
+d
+
+d
+
+x
+
+arcsin
+⁡
+(
+x
+)
+=
+
+1
+
+1
+−
+
+x
+
+2
+
+,
+−
+1
+<
+x
+<
+1.
+
+{\displaystyle {\frac {\mathrm {d} }{\mathrm {d} x}}\arcsin(x)={\frac {1}{\sqrt {1-x^{2}}}},-1<x<1.}
+
+d
+
+d
+
+x
+
+arccos
+⁡
+(
+x
+)
+=
+−
+
+1
+
+1
+−
+
+x
+
+2
+
+,
+−
+1
+<
+x
+<
+1.
+
+{\displaystyle {\frac {\mathrm {d} }{\mathrm {d} x}}\arccos(x)=-{\frac {1}{\sqrt {1-x^{2}}}},-1<x<1.}
+
+d
+
+d
+
+x
+
+arctan
+⁡
+(
+x
+)
+=
+
+1
+
+1
++
+
+x
+
+2
+
+{\displaystyle {\frac {\mathrm {d} }{\mathrm {d} x}}\arctan(x)={\frac {1}{1+x^{2}}}}
+
+Neste último caso, as derivadas resultam das fórmulas para as derivadas das funções trigonométricas juntamente com a fórmula para a derivada da inversa e a fórmula fundamental da trigonometria.
+
+=== Regras para funções combinadas ===
+Em muitos casos, a aplicação direta do quociente de diferença de Newton pode ser evitado usando regras de diferenciação, evitando complicados cálculos de limite. Algumas das regras mais básicas são as seguintes:
+
+Regra da constante: se f(x) é constante, então:
+
+f
+′
+
+=
+0.
+
+{\displaystyle f'=0.\,}
+
+Regra da soma:
+
+(
+α
+f
++
+β
+g
+
+)
+′
+
+=
+α
+
+f
+′
+
++
+β
+
+g
+′
+
+{\displaystyle (\alpha f+\beta g)'=\alpha f'+\beta g'\,}
+
+para todas as funções f e g e todos os números reais
+
+α
+
+{\displaystyle \alpha }
+
+e
+
+b
+e
+t
+a
+
+{\displaystyle \ beta}
+
+Regra do produto:
+
+(
+f
+g
+
+)
+′
+
+=
+
+f
+′
+
+g
++
+f
+
+g
+′
+
+{\displaystyle (fg)'=f'g+fg'\,}
+
+para todas as funções f e g. Por conseguinte, isso significa que a derivada de uma constante vezes uma função é a constante vezes a derivada da função
+
+d
+
+d
+
+r
+
+π
+
+r
+
+2
+
+=
+2
+π
+r
+.
+
+{\displaystyle {\frac {\mathrm {d} }{\mathrm {d} r}}\pi r^{2}=2\pi r.\,}
+
+Regra do quociente:
+
+(
+
+f
+g
+
+)
+
+′
+
+=
+
+f
+′
+
+g
+−
+f
+
+g
+′
+
+g
+
+2
+
+{\displaystyle \left({\frac {f}{g}}\right)'={\frac {f'g-fg'}{g^{2}}}}
+
+para todas as funções f e g, em que g ≠ 0.
+
+Regra da cadeia:
+Se
+
+f
+(
+x
+)
+=
+h
+(
+g
+(
+x
+)
+)
+,
+
+{\displaystyle f(x)=h(g(x)),}
+
+então:
+
+f
+′
+
+(
+x
+)
+=
+
+h
+′
+
+(
+g
+(
+x
+)
+)
+⋅
+
+g
+′
+
+(
+x
+)
+.
+
+{\displaystyle f'(x)=h'(g(x))\cdot g'(x).\,}
+
+=== Exemplo de uso ===
+A derivada de
+
+f
+(
+x
+)
+=
+
+x
+
+4
+
++
+sin
+⁡
+(
+
+x
+
+2
+
+)
+−
+ln
+⁡
+(
+x
+)
+
+e
+
+x
+
++
+7
+
+{\displaystyle f(x)=x^{4}+\sin(x^{2})-\ln(x)e^{x}+7\,}
+
+é
+
+f
+′
+
+(
+x
+)
+
+=
+4
+
+x
+
+(
+4
+−
+1
+)
+
++
+
+d
+
+(
+
+x
+
+2
+
+)
+
+d
+
+x
+
+cos
+⁡
+(
+
+x
+
+2
+
+)
+−
+
+d
+
+(
+
+ln
+⁡
+
+x
+
+)
+
+d
+x
+
+e
+
+x
+
+−
+ln
+⁡
+
+x
+
+d
+
+(
+
+e
+
+x
+
+)
+
+d
+
+x
+
++
+0
+
+=
+4
+
+x
+
+3
+
++
+2
+x
+cos
+⁡
+(
+
+x
+
+2
+
+)
+−
+
+1
+x
+
+e
+
+x
+
+−
+ln
+⁡
+(
+x
+)
+
+e
+
+x
+
+.
+
+{\displaystyle {\begin{aligned}f'(x)&=4x^{(4-1)}+{\frac {\mathrm {d} \left(x^{2}\right)}{\mathrm {d} x}}\cos(x^{2})-{\frac {d\left(\ln {x}\right)}{dx}}e^{x}-\ln {x}{\frac {\mathrm {d} \left(e^{x}\right)}{\mathrm {d} x}}+0\\&=4x^{3}+2x\cos(x^{2})-{\frac {1}{x}}e^{x}-\ln(x)e^{x}.\end{aligned}}}
+
+As derivadas conhecidas de funções elementares
+
+x
+
+2
+
+,
+
+x
+
+4
+
+,
+
+{\displaystyle x^{2},x^{4},}
+
+sen(x) e
+
+e
+x
+p
+(
+x
+)
+=
+
+e
+
+x
+
+{\displaystyle exp(x)=e^{x}}
+
+, assim como a constante 7, também foram usadas.
+
+== Funções de uma variável complexa ==
+Se A for um conjunto de números complexos, se f for uma função de A em C e se a for um ponto não isolado de A (isto é, se tão perto quanto se queira de a houver outros elementos de A), então as duas definições da derivada de f no ponto a continuam a fazer sentido. De facto, as propriedades acima descritas para o caso real continuam válidas, excepto, mais uma vez, as que dizem respeito à monotonia de funções.
+
+== Física ==
+Uma das mais importantes aplicações da Análise à Física (senão a mais importante), é o conceito de derivada temporal — a taxa de mudança ao longo do tempo — que é necessária para a definição precisa de vários importantes conceitos. Em particular, as derivadas temporais da posição s de um objeto são importantes na física newtoniana:
+
+Velocidade (velocidade instantânea; o conceito de velocidade média é anterior à Análise) v é a derivada (com respeito ao tempo) da posição do objeto.
+Aceleração a é a derivada (com respeito ao tempo) da velocidade de um objeto.
+Posto de outro modo:
+
+v
+(
+t
+)
+
+=
+
+d
+
+s
+
+d
+
+t
+
+a
+(
+t
+)
+
+=
+
+d
+
+v
+
+d
+
+t
+
+=
+
+d
+
+2
+
+s
+
+d
+
+t
+
+2
+
+{\displaystyle {\begin{aligned}v(t)&={\frac {\mathrm {d} s}{\mathrm {d} t}}\\a(t)&={\frac {\mathrm {d} v}{\mathrm {d} t}}={\frac {\mathrm {d} ^{2}s}{\mathrm {d} t^{2}}}\end{aligned}}}
+
+Por exemplo, se a posição de um objeto é s(t) = −16t² + 16t + 32, então a velocidade do objeto é s′(t) = −32t + 16 e a aceleração do objeto é s′′(t) = −32.
+Uma forma de enunciar a segunda lei de Newton é F = dp/dt , sendo p o momento linear do objeto.
+
+== Derivadas em maiores dimensões ==
+Em dimensão 1, as derivadas são pensadas como números pois, nesta dimensão, um número e uma transformação linear são a mesma coisa. Entretanto, para dimensões maiores, as derivadas necessitam ser tratadas como transformações lineares.
+
+=== Derivadas de funções vetoriais ===
+Uma função vetorial y(t) de uma variável real de uma variável real envia números reais de vetores em
+
+R
+
+n
+
+{\displaystyle R^{n}}
+
+algum espaço vetorial. A função vetorial pode ser dividido em suas funções coordenadas y1(t), y2(t),...,yn(t), significando que y(t) = (
+
+y
+
+1
+
+{\displaystyle y_{1}}
+
+(t), ...,
+
+y
+
+n
+
+{\displaystyle y_{n}}
+
+(t)). Isto inclui, por exemplo, curvas paramétricas em R² ou R³.
+As funções de coordenadas são funções de valores reais, de modo que a definição acima de derivada aplica-se a eles. A derivada de y (t) é definida como sendo o vetor, chamado o vetor tangente, cujas coordenadas são as derivadas das funções de coordenadas. Isto é,
+
+y
+
+′
+
+(
+t
+)
+=
+(
+
+y
+
+1
+
+′
+
+(
+t
+)
+,
+…
+,
+
+y
+
+n
+
+′
+
+(
+t
+)
+)
+.
+
+{\displaystyle \mathbf {y} '(t)=(y'_{1}(t),\ldots ,y'_{n}(t)).}
+
+equivalentemente,
+
+y
+
+′
+
+(
+t
+)
+=
+
+lim
+
+h
+→
+0
+
+y
+
+(
+t
++
+h
+)
+−
+
+y
+
+(
+t
+)
+
+h
+
+,
+
+{\displaystyle \mathbf {y} '(t)=\lim _{h\to 0}{\frac {\mathbf {y} (t+h)-\mathbf {y} (t)}{h}},}
+
+se o limite existe.
+A subtração no numerador é a subtração de vetores, não escalares. Se a derivada de y existe para cada valor de t, então y' é outra função vetorial.
+Se
+
+e
+
+1
+
+{\displaystyle e_{1}}
+
+, ...,
+
+e
+
+n
+
+{\displaystyle e_{n}}
+
+é a base padrão para
+
+R
+
+n
+
+{\displaystyle R^{n}}
+
+, então y (t) também pode ser escrito como
+
+y
+
+1
+
+{\displaystyle y_{1}}
+
+(t)
+
+e
+
+1
+
+{\displaystyle e_{1}}
+
++ ... +
+
+y
+
+n
+
+{\displaystyle y_{n}}
+
+(t)
+
+e
+
+n
+
+{\displaystyle e_{n}}
+
+. Se assumirmos que a derivada de uma função vetorial mantém a propriedade da linearidade, então a derivada de y (t) deve ser
+
+y
+
+1
+
+′
+
+(
+t
+)
+
+e
+
+1
+
++
+⋯
++
+
+y
+
+n
+
+′
+
+(
+t
+)
+
+e
+
+n
+
+{\displaystyle y'_{1}(t)\mathbf {e} _{1}+\cdots +y'_{n}(t)\mathbf {e} _{n}}
+
+porque cada um dos vetores de base é uma constante.
+
+Esta generalização é útil, por exemplo, se y (t) é o vetor de posição de uma partícula no tempo t; em seguida, o derivado y '(t) é o vetor de velocidade da partícula no tempo t.
+
+=== Derivadas parciais ===
+
+Quando uma função depende de mais do que uma variável, podemos usar o conceito de derivada parcial. Podemos entender as derivadas parciais como a derivada de uma função para uma determinada variável, enquanto as outras se mantêm fixadas. No gráfico, é usada para determinar a variação da função em um determinado eixo.
+Derivadas parciais são representadas como, por exemplo, ∂z/∂x, sendo x a variável fixada sobre uma função em z.
+Suponha que f é uma função que depende mais de uma variável, por exemplo,
+
+f
+(
+x
+,
+y
+)
+=
+
+x
+
+2
+
++
+x
+y
++
+
+y
+
+2
+
+.
+
+{\displaystyle f(x,y)=x^{2}+xy+y^{2}.\,}
+
+f pode ser reinterpretado como uma família de funções de uma variável indexada pelas outras variáveis:
+
+f
+(
+x
+,
+y
+)
+=
+
+f
+
+x
+
+(
+y
+)
+=
+
+x
+
+2
+
++
+x
+y
++
+
+y
+
+2
+
+.
+
+{\displaystyle f(x,y)=f_{x}(y)=x^{2}+xy+y^{2}.\,}
+
+Em outras palavras, cada valor de x escolhe uma função, denotando
+
+f
+
+x
+
+{\displaystyle f_{x}}
+
+, que é uma função de um número real. Ou seja,
+
+x
+↦
+
+f
+
+x
+
+,
+
+{\displaystyle x\mapsto f_{x},\,}
+
+f
+
+x
+
+(
+y
+)
+=
+
+x
+
+2
+
++
+x
+y
++
+
+y
+
+2
+
+.
+
+{\displaystyle f_{x}(y)=x^{2}+xy+y^{2}.\,}
+
+Uma vez que um valor de x é escolhido, digamos a, então f(x,y) determina a função
+
+f
+
+a
+
+{\displaystyle f_{a}}
+
+que envia y a a2+ay+y2:
+
+f
+
+a
+
+(
+y
+)
+=
+
+a
+
+2
+
++
+a
+y
++
+
+y
+
+2
+
+.
+
+{\displaystyle f_{a}(y)=a^{2}+ay+y^{2}.\,}
+
+Nesta expressão, a é uma constante, e não uma variável, de modo que
+
+f
+
+a
+
+{\displaystyle f_{a}}
+
+é uma função de uma única variável real. Consequentemente, a definição da derivada para uma função de uma variável aplica-se:
+
+f
+
+a
+
+′
+
+(
+y
+)
+=
+a
++
+2
+y
+.
+
+{\displaystyle f_{a}'(y)=a+2y.\,}
+
+O procedimento acima pode ser realizada por qualquer escolha de a. Montando as derivadas juntas em uma função, dá uma função que descreve a variação de f na direção y:
+
+∂
+f
+
+∂
+y
+
+(
+x
+,
+y
+)
+=
+x
++
+2
+y
+.
+
+{\displaystyle {\frac {\partial f}{\partial y}}(x,y)=x+2y.}
+
+Esta é a derivada parcial de f em relação a y. Aqui, ∂ é o símbolo derivada parcial.
+Em geral, a derivada parcial de uma função f (
+
+x
+
+1
+
+{\displaystyle x_{1}}
+
+, ...,
+
+x
+
+n
+
+{\displaystyle x_{n}}
+
+) na direção de
+
+x
+
+i
+
+{\displaystyle x_{i}}
+
+, no ponto (
+
+a
+
+1
+
+{\displaystyle a_{1}}
+
+...,
+
+a
+
+n
+
+{\displaystyle a_{n}}
+
+) é definido como sendo:
+
+∂
+f
+
+∂
+
+x
+
+i
+
+(
+
+a
+
+1
+
+,
+…
+,
+
+a
+
+n
+
+)
+=
+
+lim
+
+h
+→
+0
+
+f
+(
+
+a
+
+1
+
+,
+…
+,
+
+a
+
+i
+
++
+h
+,
+…
+,
+
+a
+
+n
+
+)
+−
+f
+(
+
+a
+
+1
+
+,
+…
+,
+
+a
+
+i
+
+,
+…
+,
+
+a
+
+n
+
+)
+
+h
+
+.
+
+{\displaystyle {\frac {\partial f}{\partial x_{i}}}(a_{1},\ldots ,a_{n})=\lim _{h\to 0}{\frac {f(a_{1},\ldots ,a_{i}+h,\ldots ,a_{n})-f(a_{1},\ldots ,a_{i},\ldots ,a_{n})}{h}}.}
+
+Na diferença de quociente acima, todas as variáveis, exceto
+
+x
+
+i
+
+{\displaystyle x_{i}}
+
+, são mantidos fixos. Essa escolha de valores fixos determina uma função de uma variável.
+{
+
+f
+
+a
+
+1
+
+,
+…
+,
+
+a
+
+i
+−
+1
+
+,
+
+a
+
+i
++
+1
+
+,
+…
+,
+
+a
+
+n
+
+(
+
+x
+
+i
+
+)
+=
+f
+(
+
+a
+
+1
+
+,
+…
+,
+
+a
+
+i
+−
+1
+
+,
+
+x
+
+i
+
+,
+
+a
+
+i
++
+1
+
+,
+…
+,
+
+a
+
+n
+
+)
+,
+
+{\displaystyle f_{a_{1},\ldots ,a_{i-1},a_{i+1},\ldots ,a_{n}}(x_{i})=f(a_{1},\ldots ,a_{i-1},x_{i},a_{i+1},\ldots ,a_{n}),}
+
+e por definição,
+
+d
+
+f
+
+a
+
+1
+
+,
+…
+,
+
+a
+
+i
+−
+1
+
+,
+
+a
+
+i
++
+1
+
+,
+…
+,
+
+a
+
+n
+
+d
+
+x
+
+i
+
+(
+
+a
+
+i
+
+)
+=
+
+∂
+f
+
+∂
+
+x
+
+i
+
+(
+
+a
+
+1
+
+,
+…
+,
+
+a
+
+n
+
+)
+.
+
+{\displaystyle {\frac {\mathrm {d} f_{a_{1},\ldots ,a_{i-1},a_{i+1},\ldots ,a_{n}}}{dx_{i}}}(a_{i})={\frac {\partial f}{\partial x_{i}}}(a_{1},\ldots ,a_{n}).}
+
+Em outras palavras, as diferentes opções de classificar uma família de funções de uma variável tal como no exemplo acima. Esta expressão também mostra que o cálculo das derivadas parciais reduz para o cálculo dos derivados de uma variável.
+Um exemplo importante de uma função de várias variáveis é o caso de uma função de valor escalar f (
+
+x
+
+1
+
+{\displaystyle x_{1}}
+
+, ...,
+
+x
+
+n
+
+{\displaystyle x_{n}}
+
+) em um domínio no espaço Euclidiano
+
+R
+
+n
+
+{\displaystyle R^{n}}
+
+(por exemplo, em R² ou R²). Neste caso, f tem uma derivada parcial ∂f / ∂xj em relação a cada variável
+
+x
+
+j
+
+{\displaystyle x_{j}}
+
+. No ponto a, estas derivadas parciais definem o vetor
+
+∇
+f
+(
+a
+)
+=
+
+(
+
+∂
+f
+
+∂
+
+x
+
+1
+
+(
+a
+)
+,
+…
+,
+
+∂
+f
+
+∂
+
+x
+
+n
+
+(
+a
+)
+
+)
+
+.
+
+{\displaystyle \nabla f(a)=\left({\frac {\partial f}{\partial x_{1}}}(a),\ldots ,{\frac {\partial f}{\partial x_{n}}}(a)\right).}
+
+Este vetor é denominado gradiente de f em a. Se f é diferenciável em todos os pontos em algum domínio, então o gradiente é uma função vetorial ∇f que leva o ponto a para o vetor ∇f(a).
+Consequentemente, o gradiente determina um campo vetorial.
+
+=== Derivadas direcionais ===
+Se f é uma função com valores reais em
+
+R
+
+n
+
+{\displaystyle R^{n}}
+
+, então a derivada parcial de f mede a sua variação na direção dos eixos das coordenadas. Por exemplo, se f é uma função de x e y, então sua derivada parcial mede a variação em f na direção x e na direção y. Contudo, elas (derivadas parciais) não medem diretamente a variação de f em qualquer outra direção, tal como aquela ao longo da linha diagonal y=x. Estas são medidas usando-se as derivadas direcionais. Escolha um vetor:
+
+v
+
+=
+(
+
+v
+
+1
+
+,
+…
+,
+
+v
+
+n
+
+)
+.
+
+{\displaystyle \mathbf {v} =(v_{1},\ldots ,v_{n}).}
+
+A derivada direcional de f na direção de v no ponto x é o limite
+
+D
+
+v
+
+f
+
+(
+
+x
+
+)
+=
+
+lim
+
+h
+→
+0
+
+f
+(
+
+x
+
++
+h
+
+v
+
+)
+−
+f
+(
+
+x
+
+)
+
+h
+
+.
+
+{\displaystyle D_{\mathbf {v} }{f}(\mathbf {x} )=\lim _{h\rightarrow 0}{\frac {f(\mathbf {x} +h\mathbf {v} )-f(\mathbf {x} )}{h}}.}
+
+Em alguns casos pode ser mais fácil computar ou estimar a derivada direcional depois de mudar o comprimento do vetor. Frequentemente isso é feito para transformar o problema numa computação de uma derivada direcional na direção de um vetor unitário. Para ver como isso funciona, suponha v = λu. Substitua h = k/λ no quociente da diferença.
+O quociente da diferença torna-se:
+
+f
+(
+
+x
+
++
+(
+k
+
+/
+
+λ
+)
+(
+λ
+
+u
+
+)
+)
+−
+f
+(
+
+x
+
+)
+
+k
+
+/
+
+λ
+
+=
+λ
+⋅
+
+f
+(
+
+x
+
++
+k
+
+u
+
+)
+−
+f
+(
+
+x
+
+)
+
+k
+
+.
+
+{\displaystyle {\frac {f(\mathbf {x} +(k/\lambda )(\lambda \mathbf {u} ))-f(\mathbf {x} )}{k/\lambda }}=\lambda \cdot {\frac {f(\mathbf {x} +k\mathbf {u} )-f(\mathbf {x} )}{k}}.}
+
+Isso é λ vezes o quociente da diferença para a derivada direcional de f no que diz respeito a u. Além disso, tomar o limite como h tendendo a zero é o mesmo que tomar o limite como k tendendo a zero, pois h e k são múltiplos um do outro.
+Portanto, Dv(f) = λDu(f). Devido a essa propriedade de redirecionamento, derivadas direcionais são frequentemente consideradas apenas para vetores unitários.
+Se todas as derivadas parciais de f existem e são contínuas em x, então elas determinam a derivada direcional de f na direção de v pela fórmula:
+
+D
+
+v
+
+f
+
+(
+
+x
+
+)
+=
+
+∑
+
+j
+=
+1
+
+n
+
+v
+
+j
+
+∂
+f
+
+∂
+
+x
+
+j
+
+.
+
+{\displaystyle D_{\mathbf {v} }{f}({\boldsymbol {x}})=\sum _{j=1}^{n}v_{j}{\frac {\partial f}{\partial x_{j}}}.}
+
+Essa é a consequência da definição de derivada total. Diz-se que a derivada direcional é linear em v, significando que D
+
+V
+
+{\displaystyle _{V}}
+
++
+
+W
+
+{\displaystyle _{W}}
+
+(f) = D
+
+V
+
+{\displaystyle _{V}}
+
+(f) + D
+
+W
+
+{\displaystyle _{W}}
+
+(f).
+A mesma definição também é aplicável quando f é a função com valores em
+
+R
+
+m
+
+{\displaystyle R^{m}}
+
+. . A definição acima é aplicada a cada componente dos vetores. Nesse caso, a derivada direcional é um vetor em
+
+R
+
+m
+
+{\displaystyle R^{m}}
+
+.
+
+== Derivadas de aplicações ==
+Sejam
+
+U
+
+{\displaystyle U}
+
+um aberto de
+
+R
+
+m
+
+{\displaystyle {\mathbb {R} }^{m}}
+
+,
+
+z
+
+0
+
+∈
+U
+
+{\displaystyle z_{0}\in U}
+
+e
+
+f
+:
+U
+→
+
+R
+
+n
+
+{\displaystyle f:U\rightarrow {\mathbb {R} }^{n}}
+
+uma função. Dizemos que
+
+f
+
+{\displaystyle f}
+
+é diferenciável quando existem uma transformação linear
+
+T
+:
+
+R
+
+m
+
+→
+
+R
+
+n
+
+{\displaystyle T:{\mathbb {R} }^{m}\rightarrow {\mathbb {R} }^{n}}
+
+e uma função
+
+r
+:
+{
+z
+−
+
+z
+
+0
+
+:
+z
+∈
+U
+}
+→
+
+R
+
+n
+
+{\displaystyle r:\{z-z_{0}:z\in U\}\rightarrow {\mathbb {R} }^{n}}
+
+dada por
+
+r
+(
+h
+)
+=
+f
+(
+
+z
+
+0
+
++
+h
+)
+−
+f
+(
+
+z
+
+0
+
+)
+−
+T
+.
+h
+
+{\displaystyle r(h)=f(z_{0}+h)-f(z_{0})-T.h}
+
+tais que
+
+lim
+
+h
+→
+0
+
+r
+(
+h
+)
+
+|
+
+h
+
+|
+
+=
+0
+
+{\displaystyle \lim _{h\rightarrow 0}{\frac {r(h)}{|h|}}=0}
+
+.
+Neste caso, a aplicação
+
+T
+
+{\displaystyle T}
+
+é chamada de derivada da função
+
+f
+
+{\displaystyle f}
+
+no ponto
+
+z
+
+0
+
+{\displaystyle z_{0}}
+
+e denotada por
+
+D
+f
+(
+
+z
+
+0
+
+)
+
+{\displaystyle Df(z_{0})}
+
+. Em outras palavras
+
+D
+f
+(
+
+z
+
+0
+
+)
+=
+
+lim
+
+t
+→
+0
+
+f
+(
+x
++
+t
+
+z
+
+0
+
+)
+−
+f
+(
+x
+)
+
+t
+
+.
+
+{\displaystyle Df(z_{0})=\lim _{t\rightarrow 0}{\frac {f(x+tz_{0})-f(x)}{t}}.}
+
+=== Exemplos ===
+Se
+
+f
+:
+U
+⊂
+
+R
+
+→
+
+R
+
+{\displaystyle f:U\subset \mathbb {R} \rightarrow \mathbb {R} }
+
+,
+
+z
+
+0
+
+∈
+U
+
+{\displaystyle z_{0}\in U}
+
+e
+
+h
+∈
+
+R
+
+{\displaystyle h\in \mathbb {R} }
+
+, então
+
+D
+f
+(
+
+z
+
+0
+
+)
+h
+=
+h
+.
+
+f
+′
+
+(
+
+z
+
+0
+
+)
+.
+
+{\displaystyle Df(z_{0})h=h.f'(z_{0}).}
+
+Se
+
+f
+:
+U
+⊂
+
+R
+
+→
+
+R
+
+n
+
+{\displaystyle f:U\subset \mathbb {R} \rightarrow {\mathbb {R} }^{n}}
+
+,
+
+z
+
+0
+
+∈
+U
+
+{\displaystyle z_{0}\in U}
+
+e
+
+h
+∈
+
+R
+
+,
+
+{\displaystyle h\in \mathbb {R} ,}
+
+então
+
+D
+f
+(
+
+z
+
+0
+
+)
+h
+=
+h
+.
+(
+
+f
+
+1
+
+′
+
+(
+
+z
+
+0
+
+)
+,
+
+f
+
+2
+
+′
+
+(
+
+z
+
+0
+
+)
+,
+.
+.
+.
+,
+
+f
+
+n
+
+′
+
+(
+
+z
+
+0
+
+)
+)
+.
+
+{\displaystyle Df(z_{0})h=h.(f_{1}'(z_{0}),f_{2}'(z_{0}),...,f_{n}'(z_{0})).}
+
+Se
+
+f
+:
+U
+⊂
+
+R
+
+m
+
+→
+
+R
+
+{\displaystyle f:U\subset \mathbb {R} ^{m}\rightarrow {\mathbb {R} }}
+
+,
+
+z
+
+0
+
+∈
+U
+
+{\displaystyle z_{0}\in U}
+
+e
+
+h
+=
+(
+
+h
+
+1
+
+,
+⋯
+,
+
+h
+
+m
+
+)
+∈
+
+R
+
+m
+
+,
+
+{\displaystyle h=(h_{1},\cdots ,h_{m})\in \mathbb {R} ^{m},}
+
+então
+
+D
+f
+(
+
+z
+
+0
+
+)
+h
+=
+
+h
+
+1
+
+.
+
+∂
+f
+
+∂
+
+x
+
+1
+
+(
+
+z
+
+0
+
+)
++
+⋯
++
+
+h
+
+m
+
+.
+
+∂
+f
+
+∂
+
+x
+
+m
+
+(
+
+z
+
+0
+
+)
+
+{\displaystyle Df(z_{0})h=h_{1}.{\partial f \over \partial x_{1}}(z_{0})+\cdots +h_{m}.{\partial f \over \partial x_{m}}(z_{0})}
+
+Se
+
+f
+:
+U
+⊂
+
+R
+
+m
+
+→
+
+R
+
+n
+
+{\displaystyle f:U\subset \mathbb {R} ^{m}\rightarrow {\mathbb {R} }^{n}}
+
+,
+
+z
+
+0
+
+∈
+U
+
+{\displaystyle z_{0}\in U}
+
+e
+
+h
+∈
+
+R
+
+n
+
+,
+
+{\displaystyle h\in \mathbb {R} ^{n},}
+
+então
+
+D
+f
+(
+
+z
+
+0
+
+)
+h
+=
+(
+h
+.
+∇
+
+f
+
+1
+
+(
+
+z
+
+0
+
+)
+,
+⋯
+,
+h
+.
+∇
+
+f
+
+n
+
+(
+
+z
+
+0
+
+)
+)
+
+{\displaystyle Df(z_{0})h=(h.\nabla f_{1}(z_{0}),\cdots ,h.\nabla f_{n}(z_{0}))}
+
+Nesta definição, podemos considerar a derivada parcial de uma aplicação como sendo
+
+∂
+f
+
+∂
+
+x
+
+j
+
+(
+x
+)
+=
+D
+f
+(
+x
+)
+
+e
+
+j
+
+.
+
+{\displaystyle {\frac {\partial f}{\partial x_{j}}}(x)=Df(x)e_{j}.}
+
+Podemos repensar nessa igualdade. Se observarmos que
+
+e
+
+j
+
+x
+
+{\displaystyle e_{j}x}
+
+corresponde à
+
+j
+
+{\displaystyle j}
+
+-ésima coordenada de
+
+x
+
+{\displaystyle x}
+
+e que a
+
+j
+
+{\displaystyle j}
+
+-ésima coordenada de
+
+∇
+f
+(
+
+z
+
+0
+
+)
+
+{\displaystyle \nabla f(z_{0})}
+
+é
+
+∂
+f
+
+∂
+
+x
+
+j
+
+(
+
+z
+
+0
+
+)
+
+{\displaystyle {\frac {\partial f}{\partial x_{j}}}(z_{0})}
+
+segue que
+
+∂
+f
+
+∂
+
+x
+
+j
+
+(
+
+z
+
+0
+
+)
+=
+
+(
+
+∂
+
+f
+
+1
+
+∂
+
+x
+
+j
+
+(
+
+z
+
+0
+
+)
+,
+⋯
+,
+
+∂
+
+f
+
+n
+
+∂
+
+x
+
+j
+
+(
+
+z
+
+0
+
+)
+
+)
+
+{\displaystyle {\frac {\partial f}{\partial x_{j}}}(z_{0})=\left({\frac {\partial f_{1}}{\partial x_{j}}}(z_{0}),\cdots ,{\frac {\partial f_{n}}{\partial x_{j}}}(z_{0})\right)}
+
+== Referências ==
+
+=== Bibliografia ===
+Agudo, F. R. Dias, Análise Real (3 volumes), Lisboa: Escolar Editora, 1994
+Lima, Elon Lages (1981). Curso de análise, Volume 2. Instituto de Matemática Pura e Aplicada. Rio de Janeiro: Instituto de Matemática Pura e Aplicada
+Ostrowski, A., Lições de Cálculo Diferencial e Integral (3 volumes), Lisboa: Fundação Calouste Gulbenkian, 1981
+Ricieri, A. P., Derivada Fracionária, Transformada de Laplace e outros bichos, Prandiano, 1993, S. José dos Campos - SP - Brasil.
+
+== Ver também ==
+Cálculo Diferencial e Integral
+Cálculo fracionário
+Derivada simétrica, Diferenciação automática, Diferenciação numérica
+Diferintegral
+Classe de diferenciabilidade
+Linearização
+Tabela de derivadas
+Técnicas para diferenciação
+
+== Ligações externas ==
+«Rei da Derivada - Torneio inventado pelo prof. Ricardo Fragelli para ensino de derivadas»
+«Cálculo diferencial para funções trigonométricas» (PDF)
+«tese de Engenharia Mecânica aplicando derivadas fracionárias» (PDF)
+«Equações generalizadas de difusão (aplica derivadas parciais fracionárias)»
+«Calculadora de derivadas com soluções detalhadas passo a passo e gráficos»
+«Calcular derivada passo a passo» (em inglês)

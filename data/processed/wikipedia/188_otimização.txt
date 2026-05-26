@@ -1,0 +1,371 @@
+Otimização (português brasileiro) ou optimização (português europeu) matemática ou programação matemática é a seleção de um melhor elemento, com relação a algum critério, de algum conjunto de alternativas disponíveis. Problemas de otimização surgem em todas as disciplinas quantitativas, desde ciência da computação e engenharia até pesquisa operacional e economia, e o desenvolvimento de métodos de solução tem sido de interesse da matemática há séculos.
+No caso mais simples, um problema de otimização consiste em maximizar ou minimizar uma função real escolhendo sistematicamente valores de entrada de um conjunto permitido e computando o valor da função. A generalização da teoria e técnicas de otimização para outras formulações constitui uma grande área da matemática aplicada. De maneira mais geral, a otimização inclui encontrar os "melhores valores disponíveis" de alguma função objetivo dado um domínio (ou entrada) definido, incluindo uma variedade de diferentes tipos de funções objetivas e diferentes tipos de domínios.
+
+== Problemas de otimização ==
+Um problema de otimização pode ser representado da seguinte forma:
+
+Dados: uma função f : A
+
+→
+
+{\displaystyle \to }
+
+R de algum conjunto A de números reais;
+Buscando: um elemento x0 em A tal que f(x0) ≤ f(x) para todo x em A ("minimização") ou tal que f(x0) ≥ f(x) para todo x em A ("maximização").
+Tal formulação é chamada de um problema de otimização ou um problema de programação matemática (um termo não diretamente relacionado à programação de computadores, mas ainda em uso, por exemplo, na programação linear). Muitos problemas do mundo real e teóricos podem ser modelados nessa estrutura geral. Problemas formulados usando esta técnica nos campos da física e da visão computacional podem se referir à técnica como minimização de energia, tratando o valor da função f como representativo da energia do sistema sendo modelado.
+Normalmente, A é algum subconjunto do espaço euclidiano Rn, muitas vezes especificado por um conjunto de restrições, igualdades ou desigualdades que os membros de A devem satisfazer. O domínio A de f é chamado de espaço de busca ou o conjunto de escolha, enquanto os elementos de A são chamados de soluções candidatas ou soluções viáveis.
+A função f é chamada, alternadamente, de função objetivo, função de custo (minimização), função utilidade (maximização), ou, em certos campos, função de energia, ou energia funcional. Uma solução viável que minimiza (ou maximiza, se este é a intenção) a função objetivo é chamada de uma solução ótima.
+Por convenção, a forma padrão de um problema de otimização é definida em termos de minimização. Geralmente, a menos que tanto a função objetivo quanto a região viável sejam convexas em um problema de minimização, pode haver alguns mínimos locais, onde um mínimo local x* é definido como um ponto para o qual existe algum δ > 0 de modo que para todo x
+
+‖
+
+x
+
+−
+
+x
+
+∗
+
+‖
+≤
+δ
+;
+
+{\displaystyle \|\mathbf {x} -\mathbf {x} ^{*}\|\leq \delta ;}
+
+a expressão
+
+f
+(
+
+x
+
+∗
+
+)
+≤
+f
+(
+
+x
+
+)
+
+{\displaystyle f(\mathbf {x} ^{*})\leq f(\mathbf {x} )}
+
+é verdadeira. Ou seja, em alguma região ao redor de x* todos os valores de função são maiores ou iguais ao valor naquele ponto. Os máximos locais são definidos de forma similar.
+Um grande número de algoritmos propostos para resolver problemas não-convexos - incluindo a maioria dos programas comercialmente disponíveis - não são capazes de fazer uma distinção entre soluções ótimas locais e soluções ótimas rigorosas, e irão tratar as primeiras como verdadeiras soluções para o problema original. O ramo da matemática aplicada e da análise numérica que se preocupa com o desenvolvimento de algoritmos deterministas que são capazes de garantir convergência em um tempo finito à solução ótima verdadeira de um problema não-convexo é chamada de otimização global.
+
+== Notação ==
+Os problemas de otimização são normalmente expressos com uma notação especial. Aqui estão alguns exemplos.
+
+=== Valor mínimo e máximo de uma função ===
+Considere a seguinte notação:
+
+min
+
+x
+∈
+
+R
+
+(
+
+x
+
+2
+
++
+1
+)
+
+{\displaystyle \min _{x\in \mathbb {R} }\;(x^{2}+1)}
+
+Ela denota o valor mínimo de uma função objetivo x2
+
++
+1
+
+{\displaystyle +1}
+
+, ao escolher x de um conjunto de números reais
+
+R
+
+{\displaystyle \mathbb {R} }
+
+. O valor mínimo neste caso é
+
+1
+
+{\displaystyle 1}
+
+, ocorrendo em
+
+x
+=
+0
+
+{\displaystyle x=0}
+
+.
+Da mesma forma, a notação
+
+max
+
+x
+∈
+
+R
+
+2
+x
+
+{\displaystyle \max _{x\in \mathbb {R} }\;2x}
+
+pede pelo valor máximo de uma função objetivo 2x, onde x pode ser qualquer número real. Neste caso, não há qualquer máximo visto que a função objetivo é irrestrita, então a resposta é "infinito" ou "indefinida".
+
+=== Argumentos ótimos de variáveis ===
+Considere a seguinte notação:
+
+a
+r
+g
+
+m
+i
+n
+
+x
+∈
+(
+−
+∞
+,
+−
+1
+]
+
+x
+
+2
+
++
+1
+,
+
+{\displaystyle {\underset {x\in (-\infty ,-1]}{\operatorname {arg\,min} }}\;x^{2}+1,}
+
+ou de forma equivalente
+
+a
+r
+g
+
+m
+i
+n
+
+x
+
+x
+
+2
+
++
+1
+,
+
+subject to:
+
+x
+∈
+(
+−
+∞
+,
+−
+1
+]
+.
+
+{\displaystyle {\underset {x}{\operatorname {arg\,min} }}\;x^{2}+1,\;{\text{subject to:}}\;x\in (-\infty ,-1].}
+
+Ela representa o valor (ou valores) do argumento x no intervalo
+
+(
+−
+∞
+,
+−
+1
+]
+
+{\displaystyle (-\infty ,-1]}
+
+que minimiza (ou minimizam) a função objetivo x2 + 1 (o verdadeiro valor mínimo da função pelo qual o problema não perguntou). Neste caso, a resposta é x = -1, desde que x = 0 é inviável, i.e., não pertence ao conjunto candidato.
+De forma semelhante,
+
+a
+r
+g
+
+m
+a
+x
+
+x
+∈
+[
+−
+5
+,
+5
+]
+,
+
+y
+∈
+
+R
+
+x
+cos
+⁡
+(
+y
+)
+,
+
+{\displaystyle {\underset {x\in [-5,5],\;y\in \mathbb {R} }{\operatorname {arg\,max} }}\;x\cos(y),}
+
+ou equivalentemente
+
+a
+r
+g
+
+m
+a
+x
+
+x
+,
+
+y
+
+x
+cos
+⁡
+(
+y
+)
+,
+
+subject to:
+
+x
+∈
+[
+−
+5
+,
+5
+]
+,
+
+y
+∈
+
+R
+
+,
+
+{\displaystyle {\underset {x,\;y}{\operatorname {arg\,max} }}\;x\cos(y),\;{\text{subject to:}}\;x\in [-5,5],\;y\in \mathbb {R} ,}
+
+representa o par (ou pares)
+
+(
+x
+,
+y
+)
+
+{\displaystyle (x,y)}
+
+que maximiza (ou maximizam) o valor da função objetivo
+
+x
+cos
+⁡
+(
+y
+)
+
+{\displaystyle x\cos(y)}
+
+, com a restrição adicional de que x está no intervalo
+
+[
+−
+5
+,
+5
+]
+
+{\displaystyle [-5,5]}
+
+(novamente, o valor máximo verdadeiro da expressão não importa). Neste caso, as soluções são os pares da forma (5, 2kπ) e (−5,(2k+1)π), onde k varia sobre todos os números inteiros.
+Arg min e arg max algumas vezes são escritos como argmin e argmax, e correspondem a argumento do mínimo e argumento do máximo.
+
+== História ==
+O método do gradiente ("gradient descent"), ou "método da descida mais íngreme" ("steepest descent"), e o método dos mínimos quadrados são técnicas de otimização que remontam a Gauss. Historicamente, a terminologia programação linear ("linear programming"), criada por George Dantzig, foi a primeira utilizada, embora muito da teoria tivesse sido introduzida por Leonid Kantorovich, em 1939. Dantzig publicou o algoritmo simplex, em 1947, e John von Neumann desenvolveu a teoria da dualidade no mesmo ano. Nesse contexto, "programação" não se refere a programação de computadores (apesar destes serem extensivamente usados hoje em dia para resolver problemas matemáticos), mas ao termo "programa", utilizado pelos militares norte-americanos para referirem-se à agenda proposta de horários para treinamentos e ações logísticas, que eram os problemas que Dantzig estava estudando à época. (Além disso, mais tarde, a utilização do termo "programação" foi aparentemente importante para obtenção de financiamento público, pois estava associada a áreas de pesquisa de alta tecnologia consideradas importantes.)
+Outros importantes matemáticos no campo da otimização são:
+
+== Aplicações ==
+Anteriormente, a principal preocupação do desenhista era conceber e construir um sistema com uma capacidade previamente especificada, enquanto a eficiência e o custo eram de secundária importância. Atualmente, a tarefa é muito mais demandante e consiste em atingir o objetivo principal (capacidade), porém com o máximo possível de efeitos positivos (eficiência, réditos, benefícios sociais e ambientais) e/ou o mínimo possível de efeitos adversos (consumo de combustível, custos, degradação ambiental). Em outras palavras, o objetivo da otimização de um sistema energético é encontrar a estrutura e os valores dos parâmetros do sistema que minimizam o custo final dos produtos, considerando as restrições impostas pela confiabilidade, disponibilidade, manutenção, operabilidade e impacto ambiental desejados para o sistema. Contudo, a complexidade dos sistemas e processos é tal que a busca pelo máximo ou mínimo de um critério de desempenho pode não ser atingido efetivamente a menos que procedimentos matemáticos determinísticos ou estocásticos, chamados geralmente de otimização, sejam usados. Para aplicar tais procedimentos, o problema considerado deve estar bem definido (objetivos e restrições), requerendo-se primeiro construir um modelo matemático que descreva o desempenho do sistema energético tão fielmente como for possível. Contudo, embora os objetivos estejam bem definidos, os dados frequentemente estão incompletos ou expressados em forma qualitativa ao invés de quantitativa e, além disso, as restrições são fracas ou imprecisas, ambos os casos devendo ser manejados pela expertise do engenheiro e a análise de sensibilidade. Diferentes ferramentas computacionais como são MATLAB, GAMS, LINGO, EXCEL, APMonitor, entre outras, são usadas para a solução desse tipo de problemas.
+
+== Ver também ==
+Método do gradiente conjugado
+Ótimo de Pareto
+Região de confiança
+
+== Referências ==
+
+== Ligações externas ==
+
+Mathematical Programming Society
+COIN-OR— Infraestrutura Computacional para Pesquisa operacional
+Glossário de programação matemática
+Otimização global
+Ligações relacionadas à Otimização
+Decision Tree for Optimization SoftwareLigações para códigos fontes de algoritmos de otimização
+Optimization OnlineUm repositório para e-prints de otimização
+The Basics of Practical OptimizationUm texto sobre otimização
+Linguagens de modelagem
+
+AIMMS
+AMPL
+GAMS— General Algebraic Modeling System
+MPL
+OPL
+OPTIMJ
+Solvers
+
+CONOPT
+CPLEX- linear, quadratic, and mixed-integer programming solver
+JOpt
+Moocho- a very flexible open-source NLP solver
+Mosek
+SAS/OR
+Free Optimization Software by Systems Optimization Laboratory, Stanford University
+TANGO Project- Trustable Algorithms for Nonlinear General Optimization
+SmartDO- Engineering global optimization (commercial) software
+Bibliotecas
+
+OOL (Open Optimization library)- a set of optimization routines in C.
+CPLEX Component Libraries
+IOptLib (Investigative Optimization Library)- a free open source library for development of optimization algorithms (ANSI C).
+ALGLIBOptimization sources. C++, C#, Delphi, Visual Basic.
+OAT (Optimization Algorithm Toolkit)- a set of standard optimization algorithms and problems in Java.

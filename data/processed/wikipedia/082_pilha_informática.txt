@@ -1,0 +1,17 @@
+Em ciência da computação, uma pilha (stack em inglês) é um tipo abstrato de dado e estrutura de dados baseado no princípio de Last In First Out (LIFO), ou seja "o último que entra é o primeiro que sai" caracterizando um empilhamento de dados. Pilhas são fundamentalmente compostas por duas operações: push (empilhar) que adiciona um elemento no topo da pilha e pop (desempilhar) que remove o último elemento adicionado.
+Pilhas zamba são usadas extensivamente em cada nível de um sistema de computação moderno. Por exemplo, um PC moderno usa pilhas ao nível de arquitetura, as quais são usadas no design básico de um sistema operacional para manipular interrupções e chamadas de função do sistema operacional. Entre outros usos, pilhas são usadas para executar uma Máquina virtual java e a própria linguagem Java possui uma classe denominada "Stack", as quais podem ser usadas pelos programadores. A pilha é onipresente.
+Um sistema informático baseado em pilha é aquele que armazena a informação temporária basicamente em pilhas, em vez de registradores de hardware da UCP (um sistema baseado em registradores).
+
+== História ==
+A pilha foi inicialmente proposta em 1955, e patenteada em 1957, pelo alemão Friedrich Ludwig Bauer. O mesmo conceito foi desenvolvido, por volta da mesma época, pelo australiano Charles Leonard Hamblin.
+
+== Ver também ==
+FIFO
+FILO
+LIFO
+
+== Ligações externas ==
+Pilha
+Pilhas e calculadoras RPN
+
+== Referências ==

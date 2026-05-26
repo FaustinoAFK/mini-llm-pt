@@ -1,0 +1,216 @@
+Lógica (do grego λογική logos) tem dois significados principais: refere-se tanto ao uso do raciocínio em alguma atividade quanto ao estudo normativo e filosófico do raciocínio válido. No segundo sentido, é um campo dedicado à análise da validade dos argumentos, sendo estudado principalmente nas disciplinas de filosofia, matemática e ciência da computação. Ambos os sentidos têm foco comum referente a harmonia de raciocínio, a proporcionalidade formal entre argumentos.
+A lógica examina de forma genérica as formas e estruturas do pensamento, distinguindo argumentos válidos de falaciosos. Em filosofia, o estudo da lógica permeia áreas como metafísica, ontologia, epistemologia e ética. Na matemática, estudam-se as formas válidas de inferência de uma linguagem formal, enquanto na ciência da computação, constitui uma ferramenta essencial para a representação de conhecimento e raciocínio automatizado. Por fim, a lógica também é estudada na teoria da argumentação.
+A lógica foi estudada em várias civilizações da Antiguidade. Na Índia, a recursão silogística, Nyaya remonta há 1900 anos. Na China, o Moísmo e a Escola dos Nomes datam de há 2200 anos. Na Grécia Antiga a lógica foi estabelecida como disciplina por Aristóteles, em a sua obra Organon, ele dividiu a lógica em formal e material. O estudo da lógica era parte do Trivium clássico, juntamente com a gramática e a retórica (ver: Artes liberais).
+A lógica é frequentemente dividida em três partes: o raciocínio indutivo, o raciocínio abdutivo e o raciocínio dedutivo.
+
+== O estudo da lógica ==
+
+O conceito de forma lógica é central à lógica, que se baseia na ideia de que a validade de um argumento é determinada pela sua forma lógica, não pelo seu conteúdo. A lógica silogística aristotélica tradicional e a lógica simbólica moderna são exemplos de lógicas formais.
+
+Lógica informal é o estudo da argumentação em língua natural. O estudo de falácias é um ramo particularmente importante da lógica informal. Os Diálogos de Platão são bons exemplos de lógica informal.
+Lógica formal é o estudo da inferência com conteúdo puramente formal. Uma inferência possui um conteúdo puramente formal se ele pode ser expresso como um caso particular de uma regra totalmente abstrata, isto é, uma regra que não é sobre uma coisa qualquer em particular. As obras de Aristóteles contêm o primeiro estudo formal da lógica. A lógica formal moderna segue e amplia o trabalho de Aristóteles. Em muitas definições de lógica, inferência lógica e inferência com conteúdo puramente formal são a mesma coisa. Isso não esvazia a noção de lógica informal, porque nenhuma lógica formal captura todas as nuances da língua natural.
+Lógica simbólica é o estudo das abstrações simbólicas que capturam as características formais da inferência lógica. A lógica simbólica é frequentemente dividida em dois ramos: lógica proposicional e a lógica de predicados.
+Lógica matemática é uma extensão da lógica simbólica em outras áreas, em especial para o estudo da teoria dos modelos, teoria da demonstração, teoria dos conjuntos e teoria da recursão.
+Lógica clássica, também conhecida como lógica aristotélica ou lógica bivalente, é a forma tradicional de lógica formal. Ela foi amplamente desenvolvida a partir dos trabalhos de Aristóteles, embora tenha evoluído significativamente ao longo dos séculos. A lógica clássica baseia-se em alguns princípios fundamentais e possui uma estrutura bem definida para avaliar a validade de proposições e argumentos
+
+== História ==
+
+O primeiro trabalho feito sobre o tema da lógica é o de Aristóteles (na verdade, os sofistas e Platão já haviam se dedicado a questões lógicas, o trabalho de Aristóteles, porém, é mais amplo, rigoroso e sistematizado). A lógica aristotélica tornou-se amplamente aceita em ciências e matemática e manteve-se em ampla utilização no Ocidente até o início do século XIX. O sistema lógico de Aristóteles foi responsável pela introdução do silogismo hipotético, lógica modal temporal e lógica indutiva. Na Europa, durante o final do período medieval, grandes esforços foram feitos para mostrar que as ideias de Aristóteles eram compatíveis com a fé cristã. Durante a Alta Idade Média, a lógica se tornou o foco principal dos filósofos, que se engajaram em análises lógicas críticas dos argumentos filosóficos (ver: Filosofia cristã).
+
+== Lógica aristotélica ==
+
+Dá-se o nome de Lógica aristotélica ao sistema lógico desenvolvido por Aristóteles a quem se deve o primeiro estudo formal do raciocínio. Dois dos princípios centrais da lógica aristotélica são a lei da não contradição e a lei do terceiro excluído.
+A lei da não contradição diz que nenhuma afirmação pode ser verdadeira e falsa ao mesmo tempo e a lei do terceiro excluído diz que qualquer afirmação da forma *P ou não P* é verdadeira. Esse princípio deve ser cuidadosamente distinguido do *princípio de bivalência*, o princípio segundo o qual para toda proposição (p), ela ou a sua negação é verdadeira.
+A lógica aristotélica, em particular, a teoria do silogismo, é apenas um fragmento da assim chamada lógica tradicional.
+
+=== Lógica formal ===
+A Lógica Formal, também chamada de Lógica Simbólica, preocupa-se, basicamente, com a estrutura do raciocínio. A Lógica Formal lida com a relação entre conceitos e fornece um meio de compor provas de declarações. Na Lógica Formal os conceitos são rigorosamente definidos, e as orações são transformadas em notações simbólicas precisas, compactas e não ambíguas. As letras minúsculas p, q e r, em fonte itálica, são convencionalmente usadas para denotar proposições:
+
+p
+:
+1
++
+2
+=
+3
+
+{\displaystyle p:1+2=3}
+
+Esta declaração define que p é 1 + 2 = 3 e que isso é verdadeiro.
+Duas ou mais proposições podem ser combinadas por meio dos chamados operadores lógicos binários , formando conjunções, disjunções ou condicionais. Essas proposições combinadas são chamadas proposições compostas. Por exemplo:
+
+p: 1 + 1 = 2 e "Lógica é o estudo do raciocínio."
+E Neste caso, e é uma conjunção. As duas proposições podem diferir totalmente uma da outra!
+Na matemática e na ciência da computação, pode ser necessário enunciar uma proposição dependendo de variáveis:
+
+p: n é um inteiro ímpar.
+Essa proposição pode ser ou verdadeira ou falsa, a depender do valor assumido pela variável n.
+Uma fórmula com variáveis livres é chamada função proposicional com domínio de discurso D. Para formar uma proposição , devem ser usados quantificadores. "Para todo n", ou "para algum n" podem ser especificados por quantificadores: o quantificador universal, ou o quantificador existencial, respectivamente. Por exemplo:
+
+para todo n em D, P(n).
+Isto pode ser escrito como:
+
+∀
+n
+∈
+D
+,
+P
+(
+n
+)
+
+{\displaystyle \forall n\in D,P(n)}
+
+Quando existem algumas variáveis livres, a situação padrão na análise matemática desde Weierstrass, as quantificações para todos ... então existe ou então existe ... isto para todos (e analogias mais complexas) podem ser expressadas.
+
+=== Lógica material ===
+Trata da aplicação das operações do pensamento, e sua relação com fatos da realidade, segundo a matéria ou natureza do objeto a conhecer. Neste caso, a lógica é a própria metodologia de cada ciência. É, portanto, somente no campo da lógica material que se pode falar da verdade: o argumento é válido quando as premissas são verdadeiras e se relacionam adequadamente à conclusão.
+
+== Lógica matemática ==
+
+Lógica Matemática é o uso da lógica formal para estudar o raciocínio matemático — ou, como propõe Alonzo Church, 'lógica tratada pelo método matemático' —. No início do século XX, lógicos e filósofos tentaram provar que a matemática, ou parte da matemática, poderia ser reduzida à lógica.(Gottlob Frege, p.ex., tentou reduzir a aritmética à lógica; Bertrand Russell e Alfred North Whitehead, no clássico Principia Mathematica, tentaram reduzir toda a matemática então conhecida à lógica — a chamada 'lógica de segunda ordem' —). Uma das suas doutrinas lógico-semânticas era que a descoberta da forma lógica de uma frase, na verdade, revela a forma adequada de dizê-la, ou revela alguma essência previamente escondida. Há um certo consenso que a redução falhou — ou que precisaria de ajustes —, assim como há um certo consenso de que a lógica — ou alguma lógica — é uma maneira precisa de representar o raciocínio matemático. Ciência que tem por objeto o estudo dos métodos e princípios que permitem distinguir raciocínios válidos de outros não válidos.
+
+== Lógica filosófica ==
+A lógica estuda e sistematiza a argumentação válida. A lógica tornou-se uma disciplina praticamente autónoma em relação à filosofia, graças ao seu elevado grau de precisão e tecnicismo. Hoje em dia, é uma disciplina acadêmica que recorre a métodos matemáticos, e os lógicos contemporâneos têm em geral formação matemática. Todavia, a lógica elementar que se costuma estudar nos cursos de filosofia é tão básica como a aritmética elementar e não tem elementos matemáticos. A lógica elementar é usada como instrumento pela filosofia, para garantir a validade da argumentação.
+Quando a filosofia tem a lógica como objecto de estudo, entramos na área da filosofia da lógica, que estuda os fundamentos das teorias lógicas e os problemas não estritamente técnicos levantados pelas diferentes lógicas. Hoje em dia há muitas lógicas além da teoria clássica da dedução de Russell e Frege (como as lógicas livres, modais, temporais, paraconsistentes, difusas, intuicionistas, etc. ver: Lógica intuicionista), o que levanta novos problemas à filosofia da lógica.
+A filosofia da lógica distingue-se da lógica filosófica aristotélica, que não estuda problemas levantados por lógicas particulares, mas problemas filosóficos gerais, que se situam na intersecção da metafísica, da epistemologia e da lógica. São problemas centrais de grande abrangência, correspondendo à disciplina medieval conhecida por "Lógica & Metafísica", e abrangendo uma parte dos temas presentes na própria Metafísica, de Aristóteles: a identidade de objetos, a natureza da Necessidade, a natureza da verdade, o conhecimento a prioridade, etc. Precisamente por ser uma "subdisciplina transdisciplinar", o domínio da lógica filosófica é ainda mais difuso do que o das outras disciplinas. Para agravar as incompreensões, alguns filósofos chamam "lógica filosófica" à filosofia da lógica (e vice-versa). Em qualquer caso, o importante é não pensar que a lógica filosófica é um gênero de lógica, a par da lógica clássica, mas "mais filosófica"; pelo contrário, e algo paradoxalmente, a lógica filosófica, não é uma lógica no sentido em que a lógica clássica é uma lógica, isto é, no sentido de uma articulação sistemática das regras da argumentação válida.
+A lógica informal estuda os aspectos da argumentação válida que não dependem exclusivamente da forma lógica. O tema introdutório mais comum no que respeita à lógica é a teoria clássica da dedução (lógica proposicional e de predicados, incluindo formalizações elementares da linguagem natural); a lógica aristotélica é por vezes ensinada, a nível universitário, como complemento histórico e não como alternativa à lógica clássica.» (Desidério Murcho)
+"Lógica", depois ela foi substituída pela invenção da Lógica Matemática. Relaciona-se com a elucidação de ideias como referência, previsão, identidade, verdade, quantificação, existência, e outras. A Lógica filosófica está muito mais preocupada com a conexão entre a Linguagem Natural e a Lógica.
+
+== Lógica de predicados ==
+
+Gottlob Frege, em sua Conceitografia (Begriffsschrift), descobriu uma maneira de reordenar várias orações para tornar sua forma lógica clara, com a intenção de mostrar como as orações se relacionam em certos aspectos. Antes de Frege, a lógica formal não obteve sucesso além do nível da lógica de orações: ela podia representar a estrutura de orações compostas de outras orações, usando palavras como "e", "ou" e "não", mas não podia quebrar orações em partes menores. Não era possível mostrar como "Vacas são animais" leva a concluir que "Partes de vacas são partes de animais".
+A lógica de orações explica como funcionam palavras como "e", "mas", "ou", "não", "se-então", "se e somente se", e "nem-ou". Frege expandiu a lógica para incluir palavras como "todos", "alguns", e "nenhum". Ele mostrou como podemos introduzir variáveis e quantificadores para reorganizar orações.
+
+"Todos os humanos são mortais" se torna "Para todo x, se x é humano, então x é mortal.", o que pode ser escrito simbolicamente como:
+:
+
+∀
+x
+(
+H
+(
+x
+)
+→
+M
+(
+x
+)
+)
+
+{\displaystyle \forall x(H(x)\to M(x))}
+
+"Alguns humanos são vegetarianos" se torna "Existe algum (ao menos um) x tal que x é humano e x é vegetariano", o que pode ser escrito simbolicamente como:
+:
+
+∃
+x
+(
+H
+(
+x
+)
+∧
+V
+(
+x
+)
+)
+
+{\displaystyle \exists x(H(x)\wedge V(x))}
+
+.
+Frege trata orações simples sem substantivos como predicados e aplica a eles to "dummy objects" (x). A estrutura lógica na discussão sobre objetos pode ser operada de acordo com as regras da lógica de orações, com alguns detalhes adicionais para adicionar e remover quantificadores. O trabalho de Frege foi um dos que deram início à lógica formal contemporânea.
+Frege adiciona à lógica de orações:
+
+o vocabulário de quantificadores (o A de ponta-cabeça, e o E invertido) e variáveis;
+e uma semântica que explica que as variáveis denotam objetos individuais e que os quantificadores têm algo como a força de "todos" ou "alguns" em relação a esse objetos;
+métodos para usá-los numa linguagem.
+Para introduzir um quantificador "todos", você assume uma variável arbitrária, prova algo que deva ser verdadeira, e então prova que não importa que variável você escolha, que aquilo deve ser sempre verdade. Um quantificador "todos" pode ser removido aplicando-se a oração para um objeto em particular. Um quantificador "algum" (existe) pode ser adicionado a uma oração verdadeira de qualquer objeto; pode ser removida em favor de um temo sobre o qual você ainda não esteja pressupondo qualquer informação.
+
+== Lógica de vários valores ==
+
+Sistemas que vão além dessas duas distinções (verdadeiro e falso) são também conhecidos como lógicas de vários valores (ou lógicas polivaluadas, ou lógicas não aristotélicas, ou polivalentes).
+No início do século XX, por exemplo, Jan Łukasiewicz investigou a extensão dos tradicionais valores verdadeiro/falso para incluir um terceiro valor, "possível".
+Lógicas como a lógica difusa foram então desenvolvidas com um número infinito de "graus de verdade", representados, por exemplo, por um número real entre 0 e 1. Probabilidade bayesiana pode ser interpretada como um sistema de lógica onde probabilidade é o valor verdade subjetivo.
+Outros exemplos de lógicas clássicas em tradições humanas seriam a lógica de quatro valores (verdadeiro, falso, ambos, nem-verdadeiro-nem-falso) ou cinco (adicionando "inefabilidade" às quatro anteriores, vide referência para casuística), conhecidas pela inclusão de paradoxos que não seriam computáveis via lógicas binárias.
+
+== Lógica e computadores ==
+
+A Lógica é extensivamente utilizada em todas as áreas vinculadas aos computadores.
+Partindo-se do princípio que muitas das nossas tarefas diárias são uma sequência que obedecem uma determinada ordem, de um estado inicial, através de um período de tempo finito e que nesse período produzimos resultados esperados e bem definidos, poderíamos classificar essas tarefas dentro de um algoritmo que utilizam o conceito da lógica formal para fazer com que o computador produza uma série sequencial.
+Nas décadas de 50 e 60, pesquisadores previram que quando o conhecimento humano pudesse ser expresso usando lógica com notação matemática, supunham que seria possível criar uma máquina com a capacidade de pensar, ou seja, inteligência artificial. Isto se mostrou mais difícil que o esperado em função da complexidade do raciocínio humano. A programação lógica é uma tentativa de fazer computadores usarem raciocínio lógico e a linguagem de programação Prolog é frequentemente utilizada para isto.
+Na lógica simbólica e lógica matemática, demonstrações feitas por humanos podem ser auxiliadas por computador. Usando prova automática de teoremas os computadores podem achar e verificar demonstrações, assim como trabalhar com demonstrações muito extensas.
+Na ciência da computação, a álgebra booleana é a base do projeto de hardware.
+
+== Tipos de lógica ==
+De uma maneira geral, pode-se considerar que a lógica, tal como é usada na filosofia e na matemática, observa sempre os mesmos princípios básicos: a lei do terceiro excluído, a lei da não contradição e a lei da identidade. A esse tipo de lógica pode-se chamar "lógica clássica", ou "lógica aristotélica".
+Além desta lógica, existem outros tipos de lógica que podem ser mais apropriadas dependendo da circunstância onde são utilizadas. Podem ser divididas em dois tipos:
+
+Complementares da lógica clássica: além dos três princípios da lógica clássica, essas formas de lógica têm ainda outros princípios que as regem, estendendo o seu domínio. Alguns exemplos:
+Lógica modal: agrega à lógica clássica o princípio das possibilidades. Enquanto na lógica clássica existem orações como: "se amanhã chover, vou viajar", "minha avó é idosa e meu pai é jovem", na lógica modal as orações são formuladas como "é possível que eu viaje se não chover", "minha avó necessariamente é idosa e meu pai não pode ser jovem", etc.
+Lógica epistêmica: também chamada "lógica do conhecimento", agrega o princípio da certeza, ou da incerteza (ver: Indeterminismo). Alguns exemplos de oração: "pode ser que haja vida em outros planetas, mas não se pode provar", "é impossível a existência de gelo a 100 °C", "não se pode saber se duendes existem ou não", etc.
+Lógica deôntica: forma de lógica vinculada à moral, agrega os princípios dos direitos, proibições e obrigações. É o sistema de lógica usado para indicar condutas e comportamentos, e que inclui as relações de poder entre indivíduos. Enquanto a lógica clássica trata do que "é ou não é", a lógica deôntica trata do que "se deve ou não fazer". As orações na lógica deôntica são da seguinte forma: "é proibido fumar mas é permitido beber", "se você é obrigado a pagar impostos, você é proibido de sonegar", etc.
+Lógica Temporal: Há situações em que os atributos de "Verdadeiro" e "Falso" não bastam, e é preciso determinar se algo é "Verdadeiro no período de tempo A", ou "Falso após o evento B". Para isso, é utilizado um sistema lógico específico que inclui novos operadores para tratar dessas situações.
+Anticlássicas: são formas de lógica que derrogam pelo menos um dos três princípios fundamentais da lógica clássica. Alguns exemplos incluem:
+Lógica paraconsistente: É uma forma de lógica onde não existe o princípio da contradição. Nesse tipo de lógica, tanto as orações afirmativas quanto as negativas podem ser falsas ou verdadeiras, dependendo do contexto. Uma das aplicações desse tipo de lógica é o estudo da semântica, especialmente em se tratando dos paradoxos. Um exemplo: "fulano é cego, mas vê". Pelo princípio da lógica clássica, o indivíduo que vê, um "não cego", não pode ser cego. Na lógica paraconsistente, ele pode ser cego para ver algumas coisas, e não cego para ver outras coisas.
+Lógica paracompleta: Esta lógica derroga o princípio do terceiro excluído, isto é, uma oração pode não ser totalmente verdadeira, nem totalmente falsa. Um exemplo de oração que pode ser assim classificada é: "fulano conhece a China". Se ele nunca esteve lá, essa oração não é verdadeira. Mas se mesmo nunca tendo estado lá ele estudou a história da China por livros, fez amigos chineses, viu muitas fotos da China, etc; essa oração também não é falsa.
+Lógica difusa: Mais conhecida como "lógica fuzzy", trabalha com o conceito de graus de pertinência. Assim como a lógica paracompleta, derroga o princípio do terceiro excluído, mas de maneira comparativa, valendo-se de um elemento chamado conjunto fuzzy. Enquanto na lógica clássica supõe-se verdadeira uma oração do tipo "se algo é quente, não é frio" e na lógica paracompleta pode ser verdadeira a oração "algo pode não ser quente nem frio", na lógica difusa poder-se-ia dizer: "algo é 30% quente, 25% morno e 45% frio". Esta lógica tem grande aplicação na informática e na estatística, sendo inclusive a base para indicadores como o coeficiente de Gini e o IDH.
+Lógica de base n: uma das forma de lógica de base n era um tipo de lógica difusa. No entanto podemos fazer enumerações de zero a n ou usar um alfabeto n-ário numa máquina de Turing, relacioná-las e com base nisso tirar vantagens. Esta lógica pode ainda relacionar-se com muitos assuntos em informática.
+
+== Testes de lógica ==
+Vejam alguns testes simples de lógica:
+1.Você está numa cela onde existem duas portas, cada uma vigiada por um guarda. Existe uma porta que dá para a liberdade, e outra para a morte. Você está livre para escolher a porta que quiser e por ela sair. Poderá fazer apenas uma pergunta a um dos dois guardas que vigiam as portas. Um dos guardas sempre fala a verdade, e o outro sempre mente e você não sabe quem é o mentiroso e quem fala a verdade. Que pergunta você faria?
+2.Você é prisioneiro de uma tribo indígena que conhece todos os segredos do Universo e portanto sabem de tudo. Você está para receber sua sentença de morte. O cacique o desafia: "Faça uma afirmação qualquer. Se o que você falar for mentira você morrerá na fogueira, se falar uma verdade você será afogado. Se não pudermos definir sua afirmação como verdade ou mentira, nós te libertaremos." O que você diria?
+3. Epiménides era um grego da cidade de Minos. Dizem que ele tinha a fama de mentir muito.
+Certa vez, ele citou esta passagem:
+Era uma vez um bode que disse:
+- Quando a mentira nunca é desvendada, quem está mentindo sou eu.
+Em seguida o leão disse:
+- Se o bode for um mentiroso, o que o dragão diz também é mentira.
+Por fim o dragão disse:
+- Quem for capaz de desvendar a minha mentira, então, ele estará dizendo a verdade.
+Qual deles está mentindo?
+Este teste é mais conhecido como paradoxo de Epiménides.
+
+== Respostas dos "testes de lógica" citados acima ==
+1. Pergunte a qualquer um deles: Qual a porta que o seu companheiro apontaria como sendo a porta da liberdade?
+Explicação: O mentiroso apontaria a porta da morte como sendo a porta que o seu companheiro (o sincero) diria que é a porta da liberdade, já que se trata de uma mentira da afirmação do sincero. E o sincero, sabendo que seu companheiro sempre mente, diria que ele apontaria a porta da morte como sendo a porta da liberdade.
+Conclusão: os dois apontariam a porta da morte como sendo a porta que o seu companheiro diria ser a porta da liberdade. Portanto, é só seguir pela outra porta.
+Uma outra opção de resposta seria perguntar a qualquer um deles: A porta que está o guarda que diz a verdade é a porta da liberdade?
+Explicação: Se você perguntar ao verdadeiro e ele estiver na porta da liberdade dirá que "sim" e se você perguntar ao mentiroso e ele estiver na porta da liberdade também dirá que "sim" pois seria uma mentira já que a verdade seria que ele está na porta da liberdade. Se o guarda que diz a verdade responder "não" seria porque a porta da liberdade estaria com o mentiroso, ou seja a outra porta, e o mentiroso dizendo "não" é porque o verdadeiro estaria na porta da liberdade que também seria a porta oposta.
+Conclusão: Independente a qual guarda perguntar sempre saia pela mesma porta se a resposta for "sim", e saia pela outra porta se a resposta for "não".
+2. Afirme que você morrerá na fogueira.
+Explicação: Se você realmente morrer na fogueira, isto é uma verdade, então você deveria morrer afogado, mas se você for afogado a afirmação seria uma mentira, e você teria que morrer na fogueira.
+Conclusão: Mesmo que eles pudessem prever o futuro, cairiam neste impasse e você seria libertado.
+3. Ao tentar responder ao enigma, encontram-se informações que se ligam umas às outras e acabam não levando a resposta alguma. Esse enigma pode ser denominado como paradoxo do mentiroso.
+Veja o exemplo de um paradoxo simples e interessante:
+
+A afirmação abaixo é verdadeira.
+A afirmação acima é falsa.
+
+== Ver também ==
+
+== Referências ==
+
+== Leituras adicionais ==
+AZEVEDO FILHO, Adriano. Princípios de Inferência Dedutiva e Indutiva: Noções de Lógica e Métodos de Prova. 1ª Edição 2010, Scotts Valley: CreateSpace, 148p. ISBN 978-1-4421-5143-7.
+BRENNAN, Andrew; DEUSTCH, Max; GOLDSTEIN, Lawrence. Lógica. Artmed, 1a edição 2007, 224p. ISBN 85-363-0908-3.
+DA COSTA Newton. Ensaio sobre os Fundamentos da Lógica. Hucitec, 2ª Edição 1994, 256p. ISBN 85-271-0182-3.
+DA COSTA Newton. Lógica Indutiva e Probabilidade. Hucitec-EdUSP, 3 a. ed., São Paulo, 2008.
+FEITOSA, Hércules de Araújo; PAULOVICH, Leonardo. Um Prelúdio á Lógica. UNESP 1a edição 2006, 225p. ISBN 85-7139-605-1
+COPI, Irving M. Introdução à Lógica. Mestre Jou. 2a edição 1978 488p. ISBN 85-87068-05-9
+FINGER, Marcelo; SILVA, Flávio Soares Corrêa da; MELO, Ana Cristina Vieira de. Lógica para Computação. Thomson Pioneira, 1a edição 2006, 244p. ISBN 85-221-0517-0
+FISHER, Alec. A Lógica dos Verdadeiros Argumentos. Novo Conceito, 1a edição 2008, 336p. ISBN 85-99560-29-8
+GORSKY, Samir. A semântica algébrica para a lógica modal e seu interesse filosófico. Dissertação de mestrado. IFCH-UNICAMP. 2008.
+HEGENBERG, Leonidas. Dicionário de Lógica. Editora Pedagógica e Universitária, 1995. 223p. ISBN 85-12-79060-1.
+MORTARI, Cézar A. Introdução á Lógica. UNESP 1a edição 2001, 391p. ISBN 85-7139-337-0
+NOLT, John; ROHATYN, Dennis. Lógica. Makron Books e McGraw-Hill, 596p.
+PINTO, Paulo Roberto Margutti. Introdução à Lógica Simbólica. UFMG 2a edição 2006 339p. ISBN 85-7041-215-0
+SALMON, WESLEY C . Lógica. LTC, 3a edição 1993, 96p. ISBN 85-7054-041-8
+SOUZA, João Nunes de. Lógica para Ciência da Computação. Campus, 2a edição 2008, 240p. ISBN 85-352-2961-2
+HURLEY, P. J. - A Concise Introduction to Logic. ISBN: 978-1285196541
+
+== Ligações externas ==

@@ -1,0 +1,202 @@
+Entropia, quando relacionada à termodinâmica, é a medida do grau de irreversibilidade de um determinado sistema. Então, quanto menor a chance do sistema voltar ao seu estado original, maior será o grau de entropia. É considerada por Einstein como a primeira lei de todas a ciências.
+Para a área de Teoria da Informação, a entropia é definida como sendo uma forma de medir o grau médio de incerteza a respeito de fontes de informação, o que consequentemente permite a quantificação da informação presente que flui no sistema. Em termos simples, o conceito de entropia se associa à ideia de que, quanto mais incerto é o resultado de um experimento aleatório, maior é a informação que se obtém ao observar a sua ocorrência.
+
+== Contexto Histórico ==
+O engenheiro e matemático Claude Shannon é considerado o pai da teoria da informação. Americano, atuou nas áreas de engenharia elétrica, comunicações, criptografia e xadrez computacional, instalando bases tanto para a indústria de computadores quanto para a de telecomunicações. Shannon introduziu, em 1948, no trabalho A Mathematical Theory of Communication, publicado na revista Bell System Technical Journal, conceitos primordiais que deram origem à teoria da informação, entre eles a entropia da informação e a capacidade de canal.
+Nesse trabalho, Shannon desenvolve um modelo teórico para o problema da comunicação envolvendo a transmissão de mensagens digitais. Ele parte do pressuposto de que uma mensagem transmitida para um receptor é invariavelmente recebida com ruídos, isto é, quando uma informação passa por um canal de comunicação ela sofre distorções e chega ao receptor precisando ser submetida a um processo de decodificação. Shannon então demonstrou matematicamente que, se por exemplo consideramos a transmissão de um sinal ruidoso como uma conversa barulhenta, este pode ser recuperado no transmissor sem distorção, respeitadas características como a capacidade de transmissão daquele meio (canal). Basta nesse sentido empregar um código corretor de erros adequado, de modo que os sinais serão recebidos com probabilidade de erro arbitrariamente pequena. As definições de Shannon tiveram impacto direto no desenvolvimento das comunicações, da criptografia, da computação digital, da codificação de sinais (vídeo, imagem, texto), assim como em problemas da linguística, psicologia e fonética. A linguagem, por exemplo, é um mecanismo de comunicação que tem um código de correção de erros embutido nas suas regras de sintaxe, ortografia e semântica.
+Norbert Wiener, o fundador da Cibernética, na mesma época, generalizou o conceito de entropia, associando-a ao processo de comunicação ou informação, afirmando que, nos processos onde há perda de informação, há uma situação igual aos processos que ganham entropia. Segundo Wiener, a soma de informação em um sistema é a medida de seu grau de organização e, ao mesmo tempo, de seu grau de desorganização, sendo assim, um é o negativo do outro.
+
+Segundo Wierner: "as mensagens são em si uma forma de padrão e de organização. Com efeito é possível tratar conjuntos de mensagens como tendo uma entropia, tais como conjuntos de estados do mundo exterior. Assim como a entropia é uma medida da desorganização, a informação transmitida por um conjunto de mensagens é uma medida de organização. De fato é possível interpretar a informação de uma mensagem essencialmente como o negativo de sua entropia e o logarítmo de sua probabilidade. Isto é, quanto mais provável é a mensagem, menor é a informação fornecida. Lugares-comuns, por exemplo, são menos esclarecedores do que grandes poemas.
+
+== Aplicações diversas da Entropia ==
+Nos anos seguintes a criação do conceito, outros pesquisadores o modificaram e generalizaram, criando outras formas de entropia. Logo, o conceito da entropia de informação foi aplicado nas mais diversas áreas de conhecimento, como por exemplo Ciência da Informação, biologia, medicina, ecologia, economia e linguística, assim se tornando cada vez mais um método interdisciplinar.
+Um dos exemplos da consequência de entropia é o primeiro experimento relacionado à química que demonstra uma auto-organização de partículas duras, não-biológicas, sem ajuda de interações atrativas, como ligações químicas. Cristais complexos foram criados sem a ajuda de interações, como por exemplo os tetraedros se organizaram espontaneamente em um quasicristal, este, por vez, terá suas propriedades diferentes de um cristal ou de um sólido comum, ele poderá ter propriedade ópticas únicas.
+Na termodinâmica, a entropia tem um papel fundamental, pois é com não-conservação da entropia, ou seja, com a variação de desordem do sistema que máquinas térmicas funcionam. A compreensão do funcionamento dessas máquinas leva ao conceito da entropia do sistema.
+
+== Entropia e Informação ==
+Informação, de acordo com diferentes autores, é um termo que vem sendo usado mais a partir da década de 1950. É usado para significar mensagens, notícias, novidades, dados, conhecimento, literatura, símbolos, signos e, até mesmo, "dicas" e sugestões. Pode até parecer um termo vago, sendo necessário um contexto em que é empregada. Georges Ifrah apresenta pelo menos 26 diferentes conceitos de informação
+Diferentemente da energia, a informação é algo que se cria e que existe cada vez mais em maior quantidade no nosso Universo.
+Segundo Zdenek Zeman, "a expressão da informação de um sistema tem por base, como se sabe, a fórmula matemática da entropia negativa". Partido dessa ideia, informação, isto é, de entropia negativa, pode exprimir, também, a medida da ordem de um sistema nervoso ou de um sistema social. A entropia negativa é atingida quando a probabilidade de ocorrer todos os símbolos é igual, ou seja, é equiprovável e não há a tendência de ocorrer determinado grupo de símbolos.
+Shannon abordou, também o conceito de redundância é relacionado à entropia no sentido de que a redundância é tudo o que não é fundamental para ser entendido em uma determinada mensagem, ou seja, é entendida como algo complementar. Então é a medida de entropia para que a mensagem atinja a entropia máxima.
+No trabalho desenvolvido por ele em A Teoria Matemática da Comunicação onde é abordada a relação entre a entropia e a informação, Shannon faz a afirmação que a informação contida em uma mensagem pode ser medida pela quantidade de entropia que, por sua vez, é relacionada à frequência dos grupo de símbolos que são transmitidos.
+A teoria da informação afirma que quanto menos informações sobre um sistema, maior será sua entropia.
+A quantidade de informação de uma mensagem é entendida na teoria da informação como sendo o menor número de bits, unidade de informação, necessários para conter todos os valores ou significados desta mensagem. Por exemplo, se quisermos transmitir ou armazenar os números dos meses do ano, serão necessários, no mínimo, 4 bits para representar esta informação.
+Portanto, a quantidade de informação de uma mensagem é medida pela entropia da mensagem, a qual mede, também a sua incerteza, que é expressa pelo número de bits que precisam ser recuperados
+quando a mensagem está cifrada para obter novamente um texto claro.
+
+== Entropia como conceito da Teoria da Informação ==
+A Teoria da Informação teve inicialmente como destaque as questões técnicas, sendo uma das primeiras teorias a separar com nitidez a informação da significação. A Teoria da Informação está situada dentro da cibernética, onde a informação se mostra como uma medida probabilística. Esta teoria tem um grande interesse pelo funcionamento dos sinais, pelas transformações energéticas mediante a codificação da mensagem e sua de codificação. Ela opera com os seguintes conceitos:
+
+ruído;
+redundância;
+entropia;
+imprevisibilidade.
+Em fontes contínuas, a codificação da informação gera ruído na mensagem, isso se dá pelo fato de que a fonte contínua precisaria de um vasto repertório de símbolos e que, como consequência, necessitaria uma capacidade de transmissão grande e, como é sabido, não existe um canal livre de ruído.
+Shannon abordou, também o conceito de redundância é relacionado à entropia no sentido de que a redundância é tudo o que não é fundamental para ser entendido em uma determinada mensagem, ou seja, é entendida como algo complementar. Então é a medida de entropia para que a mensagem atinja a entropia máxima.
+A entropia desejada de uma informação é a máxima que é dada pelas probabilidades equivalentes de ocorrer todos os símbolos.
+A teoria da informação não estuda uma língua pelo número de símbolos alfabéticos que a compõem, mas sim pela análise à redundância na língua, considerando que o inverso da entropia é a redundância, ou seja, a organização do sistema em questão. Uma língua entrópica dispõe de um vocabulário rico, com palavras diferenciadas, que mostram o poder das combinatórias; uma língua pouco entrópica é pobre e repetitiva.
+Em relação a imprevisibilidade, quanto maior for, será menor a chance de apreensão por parte do receptor, pois o receptor depende da ordem em que as mensagens são transmitidas. A imprevisibilidade total é correspondente à informação nula, ou seja, não há informação.
+A medida da informação (ou surpresa) de um evento
+
+E
+
+{\displaystyle E}
+
+é uma função que decresce a medida em que a probabilidade
+
+p
+(
+E
+)
+
+{\displaystyle p(E)}
+
+do evento se eleva. Ela pode ser calculada a partir da fórmula de Hartley (1928):
+
+I
+(
+E
+)
+=
+−
+
+log
+
+2
+
+⁡
+(
+p
+(
+E
+)
+)
+
+{\displaystyle I(E)=-\log _{2}(p(E))}
+
+Aqui,
+
+b
+
+{\displaystyle b}
+
+é a unidade da informação (Por exemplo: Informação binária,
+
+b
+=
+2
+
+{\displaystyle b=2}
+
+). Já entropia pode ser explicitamente escrita como
+
+H
+
+(
+X
+)
+=
+−
+
+∑
+
+i
+=
+1
+
+n
+
+P
+
+(
+
+x
+
+i
+
+)
+
+log
+
+b
+
+⁡
+
+P
+
+(
+
+x
+
+i
+
+)
+
+{\displaystyle \mathrm {H} (X)=-\sum _{i=1}^{n}{\mathrm {P} (x_{i})\log _{b}\mathrm {P} (x_{i})}}
+
+onde
+
+P
+
+(
+
+x
+
+i
+
+)
+
+{\displaystyle \mathrm {P} (x_{i})}
+
+é a probabilidade do i-ésimo resultado para a variável
+
+x
+
+{\displaystyle x}
+
+.
+Uma maneira mais simples de medir a entropia é perceber que há duas possibilidades de ocorrência de um evento, como no caso do lançamento de uma moeda em um jogo de cara-ou-coroa com moeda viciada. Nesse caso temos p e q, onde q = 1-p, e a entropia do sistema é calculada como
+
+H
+
+(
+X
+)
+=
+−
+(
+p
+
+log
+
+2
+
+⁡
+p
++
+q
+
+log
+
+2
+
+⁡
+q
+)
+
+{\displaystyle \mathrm {H} (X)=-(p\log _{2}p+q\log _{2}q)}
+
+== Ver também ==
+Informação
+Sociedade da Informação
+Entropia
+
+== Referências ==
+https://www.universoracionalista.org/a-morte-e-a-vitoria-da-entropia/
+http://www.inovacaotecnologica.com.br/noticias/noticia.php?artigo=ordem-partir-desordem-entropia-sozinha-cria-cristais-complexos#.VyilS4-cHIU
+
+Livro: Informação, Linguagem e Comunicação. Décio Pignatari - Publicado por Atelie Editorial, 2003.
+
+== Ligações externas ==
+Bernardo N. B. Lima, Leandro Martins Cioletti, Marcelo de O. Terra Cunha, Gastãoo A. Braga; Entropia: introdução à Teoria Matemática da (des)Informação; Departamento de Matemática - UFMG.
+Nestor Caticha - Física e Informação; IF USP ; 21/11/2006.

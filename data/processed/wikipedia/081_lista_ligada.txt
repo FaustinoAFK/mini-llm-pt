@@ -1,0 +1,88 @@
+Uma lista encadeada ou lista ligada é uma estrutura de dados linear e dinâmica. Ela é composta por várias células que estão interligadas através de ponteiros, ou seja, cada célula possui um ponteiro que aponta para o endereço de memória da próxima célula. Desse modo, as células da estrutura não precisam estar em posições contíguas da memória. Isso faz com que a estrutura se torne dinâmica, pois há qualquer momento, é possível alocar uma nova célula e mudar os ponteiros das células já existentes, de modo que a nova célula seja inserida na estrutura com êxito, na posição desejada pelo programador.
+Ao lado temos um exemplo de uma lista encadeada. Nela, cada célula aponta para o endereço de memória da próxima célula através de um ponteiro. Como o último elemento da lista (célula 5) não possui próximo, ele apontará para nulo, que representa uma posição inválida na memória que não pode sofrer escrita ou ser dereferenciada.
+Para inserir dados ou remover dados é necessário, no mínimo, um ponteiro que aponta para a primeira célula da lista. Esse ponteiro é normalmente chamado de head. A partir dele, podemos acessar a segunda célula, e a partir da segunda célula, podemos acessar a terceira, e assim em diante. Ou seja, com o ponteiro para a primeira célula, podemos acessar qualquer célula de uma lista encadeada.
+
+== Tipos ==
+
+Normalmente, temos dois tipos diferentes de listas encadeadas:
+
+Lista singularmente encadeada (Singly Linked List).
+Lista duplamente encadeada (Doubly Linked List).
+A lista singularmente encadeada é justamente aquela explicada na seção principal.
+A lista duplamente encadeada faz com que cada elemento possua dois ponteiros: um para o elemento posterior (assim como a lista singularmente encadeada), e um para o elemento anterior.
+Também possui uma referência (ponteiro) para o último elemento da lista, comumente chamado de tail. As diferenças entre encadeamento singular e duplo são melhores explicadas no parágrafo a seguir.
+
+== Singular vs. Duplo ==
+Comparando os dois tipos de listas encadeadas, temos que:
+
+Uma célula de uma lista duplamente encadeada ocupa mais memória do que uma célula de uma lista singularmente encadeada, devido ao ponteiro adicional que aponta ao elemento anterior (considerando que os tipos das duas listas possuem o mesmo tamanho).
+Inserções em listas duplamente encadeadas são potencialmente mais lentas devido à maior quantidade de ponteiros que precisam ser rearranjados.
+Porém, certas iterações e operações de indexação podem ser mais fáceis ou rápidas em listas duplamente encadeadas. Como por exemplo, percorrer a lista de trás pra frente. Aa lista duplamente encadeada pode acessar a última célula e percorrer através dos ponteiros de trás de cada célula, assim percorrendo a lista de trás para frente. Outro exemplo: pegar o penúltimo elemento da lista. Nesse caso, A lista singularmente encadeada terá que passar por n-1 elementos (onde n é o tamanho da lista), enquanto a duplamente encadeada pode ir para o elemento final e percorrer somente um elemento para trás para obter o penúltimo elemento.
+
+== Vantagens ==
+A inserção ou remoção de um elemento na lista não implica a mudança de lugar de outros elementos;
+Não é necessário definir, no momento da criação da lista, o número máximo de elementos que esta poderá ter. Ou seja, é possível alocar memória "dinamicamente", apenas para o número de nós necessários.
+
+== Desvantagens ==
+A manipulação torna-se mais "perigosa" uma vez que, se o encadeamento (ligação) entre elementos da lista for mal feito, toda a lista pode ser perdida;
+Para aceder ao elemento na posição n da lista, deve-se percorrer todos os elementos (n - 1) anteriores.
+
+== Níveis de complexidade ==
+Numa lista com n itens, temos as seguintes complexidades de tempo no pior caso:
+
+Inserção
+Cabeça: O(1).
+Cauda: O(n) (ou O(1) quando se tem uma referência pro fim da lista).
+Meio: O(n).
+Eliminação
+Cabeça: O(1).
+Cauda: O(n) (ou O(1) quando se tem uma referência pro fim da lista).
+Meio: O(n).
+
+== Exemplo em C ==
+Exemplo de código feito em linguagem de programação C:
+
+=== Estrutura ===
+
+O tipo de dados seria definido apenas pela chamada ao método struct, mas a inclusão do typedef simplifica a sua utilização. Ele cria um nome alternativo para No_st, que pode ser chamado simplesmente de No por outras estruturas de dados.
+Exemplo de inicialização e preenchimento no main:
+
+Neste exemplo, as chamadas às funções printf() imprimiriam 1 e 2, respectivamente.
+
+=== Manutenção ===
+
+==== Cria Lista ====
+Para começar uma lista não basta começar a inserir novas células, é preciso uma base, ou raiz, que será sempre a mesma para uma lista. Esta raiz pode ser simplesmente um apontador para uma lista ou um apontador para uma primeira célula vazia.
+Normalmente, para listas, é usada a célula vazia, já para as pilhas e filas é usado o apontador para os respectivos.
+A função seguinte é usada no main após ser declarada a variável raiz que será do tipo apontador para lista( que nestes exemplos tem o nome No).Esta cria uma célula vazia e mete a raiz a apontar para esta:
+
+Um exemplo da sua utilização no main seria:
+
+Como raiz está sendo passada como parâmetro na função cria_lista() e em outras funções, é preciso alocar memória para raiz de modo que seja possível realizar as operações no ponteiro que interage com raiz dentro das funções.
+
+==== No início ====
+
+==== No fim ====
+
+=== Remoção ===
+
+==== No início ====
+
+==== No fim ====
+
+Exemplo de um Código feito para um dicionário de palavras em linguagem de programação C:
+
+== Exemplo em C++ ==
+Pode-se utilizar também uma sintaxe de classe, atribuindo esses métodos, da linguagem de programação C++. Aqui, foram criadas duas classes: Node (nó) e List (lista). Os métodos criados foram os seguintes: adicionar, excluir, buscar e imprimir.
+
+== Exemplo em Java ==
+Exemplo de um Código feito para um dicionário de palavras em linguagem de programação Java:
+
+== Exemplo em Pascal ==
+Exemplo de um Código feito para um dicionário de palavras em linguagem de programação Pascal:
+
+== Referências ==
+
+== Ver também ==
+Lista
+Lista duplamente ligada
