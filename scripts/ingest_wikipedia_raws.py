@@ -4,7 +4,7 @@ import re
 import time
 from datetime import date
 from pathlib import Path
-from urllib.parse import unquote, urlparse
+from urllib.parse import unquote, urlencode, urlparse
 from urllib.request import Request, urlopen
 
 
@@ -68,8 +68,8 @@ def fetch_plaintext_article(title):
         "titles": title,
     }
 
-    query = "&".join(f"{key}={value}" for key, value in params.items())
-    url = f"{WIKIPEDIA_API_URL}?{query.replace(' ', '%20')}"
+    query = urlencode(params, encoding="utf-8")
+    url = f"{WIKIPEDIA_API_URL}?{query}"
 
     request = Request(url, headers={"User-Agent": USER_AGENT})
 
