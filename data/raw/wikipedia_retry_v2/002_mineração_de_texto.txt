@@ -1,0 +1,69 @@
+Mineração de texto, conhecida também como mineração de dados textuais e semelhante à análise textual, refere-se ao processo de obtenção de informações importantes de um texto. Informações importantes são obtidas normalmente pela elaboração de padrões e tendências através de meios como o padrão estatístico de aprendizagem. Geralmente a mineração de texto envolve o processo de estruturação do texto de entrada (frequentemente análise, junto com a adição de algumas características linguísticas derivadas e com a retirada de outras, e com a subsequente inserção em um banco de dados), de derivação de padrões dentro da estrutura de dados e, por fim, de avaliação e interpretação do resultado. Geralmente, “importante” em mineração de texto refere-se a algumas combinações de relevância, originalidade e interesse. Tarefas típicas de mineração de texto incluem categorização e agrupamento de texto, extração de conceito/entidade, produção de taxonomias granulares, análise de sentimentos 
+, resumo de documentos e modelagem de relações entre entidades (ex., aprender relações entre entidades nomeadas).
+A análise de texto envolve informações de recuperação, análise lexical a fim de estudar a frequência de distribuição de palavras, reconhecimento de padrões, identificação/anotação, extração de informações, técnicas de mineração de dados que incluem link e associação de análises, visualização e analítica preditiva. O objetivo maior é transformar o texto em dados para análise, por meio da aplicação do processamento de linguagem natural (PLN) e de métodos analíticos.
+Uma aplicação comum é examinar um conjunto de documentos escritos em uma linguagem natural e, ou modelar o conjunto de documentos para fins de classificação preditiva ou preencher um banco de dados ou índice de pesquisa com as informações extraídas.
+
+
+== História ==
+Abordagens manuais de trabalho intensivo da mineração do texto vieram à tona na metade dos anos 80, mas os avanços tecnológicos possibilitaram o avanço do campo durante a década passada. A mineração do texto é um campo interdisciplinar que se baseia na recuperação de informações, extração de dados, aprendizado de máquina, estatísticas e linguística computacional. Quanto mais informações (as estimativas comuns afirmam ser acima de 80%) são armazenadas em forma de texto, acredita-se que a mineração do texto possua um alto valor comercial potencial. O interesse crescente está relacionado a mineração multilíngue de dados: a capacidade de obter informações através de línguas e agrupar itens similares de diversas fontes linguísticas de acordo com o seu sentido.
+
+O desafio de explorar a grande proporção de informações empresariais que se originam de uma forma desestruturada tem sido reconhecido por décadas. Foi aceito na definição mais antiga de inteligência empresarial (IE), em um artigo do IBM Journal em outubro de 1958 por H.P. Luhn, um Sistema de Inteligência Empresarial, que descreve um sistema que deverá:“... utilizar máquinas de processamento de dados para o abstrato e a auto-codificação de documentos e para criar estruturas de juros para cada um dos ‘pontos de ação’ em uma organização. Tanto os documentos novos quanto aqueles criados internamente são automaticamente resumidos, caracterizados pelo modelo de palavras e enviados automaticamente para pontos de ação apropriados." 
+No entanto, como os sistemas de gerenciamento de informação desenvolvidos no começo de 1960, e como a IE (Inteligência Empresarial) começou nos anos 80 e 90 como uma categoria de software e prática de aplicação, a ênfase voltou-se para as informações numéricas armazenadas em dados relacionais. Esse fato não é surpreendente: um texto com documentos desestruturados é difícil de processar. O surgimento de análise de texto em sua forma atual origina-se de uma reorientação de pesquisa no final dos anos 90 desde o desenvolvimento de algoritmos até a aplicação, como afirmado pelo Prof. Marti A Hearst no artigo “Untagling Text Data Mining”.
+“Por quase uma década, a comunidade da Linguística Computacional considera grandes coleções de textos como um recurso a ser explorado a fim de produzir algoritmos para análise de textos. Nesse artigo, tento sugerir um novo destaque: o uso de grandes coleções online de textos para descobrir novos fatos e tendências sobre o próprio mundo. Sugiro que a fim de progredir, não precisamos de uma análise textual de inteligência artificial, mas uma mistura de análise computacional e guiada podem abrir as portas para novos resultados empolgantes." 
+
+A declaração de Hearst, em 1999, descreve muito bem o estado da tecnologia de textos analíticos e prática da década seguinte.
+
+
+== Processos de Análise de Texto ==
+Subtarefas - componentes de uma operação maior de análise de texto - tipicamente incluem:
+
+Recuperação de informação ou identificação de um corpus é uma etapa preparatória: coletando ou identificando um conjunto de materiais textuais, na Web ou realizada em um sistema de arquivos, banco de dados, ou banco de corpus, para análise.
+Embora alguns sistemas de análise de texto apliquem exclusivamente métodos estatísticos avançados, muitos outros aplicam um processo mais extenso de linguagem natural, como por exemplo marcação discurso, etiquetamento sintático, análise sintática, e outros tipos de análise linguística.
+Reconhecimento de entidades mencionadas é o uso de dicionários geográficos ou técnicas estatísticas para identificar características nomeadas no texto: pessoas, organizações, nomes de lugares, símbolos de cotações da bolsa, algumas abreviaturas, e assim por diante. A atenção ao contexto pode ser necessária para decidir onde, por exemplo, a palavra "Ford" pode se referir a um ex-presidente dos Estados Unidos, a um fabricante de veículos, uma estrela de cinema, a uma travessia de rio, ou a alguma outra entidade.
+Reconhecimento de entidades de identificação padrão: Características como números de telefone, endereços de e-mail, quantidades (com unidades) podem ser discernidos por meio da expressão regular ou de outro padrão correspondente.
+Correferência: identificação de sintagmas nominais e outros termos que se referem ao mesmo objeto. 
+Relacionamento, fato, e evento de extração: identificação de associações entre as entidades e outras informações textuais.
+Análise de sentimento envolve discernimento subjetivo (em oposição ao factual) e extração de material de várias formas de informação atitudinal: sentimento, opinião, humor e emoção. Técnicas de análise textual são úteis para analisar, o sentimento na entidade, conceito, ou nível tópico e no suporte opinião distintiva e objeto da opinião.
+Análise quantitativa do texto é um conjunto de técnicas decorrentes das ciências sociais no qual um juiz quer que um humano critico ou um computador extraia relações semânticas ou gramaticais entre as palavras, a fim de descobrir o significado ou padrões estilísticos de, na maioria dos casos, um texto pessoal ocasional com a finalidade de traçar perfil psicológico, etc.
+
+
+== Humanidades digitais e sociologia computacional ==
+
+As Humanidades Digitais podem ser entendidas como um campo de investigação interdisciplinar e transversal às áreas de conhecimento das Humanidades e das Ciências da Informação e da Computação.
+A análise automática de um vasto corpus textual possibilitou que pesquisadores analisassem milhões de documentos em diversas línguas com pouca intervenção manual. As principais tecnologias de Análise, Tradução Automática, categorização de tópicos, Aprendizado automático.
+A análise automática de corpus textual permitiu a extração de atores e de suas redes de relacionamento em uma vasta escala, transformando dados textuais em uma rede de dados. As redes resultantes, que podem conter milhares de nós, são analisadas com o uso de ferramentas da Análise de rede para identificar os atores principais, as principais comunidades ou grupos, e propriedades gerais como solidez e estabilidade estrutural da rede, ou a centralidade de certos nós. Isso automatiza a aproximação introduzida pela análise de dados quantitativos, onde sujeito-verbo-objeto serão identificados como pares de atores conectados por uma ação, ou pares formados por ator-objeto.
+Análise de conteúdo tem sido uma parte tradicionaldas ciências sociais e estudos de mídia por um longo tempo. A automação da análise de conteúdo permitiu uma revolução uma revolução de “megadados” se estabelecer nessa área, com estudos na mídia social e conteúdos nos jornais que incluem milhões de novos itens. O preconceito de gênero, legibilidade, similaridade de conteúdo, preferências do leitor e até o humor são analisados com base em métodos da mineração de texto em milhões de documentos. A análise da legibilidade, do preconceito de gênero e do preconceito de tópicos foi demonstrada ao apontar que diferentes tópicos possuem diferentes tipos de preconceito de gênero e níveis de legibilidade; a possibilidade de detectar mudanças de humor em uma grande população ao analisar conteúdo do Twitter também foi demonstrado.
+
+
+== Ver também ==
+Extração de informação
+Processamento de linguagem natural
+Linguística computacional
+Aprendizagem de máquina
+Recuperação de informação
+Mineração de dados
+Ciência cognitiva
+Visualização de Informação
+Inteligência artificial
+
+
+== Notas ==
+
+Este artigo foi inicialmente traduzido, total ou parcialmente, do artigo da Wikipédia em inglês cujo título é «Text mining».
+
+
+== Referências ==
+
+
+== Bibliografia ==
+«Text mining PLOS Collections» (em inglês). Public Library of Science. Consultado em 5 de agosto de 2015 
+Ananiadou, S. and McNaught, J. (Editors) (2006). Text Mining for Biology and Biomedicine. Artech House Books. ISBN 978-1-58053-984-5
+Bilisoly, R. (2008). Practical Text Mining with Perl. New York: John Wiley & Sons. ISBN 978-0-470-17643-6
+Feldman, R., and Sanger, J. (2006). The Text Mining Handbook. New York: Cambridge University Press. ISBN 978-0-521-83657-9
+Indurkhya, N., and Damerau, F. (2010). Handbook Of Natural Language Processing, 2nd Edition. Boca Raton, FL: CRC Press. ISBN 978-1-4200-8592-1
+Kao, A., and Poteet, S. (Editors). Natural Language Processing and Text Mining. Springer. ISBN 1-84628-175-X
+Konchady, M. Text Mining Application Programming (Programming Series). Charles River Media. ISBN 1-58450-460-9
+Manning, C., and Schutze, H. (1999). Foundations of Statistical Natural Language Processing. Cambridge, MA: MIT Press. ISBN 978-0-262-13360-9
+Miner, G., Elder, J., Hill. T, Nisbet, R., Delen, D. and Fast, A. (2012). Practical Text Mining and Statistical Analysis for Non-structured Text Data Applications. Elsevier Academic Press. ISBN 978-0-12-386979-1
+Srivastava, A., and Sahami. M. (2009). Text Mining: Classification, Clustering, and Applications. Boca Raton, FL: CRC Press. ISBN 978-1-4200-5940-3
+Zanasi, A. (Editor) (2007). Text Mining and its Applications to Intelligence, CRM and Knowledge Management. WIT Press. ISBN 978-1-84564-131-3
