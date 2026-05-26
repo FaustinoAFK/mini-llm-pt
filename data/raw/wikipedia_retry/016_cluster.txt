@@ -1,0 +1,30 @@
+Um cluster (do inglês cluster: 'grupo, aglomerado') consiste em computadores fracamente ou fortemente ligados que trabalham em conjunto, de modo que, em muitos aspectos, podem ser considerados como um único sistema. Diferentemente dos computadores em grade, computadores em cluster têm cada conjunto de nós, para executar a mesma tarefa, controlado e programado por software.
+
+
+== História ==
+A ideia inicial que conduz ao cluster foi desenvolvida na década de 1960 pela IBM como uma forma de interligar grandes mainframes, visando obter uma solução comercialmente viável de paralelismo. Nessa época, o sistema HASP (Houston Automated Spooling Program) da IBM e seu sucessor o JES (Job Entry System) proviam uma maneira de distribuir tarefas nos mainframes interligados. Pelo menos até 2001, a IBM suportava o cluster de mainframes através do Parallel Sysplex System, que permitia que hardware, sistema operacional, middleware e software de gerenciamento do sistema provessem uma notável melhora na performance e custo, permitindo que usuários de grandes mainframes continuassem utilizando as aplicações existentes.
+O cluster ganhou força até que três tendências convergiram, nos anos 1980: microprocessadores de alta performance, redes de alta velocidade e ferramentas padronizadas para computação distribuída de alto desempenho. Uma quarta tendência possível é a crescente necessidade de poder de processamento para aplicações científicas e comerciais unida ao alto custo e a baixa acessibilidade dos tradicionais supercomputadores.
+No final de 1993, Donald Becker e Thomas Sterling iniciaram um esboço de um sistema de processamento distribuído construído a partir de hardware convencional como uma medida de combate aos custos dos supercomputadores. No início de 1994, trabalhando no CESDIS, com o patrocínio do projecto HTPCC/ESS, criaram o primeiro cluster desse tipo, o projecto Beowulf.
+O protótipo inicial era um cluster de 16 processadores DX4 ligados por dois canais Ethernet acoplados (Ethernet bonding). A máquina foi um sucesso instantâneo e esta ideia rapidamente se espalhou pelos meios académicos, pela NASA e por outras comunidades de pesquisa.
+
+
+== Tipos de cluster ==
+Existem vários tipos de cluster. Os mais conhecidos são:
+
+cluster de alto desempenho: também conhecido como cluster de alta performance, ele funciona permitindo que ocorra uma grande carga de processamento com um volume baixo de gigaflops em computadores comuns e utilizando sistema operacional gratuito, o que diminui seu custo;
+cluster de alta disponibilidade: são clusters cujos sistemas conseguem permanecer ativos por um longo período de tempo e em plena condição de uso; sendo assim, podemos dizer que eles nunca param seu funcionamento; além disso, conseguem detectar erros se protegendo de possíveis falhas;
+cluster para balanceamento de carga: esse tipo de cluster tem como função controlar a distribuição equilibrada do processamento. Requer um monitoramento constante na sua comunicação e em seus mecanismos de redundância, pois, se ocorrer alguma falha, haverá uma interrupção no seu funcionamento.
+
+
+== Ver também ==
+
+
+== Referências ==
+
+
+== Ligações externas ==
+
+IEEE Technical Committee on Scalable Computing (TCSC)
+Reliable Scalable Cluster Technology (RSCT), IBM Knowledge Center
+Tivoli System Automation Wiki
+Large-scale cluster management at Google with Borg. Por Abhishek Verma, Luis Pedrosa, Madhukar Korupolu, David Oppenheimer, Eric Tune e John Wilkes, abril de 2015.
