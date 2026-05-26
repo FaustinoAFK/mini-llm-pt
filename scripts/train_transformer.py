@@ -5,7 +5,7 @@ import torch
 
 from src.batching import get_batch
 from src.data_loader import read_text_file
-from src.evaluation import estimate_loss
+from src.evaluation import estimate_loss_over_batches
 from src.models.transformer import MiniTransformerLanguageModel
 from src.tokenizer.char_tokenizer import CharTokenizer
 from src.training_data import create_training_examples
@@ -16,6 +16,8 @@ VAL_PATH = "data/splits/val.txt"
 CHECKPOINT_PATH = "checkpoints/transformer.pt"
 BLOCK_SIZE = 32
 BATCH_SIZE = 16
+EVAL_BATCH_SIZE = 16
+EVAL_NUM_BATCHES = 20
 MAX_ITERS = 300
 LEARNING_RATE = 1e-3
 N_EMBD = 64
@@ -74,8 +76,20 @@ def main():
         optimizer.step()
 
         if step % EVAL_INTERVAL == 0 or step == MAX_ITERS - 1:
-            train_loss = estimate_loss(model, x_train, y_train)
-            val_loss = estimate_loss(model, x_val, y_val)
+            train_loss = estimate_loss_over_batches(
+                model,
+                x_train,
+                y_train,
+                batch_size=EVAL_BATCH_SIZE,
+                num_batches=EVAL_NUM_BATCHES,
+            )
+            val_loss = estimate_loss_over_batches(
+                model,
+                x_val,
+                y_val,
+                batch_size=EVAL_BATCH_SIZE,
+                num_batches=EVAL_NUM_BATCHES,
+            )
 
             if val_loss < best_val_loss:
                 best_val_loss = val_loss
@@ -96,7 +110,13 @@ def main():
     if best_model_state_dict is None:
         best_model_state_dict = model.state_dict()
         best_step = MAX_ITERS - 1
-        best_val_loss = estimate_loss(model, x_val, y_val)
+        best_val_loss = estimate_loss_over_batches(
+            model,
+            x_val,
+            y_val,
+            batch_size=EVAL_BATCH_SIZE,
+            num_batches=EVAL_NUM_BATCHES,
+        )
 
     torch.save(
         {
@@ -108,6 +128,8 @@ def main():
             "start_id": train_ids[0],
             "block_size": BLOCK_SIZE,
             "batch_size": BATCH_SIZE,
+            "eval_batch_size": EVAL_BATCH_SIZE,
+            "eval_num_batches": EVAL_NUM_BATCHES,
             "n_embd": N_EMBD,
             "n_head": N_HEAD,
             "n_layer": N_LAYER,
