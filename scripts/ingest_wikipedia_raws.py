@@ -170,15 +170,18 @@ def write_manifest(entries, manifest_path):
 
 
 def ingest(
+    sources_path=SOURCES_PATH,
+    output_dir_path=OUTPUT_DIR,
+    manifest_path_value=MANIFEST_PATH,
     start=1,
     limit=None,
     sleep_seconds=2.0,
     retries=DEFAULT_RETRIES,
     retry_sleep=DEFAULT_RETRY_SLEEP,
 ):
-    sources_path = Path(SOURCES_PATH)
-    output_dir = Path(OUTPUT_DIR)
-    manifest_path = Path(MANIFEST_PATH)
+    sources_path = Path(sources_path)
+    output_dir = Path(output_dir_path)
+    manifest_path = Path(manifest_path_value)
 
     if start <= 0:
         raise ValueError("start precisa ser maior que zero.")
@@ -193,6 +196,7 @@ def ingest(
         links = links[:limit]
 
     output_dir.mkdir(parents=True, exist_ok=True)
+    manifest_path.parent.mkdir(parents=True, exist_ok=True)
 
     manifest_entries = []
     total = len(links)
@@ -244,7 +248,22 @@ def ingest(
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Baixa artigos da Wikipedia listados em docs/wikipedia_sources.md."
+        description="Baixa artigos da Wikipedia listados em um arquivo markdown."
+    )
+    parser.add_argument(
+        "--sources-path",
+        default=SOURCES_PATH,
+        help="Arquivo markdown com links da Wikipedia.",
+    )
+    parser.add_argument(
+        "--output-dir",
+        default=OUTPUT_DIR,
+        help="Diretório onde os arquivos raw serão salvos.",
+    )
+    parser.add_argument(
+        "--manifest-path",
+        default=MANIFEST_PATH,
+        help="Arquivo MANIFEST.md que será gerado.",
     )
     parser.add_argument(
         "--start",
@@ -279,6 +298,9 @@ def main():
     args = parser.parse_args()
 
     ingest(
+        sources_path=args.sources_path,
+        output_dir_path=args.output_dir,
+        manifest_path_value=args.manifest_path,
         start=args.start,
         limit=args.limit,
         sleep_seconds=args.sleep,
