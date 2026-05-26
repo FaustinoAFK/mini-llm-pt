@@ -157,11 +157,24 @@ class MiniTransformerLanguageModel(nn.Module):
 
         return logits, loss
 
-    def generate(self, idx, max_new_tokens):
+    def generate(self, idx, max_new_tokens, temperature=1.0, top_k=None):
+        if temperature <= 0:
+            raise ValueError("temperature precisa ser maior que zero.")
+
         for _ in range(max_new_tokens):
             idx_cond = idx[:, -self.block_size :]
             logits, _ = self(idx_cond)
             logits = logits[:, -1, :]
+            logits = logits / temperature
+
+            if top_k is not None:
+                if top_k <= 0:
+                    raise ValueError("top_k precisa ser maior que zero.")
+                top_k = min(top_k, logits.size(-1))
+                values, _ = torch.topk(logits, top_k)
+                min_value = values[:, -1].unsqueeze(-1)
+                logits = logits.masked_fill(logits < min_value, float("-inf"))
+
             probs = F.softmax(logits, dim=-1)
             idx_next = torch.multinomial(probs, num_samples=1)
             idx = torch.cat((idx, idx_next), dim=1)
