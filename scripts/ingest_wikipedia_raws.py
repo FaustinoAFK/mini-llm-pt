@@ -169,13 +169,25 @@ def write_manifest(entries, manifest_path):
     manifest_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def ingest(limit=None, sleep_seconds=2.0, retries=DEFAULT_RETRIES, retry_sleep=DEFAULT_RETRY_SLEEP):
+def ingest(
+    start=1,
+    limit=None,
+    sleep_seconds=2.0,
+    retries=DEFAULT_RETRIES,
+    retry_sleep=DEFAULT_RETRY_SLEEP,
+):
     sources_path = Path(SOURCES_PATH)
     output_dir = Path(OUTPUT_DIR)
     manifest_path = Path(MANIFEST_PATH)
 
+    if start <= 0:
+        raise ValueError("start precisa ser maior que zero.")
+
     markdown_text = sources_path.read_text(encoding="utf-8")
-    links = extract_wikipedia_links(markdown_text)
+    all_links = extract_wikipedia_links(markdown_text)
+
+    start_index = start - 1
+    links = all_links[start_index:]
 
     if limit is not None:
         links = links[:limit]
@@ -183,10 +195,12 @@ def ingest(limit=None, sleep_seconds=2.0, retries=DEFAULT_RETRIES, retry_sleep=D
     output_dir.mkdir(parents=True, exist_ok=True)
 
     manifest_entries = []
+    total = len(links)
 
-    for index, link in enumerate(links, start=1):
+    for offset, link in enumerate(links, start=0):
+        source_index = start + offset
         original_title = title_from_wikipedia_url(link["url"])
-        print(f"[{index}/{len(links)}] Baixando: {original_title}")
+        print(f"[{offset + 1}/{total} | fonte #{source_index}] Baixando: {original_title}")
 
         try:
             article = fetch_plaintext_article(
@@ -194,7 +208,7 @@ def ingest(limit=None, sleep_seconds=2.0, retries=DEFAULT_RETRIES, retry_sleep=D
                 retries=retries,
                 retry_sleep=retry_sleep,
             )
-            filename = f"{index:03d}_{slugify(article['title'])}.txt"
+            filename = f"{source_index:03d}_{slugify(article['title'])}.txt"
             file_path = output_dir / filename
             file_path.write_text(article["text"] + "\n", encoding="utf-8")
 
@@ -233,10 +247,16 @@ def main():
         description="Baixa artigos da Wikipedia listados em docs/wikipedia_sources.md."
     )
     parser.add_argument(
+        "--start",
+        type=int,
+        default=1,
+        help="Índice inicial 1-based da lista de fontes. Exemplo: --start 11.",
+    )
+    parser.add_argument(
         "--limit",
         type=int,
         default=None,
-        help="Limita a quantidade de artigos baixados. Útil para testes.",
+        help="Limita a quantidade de artigos baixados. Útil para testes e blocos.",
     )
     parser.add_argument(
         "--sleep",
@@ -259,6 +279,7 @@ def main():
     args = parser.parse_args()
 
     ingest(
+        start=args.start,
         limit=args.limit,
         sleep_seconds=args.sleep,
         retries=args.retries,
