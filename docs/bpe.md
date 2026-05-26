@@ -1,29 +1,137 @@
 # BPE
 
 ## Ideia principal
-A ideia principal é separar as palavra em caracteres e identificar reptições e casos que diminuiria o numeros de tokens e mesmo assim conseguiria completar uma palavra com o menor numero de passo possivel.
+
+BPE significa Byte Pair Encoding.
+
+No contexto deste projeto, o BPE é usado como um tokenizer de subpalavras. Ele começa separando o texto em caracteres e depois aprende fusões de pares que aparecem com muita frequência.
+
+Exemplo intuitivo:
+
+```txt
+c + a → ca
+ca + s → cas
+cas + a → casa
+```
+
+Com isso, palavras frequentes ou pedaços frequentes de palavras podem virar tokens maiores.
+
 ## Por que não usar apenas caracteres?
-terião uma sequencia muit longa deixando o treinamento dos modelos mais caros. 
+
+O `CharTokenizer` é simples e bom para aprender, mas gera sequências longas. Uma frase pequena vira muitos tokens.
+
+Isso dificulta o treino porque o modelo precisa aprender palavras letra por letra.
+
+Por isso aparecem saídas como:
+
+```txt
+solunção
+esigonformações
+conhecessortações
+```
+
+Essas palavras quebradas são sinal de que o modelo ainda está montando tudo caractere por caractere.
+
 ## Por que não usar apenas palavras?
-porque iria transforma varias palavras em tokens de forma desnecessarias.
+
+Um tokenizer por palavras também tem problemas:
+
+```txt
+muitas palavras raras
+muitas variações
+vocabulário muito grande
+problema com palavras novas
+```
+
+O BPE fica no meio termo:
+
+```txt
+maior que caractere
+menor que palavra inteira
+```
+
 ## Como o BPE aprende subpalavras?
-ele aprende fusões de pares que aparecem com mais frequencia durante o treinamento do tokenizer
-## Exemplo manual
-casa
-casas
-casinha
 
-c a s a 
-c a s a s
-c a s i n h a
+O processo simplificado é:
 
-cas 
-a
-s
-inha 
+```txt
+1. começa com caracteres
+2. conta pares vizinhos mais frequentes
+3. junta o par mais frequente
+4. repete o processo várias vezes
+```
 
-c+a = ca por conta das repeticões no começo das palavras.
-a mesma coisa acontece com o s ca+s = cas.
+Exemplo:
+
+```txt
+banana bandana
+```
+
+Pode aprender partes como:
+
+```txt
+an
+na
+ban
+ana
+```
+
+## Implementação atual
+
+O projeto possui um BPE simples em:
+
+```txt
+src/tokenizer/bpe_tokenizer.py
+```
+
+Ele suporta:
+
+```txt
+treino com num_merges
+encode
+decode
+save em JSON
+load de JSON
+<unk> para caracteres desconhecidos
+```
+
+Também existe um script para treinar o tokenizer:
+
+```txt
+scripts/train_bpe_tokenizer.py
+```
+
+Uso:
+
+```powershell
+python -m scripts.train_bpe_tokenizer
+```
+
+Ou com número de merges personalizado:
+
+```powershell
+python -m scripts.train_bpe_tokenizer --num-merges 1000
+```
+
+A saída padrão é:
+
+```txt
+artifacts/tokenizers/bpe.json
+artifacts/tokenizers/bpe.preview.txt
+```
 
 ## Relação com o projeto
-o tokenizer é nescessario para a transformação em token e posteriomente em IDs.
+
+O BPE ainda não substitui automaticamente o `CharTokenizer` no Transformer.
+
+A ordem correta é:
+
+```txt
+1. implementar BPETokenizer
+2. testar encode/decode/save/load
+3. treinar e inspecionar o vocabulário
+4. integrar no train_transformer.py
+5. comparar CharTokenizer vs BPE
+```
+
+A expectativa é que o BPE reduza a quantidade de tokens e ajude o modelo a gerar palavras mais inteiras.
