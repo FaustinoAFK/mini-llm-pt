@@ -1,66 +1,39 @@
 Um supercomputador é um computador com altíssima velocidade de processamento e grande capacidade de memória. Tem aplicação em áreas de pesquisa onde grande quantidade de processamento se faz necessária, como a militar, científica, química e médica.
 Supercomputadores são usados para cálculos muito complexos e tarefas intensivas, como problemas envolvendo física quântica, mecânica, meteorologia, pesquisas de clima, modelagem molecular (computação nas estruturas e propriedades de compostos químicos, macromoléculas biológicas, polímeros e cristais) e simulações físicas, como simulação de aviões em túneis de vento, simulação da detonação de armas nucleares e investigação sobre a fusão nuclear.
-Os primeiros supercomputadores foram criados na década de 1960 por Seymour Cray.Seymour Cray fundou sua própria empresa, a Cray Research, em 1970 e dominou o mercado da supercomputação durante 25 anos (1965–1990).
+Os primeiros supercomputadores foram criados na década de 1960 por Seymour Cray.Seymour Cray fundou sua própria empresa, a Cray Research, em 1970 e dominou o mercado da supercomputação durante 25 anos (1965 1990).
 Na década de 70 a Universidade de Illinois montou em conjunto com a Burroughs Corporation o ILLIAC IV, um supercomputador que ficou famoso pelas dimensões.
 A ficção científica abordou o tema num romance chamado "Colossus".
 Hoje os supercomputadores são fabricados por empresas como SUPERMICRO, NEC, SUN (esta foi comprada pela Oracle em 2010), IBM, HP, Apple Inc. etc. A lista atualizada dos 500 sistemas computacionais mais poderosos conhecidos pode ser obtida em top500.org.
-
-== Características de um super computador ==
 As principais características dos supercomputadores são:
-
-Velocidade de processamento: trilhões de operações de ponto flutuante por segundo (TFlops). Conforme a lista Top500 de nov/2015, percebe-se que as empresas fabricantes de (super)computadores tendem a chamar seus próprios produtos de supercomputador (supercomputer) aqueles com processamento superior a 80 TFlops (68º posição até a 1º), e de servidor (server) aqueles com processamento entre 25 e 80 TFlops (500º posição até a 67º);
+Velocidade de processamento: trilhões de operações de ponto flutuante por segundo (TFlops). Conforme a lista Top500 de nov/2015, percebe-se que as empresas fabricantes de (super)computadores tendem a chamar seus próprios produtos de supercomputador (supercomputer) aqueles com processamento superior a 80 TFlops (68o posição até a 1o), e de servidor (server) aqueles com processamento entre 25 e 80 TFlops (500o posição até a 67o);
 Tamanho: requerem instalações e sistemas de refrigeração especiais;
 Dificuldade de uso: escolhido por especialistas;
 Clientes usuais: grandes centros de pesquisa;
 Penetração social: praticamente zero;
 Impacto social: muito importante no espaço da investigação, a partir do momento em que fornece cálculos em alta velocidade, permitindo, por exemplo, analisar a ordem do genoma, o número pi, números complexos, o desenvolvimento de cálculos para problemas físicos que requerem uma baixíssima margem de erro, etc.;
 Parques instalados: menos de mil em qualquer lugar no mundo;
-Custo: atualmente (2010) até centenas de milhões de dólares cada (~ US$ 225MM o Cray XT5).
-
-== Tipos de supercomputadores ==
-
-=== Processadores vetoriais paralelos (PVP) ===
+Custo: atualmente (2010) até centenas de milhões de dólares cada ( US 225MM o Cray XT5).
 Sistemas compostos de poucos processadores poderosos. A interconexão é feita, em geral, por uma matriz de chaveamento (crossbar) de alta vazão. A memória é compartilhada, e os sistemas podem ser classificados como multiprocessadores UMA. Normalmente não utilizam memória cache, usando para essa função um grande número de registradores vetoriais e um buffer de instrução. Exemplos: Cray C-90 (máximo de 16 processadores), Cray T-90 (máximo de 32 processadores), Fujitsu VPi 700 (máximo de 256 processadores). O NEC SX-6 também é um PVP, e o Earth Simulator, que é um NEC SX-6, já foi o número 1 na lista das 500 máquinas mais poderosas do mundo, possuindo 5 120 processadores.
 Atualmente o supercomputador mais poderoso do mundo chama-se "Tianhe-2", instalado na China e possui 3 120 000 núcleos de processamento.
-
-=== Multiprocessadores simétricos (SMP) ===
-
 Os Symmetric Multiprocessors são sistemas constituídos de processadores comerciais conectados a uma memória compartilhada, podendo também ser classificados como multiprocessadores UMA. Utilizam-se amplamente de memória cache e todos os processadores têm igual acesso ao barramento e à memória compartilhada. São mais fáceis de programar que máquinas que se comunicam por troca de mensagens, já que a forma de programação se aproxima daquela feita em sistemas convencionais, mas tem como desvantagem o uso de um barramento de interconexão (permitindo apenas uma transação por vez). Esta limitação pode reduzir a escalabilidade desta classe de sistemas, fazendo com que sistemas comerciais estejam, geralmente, limitados a 64 processadores. Exemplos: IBM R50 (máximo de oito processadores), SGI Power Challenge (máximo de 36 processadores), SUN Ultra Enterprise 10 000 (máximo de 64 processadores) e HP/Convex Exemplar X-Class (máximo de 32 nós de 16 processadores cada).
-
-=== Máquinas maciçamente paralelas (MPP) ===
 Os MPPs (Massively Parallel Processors) são multicomputadores NORMA construídos com milhares de processadores comerciais conectados por uma rede de alta velocidade. O alto desempenho é obtido com o grande número de processadores. O fato de haver troca de mensagens torna a programação mais difícil que nos casos em que a memória é compartilhada. Exemplos: Intel Paragon (máximo de 4 000 processadores), Connection Machine CM-5 (máximo de 2 048 processadores), IBM SP2 (máximo de 512 processadores) e Cray T3D (máximo de 2 048 processadores).
-
-=== Máquinas com memória compartilhada distribuída (DSM) ===
-
 Nos sistemas DSM (Distributed Shared Memory), mesmo com a memória sendo distribuída entre os nós, todos os processadores podem acessar todas as memórias. O espaço de endereçamento único, o compartilhamento de dados e o controle de coerência de cache são conseguidos com software. Podem ser sistemas NUMA com memória entrelaçada distribuída, ou sistemas NORMA (com memórias locais), onde as memórias podem ser ligadas através de adaptadores de rede (AR) a uma rede de interconexão específica, que permite o acesso a memórias remotas. A máquina, nos dois casos, é considerada CC-NUMA ou SC-NUMA dependendo da implementação da coerência de cache. Exemplo: SGI Origin (máximo de 512 processadores).
-
-=== Redes de estações de trabalho (NOW) ===
-As redes de estações de trabalho (NOW – Network of Workstations) são constituídas de várias estações de trabalho interligadas por alguma tecnologia tradicional de rede, como Ethernet e ATM. Na prática são redes locais utilizadas na execução de aplicações paralelas. Podem ser vistas como máquinas NORMA de baixo custo, ou sem custo algum caso a rede já exista, ou seja, esta é uma solução significativamente mais barata em relação aos MPPs. A desvantagem clara que se vê em uma rede de estações de trabalho é o fato de que as redes tradicionais costumam ser usadas apenas em tarefas menores (para compartilhar arquivos e acessar impressoras remotas, por exemplo), e geralmente não são otimizadas para operações de comunicação de uma aplicação paralela. O resultado é uma alta latência nessas operações, o que compromete o desempenho da máquina como um todo. São usadas principalmente em instituições de ensino para o estudo de processamento paralelo e distribuído.
-
-== No Mundo ==
-
+As redes de estações de trabalho (NOW Network of Workstations) são constituídas de várias estações de trabalho interligadas por alguma tecnologia tradicional de rede, como Ethernet e ATM. Na prática são redes locais utilizadas na execução de aplicações paralelas. Podem ser vistas como máquinas NORMA de baixo custo, ou sem custo algum caso a rede já exista, ou seja, esta é uma solução significativamente mais barata em relação aos MPPs. A desvantagem clara que se vê em uma rede de estações de trabalho é o fato de que as redes tradicionais costumam ser usadas apenas em tarefas menores (para compartilhar arquivos e acessar impressoras remotas, por exemplo), e geralmente não são otimizadas para operações de comunicação de uma aplicação paralela. O resultado é uma alta latência nessas operações, o que compromete o desempenho da máquina como um todo. São usadas principalmente em instituições de ensino para o estudo de processamento paralelo e distribuído.
 Em junho de 2022, 32 países mantinham em funcionamento os 500 maiores supercomputadores, listados no Top500.
-
 228 na Ásia
 148 na América
 118 na Europa
 5 na Oceania
 1 na África
-
-== No Brasil ==
 O Brasil é o único país da América Latina a ter supercomputadores no TOP500 dos supercomputadores com maior desempenho no mundo, com sete máquinas em operação até o final de 2022.
 Dois deles, da Petrobrás, estão entre os 100 maiores, sendo o Dragão, atualmente, o de maior capacidade, com 188 224 núcleos de CPU e 8,98 PetaFlops, e o Atlas com 91 936 núcleos de CPU e 4,38 PetaFlops.
 A empresa brasileira, entretanto, está montando o Pegaso, que será o sétimo e maior supercomputador a estar operacional no país até dezembro de 2022. A nova máquina terá uma capacidade de processamento de 21 PetaFlops, 678 terabytes de RAM e uma rede de 400 Gbps.
 Outros dois estão instalados em empresas privadas e o outro, o Santos Dumont, está no Laboratório Nacional de Computação Científica (LNCC), no Rio de Janeiro.
-
-== Em Portugal ==
 O primeiro supercomputador em Portugal foi inaugurado em 5 de julho de 2019, em Riba de Ave, onde funciona o novo Centro de Computação Avançada do Minho.
 O supercomputador “Bob”, cujo funcionamento chegou a ser anunciado pelo ministro da Ciência para o primeiro semestre de 2018, possibilitará aumentar “em dez vezes a capacidade nacional de computação” e incentivar a cooperação científica e empresarial na ciência de dados e inteligência artificial, de acordo com uma nota informativa da Fundação para a Ciência e Tecnologia.
 O Centro de Computação Avançada do Minho, que é hoje também inaugurado, pertence à Universidade do Minho, que, em conjunto com a FCT, instalou e operacionaliza o supercomputador.
-A nova unidade de computação avançada está fisicamente instalada no centro de dados da REN – Redes Energéticas Nacionais, pretendendo-se que o supercomputador funcione maioritariamente com fontes de energia renovável (eólica, fotovoltaica e hidroelétrica).
+A nova unidade de computação avançada está fisicamente instalada no centro de dados da REN Redes Energéticas Nacionais, pretendendo-se que o supercomputador funcione maioritariamente com fontes de energia renovável (eólica, fotovoltaica e hidroelétrica).
 Parte da infraestrutura computacional foi cedida à FCT pela universidade norte-americana do Texas, ao abrigo de uma parceria que se alargou ao Centro Nacional de Supercomputação de Barcelona, que tem o supercomputador MareNostrum, um dos mais potentes da Europa e um dos com maior capacidade do mundo.
-
-== Ver também ==
 Transferência de energia sem fio
 Computador
 Mainframe
@@ -68,11 +41,6 @@ Servidor
 Computação de alto desempenho
 TOP500
 Computação em grelha
-
-== Referências ==
-
-== Ligações externas ==
-
 Clusters e Supercomputação
 Supercomputadores Caseiros: Construindo Clusters com o Linux
 Supercomputador utiliza tecnologia Infiniband para ser o mais veloz da América Latina

@@ -2,108 +2,47 @@ A validação cruzada é uma técnica para avaliar a capacidade de generalizaç�
 O conceito central das técnicas de validação cruzada é o particionamento do conjunto de dados em subconjuntos mutuamente exclusivos, e posteriormente, o uso de alguns destes subconjuntos para a estimação dos parâmetros do modelo (dados de treinamento), sendo os subconjuntos restantes (dados de validação ou de teste) empregados na validação do modelo.
 Diversas formas de realizar o particionamento dos dados foram sugeridas, sendo as três mais utilizadas: o método holdout, o k-fold e o leave-one-out.
 Para todos os métodos de particionamento, citados acima e apresentados a seguir, a precisão final do modelo estimado é obtido por:
-
 A
-
 c
-
 f
-
-=
-
 1
 v
-
-∑
-
 i
-=
 1
-
 v
-
-ϵ
-
 y
-
 i
-
 ,
-
 y
-^
-
 i
-
-=
-
 1
 v
-
-∑
-
 i
-=
 1
-
 v
-
 (
-
 y
-
 i
-
-−
-
 y
-^
-
 i
-
 )
-
-{\displaystyle Ac_{f}={\frac {1}{v}}\sum _{i=1}^{v}\epsilon _{y_{i},{\hat {y}}_{i}}={\frac {1}{v}}\sum _{i=1}^{v}(y_{i}-{\hat {y}}_{i})}
-
+displaystyle Ac f frac 1 v sum i 1 v epsilon y i , hat y i frac 1 v sum i 1 v (y i - hat y i )
 onde v é o número de dados de validação e
-
-ϵ
-
 y
-
 i
-
 ,
-
 y
-^
-
 i
-
-{\displaystyle \epsilon _{y_{i},{\hat {y}}_{i}}}
-
+displaystyle epsilon y i , hat y i
 é o resíduo dado pela diferença entre o valor real da saída i e o valor predito. Com isso, é possível inferir de forma quantitativa a capacidade de generalização do modelo.
-
-== Método holdout ==
 Este método consiste em dividir o conjunto total de dados em dois subconjuntos mutuamente exclusivos, um para treinamento (estimação dos parâmetros) e outro para teste (validação). O conjunto de dados pode ser separado em quantidades iguais ou não. Uma proporção muito comum é considerar 2/3 dos dados para treinamento e o 1/3 restante para teste.
 Após o particionamento, a estimação do modelo é realizada e, posteriormente, os dados de teste são aplicados e o erro de predição calculado.
 Esta abordagem é indicada quando está disponível uma grande quantidade de dados. Caso o conjunto total de dados seja pequeno, o erro calculado na predição pode sofrer muita variação.
-
-== Método k-fold ==
 O método de validação cruzada denominado k-fold consiste em dividir o conjunto total de dados em k subconjuntos mutuamente exclusivos do mesmo tamanho e, a partir daí, um subconjunto é utilizado para teste e os k-1 restantes são utilizados para estimação dos parâmetros, fazendo-se o cálculo da acurácia do modelo. Este processo é realizado k vezes alternando de forma circular o subconjunto de teste. A figura
 abaixo mostra o esquema realizado pelo k-fold.
-
 Ao final das k iterações calcula-se a acurácia sobre os erros encontrados, através da equação descrita anteriormente, obtendo assim uma medida mais confiável sobre a capacidade do modelo de representar o processo gerador dos dados.
-
-== Método leave-one-out ==
 O método leave-one-out é um caso específico do k-fold, com k igual ao número total de dados N. Nesta abordagem são realizados N cálculos de erro, um para cada dado.
 Apesar de apresentar uma investigação completa sobre a variação do modelo em relação aos dados utilizados, este método possui um alto custo computacional, sendo indicado para situações onde poucos dados estão disponíveis.
-
-== Ver também ==
 Reamostragem (estatística)
 Bootstrapping (estatística)
-
-== Referências ==
-
-== Ligações externas ==
 «Validação Cruzada» (PDF) (em inglês)

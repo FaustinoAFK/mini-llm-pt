@@ -1,220 +1,100 @@
 Computação paralela é um tipo de computação em que muitos cálculos ou processos são realizados simultaneamente.
 Problemas de grande porte muitas vezes podem ser divididos em partes menores, que podem então ser solucionadas ao mesmo tempo. Existem várias formas de computação paralela: Paralelismo em nível de bit, Paralelismo em nível de instrução, Paralelismo de dados e Paralelismo de tarefas. O paralelismo há muito é empregado em computação de alto desempenho, mas ganhou interesse mais amplo devido às limitações físicas que impedem o escalonamento de frequência.
 Como o consumo de energia (e consequentemente a geração de calor) pelos computadores se tornou uma preocupação nos últimos anos, a computação paralela tornou-se o paradigma dominante em arquitetura de computadores, principalmente na forma de processadores multinúcleo.
-
 Em ciência da computação, paralelismo e concorrência são duas coisas diferentes: um programa paralelo utiliza múltiplos núcleos de CPU, cada núcleo executando uma tarefa de forma independente. Por outro lado, concorrência possibilita que um programa lide com várias tarefas mesmo em um único núcleo de CPU; o núcleo alterna entre tarefas (isto é, threads) sem necessariamente concluir cada uma. Um programa pode apresentar características de paralelismo, de concorrência, ambos ou nenhum dos dois.
 Computadores paralelos podem ser classificados conforme o nível em que o hardware suporta paralelismo: computadores multinúcleo e multiprocessadores simétricos possuem vários elementos de processamento numa única máquina, enquanto clusters, MPPs e grids usam múltiplos computadores para trabalhar na mesma tarefa. Arquiteturas especializadas são às vezes usadas juntamente com processadores tradicionais para acelerar tarefas específicas.
 Em alguns casos o paralelismo é transparente ao programador, como no paralelismo em nível de bit ou em nível de instrução, mas algoritmos paralelos explícitos, especialmente os que usam concorrência, são mais difíceis de escrever do que algoritmos sequenciais, pois a concorrência introduz várias novas classes de potenciais bugs, sendo as condições de corrida as mais comuns. Comunicação e sincronização entre subtarefas são frequentemente alguns dos maiores obstáculos para obter desempenho ótimo.
 Um limite teórico para o aceleração de um programa pela paralelização é dado pela Lei de Amdahl, que afirma que ela é limitada pela fração de tempo que pode ser paralelizada.
-
-== Antecedentes ==
-Tradicionalmente, software de computador era escrito para computação serial. Para resolver um problema, constrói-se um algoritmo e o implementa como um fluxo serial de instruções. Essas instruções são executadas em uma unidade central de processamento de um único computador. Apenas uma instrução é executada por vez — após sua conclusão, a próxima é executada.
+Tradicionalmente, software de computador era escrito para computação serial. Para resolver um problema, constrói-se um algoritmo e o implementa como um fluxo serial de instruções. Essas instruções são executadas em uma unidade central de processamento de um único computador. Apenas uma instrução é executada por vez após sua conclusão, a próxima é executada.
 Por outro lado, a computação paralela usa múltiplos elementos de processamento simultaneamente para resolver um problema. Isso é feito dividindo o problema em partes independentes, de modo que cada elemento execute sua parte do algoritmo ao mesmo tempo que os demais. Os elementos podem incluir um único computador com vários processadores, vários computadores em rede, hardware especializado ou qualquer combinação. Historicamente, a computação paralela era usada em aplicações científicas e simulações, particularmente nas ciências naturais e de engenharia, como meteorologia. Isso levou ao desenvolvimento de hardware e software paralelos, bem como à computação de alto desempenho.
-O escalonamento de frequência foi o principal fator de melhoria em desempenho de computador de meados dos anos 1980 até 2004. O tempo de execução de um programa é o número de instruções multiplicado pelo tempo médio por instrução. Aumentar a frequência do relógio reduz esse tempo médio, diminuindo o tempo total de programas CPU-bound. Contudo, o consumo de energia ‹P› de um chip é dado por ‹P› = ‹C› × ‹V›² × ‹F›, onde ‹C› é a capacitância comutada (proporcional ao número de transistores ativos), ‹V› é a tensão e ‹F› é a frequência do relógio. Aumentos em ‹F› elevam o consumo. Esse problema levou ao cancelamento dos processadores Tejas and Jayhawk da Intel em 8 de maio de 2004, marcando o fim do escalonamento de frequência como paradigma dominante.
-Para mitigar consumo e calor, fabricantes de CPU começaram a produzir processadores energeticamente eficientes com múltiplos núcleos. Cada núcleo é independente e acessa a mesma memória concorrentemente. Processadores multinúcleo trouxeram a computação paralela a computadores de mesa. Em 2012, processadores quad-core tornaram-se padrão em desktops, enquanto servidores já possuíam 10+ núcleos. Até 2023, alguns chegavam a mais de cem núcleos, inclusive com núcleos de desempenho e eficiência (como ARM big.LITTLE). Pela Lei de Moore, prevê-se que o número de núcleos dobrará a cada 18–24 meses.
+O escalonamento de frequência foi o principal fator de melhoria em desempenho de computador de meados dos anos 1980 até 2004. O tempo de execução de um programa é o número de instruções multiplicado pelo tempo médio por instrução. Aumentar a frequência do relógio reduz esse tempo médio, diminuindo o tempo total de programas CPU-bound. Contudo, o consumo de energia P de um chip é dado por P C V 2 F , onde C é a capacitância comutada (proporcional ao número de transistores ativos), V é a tensão e F é a frequência do relógio. Aumentos em F elevam o consumo. Esse problema levou ao cancelamento dos processadores Tejas and Jayhawk da Intel em 8 de maio de 2004, marcando o fim do escalonamento de frequência como paradigma dominante.
+Para mitigar consumo e calor, fabricantes de CPU começaram a produzir processadores energeticamente eficientes com múltiplos núcleos. Cada núcleo é independente e acessa a mesma memória concorrentemente. Processadores multinúcleo trouxeram a computação paralela a computadores de mesa. Em 2012, processadores quad-core tornaram-se padrão em desktops, enquanto servidores já possuíam 10 núcleos. Até 2023, alguns chegavam a mais de cem núcleos, inclusive com núcleos de desempenho e eficiência (como ARM big.LITTLE). Pela Lei de Moore, prevê-se que o número de núcleos dobrará a cada 18 24 meses.
 Um sistema operacional pode distribuir tarefas em múltiplos núcleos. Contudo, para que software serial aproveite totalmente o multicore, o programador deve reestruturar e paralelizar o código. O ganho de desempenho não virá mais do aumento de frequência, mas da paralelização do software.
-
-=== Leis relevantes ===
-
 Artigo principal: Lei de Amdahl
-Ideally, o Speedup da paralelização seria linear — dobrar o número de elementos de processamento reduziria o tempo pela metade; dobrar novamente, reduziria pela metade de novo. Porém, raros algoritmos alcançam esse ganho ótimo. A maioria tem aceleração quase linear para poucos elementos, mas estagna com muitos.
+Ideally, o Speedup da paralelização seria linear dobrar o número de elementos de processamento reduziria o tempo pela metade; dobrar novamente, reduziria pela metade de novo. Porém, raros algoritmos alcançam esse ganho ótimo. A maioria tem aceleração quase linear para poucos elementos, mas estagna com muitos.
 O ganho potencial máximo de um sistema é calculado pela Lei de Amdahl. A Lei de Amdahl indica que o melhor desempenho é alcançado equilibrando aprimoramentos em componentes paralelizáveis e não paralelizáveis, e mostra retornos decrescentes ao adicionar processadores.
 A Lei de Amdahl tem limitações: assume carga fixa, ignora sobrecargas de comunicação e sincronização, foca no aspecto computacional e negligencia fatores extrínsecos como persistência de dados, E/S e acesso à memória.
 As leis de Gustafson e Lei de Escalabilidade Universal oferecem avaliações mais realistas do desempenho paralelo.
-
-=== Dependências ===
 Compreender dependências de dados é fundamental para algoritmos paralelos. Nenhum programa pode rodar mais rápido que o maior caminho crítico (a longa cadeia de cálculos dependentes), pois cálculos dependentes devem seguir ordem. Mas a maioria dos algoritmos não é apenas uma longa cadeia; há oportunidades de paralelismo.
 Sejam Pi e Pj segmentos de programa. As condições de Bernstein definem quando são independentes e podem rodar em paralelo:
-
 I
-
 j
-
-∩
-
 O
-
 i
-
-=
-∅
-
-{\displaystyle I_{j}\cap O_{i}=\varnothing }
-
+displaystyle I j cap O i varnothing
 I
-
 i
-
-∩
-
 O
-
 j
-
-=
-∅
-
-{\displaystyle I_{i}\cap O_{j}=\varnothing }
-
+displaystyle I i cap O j varnothing
 O
-
 i
-
-∩
-
 O
-
 j
-
-=
-∅
-
-{\displaystyle O_{i}\cap O_{j}=\varnothing }
-
+displaystyle O i cap O j varnothing
 Violação de fluxo ocorre na primeira, antidependência na segunda, e dependência de saída na terceira.
 Exemplos:
-
 : 1: function Dep(a, b)
-: 2: c := a * b
-: 3: d := 3 * c
+: 2: c : a b
+: 3: d : 3 c
 : 4: end function
-
 Aqui, instrução 3 depende de 2 (fluxo), não podendo rodar antes ou em paralelo.
-
 : 1: function NoDep(a, b)
-: 2: c := a * b
-: 3: d := 3 * b
-: 4: e := a + b
+: 2: c : a b
+: 3: d : 3 b
+: 4: e : a b
 : 5: end function
-
 Sem dependências, todas podem rodar em paralelo.
 Bernstein não permite memória compartilhada; para isso, é preciso impor ordenação entre acessos, como semáforos ou barreiras.
-
-=== Condições de corrida, exclusão mútua, sincronização e desaceleração paralela ===
 Subtarefas são chamadas threads. Algumas arquiteturas usam fibers ou processes, mas "threads" é o termo genérico. Threads frequentemente precisam de acesso sincronizado a um recurso, como ao atualizar uma variável compartilhada. Sem sincronização, instruções podem ser entrelaçadas de modo incorreto, criando condição de corrida. Exemplo:
-
 Se 1B ocorre entre 1A e 3A, dados incorretos resultam. Usa-se lock para exclusão mútua:
-
 Locks garantem correção, mas podem retardar e afetar confiabilidade.
 Bloquear múltiplas variáveis com locks não atômicos pode causar deadlock. Locks atômicos bloqueiam múltiplas variáveis de uma vez, evitando deadlocks.
 Muitos programas exigem que threads sincronizem em barreiras, implementadas com locks ou semáforos. Algoritmos lock-free e wait-free evitam locks, mas são difíceis e exigem estruturas de dados especiais.
-Nem toda paralelização resulta em aceleração: threads podem gastar mais tempo comunicando ou esperando recursos. Quando sobrecarga de comunicação domina, mais threads podem aumentar o tempo — chamado parallel slowdown. Pode ser mitigado por análise e redesenho de software.
-
-=== Paralelismo de grão fino, grosso e embarassingly parallel ===
+Nem toda paralelização resulta em aceleração: threads podem gastar mais tempo comunicando ou esperando recursos. Quando sobrecarga de comunicação domina, mais threads podem aumentar o tempo chamado parallel slowdown. Pode ser mitigado por análise e redesenho de software.
 Aplicações são classificadas segundo a frequência de comunicação entre subtarefas. Se precisam se comunicar muitas vezes por segundo, têm paralelismo de grão fino; poucas vezes, grão grosso; raramente, Embarrassingly parallel, as mais fáceis de paralelizar.
-
-=== Taxonomia de Flynn ===
-
 Michael J. Flynn criou um dos primeiros sistemas de classificação para computadores e programas, conhecido como Taxonomia de Flynn. Ele classificou conforme o número de fluxos de instruções e dados:
-
 SISD (Single Instruction, Single Data): programa totalmente sequencial.
 SIMD (Single Instruction, Multiple Data): mesma operação em múltiplos dados, comum em processamento de sinais.
 MISD (Multiple Instruction, Single Data): raro; arquiteturas como systolic array foram propostas mas pouco usadas.
 MIMD (Multiple Instruction, Multiple Data): mais comum em programas paralelos.
-Segundo David A. Patterson e John L. Hennessy, "Algumas máquinas são híbridas destas categorias, mas este modelo clássico sobrevive por ser simples, fácil de entender e oferecer uma boa aproximação. É também — talvez por sua compreensão clara — o esquema mais amplamente usado."
-
-== Desvantagens ==
+Segundo David A. Patterson e John L. Hennessy, "Algumas máquinas são híbridas destas categorias, mas este modelo clássico sobrevive por ser simples, fácil de entender e oferecer uma boa aproximação. É também talvez por sua compreensão clara o esquema mais amplamente usado."
 A computação paralela pode gerar grande sobrecarga na mesclagem de dados de múltiplos processos. Especificamente, comunicação e sincronização podem ter custos duas ou mais ordens de magnitude superiores ao processamento em thread única. Portanto, a melhoria global deve ser cuidadosamente avaliada.
-
-== Granularidade ==
-
-=== Paralelismo em nível de bit ===
-
-Do advento da tecnologia VLSI na década de 1970 até cerca de 1986, o aumento de velocidade era obtido dobrando-se o tamanho da palavra de máquina — a quantidade de informação manipulável por ciclo. Aumentar o tamanho da palavra reduz o número de instruções para operações em variáveis maiores. Por exemplo, um processador de 8 bits precisa de duas instruções para somar inteiros de 16 bits, enquanto um de 16 bits faz em uma só.
+Do advento da tecnologia VLSI na década de 1970 até cerca de 1986, o aumento de velocidade era obtido dobrando-se o tamanho da palavra de máquina a quantidade de informação manipulável por ciclo. Aumentar o tamanho da palavra reduz o número de instruções para operações em variáveis maiores. Por exemplo, um processador de 8 bits precisa de duas instruções para somar inteiros de 16 bits, enquanto um de 16 bits faz em uma só.
 Microprocessadores de 4 bits foram substituídos por 8, depois 16, depois 32 bits, padrão por duas décadas. Nos anos 2000, x86-64 introduziu processadores de 64 bits.
-
-=== Paralelismo em nível de instrução ===
-
-Um programa é um fluxo de instruções. Sem paralelismo em instrução, processadores emitem menos de uma instrução por ciclo (IPC < 1), sendo subescalares. Instruções podem ser reordenadas e agrupadas para execução paralela sem alterar o resultado — paralelismo em nível de instrução. Dominou a arquitetura de meados dos anos 1980 aos 1990.
-
-Processadores modernos têm pipelines de N estágios, podendo ter até N instruções em estágios diferentes, alcançando IPC = 1. Exemplo canônico: RISC de cinco estágios (IF, ID, EX, MEM, WB). O Pentium 4 tinha pipeline de 35 estágios.
-
-Muitos também têm múltiplas unidades de execução, combinadas com pipeline, emitindo >1 instrução por ciclo (IPC > 1). São chamados superscalar. Difere de Processador multinúcleo: as unidades não são núcleos independentes. Instruções só agrupam se não houver dependência de dados. Técnicas comuns: scoreboarding e algoritmo de Tomasulo.
-
-=== Paralelismo de tarefas ===
+Um programa é um fluxo de instruções. Sem paralelismo em instrução, processadores emitem menos de uma instrução por ciclo (IPC 1), sendo subescalares. Instruções podem ser reordenadas e agrupadas para execução paralela sem alterar o resultado paralelismo em nível de instrução. Dominou a arquitetura de meados dos anos 1980 aos 1990.
+Processadores modernos têm pipelines de N estágios, podendo ter até N instruções em estágios diferentes, alcançando IPC 1. Exemplo canônico: RISC de cinco estágios (IF, ID, EX, MEM, WB). O Pentium 4 tinha pipeline de 35 estágios.
+Muitos também têm múltiplas unidades de execução, combinadas com pipeline, emitindo 1 instrução por ciclo (IPC 1). São chamados superscalar. Difere de Processador multinúcleo: as unidades não são núcleos independentes. Instruções só agrupam se não houver dependência de dados. Técnicas comuns: scoreboarding e algoritmo de Tomasulo.
 Paralelismo de tarefas significa que cálculos totalmente diferentes podem ocorrer no mesmo ou em diferentes dados. Contrasta com paralelismo de dados, onde o mesmo cálculo é aplicado a diferentes dados. Envolve decompor tarefas em subtarefas, alocando cada uma a um processador, executando-as concorrentemente. Não escala com o tamanho do problema.
-
-=== Paralelismo em nível de superpalavra ===
 Paralelismo de superpalavra é técnica de vetorização automática baseada em desenrolar laços e vetorização de blocos básicos, explorando paralelismo em código inline, como manipulação de canais de cor ou coordenadas.
-
-== Hardware ==
-
-=== Memória e comunicação ===
 A memória principal pode ser memória compartilhada (num único espaço de endereçamento), ou memória distribuída. Memória distribuída implica distribuição lógica e física. Memória compartilhada distribuída e virtualização de memória combinam abordagens, com acesso mais rápido à memória local. Em supercomputadores, memória compartilhada distribuída pode usar modelos PGAS. Nós se conectam a um sistema de memória compartilhada externa via interconexão de alta velocidade (ex.: Infiniband), chamado burst buffer, construído com arrays de memória não volátil distribuídos.
-
 Arquiteturas com latência e largura de banda uniformes são UMA; tipicamente memória compartilhada não distribuída. Arquiteturas não-UMA são NUMA, comum em sistemas distribuídos.
-Sistemas paralelos usam caches — memórias rápidas próximas ao processador. Coerência de cache é complexa, exigindo técnicas como bus snooping. Sistemas compartilhados escalam pior que distribuídos.
+Sistemas paralelos usam caches memórias rápidas próximas ao processador. Coerência de cache é complexa, exigindo técnicas como bus snooping. Sistemas compartilhados escalam pior que distribuídos.
 Comunicação entre processadores pode ser via memória compartilhada multiportada, crossbar switch, barramento ou redes de interconexão (estrela, anel, árvore, hipercubo, malha, etc.). Roteamento é necessário para nós não diretamente conectados, especialmente em máquinas multiprocessadas hierárquicas.
-
-=== Classes de computadores paralelos ===
 Classificação análoga à distância entre nós de computação. Não exclusivas; clusters de SMPs comuns.
-
-==== Computação multinúcleo ====
-
 Processador multinúcleo tem vários núcleos no mesmo chip, emitindo instruções de múltiplos fluxos por ciclo, diferentemente de superscalar (múltiplas unidades de execução de um fluxo). Ex.: Cell da IBM, usado no PlayStation 3. Cada núcleo pode ser superscalar.
 Multithreading simultâneo (ex: Hyper-Threading) foi forma inicial de pseudo-multinúcleo. Processadores com multithreading concorrente têm múltiplas unidades de execução; multithreading temporal emite uma instrução de múltiplos threads.
-
-==== Multiprocessamento simétrico ====
-
-SMP é sistema com vários processadores idênticos compartilhando memória via barramento. Contenção de barramento limita SMPs a ~32 processadores. SMPs são custo-efetivos com caches grandes, desde que haja largura de banda de memória.
-
-==== Computação distribuída ====
-
+SMP é sistema com vários processadores idênticos compartilhando memória via barramento. Contenção de barramento limita SMPs a 32 processadores. SMPs são custo-efetivos com caches grandes, desde que haja largura de banda de memória.
 Computador distribuído conecta elementos por rede. Termos "concorrente", "paralelo" e "distribuído" se sobrepõem. Um sistema pode ser paralelo e distribuído simultaneamente.
-
-===== Clusters =====
-
 Clusters são grupos de computadores independentes trabalhando juntos, agindo como um só. Máquinas idem facilitam balanceamento de carga. Ex.: cluster Beowulf em COTS com Ethernet. Desenvolvido por Thomas Sterling e Donald Becker. 87% dos Top500 são clusters. Grids tratam problemas embarassingly parallel; clusters modernos lidam com problemas que exigem compartilhamento frequente de dados, requerendo alta largura de banda e baixa latência (ex.: Cray Gemini, InfiniBand, Myrinet, Gigabit Ethernet).
-
-===== Computação massivamente paralela =====
-
-MPP é um único sistema com muitos processadores em rede, com interconexão especializada, normalmente >100 CPUs. Cada CPU tem memória e sistema operacional próprios, comunicando-se por interconexão de alta velocidade. Ex.: Blue Gene/L ficou em 5.º no Top500 de junho de 2009.
-
-===== Computação em grade =====
-
+MPP é um único sistema com muitos processadores em rede, com interconexão especializada, normalmente 100 CPUs. Cada CPU tem memória e sistema operacional próprios, comunicando-se por interconexão de alta velocidade. Ex.: Blue Gene/L ficou em 5.o no Top500 de junho de 2009.
 Grid computing usa Internet para resolver problemas embarassingly parallel em larga escala. Usa middleware (ex.: BOINC). Computação voluntária aproveita ciclos ociosos.
-
-===== Cloud computing =====
-
 A ubiquidade da Internet possibilitou computação em nuvem.
-
-==== Computadores especializados ====
 Dispositivos especializados para tarefas paralelas específicas.
-
-===== Computação reconfigurável com FPGA =====
-Computação reconfigurável usa FPGAs como coprocessadores. Programáveis em VHDL ou Verilog. Linguagens C-to-HDL: Mitrion-C, Impulse C, Handel-C. SystemC (C++) serve FPGAs.
+Computação reconfigurável usa FPGAs como coprocessadores. Programáveis em VHDL ou Verilog. Linguagens C-to-HDL: Mitrion-C, Impulse C, Handel-C. SystemC (C ) serve FPGAs.
 AMD abriu HyperTransport a terceiros, viabilizando computação reconfigurável de alto desempenho. Segundo Michael R. D'Amour, "quando entramos na AMD, eles nos chamavam de 'socket stealers'. Agora somos parceiros."
-
-===== GPGPU =====
-
 Computação geral em GPUs usa coprocessadores otimizados para gráficos e álgebra linear. Surgiram linguagens e APIs: CUDA, AMD FireStream SDK, BrookGPU, PeakStream, RapidMind. Nvidia Tesla e especificação OpenCL do Khronos Group são suportadas por AMD, Apple, Intel, Nvidia etc.
-
-===== ASICs =====
-ASICs para aplicações paralelas podem superar CPUs gerais em desempenho, mas exigem máscaras caras (~US$1 mi). Lei de Moore tende a anular ganhos em 1–2 gerações. Apesar de caros e ultrapassados rapidamente, alguns existem, como o MDGRAPE-3 do RIKEN.
-
-===== Processadores vetoriais =====
-
-Processador vetorial executa instruções em vetores de dados, contrastando com processadores escalares. Ex.: A = B × C, onde A, B e C são vetores de 64 elementos de ponto flutuante. Flynn SIMD. Cray tornou vetoriais famosos; hoje vetorização está em instruções vetoriais (AltiVec, SSE).
-
-== Software ==
-
-=== Linguagens de programação paralela ===
+ASICs para aplicações paralelas podem superar CPUs gerais em desempenho, mas exigem máscaras caras ( US 1 mi). Lei de Moore tende a anular ganhos em 1 2 gerações. Apesar de caros e ultrapassados rapidamente, alguns existem, como o MDGRAPE-3 do RIKEN.
+Processador vetorial executa instruções em vetores de dados, contrastando com processadores escalares. Ex.: A B C, onde A, B e C são vetores de 64 elementos de ponto flutuante. Flynn SIMD. Cray tornou vetoriais famosos; hoje vetorização está em instruções vetoriais (AltiVec, SSE).
 Linguagens, bibliotecas e APIs para programação paralela dividem-se conforme memória: compartilhada, distribuída ou mista. POSIX Threads e OpenMP são populares em memória compartilhada; MPI domina passagem de mensagens. Conceitos como futuro permitem prometer dados entre partes do programa.
 Padrões como OpenHMPP oferecem diretivas para offload em aceleradores e otimização de transferência de dados via RPC.
-
-=== Paralelização automática ===
 Automatizar paralelização por compilador é o "Santo Graal" da computação paralela. Resultados até agora são limitados a classes específicas de algoritmos científicos e numéricos.
-
-=== Checkpointing de aplicação ===
-Com sistemas maiores, a MTBF cai. Checkpointing tira um "snapshot" da aplicação — alocações e estados — permitindo retomar do último ponto em caso de falha. Muito útil em sistemas paralelos com muitos processadores.
-
-== Métodos algorítmicos ==
+Com sistemas maiores, a MTBF cai. Checkpointing tira um "snapshot" da aplicação alocações e estados permitindo retomar do último ponto em caso de falha. Muito útil em sistemas paralelos com muitos processadores.
 Computadores paralelos maiores e mais rápidos permitem resolver problemas antes inviáveis em bioinformática (dobramento de proteínas, análise de sequências) e economia. Problemas comuns incluem:
-
 Álgebra linear densa
 Álgebra linear esparsa
-Métodos espectrais (p.ex. Cooley–Tukey FFT)
-Problemas de N corpos (p.ex. Barnes–Hut)
+Métodos espectrais (p.ex. Cooley Tukey FFT)
+Problemas de N corpos (p.ex. Barnes Hut)
 Problemas em grade estruturada (p.ex. Lattice Boltzmann methods)
 Problemas em grade não estruturada (p.ex. Elementos finitos)
 Método de Monte Carlo
@@ -225,22 +105,14 @@ Métodos branch and bound
 Modelos gráficos (p.ex. Hidden Markov model, rede bayesiana)
 Modelo HBJ de passagem de mensagens
 Simulação de automato finito
-
-== Tolerância a falhas ==
 Computação paralela pode ser aplicada a sistemas lockstep, executando operações em paralelo para redundância e detecção/correção de erros se resultados divergem. Útil contra single-event upsets transitórios.
-
-== Histórico ==
-
 As raízes do paralelismo MIMD remontam a Luigi Federico Menabrea e seu Sketch of the Analytic Engine Invented by Charles Babbage.
 Em 1957, a Compagnie des Machines Bull anunciou o primeiro design para paralelismo, o Gamma 60. Ele usava modelo fork-join e um "Distribuidor de Programas" para comunicar-se com unidades independentes.
 Em abril de 1958, Stanley Gill (Ferranti) discutiu programação paralela e necessidade de branching e waiting. Também em 1958, John Cocke e Daniel Slotnick (IBM) abordaram paralelismo em cálculos numéricos. A Burroughs introduziu o D825 em 1962, um sistema de quatro processadores e 16 módulos de memória via crossbar. Em 1967, Amdahl e Slotnick debateram o paralelo no AFIPS, cunhando a Lei de Amdahl.
-Em 1969, a Honeywell lançou um sistema Multics SMP com até oito processadores. O C.mmp (CMU, anos 1970) foi um dos primeiros multiprocessadores maiores. O Synapse N+1 (1984) foi o primeiro com cache snooping.
-Computadores SIMD datam dos anos 1970, visando amortizar latência de controle. Em 1964, Slotnick propôs o ILLIAC IV para LLNL, financiado pela Força Aérea dos EUA — o primeiro esforço SIMD massivo. Quando rodou sua primeira aplicação real em 1976, já era ultrapassado por supercomputadores como o Cray-1.
-
-== Cérebro biológico como computador massivamente paralelo ==
+Em 1969, a Honeywell lançou um sistema Multics SMP com até oito processadores. O C.mmp (CMU, anos 1970) foi um dos primeiros multiprocessadores maiores. O Synapse N 1 (1984) foi o primeiro com cache snooping.
+Computadores SIMD datam dos anos 1970, visando amortizar latência de controle. Em 1964, Slotnick propôs o ILLIAC IV para LLNL, financiado pela Força Aérea dos EUA o primeiro esforço SIMD massivo. Quando rodou sua primeira aplicação real em 1976, já era ultrapassado por supercomputadores como o Cray-1.
 Nos anos 1970, no MIT CSAIL, Marvin Minsky e Seymour Papert desenvolveram a teoria Society of Mind, que vê o cérebro como computação massivamente paralela. Em 1986, Minsky publicou The Society of Mind, afirmando que "a mente é formada por muitos pequenos agentes, cada um sem inteligência por si só".
 Modelos semelhantes foram propostos por:
-
 Thomas R. Blakeslee,
 Michael Gazzaniga,
 Robert E. Ornstein,
@@ -248,10 +120,6 @@ Ernest Hilgard,
 Michio Kaku,
 George Ivanovich Gurdjieff,
 Modelo Neurocluster.
-
-== Referências ==
-
-== Ligações externas ==
 Parallel Virtual Machine (PVM)
 Message Passing Interface (MPI)
 Open Cluster Framework

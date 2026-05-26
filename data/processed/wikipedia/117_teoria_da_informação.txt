@@ -1,737 +1,398 @@
 A teoria matemática da informação estuda a quantificação, armazenamento e comunicação da informação. Ela foi originalmente proposta por Claude E. Shannon em 1948 para achar os limites fundamentais no processamento de sinais e operações de comunicação, como as de compressão de dados. No entanto, o termo “informação”, em geral, é usado como um substantivo abstrato de massa para denotar qualquer quantidade de dados, código ou texto armazenado, enviado, recebido ou manipulado em qualquer meio. A história do termo “informação” quanto dos vários conceitos a ele associados é complexa e o significado do termo “informação” varia em diferentes contextos.
-
-== Definição ==
 Em um artigo divisor de águas, publicado por Claude E. Shannon intitulado "A Mathematical Theory of Communication", que apresentou uma forma de medir informação. Agora essa teoria tem várias aplicações nas mais diversas áreas, incluindo inferência estatística, processamento de linguagem natural, criptografia, neurociência computacional, evolução e computação quântica.
 A medida chave em teoria da informação é a entropia. A entropia é o grau de aleatoriedade, de indeterminação que algo possui. Quanto maior a informação, maior a desordem, maior a entropia. Quanto menor a informação, menor a escolha, menor a entropia. Dessa forma, esse processo quantifica a quantidade de incerteza envolvida no valor de uma variável aleatória ou na saída de um processo aleatório. Por exemplo, a saída de cara ou coroa de uma moeda honesta (com duas saídas igualmente prováveis) fornece menos informação (menor entropia) do que especificar a saída da rolagem de um dado de seis faces (com seis saídas igualmente prováveis). Algumas outras medidas importantes em teoria da informação são informação mútua, informação condicional e capacidade de um canal.
 Aplicações de tópicos fundamentais da teoria da informação incluem compressão sem perdas de dados (como ZIP), e compressão com perdas de dados (como MP3 e JPEG).
 Essa teoria é considerada uma das fundadoras das ciências da comunicação. Um dos criadores da teoria da informação, Weaver, defende que comunicação é o processo de transmissão plena de uma ideia. E para isso a informação deve solucionar três níveis de problemas: técnico, semântico e de influência. Enquanto a maior parte das pessoas acredita que o principal aspecto da comunicação é a interpretação (nível semântico) ou o efeito (problema de influência), a teoria matemática da comunicação traz as questões técnicas para o centro da discussão. Esse nível envolve tudo que diz respeito à precisão na transmissão de informação que parte do emissor e vai até o receptor através de um sinal, seja de rádio, telefone ou televisão. Sua importância se justapõe à dos outros dois níveis de problemas, porque eles dependem inevitavelmente da eficácia na transmissão das mensagens.
 O campo está na intersecção da matemática, estatística, ciência da computação, física, neurobiologia e engenharia elétrica. Seu impacto é crucial, por exemplo, no sucesso das missões da sonda Voyager no espaço, no entendimento de buracos negros e da consciência humana, como na teoria de integração da informação (do inglês, Integrated Information Theory) proposta por Giulio Tononi.
-
-=== Definição técnica da informação ===
 O termo "informação" especifica (sob o contexto da teoria da informação) o valor-surpresa de determinado conteúdo (ou mensagem) que consegue diminuir a quantidade de incerteza que existe em algum meio físico anteriormente à chegada do conteúdo informativo. Colocando de outro modo, informação especifica o quanto a ignorância ou incerteza previamente existente foi reduzida em um meio assim que este recebeu a mensagem informativa. Usualmente, a consequência da mensagem informativa é tornar a incerteza previamente existente em certeza.
 Por exemplo, suponhamos que você precise identificar um certo indivíduo em uma lista composta por 30 pessoas. Você somente pode receber respostas do tipo Sim ou Não (respostas binárias). Perguntas como "É homem ou mulher?" e "Tem cabelo loiro?" me dão informações que diminuirão minha incerteza sobre qual indivíduo preciso achar. Em outras palavras, após eu encontrar o ser que estou procurando, a incerteza previamente existente se transformará em certeza.
 A informação consiste em um estado (ou configuração) particular dos elementos que compõem um determinado meio que tem a capacidade de afetar esse próprio meio ou qualquer outro. Isso é o mesmo que dizer que a informação é uma propriedade que um meio pode possuir, e designa sobretudo os estados que podem resultar em algum efeito útil para alguma finalidade.
-
-== Contexto histórico ==
 O marco que estabeleceu a teoria da informação e chamou imediatamente a atenção mundial foi o artigo A Mathematical Theory of Communication escrito por Claude Shannon de julho a outubro de 1948.
 Antes deste artigo, algumas abordagens teóricas ainda que limitadas vinham sendo desenvolvidas nos laboratórios da Bell, todas implicitamente assumindo eventos de igual probabilidade. O artigo Certain Factors Affecting Telegraph Speed de Harry Nyquist escrito em 1924 contém uma seção teórica que quantifica inteligência e a velocidade de transmissão pela qual ela pode ser transmitida por um sistema de comunicação, estabelecendo a relação
-
 W
-=
 K
 log
-⁡
-
 m
-
-{\displaystyle W=K\log {m}}
-
+displaystyle W K log m
 , onde
-
 W
-
-{\displaystyle W}
-
+displaystyle W
 é a velocidade de transmissão da inteligência,
-
 m
-
-{\displaystyle m}
-
+displaystyle m
 é o número de níveis de tensão para cada intervalo de tempo, e
-
 K
-
-{\displaystyle K}
-
+displaystyle K
 é uma constante. Em 1928, Ralph Hartley publicou o artigo Transmission of Information, onde aparece a palavra informação como uma medida da capacidade do destinatário para distinguir diferentes sequências de símbolos, levando à expressão
-
 H
-=
 log
-⁡
-
 S
-
 n
-
-=
 n
 log
-⁡
-
 S
-
-{\displaystyle H=\log {S^{n}}=n\log {S}}
-
+displaystyle H log S n n log S
 , onde
-
 S
-
-{\displaystyle S}
-
+displaystyle S
 e
-
 n
-
-{\displaystyle n}
-
-representam, respectivamente, o número de símbolos possíveis e o número de símbolos na transmissão. Inicialmente, a unidade natural da transmissão foi definida como sendo o dígito decimal, sendo, posteriormente, renomeada para hartley em uma clara homenagem. Alan Turing em 1940, durante a 2ª Guerra Mundial, aplicou ideias similares como parte da análise estatística para decifrar a criptografia da máquina alemã Enigma.
+displaystyle n
+representam, respectivamente, o número de símbolos possíveis e o número de símbolos na transmissão. Inicialmente, a unidade natural da transmissão foi definida como sendo o dígito decimal, sendo, posteriormente, renomeada para hartley em uma clara homenagem. Alan Turing em 1940, durante a 2a Guerra Mundial, aplicou ideias similares como parte da análise estatística para decifrar a criptografia da máquina alemã Enigma.
 Boa parte da matemática por trás da teoria da informação com eventos de diferentes probabilidades foi desenvolvida para os campos da termodinâmica por Ludwig Boltzmann e J. Willard Gibbs. As conexões entre as entropias da informação e termodinâmica, incluindo as importantes contribuições de Rolf Landauer na década de 1960, são exploradas na Entropia termodinâmica e teoria da informação.
 No artigo seminal de Shannon, introduz-se pela primeira vez um modelo quantitativo e qualitativo da comunicação, apresentando-a como um processo estatístico subjacente à teoria da informação. Shannon inicia seu artigo dizendo
 "O problema fundamental da comunicação é reproduzir em um dado ponto, exata ou aproximadamente, uma mensagem produzida em outro ponto."
 Com este artigo vieram à tona os conceitos
-
 de entropia da informação e redundância de uma fonte, e sua aplicação no teorema de codificação da fonte;
 de informação mútua e capacidade de um canal com ruído, incluindo a promessa de comunicação sem perdas estabelecida no teorema de codificação de canais-ruidosos;
 da lei de Shannon-Hartley para a capacidade de um canal Gaussiano;
 do bit - uma nova forma de enxergar a unidade fundamental da informação.
-
-== Variáveis aleatórias discretas ==
 Antes de prosseguir é importante definir a notação utilizada para as variáveis aleatórias discretas. Dado uma variável aleatória
-
 R
-
-{\displaystyle R}
-
+displaystyle R
 , que pode assumir
-
 m
-
-{\displaystyle m}
-
+displaystyle m
 valores, podemos representá-la como:
-
 R
-=
-{
-
 r
-
 1
-
 ,
 .
 .
 .
 ,
-
 r
-
 m
-
-}
-
-{\displaystyle R=\{r_{1},...,r_{m}\}}
-
+displaystyle R r 1 ,...,r m
 Onde
-
 r
-
 i
-
-{\displaystyle r_{i}}
-
+displaystyle r i
 é o i-ésimo valor que pode ser assumido pela variável. Cada um dos
-
 m
-
-{\displaystyle m}
-
+displaystyle m
 valores podem acontecer com probabilidade
-
 p
-
-{\displaystyle p}
-
+displaystyle p
 , não necessariamente iguais. A distribuição de probabilidades de
-
 R
-
-{\displaystyle R}
-
+displaystyle R
 é representada como:
-
 p
 (
 R
 )
-=
-{
-
 p
-
 1
-
 ,
 .
 .
 .
 ,
-
 p
-
 m
-
-}
-
-{\displaystyle p(R)=\{p_{1},...,p_{m}\}}
-
+displaystyle p(R) p 1 ,...,p m
 Nesse caso
-
 p
-
 i
-
-{\displaystyle p_{i}}
-
+displaystyle p i
 , com
-
 1
-≤
 i
-≤
 m
-
-{\displaystyle 1\leq i\leq m}
-
+displaystyle 1 leq i leq m
 , representa a probabilidade do valor
-
 r
-
 i
-
-{\displaystyle r_{i}}
-
+displaystyle r i
 acontecer. Esse tipo de distribuição pode ser representada com um gráfico de barras como na figura a seguir.
-
 Para uma dada distribuição de probabilidades a condição
-
-∑
-
 i
-=
 0
-
 n
-
 p
-
 i
-
-=
 1
-
-{\displaystyle \sum _{i=0}^{n}p_{i}=1}
-
+displaystyle sum i 0 n p i 1
 é cumprida.
-*
 Dado duas variáveis aleatórias
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 e
-
 Y
-
-{\displaystyle Y}
-
+displaystyle Y
 , cada uma podendo assumir quatro valores, logo
-
 X
-=
-{
-
 x
-
 1
-
 ,
-
 x
-
 2
-
 ,
-
 x
-
 3
-
 ,
-
 x
-
 4
-
-}
-
-{\displaystyle X=\{x_{1},x_{2},x_{3},x_{4}\}}
-
+displaystyle X x 1 ,x 2 ,x 3 ,x 4
 e
-
 Y
-=
-{
-
 y
-
 1
-
 ,
-
 y
-
 2
-
 ,
-
 y
-
 3
-
 ,
-
 y
-
 4
-
-}
-
-{\displaystyle Y=\{y_{1},y_{2},y_{3},y_{4}\}}
-
+displaystyle Y y 1 ,y 2 ,y 3 ,y 4
 , com distribuições de probabilidade
-
 p
 (
 X
 )
-=
-{
 p
 (
-
 x
-
 1
-
 )
 ,
 p
 (
-
 x
-
 2
-
 )
 ,
 p
 (
-
 x
-
 3
-
 )
 ,
 p
 (
-
 x
-
 4
-
 )
-}
-
-{\displaystyle p(X)=\{p(x_{1}),p(x_{2}),p(x_{3}),p(x_{4})\}}
-
+displaystyle p(X) p(x 1 ),p(x 2 ),p(x 3 ),p(x 4 )
 e
-
 p
 (
 Y
 )
-=
-{
 p
 (
-
 y
-
 1
-
 )
 ,
 p
 (
-
 y
-
 2
-
 )
 ,
 p
 (
-
 y
-
 3
-
 )
 ,
 p
 (
-
 y
-
 4
-
 )
-}
-
-{\displaystyle p(Y)=\{p(y_{1}),p(y_{2}),p(y_{3}),p(y_{4})\}}
-
+displaystyle p(Y) p(y 1 ),p(y 2 ),p(y 3 ),p(y 4 )
 . A distribuição conjunta das variáveis pode ser determinada medindo-se a frequência de ocorrência dos pares
-
 B
-
 i
 j
-
-=
-
 x
-
 i
-
 ,
-
 y
-
 j
-
-{\displaystyle B_{ij}={x_{i},y_{j}}}
-
+displaystyle B ij x i ,y j
 , com
-
 i
 ,
 j
-≤
 4
-
-{\displaystyle i,j\leq 4}
-
+displaystyle i,j leq 4
 .
 Medindo o número de ocorrências dos pares
-
 B
-
 i
 j
-
-{\displaystyle B_{ij}}
-
+displaystyle B ij
 , em uma amostragem de tamanho
-
 n
-
-{\displaystyle n}
-
+displaystyle n
 suficientemente grande, é possível determinar as probabilidades de cada par dividindo o número de ocorrências de cada um deles por
-
 n
-
-{\displaystyle n}
-
+displaystyle n
 . Dando a distribuição de probabilidades conjunta (do inglês, joint probability distribution).
 A distribuição conjunta pode ser por um histograma tridimensional, como o mostrado a seguir.
-
 A partir da distribuição conjunta de
-
 X
 ,
 Y
-
-{\displaystyle X,Y}
-
+displaystyle X,Y
 , é possível obter as distribuições de
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 ou de
-
 Y
-
-{\displaystyle Y}
-
+displaystyle Y
 (chamadas de distribuições marginais), através de um processo chamado marginalização. Por exemplo, se quisermos obter o valor da distribuição
-
 p
 (
 X
 )
-
-{\displaystyle p(X)}
-
+displaystyle p(X)
 para
-
 X
-=
-
 x
-
 i
-
-{\displaystyle X=x_{i}}
-
+displaystyle X x i
 então devemos fazê-lo somando por todos os
-
 m
-
 y
-
-{\displaystyle m_{y}}
-
+displaystyle m y
 valores de
-
 Y
-
-{\displaystyle Y}
-
+displaystyle Y
 para
-
 X
-=
-
 x
-
 i
-
-{\displaystyle X=x_{i}}
-
+displaystyle X x i
 :
-
 p
 (
 X
-=
-
 x
-
 i
-
 )
-=
-
-∑
-
 j
-=
 0
-
 m
-
 y
-
 p
 (
-
 x
-
 i
-
 ,
-
 y
-
 j
-
 )
-
-{\displaystyle p(X=x_{i})=\sum _{j=0}^{m_{y}}p(x_{i},y_{j})}
-
-Fazendo isso fixando cada um dos possíveis valores de $X$, obtemos a distribuição marginal
-
+displaystyle p(X x i ) sum j 0 m y p(x i ,y j )
+Fazendo isso fixando cada um dos possíveis valores de X , obtemos a distribuição marginal
 p
 (
 X
 )
-
-{\displaystyle p(X)}
-
+displaystyle p(X)
 :
-
 p
 (
 X
 )
-=
-
-∑
-
 j
-=
 0
-
 m
-
 y
-
 p
 (
 X
 ,
-
 y
-
 j
-
 )
-=
-{
 p
 (
-
 x
-
 1
-
 )
 ,
 p
 (
-
 x
-
 2
-
 )
 ,
 p
 (
-
 x
-
 3
-
 )
 ,
 p
 (
-
 x
-
 4
-
 )
-}
-
-{\displaystyle p(X)=\sum _{j=0}^{m_{y}}p(X,y_{j})=\{p(x_{1}),p(x_{2}),p(x_{3}),p(x_{4})\}}
-
+displaystyle p(X) sum j 0 m y p(X,y j ) p(x 1 ),p(x 2 ),p(x 3 ),p(x 4 )
 Para obter a distribuição marginal
-
 p
 (
 Y
 )
-
-{\displaystyle p(Y)}
-
+displaystyle p(Y)
 basta seguir o mesmo procedimento, fixando
-
 Y
-
-{\displaystyle Y}
-
+displaystyle Y
 , em cada um de seus possíveis valores:
-
 p
 (
 Y
 )
-=
-
-∑
-
 i
-=
 0
-
 m
-
 x
-
 p
 (
-
 x
-
 i
-
 ,
 Y
 )
-=
-{
 p
 (
-
 y
-
 1
-
 )
 ,
 p
 (
-
 y
-
 2
-
 )
 ,
 p
 (
-
 y
-
 3
-
 )
 ,
 p
 (
-
 y
-
 4
-
 )
-}
-
-{\displaystyle p(Y)=\sum _{i=0}^{m_{x}}p(x_{i},Y)=\{p(y_{1}),p(y_{2}),p(y_{3}),p(y_{4})\}}
-
-== As grandezas da teoria da informação ==
+displaystyle p(Y) sum i 0 m x p(x i ,Y) p(y 1 ),p(y 2 ),p(y 3 ),p(y 4 )
 A teoria da informação é baseada na teoria de probabilidades e estatística. Ela se preocupa com medidas de informação das distribuições de probabilidade associadas com variáveis aleatórias. Grandezas importantes da teoria da informação são a entropia, uma medida de informação de uma única variável aleatória, e informação mútua, uma medida de informação em comum entre das variáveis aleatórias.
 Na formulação das grandezas da teoria da informação, escolheu-se utilizar bases logarítmicas (para manter propriedades como a aditividade da entropia), mais especificamente a entropia de Shannon é definida com logaritmos na base 2. A unidade utilizada para quantificar informação é o bit (baseado no logaritmo base 2), muito embora outras existam, como o nat (baseada no logaritmo natural), e o hartley (baseado no logaritmo na base 10).
 Tendo citado as aplicações da teoria da informação, seu contexto histórico de surgimento e mencionado as grandezas envolvidas, chegou o momento de discutir mais a fundo alguns dos conceitos bases da teoria, começando pela unidade de informação, o bit.
-
-=== Escolhendo destinos e o bit de informação ===
 A fim de entender de forma intuitiva o que significa dizer 1 bit de informação, imagine a seguinte situação, um viajante, decide sair de sua cidade, no ponto marcado com a letra "A" na figura abaixo e chegar ao seu destino no ponto "D".
-
 O caminho entre "A" e "D" possui várias bifurcações (como os pontos "B" e "C"). Assumindo que o viajante desconhece o caminho, em cada cidade que passar (representada pelas bifurcações) ele pede uma informação, perguntando se deve seguir à direita ou à esquerda. Na figura anterior, dizer que ele deve seguir a esquerda é o mesmo que mostrar o dígito binário 0 a ele, e um sinal de que deve seguir a direita o mesmo que mostrar o dígito 1.
 Dessa forma, como é possível ver pela figura, ele terá que pedir informação nos pontos "A", "B" e "C". Note que independente do destino (
-
-{
 000
 ,
 001
@@ -741,591 +402,295 @@ Dessa forma, como é possível ver pela figura, ele terá que pedir informação
 .
 .
 .
-}
-
-{\displaystyle \{000,001,011,...\}}
-
+displaystyle 000,001,011,...
 ) o número de perguntas para alcançá-lo (nesse caso) é sempre três. Ou seja, escolher entre oito destinos requer três perguntas:
-
 8
-
 destinos
-
-=
-
 2
-
 3
-
 destinos
-
-{\displaystyle 8{\text{ destinos}}=2^{3}{\text{ destinos}}}
-
+displaystyle 8 text destinos 2 3 text destinos
 Note que o o expoente do número dois na equação anterior é igual ao número de perguntas feitas. Define-se então que para escolher entre um dos oito possíveis destinos é necessária uma quantidade de informação igual a
-
 3
-
 b
 i
 t
 s
-
-{\displaystyle 3\,\mathrm {bits} }
-
+displaystyle 3 , mathrm bits
 .
 Aplicando logaritmo de base dois na expressão anterior, temos:
-
 3
-=
-
 log
-
 2
-
-⁡
 8
-
 [
-
 b
 i
 t
 s
-
 ]
-
-{\displaystyle 3=\log _{2}8\quad [\mathrm {bits} ]}
-
+displaystyle 3 log 2 8 quad [ mathrm bits ]
 É importante salientar que como o viajante poderia igualmente ter escolhido qualquer um dos destinos finais possíveis eles são todos equiprováveis com probabilidade
-
 p
-=
 1
-
 /
-
 8
-
-{\displaystyle p=1/8}
-
+displaystyle p 1/8
 .
 De forma análoga, para o caso em que se tem
-
 m
-
-{\displaystyle m}
-
+displaystyle m
 possíveis destinos, e supondo que o viajante possa escolher qualquer um deles com igual probabilidade, a quantidade de informação, em bits, para alcançar um dos possíveis destinos é dada pela relação a seguir:
-
 n
-=
-
 log
-
 2
-
-⁡
 m
-
 [
-
 b
 i
 t
 s
-
 ]
-
-{\displaystyle n=\log _{2}m\quad [\mathrm {bits} ]}
-
+displaystyle n log 2 m quad [ mathrm bits ]
 Com isso conclui-se que
-
 n
-
-{\displaystyle n}
-
+displaystyle n
 bits é a quantidade informação necessária para se escolher entre
-
 m
-
-{\displaystyle m}
-
+displaystyle m
 alternativas equiprováveis, ou
-
 1
 b
 i
 t
-
-{\displaystyle 1bit}
-
+displaystyle 1bit
 é a quantidade de informação necessária para escolher entre duas alternativas equiprováveis.
-
 n
-=
-
 log
-
 2
-
-⁡
 2
-=
 1
-
 b
 i
 t
 s
-
-{\displaystyle n=\log _{2}2=1\,\mathrm {bits} }
-
-=== Informação de Shannon (h) ou surpresa ===
+displaystyle n log 2 2 1 , mathrm bits
 Usarei de outro exemplo para explicar a medida de Informação de Shannon
-
 h
-
-{\displaystyle h}
-
+displaystyle h
 ou surpresa. Imagine nesse caso, uma moeda desonesta (enviesada), que tem probabilidade
-
 p
-
 c
 a
 r
 a
-
-=
 0.9
-
-{\displaystyle p_{\mathrm {cara} }=0.9}
-
+displaystyle p mathrm cara 0.9
 de dar cara e probabilidade
-
 p
-
 c
 o
 r
 o
 a
-
-=
 0.1
-
-{\displaystyle p_{\mathrm {coroa} }=0.1}
-
+displaystyle p mathrm coroa 0.1
 de dar coroa.
 Por você estar acostumado que a jogada dessa moeda quase sempre dê cara, esse resultado não te surpreende. Mas um resultado coroa te surpreende por conta da "raridade" do evento. Pensando nisso, uma forma natural de se definir essa surpresa que se tem, seria como algo proporcional ao inverso da probabilidade
-
 p
-
-{\displaystyle p}
-
+displaystyle p
 de ocorrência do evento, de modo que quando menor essa probabilidade maior a surpresa.
 Shannon definiu essa grandeza como:
-
 h
-=
-
 log
-
 2
-
-⁡
-
 1
 p
-
-{\displaystyle h=\log _{2}{\dfrac {1}{p}}}
-
+displaystyle h log 2 dfrac 1 p
 Utilizando o logaritmo na base dois mantêm-se a propriedade de aditividade dessa grandeza.
 Dessa maneira podemos calcular a surpresa da jogada da moeda retornar cara (
-
 h
-
 c
 a
 r
 a
-
-{\displaystyle h_{\mathrm {cara} }}
-
+displaystyle h mathrm cara
 ) ou coroa (
-
 h
-
 c
 o
 r
 o
 a
-
-{\displaystyle h_{\mathrm {coroa} }}
-
+displaystyle h mathrm coroa
 ) de acordo com a definição anterior.
-
 h
-
 c
 a
 r
 a
-
-=
-
 log
-
 2
-
-⁡
-
 1
 0.9
-
-=
 0.152
-
-{\displaystyle h_{cara}=\log _{2}{\dfrac {1}{0.9}}=0.152}
-
+displaystyle h cara log 2 dfrac 1 0.9 0.152
 e,
-
 h
-
 c
 o
 r
 o
 a
-
-=
-
 log
-
 2
-
-⁡
-
 1
 0.1
-
-=
 3.322
-
-{\displaystyle h_{coroa}=\log _{2}{\dfrac {1}{0.1}}=3.322}
-
+displaystyle h coroa log 2 dfrac 1 0.1 3.322
 De fato,
-
 h
-
 c
 o
 r
 o
 a
-
->
-
 h
-
 c
 a
 r
 a
-
-{\displaystyle h_{coroa}>h_{cara}}
-
+displaystyle h coroa h cara
 , que surpresa!
-
-=== Entropia (H) ===
 A fim de chegar na formulação matemática da entropia, imagine por exemplo uma variável aleatória
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 , que pode assumir dois valores distintos
-
 x
-
 1
-
-{\displaystyle x_{1}}
-
+displaystyle x 1
 e
-
 x
-
 2
-
-{\displaystyle x_{2}}
-
+displaystyle x 2
 com probabilidades
-
 p
-
 1
-
-{\displaystyle p_{1}}
-
+displaystyle p 1
 e
-
 p
-
 2
-
-{\displaystyle p_{2}}
-
+displaystyle p 2
 , respectivamente. Seguindo a notação definida na seção: Variáveis aleatórias discretas, temos:
-
 X
-=
-{
-
 x
-
 1
-
 ,
-
 x
-
 2
-
-}
-
-{\displaystyle X=\{x_{1},x_{2}\}}
-
+displaystyle X x 1 ,x 2
 e,
-
 p
 (
 X
 )
-=
-{
-
 p
-
 1
-
 ,
-
 p
-
 2
-
-}
-
-{\displaystyle p(X)=\{p_{1},p_{2}\}}
-
+displaystyle p(X) p 1 ,p 2
 A informação de Shannon associada a cada um dos valores é:
-
 h
-
 1
-
-=
-
 log
-
 2
-
-⁡
-
 1
-
 p
-
 1
-
-{\displaystyle h_{1}=\log _{2}{\dfrac {1}{p_{1}}}}
-
+displaystyle h 1 log 2 dfrac 1 p 1
 e,
-
 h
-
 2
-
-=
-
 log
-
 2
-
-⁡
-
 1
-
 p
-
 2
-
-{\displaystyle h_{2}=\log _{2}{\dfrac {1}{p_{2}}}}
-
+displaystyle h 2 log 2 dfrac 1 p 2
 Na prática, geralmente nós não estamos interessados em saber a surpresa de um valor em particular que uma variável aleatória pode assumir, e sim a surpresa associada com todos os possíveis valores que essa variável aleatória pode ter. De modo a obter a surpresa associada a todos possíveis valores que
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 pode assumir, define-se a entropia
-
 H
 (
 X
 )
-
-{\displaystyle H(X)}
-
+displaystyle H(X)
 como a informação de Shannon média:
-
 H
 (
 X
 )
-=
-
 p
-
 1
-
 h
-
 1
-
-+
-
 p
-
 2
-
 h
-
 2
-
-=
-
 p
-
 1
-
 log
-
 2
-
-⁡
-
 1
-
 p
-
 1
-
-+
-
 p
-
 2
-
 log
-
 2
-
-⁡
-
 1
-
 p
-
 2
-
-=
-
-∑
-
 i
-=
 1
-
 2
-
 p
-
 i
-
 log
-
 2
-
-⁡
-
 1
-
 p
-
 i
-
-{\displaystyle H(X)=p_{1}h_{1}+p_{2}h_{2}=p_{1}\log _{2}{\dfrac {1}{p_{1}}}+p_{2}\log _{2}{\dfrac {1}{p_{2}}}=\sum _{i=1}^{2}p_{i}\log _{2}{\dfrac {1}{p_{i}}}}
-
+displaystyle H(X) p 1 h 1 p 2 h 2 p 1 log 2 dfrac 1 p 1 p 2 log 2 dfrac 1 p 2 sum i 1 2 p i log 2 dfrac 1 p i
 Caso
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 , possa assumir
-
 m
-
-{\displaystyle m}
-
+displaystyle m
 valores, a expressão anterior pode ser escrita de modo mais geral.
-
 H
 (
 X
 )
-=
-−
-
-∑
-
 i
-=
 1
-
 m
-
 p
-
 i
-
 log
-
 2
-
-⁡
-
 p
-
 i
-
-{\displaystyle H(X)=-\sum _{i=1}^{m}p_{i}\log _{2}p_{i}}
-
-==== A entropia do dado de seis faces ====
+displaystyle H(X) - sum i 1 m p i log 2 p i
 Uma aplicação direta para a equação da entropia definida anteriormente pode ser obtida com o exemplo um dado de seis faces. Representando o dado pela variável aleatória
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 , temos que:
-
 X
-=
-{
 1
 ,
 2
@@ -1337,131 +702,69 @@ X
 5
 ,
 6
-}
-
-{\displaystyle X=\{1,2,3,4,5,6\}}
-
+displaystyle X 1,2,3,4,5,6
 e,
-
 p
 (
 X
 )
-=
-{
 1
-
 /
-
 6
 ,
 1
-
 /
-
 6
 ,
 1
-
 /
-
 6
 ,
 1
-
 /
-
 6
 ,
 1
-
 /
-
 6
 ,
 1
-
 /
-
 6
-}
-
-{\displaystyle p(X)=\{1/6,1/6,1/6,1/6,1/6,1/6\}}
-
 Desse modo a entropia é:
-
 H
 (
 X
 )
-=
-−
-
-∑
-
 i
-=
 1
-
 6
-
 p
-
 i
-
 log
-
 2
-
-⁡
-
 p
-
 i
-
-=
-−
 6
-
 1
 6
-
 log
-
 2
-
-⁡
-
 1
 6
-
-=
 2.585
-
 b
 i
 t
 s
-
-{\displaystyle H(X)=-\sum _{i=1}^{6}p_{i}\log _{2}p_{i}=-6{\dfrac {1}{6}}\log _{2}{\dfrac {1}{6}}=2.585\,\mathrm {bits} }
-
-==== Moeda boa, moeda má ====
+displaystyle H(X) - sum i 1 6 p i log 2 p i -6 dfrac 1 6 log 2 dfrac 1 6 2.585 , mathrm bits
 Considere a moeda honesta, representada pela variável aleatória
-
 M
-
 1
-
-{\displaystyle M_{1}}
-
+displaystyle M 1
 :
-
 M
-
 1
-
-=
-{
 c
 a
 r
@@ -1472,70 +775,38 @@ o
 r
 o
 a
-}
-=
-{
 0
 ,
 1
-}
-
-{\displaystyle M_{1}=\{cara,coroa\}=\{0,1\}}
-
+displaystyle M 1 cara,coroa 0,1
 e,
-
 p
 (
-
 M
-
 1
-
 )
-=
-{
-
 p
-
 c
 a
 r
 a
-
-=
 0.5
 ,
-
 p
-
 c
 o
 r
 o
 a
-
-=
 0.5
-}
-
-{\displaystyle p(M_{1})=\{p_{cara}=0.5,p_{coroa}=0.5\}}
-
+displaystyle p(M 1 ) p cara 0.5,p coroa 0.5
 E a moeda enviesada, como aquela utilizada para exemplificar a informação de Shannon, representada pela variável aleatória
-
 M
-
 2
-
-{\displaystyle M_{2}}
-
+displaystyle M 2
 .
-
 M
-
 2
-
-=
-{
 c
 a
 r
@@ -1546,366 +817,186 @@ o
 r
 o
 a
-}
-=
-{
 0
 ,
 1
-}
-
-{\displaystyle M_{2}=\{cara,coroa\}=\{0,1\}}
-
+displaystyle M 2 cara,coroa 0,1
 e,
-
 p
 (
-
 M
-
 2
-
 )
-=
-{
-
 p
-
 c
 a
 r
 a
-
-=
 0.9
 ,
-
 p
-
 c
 o
 r
 o
 a
-
-=
 0.1
-}
-
-{\displaystyle p(M_{2})=\{p_{cara}=0.9,p_{coroa}=0.1\}}
-
+displaystyle p(M 2 ) p cara 0.9,p coroa 0.1
 Note que um resultado cara é representado pelo dígito 0 e um resultado coroa por um dígito 1. A entropia de cada uma das moedas pode ser calculada, sendo então:
-
 H
 (
-
 M
-
 1
-
 )
-=
-−
-
-∑
-
 i
-=
 1
-
 2
-
 p
-
 i
-
 log
-
 2
-
-⁡
-
 p
-
 i
-
-=
-−
 2
-
 1
 2
-
 log
-
 2
-
-⁡
-
 1
 2
-
-=
 1
-
 bit
-
-{\displaystyle H(M_{1})=-\sum _{i=1}^{2}p_{i}\log _{2}p_{i}=-2{\dfrac {1}{2}}\log _{2}{\dfrac {1}{2}}=1{\text{ bit}}}
-
+displaystyle H(M 1 ) - sum i 1 2 p i log 2 p i -2 dfrac 1 2 log 2 dfrac 1 2 1 text bit
 e,
-
 H
 (
-
 M
-
 2
-
 )
-=
-−
-
-∑
-
 i
-=
 1
-
 2
-
 p
-
 i
-
 log
-
 2
-
-⁡
-
 p
-
 i
-
-=
-−
 (
 0.9
-
 log
-
 2
-
-⁡
 0.9
-+
 0.1
-
 log
-
 2
-
-⁡
 0.1
 )
-=
 0.469
-
 bits
-
-{\displaystyle H(M_{2})=-\sum _{i=1}^{2}p_{i}\log _{2}p_{i}=-(0.9\log _{2}0.9+0.1\log _{2}0.1)=0.469{\text{ bits}}}
-
+displaystyle H(M 2 ) - sum i 1 2 p i log 2 p i -(0.9 log 2 0.9 0.1 log 2 0.1) 0.469 text bits
 Nesse caso a entropia da moeda honesta é maior do que a da moeda desonesta, mas qual o significado disso? O que a medida de entropia pode me dizer? Essas questões serão abordadas na próxima seção, onde uma abordagem conceitual de entropia será tratada.
-
-== Uma visão conceitual da grandeza entropia ==
 Fundamentalmente a entropia é uma medida de incerteza. Isso pode ser visto no exemplo anterior, na moeda honesta é muito difícil dizer qual será o resultado antes de jogá-la, alguém pode arriscar dizer que o resultado será cara ou coroa, mas a incerteza continua maior do que no caso da moeda enviesada (logo com entropia também maior), onde podemos prever com certa tranquilidade que o resultado da jogada será cara.
 No fundo, essa incerteza está ligada à previsibilidade do valor que será assumido por uma dada variável aleatória, prever um valor sorteado entre 100 valores equiprováveis (por exemplo, adivinhar o número que saíra em um dado de 100 faces) é mais difícil do que prever esse valor, caso esse dado seja enviesado e uma das faces tenha probabilidade alta de aparecer.
 Agora sabemos também que a entropia é uma medida de informação, como uma coisa se relaciona a outra?
 Justamente por ter mais incerteza sobre a possível saída de uma variável aleatória, você precisa de mais informação, para "adivinhar" essa saída. Isso é análogo ao número de perguntas que o nosso viajante da seção "Escolhendo destinos e o bit de informação" teve de fazer para chegar ao seu destino. Desse modo quanto maior a entropia maior a incerteza e maior a informação que você precisa para "adivinhar" uma possível saída que a variável aleatória pode apresentar.
 Para ilustrar o que foi dito, considere a seguinte situação, estacionaram seu carro em um estacionamento de 8 vagas dispostas como no desenho abaixo, para adivinhar em que vaga ele está você tem permissão de realizar perguntas sim ou não.
-
 Você pode começar: "O carro está na direita?", caso a resposta seja sim, isso restringe as possíveis vagas pela metade, sendo elas as vagas 3, 4, 7 e 8. A próxima perguntar pode ser: "O carro está ao norte?", com uma resposta não, restam duas possibilidades, a vaga 7 ou 8. Uma ultima pergunta: "O carro está a direita?", basta para determinar em qual delas seu carro está. Nesse caso cada resposta sim/não te da 1 bit de informação. Como são necessárias três perguntamos podemos dizer que a entropia
-
 H
-
-{\displaystyle H}
-
+displaystyle H
 é igual a 3 bits.
 Assim fica fácil entender a ideia de que a entropia está relacionada com a quantidade de informação necessária para "adivinhar" a resposta (ou uma possível saída de uma variável aleatória).
 No exemplo das vagas, como a probabilidade do carro estar em qualquer uma das vagas é igual, cada bit de informação diminui o número de respostas possíveis pela metade.
-
-== Entropia da distribuição conjunta ==
 A definição de entropia para uma distribuição conjunta
-
 P
 (
 X
 ,
 Y
 )
-
-{\displaystyle P(X,Y)}
-
+displaystyle P(X,Y)
 pode ser obtida de forma direta da definição de entropia, por analogia, sendo:
-
 H
 (
 X
 ,
 Y
 )
-=
-−
-
-∑
-
 i
-=
 1
-
 m
-
 x
-
-∑
-
 j
-=
 1
-
 m
-
 y
-
 p
-
 i
 j
-
 log
-
 2
-
-⁡
-
 p
-
 i
 j
-
-{\displaystyle H(X,Y)=-\sum _{i=1}^{m_{x}}\sum _{j=1}^{m_{y}}p_{ij}\log _{2}p_{ij}}
-
+displaystyle H(X,Y) - sum i 1 m x sum j 1 m y p ij log 2 p ij
 Onde
-
 p
-
 i
 j
-
-{\displaystyle p_{ij}}
-
+displaystyle p ij
 é a probabilidade de ocorrência do par
-
 B
-
 i
 j
-
-=
-
 x
-
 i
-
 ,
-
 y
-
 j
-
-{\displaystyle B_{ij}={x_{i},y_{j}}}
-
+displaystyle B ij x i ,y j
 . Essa definição é de particular importância para quando definirmos informação mútua.
-
-== Teorema de codificação da fonte ==
 O teorema de codificação da fonte é fundamental para todos os meios de comunicação, uma vez que ele estabelece limites de como mensagens podem ser transmitidas e além disso, ele mostra que existem maneiras mais e menos eficientes de se fazer isso, dependendo da mensagem enviada. Aqui apenas uma ideia do que ele se trata será dada, para entendimento maior consulte as referências.
 Antes de mais nada considere um canal, sem fonte de ruído, onde uma mensagem é codificada em sua fonte (source) por um encoder, enviada pelo canal até seu destino, decodificada por um decoder e interpretada pela pessoa alvo.
-
 Define-se a Capacidade do canal
-
 C
-
-{\displaystyle C}
-
+displaystyle C
 como sendo numericamente igual ao número de dígitos binários comunicados por segundo. Se tivermos 1 bit por dígito binário a capacidade é definida em unidades de bits por segundo. Essa definição pode ser mais bem explorada matematicamente, mas para os fins aqui propostos, a definição dada é suficiente.
-Dada as definições, imagine que se deseja transmitir uma série de $m$ símbolos, representados pela variável
-
+Dada as definições, imagine que se deseja transmitir uma série de m símbolos, representados pela variável
 S
-=
-{
-
 s
-
 1
-
 ,
 .
 .
 ,
-
 s
-
 m
-
-}
-
-{\displaystyle S=\{s_{1},..,s_{m}\}}
-
+displaystyle S s 1 ,..,s m
 , sendo
-
 p
 (
 S
 )
-
-{\displaystyle p(S)}
-
+displaystyle p(S)
 a distribuição de probabilidades de
-
 S
-
-{\displaystyle S}
-
+displaystyle S
 e
-
 H
 (
 S
 )
-
-{\displaystyle H(S)}
-
+displaystyle H(S)
 sua entropia. O teorema de codificação da fonte pode ser enunciado como segue:
-"Dada a distribuição $S$ com entropia $H(S)$, medida em bits por símbolo $s$, e um canal com capacidade $C$ bits por segundo. Então é possível codificar os símbolos $s$ enviados pela fonte de tal modo que a mensagem seja transmitida na capacidade máxima $C$ do canal."
-
-=== Enviando números de 1 a 8 ===
+"Dada a distribuição S com entropia H(S) , medida em bits por símbolo s , e um canal com capacidade C bits por segundo. Então é possível codificar os símbolos s enviados pela fonte de tal modo que a mensagem seja transmitida na capacidade máxima C do canal."
 Imagine uma fonte que envia números de 1 a 8, com igual probabilidade
-
 p
-=
 1
-
 /
-
 8
-
-{\displaystyle p=1/8}
-
+displaystyle p 1/8
 , então temos nossa variável
-
 S
-=
-{
 1
 ,
 2
@@ -1921,164 +1012,91 @@ S
 7
 ,
 8
-}
-
-{\displaystyle S=\{1,2,3,4,5,6,7,8\}}
-
+displaystyle S 1,2,3,4,5,6,7,8
 , podemos determinar a entropia de
-
 S
-
-{\displaystyle S}
-
+displaystyle S
 como sendo
-
 H
 (
 S
 )
-=
 3
-
 b
 i
 t
 s
-
 /
-
 s
-
 i
-´
-
 m
 b
 o
 l
 o
-
-{\displaystyle H(S)=3{\mathtt {bits/s{\acute {i}}mbolo}}}
-
+displaystyle H(S) 3 mathtt bits/s acute i mbolo
 .
 Caso os números sejam transmitidos por um canal com capacidade
-
 C
-=
 3
 b
 i
 t
 s
-
 /
-
 s
-
-{\displaystyle C=3bits/s}
-
+displaystyle C 3bits/s
 , o teorema de codificação da fonte garante que existe um modo de codificar os símbolos em
-
 S
-
-{\displaystyle S}
-
+displaystyle S
 de modo tal que eles sejam transmitidos com capacidade máxima
-
 C
-
-{\displaystyle C}
-
+displaystyle C
 , no caso 3 bits/s.
 Um modo de codificar os valores de 1 a 8, seria representá-los por números binários de
-
 3
-=
 l
 o
-
 g
-
 2
-
 8
-
-{\displaystyle 3=log_{2}8}
-
+displaystyle 3 log 2 8
 dígitos binários, como na tabela a seguir, que indica o símbolo e sua respectivo código.
-
 Sendo
-
 L
-
-{\displaystyle L}
-
+displaystyle L
 o número de dígitos binários utilizado por código para cada símbolo de
-
 S
-
-{\displaystyle S}
-
+displaystyle S
 . A eficiência
-
-ϵ
-
-{\displaystyle \epsilon }
-
+displaystyle epsilon
 é um número entre 0 e 1, calculada como a razão da entropia de
-
 S
-
-{\displaystyle S}
-
+displaystyle S
 por
-
 L
-
-{\displaystyle L}
-
+displaystyle L
 .
-
-ϵ
-=
-
 H
 L
-
-{\displaystyle \epsilon ={\dfrac {H}{L}}}
-
+displaystyle epsilon dfrac H L
 Nesse caso,
-
-ϵ
-=
-
 3
-
 b
 i
 t
 s
-
 /
-
 s
-
 i
-´
-
 m
 b
 o
 l
 o
-
 3
-
 d
-
 i
-´
-
 g
 i
 t
@@ -2087,42 +1105,26 @@ s
 b
 i
 n
-
 a
-´
-
 r
 i
 o
 s
-
 /
-
 s
-
 i
-´
-
 m
 b
 o
 l
 o
-
-=
 1
-
 b
 i
 t
-
 /
-
 d
-
 i
-´
-
 g
 i
 t
@@ -2131,742 +1133,434 @@ s
 b
 i
 n
-
 a
-´
-
 r
 i
 o
 s
-
-{\displaystyle \epsilon ={\dfrac {3{\mathtt {bits/s{\acute {i}}mbolo}}}{3{\mathtt {d{\acute {i}}gitosbin{\acute {a}}rios/s{\acute {i}}mbolo}}}}=1{\mathtt {bit/d{\acute {i}}gitosbin{\acute {a}}rios}}}
-
+displaystyle epsilon dfrac 3 mathtt bits/s acute i mbolo 3 mathtt d acute i gitosbin acute a rios/s acute i mbolo 1 mathtt bit/d acute i gitosbin acute a rios
 Para esse caso simples é muito fácil encontrar a codificação necessária para transmitir os símbolos com máxima eficiência. Mas para maioria dos casos não é assim, e são necessários algoritmos mais rebuscados, como por exemplo a codificação de Huffman, que não será discutida aqui, mas consiste em codificar os símbolos mais frequentes com códigos mais simples (que usam menos dígitos binários por exemplo). O código Morse (figura abaixo), se baseia nesse princípio, onde letras como o E mais frequentes na língua inglesa são representados por sequência mais simples, e outras letras menos frequentes como o J por sequências mais complicadas, isso ajuda a aumentar a eficiência com a qual a mensagem é enviada.
-
 É importante salientar que o código Morse precede o artigo de Shannon, sendo portanto desconhecidos esses limites teóricos para comunicar informação.
-
-== Informação mútua ==
-
-=== Considerações iniciais ===
 Dado duas variáveis aleatórias
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 e
-
 Y
-
-{\displaystyle Y}
-
+displaystyle Y
 , a informação mútua
-
 I
 (
 X
 ,
 Y
 )
-
-{\displaystyle I(X,Y)}
-
+displaystyle I(X,Y)
 entre elas é a quantidade de informação média que ganhamos sobre
-
 Y
-
-{\displaystyle Y}
-
+displaystyle Y
 após observar um valor isolado de
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 A informação mútua entre
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 e
-
 Y
-
-{\displaystyle Y}
-
+displaystyle Y
 é definida como:
-
 I
 (
 X
 ,
 Y
 )
-=
-
-∑
-
 i
-=
 1
-
 m
-
 x
-
-∑
-
 j
-=
 1
-
 m
-
 y
-
 p
 (
-
 x
-
 i
-
 ,
-
 y
-
 j
-
 )
-
 log
-
 2
-
-⁡
-
 p
 (
-
 x
-
 i
-
 ,
-
 y
-
 j
-
 )
-
 p
 (
-
 x
-
 i
-
 )
 p
 (
-
 y
-
 j
-
 )
-
-{\displaystyle I(X,Y)=\sum _{i=1}^{m_{x}}\sum _{j=1}^{m_{y}}p(x_{i},y_{j})\log _{2}{\dfrac {p(x_{i},y_{j})}{p(x_{i})p(y_{j})}}}
-
+displaystyle I(X,Y) sum i 1 m x sum j 1 m y p(x i ,y j ) log 2 dfrac p(x i ,y j ) p(x i )p(y j )
 Para
-
 m
-
 x
-
-{\displaystyle m_{x}}
-
+displaystyle m x
 valores de
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 e
-
 m
-
 y
-
-{\displaystyle m_{y}}
-
+displaystyle m y
 valores de
-
 Y
-
-{\displaystyle Y}
-
+displaystyle Y
 . A expressão anterior pode ser trabalhada de forma a ser escrita como:
-
 H
 (
 X
 ,
 Y
 )
-=
 H
 (
 X
 )
-+
 H
 (
 Y
 )
-−
 I
 (
 X
 ,
 Y
 )
-
-{\displaystyle H(X,Y)=H(X)+H(Y)-I(X,Y)}
-
+displaystyle H(X,Y) H(X) H(Y)-I(X,Y)
 Onde
-
 H
 (
 X
 ,
 Y
 )
-
-{\displaystyle H(X,Y)}
-
+displaystyle H(X,Y)
 é entropia da distribuição conjunta dada já definida anteriormente.
-
-=== Entropia condicional ===
 Um modo alternativo de enxergar o conceito de informação mútua pode ser obtido considerando-se a entropia da saída em relação ao ruído do canal. Se não conhecemos o valor da entrada
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 então nossa incerteza sobre o valor de
-
 Y
-
-{\displaystyle Y}
-
+displaystyle Y
 é dado por sua entropia
-
 H
 (
 Y
 )
-
-{\displaystyle H(Y)}
-
+displaystyle H(Y)
 . Mas se conhecemos o valor de
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 então nossa incerteza sobre
-
 Y
-
-{\displaystyle Y}
-
+displaystyle Y
 é reduzida de
-
 H
 (
 Y
 )
-
-{\displaystyle H(Y)}
-
+displaystyle H(Y)
 para um valor chamado de entropia condicional
-
 H
 (
 Y
-
-|
-
 X
 )
-
-{\displaystyle H(Y|X)}
-
+displaystyle H(Y X)
 , que é a incerteza média do valor de
-
 Y
-
-{\displaystyle Y}
-
+displaystyle Y
 após
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 ser observado. Assim:
-
 I
 (
 X
 ,
 Y
 )
-=
 H
 (
 Y
 )
-−
 H
 (
 Y
-
-|
-
 X
 )
-
-{\displaystyle I(X,Y)=H(Y)-H(Y|X)}
-
+displaystyle I(X,Y) H(Y)-H(Y X)
 Como informação mútua e uma grandeza simétrica:
-
 I
 (
 Y
 ,
 X
 )
-=
 H
 (
 X
 )
-−
 H
 (
 X
-
-|
-
 Y
 )
-
-{\displaystyle I(Y,X)=H(X)-H(X|Y)}
-
+displaystyle I(Y,X) H(X)-H(X Y)
 Onde
-
 H
 (
 X
 ,
 Y
 )
-
-{\displaystyle H(X,Y)}
-
+displaystyle H(X,Y)
 é a incerteza média que temos sobre o valor de
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 após temos observado
-
 Y
-
-{\displaystyle Y}
-
+displaystyle Y
 , e portanto a incerteza média em
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 que não pode ser atribuída a
-
 Y
-
-{\displaystyle Y}
-
+displaystyle Y
 .
-
-=== Independência estatística ===
 Se
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 e
-
 Y
-
-{\displaystyle Y}
-
+displaystyle Y
 são estatisticamente independentes, então conhecer um valor de
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 não nos dá nenhuma informação sobre
-
 Y
-
-{\displaystyle Y}
-
+displaystyle Y
 e vice versa. Nesse caso cada valor de probabilidade da distribuição conjunta pode ser escrito como:
-
 p
 (
-
 x
-
 i
-
 ,
-
 y
-
 j
-
 )
-=
 p
 (
-
 x
-
 i
-
 )
 p
 (
-
 y
-
 j
-
 )
-
-{\displaystyle p(x_{i},y_{j})=p(x_{i})p(y_{j})}
-
+displaystyle p(x i ,y j ) p(x i )p(y j )
 Substituindo na definição de informação mútua, e realizando algumas manipulações temos:
-
 H
 (
 X
 )
-+
 H
 (
 Y
 )
-−
 H
 (
 X
 ,
 Y
 )
-=
 0
-
-{\displaystyle H(X)+H(Y)-H(X,Y)=0}
-
+displaystyle H(X) H(Y)-H(X,Y) 0
 O que significa que
-
 I
 (
 X
 ,
 Y
 )
-=
 0
-
-{\displaystyle I(X,Y)=0}
-
+displaystyle I(X,Y) 0
 , como esperado.
-
-=== Entropia condicional e ruído ===
 Diferente do que se considerou na seção onde tratamos do teorema de codificação da fonte, os canais geralmente possuem ruído (figura abaixo). Por esse motivo se considera que a saída do canal
-
 Y
-
-{\displaystyle Y}
-
+displaystyle Y
 é igual a entrada
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 mas um ruído do canal
-
-η
-
-{\displaystyle \eta }
-
+displaystyle eta
 , é possível achar uma expressão do ruído do canal como a seguir.
-
 Y
-=
 X
-+
-η
-
-{\displaystyle Y=X+\eta }
-
+displaystyle Y X eta
 Da expressão
-
 I
 (
 X
 ,
 Y
 )
-=
 H
 (
 Y
 )
-−
 H
 (
 Y
-
-|
-
 X
 )
-
-{\textstyle I(X,Y)=H(Y)-H(Y|X)}
-
+textstyle I(X,Y) H(Y)-H(Y X)
 nos leva a:
-
 I
 (
 X
 ,
 Y
 )
-=
 H
 (
 Y
 )
-−
 H
 (
 [
 X
-+
-η
 ]
-
-|
-
 X
 )
-
-{\displaystyle I(X,Y)=H(Y)-H([X+\eta ]|X)}
-
+displaystyle I(X,Y) H(Y)-H([X eta ] X)
 Se o valor de
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 é conhecido, então a incerteza em
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 é zero, logo ele não tem nenhuma contribuição na entropia condicional
-
 H
 (
 [
 X
-+
-η
 ]
-
-|
-
 X
 )
-
-{\displaystyle H([X+\eta ]|X)}
-
+displaystyle H([X eta ] X)
 , dando:
-
 I
 (
 X
 ,
 Y
 )
-=
 H
 (
 Y
 )
-−
 H
 (
-η
-
-|
-
 X
 )
-
-{\displaystyle I(X,Y)=H(Y)-H(\eta |X)}
-
+displaystyle I(X,Y) H(Y)-H( eta X)
 Entretanto o valor do ruído
-
-η
-
-{\displaystyle \eta }
-
+displaystyle eta
 é independente do valor de
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 , logo
-
 H
 (
-η
-
-|
-
 X
 )
-=
 H
 (
-η
 )
-
-{\displaystyle H(\eta |X)=H(\eta )}
-
+displaystyle H( eta X) H( eta )
 , o que nos permite reescrever a equação anterior como:
-
 I
 (
 X
 ,
 Y
 )
-=
 H
 (
 Y
 )
-−
 H
 (
-η
 )
-
-{\displaystyle I(X,Y)=H(Y)-H(\eta )}
-
+displaystyle I(X,Y) H(Y)-H( eta )
 Comparando as equações
-
 I
 (
 X
 ,
 Y
 )
-=
 H
 (
 Y
 )
-−
 H
 (
 Y
-
-|
-
 X
 )
-
-{\textstyle I(X,Y)=H(Y)-H(Y|X)}
-
+textstyle I(X,Y) H(Y)-H(Y X)
 e a anterior podemos concluir que:
-
 H
 (
 Y
-
-|
-
 X
 )
-=
 H
 (
-η
 )
-
-{\displaystyle H(Y|X)=H(\eta )}
-
+displaystyle H(Y X) H( eta )
 Logo, a entropia do ruído é igual a entropia condicional
-
 H
 (
 Y
-
-|
-
 X
 )
-
-{\displaystyle H(Y|X)}
-
+displaystyle H(Y X)
 .
-
-== Ver também ==
 Abraham Moles
 Distância Levenshtein
 Informação
 Norbert Wiener
-
-== Referências ==
-
 [1] Stone J. (2014). Information Theory: A Tutorial Introduction. Sheffield: Sebtel Press.
 [2] MacKay D. (2003). Information Theory, Inference, and Learning Algorithms. Cambridge: Cambridge University Press.
 [3] Shannon C., Weaver W. (1949). The Mathematical Theory of Communication. Urbana, IL: University of Illinois Press.
-[4] Borst, A. \& Theunissen, F. Information theory and neural coding. Nature Neurosci. 2, 947–957
+[4] Borst, A. Theunissen, F. Information theory and neural coding. Nature Neurosci. 2, 947 957
 (1999).
 [5] Tononi, 2012 Integrated information theory of consciousness: an updated account
-Arch. Ital. Biol., 150 (2012), pp. 56–90.
-
-== Ligações externas ==
+Arch. Ital. Biol., 150 (2012), pp. 56 90.
 «"The Mathematical Theory of Communication", Claude Shannon» (PDF)
 «Entropy on the World Wide Web»
 «Information Theory Resources»

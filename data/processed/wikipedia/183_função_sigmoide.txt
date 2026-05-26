@@ -1,210 +1,98 @@
 A função sigmoide é uma função matemática de amplo uso em campos como a economia e a computação. O nome "sigmoide" vem da forma em S do seu gráfico.
 Ela é definida como:
-
 f
 (
 x
 )
-=
-
 1
-
 1
-+
-
 e
-
-−
 x
-
-{\displaystyle f(x)={\frac {1}{1+e^{-x}}}}
-
+displaystyle f(x) frac 1 1 e -x
 para todo
-
 x
-
-{\displaystyle x}
-
+displaystyle x
 real.
 Ela é solução da equação diferencial:
-
 d
-
 y
-
 d
-
 x
-
-=
-λ
-⋅
 (
 y
 )
-⋅
 (
 1
-−
 y
 )
 .
-
-{\displaystyle {\frac {\mathrm {d} y}{\mathrm {d} x}}=\lambda \cdot (y)\cdot (1-y).}
-
+displaystyle frac mathrm d y mathrm d x lambda cdot (y) cdot (1-y).
 com
-
 y
-
-{\displaystyle y}
-
+displaystyle y
 entre 0 e 1.
 A função sigmoide pode ser reescrita como:
-
 f
 (
 x
 )
-=
-
 1
-
 1
-+
-
 e
-
-−
-λ
 x
-
-=
-
 e
-
-λ
 x
-
 /
-
 2
-
 e
-
-λ
 x
-
 /
-
 2
-
-+
-
 e
-
-−
-λ
 x
-
 /
-
 2
-
-=
-
 1
 2
-
-+
-
 1
 2
-
 e
-
-λ
 x
-
 /
-
 2
-
-−
-
 e
-
-−
-λ
 x
-
 /
-
 2
-
 e
-
-λ
 x
-
 /
-
 2
-
-+
-
 e
-
-−
-λ
 x
-
 /
-
 2
-
-=
-
 1
 2
-
-+
-
 1
 2
-
 tanh
-⁡
-
 (
-
-λ
 x
-
 2
-
 )
-
-{\displaystyle f(x)={\frac {1}{1+e^{-\lambda x}}}={\frac {e^{\lambda x/2}}{e^{\lambda x/2}+e^{-\lambda x/2}}}={\frac {1}{2}}+{\frac {1}{2}}{\frac {e^{\lambda x/2}-e^{-\lambda x/2}}{e^{\lambda x/2}+e^{-\lambda x/2}}}={\frac {1}{2}}+{\frac {1}{2}}\operatorname {tanh} \left({\frac {\lambda x}{2}}\right)}
-
-== Computação ==
+displaystyle f(x) frac 1 1 e - lambda x frac e lambda x/2 e lambda x/2 e - lambda x/2 frac 1 2 frac 1 2 frac e lambda x/2 -e - lambda x/2 e lambda x/2 e - lambda x/2 frac 1 2 frac 1 2 operatorname tanh left( frac lambda x 2 right)
 Um exemplo de código para Octave, que aplica a função a um escalar ou a alguma matriz:
-
-function f = sigmoid(z)
-f=1./(1+exp(-z));
+function f sigmoid(z)
+f 1./(1 exp(-z));
 endfunction
-
 No MATLAB a função sigmf possui dois valores de ajustes da sigmoide. O primeiro indica o grau de inclinação da curva, enquanto o segundo indica o ponto médio da curva, ou seja, para que valor de x a sigmoide vai assumir valor 0.5 no eixo y (centro da sigmoide).
 Um exemplo de código para o Matlab:
-
-x = 0:0.5:20 //definimos x como um vetor de valores que vai de 0 a 20 em um intervalo de 0.5, ou seja, x = {0 , 0.5, 1, 1.5, … , 19.5, 20}
-s1 = sigmf(x,[1 5]) // s1 será uma sigmoide cujo centro é no 5
-s2 = sigmf(x,[0.5 5]) // s2 será uma sigmoide cujo centro é no 5, porém com uma inclinação mais suave que anterior
-s3 = sigmf(x,[0.5 10]) // s3 será uma sigmoide cujo centro é no 10, com a mesma inclinação que anterior
+x 0:0.5:20 //definimos x como um vetor de valores que vai de 0 a 20 em um intervalo de 0.5, ou seja, x 0 , 0.5, 1, 1.5, ... , 19.5, 20
+s1 sigmf(x,[1 5]) // s1 será uma sigmoide cujo centro é no 5
+s2 sigmf(x,[0.5 5]) // s2 será uma sigmoide cujo centro é no 5, porém com uma inclinação mais suave que anterior
+s3 sigmf(x,[0.5 10]) // s3 será uma sigmoide cujo centro é no 10, com a mesma inclinação que anterior
 plot(x,s1)
 plot(x,s2)
 plot(x,s3)
-
-== Ver também ==
 Função logística
-
-== Referências ==

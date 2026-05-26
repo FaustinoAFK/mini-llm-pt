@@ -1,48 +1,24 @@
 Ciência da computação é a ciência que estuda as técnicas, metodologias, instrumentos computacionais e aplicações tecnológicas, que informatizem os processos e desenvolvam soluções de processamento de dados de entrada e saída pautados no computador. Não se restringindo apenas ao estudo dos algoritmos, suas aplicações e implementação na forma de software. Assim, a Ciência da Computação também abrange as técnicas de modelagem de dados e gerenciamento de banco de dados, envolvendo também a telecomunicação e os protocolos de comunicação, além de princípios que abrangem outras especializações da área.
 Enquanto ciência, classifica-se como ciência exata, apesar de herdar elementos da lógica filosófica aristotélica, tendo por isso um papel importante na formalização matemática de algoritmos, como forma de representar problemas decidíveis, i.e., os que são susceptíveis de redução a operações elementares básicas, capazes de serem reproduzidas através de um dispositivo qualquer capaz de armazenar e manipular dados. Um destes dispositivos é o computador digital, de uso generalizado, nos dias de hoje. Também de fundamental importância para a área de Ciência da Computação são as metodologias e técnicas ligadas à implementação de software que abordam a especificação, modelagem, codificação, teste e avaliação de sistemas de software.
 Os estudos oriundos da Ciência da Computação podem ser aplicados em qualquer área do conhecimento humano em que seja possível definir métodos de resolução de problemas baseados em repetições previamente observadas. Avanços recentes na Ciência da Computação têm impactado fortemente a sociedade contemporânea, em particular as aplicações relacionadas às áreas de redes de computadores, Internet, Web, ciência de dados e computação móvel, que têm sido utilizadas por bilhões de pessoas ao redor do globo.
-
-== História da Computação ==
-
-A primeira ferramenta conhecida para a computação foi o ábaco, cuja invenção é atribuída a habitantes da Mesopotâmia, em torno de 2700–2300 a.C.. Seu uso original era desenhar linhas na areia com rochas. Versões mais modernas do ábaco ainda são usadas como instrumento de cálculo.
-No século VII a.C., na antiga Índia, o gramático Pānini formulou a gramática de Sânscrito usando 3959 regras conhecidas como Ashtadhyāyi, de forma bastante sistemática e técnica. Pānini usou transformações e recursividade com tamanha sofisticação que sua gramática possuía o poder computacional teórico tal qual a Máquina de Turing.
+A primeira ferramenta conhecida para a computação foi o ábaco, cuja invenção é atribuída a habitantes da Mesopotâmia, em torno de 2700 2300 a.C.. Seu uso original era desenhar linhas na areia com rochas. Versões mais modernas do ábaco ainda são usadas como instrumento de cálculo.
+No século VII a.C., na antiga Índia, o gramático P nini formulou a gramática de Sânscrito usando 3959 regras conhecidas como Ashtadhy yi, de forma bastante sistemática e técnica. P nini usou transformações e recursividade com tamanha sofisticação que sua gramática possuía o poder computacional teórico tal qual a Máquina de Turing.
 Entre 200 a.C. e 400, os indianos também inventaram o logaritmo, e a partir do século XIII tabelas logarítmicas eram produzidas por matemáticos islâmicos. Quando John Napier descobriu os logaritmos para uso computacional no século XVI, seguiu-se um período de considerável progresso na construção de ferramentas de cálculo.
-
-=== Algoritmos ===
 No século VII, o matemático indiano Brahmagupta explicou pela primeira vez o sistema de numeração hindu-arábico e o uso do 0. Aproximadamente em 825, o matemático persa al-Khwarizmi escreveu o livro Calculando com numerais hindus, responsável pela difusão do sistema de numeração hindu-arábico no Oriente Médio, e posteriormente na Europa. Por volta do século XII houve uma tradução do mesmo livro para o latim: Algoritmi de numero Indorum. Tais livros apresentaram novos conceitos para definir sequências de passos para completar tarefas, como aplicações de aritmética e álgebra. Por derivação do nome do matemático, atualmente usa-se o termo algoritmo.
-
-=== Lógica binária ===
 Por volta do século III a.C., o matemático indiano Pingala inventou o sistema de numeração binário. Ainda usado atualmente no processamento de todos os computadores modernos, o sistema estabelece que sequências específicas de uns e zeros podem representar qualquer informação.
 Em 1703 Gottfried Leibniz desenvolveu a lógica em um sentido formal e matemático, utilizando o sistema binário. Em seu sistema, uns e zeros também representam conceitos como verdadeiro e falso, ligado e desligado, válido e inválido. Mais de um século depois, George Boole publicou a álgebra booleana (em 1854), com um sistema completo que permitia a construção de modelos matemáticos para o processamento computacional. Em 1801, apareceu o tear controlado por cartão perfurado, invenção de Joseph Marie Jacquard, no qual buracos indicavam os uns e áreas não furadas indicavam os zeros. O sistema está longe de ser um computador, mas ilustrou que as máquinas poderiam ser controladas pelo sistema binário.
-
-=== Engenho analítico ===
-
 Foi com Charles Babbage que o computador moderno começou a ganhar forma, através de seu trabalho no engenho analítico. O equipamento descrito originalmente em 1837, mais de um século antes de seu sucessor, nunca foi construído com sucesso, mas possuía todas as funções de um computador moderno. O dispositivo de Babbage se diferenciava por ser programável, algo imprescindível para qualquer computador moderno.
 Durante sua colaboração, a matemática Ada Lovelace publicou os primeiros programas de computador em uma série de notas para o engenho analítico. Por isso, Lovelace é popularmente considerada como a primeira programadora.
-
-=== Nascimento da Ciência da Computação ===
 Antes da década de 1920, computador era um termo associado a pessoas que realizavam cálculos, geralmente liderados por físicos. Milhares de computadores eram empregados em projetos no comércio, governo e sítios de pesquisa. Após a década de 1920, a expressão máquina computacional começou a ser usada para referir-se a qualquer máquina que realize o trabalho de um profissional, especialmente aquelas de acordo com os métodos da Tese de Church-Turing.
 O termo máquina computacional acabou perdendo espaço para o termo reduzido computador no final da década de 1940, com as máquinas digitais cada vez mais difundidas. Alan Turing, conhecido como pai da Ciência da Computação, inventou a Máquina de Turing, que posteriormente evoluiu para o computador moderno.
-
-=== Trabalho teórico ===
 Os fundamentos matemáticos da Ciência da Computação moderna começaram a ser definidos por Kurt Gödel com seu teorema da incompletude (1931). Essa teoria mostra que existem limites no que pode ser provado ou desaprovado em um sistema formal; isso levou a trabalhos posteriores por Gödel e outros teóricos para definir e descrever tais sistemas formais, incluindo conceitos como recursividade e cálculo lambda.
 Em 1936 Alan Turing e Alonzo Church independentemente, e também juntos, introduziram a formalização de um algoritmo, definindo os limites do que pode ser computador e um modelo puramente mecânico para a computação. Tais tópicos são abordados no que atualmente chama-se Tese de Church-Turing, uma hipótese sobre a natureza de dispositivos mecânicos de cálculo. Essa tese define que qualquer cálculo possível pode ser realizado por um algoritmo sendo executado em um computador, desde que haja tempo e armazenamento suficiente para tal.
-
 Turing também incluiu na tese uma descrição da Máquina de Turing, que possui uma fita de tamanho infinito e um cabeçote para leitura e escrita que move-se pela fita. Devido ao seu caráter infinito, tal máquina não pode ser construída, mas tal modelo pode simular a computação de qualquer algoritmo executado em um computador moderno. Turing é bastante importante para a Ciência da Computação, tanto que seu nome é usado para o Prêmio Turing e o teste de Turing. Ele contribuiu para a quebra do código da Alemanha pela Grã-Bretanha na Segunda Guerra Mundial, e continuou a projetar computadores e programas de computador pela década de 1940; cometeu suicídio em 1954.
-
-=== Shannon e a teoria da informação ===
 Até a década de 1930, engenheiros eletricistas podiam construir circuitos eletrônicos para resolver problemas lógicos e matemáticos, mas a maioria o fazia sem qualquer processo, de forma particular, sem rigor teórico para tal. Isso mudou com a tese de mestrado de Claude Shannon de 1937, A Symbolic Analysis of Relay and Switching Circuits. Enquanto tomava aulas de Filosofia, Shannon foi exposto ao trabalho de George Boole, e percebeu que poderia aplicar esse aprendizado em conjuntos eletromecânico para resolver problemas. Shannon desenvolveu a teoria da informação no artigo de 1948: A Mathematical Theory of Communication, cujo conteúdo serve como fundamento para áreas como compressão de dados e criptografia.
-
-== Contribuição social ==
 Apesar de sua pequena história enquanto uma disciplina acadêmica, a Ciência da Computação deu origem a diversas contribuições fundamentais para a ciência e para a sociedade. Esta ciência foi responsável pela definição formal de computação e computabilidade, e pela prova da existência de problemas insolúveis ou intratáveis computacionalmente.
 Também foi possível a construção e formalização do conceito de linguagem de computador, sobretudo linguagem de programação, uma ferramenta para a expressão precisa de informação metodológica flexível o suficiente para ser representada em diversos níveis de abstração.
-
 Para outros campos científicos e para a sociedade de forma geral, a Ciência da Computação forneceu suporte para a Revolução Digital, dando origem a Era da Informação. A computação científica é uma área da computação que permite o avanço de estudos como o mapeamento do genoma humano (ver Projeto Genoma Humano).Ciência da Computação tem tanto a ver com o computador como a astronomia com o telescópio, a biologia com o microscópio, ou a química com os tubos de ensaio. A ciência não estuda ferramentas, mas o que fazemos e o que descobrimos com elas.
-
-== Pessoas notáveis ==
 Algumas das pessoas mais importantes da computação foram agraciadas com o Prêmio Turing.
-
-=== Precursores ===
 Blaise Pascal, desenvolveu a calculadora mecânica e tem seu nome em uma linguagem de programação;
 Charles Babbage, projetou um computador mecânico, a máquina analítica;
 Ada Lovelace, considerada a primeira pessoa programadora, deu nome a uma linguagem de programação;
@@ -57,19 +33,17 @@ John Bardeen, inventor do transístor;
 Fred Williams, inventor da memória RAM;
 Tom Kilburn, inventor da memória RAM;
 Konrad Zuse, inventor independente do computador digital e de linguagens de programação na Alemanha nazista;
-John Atanasoff, inventor do primeiro computador digital, o Atanasoff–Berry Computer, ABC;
+John Atanasoff, inventor do primeiro computador digital, o Atanasoff Berry Computer, ABC;
 Clifford Berry, assistente de Atanasoff;
 Almirante Grace Hopper, programadora do Mark I, desenvolveu o primeiro compilador; primeira mulher a receber um Ph.D. em matemática;
 Edsger Dijkstra, líder do ALGOL 60, publicou o artigo original sobre programação estruturada;
 J. Presper Eckert, criador do ENIAC;
 John William Mauchly, criador do ENIAC.
-
-=== Personalidades influentes ===
 Andrew Stuart Tanenbaum, pesquisador na área de sistemas operacionais, inventor do MINIX; seus livros-texto são dos mais referenciados na área;
 Edgar Frank Codd, inventor de Banco de dados relacionais;
 Brian Kernighan, inventor da linguagem de programação C;
 Dennis Ritchie, inventor da linguagem de programação C e do Unix;
-Bjarne Stroustrup, inventor da linguagem de programação C++;
+Bjarne Stroustrup, inventor da linguagem de programação C ;
 Ken Thompson, inventor do Unix e da codificação de caracteres UTF-8;
 Peter Chen, inventor do Modelo de entidades e relacionamentos;
 Donald Ervin Knuth, criador do TeX, da programação literária e da influente série (inacabada em 2011) sobre algoritmos The Art of Computer Programming;
@@ -82,69 +56,57 @@ James Gosling, criador da linguagem Java;
 Guido van Rossum, criador da linguagem Python;
 Tim Berners-Lee, criador da World Wide Web e do HTML;
 Brendan Eich, criador do JavaScript.
-
-== Áreas de pesquisa ==
-
-=== Fundamentos matemáticos ===
 Álgebra linear
 Cálculo diferencial e integral
 Cálculo numérico
 Analise combinatória
-Geometria analítica — o estudo de algoritmos para a resolução de problemas de geometria, ou que dependem da geometria
+Geometria analítica o estudo de algoritmos para a resolução de problemas de geometria, ou que dependem da geometria
 Heurística - o desvendamento de soluções de problemas com alto grau de complexidade
-Lógica matemática — lógica booleana e outras formas para a modelagem lógica de problemas
+Lógica matemática lógica booleana e outras formas para a modelagem lógica de problemas
 Matemática discreta
 Teoria do caos - sistemas complexos e não determinísticos influenciam a confecção de novos algoritmos e metodologias matemáticas na computação
 Probabilidade e estatística
 Teoria da informação
 Teoria das categorias
-Teoria dos grafos — fundações para estruturas de dados e algoritmos de busca
-Teoria dos números — teoria para a definição de provas a conjunto dos números inteiros, usada em criptografia e no teste de inteligência artificial
-Teoria dos tipos — análise formal de tipos de dados e seu uso para entender a propriedade de programas de algoritmos
-
-=== Fundamentos de computação ===
+Teoria dos grafos fundações para estruturas de dados e algoritmos de busca
+Teoria dos números teoria para a definição de provas a conjunto dos números inteiros, usada em criptografia e no teste de inteligência artificial
+Teoria dos tipos análise formal de tipos de dados e seu uso para entender a propriedade de programas de algoritmos
 Paradigma de programação
 Circuitos digitais
-Complexidade computacional — definição de limites computacionais (sobretudo relativo a espaço e tempo) fundamentais em classes de computação
-Criptografia — aplicação da complexidade computacional, da probabilidade e da teoria de números para a criação ou quebra de códigos
-Estrutura de dados — a organização e as regras para a manipulação de informação
-Linguagens formais — estudo de modelos para especificar e reconhecer linguagens de forma geral
-Métodos formais — o uso de abordagens matemáticas para descrever e formalizar padrões de desenvolvimento de software
+Complexidade computacional definição de limites computacionais (sobretudo relativo a espaço e tempo) fundamentais em classes de computação
+Criptografia aplicação da complexidade computacional, da probabilidade e da teoria de números para a criação ou quebra de códigos
+Estrutura de dados a organização e as regras para a manipulação de informação
+Linguagens formais estudo de modelos para especificar e reconhecer linguagens de forma geral
+Métodos formais o uso de abordagens matemáticas para descrever e formalizar padrões de desenvolvimento de software
 Pesquisa e ordenação
-Projeto e análise de algoritmos — complexidade computacional aplicada aos algoritmos
-Robótica — o controle do comportamento de robôs
-Semântica formal — estudo da especificação do significado (ou comportamento) de programas de computador e partes de hardware
-Teoria da computabilidade — definição do que é computável utilizando-se os modelos atuais, definindo as possibilidades teóricas da computação
+Projeto e análise de algoritmos complexidade computacional aplicada aos algoritmos
+Robótica o controle do comportamento de robôs
+Semântica formal estudo da especificação do significado (ou comportamento) de programas de computador e partes de hardware
+Teoria da computabilidade definição do que é computável utilizando-se os modelos atuais, definindo as possibilidades teóricas da computação
 Teoria da computação
 Teoria dos algoritmos de informação
 Teoria dos autômatos
-
-=== Física ===
 Eletromagnetismo
 Mecânica quântica
-
-=== Tecnologia da computação ===
 Banco de dados
-Compiladores — tradução de algoritmos entre diferentes linguagens de computador, geralmente de uma linguagem de alto nível, mais abstrata e legível para seres humanos, para uma linguagem de baixo nível, mais concreta e voltada para o computador digital
-Computação gráfica — geração sintética de imagens, e a integração ou alteração visual de informações visuais do mundo real
+Compiladores tradução de algoritmos entre diferentes linguagens de computador, geralmente de uma linguagem de alto nível, mais abstrata e legível para seres humanos, para uma linguagem de baixo nível, mais concreta e voltada para o computador digital
+Computação gráfica geração sintética de imagens, e a integração ou alteração visual de informações visuais do mundo real
 Engenharia de software
-Inteligência artificial — o estudo e a implementação de sistemas que exibem um comportamento autônomo inteligente
+Inteligência artificial o estudo e a implementação de sistemas que exibem um comportamento autônomo inteligente
 Microprocessamento - o estudo dos chips, circuitos integrados e sistemas digitais que interagem com as linguagens de baixo nível
-Processamento de imagens — a obtenção de informação a partir de imagens
-Rede de computadores — algoritmos e protocolos para a comunicação de dados confiável entre diferentes sistemas, incluindo mecanismos para a identificação e correção de erros
+Processamento de imagens a obtenção de informação a partir de imagens
+Rede de computadores algoritmos e protocolos para a comunicação de dados confiável entre diferentes sistemas, incluindo mecanismos para a identificação e correção de erros
 Sistemas operacionais - softwares básicos que gerenciam os recursos computacionais e fazem a interação entre hardware e software
 Sistemas de Informação - todos os recursos em TI que servem para armazenar, manipular, transferir e tratar dados, sejam eles elementos computacionais ou não-computacionais
-
-=== Ciência da computação aplicada ===
 Álgebra computacional
 Especificação de programas
 Estrutura de dados
 Informática educativa
-Interação homem-computador — estudo sobre a utilidade e usabilidade de computadores, tornando-os acessíveis às pessoas
+Interação homem-computador estudo sobre a utilidade e usabilidade de computadores, tornando-os acessíveis às pessoas
 Otimização combinatória
 Pesquisa operacional
-Planejamento automatizado — estuda o processo de deliberação por meio da computação
-Programação de computadores — o uso de linguagens de programação para a implementação de algoritmos
+Planejamento automatizado estuda o processo de deliberação por meio da computação
+Programação de computadores o uso de linguagens de programação para a implementação de algoritmos
 Reconhecimento de padrões
 Recuperação de informações
 Redes de Petri
@@ -153,38 +115,22 @@ Redes semânticas
 Segurança de computadores
 Sistemas multiagentes
 Tolerância a falhas
-Vida artificial — o estudo de organismos digitais
-
-=== Organização dos sistemas computacionais ===
-Arquitetura de computadores — o desenvolvimento, a organização, a otimização e a verificação de sistemas computacionais
-Computação distribuída — computação sendo executada em diversos dispositivos interligados por uma rede, todos com o mesmo objetivo comum
-Computação paralela — computação sendo executada em diferentes tarefas; geralmente concorrentes entre si na utilização de recursos
-Computação quântica — representação e manipulação de dados usando as propriedades quânticas das partículas e a mecânica quântica
-Sistemas operacionais — sistemas para o gerenciamento de programas de computador e para a abstração da máquina, fornecendo base para um sistema utilizável
-|}
-
-== Relacionamento com outros campos ==
+Vida artificial o estudo de organismos digitais
+Arquitetura de computadores o desenvolvimento, a organização, a otimização e a verificação de sistemas computacionais
+Computação distribuída computação sendo executada em diversos dispositivos interligados por uma rede, todos com o mesmo objetivo comum
+Computação paralela computação sendo executada em diferentes tarefas; geralmente concorrentes entre si na utilização de recursos
+Computação quântica representação e manipulação de dados usando as propriedades quânticas das partículas e a mecânica quântica
+Sistemas operacionais sistemas para o gerenciamento de programas de computador e para a abstração da máquina, fornecendo base para um sistema utilizável
 Por ser uma disciplina recente, existem várias definições alternativas para a Ciência da Computação. Ela pode ser vista como uma forma de ciência, uma forma de matemática ou uma nova disciplina que não pode ser categorizada seguindo os modelos atuais. Várias pessoas que estudam a Ciência da Computação o fazem para tornarem-se programadores, levando alguns a acreditarem que seu estudo é sobre o software e a programação. Apesar disso, a maioria dos cientistas da computação são interessados na inovação ou em aspectos teóricos que vão muito além de somente a programação, mais relacionados com a computabilidade.
-Apesar do nome, muito da Ciência da Computação não envolve o estudo dos computadores por si próprios. De fato, o conhecido cientista da computação Edsger Dijkstra é considerado autor da frase "Ciência da Computação tem tanto a ver com o computador como a astronomia com o telescópio […]". O projeto e desenvolvimento de computadores e sistemas computacionais são geralmente considerados disciplinas fora do contexto da Ciência da Computação. Por exemplo, o estudo do hardware é geralmente considerado parte da engenharia de computação, enquanto o estudo de sistemas computacionais comerciais são geralmente parte da tecnologia da informação ou sistemas de informação.
+Apesar do nome, muito da Ciência da Computação não envolve o estudo dos computadores por si próprios. De fato, o conhecido cientista da computação Edsger Dijkstra é considerado autor da frase "Ciência da Computação tem tanto a ver com o computador como a astronomia com o telescópio [...]". O projeto e desenvolvimento de computadores e sistemas computacionais são geralmente considerados disciplinas fora do contexto da Ciência da Computação. Por exemplo, o estudo do hardware é geralmente considerado parte da engenharia de computação, enquanto o estudo de sistemas computacionais comerciais são geralmente parte da tecnologia da informação ou sistemas de informação.
 Por vezes a Ciência da Computação também é criticada por não ser suficientemente científica, como exposto na frase "Ciência é para a Ciência da Computação assim como a hidrodinâmica é para a construção de encanamentos", credita a Stan Kelly-Bootle. Apesar disso, seu estudo frequentemente cruza outros campos de pesquisa, tais como a inteligência artifical, física e linguística.
 Ela é considerada por alguns por ter um grande relacionamento com a matemática, maior que em outras disciplinas. Isso é evidenciado pelo fato que os primeiros trabalhos na área eram fortemente influenciados por matemáticos como Kurt Gödel e Alan Turing; o campo continua sendo útil para o intercâmbio de informação com áreas como lógica matemática, teoria das categorias e álgebra. Apesar disso, diferente da matemática, a Ciência da Computação é considerada uma disciplina mais experimental que teórica.
-Várias alternativas para o nome da disciplina já foram cogitadas. Em francês ela é chamada informatique, em alemão Informatik, em espanhol informática, em holandês, italiano e romeno informatica, em polonês informatyka, em russo информатика e em grego Πληροφορική. Apesar disso, tanto em inglês quanto em português informática não é diretamente um sinônimo para a Ciência da Computação; o termo é usado para definir o estudo de sistemas artificiais e naturais que armazenam processos e comunicam informação, e refere-se a um conjunto de ciências da informação que engloba a Ciência da Computação. Em Portugal, no entanto, apesar de a palavra estar dicionarizada com esse sentido amplo, o termo é usado como sinónimo de Ciência da Computação.
-
-== Profissão ==
+Várias alternativas para o nome da disciplina já foram cogitadas. Em francês ela é chamada informatique, em alemão Informatik, em espanhol informática, em holandês, italiano e romeno informatica, em polonês informatyka, em russo e em grego . Apesar disso, tanto em inglês quanto em português informática não é diretamente um sinônimo para a Ciência da Computação; o termo é usado para definir o estudo de sistemas artificiais e naturais que armazenam processos e comunicam informação, e refere-se a um conjunto de ciências da informação que engloba a Ciência da Computação. Em Portugal, no entanto, apesar de a palavra estar dicionarizada com esse sentido amplo, o termo é usado como sinónimo de Ciência da Computação.
 De forma geral, cientistas da computação estudam os fundamentos teóricos da computação, de onde outros campos derivam, como as áreas de pesquisa supracitadas. Como o nome implica, a Ciência da Computação é uma ciência pura, não aplicada. Entretanto, o profissional dessa área pode seguir aplicações mais práticas de seu conhecimento, atuando em áreas como desenvolvimento de software, telecomunicação, consultoria, análise de sistemas, segurança em TI, governança em TI, análise de negócios e tecnologia da informação. O profissional de computação precisa ter muita determinação na apreensão tecnológica, uma vez que esta área sofre contínuas transformações, modificando rapidamente paradigmas.
-
-== Pesquisa ==
 As conferências são eventos importantes para a pesquisa da ciência da computação. Durante esses eventos, pesquisadores dos setores público e privado apresentam seus trabalhos recentes. Além disso, esses eventos promovem encontros e trocas entre pesquisadores. Ao contrário da maioria dos outros campos acadêmicos, na ciência da computação, a aprovação dos artigos de conferência é maior do que o das publicações acadêmicas. Uma explicação proposta para isso é que o rápido desenvolvimento desse campo relativamente recente exige revisão e disseminação rápidas dos resultados de pesquisa, uma tarefa melhor executada por conferências do que por periódicos científicos.
-
-== Ver também ==
 Informática
 Tecnologia da informação
-
-== Referências ==
-
-== Ligações externas ==
 Fundamentos em informática
-
 Análise de sistemas e tecnologia da informação
 Lista de termos de computação
 Engenharia de computação

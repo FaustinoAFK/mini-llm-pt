@@ -1,8 +1,4 @@
 Em aprendizagem automática e nas estatísticas, a classificação estatística é o problema de identificar a qual de um conjunto de categorias (subpopulações) pertence em uma nova observação, com base em um conjunto de dados contendo observações (ou instâncias) cuja categoria de adesão é conhecida.
-
-== Ver também ==
 Inteligência artifical
 Aprendizado de Máquina
 Reconhecimento de padrões
-
-== Referências ==

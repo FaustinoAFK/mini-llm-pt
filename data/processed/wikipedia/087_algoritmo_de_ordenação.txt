@@ -1,16 +1,10 @@
 Algoritmo de ordenação em ciência da computação é um algoritmo, de manipulação de dados, que coloca os elementos de uma dada sequência em uma certa ordem -- em outras palavras, efetua sua ordenação completa ou parcial. As ordens mais usadas são a numérica e a lexicográfica.
 Existem várias razões para se ordenar uma sequência. Uma delas é a possibilidade se acessar seus dados de modo mais eficiente.
-
-== Métodos de ordenação de vetores ==
-
-=== Métodos simples ===
 Insertion sort
 Selection sort
 Bubble sort
 Comb sort
 Bogo sort
-
-=== Métodos sofisticados ===
 Merge sort
 Heapsort
 Shell sort
@@ -22,9 +16,5 @@ Cocktail sort
 Timsort
 TwistSort
 Quick sort
-
-== Métodos de pesquisa ==
 Pesquisa binária
 Busca linear
-
-== Galeria ==

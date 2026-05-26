@@ -1,13 +1,8 @@
 A resolução de problemas consiste no uso de métodos, de uma forma ordenada, para encontrar soluções de problemas específicos. Algumas técnicas para resolução de problemas desenvolvidas e utilizadas na inteligência artificial, ciência da computação, engenharia, matemática, medicina etc. estão relacionadas com processos mentais de resolução de problemas estudados no campo da psicologia.
-
-== Especialista e Iniciante ==
 As características psicológicas típicas que podem ser úteis e benéficas para um solucionador de problemas bem-sucedido são: identificar corretamente os objetivos do problema, ser persistente, adotar estratégias eficientes na busca e ser capaz de retroceder até um determinado ponto anterior no processo de solução.
 As características mais significativas da diferenças entre especialistas e iniciantes na resolução de problemas são identificadas como:
 Escopo de conhecimento sobre as informações acumuladas, esquemas de resolução de problemas, habilidades, expertise, capacidade de memória, habilidade de interpretação de problemas, abstração e categorização, habilidades de análise e síntese, capacidade de concentração de longo prazo, motivação, eficiência e precisão.
-
-=== Resolução de Problemas em Engenharia de Software ===
 Profissionais de engenharia de software e amadores diferem em suas abordagens para resolução de problemas. Os profissionais que são treinados e habilitados em engenharia de software, possuem uma variedade de modelos cognitivos e conhecimento que os habilitam a abordar problemas de maneira sistemática. Isso inclui:
-
 Conhecimento fundamental de software e práticas de engenharia de software.
 Princípios e leis básicas de Software.
 Algoritmos postos à prova.
@@ -17,48 +12,24 @@ Familiaridade com ferramentas e ambientes de programação.
 Habilidades fortes dos conceitos de programação em várias linguagens.
 Além disso, os profissionais têm uma visão global e perspicaz sobre o desenvolvimento de sistemas, incluindo o entendimento das funcionalidades necessárias para tal, tratamento de exceções e estratégias de tolerância a falhas.
 Por outro lado, os programadores amadores possuem treinamento e atividades praticas limitadas e podem ser caracterizados por possuírem:
-
 Estrutura ad hoc dos conhecimentos de programação. (Estrutura de conhecimento de programação que não foi organizada de forma sistemática ou planejada para um propósito mais amplo.)
 Experiências e habilidades limitadas.
 Tendência em se buscar necessidades imediatas dos problemas que aparecerem ao invés de projetar a estruturação do sistema como um todo.
 Falta de uma visão global e sistemática.
 De acordo com Richard Mayer, há quatro aspectos de conhecimento necessários para resolver problemas de programação: sintático, semântico, esquemático e estratégico. A pesquisa de Mayer mostrou que há diferenças significativas nas estruturas de conhecimento de especialistas e iniciantes em todas as quatro categorias.
-
-== Definição ==
 O termo resolução de problemas é usado em muitas disciplinas e áreas do conhecimento , às vezes com diferentes perspectivas e geralmente com terminologias diferentes. Por exemplo, na psicologia refere-se a um processo mental, enquanto na ciência da computação a um processo computadorizado. Já na Educação pode proporcionar um ensino mais investigativo e contextualizado, favorecendo o processo de ensino e aprendizagem.
-
-=== Psicologia ===
 Em psicologia, a resolução de problemas se refere a um estado de desejo por alcançar uma meta definida a partir de uma condição que de outro modo não está diretamente se movendo em direção à meta, está longe dela, ou necessita de mais lógica complexa para encontrar uma descrição perdida das condições ou passos em direção à meta. Em psicologia, a resolução de problemas é a conclusão de um grande processo que também inclui a descoberta do problema e molde do problema.
 Resolução de Problemas na Educação
 A Resolução de Problemas na área da educação é considerada por muitos especialistas como uma metodologia de ensino, pois pode proporcionar ao aluno a capacidade de aprender a aprender. A Resolução de Problemas possibilita a apresentação de situações reais e sugestivas que exijam dos alunos uma atitude ativa ou um esforço para buscar suas próprias respostas. O ensino baseado na Resolução de Problemas pressupõe promover nos alunos o domínio de procedimentos, assim como a utilização dos conhecimentos disponíveis, para dar resposta a situações variáveis e diferentes.
-
-== No ensino de matemática ==
-
 A resolução de problemas é considerada uma estratégia eficiente no processo de ensino de matemática, pois desenvolve a capacidade do aluno de resolver situações-problema e possibilita que os estudantes tenham mais ferramentas e capacidade de interpretar e resolver situações ao ingressar no mundo do trabalho e conviver em sociedade. Além disso, o recurso da resolução de problema permite a interdisciplinaridade entre a matemática e outras áreas do conhecimentos.
 Dois autores importantes, George Polya e Ignacio Pozo, dissertam sobre essa temática e, enquanto Polya apresenta uma uma sistematização para a resolução de problema, Pozo explana sobre o papel do professor e do estudante ao explorar essa estratégia.
-
-=== Resolução de Problemas segundo Polya ===
 A resolução de problemas é uma habilidade essencial em diversas áreas do conhecimento, e George Polya emerge como uma figura central nesse contexto. Inicialmente reconhecido por seus livros que exploram métodos eficazes para abordar desafios intelectuais, Polya transcendeu sua própria obra ao mergulhar mais profundamente na pesquisa sobre estratégias e abordagens para solucionar problemas. Em A Arte de Resolver Problemas, Polya apresenta uma sistematização, ou seja, um método a ser seguido a fim de se resolver um problema:
-
-==== 1º Passo: Compreensão do Problema ====
 No processo de compreensão de problemas matemáticos, são sugeridas uma série de perguntas que visam aprofundar a análise da situação em questão. Algumas dessas perguntas incluem a identificação da incógnita a ser determinada, a análise minuciosa dos dados fornecidos e a consideração das condições ou restrições estabelecidas no problema. Para orientar o raciocínio, questões específicas são propostas, tais como verificar a viabilidade de satisfazer as condições impostas, avaliar se tais condições são suficientes para determinar a incógnita, e discutir a presença de redundâncias ou contradições. Este método investigativo, fundamentado em questionamentos cuidadosos, oferece uma abordagem sistemática para guiar a compreensão efetiva de problemas matemáticos, proporcionando uma estrutura sólida para a resolução criativa e eficaz de desafios matemáticos.
-
-==== 2º Passo: Estabelecimento de um Plano ====
 Nesta etapa do processo, Polya propõe a identificação da relação entre os dados apresentados e a incógnita em questão. Vale ressaltar que, caso não seja possível estabelecer uma conexão imediata, é recomendável explorar problemas auxiliares como uma alternativa viável. Por fim, é preciso desenvolver um plano estratégico para a resolução do problema em questão.
-
-==== 3º Passo: Execução do Plano ====
 A etapa de execução do plano assume um papel crucial no processo de encontrar soluções eficazes. Polya destaca a importância de uma análise minuciosa de cada passo do plano delineado para resolver o problema em questão. Nesse contexto, o autor instiga o pensamento crítico do solucionador ao questionar a clareza e a demonstração de cada passo. A necessidade de verificar se o passo está correto e se é possível evidenciar sua correção destaca a importância da rigorosidade e da validação na resolução de problemas. Esse aspecto não apenas assegura a confiabilidade da abordagem escolhida, mas também incentiva o desenvolvimento de uma compreensão profunda do processo, fomentando, assim, um raciocínio lógico e consistente na busca por soluções.
-
-==== 4º Passo: Retrospecto ====
 No passo de Retrospecto no método de resolução de problemas de Polya, o autor enfatiza a importância de examinar a solução obtida de maneira crítica e reflexiva. Polya encoraja os solucionadores a questionarem se é possível verificar o resultado, se é possível analisar o argumento utilizado para chegar a essa solução e se existe a possibilidade de alcançar o mesmo resultado por um caminho diferente. Além disso, ele destaca a relevância de perceber rapidamente se a solução está correta e se pode ser aplicada a outras situações. A abordagem retrospectiva não apenas valida a resposta encontrada, mas também promove uma compreensão mais profunda do processo de resolução, contribuindo para o desenvolvimento de habilidades matemáticas e lógicas.
-
-=== Resolução de Problemas segundo Pozo ===
 Ao explanar sobre a metodologia envolvida na resolução de problemas, Pozo explica que o professor deve abandonar o papel de transmissor de conhecimento em sala de aula e passar a orientar os estudantes nas suas buscas pela resoluções dos problemas, desenvolvendo o hábito da pesquisa.
 Pozo ainda explora algumas estratégias que podem ser adotadas para a resolução de problemas: "realizar tentativas por meio de ensaio e erro; dividir o problema em subproblemas; estabelecer submetas; decompor o problema; procurar problemas análogos".
-
-== Ver também ==
 Teoria dos problemas
 Problema psicológico
 Heurística
-
-== Referências ==

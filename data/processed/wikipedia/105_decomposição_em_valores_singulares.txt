@@ -1,1371 +1,610 @@
 Em álgebra linear, a decomposição em valores singulares ou singular value decomposition (SVD) é a fatoração de uma matriz real ou complexa, com diversas aplicações importantes em processamento de sinais e estatística.
-Formalmente, a decomposição em valores singulares de uma matriz m×n real ou complexa M é uma fatoração ou fatorização na forma:
-
+Formalmente, a decomposição em valores singulares de uma matriz m n real ou complexa M é uma fatoração ou fatorização na forma:
 M
-=
 U
-Σ
-
 V
-
-∗
-
 ,
-
-{\displaystyle M=U\Sigma V^{*},}
-
-onde U é uma matriz unitária m×m real ou complexa, Σ é uma matriz retangular diagonal m×n com números reais não-negativos na diagonal, e V* (a conjugada transposta de V) é uma matriz unitária n×n real ou complexa. As entradas diagonais Σi,i de Σ são os chamados valores singulares de M. As m colunas de U e as n colunas de V são os chamados vetores singulares à esquerda e vetores singulares à direita de M, respetivamente.
+displaystyle M U Sigma V ,
+onde U é uma matriz unitária m m real ou complexa, é uma matriz retangular diagonal m n com números reais não-negativos na diagonal, e V (a conjugada transposta de V) é uma matriz unitária n n real ou complexa. As entradas diagonais i,i de são os chamados valores singulares de M. As m colunas de U e as n colunas de V são os chamados vetores singulares à esquerda e vetores singulares à direita de M, respetivamente.
 A decomposição em valores singulares e a decomposição em autovalores são intimamente relacionadas. Mais especificamente:
-
 Os vetores singulares à esquerda de M são autovetores de
-
 M
-
 M
-
-∗
-
 .
-
-{\displaystyle MM^{*}.}
-
+displaystyle MM .
 Os vetores singulares à direita de M são autovetores de
-
 M
-
-∗
-
 M
 .
-
-{\displaystyle M^{*}M.}
-
-Os valores singulares não-nulos de M (ao longo da diagonal de Σ) são as raízes quadradas dos autovalores não-nulos de
-
+displaystyle M M.
+Os valores singulares não-nulos de M (ao longo da diagonal de ) são as raízes quadradas dos autovalores não-nulos de
 M
-
-∗
-
 M
-
-{\displaystyle M^{*}M}
-
+displaystyle M M
 ou
-
 M
-
 M
-
-∗
-
 .
-
-{\displaystyle MM^{*}.}
-
+displaystyle MM .
 Dentre as aplicações que envolvem a SVD estão o cálculo da pseudoinversa, o ajuste (fitting) de dados por mínimos quadrados, aproximação de matrizes, e a determinação do posto, imagem e núcleo de uma matriz.
-
-== Enunciado do teorema ==
-Suponha-se que M é uma matriz m×n cujas entradas vêm de um corpo de escalares K, que pode ser tanto o corpo de números reais ou o corpo de números complexos. Então existe uma fatorização da forma:
-
+Suponha-se que M é uma matriz m n cujas entradas vêm de um corpo de escalares K, que pode ser tanto o corpo de números reais ou o corpo de números complexos. Então existe uma fatorização da forma:
 M
-=
 U
-Σ
-
 V
-
-∗
-
 ,
-
-{\displaystyle M=U\Sigma V^{*},}
-
-onde U é uma matriz unitária m×m sobre K, a matriz Σ é uma matriz diagonal m×n com números reais não-negativos na diagonal, e V*, uma matriz unitária n×n sobre K, denota a transposta conjugada de V. Tal fatorização é chamada de decomposição em valores singulares de M.
+displaystyle M U Sigma V ,
+onde U é uma matriz unitária m m sobre K, a matriz é uma matriz diagonal m n com números reais não-negativos na diagonal, e V , uma matriz unitária n n sobre K, denota a transposta conjugada de V. Tal fatorização é chamada de decomposição em valores singulares de M.
 Os elementos diagonais
-
-σ
-
 i
-
-{\displaystyle \sigma _{i}}
-
-de Σ são chamados de valores singulares de M. Uma convenção bastante comum é listar os valores singulares em ordem decrescente. Neste caso, a matriz diagonal Σ é determinada de forma única por M (mas as matrizes U e V não são).
-
-== Interpretações intuitivas ==
-
-=== Rotação, escala, rotação ===
-No caso especial porém comum no qual M é apenas uma matriz quadrada m×m com determinante positivo cujas entradas são meros números reais, então U, V*, e Σ são matrizes m×m também de números reais, Σ pode ser vista como uma matriz de escala, e U e V* podem ser vistas como matrizes de rotação.
+displaystyle sigma i
+de são chamados de valores singulares de M. Uma convenção bastante comum é listar os valores singulares em ordem decrescente. Neste caso, a matriz diagonal é determinada de forma única por M (mas as matrizes U e V não são).
+No caso especial porém comum no qual M é apenas uma matriz quadrada m m com determinante positivo cujas entradas são meros números reais, então U, V , e são matrizes m m também de números reais, pode ser vista como uma matriz de escala, e U e V podem ser vistas como matrizes de rotação.
 Se as condições supracitadas são satisfeitas, a expressão
-
 U
-Σ
-
 V
-
-∗
-
-{\displaystyle U\Sigma V^{*}}
-
+displaystyle U Sigma V
 pode ser interpretada intuitivamente como uma composição (ou sequência) de três transformações geométricas: uma rotação, uma escala, e outra rotação. A figura acima exemplifica como uma matriz de cisalhamento (shear matrix) pode ser descrita como tal sequência.
-
-=== Valores singulares como semi-eixos de uma elipse ou elipsoide ===
 Como ilustrado na figura, os valores singulares podem ser interpretados como os semi-eixos de uma elipse em 2D. Este conceito pode ser generalizado para o Espaço euclidiano n-dimensional, com valores singulares de qualquer matriz quadrada nxn sendo vistos como os semi-eixos de um elipsoide n-dimensional. Veja
 abaixo para maiores detalhes.
-
-=== U e V são bases ortonormais ===
-Como U e V* são unitárias, as colunas de cada uma formam um conjunto de vetores ortonormais, que podem ser tomados uma base. Pela definição de matriz unitária, o mesmo vale para suas conjugadas transpostas U* e V. Em suma, U, U*, V, e V* são bases ortonormais.
-
-== Exemplo ==
-Considere-se a matriz 4×5
-
+Como U e V são unitárias, as colunas de cada uma formam um conjunto de vetores ortonormais, que podem ser tomados uma base. Pela definição de matriz unitária, o mesmo vale para suas conjugadas transpostas U e V. Em suma, U, U , V, e V são bases ortonormais.
+Considere-se a matriz 4 5
 M
-=
-
 [
-
 1
-
 0
-
 0
-
 0
-
 2
-
 0
-
 0
-
 3
-
 0
-
 0
-
 0
-
 0
-
 0
-
 0
-
 0
-
 0
-
 4
-
 0
-
 0
-
 0
-
 ]
-
-{\displaystyle M={\begin{bmatrix}1&0&0&0&2\\0&0&3&0&0\\0&0&0&0&0\\0&4&0&0&0\end{bmatrix}}}
-
+displaystyle M begin bmatrix 1 0 0 0 2 0 0 3 0 0 0 0 0 0 0 0 4 0 0 0 end bmatrix
 A decomposição em valores singulares desta matriz é dada por
-
 U
-Σ
-
 V
-
-∗
-
-{\displaystyle U\Sigma V^{*}}
-
+displaystyle U Sigma V
 U
-=
-
 [
-
 0
-
 0
-
 1
-
 0
-
 0
-
 1
-
 0
-
 0
-
 0
-
 0
-
 0
-
 1
-
 1
-
 0
-
 0
-
 0
-
 ]
-
 ,
-
-Σ
-=
-
 [
-
 4
-
 0
-
 0
-
 0
-
 0
-
 0
-
 3
-
 0
-
 0
-
 0
-
 0
-
 0
-
 5
-
 0
-
 0
-
 0
-
 0
-
 0
-
 0
-
 0
-
 ]
-
 ,
-
 V
-
-∗
-
-=
-
 [
-
 0
-
 1
-
 0
-
 0
-
 0
-
 0
-
 0
-
 1
-
 0
-
 0
-
 0.2
-
 0
-
 0
-
 0
-
 0.8
-
 0
-
 0
-
 0
-
 1
-
 0
-
 0.8
-
 0
-
 0
-
 0
-
-−
-
 0.2
-
 ]
-
-{\displaystyle U={\begin{bmatrix}0&0&1&0\\0&1&0&0\\0&0&0&1\\1&0&0&0\end{bmatrix}},\;\Sigma ={\begin{bmatrix}4&0&0&0&0\\0&3&0&0&0\\0&0&{\sqrt {5}}&0&0\\0&0&0&0&0\end{bmatrix}},\;V^{*}={\begin{bmatrix}0&1&0&0&0\\0&0&1&0&0\\{\sqrt {0.2}}&0&0&0&{\sqrt {0.8}}\\0&0&0&1&0\\{\sqrt {0.8}}&0&0&0&-{\sqrt {0.2}}\end{bmatrix}}}
-
 Note-se que
-
-Σ
-
-{\displaystyle \Sigma }
-
+displaystyle Sigma
 contém apenas zeros fora da diagonal. Ademais, como as matrizes
-
 U
-
-{\displaystyle U}
-
+displaystyle U
 e
-
 V
-
-∗
-
-{\displaystyle V^{*}}
-
+displaystyle V
 são unitárias, multiplicando-se por suas respectivas conjugadas transpostas gera matrizes identidades, como mostrado a seguir. Nesse caso, como
-
 U
-
-{\displaystyle U}
-
+displaystyle U
 e
-
 V
-
-∗
-
-{\displaystyle V^{*}}
-
+displaystyle V
 são reais, cada uma delas é uma matriz ortogonal.
-
 U
-
 U
-
-∗
-
-=
-
 [
-
 0
-
 0
-
 1
-
 0
-
 0
-
 1
-
 0
-
 0
-
 0
-
 0
-
 0
-
 1
-
 1
-
 0
-
 0
-
 0
-
 ]
-
-⋅
-
 [
-
 0
-
 0
-
 0
-
 1
-
 0
-
 1
-
 0
-
 0
-
 1
-
 0
-
 0
-
 0
-
 0
-
 0
-
 1
-
 0
-
 ]
-
-=
-
 [
-
 1
-
 0
-
 0
-
 0
-
 0
-
 1
-
 0
-
 0
-
 0
-
 0
-
 1
-
 0
-
 0
-
 0
-
 0
-
 1
-
 ]
-
-≡
-
 I
-
 4
-
-{\displaystyle UU^{*}={\begin{bmatrix}0&0&1&0\\0&1&0&0\\0&0&0&1\\1&0&0&0\end{bmatrix}}\cdot {\begin{bmatrix}0&0&0&1\\0&1&0&0\\1&0&0&0\\0&0&1&0\end{bmatrix}}={\begin{bmatrix}1&0&0&0\\0&1&0&0\\0&0&1&0\\0&0&0&1\end{bmatrix}}\equiv I_{4}}
-
+displaystyle UU begin bmatrix 0 0 1 0 0 1 0 0 0 0 0 1 1 0 0 0 end bmatrix cdot begin bmatrix 0 0 0 1 0 1 0 0 1 0 0 0 0 0 1 0 end bmatrix begin bmatrix 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 end bmatrix equiv I 4
 e
-
 V
-
 V
-
-∗
-
-=
-
 [
-
 0
-
 0
-
 0.2
-
 0
-
 0.8
-
 1
-
 0
-
 0
-
 0
-
 0
-
 0
-
 1
-
 0
-
 0
-
 0
-
 0
-
 0
-
 0
-
 1
-
 0
-
 0
-
 0
-
 0.8
-
 0
-
-−
-
 0.2
-
 ]
-
-⋅
-
 [
-
 0
-
 1
-
 0
-
 0
-
 0
-
 0
-
 0
-
 1
-
 0
-
 0
-
 0.2
-
 0
-
 0
-
 0
-
 0.8
-
 0
-
 0
-
 0
-
 1
-
 0
-
 0.8
-
 0
-
 0
-
 0
-
-−
-
 0.2
-
 ]
-
-=
-
 [
-
 1
-
 0
-
 0
-
 0
-
 0
-
 0
-
 1
-
 0
-
 0
-
 0
-
 0
-
 0
-
 1
-
 0
-
 0
-
 0
-
 0
-
 0
-
 1
-
 0
-
 0
-
 0
-
 0
-
 0
-
 1
-
 ]
-
-≡
-
 I
-
 5
-
-{\displaystyle VV^{*}={\begin{bmatrix}0&0&{\sqrt {0.2}}&0&{\sqrt {0.8}}\\1&0&0&0&0\\0&1&0&0&0\\0&0&0&1&0\\0&0&{\sqrt {0.8}}&0&-{\sqrt {0.2}}\end{bmatrix}}\cdot {\begin{bmatrix}0&1&0&0&0\\0&0&1&0&0\\{\sqrt {0.2}}&0&0&0&{\sqrt {0.8}}\\0&0&0&1&0\\{\sqrt {0.8}}&0&0&0&-{\sqrt {0.2}}\end{bmatrix}}={\begin{bmatrix}1&0&0&0&0\\0&1&0&0&0\\0&0&1&0&0\\0&0&0&1&0\\0&0&0&0&1\end{bmatrix}}\equiv I_{5}}
-
 Deve-se notar que esta decomposição em valores singulares em particular não é única. Escolhendo-se
-
 V
-
-{\displaystyle V}
-
+displaystyle V
 tal que
-
 V
-
-∗
-
-=
-
 [
-
 0
-
 1
-
 0
-
 0
-
 0
-
 0
-
 0
-
 1
-
 0
-
 0
-
 0.2
-
 0
-
 0
-
 0
-
 0.8
-
 0.4
-
 0
-
 0
-
 0.5
-
-−
-
 0.1
-
-−
-
 0.4
-
 0
-
 0
-
 0.5
-
 0.1
-
 ]
-
-{\displaystyle V^{*}={\begin{bmatrix}0&1&0&0&0\\0&0&1&0&0\\{\sqrt {0.2}}&0&0&0&{\sqrt {0.8}}\\{\sqrt {0.4}}&0&0&{\sqrt {0.5}}&-{\sqrt {0.1}}\\-{\sqrt {0.4}}&0&0&{\sqrt {0.5}}&{\sqrt {0.1}}\end{bmatrix}}}
-
 é também uma decomposição válida em valores singulares.
-
-== Valores singulares, vetores singulares e sua relação com a SVD ==
-Um número real não-negativo σ é um valor singular para M se e somente se existem vetores unitários u em Km e v em Kn tal que
-
+Um número real não-negativo é um valor singular para M se e somente se existem vetores unitários u em Km e v em Kn tal que
 M
 v
-=
-σ
 u
-
 e
-
 M
-
-∗
-
 u
-=
-σ
 v
 .
-
-{\displaystyle Mv=\sigma u\,{\text{ e }}M^{*}u=\sigma v.}
-
-Os vetores u e v são chamados vetor singular à esquerda e vetor singular à direita para σ, respectivamente.
+displaystyle Mv sigma u , text e M u sigma v.
+Os vetores u e v são chamados vetor singular à esquerda e vetor singular à direita para , respectivamente.
 Em qualquer decomposição em valores singulares
-
 M
-=
 U
-Σ
-
 V
-
-∗
-
-{\displaystyle M=U\Sigma V^{*}}
-
-os elementos diagonais de Σ são iguais aos valores singulares de M. As colunas de U e V são, respectivamente, vetores singulares à esquerda e à direita para os valores singulares correspondentes. Por consequência, o teorema acima implica que:
-
-Uma matriz m × n M tem pelo menos um e no máximo p = min(m,n) valores singulares distintos.
+displaystyle M U Sigma V
+os elementos diagonais de são iguais aos valores singulares de M. As colunas de U e V são, respectivamente, vetores singulares à esquerda e à direita para os valores singulares correspondentes. Por consequência, o teorema acima implica que:
+Uma matriz m n M tem pelo menos um e no máximo p min(m,n) valores singulares distintos.
 É sempre possível encontrar uma base ortogonal U para Km consistindo dos vetores singulares à esquerda de M.
 É sempre possível encontrar uma base ortogonal V para Kn consistindo dos vetores singulares à direita de M.
 Um valor singular para o qual podemos encontrar dois vetores singulares à esquerda (ou direita) que sejam linearmente independentes é chamado degenerado.
-Valores singulares não-degenerados têm sempre vetores singulares à esquerda e à direita únicos, a não ser pela multiplicação por um fator de fase único eiφ (para o caso real a não ser pelo sinal). Assim, se todos os valores singulares de M são não-degenerados e não-zero, então sua decomposição em valores singulares é única, a não ser por multiplicação de uma coluna de U por um fator de fase único e a multiplicação simultânea da coluna correspondente de V pelo mesmo fator unitário de fase.
-Valores singulares degenerados têm, por definição, vários vetores singulares distintos. Ademais, se u1 e u2 são dois vetores singulares à esquerda ambos correspondendo ao valor singular σ, então qualquer combinação linear normalizada de dois vetores é também um vetor singular à esquerda correspondendo ao valor singular σ. Raciocínio análogo é válido para vetores singulares à direita. Por consequência, se M tem valores singulares degenerados, então sua decomposição em valores singulares não é única.
-
-== Aplicações da SVD ==
-
-=== Pseudo-inversa ===
+Valores singulares não-degenerados têm sempre vetores singulares à esquerda e à direita únicos, a não ser pela multiplicação por um fator de fase único ei (para o caso real a não ser pelo sinal). Assim, se todos os valores singulares de M são não-degenerados e não-zero, então sua decomposição em valores singulares é única, a não ser por multiplicação de uma coluna de U por um fator de fase único e a multiplicação simultânea da coluna correspondente de V pelo mesmo fator unitário de fase.
+Valores singulares degenerados têm, por definição, vários vetores singulares distintos. Ademais, se u1 e u2 são dois vetores singulares à esquerda ambos correspondendo ao valor singular , então qualquer combinação linear normalizada de dois vetores é também um vetor singular à esquerda correspondendo ao valor singular . Raciocínio análogo é válido para vetores singulares à direita. Por consequência, se M tem valores singulares degenerados, então sua decomposição em valores singulares não é única.
 A decomposição em valores singulares pode ser usada para calcular a pseudoinversa de uma matriz, a qual é útil como uma forma de resolver problemas de mínimos quadrados lineares. De fato, a pseudoinversa da matriz M com decomposição em valores singulares
-
 M
-=
 U
-Σ
-
 V
-
-∗
-
-{\displaystyle M=U\Sigma V^{*}}
-
+displaystyle M U Sigma V
 é
-
 M
-
-+
-
-=
 V
-
-Σ
-
-+
-
 U
-
-∗
-
 ,
-
-{\displaystyle M^{+}=V\Sigma ^{+}U^{*},}
-
-onde Σ+ é a pseudoinversa de Σ, a qual é formada substituindo-se todo elemento diagonal não-nulo por seu inverso e tomando-se a transposta da matriz resultante.
-
-=== Solução de sistemas lineares homogêneos ===
+displaystyle M V Sigma U ,
+onde é a pseudoinversa de , a qual é formada substituindo-se todo elemento diagonal não-nulo por seu inverso e tomando-se a transposta da matriz resultante.
 Um conjunto de equações lineares homogêneas pode ser escrito como
-
 A
-
 x
-
-=
-
 0
-
-{\displaystyle \mathbf {A} \,\mathbf {x} =\mathbf {0} }
-
+displaystyle mathbf A , mathbf x mathbf 0
 para uma matriz
-
 A
-
-{\displaystyle \mathbf {A} }
-
+displaystyle mathbf A
 e vetor
-
 x
-
-{\displaystyle \mathbf {x} }
-
+displaystyle mathbf x
 . Uma situação típica é quando
-
 A
-
-{\displaystyle \mathbf {A} }
-
+displaystyle mathbf A
 é dada e quer-se determinar
-
 x
-
-{\displaystyle \mathbf {x} }
-
+displaystyle mathbf x
 não-nulo que satisfaça a equação. Tal
-
 x
-
-{\displaystyle \mathbf {x} }
-
+displaystyle mathbf x
 pertence ao núcleo de
-
 A
-
-{\displaystyle \mathbf {A} }
-
+displaystyle mathbf A
 e é por vezes chamado de vetor nulo (à direita) de
-
 A
-
-{\displaystyle \mathbf {A} }
-
+displaystyle mathbf A
 .
-
 x
-
-{\displaystyle \mathbf {x} }
-
+displaystyle mathbf x
 pode ser caracterizado como um vetor singular à direita correspondendo a um valor singular de
-
 A
-
-{\displaystyle \mathbf {A} }
-
+displaystyle mathbf A
 que seja zero. Isto significa que se
-
 A
-
-{\displaystyle \mathbf {A} }
-
+displaystyle mathbf A
 é uma matriz quadrada e não tem nenhum valor singular nulo, então a equação tem
-
 x
-
-{\displaystyle \mathbf {x} }
-
+displaystyle mathbf x
 não-nulo como solução. Também significa que se existem vários valores singulares nulos, qualquer combinação linear dos vetores singulares à direita é uma solução válida. Analogamente à definição de um vetor nulo (à direita), um
-
 x
-
-{\displaystyle \mathbf {x} }
-
+displaystyle mathbf x
 não-nulo satisfazendo
-
 x
-
-∗
-
 A
-
-=
-
 0
-
-{\displaystyle \mathbf {x} ^{*}\,\mathbf {A} =\mathbf {0} }
-
+displaystyle mathbf x , mathbf A mathbf 0
 , com
-
 x
-
-∗
-
-{\displaystyle \mathbf {x} ^{*}}
-
+displaystyle mathbf x
 sendo a transposta conjugada de
-
 x
-
-{\displaystyle \mathbf {x} }
-
+displaystyle mathbf x
 , é chamada de um vetor nulo à esquerda de
-
 A
-
-{\displaystyle \mathbf {A} }
-
+displaystyle mathbf A
 .
-
-=== Minimização de mínimos quadrados totais ===
 Um problema de mínimos quadrados totais (total least squares) objetiva determinar o vetor
-
 x
-
-{\displaystyle \mathbf {x} }
-
+displaystyle mathbf x
 que minimiza a norma
-
-ℓ
-
+l
 2
-
-{\displaystyle \ell ^{2}}
-
+displaystyle ell 2
 de um vetor
-
 A
-
 x
-
-{\displaystyle \mathbf {A} \,\mathbf {x} }
-
+displaystyle mathbf A , mathbf x
 sob a restrição
-
-‖
-
 x
-
-‖
-=
 1
-
-{\displaystyle \|\mathbf {x} \|=1}
-
+displaystyle mathbf x 1
 . Mostra-se que a solução é o vetor singular à direita de
-
 A
-
-{\displaystyle \mathbf {A} }
-
+displaystyle mathbf A
 correspondendo ao menor valor singular.
-
-=== Imagem, núcleo e posto ===
 Outra aplicação da SVD é que a mesma representa explicitamente a imagem e o núcleo de uma matriz M. Os vetores singulares à direita que correspondem a valores singulares nulos de M geram o núcleo (kernel) de M. Por exemplo, o núcleo é gerado pelas últimas duas colunas de
-
 V
-
-{\displaystyle V}
-
+displaystyle V
 no exemplo acima. Os valores singulares à esquerda correspondendo aos valores singulares não-nulos de M geram a imagem de M. Assim, o posto de M é igual ao número de valores singulares não-nulos que é igual ao número de elementos não-diagonais em
-
-Σ
-
-{\displaystyle \Sigma }
-
+displaystyle Sigma
 .
 Em álgebra linear numérica os valores singulares podem ser usados para determinar o posto efetivo de uma matriz, já que erros de arredondamento podem levar a valores singulares pequenos porém não-nulos numa matriz de posto deficiente.
-
-=== Aproximação por matriz de baixo posto ===
 Algumas aplicações práticas precisam resolver o problema de se aproximar uma matriz
-
 M
-
-{\displaystyle M}
-
+displaystyle M
 usando outra matriz
-
 M
-~
-
-{\displaystyle {\tilde {M}}}
-
+displaystyle tilde M
 de posto
-
 r
-
-{\displaystyle r}
-
+displaystyle r
 . Para o caso em que a aproximação é baseada na minimização da norma de Frobenius da diferença entre
-
 M
-
-{\displaystyle M}
-
+displaystyle M
 e
-
 M
-~
-
-{\displaystyle {\tilde {M}}}
-
+displaystyle tilde M
 sob a restrição de que
-
 rank
-⁡
 (
-
 M
-~
-
 )
-=
 r
-
-{\displaystyle \operatorname {rank} ({\tilde {M}})=r}
-
+displaystyle operatorname rank ( tilde M ) r
 , pode-se mostrar que a solução é dada pela SVD de
-
 M
-
-{\displaystyle M}
-
+displaystyle M
 :
-
 M
-~
-
-=
 U
-
-Σ
-~
-
 V
-
-∗
-
-{\displaystyle {\tilde {M}}=U{\tilde {\Sigma }}V^{*}}
-
+displaystyle tilde M U tilde Sigma V
 onde
-
-Σ
-~
-
-{\displaystyle {\tilde {\Sigma }}}
-
+displaystyle tilde Sigma
 é a mesma matriz que
-
-Σ
-
-{\displaystyle \Sigma }
-
+displaystyle Sigma
 a não ser pelo fato de conter os
-
 r
-
-{\displaystyle r}
-
-maiores valores singulares (os outros valores singulares são substituídos por zero). Isso é conhecido como o teorema Eckart–Young, provado por tais autores em 1936 (apesar de ter-se descoberto mais tarde que já era conhecido por outros autores; veja Stewart 1993).
-
-=== Modelos separáveis ===
+displaystyle r
+maiores valores singulares (os outros valores singulares são substituídos por zero). Isso é conhecido como o teorema Eckart Young, provado por tais autores em 1936 (apesar de ter-se descoberto mais tarde que já era conhecido por outros autores; veja Stewart 1993).
 A SVD pode ser vista como a decomposição de uma matriz em uma soma ponderada e ordenada de matrizes separáveis. O termo 'separável' refere-se ao fato de uma matriz
-
 A
-
-{\displaystyle \mathbf {A} }
-
+displaystyle mathbf A
 poder ser escrita como um produto externo de dois vetores
-
 A
-
-=
-
 u
-
-⊗
-
 v
-
-{\displaystyle \mathbf {A} =\mathbf {u} \otimes \mathbf {v} }
-
+displaystyle mathbf A mathbf u otimes mathbf v
 , ou, em coordenadas,
-
 A
 (
 i
 ,
 j
 )
-
-=
-
 u
-
 (
 i
 )
-
 v
-
 (
 j
 )
-
-{\displaystyle \mathbf {A(i,j)} =\mathbf {u} (i)\mathbf {v} (j)}
-
+displaystyle mathbf A(i,j) mathbf u (i) mathbf v (j)
 . Especificamente, a matriz M pode ser decomposta como:
-
 M
-
-=
-
-∑
-
 i
-
 A
-
 i
-
-=
-
-∑
-
 i
-
-σ
-
 i
-
 U
-
 i
-
-⊗
-
 V
-
 i
-
-†
-
 .
-
-{\displaystyle \mathbf {M} =\sum _{i}\mathbf {A} _{i}=\sum _{i}\sigma _{i}U_{i}\otimes V_{i}^{\dagger }.}
-
+displaystyle mathbf M sum i mathbf A i sum i sigma i U i otimes V i dagger .
 Aqui,
-
 U
-
 i
-
-{\displaystyle U_{i}}
-
+displaystyle U i
 e
-
 V
-
 i
-
-{\displaystyle V_{i}}
-
+displaystyle V i
 são as i-ésimas colunas das matrizes SVD correspondentes,
-
-σ
-
 i
-
-{\displaystyle \sigma _{i}}
-
+displaystyle sigma i
 são os autovalores ordenados, e cada
-
 A
-
 i
-
-{\displaystyle \mathbf {A} _{i}}
-
+displaystyle mathbf A i
 é separável. A SVD pode ser usada para encontrar a decomposição de um filtro de processamento de imagens em filtros separados verticais e horizontais. Note-se que o número de
-
-σ
-
 i
-
-{\displaystyle \sigma _{i}}
-
+displaystyle sigma i
 's não-nulos é precisamente o posto da matriz.
-
-=== Matriz ortogonal mais próxima ===
 Pode-se utilizar a SVD de
-
 A
-
-{\displaystyle A}
-
+displaystyle A
 para determinar a matriz ortogonal
-
 R
-
-{\displaystyle R}
-
+displaystyle R
 mais próxima de
-
 A
-
-{\displaystyle A}
-
+displaystyle A
 . A proximidade é medida pela norma de Frobenius de
-
 R
-−
 A
-
-{\displaystyle R-A}
-
+displaystyle R-A
 . A solução é o produto
-
 U
-
 V
-
-∗
-
-{\displaystyle UV^{*}}
-
+displaystyle UV
 . Isso confere com a intuição já que uma matriz ortogonal deveria ter a decomposição
-
 U
 I
-
 V
-
-∗
-
-{\displaystyle UIV^{*}}
-
+displaystyle UIV
 onde
-
 I
-
-{\displaystyle I}
-
+displaystyle I
 é a matriz identidade, de forma que se
-
 A
-=
 U
-Σ
-
 V
-
-∗
-
-{\displaystyle A=U\Sigma V^{*}}
-
+displaystyle A U Sigma V
 então o produto
-
 A
-=
 U
-
 V
-
-∗
-
-{\displaystyle A=UV^{*}}
-
+displaystyle A UV
 se reduz a colocar 1's no lugar dos valores singulares.
 Um problema similar, com aplicações fundamentais em visão computacional,
 robótica e en:shape analysis, é o Problema de Procrustes Ortogonal
 (orthogonal Procrustes problem), que consiste em encontrar uma matriz ortogonal
-
 R
-
-{\displaystyle R}
-
+displaystyle R
 que mapeia
-
 A
-
-{\displaystyle A}
-
+displaystyle A
 o mais próximo possível de
-
 B
-
-{\displaystyle B}
-
+displaystyle B
 . Formalmente,
-
 R
-=
 arg
-⁡
-
 min
-
-Ω
-
-‖
 A
-Ω
-−
 B
-
-‖
-
 F
-
 s
 u
 j
@@ -1373,266 +612,107 @@ e
 i
 t
 o
-
 a
-
-Ω
-
 T
-
-Ω
-=
 I
 ,
-
-{\displaystyle R=\arg \min _{\Omega }\|A\Omega -B\|_{F}\quad \mathrm {sujeito\ a} \quad \Omega ^{T}\Omega =I,}
-
+displaystyle R arg min Omega A Omega -B F quad mathrm sujeito a quad Omega T Omega I,
 onde
-
-‖
 .
 .
 .
-
-‖
-
 F
-
-{\displaystyle \|...\|_{F}}
-
+displaystyle ... F
 é a norma de Frobenius.
 Este problema é equivalente ao de encontrar a matriz ortogonal mais próxima a uma dada matriz
-
 M
-=
-
 A
-
 T
-
 B
-
-{\displaystyle M=A^{T}B}
-
+displaystyle M A T B
 .
-
-=== O Algoritmo de Kabsch ===
 O algoritmo de Kabsch (Kabsch algorithm), também conhecido como Wahba's problem, utiliza a SVD para calcular a rotação ótima (no sentido dos mínimos quadrados) que alinha um conjunto de pontos com um conjunto de pontos correspondentes. Isso tem aplicações para a comparação de estruturas moleculares e em problemas relacionados a modelos 3D em visão computacional e robótica.
-
-=== Outros exemplos ===
 A SVD é também aplicada extensivamente ao estudo de problemas inversos lineares e é útil na análise de métodos de regularização tais como os de regularização de Tikhonov (Tikhonov regularization). Também é amplamente utilizada em estatística, onde se relaciona com a análise de componentes principais e à en:Correspondence analysis, de aplicação direta em processamento de sinais e reconhecimento de padrões. Também é usada em análise modal, onde os mode shapes não escalados podem ser determinados pelos vetores singulares. Ainda outro uso é no indexamento semântico latente no processamento de linguagem natural textual.
 A SVD também tem papel crucial no campo da informação quântica (quantum information), numa forma comumente chamada de decomposição de Schmidt. Através dela, estados de dois sistemas quânticos são decompostos naturalmente, provendo condição necessária e suficiente para eles serem entangled: se o posto de
-
-Σ
-
-{\displaystyle \Sigma }
-
+displaystyle Sigma
 é maior que um.
 Uma aplicação da SVD para matrizes grandes é na previsão numérica do tempo, onde os vetores singulares gerados podem representar sistemas meteorológicos inteiros. Outra aplicação é a obtenção da equação do raio de luz que gerou um ponto em uma projeção perspectiva de uma cena (como uma foto) através da pseudoinversa.
-
-== História ==
 A decomposição em valores singulares foi originalmente desenvolvida por geômetras estudando geometria diferencial. Eles desejavam determinar se uma forma bilinear real pode ser tornada igual a uma outra por transformações ortogonais independentes dos dois espaços no qual ela age. Eugenio Beltrami e Camille Jordan descobriram independentemente, em 1873 e 1874, respectivamente, que os valores singulares das formas bilineares, representados por uma matriz, formam um conjunto completo de invariantes para formas bilineares sob substituições ortogonais. James Joseph Sylvester também chegou à decomposição em valores singulares para matrizes quadradas reais em 1889, aparentemente independentemente de Beltrami e Jordan. Sylvester chamou os valores singulares de multiplicadores canônicos da matriz A. O quarto matemático a descobrir a decomposição em valores singulares de forma independente foi Autonne em 1915, que chegou a ela via a decomposição polar (Polar decomposition). A primeira prova da decomposição singular para matrizes retangulares e complexas parece ter sido realizada por Carl Eckart e Gale Young em 1936; eles viam a SVD como uma generalização da transformação de eixo principal para matrizes hermitianas.
 Em 1907, Erhard Schmidt definiu um conceito análogo ao de valores singulares para operadores integrais (que são compactos, sob certas premissas técnicas); parece que ele não estava ciente do trabalho paralelo de valores singulares para matrizes finitas. Essa teoria foi levada adiante por Émile Picard em 1910, que é o primeiro a chamar os números
-
-σ
-
 k
-
-{\displaystyle \sigma _{k}}
-
+displaystyle sigma k
 de valores singulares (ou valeurs singulières).
-
-== Relação com a decomposição em autovalores (espectral) ==
-A decomposição em valores singulares é bastante geral, já que pode ser aplicada a qualquer matriz m × n , ao passo que a decomposição em autovalores pode apenas ser aplicada para algumas classes de matrizes quadradas.
+A decomposição em valores singulares é bastante geral, já que pode ser aplicada a qualquer matriz m n , ao passo que a decomposição em autovalores pode apenas ser aplicada para algumas classes de matrizes quadradas.
 Dada uma SVD de M, como acima, valem as seguintes condições:
-
 M
-
-∗
-
 M
-=
 V
-
-Σ
-
-∗
-
 U
-
-∗
-
 U
-Σ
-
 V
-
-∗
-
-=
 V
 (
-
-Σ
-
-∗
-
-Σ
 )
-
 V
-
-∗
-
-{\displaystyle M^{*}M=V\Sigma ^{*}U^{*}\,U\Sigma V^{*}=V(\Sigma ^{*}\Sigma )V^{*}}
-
+displaystyle M M V Sigma U ,U Sigma V V( Sigma Sigma )V
 M
-
 M
-
-∗
-
-=
 U
-Σ
-
 V
-
-∗
-
 V
-
-Σ
-
-∗
-
 U
-
-∗
-
-=
 U
 (
-Σ
-
-Σ
-
-∗
-
 )
-
 U
-
-∗
-
 .
-
-{\displaystyle MM^{*}=U\Sigma V^{*}\,V\Sigma ^{*}U^{*}=U(\Sigma \Sigma ^{*})U^{*}.}
-
+displaystyle MM U Sigma V ,V Sigma U U( Sigma Sigma )U .
 Os lados direitos dessas relações descrevem a decomposição em autovalor dos lados esquerdos. Sendo assim:
-
 Os vetores singulares à esquerda de M são autovetores de
-
 M
-
 M
-
-∗
-
 .
-
-{\displaystyle MM^{*}.}
-
+displaystyle MM .
 Os vetores singulares à direita de M são autovetores de
-
 M
-
-∗
-
 M
 .
-
-{\displaystyle M^{*}M.}
-
-Os valores singulares não-nulos de M (ao longo da diagonal de Σ) são as raízes dos autovalores não-nulos de
-
+displaystyle M M.
+Os valores singulares não-nulos de M (ao longo da diagonal de ) são as raízes dos autovalores não-nulos de
 M
-
-∗
-
 M
-
-{\displaystyle M^{*}M}
-
+displaystyle M M
 ou
-
 M
-
 M
-
-∗
-
 .
-
-{\displaystyle MM^{*}.}
-
+displaystyle MM .
 No caso especial em que M é uma matriz normal, que por definição deve ser quadrada, o teorema espectral diz que ela pode ser unitariamente diagonalizada usando-se uma base de autovalores, de forma que ela pode ser escrita
-
 M
-=
 U
 D
-
 U
-
-∗
-
-{\displaystyle M=UDU^{*}}
-
+displaystyle M UDU
 para uma matriz unitária U e uma matriz diagonal D. Quando M é também positiva semi-definida, a decomposição
-
 M
-=
 U
 D
-
 U
-
-∗
-
-{\displaystyle M=UDU^{*}}
-
+displaystyle M UDU
 é também uma SVD.
 No entanto, as decomposições em autovalores e em valores singulares diferem para todas outras matrizes M: a decomposição espectral é
-
 M
-=
 U
 D
-
 U
-
-−
 1
-
-{\displaystyle M=UDU^{-1}}
-
+displaystyle M UDU -1
 onde U não é necessariamente unitária e D não é necessariamente positiva semi-definida, enquanto a SVD é
-
 M
-=
 U
-Σ
-
 V
-
-∗
-
-{\displaystyle M=U\Sigma V^{*}}
-
-onde Σ é diagonal postiva semi-definida, e U e V são matrizes unitárias que não são necessariamente relacionadas exceto através de M.
-
-== Ver também ==
+displaystyle M U Sigma V
+onde é diagonal postiva semi-definida, e U e V são matrizes unitárias que não são necessariamente relacionadas exceto através de M.
 Forma canônica de Jordan
 Curse of dimensionality
 Teoremas espectrais
@@ -1641,24 +721,18 @@ Decomposição matricial (matrix decomposition)
 Decomposição polar (Polar decomposition)
 Análise de Componentes Principais
 Aproximação de baixo posto (low-rank approximation)
-
-== Notas ==
-
-== Referências ==
 Trefethen, Lloyd N.; Bau III, David (1997). Numerical linear algebra. Philadelphia: Society for Industrial and Applied Mathematics. ISBN 978-0-89871-361-9
-Demmel, James; Kahan, William (1990). «Accurate singular values of bidiagonal matrices». Society for Industrial and Applied Mathematics. Journal on Scientific and Statistical Computing. 11 (5): 873–912. doi:10.1137/0911052
-Golub, Gene H.; Kahan, William (1965). «Calculating the singular values and pseudo-inverse of a matrix». Journal of the Society for Industrial and Applied Mathematics: Series B, Numerical Analysis. 2 (2): 205–224. JSTOR 2949777. doi:10.1137/0702016
+Demmel, James; Kahan, William (1990). «Accurate singular values of bidiagonal matrices». Society for Industrial and Applied Mathematics. Journal on Scientific and Statistical Computing. 11 (5): 873 912. doi:10.1137/0911052
+Golub, Gene H.; Kahan, William (1965). «Calculating the singular values and pseudo-inverse of a matrix». Journal of the Society for Industrial and Applied Mathematics: Series B, Numerical Analysis. 2 (2): 205 224. JSTOR 2949777. doi:10.1137/0702016
 Golub, Gene H.; Van Loan, Charles F. (1996). Matrix Computations 3rd ed. [S.l.]: Johns Hopkins. ISBN 978-0-8018-5414-9
-GSL Team (2007). «§13.4 Singular Value Decomposition». GNU Scientific Library. Reference Manual. [S.l.: s.n.]
+GSL Team (2007). « 13.4 Singular Value Decomposition». GNU Scientific Library. Reference Manual. [S.l.: s.n.]
 Halldor, Bjornsson and Venegas, Silvia A. (1997). "A manual for EOF and SVD analyses of climate data". McGill University, CCGCR Report No. 97-1, Montréal, Québec, 52pp.
-Hansen, P. C. (1987). «The truncated SVD as a method for regularization». BIT. 27: 534–553. doi:10.1007/BF01937276
+Hansen, P. C. (1987). «The truncated SVD as a method for regularization». BIT. 27: 534 553. doi:10.1007/BF01937276
 Horn, Roger A.; Johnson, Charles R. (1985). «Section 7.3». Matrix Analysis. [S.l.]: Cambridge University Press. ISBN 0-521-38632-2 !CS1 manut: Nomes múltiplos: lista de autores (link)
 Horn, Roger A.; Johnson, Charles R. (1991). «Chapter 3». Topics in Matrix Analysis. [S.l.]: Cambridge University Press. ISBN 0-521-46713-6 !CS1 manut: Nomes múltiplos: lista de autores (link)
 Samet, H. (2006). Foundations of Multidimensional and Metric Data Structures. [S.l.]: Morgan Kaufmann. ISBN 0-12-369446-9
 Strang G. (1998). «Section 6.7». Introduction to Linear Algebra 3rd ed. [S.l.]: Wellesley-Cambridge Press. ISBN 0-9614088-5-5
-Stewart, G. W. (1993). «On the Early History of the Singular Value Decomposition». SIAM Review. 35 (4): 551–566. doi:10.1137/1035134
-Wall, Michael E., Andreas Rechtsteiner, Luis M. Rocha (2003). «Singular value decomposition and principal component analysis». In: D.P. Berrar, W. Dubitzky, M. Granzow. A Practical Approach to Microarray Data Analysis. Norwell, MA: Kluwer. pp. 91–109 !CS1 manut: Nomes múltiplos: lista de autores (link)
+Stewart, G. W. (1993). «On the Early History of the Singular Value Decomposition». SIAM Review. 35 (4): 551 566. doi:10.1137/1035134
+Wall, Michael E., Andreas Rechtsteiner, Luis M. Rocha (2003). «Singular value decomposition and principal component analysis». In: D.P. Berrar, W. Dubitzky, M. Granzow. A Practical Approach to Microarray Data Analysis. Norwell, MA: Kluwer. pp. 91 109 !CS1 manut: Nomes múltiplos: lista de autores (link)
 Press, WH; Teukolsky, SA; Vetterling, WT; Flannery, BP (2007), «Section 2.6», Numerical Recipes: The Art of Scientific Computing, ISBN 978-0-521-88068-8 3rd ed. , New York: Cambridge University Press
-
-== Ligações externas ==
-«Material on-line de cursos de graduacao e pos-graduacao de Algebra Linear Numerica/Aplicada e Analise Matricial do IPRJ» 🔗
+«Material on-line de cursos de graduacao e pos-graduacao de Algebra Linear Numerica/Aplicada e Analise Matricial do IPRJ»

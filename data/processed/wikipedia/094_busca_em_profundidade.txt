@@ -1,47 +1,28 @@
 Na teoria dos grafos, busca em profundidade (ou busca em profundidade-primeiro, também conhecido em inglês por Depth-First Search - DFS) é um algoritmo usado para realizar uma busca ou travessia numa árvore, estrutura de árvore ou grafo. Intuitivamente, o algoritmo começa num nó raiz (selecionando algum nó como sendo o raiz, no caso de um grafo) e explora tanto quanto possível cada um dos seus ramos, antes de retroceder(backtracking).
 Uma versão da busca em profundidade foi investigada no século XIX pelo matemático francês Charles Pierre Trémaux como estratégia para solucionar labirintos.
-
-== Definição Formal ==
-
 Formalmente, um algoritmo de busca em profundidade realiza uma busca não-informada que progride através da expansão do primeiro nó filho da árvore de busca, e se aprofunda cada vez mais, até que o alvo da busca seja encontrado ou até que ele se depare com um nó que não possui filhos (nó folha). Então a busca retrocede (backtrack) e começa no próximo nó. Numa implementação não-recursiva, todos os nós expandidos recentemente são adicionados a uma pilha, para realizar a exploração.
 A complexidade espacial de um algoritmo de busca em profundidade é muito menor que a de um algoritmo de busca em largura. A complexidade temporal de ambos algoritmos são proporcionais ao número de vértices somados ao número de arestas dos grafos aos quais eles atravessam.
 Quando ocorrem buscas em grafos muito grandes, que não podem ser armazenadas completamente na memória, a busca em profundidade não termina, em casos onde o comprimento de um caminho numa árvore de busca é infinito. O simples artifício de “ lembrar quais nós já foram visitados ” não funciona, porque pode não haver memória suficiente. Isso pode ser resolvido estabelecendo-se um limite de aumento na profundidade da árvore.
-
-== Exemplo ==
-
 Para o grafo ao lado, uma busca em profundidade começando em A, assumindo-se que as arestas esquerdas do grafo apresentado sejam escolhidas antes das arestas direitas, e assumindo que a busca relembre os nós previamente visitados e que não os repita (desde que este seja um grafo pequeno), visitaremos os nós na seguinte ordem : A, B, D, F, E, C, G.
 Modificando essa mesma busca, sem que nos recordemos dos nós previamente visitados, teríamos como resultado a seguinte ordem de visita dos nós: A, B, D, F, E, A, B, D, F, E, etc, eternamente, já que a busca ficaria presa no ciclo A,B,D,F,E e nunca alcançaria G ou C.
 O aprofundamento iterativo previne esse looping, alcançando os seguintes nós, nas seguintes profundidades, assumindo-se que ele prossiga da esquerda para a direita, como mostrado abaixo:
-
 0: A
 1: A (repetido), B, C, E
 (Perceba que o aprofundamento iterativo agora enxergou C, ao passo que uma busca em profundidade convencional não enxergaria.)
-
 2: A, B, D, F, C, G, E, F
 (Perceba que a busca ainda enxerga C, mas que ele vem depois. Perceba também que ele enxerga E via diferentes caminhos, e passa duas vezes pelo F .)
-
 3: A, B, D, F, E, C, G, E, F, B
 Para esse grafo, quanto maior for a profundidade aplicada, os dois ciclos “ABFE” e “AEFB” simplesmente ficarão maiores, antes que o algoritmo desista e tente outro ramo.
-
-== Exemplos de Código ==
-Um exemplo deste código gerado em C++ pode ser observado abaixo:Outro exemplo deste código gerado em JavaScript pode ser observado abaixo:
-
-== Aplicações ==
+Um exemplo deste código gerado em C pode ser observado abaixo:Outro exemplo deste código gerado em JavaScript pode ser observado abaixo:
 Achar componentes conectados
 Achar componentes fortemente conectados
 Ordenação topológica
 Resolução de quebra-cabeças como labirinto
-
-== Referências ==
-
-== Ver também ==
 Busca em largura
-
-== Ligações externas ==
 Explicação e exemplo da busca em profundidade
-C++ Boost Graph Library: Depth-First Search
+C Boost Graph Library: Depth-First Search
 [1]
 [2]
 QuickGraph, exemplo para .Net
 [3]
-YAGSBPL – Um template feito em biblioteca C++ para procura de gráficos e planejamento
+YAGSBPL Um template feito em biblioteca C para procura de gráficos e planejamento

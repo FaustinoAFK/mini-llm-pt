@@ -1,56 +1,26 @@
 Código aberto (do inglês Open Source) é o código-fonte que é disponibilizado gratuitamente para consulta, examinação, modificação e redistribuição. Os produtos incluem permissão para usar o código-fonte, documentos de design ou conteúdo do produto. O modelo de código aberto é um modelo de desenvolvimento de software descentralizado que incentiva a colaboração aberta. Um princípio importante do desenvolvimento de software de código aberto é a produção por pares (do inglês pair production), com produtos como código-fonte, projetos e documentação disponíveis gratuitamente ao público. O movimento de código aberto no software começou como uma resposta às limitações do código proprietário. O modelo é usado em projetos de tecnologia apropriada e na descoberta e pesquisa de medicamentos.
 O termo "código aberto" foi popularizado pela Open Source Initiative (OSI), que difere de um software livre por não seguir as quatro liberdades definidas pela Fundação de Programas Livres (do inglês: Free Software Foundation - FSF), que eram também compartilhadas pelo projeto Debian. Qualquer licença de software livre é também uma licença de código aberto (open source), mas o contrário não é necessariamente verdade.
 Enquanto a FSF usa o termo "Software Livre" envolta de um discurso baseado em questões éticas, direitos e liberdade, a OSI usa o termo "Código Aberto" sob um ponto de vista puramente técnico, evitando (propositadamente) questões éticas. Esta nomenclatura e este discurso foram cunhados por Eric Raymond e outros fundadores da OSI com o objetivo de apresentar o software livre a empresas de uma forma mais comercial evitando o discurso ético.
-
-== História ==
 O compartilhamento de informações técnicas é muito anterior à Internet e ao computador pessoal. Por exemplo, nos primeiros anos do desenvolvimento do automóvel, um grupo de monopolistas de capital possuía os direitos de uma patente de motor a gasolina de 2 tempos originalmente depositada por George B. Selden. Ao controlar essa patente, eles foram capazes de monopolizar a indústria e forçar os fabricantes de automóveis a cumprir suas exigências, ou arriscar uma ação judicial.
 Em 1911, a montadora independente Henry Ford venceu um desafio à patente de Selden. O resultado foi que a patente de Selden se tornou virtualmente inútil e uma nova associação (que eventualmente se tornaria a Associação de Fabricantes de Veículos Automotores) foi formada. A nova associação instituiu um acordo de licenciamento cruzado entre todos os fabricantes automotivos dos EUA: embora cada empresa desenvolvesse tecnologia e registrasse patentes, essas patentes eram compartilhadas abertamente e sem troca de dinheiro entre todos os fabricantes. Quando os EUA entraram na Segunda Guerra Mundial, 92 patentes da Ford e 515 patentes de outras empresas estavam sendo compartilhadas entre esses fabricantes, sem qualquer troca de dinheiro (ou ações judiciais).
 As primeiras instâncias do compartilhamento gratuito de código-fonte incluem versões de origem de seus sistemas operacionais e outros programas da IBM nas décadas de 1950 e 1960, e o grupo de usuários SHARE formado para facilitar a troca de software. A partir da década de 1960, os pesquisadores da ARPANET usaram um processo aberto de "Request for Comments" (RFC) para incentivar o feedback nos primeiros protocolos de rede de telecomunicações. Isso levou ao nascimento do início da Internet em 1969.
 O compartilhamento de código-fonte na Internet começou quando a Internet era relativamente primitiva, com software distribuído via UUCP, Usenet, IRC e Gopher. O BSD, por exemplo, foi primeiramente distribuído amplamente por postagens no comp.os.linux na Usenet, que também é onde seu desenvolvimento foi discutido. Linux seguiu neste modelo.
-
-=== Etimologia ===
 Em fevereiro de 1998, o rótulo "Open Source" surgiu em uma reunião, de futuras referências no tema, como Todd Anderson, Chris Peterson (Foresight Institute), Jon "Maddog" Hall e Larry Augustin (Linux International), Sam Ockman (Silicon Valley Linux User's Group) e Eric Raymond.
 Como a diferença entre o movimento "Software Livre" e modelo "Código Aberto" está apenas na argumentação em prol dos mesmos softwares, é comum que esses grupos se unam em diversas situações ou que sejam citados de uma forma agregadora através da sigla "FLOSS" (Free/Libre and Open Source Software).
 Os defensores do modelo Open Source sustentam que não se trata de algo anticapitalista ou anarquista, mas de uma alternativa ao modelo de negócio para a indústria de software. O modelo colaborativo de produção intelectual oferece um novo paradigma para o direito autoral. Algumas grandes empresas como IBM, HP, Intel e Dell também têm investido no software de código aberto, juntando esforços para a criação do Open Source Development Lab (OSDL), instituição destinada à criação de tecnologias de código aberto.
-
-== Características ==
 A definição do Open Source foi criada pela Open Source Iniciative (OSI) a partir do texto original das Debian Free Software Guidelines e determina que um programa de código aberto deve garantir:
-
-=== Livre distribuição ===
 A licença não deve restringir de nenhuma maneira a venda ou distribuição do programa gratuitamente, como componente de outro programa ou não.
-
-=== Código fonte ===
 O programa deve incluir seu código fonte e deve permitir a sua distribuição também na forma compilada. Se o programa não for distribuído com seu código fonte, deve haver algum meio de se obter o mesmo seja via rede ou com custo apenas de reprodução. O código deve ser legível e inteligível por qualquer programador.
-
-=== Trabalhos Derivados ===
 A licença deve permitir modificações e trabalhos derivados, e deve permitir que eles sejam distribuídos sobre os mesmos termos da licença original.
-
-=== Integridade do autor do código ===
-A licença não pode restringir o código fonte de ser distribuído em uma forma modificada mesmo se a licença permitir a distribuição de arquivos patch (de atualização) com o código fonte para o propósito de modificar o programa no momento de sua construção pois a restrição ao código–fonte significa transformar o software livre em software proprietário. A licença deve explicitamente permitir a distribuição do programa construído a partir do código fonte modificado. Contudo, a licença pode ainda requerer que programas derivados tenham um nome ou número de versão diferentes do programa original.
-
-=== Não discriminação contra pessoas ou grupos ===
+A licença não pode restringir o código fonte de ser distribuído em uma forma modificada mesmo se a licença permitir a distribuição de arquivos patch (de atualização) com o código fonte para o propósito de modificar o programa no momento de sua construção pois a restrição ao código fonte significa transformar o software livre em software proprietário. A licença deve explicitamente permitir a distribuição do programa construído a partir do código fonte modificado. Contudo, a licença pode ainda requerer que programas derivados tenham um nome ou número de versão diferentes do programa original.
 A licença não pode ser discriminatória contra qualquer pessoa ou grupo de pessoas.
-
-=== Não discriminação contra áreas de atuação ===
 A licença não deve restringir qualquer pessoa de usar o programa em um ramo específico de atuação. Por exemplo, ela não deve proibir que o programa seja usado em um empresa, ou de ser usado para pesquisa genética.
-
-=== Distribuição da Licença ===
 Os direitos associados ao programa devem ser aplicáveis para todos aqueles cujo programa é redistribuído, sem a necessidade da execução de uma licença adicional para estas partes.
-
-=== Licença não específica a um produto ===
 Os direitos associados ao programa não devem depender que o programa seja parte de uma distribuição específica de programas. Se o programa é extraído desta distribuição e usado ou distribuído dentro dos termos da licença do programa, todas as partes para quem o programa é redistribuído devem ter os mesmos direitos que aqueles que são garantidos em conjunção com a distribuição de programas original.
-
-=== Licença não restrinja outros programas ===
 A licença não pode colocar restrições em outros programas que são distribuídos juntos com o programa licenciado. Isto é, a licença não pode especificar que todos os programas distribuídos na mesma mídia de armazenamento sejam programas de código aberto.
-
-=== Licença neutra em relação a tecnologia ===
 Nenhuma cláusula da licença pode estabelecer uma tecnologia individual, estilo ou interface a ser aplicada no programa.
-
-== Governos, Movimentos Cívicos e a Transformação Digital ==
 No contexto da Transformação Digital de Governos pelo mundo, o código aberto é considerado essencial para promoção da colaboração, padronização e otimização das tecnologias desenvolvidas pela e para a gestão pública.
 Nesse cenário, diversos movimentos cívicos como Rede Livre, Ciudadania Inteligente, Code For America, My Society e G0v, atuam na promoção da cultura de governos, dados e códigos abertos, mobilizando profissionais, cidadãos e agentes governamentais em eventos e redes comunitárias, que geram ou maximizam o impacto na sociedade através da adoção e prática de códigos abertos e governança colaborativa nos governos e na sociedade.
-
-== Ver também ==
 Copyleft
 Copyright
 Creative Commons
@@ -60,11 +30,6 @@ Licença livre
 Hardware aberto
 Educação aberta
 Recursos educacionais abertos
-
-== Referências ==
-
-== Ligações externas ==
-
 «A identificação da ideologia». Software Livre versus Código Aberto
 «Os líderes Open Source». na Webyes
 «SourceForge» (em inglês). - banco de dados de projetos open source

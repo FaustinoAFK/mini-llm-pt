@@ -1,64 +1,40 @@
 Visão computacional é a ciência e tecnologia das máquinas que enxergam. Ela desenvolve teoria e tecnologia para a construção de sistemas artificiais que obtém informação de imagens ou quaisquer dados multidimensionais. Exemplos de aplicações incluem o controle de processos (como robôs industriais ou veículos autônomos), detecção de eventos, organização de informação, modelagem de objetos ou ambientes e interação (atrelado a interação humano-computador).
 A visão computacional também pode ser descrita como um complemento da visão biológica. Na visão biológica, a percepção visual dos humanos e outros animais é estudada, resultando em modelos em como tais sistemas operam em termos de processos fisiológicos. Por outro lado, a visão computacional estuda e descreve sistemas de visão artificial implementados por hardware ou software.
 Sub campos de pesquisa incluem reconstrução de cena, detecção de eventos, reconhecimento de objetos, aprendizagem de máquina e restauração de imagens.
-
-== Estado da arte ==
-
 O campo de visão computacional pode ser caracterizado como imaturo e diverso. Apesar de existirem trabalhos já reconhecidos, somente após o final da década de 1970 que começaram estudos aprofundados, quando os computadores já podiam processar grandes conjuntos de dados como imagens. Entretanto, tais estudos foram geralmente originados de outros campos de pesquisa, e, consequentemente, não existe uma formulação padrão para o problema de visão computacional, assim como não existe uma formulação padrão de como os problemas de visão computacionais devem ser resolvidos. O que existem atualmente são diversos métodos para resolver várias tarefas bem definidas, no qual os métodos são bastante especializados e raramente podem ser generalizados para várias aplicações. Na maioria das aplicações de visão computacional, os computadores são pré-programados para resolver uma tarefa particular, mas métodos baseados em aprendizagem estão se tornando cada vez mais comuns.
 Uma parte significativa da inteligência artificial lida com sistemas que realizam ações mecânicas como movimentar um robô em um ambiente. Esse tipo de processamento necessita de um sistema de visão computacional, que age como um sensor de visão, fornecendo informações de alto nível sobre o ambiente ao robô. Outras áreas da inteligência artificial relacionadas com a visão computacional são o reconhecimento de padrões e a aprendizagem de máquina. Como consequência, a visão computacional é por vezes vista como parte da inteligência artificial ou da ciência da computação de modo geral.
 Física é outro campo relacionado. Grande parte da visão computacional lida com métodos que requerem o entendimento dos processos no qual a radiação eletromagnética, tipicamente na camada visível ou infravermelha, é refletida pelas superfícies dos objetos e capturada pelos sensores para formar a imagem. Esse processo é baseado na óptica e na física dos estados sólidos. Sensores de imagem mais sofisticados requerem também a física quântica para fornecer uma compreensão completa do processo de formação da imagem. Também, vários problemas como o movimento de fluidos podem ser resolvidos com a visão computacional, o que a torna também uma extensão da física.
 Um terceiro campo relacionado é a neurobiologia, especificamente o estudo de sistemas biológicos de visão. Durante o século XX houve vários estudos extensos sobre as estruturas do olho, neurônios e do cérebro, devotados ao processo de estimulação visual tanto nos humanos quanto em vários outros animais. Isso levou a uma descrição bastante rica e complexa de como a visão biológica opera para resolver algumas tarefas de visão. Os resultados foram usados para o enriquecimento dos estudos sobre a imitação dos sistemas biológicos, em diferentes níveis de complexidade.
 Outro campo relacionado com a visão computacional é o processamento de sinais. Vários métodos de processamento de sinais univariáveis, geralmente relacionados ao tempo, podem ser estendidos ao processamento de sinais com duas ou várias variáveis.
 Além dos campos de pesquisa anteriores, vários outros tópicos também são estudados na visão computacional, tais como estatística, otimização e geometria computacional.
-
-== Exemplos de aplicações ==
 Uma das mais difundidas aplicações da visão computacional é a Medicina, ou o processamento médico da imagens. Tal área é caracterizada pela extração de informação de imagens para realizar diagnósticos sobre os pacientes. Fontes de imagens incluem imagens de microscopia, de radiografia, de angioplastia, de ultrassonografia, de tomografia e de ressonância magnética.
 Outra aplicação bastante difundida é a indústria. Aqui, a informação obtida auxilia processos como a inspeção de controle de qualidade e cálculo de posição e orientação de detalhes para um braço robótico por exemplo.
 As aplicações militares são talvez uma das maiores da visão computacional, ainda que apenas uma pequena parte desse trabalho esteja disponível ao público. Exemplos básicos incluem a detecção de unidades inimigas e ou mísseis tele-guiados. Sistemas mais avançados enviam mísseis para uma área ao invés de um alvo específico, sendo que a seleção do alvo é feita no processamento da imagem do local feita pelo próprio míssil.
-
 Uma das novas aplicações são os veículos autônomos, cujo nível de autonomia varia entre total ou parcial, este último usado para somente auxiliar a tarefa de dirigir em situações diversas. A autonomia total usa a visão computacional para a navegação, isto é, para obter a localização, para produzir mapas do ambiente e para detectar obstáculos. Várias montadoras já demonstraram veículos totalmente autônomos, mas tal tecnologia ainda não atingiu maturidade suficiente para estar no mercado. A exploração espacial também está usando veículos autônomos usando a visão computacional, como por exemplo a Mars Exploration Rover da NASA.
-
-== Tarefas típicas ==
 Cada uma das áreas de aplicação descritas abaixo utilizam um conjunto de tarefas de visão computacional.
-
 Reconhecimento
 O problema clássico da visão computacional e do processamento de imagens é determinar se uma imagem contém ou não um dado objeto, uma dada característica ou uma dada atividade. Tal tarefa pode ser resolvida de forma robusta e sem esforço humano, mas ainda não foi resolvida satisfatoriamente para o caso geral, objetos arbitrários em situações arbitrárias. Os métodos atuais conseguem, no máximo, resolver para objetos específicos, como poliedros, faces humanas, letras escritas à mão ou veículos; também em situações específicas, como iluminação bem definida, fundo fixo e pose dos objetos bem definida.
 Diferentes variedade de problemas de reconhecimento são descritos na literatura:
-
 Reconhecimento: uma ou várias classes pré-definidas ou aprendidas de objetos podem ser reconhecidas, geralmente em conjunto com sua posição em imagens bidimensionais ou com sua pose em imagens tridimensionais. As predições de um modelo de visão computacional, atualmente são realizadas utilizando um percentual de identificação, o que provoca a não identificação do objeto em questão quando utilizado uma imagem com baixa similaridade em comparação com o conjunto de imagens do treinamento.
 Identificação: uma instância individual de um objeto pode ser reconhecida, como a identificação de uma face ou de impressão digital, ou até mesmo a identificação de um veículo.
 Detecção: a imagem é digitalizada para uma condição específica, como a detecção de células ou tecidos anormais.
 Movimento
 Várias tarefas estão relacionadas a estimativa do movimento, no qual uma sequência de imagens é processada para produzir uma estimativa da velocidade em cada ponto.
-
 Reconstrução de cena
 Dadas duas ou mais imagens de uma cena, ou um vídeo, a reconstrução de cena visa computar um modelo tridimensional da cena. No caso mais simples, o modelo consiste somente em um conjunto de pontos tridimensionais; métodos mais sofisticados reconstroem também texturas e cores.
-
 Restauração de imagens
 O objetivo da restauração de imagens é a remoção de ruídos.
-
-== Sistemas de visão computacional ==
 A organização de um sistema de visão computacional é dependente da aplicação. A implementação específica de tal sistema depende também se sua funcionalidade é pré especificada ou se existe alguma parte de aprendizagem durante a operação. Existem, entretanto, funções típicas encontradas vários sistemas de visão computacional:
-
 Aquisição de imagem: uma imagem digital é produzida por um ou vários sensores. Dependendo do tipo do sensor, o resultado pode variar entre uma imagem bidimensional, uma cena tridimensional ou ainda uma sequência de imagens. Os valores dos pixels geralmente indicam a intensidade da luz em uma ou várias faixas de cor (o que forma imagens em tom de cinza ou coloridas), mas também podem indicar valores físicos como profundidade e absorção ou reflexão das ondas eletromagnéticas.
 Pré-processamento: antes de um método de visão computacional ser aplicado em uma imagem para extrair informação, é geralmente necessário processar a imagem para assegurar-se que ela satisfaz as condições do método. Exemplos incluem remapeamento (para assegurar o sistema de coordenadas), redução de ruídos (para assegurar que as informações são verdadeiras) e aumento de contraste (para assegurar que as informações relevantes serão detectadas).
 Extração de características: características matemáticas da imagem em vários níveis de complexidade são extraídos. Exemplos básicos incluem detecção de bordas, cantos ou pontos. Exemplo sofisticados incluem a morfologia matemática, detecção de texturas, formatos e movimentos.
 Detecção e segmentação: em algum ponto do processo uma decisão é feita sobre a relevância de regiões da imagem para processamento posterior. Exemplos incluem a seleção de regiões de interesse específicos e segmentação de uma ou mais regiões que contém um objeto de interesse.
 Processamento de alto nível: neste ponto a entrada é geralmente um conjunto pequeno de dados. O processo posterior inclui a verificação da satisfação dos dados, a estimativa de parâmetros sobre a imagem e a classificação dos objetos detectados em diferentes categorias.
-
-== Ver também ==
 Inteligência artificial
 Computação gráfica
 Processamento de imagens
 Aprendizagem de máquina
 Reconhecimento de padrões
 Sistema de visão
-
-== Referências ==
-
-=== Bibliografia ===
-
-== Ligações externas ==
 Enciclopédia de Visão Artificial (em Português e Espanhol)
-
 (em inglês) Computer Vision: Algorithms and Applications

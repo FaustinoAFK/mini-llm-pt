@@ -1,16 +1,12 @@
 Máquina de vetores de suporte (SVM, do inglês: support-vector machine) é um conceito na ciência da computação para um conjunto de métodos de aprendizado supervisionado (aprendizagem de máquina supervisionada) que analisam os dados e reconhecem padrões, usado para classificação e análise de regressão. O SVM padrão toma como entrada um conjunto de dados e prediz, para cada entrada dada, qual de duas possíveis classes a entrada faz parte, o que faz do SVM um classificador linear binário não probabilístico. Dados um conjunto de exemplos de treinamento, cada um marcado como pertencente a uma de duas categorias, um algoritmo de treinamento do SVM constrói um modelo que atribui novos exemplos a uma categoria ou outra. Um modelo SVM é uma representação de exemplos como pontos no espaço, mapeados de maneira que os exemplos de cada categoria sejam divididos por um espaço claro que seja tão amplo quanto possível. Os novos exemplos são então mapeados no mesmo espaço e preditos como pertencentes a uma categoria baseados em qual o lado do espaço eles são colocados.
 Em outras palavras, o que uma SVM faz é encontrar uma linha de separação, mais comumente chamada de hiperplano entre dados de duas classes. Essa linha busca maximizar a distância entre os pontos mais próximos em relação a cada uma das classes, ver imagem:
-
 Essa distância entre o hiperplano e o primeiro ponto de cada classe costuma ser chamada de margem. A SVM coloca em primeiro lugar a classificação das classes, definindo assim cada ponto pertencente a cada uma das classes, e em seguida maximiza a margem. Ou seja, ela primeiro classifica as classes corretamente e depois em função dessa restrição define a distância entre as margens.
 Algumas características:
-
 Em caso de outlier a SVM busca a melhor forma possível de classificação e, se necessário, desconsidera o outlier;
 Funciona muito bem em domínios complicados, em que existe uma clara margem de separação;
 Não funciona bem em conjuntos de dados muito grandes, pois exige inversão de matriz - aumentando a complexidade computacional com até o cubo do volume de dados;
 Não funciona bem em conjunto de dados com grande quantidade de ruídos;
 Se as classes estiverem muito sobrepostas deve-se utilizar apenas evidências independentes (devido a esta família de algoritmos não ser muito boa com dados com muito ruído).
-
-== Ver também ==
 Inteligência artificial
 Aprendizado de Máquina
 Visão computacional

@@ -1,891 +1,401 @@
-Um espaço vetorial (também chamado de espaço linear) é uma coleção de objetos chamada vetores, que podem ser somados um a outro e multiplicados ("escalonados") por números, denominados escalares. Os números reais são escalares frequentemente utilizados, mas também existem espaços vetoriais com multiplicação por números complexos, números racionais; em geral, por qualquer corpo. As operações de adição de vetores e multiplicação por escalar precisam satisfazer certas propriedades, denominadas axiomas (listados abaixo, em § Definição). Para explicitar se os escalares são números reais ou complexo, os termos espaço vetorial real e espaço vetorial complexo são frequentemente utilizados.
+Um espaço vetorial (também chamado de espaço linear) é uma coleção de objetos chamada vetores, que podem ser somados um a outro e multiplicados ("escalonados") por números, denominados escalares. Os números reais são escalares frequentemente utilizados, mas também existem espaços vetoriais com multiplicação por números complexos, números racionais; em geral, por qualquer corpo. As operações de adição de vetores e multiplicação por escalar precisam satisfazer certas propriedades, denominadas axiomas (listados abaixo, em Definição). Para explicitar se os escalares são números reais ou complexo, os termos espaço vetorial real e espaço vetorial complexo são frequentemente utilizados.
 Vetores euclidianos são um exemplo de espaço vetorial. Eles representam quantidades físicas como forças: quaisquer duas forças (do mesmo tipo) podem ser somadas para resultar em uma terceira, enquanto que a multiplicação de um vetor de força por um número real gera outro vetor de força. De forma semelhante, porém com um sentido mais geométrico, vetores que representam deslocamentos em um plano ou em um espaço tridimensional também formam espaços vetoriais. Vetores em espaços vetoriais não necessitam ser objetos do tipo seta, como aparecem nos exemplos mencionados acima; vetores são tratados como entidades matemáticas abstratas com propriedades particulares, que, em alguns casos, podem ser visualizados por setas.
 Espaços vetoriais são o objeto de estudo da álgebra linear e são bem caracterizados pela sua dimensão, que, grosso modo, especifica o número de direções independentes no espaço. Espaços vetoriais de dimensão infinita surgem naturalmente em análise matemática, como em espaços funcionais, cujos vetores são funções. Esses espaços vetoriais são munidos em geral de uma estrutura adicional, que pode ser uma topologia, permitindo a consideração de conceitos como proximidade e continuidade. Dentre essas topologias, aquelas que são definidas por uma norma ou um produto interno são mais frequentemente utilizadas, por possuírem uma noção de distância entre dois vetores. Esse é o caso particularmente com os espaços de Banach e os espaços de Hilbert, que são fundamentais em análise matemática.
 Historicamente, as primeiras ideias que levaram ao conceito de espaços vetoriais podem ser associadas aos avanços, durante o século XVII, nas áreas de geometria analítica, matrizes, sistemas de equações lineares, e vetores euclidianos. O tratamento moderno e mais abstrato, formulado pela primeira vez por Giuseppe Peano em 1888, contém objetos mais gerais que o espaço euclidiano, mas muito da teoria pode ser visto como uma extensão de ideias da geometria clássica como retas, planos, e seus análogos de dimensão mais alta. Atualmente, os espaços vetoriais permeiam a matemática, a ciência e a engenharia. Eles são a noção apropriada da álgebra linear para lidar com sistemas de equações lineares. Eles oferecem um escopo para as séries de Fourier, que são utilizadas em métodos de compressão de imagens, e eles fornecem um ambiente que pode ser utilizado para técnicas de solução de equações diferenciais parciais. Ademais, espaços vetoriais fornecem uma maneira abstrata, livre de coordenadas, de lidar com objetos geométricos e físicos como tensores. Isso por sua vez permite a análise de propriedades locais variedades por técnicas de linearização. Espaços vetoriais podem ser generalizados de diversas maneiras, acarretando noções mais avançadas em geometria e em álgebra abstrata.
 Não é necessário que os vetores tenham interpretação geométrica, mas podem ser quaisquer objetos que satisfaçam os axiomas abaixo. Polinômios de grau menor ou igual a
-
 n
-
-{\displaystyle n}
-
+displaystyle n
 (
-
 n
-∈
-
 N
-
-{\displaystyle n\in \mathbb {N} }
-
+displaystyle n in mathbb N
 ) formam um espaço vetorial, por exemplo, assim como grupos de matrizes
-
 m
-×
 n
-
-{\displaystyle m\times n}
-
+displaystyle m times n
 e o espaço de todas as funções de um conjunto no conjunto R dos números reais.
-
-== Introdução e definição ==
 O conceito de espaço vetorial será primeiramente explicado pela descrição de dois exemplos específicos:
-
-=== Primeiro exemplo: setas em um plano ===
-O primeiro exemplo de um espaço vetorial consiste de setas em um plano fixo, começando por um ponto fixo. Isso é usado em física para descrever forças ou velocidades. Dadas duas setas deste tipo, v e w, o paralelogramo formado por elas contém uma seta diagonal que também começa na origem. Essa nova seta é chamada de soma das setas anteriores e é denotada por v + w. No caso especial de duas setas na mesma linha, a soma delas é a seta na mesma linha cujo comprimento é a soma ou a diferença dos comprimentos, dependendo se as setas possuem mesmo sentido ou sentidos opostos. Uma outra operação que pode ser feita com setas é o seu escalonamento: dado qualquer número real positivo a, a seta que tem a mesma direção que v, mas está dilatada ou contraída ao multiplicar seu comprimento por a, é chamada multiplicação de v por a. É denotada por av. Quando a for negativo, av é definido como a seta apontando no sentido oposto.
-A seguir estão alguns exemplos: se a = 2, o vetor resultante aw tem a mesma direção que w, mas está esticado, tendo um comprimento que é o dobro de w (imagem abaixo, à direita). De forma equivalente, 2w é a soma de w + w. Além disso, (−1)v = −v tem o sentido oposto e o mesmo comprimento que v (vetor azul apontando para baixo, na imagem à direita).
-
-=== Segundo exemplo: pares ordenados de números ===
+O primeiro exemplo de um espaço vetorial consiste de setas em um plano fixo, começando por um ponto fixo. Isso é usado em física para descrever forças ou velocidades. Dadas duas setas deste tipo, v e w, o paralelogramo formado por elas contém uma seta diagonal que também começa na origem. Essa nova seta é chamada de soma das setas anteriores e é denotada por v w. No caso especial de duas setas na mesma linha, a soma delas é a seta na mesma linha cujo comprimento é a soma ou a diferença dos comprimentos, dependendo se as setas possuem mesmo sentido ou sentidos opostos. Uma outra operação que pode ser feita com setas é o seu escalonamento: dado qualquer número real positivo a, a seta que tem a mesma direção que v, mas está dilatada ou contraída ao multiplicar seu comprimento por a, é chamada multiplicação de v por a. É denotada por av. Quando a for negativo, av é definido como a seta apontando no sentido oposto.
+A seguir estão alguns exemplos: se a 2, o vetor resultante aw tem a mesma direção que w, mas está esticado, tendo um comprimento que é o dobro de w (imagem abaixo, à direita). De forma equivalente, 2w é a soma de w w. Além disso, ( 1)v v tem o sentido oposto e o mesmo comprimento que v (vetor azul apontando para baixo, na imagem à direita).
 Um segundo exemplo chave de um espaço vetorial é fornecido por pares de números reais x e y. (A ordem das componentes x e y é importante, de modo que um par também seja chamado de par ordenado.) Tal par é escrito como (x, y). A soma de dois desses pares e a multiplicação de um par por um número são definidas da seguinte maneira:
-
-(x1, y1) + (x2, y2) = (x1 + x2, y1 + y2)
 e
-
-a (x, y) = (ax, ay).
+a (x, y) (ax, ay).
 O primeiro exemplo acima reduz-se a esse se as setas forem representadas por um par de coordenadas cartesianas do seus pontos finais.
-
-=== Definição ===
 Neste artigo, os vetores são representados em negrito para distingui-los de escalares.
 Um espaço vetorial sobre um corpo K é um conjunto V munido de duas operações que satisfazem os oito axiomas abaixo.
-
-A primeira operação, chamada de adição de vetores ou simplesmente adição + : V × V → V, leva quaisquer dois vetores v e w e associa a eles um terceiro vetor, normalmente escrito como v + w, e chamado de soma dos dois vetores iniciais. (O vetor resultante também é um elemento de V.)
-A segunda operação, chamada de multiplicação por escalar · : K × V → V, toma qualquer escalar a e qualquer vetor v e fornece um outro vetor av. (Similarmente, um vetor av é um elemento do conjunto V.)
+A primeira operação, chamada de adição de vetores ou simplesmente adição : V V V, leva quaisquer dois vetores v e w e associa a eles um terceiro vetor, normalmente escrito como v w, e chamado de soma dos dois vetores iniciais. (O vetor resultante também é um elemento de V.)
+A segunda operação, chamada de multiplicação por escalar : K V V, toma qualquer escalar a e qualquer vetor v e fornece um outro vetor av. (Similarmente, um vetor av é um elemento do conjunto V.)
 Elementos de V são normalmente denominados vetores. Elementos de K são comumente denominados escalares.
 Nos dois exemplos acima, o corpo utilizado é o corpo dos números reais e o conjunto de vetores consiste das setas planas com um ponto fixo de início e de pares de números reais, respectivamente.
 Para qualificar um conjunto como sendo um espaço vetorial, ele V e suas operações de adição e multiplicação devem obedecer às condições impostas a seguir, denominadas axiomas. Na lista abaixo, sejam u, v e w vetores arbitrários de V, e a e b escalares em K.
-
 Esses axiomas generalizam as propriedades dos vetores introduzidos nos exemplos acima. De fato, o resultado da adição de dois pares ordenados (como no segundo exemplo acima) não depende da ordem dos somandos:
-
-(xv, yv) + (xw, yw) = (xw, yw) + (xv, yv).
-Da mesma forma, no exemplo geométrico de vetores como setas, v + w = w + v como o paralelogramo que define a soma dos vetores é independente da ordem dos vetores. Todos os outros axiomas podem ser verificados de forma semelhante nos outros exemplos. Portanto, ao ignorar a natureza concreta desse tipo particular de vetores, a definição incorpora esses dois exemplos e muitos outros em uma noção unificadora de espaço vetorial.
+(xv, yv) (xw, yw) (xw, yw) (xv, yv).
+Da mesma forma, no exemplo geométrico de vetores como setas, v w w v como o paralelogramo que define a soma dos vetores é independente da ordem dos vetores. Todos os outros axiomas podem ser verificados de forma semelhante nos outros exemplos. Portanto, ao ignorar a natureza concreta desse tipo particular de vetores, a definição incorpora esses dois exemplos e muitos outros em uma noção unificadora de espaço vetorial.
 A subtração de dois vetores e a divisão por escalar (não nulo) pode ser definido como
-
 v
-
-−
-
 w
-
-=
-
 v
-
-+
 (
-−
-
 w
-
 )
-
 v
-
 a
-
-=
-
 1
 a
-
 v
-
-{\displaystyle {\begin{aligned}\mathbf {v} -\mathbf {w} &=\mathbf {v} +(-\mathbf {w} )\\{\frac {\mathbf {v} }{a}}&={\frac {1}{a}}\mathbf {v} \end{aligned}}}
-
+displaystyle begin aligned mathbf v - mathbf w mathbf v (- mathbf w ) frac mathbf v a frac 1 a mathbf v end aligned
 .
 Quando o corpo dos escalares K é o dos números reais R, o espaço vetorial é chamado de espaço vetorial real; quando for o dos números complexos C, o espaço vetorial é chamado de espaço vetorial complexo. Esses dois casos são aqueles mais frequentemente utilizados em engenharia. A definição geral de espaço vetorial permite que os escalares sejam elementos de qualquer corpo fixo K. A noção é então abstraída para um espaço vetorial sobre K. Um corpo é, essencialmente, um conjunto de números que possui as operações de adição, subtração, multiplicação e divisão. Por exemplo, os números racionais formam um corpo.
 Em contraste com a intuição provinda de vetores em um plano ou em outros objetos de dimensão maior, existe, em espaços vetoriais gerais, a noção de vizinhanças, ângulos e distâncias. Para lidar com essas questões, tipos particulares de espaços vetoriais são introduzidos.
-
-=== Formulações alternativas e consequências elementares ===
-A adição de vetores e a multiplicação por escalar são operações que satisfazem a propriedade de fechamento: u + v e av pertencem a V para todo a em K, e u, v em V. Algumas referências mais antigas mencionam essas propriedades como axiomas separados.
+A adição de vetores e a multiplicação por escalar são operações que satisfazem a propriedade de fechamento: u v e av pertencem a V para todo a em K, e u, v em V. Algumas referências mais antigas mencionam essas propriedades como axiomas separados.
 No linguajar da álgebra abstrata, os primeiros quatro axiomas são equivalentes a requerer que o conjunto de vetores seja um grupo abeliano sob adição. Os axiomas restantes dão a esse a estrutura de módulo sobre K. Em outras palavras, existe um homomorfismo de anéis f do corpo K para o anel de endomorfismo do grupo de vetores. A multiplicação por escalar av é então definida como (f(a))(v).
-Há várias outras consequências diretas dos axiomas de espaço vetorial. Algumas delas são derivadas teoria dos grupos elementar, aplicada ao grupo aditivo de vetores: por exemplo, o vetor nulo 0 de V e o inverso aditivo −v de um vetor v são únicos. Outras propriedades seguem ao empregar também a lei de distributividade da multiplicação por escalar; por exemplo, av é igual a 0 se e somente se a é igual a 0 ou v é igual a 0.
-
-== História ==
-
+Há várias outras consequências diretas dos axiomas de espaço vetorial. Algumas delas são derivadas teoria dos grupos elementar, aplicada ao grupo aditivo de vetores: por exemplo, o vetor nulo 0 de V e o inverso aditivo v de um vetor v são únicos. Outras propriedades seguem ao empregar também a lei de distributividade da multiplicação por escalar; por exemplo, av é igual a 0 se e somente se a é igual a 0 ou v é igual a 0.
 Espaços vetoriais têm sua origem no ramo da geometria afim, surgindo a partir da introdução de coordenadas no plano ou no espaço tridimensional. Por volta de 1636, os matemáticos franceses René Descartes e Pierre de Fermat forneceram as bases da geometria analítica ao identificar soluções de uma equação a duas variáveis com pontos em uma curva plana. Para obter soluções geométricas sem utilizar-se de coordenadas, Bolzano introduziu, em 1804, certas operações com pontos, linhas e planos; hoje, esses objetos podem ser vistos como antecessores de vetores. Esse trabalho foi utilizado por Möbius em 1827 para introduzir o conceito de coordenadas baricêntricas. A fundação para a definição de vetores foi a noção de Bellavitis de um "duplo ponto" ("bipoint"), um segmento orientado em que uma das extremidades é a origem e a outra é um alvo. Vetores foram repensados com a apresentação de números complexos por Argand e Hamilton, e pela criação dos quaterniões pelo último. Eles são elementos em R2 e R4; o tratamento deles utilizando combinações lineares remete a Laguerre em 1867, que também definiu sistema de equações lineares.
 Em 1857, Cayley introduziu a notação matricial que permitiu a harmonização e a simplificação de mapas lineares. Na mesma época, Grassmann estudou o cálculo baricêntrico iniciado por Möbius. Ele vislumbrou conjuntos de objetos abstratos munidos de certas operações. Em seu trabalho, os conceitos de independência linear e dimensão, bem como o de produtos escalares, estavam presentes. De fato, a obra de Grassmann de 1844 excede o escopo dos espaços vetoriais atuais, já que ele também considera multiplicação entre vetores, o que caracteriza o conceito moderno de álgebra. O matemático italiano Peano foi o primeiro a fornecer uma definição moderna de espaços vetoriais e de transformações lineares em 1888.
 Um desenvolvimento importante dos espaços vetoriais foi a construção de espaços funcionais por Henri Lebesgue. Isso foi posteriormente formalizado por Banach e Hilbert, por volta de 1920. À época, a álgebra e o novo ramo da análise funcional começaram a interagir, notavelmente com conceitos-chave como os espaços de funções p-integráveis e os espaços de Hilbert. Também nessa época, iniciaram-se os primeiros estudos de espaços vetoriais de dimensão infinita.
-
-== Exemplos ==
-
-=== Espaço do vetor nulo ===
 Seja
-
 V
-
-{\displaystyle V}
-
+displaystyle V
 formado por um único elemento
-
 a
 .
-
-{\displaystyle a.}
-
+displaystyle a.
 Então, definindo-se
-
 a
-+
 a
-=
 a
-
-{\displaystyle a+a=a}
-
+displaystyle a a a
 e
-
 k
-⋅
 a
-=
 a
-
-{\displaystyle k\cdot a=a}
-
+displaystyle k cdot a a
 para todo elemento
-
 k
-
-{\displaystyle k}
-
+displaystyle k
 de um corpo
-
 K
 ,
-
-{\displaystyle K,}
-
+displaystyle K,
 temos que
-
 V
-
-{\displaystyle V}
-
+displaystyle V
 é um espaço vetorial com
-
 K
-
-{\displaystyle K}
-
+displaystyle K
 como corpo de escalares. Obviamente, como
-
 a
-
-{\displaystyle a}
-
+displaystyle a
 é o elemento neutro de
-
 V
 ,
-
-{\displaystyle V,}
-
+displaystyle V,
 isto é,
-
 a
-=
 0
 ,
-
-{\displaystyle a=0,}
-
+displaystyle a 0,
 este espaço vetorial é representado por
-
 V
-=
-
 0
-
 .
-
-{\displaystyle V={0}.}
-
-=== Espaços de coordenada ===
-
+displaystyle V 0 .
 O exemplo mais simples de um espaço vetorial sobre um corpo K é o próprio corpo, equipado com suas adição e multiplicação padrão. De forma mais geral, todas n-uplas (sequências de comprimento n)
-
 (a1, a2, ..., an)
-de elementos do corpo K formam um espaço vetorial que é usualmente denotado por Kn e chamado de espaço de coordenadas. O caso n = 1 é o caso mais simples mencionado acima, no qual o corpo K também é percebido como um espaço vetorial sobre si mesmo. O caso K = R e n = 2 foi discutido na introdução acima.
-
-=== Números complexos e outras extensões de corpos ===
-O conjunto de números complexos C (isto é, números que podem ser escritos na forma x + iy, para números reais x e y, em que i é a unidade imaginária) formam um espaço vetorial sobre os reais com a adição e a multiplicação definidas usualmente: (x + iy) + (a + ib) = (x + a) + i(y + b) e c ⋅ (x + iy) = (c ⋅ x) + i(c ⋅ y) para números reais x, y, a, b e c. Os vários axiomas de um espaço vetorial seguem do fato de que as mesmas regras se mantêm para a aritmética dos números complexos.
-De fato, o exemplo dos números complexos é essencialmente o mesmo (isto é, é isomórfico) ao espaço vetorial de pares ordenados de números reais mencionado acima: se pensarmos no número complexo x + i y como uma representação do par ordenado (x, y) no plano complexo, então percebe-se que as regras de soma e multiplicação de escalares correspondem exatamente ao exemplo anterior.
+de elementos do corpo K formam um espaço vetorial que é usualmente denotado por Kn e chamado de espaço de coordenadas. O caso n 1 é o caso mais simples mencionado acima, no qual o corpo K também é percebido como um espaço vetorial sobre si mesmo. O caso K R e n 2 foi discutido na introdução acima.
+O conjunto de números complexos C (isto é, números que podem ser escritos na forma x iy, para números reais x e y, em que i é a unidade imaginária) formam um espaço vetorial sobre os reais com a adição e a multiplicação definidas usualmente: (x iy) (a ib) (x a) i(y b) e c (x iy) (c x) i(c y) para números reais x, y, a, b e c. Os vários axiomas de um espaço vetorial seguem do fato de que as mesmas regras se mantêm para a aritmética dos números complexos.
+De fato, o exemplo dos números complexos é essencialmente o mesmo (isto é, é isomórfico) ao espaço vetorial de pares ordenados de números reais mencionado acima: se pensarmos no número complexo x i y como uma representação do par ordenado (x, y) no plano complexo, então percebe-se que as regras de soma e multiplicação de escalares correspondem exatamente ao exemplo anterior.
 De modo mais geral, extensões de corpo fornecem uma outra classe de exemplos de espaços vetoriais, particularmente em álgebras e em teoria algébrica dos números: um corpo K que contém um corpo menor E é um espaço vetorial em E, pelas mesmas operações de adição e multiplicação definidas para K. Por exemplo, os números complexos são um espaço vetorial sobre R, e a extensão de corpo
-
 Q
-
 (
 i
-
 5
-
 )
-
-{\displaystyle \mathbf {Q} (i{\sqrt {5}})}
-
+displaystyle mathbf Q (i sqrt 5 )
 é um espaço vetorial sobre Q.
-
-=== Espaços funcionais ===
-
-Funções de qualquer conjunto fixo Ω para um corpo K também formam espaços vetoriais, ao realizar adição e multiplicação por escalar ponto a ponto. Ou seja, a soma de duas funções f e g é a função (f + g) dada por
-
-(f + g)(w) = f(w) + g(w),
-e de modo semelhante para a multiplicação. Espaços funcionais desse tipo surgem em várias situações geométricas, quando Ω é a reta real ou um intervalo, ou outros subconjuntos de R. Muitas noções em topologia e análise, como continuidade, integrabilidade ou diferenciabilidade são bem comportadas em relação à linearidade: somas e múltiplos escalares de funções com essas propriedades ainda as preservam. Portanto, o conjunto dessas funções é um espaço vetorial. Elas são estudadas em maior detalhe usando métodos de análise funcional. Restrições algébricas também geram espaços vetoriais: o espaço vetorial K[x] é dado por funções polinomiais:
-
-f(x) = r0 + r1x + ... + rn−1xn−1 + rnxn, em que os coeficientes r0, ..., rn estão em K.
-
-=== Equações lineares ===
-
+Funções de qualquer conjunto fixo para um corpo K também formam espaços vetoriais, ao realizar adição e multiplicação por escalar ponto a ponto. Ou seja, a soma de duas funções f e g é a função (f g) dada por
+(f g)(w) f(w) g(w),
+e de modo semelhante para a multiplicação. Espaços funcionais desse tipo surgem em várias situações geométricas, quando é a reta real ou um intervalo, ou outros subconjuntos de R. Muitas noções em topologia e análise, como continuidade, integrabilidade ou diferenciabilidade são bem comportadas em relação à linearidade: somas e múltiplos escalares de funções com essas propriedades ainda as preservam. Portanto, o conjunto dessas funções é um espaço vetorial. Elas são estudadas em maior detalhe usando métodos de análise funcional. Restrições algébricas também geram espaços vetoriais: o espaço vetorial K[x] é dado por funções polinomiais:
+f(x) r0 r1x ... rn 1xn 1 rnxn, em que os coeficientes r0, ..., rn estão em K.
 Sistemas de equações lineares homogêneas estão proximamente relacionados com os espaços vetoriais vector spaces. Por exemplo, as soluções de
-
-são dadas por triplas com a arbitrário, de modo que b = a/2 e c = −5a/2. Elas formam um espaço vetorial: somas e múltiplos escalares de tais triplas precisam também satisfazer às mesmas razões entre as três variáveis; logo, elas também são soluções. Matrizes podem ser usadas para condensar várias equações lineares como acima em uma equação vetorial, a saber
-
-Ax = 0,
-em que A =
-
+são dadas por triplas com a arbitrário, de modo que b a/2 e c 5a/2. Elas formam um espaço vetorial: somas e múltiplos escalares de tais triplas precisam também satisfazer às mesmas razões entre as três variáveis; logo, elas também são soluções. Matrizes podem ser usadas para condensar várias equações lineares como acima em uma equação vetorial, a saber
+Ax 0,
+em que A
 [
-
 1
-
 3
-
 1
-
 4
-
 2
-
 2
-
 ]
-
-{\displaystyle {\begin{bmatrix}1&3&1\\4&2&2\end{bmatrix}}}
-
-é a matriz que contém os coeficientes das equações que compõem o sistema, x é o vetor (a, b, c), Ax denota um produto matricial, e 0 = (0, 0) é o vetor nulo. De forma semelhante, as soluções de equações diferenciais lineares homogêneas formam espaços vetoriais. Por exemplo,
-
-f′′(x) + 2f′(x) + f(x) = 0
-implica que f(x) = a e−x + bx e−x, em que a e b são constantes arbitrárias, e ex é a função exponencial.
-
-== Base e dimensão ==
-
-Bases permitem representar vetores como uma sequência de escalares denominados coordenadas ou componentes. Uma base é um conjunto (finito ou infinito) B = {bi}i ∈ I de vetores bi, que por conveniência são frequentemente indexados por um conjunto de índices I, que gera todo o espaço é linearmente independente. "Gerar todo o espaço" significa que qualquer vetor v pode ser expresso por uma soma finita (chamada de combinação linear) dos elementos da base:
-
-em que ak são escalares, chamados de coordenadas (ou de componentes) do vetor v em relação à base B, e bik (k = 1, ..., n) são os elementos de B. Independência linear significa que as coordenadas ak são univocamente determinadas para qualquer vetor no espaço vetorial.
-Por exemplo, os vetores de coordenadas e1 = (1, 0, ..., 0), e2 = (0, 1, 0, ..., 0), até en = (0, 0, ..., 0, 1), formam uma base de Kn, chamada de base canônica, já que qualquer vetor (x1, x2, ..., xn) pode ser expresso de forma única como uma combinação linear desses vetores:
-
-(x1, x2, ..., xn) = x1(1, 0, ..., 0) + x2(0, 1, 0, ..., 0) + ... + xn(0, ..., 0, 1) = x1e1 + x2e2 + ... + xnen.
+displaystyle begin bmatrix 1 3 1 4 2 2 end bmatrix
+é a matriz que contém os coeficientes das equações que compõem o sistema, x é o vetor (a, b, c), Ax denota um produto matricial, e 0 (0, 0) é o vetor nulo. De forma semelhante, as soluções de equações diferenciais lineares homogêneas formam espaços vetoriais. Por exemplo,
+implica que f(x) a e x bx e x, em que a e b são constantes arbitrárias, e ex é a função exponencial.
+Bases permitem representar vetores como uma sequência de escalares denominados coordenadas ou componentes. Uma base é um conjunto (finito ou infinito) B bi i I de vetores bi, que por conveniência são frequentemente indexados por um conjunto de índices I, que gera todo o espaço é linearmente independente. "Gerar todo o espaço" significa que qualquer vetor v pode ser expresso por uma soma finita (chamada de combinação linear) dos elementos da base:
+em que ak são escalares, chamados de coordenadas (ou de componentes) do vetor v em relação à base B, e bik (k 1, ..., n) são os elementos de B. Independência linear significa que as coordenadas ak são univocamente determinadas para qualquer vetor no espaço vetorial.
+Por exemplo, os vetores de coordenadas e1 (1, 0, ..., 0), e2 (0, 1, 0, ..., 0), até en (0, 0, ..., 0, 1), formam uma base de Kn, chamada de base canônica, já que qualquer vetor (x1, x2, ..., xn) pode ser expresso de forma única como uma combinação linear desses vetores:
 As coordenadas correspondentes x1, x2, ..., xn são exatamente as coordenadas cartesianas de um vetor.
-Todo espaço vetorial possui uma base. Isso é uma consequência do lema de Zorn, uma formulação equivalente do axioma da escolha. Dados os outros axiomas da teoria de conjuntos de Zermelo–Fraenkel, a existência de bases é equivalente ao axioma da escolha. O teorema do ultrafiltro, que é mais fraco do que o axioma da escolha, implica que todas as bases de um determinado espaço vetorial têm o mesmo número de elementos, ou cardinalidade (ver Teorema da dimensão para espaços vetoriais). Ela é chamada de dimensão do espaço vetorial, e é denotada por dim V. Se o espaço for gerado por um número finito de vetores, os enunciados acima podem ser provados sem um enfoque tão fundamental quanto o da teoria de conjuntos.
-A dimensão do espaço de coordenadas Kn é n, pelo que foi exibido acima. A dimensão do anel de polinômios K[x] introduzida acima é enumeravelmente infinita, sendo que uma base é 1, x, x2, ... A fortiori, a dimensão de espaços funcionais mais gerais, tal como o espaço de funções em um intervalo (limitado ou ilimitado), é infinita. Sob suposições adequadas de regularidade dos coeficientes envolvidos, a dimensão do espaço de solução de uma equação diferencial ordinária homogênea é igual ao grau da equação. Por exemplo, os espaço de soluções da equação acima é gerado por e−x e {{xe−x}}. Essas duas funções são linearmente independentes sobre os reais R, de modo que a dimensão do espaço gerado seja 2, assim como o grau da equação.
-Uma extensão de corpo sobre os racionais Q pode ser pensada como um espaço vetorial sobre Q (ao definir a soma de vetores como a soma de elementos do corpo, e definir a multiplicação por escalar como a multiplicação por elementos de Q, e por outro lado ignorando a multiplicação do corpo). A dimensão (ou grau) da extensão de corpo Q(α) sobre Q depende de α. Se α satisfaz algumas equação polinomial
-
+Todo espaço vetorial possui uma base. Isso é uma consequência do lema de Zorn, uma formulação equivalente do axioma da escolha. Dados os outros axiomas da teoria de conjuntos de Zermelo Fraenkel, a existência de bases é equivalente ao axioma da escolha. O teorema do ultrafiltro, que é mais fraco do que o axioma da escolha, implica que todas as bases de um determinado espaço vetorial têm o mesmo número de elementos, ou cardinalidade (ver Teorema da dimensão para espaços vetoriais). Ela é chamada de dimensão do espaço vetorial, e é denotada por dim V. Se o espaço for gerado por um número finito de vetores, os enunciados acima podem ser provados sem um enfoque tão fundamental quanto o da teoria de conjuntos.
+A dimensão do espaço de coordenadas Kn é n, pelo que foi exibido acima. A dimensão do anel de polinômios K[x] introduzida acima é enumeravelmente infinita, sendo que uma base é 1, x, x2, ... A fortiori, a dimensão de espaços funcionais mais gerais, tal como o espaço de funções em um intervalo (limitado ou ilimitado), é infinita. Sob suposições adequadas de regularidade dos coeficientes envolvidos, a dimensão do espaço de solução de uma equação diferencial ordinária homogênea é igual ao grau da equação. Por exemplo, os espaço de soluções da equação acima é gerado por e x e xe x . Essas duas funções são linearmente independentes sobre os reais R, de modo que a dimensão do espaço gerado seja 2, assim como o grau da equação.
+Uma extensão de corpo sobre os racionais Q pode ser pensada como um espaço vetorial sobre Q (ao definir a soma de vetores como a soma de elementos do corpo, e definir a multiplicação por escalar como a multiplicação por elementos de Q, e por outro lado ignorando a multiplicação do corpo). A dimensão (ou grau) da extensão de corpo Q( ) sobre Q depende de . Se satisfaz algumas equação polinomial
 q
-
 n
-
-α
-
 n
-
-+
-
 q
-
 n
-−
 1
-
-α
-
 n
-−
 1
-
-+
-…
-+
-
+...
 q
-
 0
-
-=
 0
-
-{\displaystyle q_{n}\alpha ^{n}+q_{n-1}\alpha ^{n-1}+\ldots +q_{0}=0}
-
-com coeficientes racionais qn, ..., q0 (em outras palavras, se α é um número algébrico), a dimensão é finita. Mais precisamente, é igual ao grau do polinômio mínimo que tem α como raiz. Por exemplo, os números complexos C são um espaço vetorial real bidimensional, gerados por 1 e pela unidade imaginária i. A unidade imaginária satisfaz i2 + 1 = 0, uma equação de grau 2. Portanto, C é um espaço vetorial bidimensional sobre R (e, como qualquer corpo, unidimensional como um espaço vetorial sobre si mesmo, C). Se α não for algébrico, a dimensão de Q(α) sobre Q é infinita. De fato, para α = π não existe tal equação; em outras palavras, π é um número transcendental.
-
-== Aplicações lineares e matrizes ==
-
-A relação entre dois espaços vetoriais pode ser expressa como um mapeamento linear ou uma transformação linear. Elas são funções que refletem a estrutura do espaço vetorial — isto é, elas preservam soma e multiplicação por escalar:
-
+displaystyle q n alpha n q n-1 alpha n-1 ldots q 0 0
+com coeficientes racionais qn, ..., q0 (em outras palavras, se é um número algébrico), a dimensão é finita. Mais precisamente, é igual ao grau do polinômio mínimo que tem como raiz. Por exemplo, os números complexos C são um espaço vetorial real bidimensional, gerados por 1 e pela unidade imaginária i. A unidade imaginária satisfaz i2 1 0, uma equação de grau 2. Portanto, C é um espaço vetorial bidimensional sobre R (e, como qualquer corpo, unidimensional como um espaço vetorial sobre si mesmo, C). Se não for algébrico, a dimensão de Q( ) sobre Q é infinita. De fato, para não existe tal equação; em outras palavras, é um número transcendental.
+A relação entre dois espaços vetoriais pode ser expressa como um mapeamento linear ou uma transformação linear. Elas são funções que refletem a estrutura do espaço vetorial isto é, elas preservam soma e multiplicação por escalar:
 f
 (
-
 v
-
-+
-
 w
-
 )
-=
 f
 (
-
 v
-
 )
-+
 f
 (
-
 w
-
 )
-
-{\displaystyle f(\mathbf {v} +\mathbf {w} )=f(\mathbf {v} )+f(\mathbf {w} )}
-
-e f(a · v)
-
-=
-
-{\displaystyle =}
-
-a · f(v) para todo v e w em V, e todo a em K.
-Um isomorfismo é uma transformação linear f : V → W tal que exista uma função inversa g : W → V, a qual é um mapeamento tal que as duas possíveis composições f ∘ g : W → W e g ∘ f : V → V sejam a função identidade. De forma equivalente, f é um-pra-um (injetora) e é sobre o contradomínio (sobrejetora). Se existir um isomorfismo entre V e W, os dois espaços são ditos isomórficos; eles então são essencialmente o mesmo espaço vetorial, já que todas as identidades válidas em V são, através de f, levadas a identidades semelhantes em W, e vice-versa através de g.
-
+displaystyle f( mathbf v mathbf w ) f( mathbf v ) f( mathbf w )
+e f(a v)
+displaystyle
+a f(v) para todo v e w em V, e todo a em K.
+Um isomorfismo é uma transformação linear f : V W tal que exista uma função inversa g : W V, a qual é um mapeamento tal que as duas possíveis composições f g : W W e g f : V V sejam a função identidade. De forma equivalente, f é um-pra-um (injetora) e é sobre o contradomínio (sobrejetora). Se existir um isomorfismo entre V e W, os dois espaços são ditos isomórficos; eles então são essencialmente o mesmo espaço vetorial, já que todas as identidades válidas em V são, através de f, levadas a identidades semelhantes em W, e vice-versa através de g.
 Por exemplo, as "setas em um plano" e os "pares ordenados de números", que são cada qual um espaço vetorial, são isomórficos: uma seta v em um plano que sai da origem de algum sistema (fixo) de coordenadas pode ser expresso por um par ordenado de números ao considerar as componentes x e y da seta, como mostrado na imagem ao lado. Por outro lado, dado um par (x, y), a seta que está à direita pela quantidade x (ou à esquerda, se x for negativo), e está para cima pela quantidade y (ou para baixo, se y for negativo) retorna a seta v.
-As transformações lineares V → W entre dois espaços vetoriais formam um espaço vetorial HomK(V, W), também denotado por L(V, W). O espaço das transformações lineares de V para o corpo K é chamado de espaço dual, e é denotado por V∗. Através do mapa natural injetivo V → V∗∗, qualquer espaço vetorial pode ser embutido no seu bidual; o mapeamento é um isoformismo se e somente se o espaço tem dimensão finita.
-Uma vez que uma base de V é escolhida, as transformações lineares f : V → W ficam completamente determinadas ao se especificar a imagem dos vetores da base, já que qualquer elemento de V é escrito de forma única como combinação linear desses vetores. Se dim V = dim W, uma correspondência 1-para-1 entre as bases fixadas de V e W acarreta uma aplicação linear que mapeia qualquer elemento da base de V ao elemento correspondente da base de W; isto é, por definição, um isomorfismo. Logo, dois espaços vetoriais são isomórficos se as suas dimensões são as mesmas. Outra forma de expressar isso é que qualquer espaço vetorial é completamente classificado (a menos de um isomorfismo) pela sua dimensão, um único número. Em particular, qualquer espaço vetorial n-dimensional V de tipo K é isomórfico a Kn. Não existe, no entanto, nenhum isomorfismo "canônico" ou preferencial; de fato, um isomorfismo φ : Kn → V é equivalente à escolha da base de V, ao mapear os vetores da base canônica de Kn para V, através de φ. A liberdade em escolher uma base conveniente é particularmente útil no contexto de dimensão infinita.
-
-=== Matrizes ===
-
+As transformações lineares V W entre dois espaços vetoriais formam um espaço vetorial HomK(V, W), também denotado por L(V, W). O espaço das transformações lineares de V para o corpo K é chamado de espaço dual, e é denotado por V . Através do mapa natural injetivo V V , qualquer espaço vetorial pode ser embutido no seu bidual; o mapeamento é um isoformismo se e somente se o espaço tem dimensão finita.
+Uma vez que uma base de V é escolhida, as transformações lineares f : V W ficam completamente determinadas ao se especificar a imagem dos vetores da base, já que qualquer elemento de V é escrito de forma única como combinação linear desses vetores. Se dim V dim W, uma correspondência 1-para-1 entre as bases fixadas de V e W acarreta uma aplicação linear que mapeia qualquer elemento da base de V ao elemento correspondente da base de W; isto é, por definição, um isomorfismo. Logo, dois espaços vetoriais são isomórficos se as suas dimensões são as mesmas. Outra forma de expressar isso é que qualquer espaço vetorial é completamente classificado (a menos de um isomorfismo) pela sua dimensão, um único número. Em particular, qualquer espaço vetorial n-dimensional V de tipo K é isomórfico a Kn. Não existe, no entanto, nenhum isomorfismo "canônico" ou preferencial; de fato, um isomorfismo : Kn V é equivalente à escolha da base de V, ao mapear os vetores da base canônica de Kn para V, através de . A liberdade em escolher uma base conveniente é particularmente útil no contexto de dimensão infinita.
 Matrizes são uma noção útil para representar transformações lineares. Elas são escritas como uma tabela retangular de escalares (imagem ao lado). Qualquer matriz A m-por-n gera um mapeamento linear de Kn para Km da seguinte maneira:
-
 x
-
-=
 (
-
 x
-
 1
-
 ,
-
 x
-
 2
-
 ,
-⋯
 ,
-
 x
-
 n
-
 )
-↦
-
 (
-
-∑
-
 j
-=
 1
-
 n
-
 a
-
 1
 j
-
 x
-
 j
-
 ,
-
-∑
-
 j
-=
 1
-
 n
-
 a
-
 2
 j
-
 x
-
 j
-
 ,
-⋯
 ,
-
-∑
-
 j
-=
 1
-
 n
-
 a
-
 m
 j
-
 x
-
 j
-
 )
-
-{\displaystyle \mathbf {x} =(x_{1},x_{2},\cdots ,x_{n})\mapsto \left(\sum _{j=1}^{n}a_{1j}x_{j},\sum _{j=1}^{n}a_{2j}x_{j},\cdots ,\sum _{j=1}^{n}a_{mj}x_{j}\right)}
-
+displaystyle mathbf x (x 1 ,x 2 , cdots ,x n ) mapsto left( sum j 1 n a 1j x j , sum j 1 n a 2j x j , cdots , sum j 1 n a mj x j right)
 , em que
-
-∑
-
-{\displaystyle \sum }
-
+displaystyle sum
 denota um somatório,
 ou, usando multiplicação de matrizes de A com o vetor de coordenadas x:
-
-x ↦ Ax.
-Ademais, após escolher bases de V e de W, qualquer transformação linear f : V → W é representada de forma única por uma matriz através desse procedimento.
-
+x Ax.
+Ademais, após escolher bases de V e de W, qualquer transformação linear f : V W é representada de forma única por uma matriz através desse procedimento.
 O determinante det (A) de uma matriz quadrada A é um escalar que diz se o mapeamento associado à matriz é um isomorfismo ou não: para isso, é suficiente e necessário que o determinante seja não nulo. A transformação linear de Rn que corresponde a uma matriz n-by-n real preserva a orientação se e somente se seu determinante for positivo.
-
-=== Autovetores e autovalores ===
-
-Endomorfismos, aplicações lineares do tipo f : V → V, são particularmente importantes já que nesse caso vetores v podem ser comparados com a sua imagem sob f, f(v). Qualquer vetor não nulo v que satisfaz a condição λv = f(v), em que λ é um escalar, é denominado autovetor de f com autovalor λ. De maneira equivalente, v é um elemento do núcleo da diferença f − λ · Id (em que Id é a função identidade V → V). Se V tem dimensão finita, essa afirmação pode ser reformulada usando determinantes: f ter um autovalor λ é equivalente a
-
-det(f − λ · Id) = 0.
-Ao desenvolvê-la através da definição de determinante, a expressão à esquerda pode ser analisada enquanto função polinomial de variável λ, chamada de polinômio característico de f. Se o corpo K for abrangente o suficiente para conter uma raiz desse polinômio (o que acontece automaticamente quando K for algebricamente fechado, tal como K = C), qualquer aplicação linear tem pelo menos um autovetor. O espaço vetorial V pode ou não possuir uma base de autovetores. Esse fenômeno é regido pela forma canônica de Jordan da aplicação. O conjunto de todos os autovetores associados a um certo autovalor de f forma um espaço vetorial conhecido como autoespaço. Para alcançar o teorema espectral, a afirmação correspondente do caso em que a dimensão é infinita, as ferramentas da análise funcional são necessárias.
-
-== Construções básicas ==
+Endomorfismos, aplicações lineares do tipo f : V V, são particularmente importantes já que nesse caso vetores v podem ser comparados com a sua imagem sob f, f(v). Qualquer vetor não nulo v que satisfaz a condição v f(v), em que é um escalar, é denominado autovetor de f com autovalor . De maneira equivalente, v é um elemento do núcleo da diferença f Id (em que Id é a função identidade V V). Se V tem dimensão finita, essa afirmação pode ser reformulada usando determinantes: f ter um autovalor é equivalente a
+det(f Id) 0.
+Ao desenvolvê-la através da definição de determinante, a expressão à esquerda pode ser analisada enquanto função polinomial de variável , chamada de polinômio característico de f. Se o corpo K for abrangente o suficiente para conter uma raiz desse polinômio (o que acontece automaticamente quando K for algebricamente fechado, tal como K C), qualquer aplicação linear tem pelo menos um autovetor. O espaço vetorial V pode ou não possuir uma base de autovetores. Esse fenômeno é regido pela forma canônica de Jordan da aplicação. O conjunto de todos os autovetores associados a um certo autovalor de f forma um espaço vetorial conhecido como autoespaço. Para alcançar o teorema espectral, a afirmação correspondente do caso em que a dimensão é infinita, as ferramentas da análise funcional são necessárias.
 Além dos exemplos concretos citados anteriormente, existem várias construções de álgebra linear padrão que acarretam espaços vetoriais a outros previamente fornecidos. Eles também são caracterizados pelas propriedades universais, que determinam um objeto X ao especificar as transformações lineares dele para qualquer outro espaço vetorial.
-
-=== Subespaços e espaços quociente ===
-
 Um subconjunto não-vazio W de um espaço vetorial V que é fechado sob adição e multiplicação por escalar (e portanto contém o vetor nulo 0 de V) é chamado de subespaço vetorial de V, ou simplesmente um subespaço de V, quando o objeto em questão for, de forma não ambígua, um espaço vetorial. Subespaços de V são espaços vetoriais próprios (sobre o mesmo corpo). A interseção de todos os subespaços contendo um determinado conjunto S de vetores é denominado como seu espaço vetorial gerado (ou, ainda, ger ou span), e é o menor subespaço de V contendo o conjunto S. Expressado em termos de elementos, o span é o subespaço que contém todas as combinações lineares dos elementos de S.
-Um subespaço vetorial de dimensão 1 é uma linha vetorial. Um subespaço de dimensão 2 é um plano vetorial. Um subespaço vetorial que contém todos a menos de um dos elementos de uma base do espaço principal é um hiperplano vetorial. Em um espaço vetorial de dimensão finita n, um hiperplano de vetores é portanto um subespaço de dimensão n – 1.
-A contrapartida dos subespaços são os espaços vetoriais quocientes. Dado qualquer subespaço W ⊂ V, o espaço quociente V/W ("V módulo W") é definido da seguinte maneira: enquanto conjunto, ele consiste de v + W = {v + w : w ∈ W}, em que v é um vetor arbitrário em V; enquanto espaço vetorial, a soma de dois elementos desse tipo v1 + W e v2 + W é dada por (v1 + v2) + W, e a multiplicação por escalar obedece a relação a · (v + W) = (a · v) + W. A questão chave dessa definição é que v1 + W = v2 + W se e somente se a diferença de v1 e v2 estiver em W. Dessa maneira, o espaço quociente "esquece" da informação contida no subespaço W.
-O núcleo ker(f) (do inglês, kernel) de uma transformação linear f : V → W consiste em vetores v que são mapeados para o vetor 0 em W (o vetor nulo de W). Tanto o núcleo quanto a imagem im(f) = {f(v) : v ∈ V} são subespaços de V e W, respectivamente. A existência de núcleos e imagens é parte do enunciado de que a categoria de espaços vetoriais (sobre um corpo fixo K) é uma categoria abeliana, isto é, um corpo de objetos matemáticos e de transformações que preservem a estrutura entre eles (uma categoria), que se comporta de forma muito semelhante a uma categoria de grupos abelianos. Por causa disso, enunciados como o teorema do núcleo e da imagem (também chamado de teorema do posto e da nulidade, no contexto de matrizes),
-
-V / ker(f) ≡ im(f),
+Um subespaço vetorial de dimensão 1 é uma linha vetorial. Um subespaço de dimensão 2 é um plano vetorial. Um subespaço vetorial que contém todos a menos de um dos elementos de uma base do espaço principal é um hiperplano vetorial. Em um espaço vetorial de dimensão finita n, um hiperplano de vetores é portanto um subespaço de dimensão n 1.
+A contrapartida dos subespaços são os espaços vetoriais quocientes. Dado qualquer subespaço W V, o espaço quociente V/W ("V módulo W") é definido da seguinte maneira: enquanto conjunto, ele consiste de v W v w : w W , em que v é um vetor arbitrário em V; enquanto espaço vetorial, a soma de dois elementos desse tipo v1 W e v2 W é dada por (v1 v2) W, e a multiplicação por escalar obedece a relação a (v W) (a v) W. A questão chave dessa definição é que v1 W v2 W se e somente se a diferença de v1 e v2 estiver em W. Dessa maneira, o espaço quociente "esquece" da informação contida no subespaço W.
+O núcleo ker(f) (do inglês, kernel) de uma transformação linear f : V W consiste em vetores v que são mapeados para o vetor 0 em W (o vetor nulo de W). Tanto o núcleo quanto a imagem im(f) f(v) : v V são subespaços de V e W, respectivamente. A existência de núcleos e imagens é parte do enunciado de que a categoria de espaços vetoriais (sobre um corpo fixo K) é uma categoria abeliana, isto é, um corpo de objetos matemáticos e de transformações que preservem a estrutura entre eles (uma categoria), que se comporta de forma muito semelhante a uma categoria de grupos abelianos. Por causa disso, enunciados como o teorema do núcleo e da imagem (também chamado de teorema do posto e da nulidade, no contexto de matrizes),
+V / ker(f) im(f),
 podem ser formulados e provados de uma maneira similar ao que se faria para demonstrar enunciados equivalentes para grupos.
-Um exemplo importante é o do núcleo da transformação linear x ↦ Ax para alguma matriz fixa A. O núcleo dessa aplicação é o subespaço dos vetores x tais que Ax = 0, que é exatamente o conjunto das soluções do sistema de equações lineares homogêneas associadas a A. Esse conceito também se estende para equações diferenciais lineares, cuja forma geral é
-
+Um exemplo importante é o do núcleo da transformação linear x Ax para alguma matriz fixa A. O núcleo dessa aplicação é o subespaço dos vetores x tais que Ax 0, que é exatamente o conjunto das soluções do sistema de equações lineares homogêneas associadas a A. Esse conceito também se estende para equações diferenciais lineares, cuja forma geral é
 a
-
 0
-
 f
-+
-
 a
-
 1
-
 d
 f
-
 d
 x
-
-+
-
 a
-
 2
-
 d
-
 2
-
 f
-
 d
-
 x
-
 2
-
-+
-⋯
-+
-
 a
-
 n
-
 d
-
 n
-
 f
-
 d
-
 x
-
 n
-
-=
 0
-
-{\displaystyle a_{0}f+a_{1}{\frac {df}{dx}}+a_{2}{\frac {d^{2}f}{dx^{2}}}+\cdots +a_{n}{\frac {d^{n}f}{dx^{n}}}=0}
-
+displaystyle a 0 f a 1 frac df dx a 2 frac d 2 f dx 2 cdots a n frac d n f dx n 0
 , em que os coeficientes ai são também funções de x.
 Na transformação linear correspondente
-
 f
-↦
 D
 (
 f
 )
-=
-
-∑
-
 i
-=
 0
-
 n
-
 a
-
 i
-
 d
-
 i
-
 f
-
 d
-
 x
-
 i
-
-{\displaystyle f\mapsto D(f)=\sum _{i=0}^{n}a_{i}{\frac {d^{i}f}{dx^{i}}}}
-
+displaystyle f mapsto D(f) sum i 0 n a i frac d i f dx i
 ,
-as derivadas da função f aparecem de forma linear (ao contrário de f′′(x)2, por exemplo). Como a diferenciação é um procedimento linear (isto é, (f + g)′ = f′ + g ′ e (c·f)′ = c·f′ para uma constante c), essa transformação também é linear, denominada um operador diferencial linear. Em particular, as soluções da equação diferencial D(f) = 0 formam um espaço vetorial (sobre R ou sobre C).
-
-=== Produto direto e soma direta ===
-
+as derivadas da função f aparecem de forma linear (ao contrário de f (x)2, por exemplo). Como a diferenciação é um procedimento linear (isto é, (f g) f g e (c f) c f para uma constante c), essa transformação também é linear, denominada um operador diferencial linear. Em particular, as soluções da equação diferencial D(f) 0 formam um espaço vetorial (sobre R ou sobre C).
 O produto direto de espaços vetoriais e a soma direta de espaços vetoriais são duas maneiras de combinar uma família indexada de espaços vetoriais em um novo espaço vetorial.
 O produto direto
-
-∏
-
 i
-∈
 I
-
 V
-
 i
-
-{\displaystyle \textstyle {\prod _{i\in I}V_{i}}}
-
-de uma família de espaços vetoriais Vi consiste em um conjunto de todas as ênuplas (vi)i ∈ I, que especificam para cada índice i em algum conjunto de índices I um elemento vi de Vi. Adição e multiplicação por escalar são realizadas componente a componente. Uma variação dessa construção é a soma direta
-
-⊕
-
+displaystyle textstyle prod i in I V i
+de uma família de espaços vetoriais Vi consiste em um conjunto de todas as ênuplas (vi)i I, que especificam para cada índice i em algum conjunto de índices I um elemento vi de Vi. Adição e multiplicação por escalar são realizadas componente a componente. Uma variação dessa construção é a soma direta
 i
-∈
 I
-
 V
-
 i
-
-{\displaystyle \oplus _{i\in I}V_{i}}
-
+displaystyle oplus i in I V i
 (também chamada coproduto e denotada por
-
-∐
-
 i
-∈
 I
-
 V
-
 i
-
-{\displaystyle \textstyle {\coprod _{i\in I}V_{i}}}
-
+displaystyle textstyle coprod i in I V i
 ), em que somente as ênuplas com um número finito de vetores nulos são permitidas. Se o conjunto de índices I é finito, as duas construções são a mesma; porém, de forma mais geral, elas são distintas.
-
-=== Produto tensorial ===
-
-O produto tensorial V ⊗F W, ou simplesmente V ⊗ W, de dois espaços vetoriais V e W é uma das noções centrais da álgebra multilinear, que lida com noções estendidas como a de transformações lineares a várias variáveis. Um mapeamento g : V × W → X é chamado de bilinear se g é linear em ambas as variáveis v e w. Isto é, para um w fixo o mapa v ↦ g(v, w) é linear no sentido acima; isso então também é válido para um v fixo.
+O produto tensorial V F W, ou simplesmente V W, de dois espaços vetoriais V e W é uma das noções centrais da álgebra multilinear, que lida com noções estendidas como a de transformações lineares a várias variáveis. Um mapeamento g : V W X é chamado de bilinear se g é linear em ambas as variáveis v e w. Isto é, para um w fixo o mapa v g(v, w) é linear no sentido acima; isso então também é válido para um v fixo.
 O produto tensorial é um espaço vetorial particular que é um receptor universal de mapeamentos bilineares g, como a seguir. Ele é definido como um espaço vetorial que consiste de somas (formais) finitas de símbolos chamados de tensores
-
-v1 ⊗ w1 + v2 ⊗ w2 + ... + vn ⊗ wn,
+v1 w1 v2 w2 ... vn wn,
 sujeitos às regras
-
-a · (v ⊗ w) = (a · v) ⊗ w = v ⊗ (a · w), em que a é um escalar,
-(v1 + v2) ⊗ w = v1 ⊗ w + v2 ⊗ w, e
-v ⊗ (w1 + w2) = v ⊗ w1 + v ⊗ w2.
-
-Essas regras garantem que o mapa f de V × W para V ⊗ W, que envia a ênupla (v, w) para v ⊗ w, seja bilinear. A universalidade enuncia que dado qualquer espaço vetorial X e qualquer mapa bilinear g : V × W → X, existe um mapa único u, mostrado no diagrama com uma seta pontilhada, cuja composição com f é igual a g: u(v ⊗ w) = g(v, w). Isso é chamado de propriedade universal do produto tensorial, uma ocorrência do método — muito utilizado em álgebra abstrata avançada — de indiretamente definir objetos ao especificar mapas de ou para esse objeto.
-
-== Espaços vetoriais com estrutura adicional ==
-Do ponto de vista da álgebra linear, os espaços vetoriais são completamente compreendidos na medida em que qualquer espaço vetorial é caracterizado, de modo isomórfico, pela sua dimensão. Contudo, espaços vetoriais por si só não oferecem um escopo no qual é possível responder à questão — essencial para análise — de quando, ou se, uma série de funções converge para outra função. Da mesma forma, a álgebra linear não é adaptada para lidar com séries infinitas, já que a operação de adição permite somente a soma de um número finito de termos. Assim, as demandas do ramo da análise funcional fazem com que sejam considerados espaços vetoriais com estrutura adicional.
-Um espaço vetorial pode ser parcialmente ordenado ≤, de modo que certos vetores possam ser comparados. Por exemplo, um espaço vetorial real n-dimensional Rn pode ser ordenado ao se comparar os vetores componente à componente. Espaços vetoriais ordenados, como os espaços de Riesz, são fundamentais para a formulação da integral de Lebesgue, que requer que uma função qualquer seja expressa como a diferença de duas funções positivas
-
-f = f+ − f−,
-em que f+ denota a parte positiva de f e f− a parte negativa.
-
-=== Espaços vetoriais normados e com produto interno ===
-
+a (v w) (a v) w v (a w), em que a é um escalar,
+(v1 v2) w v1 w v2 w, e
+v (w1 w2) v w1 v w2.
+Essas regras garantem que o mapa f de V W para V W, que envia a ênupla (v, w) para v w, seja bilinear. A universalidade enuncia que dado qualquer espaço vetorial X e qualquer mapa bilinear g : V W X, existe um mapa único u, mostrado no diagrama com uma seta pontilhada, cuja composição com f é igual a g: u(v w) g(v, w). Isso é chamado de propriedade universal do produto tensorial, uma ocorrência do método muito utilizado em álgebra abstrata avançada de indiretamente definir objetos ao especificar mapas de ou para esse objeto.
+Do ponto de vista da álgebra linear, os espaços vetoriais são completamente compreendidos na medida em que qualquer espaço vetorial é caracterizado, de modo isomórfico, pela sua dimensão. Contudo, espaços vetoriais por si só não oferecem um escopo no qual é possível responder à questão essencial para análise de quando, ou se, uma série de funções converge para outra função. Da mesma forma, a álgebra linear não é adaptada para lidar com séries infinitas, já que a operação de adição permite somente a soma de um número finito de termos. Assim, as demandas do ramo da análise funcional fazem com que sejam considerados espaços vetoriais com estrutura adicional.
+Um espaço vetorial pode ser parcialmente ordenado , de modo que certos vetores possam ser comparados. Por exemplo, um espaço vetorial real n-dimensional Rn pode ser ordenado ao se comparar os vetores componente à componente. Espaços vetoriais ordenados, como os espaços de Riesz, são fundamentais para a formulação da integral de Lebesgue, que requer que uma função qualquer seja expressa como a diferença de duas funções positivas
+f f f ,
+em que f denota a parte positiva de f e f a parte negativa.
 O processo de "medida" de vetores é feito ao se especificar uma norma, uma função que mede o comprimento de um vetor, ou definindo um produto interno, que mede ângulos entre vetores. Normas e produtos internos são denotados por
-
-|
-
 v
-
-|
-
-{\displaystyle |\mathbf {v} |}
-
+displaystyle mathbf v
 e
-
-⟨
-
 v
-
 ,
-
 w
-
-⟩
-
-{\displaystyle \langle \mathbf {v} ,\mathbf {w} \rangle }
-
+displaystyle langle mathbf v , mathbf w rangle
 , respectivamente. Espaços vetoriais dotados dessa estrutura são denominados espaços vetoriais normados e espaços com produto interno, respectivamente. É possível obter uma norma a partir de um produto interno, definindo-a como
-
-|
-
 v
-
-|
-
-:=
-
-⟨
-
+:
 v
-
 ,
-
 v
-
-⟩
-
-{\displaystyle |\mathbf {v} |:={\sqrt {\langle \mathbf {v} ,\mathbf {v} \rangle }}}
-
+displaystyle mathbf v : sqrt langle mathbf v , mathbf v rangle
 .
 O espaço de coordenadas Kn pode ser equipado com o produto escalar canônico:
-
-⟨
-
 x
-
 ,
-
 y
-
-⟩
-=
-
 x
-
-⋅
-
 y
-
-=
-
 x
-
 1
-
 y
-
 1
-
-+
-⋯
-+
-
 x
-
 n
-
 y
-
 n
-
 .
-
-{\displaystyle \langle \mathbf {x} ,\mathbf {y} \rangle =\mathbf {x} \cdot \mathbf {y} =x_{1}y_{1}+\cdots +x_{n}y_{n}.}
-
+displaystyle langle mathbf x , mathbf y rangle mathbf x cdot mathbf y x 1 y 1 cdots x n y n .
 Em R2, isso reflete a noção comum de ângulo entre dois vetores x e y, pela lei dos cossenos:
-
 x
-
-⋅
-
 y
-
-=
 cos
-⁡
-
 (
-
-∠
 (
-
 x
-
 ,
-
 y
-
 )
-
 )
-
-⋅
-
-|
-
 x
-
-|
-
-⋅
-
-|
-
 y
-
-|
-
 .
-
-{\displaystyle \mathbf {x} \cdot \mathbf {y} =\cos \left(\angle (\mathbf {x} ,\mathbf {y} )\right)\cdot |\mathbf {x} |\cdot |\mathbf {y} |.}
-
+displaystyle mathbf x cdot mathbf y cos left( angle ( mathbf x , mathbf y ) right) cdot mathbf x cdot mathbf y .
 Por causa disso, dois vetores que satisfaçam
-
-⟨
-
 x
-
 ,
-
 y
-
-⟩
-=
 0
-
-{\displaystyle \langle \mathbf {x} ,\mathbf {y} \rangle =0}
-
+displaystyle langle mathbf x , mathbf y rangle 0
 são chamados de ortogonais. Uma variante importante do produto interno padrão é usado no espaço de Minkowski; isto é, o espaço R4 dotado do produto de Lorentz
-
-⟨
-
 x
-
-|
-
 y
-
-⟩
-=
-
 x
-
 1
-
 y
-
 1
-
-+
-
 x
-
 2
-
 y
-
 2
-
-+
-
 x
-
 3
-
 y
-
 3
-
-−
-
 x
-
 4
-
 y
-
 4
-
 .
-
-{\displaystyle \langle \mathbf {x} |\mathbf {y} \rangle =x_{1}y_{1}+x_{2}y_{2}+x_{3}y_{3}-x_{4}y_{4}.}
-
+displaystyle langle mathbf x mathbf y rangle x 1 y 1 x 2 y 2 x 3 y 3 -x 4 y 4 .
 Em contraste com o produto escalar padrão, ele não é positivo definido:
-
-⟨
-
 x
-
-|
-
 x
-
-⟩
-
-{\displaystyle \langle \mathbf {x} |\mathbf {x} \rangle }
-
+displaystyle langle mathbf x mathbf x rangle
 também pode assumir valores negativos, como por exemplo para
-
 x
-
-=
 (
 0
 ,
@@ -895,915 +405,415 @@ x
 ,
 1
 )
-
-{\displaystyle \mathbf {x} =(0,0,0,1)}
-
-. Isolar a quarta temporada — correspondente ao tempo, em vez das três dimensões espaciais — é útil para o tratamento matemático da relatividade restrita.
-
-=== Espaços vetoriais topológicos ===
-
-Questões de convergência são tratadas ao considerar espaços vetoriais que comportem uma topologia compatível, uma estrutura que permite descrever pontos como sendo próximos uns dos outros. A compatibilidade significa que a adição e a multiplicação por escalar precisam ser mapas contínuos. Em resumo, se x e y em um espaço vetorial V e a no corpo K variarem por uma quantidade limitada, então x + y e ax variam limitadamente. Para dar sentido em especificar o quanto um escalar varia, o corpo K também precisa carregar uma topologia nesse contexto; opções comuns de corpos são o dos números reais e o dos números complexos.
+displaystyle mathbf x (0,0,0,1)
+. Isolar a quarta temporada correspondente ao tempo, em vez das três dimensões espaciais é útil para o tratamento matemático da relatividade restrita.
+Questões de convergência são tratadas ao considerar espaços vetoriais que comportem uma topologia compatível, uma estrutura que permite descrever pontos como sendo próximos uns dos outros. A compatibilidade significa que a adição e a multiplicação por escalar precisam ser mapas contínuos. Em resumo, se x e y em um espaço vetorial V e a no corpo K variarem por uma quantidade limitada, então x y e ax variam limitadamente. Para dar sentido em especificar o quanto um escalar varia, o corpo K também precisa carregar uma topologia nesse contexto; opções comuns de corpos são o dos números reais e o dos números complexos.
 Nesses espaços vetoriais topológicos é possível considerar série de vetores. A soma infinita
-
-∑
-
 i
-=
 0
-
-∞
-
 f
-
 i
-
-{\displaystyle \sum _{i=0}^{\infty }f_{i}}
-
-denota o limite das somas parciais finitas correspondentes da sequência (fi)i∈N de elementos de V. Por exemplo, os elementos fi podem ser funções (reais ou complexas) pertencentes a algum espaço funcional V, de modo que a soma infinita seja uma série de funções. O modo de convergência da série é dependente da topologia imposta ao espaço funcional. Nesses casos, convergência pontual e convergência uniforme são dois exemplos proeminentes.
-
+displaystyle sum i 0 infty f i
+denota o limite das somas parciais finitas correspondentes da sequência (fi)i N de elementos de V. Por exemplo, os elementos fi podem ser funções (reais ou complexas) pertencentes a algum espaço funcional V, de modo que a soma infinita seja uma série de funções. O modo de convergência da série é dependente da topologia imposta ao espaço funcional. Nesses casos, convergência pontual e convergência uniforme são dois exemplos proeminentes.
 Uma maneira de garantir a existência de limites de certas séries infinitas é restringir o estudo a espaços onde qualquer sequência de Cauchy possui limite; tais espaços vetoriais são denominados completos. Simplificadamente, um espaço vetorial é dito completo contanto que contenha todos os limites necessários; o espaço vetorial dos polinômios nos intervalo unitário [0,1], equipado com a topologia de convergência uniforme, não é completo, pois qualquer função contínua em [0,1] pode ser uniformemente aproximada por uma sequência de polinômios (Teorema de Stone-Weierstrass). Em contraste, o espaço de todas as funções contínuas em [0,1] equipado com a mesma topologia é completo. Uma norma acarreta uma topologia ao definir que uma sequência de vetores vn convirja para v se e somente se
-
 lim
-
 n
-→
-∞
-
-|
-
 v
-
 n
-
-−
-
 v
-
-|
-
-=
 0.
-
-{\displaystyle \lim _{n\to \infty }|\mathbf {v} _{n}-\mathbf {v} |=0.}
-
-Espaços de Banach e Hilbert são espaços vetoriais topológicos completos cujas topologias são fornecidas, respectivamente, por uma norma e por um produto interno. O estudo deles — uma peça-chave da análise funcional — tem como foco espaços vetoriais de dimensão infinita, já que todas as normas em espaços topológicos de dimensão finita fornecem a mesma noção de convergência. A imagem à direita mostra a equivalência da 1-norma e da ∞-norma no R2: com as "bolas" unitárias englobando-se umas às outras, uma sequência converge a zero em uma norma se e somente se o fizer em uma outra norma. No caso de dimensão infinita, entretanto, em geral existirão topologias não equivalentes, o que faz com que o estudo espaços vetoriais topológicos seja mais rico do que o de espaços vetoriais sem essa estrutura adicional.
-De um ponto de vista conceitual, todas as noções relacionadas a espaços vetoriais topológicos devem ser compatíveis com a topologia associada. Por exemplo, ao invés de considerar todas as transformações lineares (também chamadas de funcionais) V → W, exige-se que mapas entre espaços vetoriais topológicos sejam contínuos. Em particular, o espaço dual (topológico) V∗ consiste dos funcionais contínuos V → R (ou para C). O teorema de Hahn-Banach tem por objetivo a separação de subespaços de espaços vetoriais topológicos adequados por funcionais contínuos.
-
-==== Espaços de Banach ====
-
+displaystyle lim n to infty mathbf v n - mathbf v 0.
+Espaços de Banach e Hilbert são espaços vetoriais topológicos completos cujas topologias são fornecidas, respectivamente, por uma norma e por um produto interno. O estudo deles uma peça-chave da análise funcional tem como foco espaços vetoriais de dimensão infinita, já que todas as normas em espaços topológicos de dimensão finita fornecem a mesma noção de convergência. A imagem à direita mostra a equivalência da 1-norma e da -norma no R2: com as "bolas" unitárias englobando-se umas às outras, uma sequência converge a zero em uma norma se e somente se o fizer em uma outra norma. No caso de dimensão infinita, entretanto, em geral existirão topologias não equivalentes, o que faz com que o estudo espaços vetoriais topológicos seja mais rico do que o de espaços vetoriais sem essa estrutura adicional.
+De um ponto de vista conceitual, todas as noções relacionadas a espaços vetoriais topológicos devem ser compatíveis com a topologia associada. Por exemplo, ao invés de considerar todas as transformações lineares (também chamadas de funcionais) V W, exige-se que mapas entre espaços vetoriais topológicos sejam contínuos. Em particular, o espaço dual (topológico) V consiste dos funcionais contínuos V R (ou para C). O teorema de Hahn-Banach tem por objetivo a separação de subespaços de espaços vetoriais topológicos adequados por funcionais contínuos.
 Espaços de Banach, introduzidos por Stefan Banach, são espaços vetoriais normados completos.
 Um primeiro exemplo é o espaço vetorial
-
-ℓ
-
+l
 p
-
-{\displaystyle \ell ^{p}}
-
+displaystyle ell p
 composto de vetores com infinitas entradas reais
-
 x
-
-=
-
 (
-
 x
-
 1
-
 ,
-
 x
-
 2
-
 ,
-…
+...
 ,
-
 x
-
 n
-
 ,
-…
-
+...
 )
-
-{\displaystyle \mathbf {x} =\left(x_{1},x_{2},\ldots ,x_{n},\ldots \right)}
-
+displaystyle mathbf x left(x 1 ,x 2 , ldots ,x n , ldots right)
 , cuja
-
 p
-
-{\displaystyle p}
-
+displaystyle p
 -norma
-
 (
 1
-≤
-
 p
-
-≤
-∞
 )
-
-{\displaystyle (1\leq {p}\leq \infty )}
-
+displaystyle (1 leq p leq infty )
 dado por
-
-‖
-
 x
-
-‖
-
 p
-
-:=
-
+:
 (
-
-∑
-
 i
-
-|
-
 x
-
 i
-
-|
-
 p
-
 )
-
 1
 p
-
-{\displaystyle \left\Vert \mathbf {x} \right\Vert _{p}:=\left(\sum _{i}\left\vert x_{i}\right\vert ^{p}\right)^{\frac {1}{p}}}
-
+displaystyle left Vert mathbf x right Vert p : left( sum i left vert x i right vert p right) frac 1 p
 para
-
 p
-<
-∞
-
-{\displaystyle p<\infty }
-
+displaystyle p infty
 e
-
-‖
-
 x
-
-‖
-
-∞
-
-:=
-
+:
 sup
-
 i
-
-|
-
 x
-
 i
-
-|
-
-{\displaystyle \left\Vert \mathbf {x} \right\Vert _{\infty }:={\text{sup}}_{i}\left\vert x_{i}\right\vert }
-
+displaystyle left Vert mathbf x right Vert infty : text sup i left vert x i right vert
 .
 As topologias do espaço
-
-ℓ
-
+l
 p
-
-{\displaystyle \ell ^{p}}
-
+displaystyle ell p
 de dimensão infinita não são equivalentes para diferentes valores de
-
 p
-
-{\displaystyle p}
-
+displaystyle p
 . Como exemplo, a sequência de vetores
-
 x
-
 n
-
-=
-
 (
-
 2
-
-−
 n
-
 ,
-
 2
-
-−
 n
-
 ,
-…
+...
 ,
-
 2
-
-−
 n
-
 ,
 0
 ,
 0
 ,
-…
-
+...
 )
-
-{\displaystyle \mathbf {x} _{n}=\left(2^{-n},2^{-n},\ldots ,2^{-n},0,0,\ldots \right)}
-
+displaystyle mathbf x n left(2 -n ,2 -n , ldots ,2 -n ,0,0, ldots right)
 , em que as primeiras
-
 2
-
 n
-
-{\displaystyle 2^{n}}
-
+displaystyle 2 n
 componentes são
-
 2
-
-−
 n
-
-{\displaystyle 2^{-n}}
-
+displaystyle 2 -n
 e as seguintes são
-
 0
-
-{\displaystyle 0}
-
+displaystyle 0
 , converge para o vetor nulo para
-
 p
-=
-∞
-
-{\displaystyle p=\infty }
-
+displaystyle p infty
 , mas não para
-
 p
-=
 1
-
-{\displaystyle p=1}
-
+displaystyle p 1
 :
-
-‖
-
 x
-
 n
-
-‖
-
-∞
-
-=
 sup
 (
-
 2
-
-−
 n
-
 ,
 0
 )
-=
-
 2
-
-−
 n
-
-→
 0
-
-{\displaystyle \left\Vert \mathbf {x} _{n}\right\Vert _{_{\infty }}=\sup(2^{-n},0)=2^{-n}\rightarrow 0}
-
+displaystyle left Vert mathbf x n right Vert infty sup(2 -n ,0) 2 -n rightarrow 0
 , mas
-
-‖
-
 x
-
 n
-
-‖
-
 1
-
-=
-
-∑
-
 i
-=
 1
-
 2
-
 n
-
 2
-
-−
 n
-
-=
-
 2
-
 n
-
-⋅
-
 2
-
-−
 n
-
-=
 1.
-
-{\displaystyle \left\Vert \mathbf {x} _{n}\right\Vert _{1}=\sum _{i=1}^{2^{n}}2^{-n}=2^{n}\cdot 2^{-n}=1.}
-
+displaystyle left Vert mathbf x n right Vert 1 sum i 1 2 n 2 -n 2 n cdot 2 -n 1.
 De forma mais geral do que sequências de números reais, funções
-
 f
 :
-Ω
-→
-
 R
-
-{\displaystyle f\colon \Omega \to \mathbb {R} }
-
+displaystyle f colon Omega to mathbb R
 são equipados com uma norma que substitui a soma acima pela integral de Lebesgue
-
-‖
-
 f
-
-‖
-
 p
-
-:=
-
+:
 (
-
-∫
-
-Ω
-
-|
-
 f
-
 (
 x
 )
-
-|
-
 p
-
 d
-μ
-
 (
 x
 )
-
 )
-
 1
 p
-
 .
-
-{\displaystyle \left\Vert {f}\right\Vert _{p}:=\left(\int _{\Omega }\left\vert {f}\left(x\right)\right\vert ^{p}\,{d\mu \left(x\right)}\right)^{\frac {1}{p}}.}
-
+displaystyle left Vert f right Vert p : left( int Omega left vert f left(x right) right vert p , d mu left(x right) right) frac 1 p .
 O espaço das funções integráveis em um dado domínio
-
-Ω
-
-{\displaystyle \Omega }
-
+displaystyle Omega
 (por exemplo um intervalo) satisfazendo
-
-‖
-
 f
-
-‖
-
 p
-
-<
-∞
-
-{\displaystyle \left\Vert {f}\right\Vert _{p}<\infty }
-
+displaystyle left Vert f right Vert p infty
 , e equipado com essa norma são chamados de espaços de Lebesgue, denotados como
-
 L
-
 p
-
 (
-Ω
 )
-
-{\displaystyle L^{\;\!p}\left(\Omega \right)}
-
+displaystyle L ; !p left( Omega right)
 .
 Esses espaços são completos. (Se, ao invés disso, a integral de Riemann for utilizada, o espaço não é completo, o que pode ser percebido como uma justificativa para a teoria de integração de Lebesgue.) Concretamente, isso significa que para qualquer sequência de funções do integráveis por Lebesgue
-
 f
-
 1
-
 ,
-
 f
-
 2
-
 ,
-…
+...
 ,
-
 f
-
 n
-
 ,
-…
-
-{\displaystyle f_{1},f_{2},\ldots ,f_{n},\ldots }
-
+...
+displaystyle f 1 ,f 2 , ldots ,f n , ldots
 com
-
-‖
-
 f
-
 n
-
-‖
-
 p
-
-<
-∞
-
-{\displaystyle \left\Vert {f}_{n}\right\Vert _{p}<\infty }
-
+displaystyle left Vert f n right Vert p infty
 , satisfazendo a condição
-
 lim
-
 k
 ,
-
 n
-→
-∞
-
-∫
-
-Ω
-
-|
-
 f
-
 k
-
 (
 x
 )
-−
-
 f
-
 n
-
 (
 x
 )
-
-|
-
 p
-
 d
-μ
-
 (
 x
 )
-
-=
 0
-
-{\displaystyle \lim _{k,\ n\to \infty }\int _{\Omega }\left\vert {f}_{k}(x)-{f}_{n}(x)\right\vert ^{p}\,{d\mu \left(x\right)}=0}
-
+displaystyle lim k, n to infty int Omega left vert f k (x)- f n (x) right vert p , d mu left(x right) 0
 .
 Existe uma função
-
 f
-
 (
 x
 )
-
-{\displaystyle {f}\left(x\right)}
-
+displaystyle f left(x right)
 pertencente ao espaço vetorial
-
 L
-
 p
-
 (
-Ω
 )
-
-{\displaystyle L^{\;\!p}\left(\Omega \right)}
-
+displaystyle L ; !p left( Omega right)
 tal que
-
 lim
-
 k
-→
-∞
-
-∫
-
-Ω
-
-|
-
 f
-
 (
 x
 )
-
-−
-
 f
-
 k
-
 (
 x
 )
-
-|
-
 p
-
 d
-μ
-
 (
 x
 )
-
-=
 0.
-
-{\displaystyle \lim _{k\to \infty }\int _{\Omega }\left\vert {f}\left(x\right)-{f}_{k}\left(x\right)\right\vert ^{p}\,{d\mu \left(x\right)}=0.}
-
+displaystyle lim k to infty int Omega left vert f left(x right)- f k left(x right) right vert p , d mu left(x right) 0.
 Impondo condições de limitação não somente à função, mas também às suas derivadas resulta nos espaços de Sobolev.
-
-==== Espaços de Hilbert ====
-
 Espaços com produto interno completo são conhecidos como espaços de Hilbert, em homenagem a David Hilbert.
-O espaço de Hilbert L2(Ω), com produto interno dado por
-
-⟨
+O espaço de Hilbert L2( ), com produto interno dado por
 f
-
 ,
-
 g
-⟩
-=
-
-∫
-
-Ω
-
 f
 (
 x
 )
-
 g
 (
 x
 )
-
-¯
-
 d
 x
 ,
-
-{\displaystyle \langle f\ ,\ g\rangle =\int _{\Omega }f(x){\overline {g(x)}}\,dx,}
-
+displaystyle langle f , g rangle int Omega f(x) overline g(x) ,dx,
 em que
-
 g
 (
 x
 )
-
-¯
-
-{\displaystyle {\overline {g(x)}}}
-
+displaystyle overline g(x)
 denota o conjugado complexo de g(x), é um caso chave.
 Por definição, em um espaço de Hilbert qualquer sequência de Cauchy converge para um limite. Dessa forma, encontrar uma sequência de funções fn com propriedades desejáveis que aproxime uma dada função limite torna-se crucial. O início da análise, na forma da aproximação de Taylor, estabeleceu uma aproximação de funções diferenciáveis por polinômios. Pelo teorema de Stone-Weierstrass, toda função contínua em um intervalo [a, b] pode ser aproximada tão bem quanto desejado por um polinômio. Uma técnica de aproximação semelhante feita com funções trigonométricas é comumente chamada de expansão de Fourier, e é muito aplicada em engenharia. De forma mais geral, e mais conceitual, o teorema permite uma descrição simples de quais "funções básicas", ou, no contexto de espaços abstratos de Hilbert, quais vetores básicos são suficientes para gerar o espaço de Hilbert H, no sentido de que o fecho do span desses vetores (isto é, combinações lineares finitas e seus limites) é o espaço inteiro. Tal conjunto de funções é chamada de uma base de H, sua cardinalidade é conhecida como a dimensão do espaço de Hilbert. O teorema não apenas mostra funções adequadas para uma base como suficiente para fazer aproximações, mas também, aliado ao processo de Gram-Schmidt, permite a construção de uma base ortogonal de vetores. Tais bases ortogonais são a generalização em espaços de Hilbert dos eixos de coordenadas em espaços euclidianos, de dimensão finita.
 As soluções para várias equações diferenciais podem ser interpretadas em termos de espaços de Hilbert. Por exemplo, muitas áreas da física e da engenharia deparam-se com tais equações e frequentemente soluções com propriedades físicas particulares são utilizadas como funções de uma base, por vezes ortogonal. Na física quântica, a equação de Schrödinger dependente do tempo descreve a mudança de propriedades físicas como função do tempo através de uma equação diferencial parcial, cujas soluções são chamadas de funções de onda. Valores definidos de grandezas físicas como energia e momento correspondem a autovalores de um certo operador diferencial linear e as funções de onda associadas são chamadas de autoestados. O teorema espectral decompõe um operador linear compacto que atua sobre uma função em termos dessas autofunções e desses autovalores.
-
-== Propriedades ==
 Se
-
 v
-∈
 V
 ,
-
-{\displaystyle v\in V,}
-
+displaystyle v in V,
 então
-
 0
-⋅
 v
-=
 0.
-
-{\displaystyle 0\cdot v=0.}
-
+displaystyle 0 cdot v 0.
 Isto é assim porque
-
 0
-=
 0
-⋅
 v
-−
 0
-⋅
 v
-=
 (
 0
-−
 0
 )
-⋅
 v
-=
 0
-⋅
 v
 .
-
-{\displaystyle 0=0\cdot v-0\cdot v=(0-0)\cdot v=0\cdot v.}
-
+displaystyle 0 0 cdot v-0 cdot v (0-0) cdot v 0 cdot v.
 Se
-
 v
-
-{\displaystyle v}
-
-∈
-
+displaystyle v
 V
 ,
-
-{\displaystyle V,}
-
+displaystyle V,
 (
-−
 1
 )
-⋅
 v
-=
-−
 v
 .
-
-{\displaystyle (-1)\cdot v=-v.}
-
+displaystyle (-1) cdot v -v.
 Isto é assim porque
-
 (
-−
 1
 )
-⋅
 v
-+
 v
-=
 (
-−
 1
 )
-⋅
 v
-+
 1
-⋅
 v
-=
 (
 (
-−
 1
 )
-+
 1
 )
-⋅
 v
-=
 0
-⋅
 v
-=
 0.
-
-{\displaystyle (-1)\cdot v+v=(-1)\cdot v+1\cdot v=((-1)+1)\cdot v=0\cdot v=0.}
-
+displaystyle (-1) cdot v v (-1) cdot v 1 cdot v ((-1) 1) cdot v 0 cdot v 0.
 Se
-
 a
-
-{\displaystyle a}
-
-∈
-
+displaystyle a
 K
-
-{\displaystyle K}
-
+displaystyle K
 e
-
 v
-
-{\displaystyle v}
-
-∈
-
+displaystyle v
 V
 ,
-
-{\displaystyle V,}
-
+displaystyle V,
 então
-
 a
-⋅
 (
-−
 v
 )
-=
-−
 (
 a
-⋅
 v
 )
 .
-
-{\displaystyle a\cdot (-v)=-(a\cdot v).}
-
+displaystyle a cdot (-v) -(a cdot v).
 Isto é assim porque
-
 a
-⋅
 (
-−
 v
 )
-+
 a
-⋅
 v
-=
 a
-⋅
 (
-−
 v
-+
 v
 )
-=
 a
-⋅
 0
-=
 0.
-
-{\displaystyle a\cdot (-v)+a\cdot v=a\cdot (-v+v)=a\cdot 0=0.}
-
-== Terminologia ==
+displaystyle a cdot (-v) a cdot v a cdot (-v v) a cdot 0 0.
 Um espaço vetorial sobre
-
 R
-
 ,
-
-{\displaystyle \mathbb {R} ,}
-
+displaystyle mathbb R ,
 o conjuntos dos números reais, é chamado espaço vetorial real.
 Um espaço vetorial sobre
-
 C
-
 ,
-
-{\displaystyle \mathbb {C} ,}
-
+displaystyle mathbb C ,
 o conjuntos dos números complexos, é chamado espaço vetorial complexo.
 Um espaço vetorial com um conceito definido de comprimento, isto é uma norma definida, é chamado espaço vectorial normado.
-
-== Tipos de espaços vectoriais ==
 Espaço Vectorial Euclidiano: É qualquer espaço real que possui um número finito de dimensões e possui uma operação denominada produto interno.
 Espaço de Hilbert: É qualquer espaço vetorial que possui uma operação denominada produto interno e cuja métrica gerada por esse produto interno o torne um espaço completo.
 Espaço normado: É qualquer espaço vetorial que possui uma norma definida
 Espaço de Banach: É um espaço normado completo na métrica gerada por esta norma.
 Espaço vectorial topológico: se existe uma topologia compatível com as operações de espaço vectorial.
-
-== Ver também ==
 Base de um Espaço Vetorial
 Subespaço vetorial
 Módulo (álgebra): a generalização de espaço vetorial, quando o conjunto dos escalares é um anel
 Álgebra sobre um corpo: se existe uma multiplicação de vetores satisfazendo alguns axiomas
-
-== Notas ==
-
-== Referências ==
-
-== Bibliografia ==
 Callioli, Carlos A.; Domingues, Hygino H.; Costa, Roberto C. F. (1990). Álgebra Linear e Aplicações (PDF) 6 ed. São Paulo: Atual. ISBN 9788570562975
 Noble, Ben; James W. Daniel (1986). Álgebra Linear Aplicada. Rio de Janeiro: Prentice-Hall do Brasil. ISBN 9788570540225
-
-=== Álgebra ===
-
-=== Análise ===
-
-=== Referências históricas ===
-
-=== Referências extras ===
-
-== Ligações externas ==
-
 Livro Álgebra Vetorial e Geometria Analítica: Livro do Prof. Jacir J. Venturi, de 242 páginas, disponível na íntegra para acesso gratuito.

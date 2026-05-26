@@ -2,60 +2,38 @@ A educação é uma atividade proposital direcionada para atingir determinados o
 Os tipos de educação são comumente divididos em educação formal, não formal e informal. A educação formal ocorre em instituições de ensino e formação, geralmente é estruturada por metas e objetivos curriculares, e a aprendizagem é tipicamente orientada por um professor. Na maioria das regiões, a educação formal é obrigatória até uma certa idade e comumente dividida em etapas educacionais, como jardim de infância, escola primária e escola secundária. A educação não formal ocorre como complemento ou alternativa à educação formal. Pode ser estruturado de acordo com arranjos educacionais, mas de maneira mais flexível, e geralmente ocorre em ambientes baseados na comunidade, no local de trabalho ou na sociedade civil. Por fim, a educação informal ocorre no cotidiano, na família, qualquer experiência que tenha efeito formativo sobre o modo de pensar, sentir ou agir pode ser considerada educativa, não intencional ou intencional. Na prática, há um continuum do altamente formalizado ao altamente informal, e a aprendizagem informal pode ocorrer em todos os três cenários. Por exemplo, homeschooling pode ser classificado como não formal ou informal, dependendo da estrutura.
 Independentemente do cenário, os métodos educacionais incluem ensino, treinamento, contação de histórias, discussão e pesquisa direcionada. A metodologia de ensino chama-se pedagogia. A educação é apoiada por uma variedade de diferentes filosofias, teorias e agendas de pesquisa empírica.
 Existem movimentos para reformas educacionais, como para melhorar a qualidade e eficiência da educação em direção à relevância na vida dos alunos e resolução eficiente de problemas na sociedade moderna ou futura em geral, ou por metodologias de educação baseadas em evidências. O direito à educação foi reconhecido por alguns governos e pelas Nações Unidas. As iniciativas globais visam alcançar o Objetivo de Desenvolvimento Sustentável 4, que promove educação de qualidade para todos.
-
-== No Brasil ==
-
-=== Níveis de ensino no Brasil ===
-
 De acordo com a Lei de Diretrizes e Bases da Educação Nacional a educação no Brasil se divide em:
-
 Educação infantil
-Ensino fundamental | Anos iniciais do ensino fundamental | Anos finais do ensino fundamental
+Ensino fundamental Anos iniciais do ensino fundamental Anos finais do ensino fundamental
 Ensino médio
 Educação de jovens e adultos
 Educação do campo
 Ensino técnico
-Ensino superior | Sequencial | Tecnológico | Licenciatura | Bacharelado
-Pós-graduação | Especialização
+Ensino superior Sequencial Tecnológico Licenciatura Bacharelado
+Pós-graduação Especialização
 Mestrado
 Doutorado
 Pós-doutorado
-
-=== Legislação brasileira ===
 No Brasil, a educação é regulamentada pela Lei de Diretrizes e Bases da Educação Nacional, pelo Fundo de Manutenção e Desenvolvimento da Educação Básica e pelo Fundo de Manutenção e Desenvolvimento do Ensino Fundamental e de Valorização do Magistério.
-
-=== Plano de Desenvolvimento da Educação ===
 A principal meta do Plano de Desenvolvimento da Educação (PDE) é uma educação básica de qualidade, para isso deve-se investir na educação profissional e na educação superior. Para isso se tornar realidade deve acontecer o envolvimento de todos: pais, alunos, professores e gestores, em busca da permanência do aluno na escola. Com o PDE o Ministério da Educação pretende mostrar tudo o que se passa dentro e fora da escola e realizar uma grande prestação de contas. As iniciativas do MEC devem chegar a sala de aula para beneficiar a criança e assim atingir a qualidade que se deseja para a educação brasileira. O PDE foi editado pelo Governo Federal, por premissas à visão sistêmica da educação, a sustentação da qualidade do ensino e a prioridade a educação básica.
-
-== Em Portugal ==
-
-=== Níveis de ensino em Portugal ===
 Em Portugal o ensino curricular é um complemento ao ensino oficial.
-
 Ensino Pré-Escolar
 Ensino Básico
-1º ciclo
-2º ciclo
-3º ciclo
+1o ciclo
+2o ciclo
+3o ciclo
 Ensino secundário
 Ensino superior
-
-=== Legislação portuguesa ===
 Em Portugal, a educação é regulamentada pela Lei de Bases do Sistema Educativo que estabelece o quadro geral do sistema educativo nacional.
-
-=== Plano educacional em Portugal ===
-
 A nível institucional, a educação inicia-se num âmbito não obrigatório com o Pré-escolar, destinado a crianças com idades compreendidas entre os 3 anos e a entrada na escolaridade obrigatória.
 A escolaridade obrigatória denomina-se como "ensino regular", tem a duração de 12 anos, e compreende a idades dos 6 anos até aos 18 anos e organiza-se em três ciclos sequenciais.
-
-1º ciclo: O ensino é global e visa o desenvolvimento de competências básicas em Língua Portuguesa, Matemática, Estudo do Meio e Expressão Plástica. Com a implementação da escola a tempo inteiro, através do alargamento do horário de funcionamento para um mínimo de oito horas diárias, as escolas promovem actividades de enriquecimento curricular, nomeadamente o ensino obrigatório do Inglês, o apoio ao estudo para todos os alunos, a actividade física e desportiva, o ensino da Música e de outras expressões artísticas e de outras línguas estrangeiras. O 1º ciclo funciona em regime de monodocência, com recurso a professores especializados em determinadas áreas.
-2º ciclo: Está organizado por disciplinas e áreas de estudo pluridisciplinares.
-No 3º ciclo, o ensino está organizado por disciplinas. Os principais objectivos deste ciclo são o desenvolvimento de saberes e competências necessários à entrada na vida ativa ou ao prosseguimento de estudos.
-3º ciclo: Funciona em regime de pluridocência, com professores especializados nas diferentes áreas disciplinares ou disciplinas.
-Aos alunos que completam com sucesso o 3º ciclo é atribuído o diploma do ensino básico.
+1o ciclo: O ensino é global e visa o desenvolvimento de competências básicas em Língua Portuguesa, Matemática, Estudo do Meio e Expressão Plástica. Com a implementação da escola a tempo inteiro, através do alargamento do horário de funcionamento para um mínimo de oito horas diárias, as escolas promovem actividades de enriquecimento curricular, nomeadamente o ensino obrigatório do Inglês, o apoio ao estudo para todos os alunos, a actividade física e desportiva, o ensino da Música e de outras expressões artísticas e de outras línguas estrangeiras. O 1o ciclo funciona em regime de monodocência, com recurso a professores especializados em determinadas áreas.
+2o ciclo: Está organizado por disciplinas e áreas de estudo pluridisciplinares.
+No 3o ciclo, o ensino está organizado por disciplinas. Os principais objectivos deste ciclo são o desenvolvimento de saberes e competências necessários à entrada na vida ativa ou ao prosseguimento de estudos.
+3o ciclo: Funciona em regime de pluridocência, com professores especializados nas diferentes áreas disciplinares ou disciplinas.
+Aos alunos que completam com sucesso o 3o ciclo é atribuído o diploma do ensino básico.
 Ensino secundário:
 Está organizado segundo formas diferenciadas, orientadas quer para o prosseguimento de estudos quer para o mundo do trabalho. O currículo dos cursos de nível secundário tem um referencial de três anos lectivos e compreende quatro tipos de cursos:
-
 Os Cursos científico-humanísticos, são vocacionados essencialmente para o prosseguimento de estudos de nível superior.
 Os Cursos tecnológicos, dirigidos essencialmente a alunos que desejam entrar no mercado de trabalho, permitindo, igualmente, o prosseguimento de estudos em cursos tecnológicos especializados ou no ensino superior.
 Os Cursos artísticos especializados, asseguram a formação artística especializada nas áreas de artes visuais, audiovisuais, dança e música, permitindo a entrada no mundo do trabalho ou o prosseguimento de estudos em cursos pós-secundários não superiores ou, ainda, no ensino superior;
@@ -67,32 +45,23 @@ Após a conclusão do ensino Secundário umas das opções que o sistema educaci
 A formação realizada nos CET é creditada no âmbito do curso superior em que o aluno seja admitido. A conclusão com aproveitamento de um curso de especialização tecnológica confere um diploma de especialização tecnológica (DET) e qualificação profissional de nível 5, podendo ainda dar acesso a um certificado de aptidão profissional (CAP).
 Educação e Formação de Jovens e Adultos
 A educação e formação de jovens e adultos oferece uma segunda oportunidade a indivíduos que abandonaram a escola precocemente ou que estão em risco de a abandonar, bem como àqueles que não tiveram oportunidade de a frequentar quando jovens e, ainda, aos que procuram a escola por questões de natureza profissional ou valorização pessoal, numa perspectiva de aprendizagem ao longo da vida.
-No sentido de proporcionar novas vias para aprender e progredir surgiu a Iniciativa "Novas Oportunidades" que define como um dos objectivos principais alargar o referencial mínimo de formação ao 12º ano de escolaridade e cuja estratégia assenta em dois pilares fundamentais:
-
+No sentido de proporcionar novas vias para aprender e progredir surgiu a Iniciativa "Novas Oportunidades" que define como um dos objectivos principais alargar o referencial mínimo de formação ao 12o ano de escolaridade e cuja estratégia assenta em dois pilares fundamentais:
 Elevar a formação de base da população activa;
 Tornar a educação profissional uma opção efectiva para os jovens.
 As diferentes modalidades de educação e formação de jovens e adultos permitem adquirir uma certificação escolar e/ou uma qualificação profissional, bem como o prosseguimento de estudos de nível pós-secundário não superior ou o ensino superior.
 A educação e formação de jovens e adultos compreendem as seguintes modalidades:
-
 Sistema de Reconhecimento, Validação e Certificação de Competências (RVCC).
 Existe uma valorização e reconhecimentos das aprendizagens adquiridas ao longo da vida, por via formal, informal e não-formal, permitindo aos alunos obter uma dupla certificação académica e profissional. A formação adquirida permite o acesso a empregos mais qualificados e melhor perspectiva de formação ao longo da vida. Este Sistema tem lugar nos Centros Novas Oportunidades, disseminados por todo o país;
-
 Cursos de Educação e Formação (CEF) para alunos a partir dos 15 anos.
 Os CEF são uma oportunidade para os jovens poderem concluir a escolaridade obrigatória, incentivando-os para o prosseguimento de estudos/formação, assim como para a aquisição de competências profissionais, através de soluções flexíveis, de acordo com os seus interesses e face às necessidades do mercado de trabalho.
 São destinados a jovens com idade igual ou superior a 15 anos e inferior a 23 anos, em risco de abandono escolar ou que já abandonaram.
-
 Cursos de Educação e Formação de Adultos (EFA) e Formações Modulares.
-Possibilitam a aquisição de habilitações escolares e/ou competências profissionais, com vista a uma reinserção ou progressão no mercado de trabalho a jovens com idade igual ou superior a 18 anos, que pretendam completarmos o 9º ou 12º ano de escolaridade e desejem obter uma qualificação profissional de nível 2 ou 3.
-
-"Acções de curta duração S@bER +"
+Possibilitam a aquisição de habilitações escolares e/ou competências profissionais, com vista a uma reinserção ou progressão no mercado de trabalho a jovens com idade igual ou superior a 18 anos, que pretendam completarmos o 9o ou 12o ano de escolaridade e desejem obter uma qualificação profissional de nível 2 ou 3.
+"Acções de curta duração S bER "
 Destinadas a maiores de 18 anos, procura, através de formações de curta duração, motivar a população adulta a melhorar as suas qualificações escolares ou profissionais e a encontrar as respostas adequadas aos contínuos desafios que enfrenta. Apresentam uma estrutura curricular flexível e diferenciada em função dos interesses e das necessidades do público-alvo.
 Ensino Superior
 O ensino superior actualmente está estruturado de acordo com os princípios de Bolonha e visa a assegurar uma sólida preparação científica, cultural, artística e tecnológica que habilite para o exercício de actividades profissionais e culturais e para o desenvolvimento das capacidades de concepção, de inovação e de análise crítica.
 Em Portugal, organiza-se num sistema binário: o ensino universitário e o ensino politécnico, administrados por instituições do ensino superior públicas, privadas ou cooperativas.
-
-== Em Cabo Verde ==
-
-=== Níveis de ensino em Cabo Verde ===
 Ensino Fundamental
 Ensino Escolar
 Ensino Básico
@@ -108,19 +77,11 @@ Ensino Superior
 Ensino Universitário
 Ensino Politécnico
 Ensino Extra-Escolar
-
-== Tipos ==
 Há muitas classificações de educação. Uma delas depende da estrutura institucional e faz distinção entre educação formal, não formal e informal. Outra classificação inclui diferentes níveis de educação com base em fatores como a idade do aluno e a complexidade do conteúdo. Outras categorias se concentram no tópico, no método de ensino, no meio usado e no financiamento.
-
-=== Formal, não formal e informal ===
 A divisão mais comum é entre educação formal, não formal e informal. A educação formal ocorre em uma estrutura institucional complexa. Essas estruturas têm uma ordem cronológica e hierárquica: o sistema escolar moderno tem aulas com base na idade e no progresso do aluno, estendendo-se desde o ensino fundamental até a universidade. A educação formal geralmente é controlada e orientada pelo governo. Ela tende a ser obrigatória até uma determinada idade.
 A educação não formal e informal ocorre fora do sistema de ensino formal. A educação não formal é um meio-termo. Assim como a educação formal, ela é organizada, sistemática e realizada com um objetivo claro em mente. Exemplos são aulas particulares, aulas de ginástica e o movimento de escotismo. A educação informal ocorre de forma não sistemática por meio de experiências diárias e exposição ao ambiente. Ao contrário da educação formal e não formal, geralmente não há uma figura de autoridade designada responsável pelo ensino. A educação informal está presente em muitos ambientes. Ela ocorre ao longo da vida, em sua maioria de forma espontânea. É assim que as crianças aprendem sua língua materna com os pais ou como as pessoas aprendem a preparar um prato cozinhando juntas.
 Alguns teóricos distinguem os três tipos com base no local do aprendizado. A educação formal ocorre na escola. A educação informal ocorre em locais de rotina diária. A educação não formal ocorre em locais que são visitados ocasionalmente. Há também diferenças na fonte de motivação. A educação formal tende a ser impulsionada pela motivação extrínseca para obter recompensas externas. A educação não formal e informal está intimamente ligada à motivação intrínseca porque o aprendizado em si é apreciado. A distinção entre os três tipos normalmente é clara nos casos típicos. Entretanto, algumas formas de educação não se enquadram facilmente em uma categoria.
 A educação formal desempenha um papel central na civilização moderna. Mas nas culturas primitivas, a maior parte da educação acontecia em nível informal, o que geralmente significava que não havia distinção entre as atividades voltadas para a educação e outras atividades. Em vez disso, todo o ambiente funcionava como uma forma de escola e a maioria dos adultos atuava como professores. Entretanto, a educação informal geralmente não é eficiente o suficiente para transmitir grandes quantidades de conhecimento. Para isso, geralmente é necessário um ambiente formal e professores bem treinados. Esse foi um dos motivos pelos quais, no decorrer da história, a educação formal tornou-se cada vez mais importante. Nesse processo, a experiência da educação tornou-se mais abstrata e distante da vida cotidiana. Foi dada mais ênfase à compreensão de padrões gerais em vez de observar e imitar formas específicas de comportamento.SSS
-
-== Quadro comparativo dos sistemas de ensino de vários países ==
-
-== Ver também ==
 Aprendizagem
 Artes liberais
 Artes mecânicas
@@ -136,19 +97,11 @@ Modalidades de aprendizagem
 Tecnologias educacionais
 Teoria da modificabilidade cognitiva estrutural de Reuven Feuerstein
 Quatro pilares da educação
-
-== Referências ==
-
-== Ligações externas ==
-
-=== Ministérios da educação ===
 Angola
 Brasil
 Cabo Verde
 Moçambique
 Portugal
-
-=== Outros ===
 Memória da Educação online
 Lei de Diretrizes e Bases da Educação Nacional - Brasil
 Base "Estudos e Educação"

@@ -1,10 +1,8 @@
 Dado ou dados pode referir-se a:
 Dado (arquitetura)
-Dado (peça) — peça de jogo de tabuleiro
-Dados — conjunto de informações
-Dados (computação) — qualquer sequência de um ou mais símbolos com significado por ato(s) específico(s) de interpretação
-
-== Ver também ==
+Dado (peça) peça de jogo de tabuleiro
+Dados conjunto de informações
+Dados (computação) qualquer sequência de um ou mais símbolos com significado por ato(s) específico(s) de interpretação
 Todas as páginas cujo título começa por "Dado"
 Todas as páginas que tenham "Dado" no título
 Busca por "dado"

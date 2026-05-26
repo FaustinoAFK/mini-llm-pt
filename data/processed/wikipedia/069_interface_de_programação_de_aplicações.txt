@@ -1,22 +1,12 @@
 Em ciência da computação, a Interface de Programação de Aplicações (do inglês Application Programming Interface, abreviado API) é um conjunto de serviços/funções que foram implementadas em um programa de computador que são disponibilizados para que outros programas/aplicativos possam utiliza-los diretamente de forma simplificada; sem envolver-se em detalhes da implementação do programa de computador principal (função chamada de encapsulamento, usar as funcionalidades através de um código de programação simplificado).
 Uma API permite utilizar características do software menos evidentes ao utilizador tradicional; por exemplo, um sistema operativo possui uma grande quantidade de funções na API, que permitem ao programador criar janelas, aceder a arquivos, codificar dados. Mas as APIs dos sistemas operativos costumam ser sem associação de tarefas mais essenciais, como a manipulação de blocos de memória e acesso a dispositivos. Essas tarefas são atributos do núcleo de sistema e raramente são programáveis. Outro exemplo são programas de desenho geométrico que possuem uma API específica para criar automaticamente entidades de acordo com padrões definidos pelo utilizador.
 Mais recentemente, o uso de API tem-se generalizado na forma de plugins (acessórios opcionais que complementam a funcionalidade de um programa). Os autores do programa principal fornecem uma API específica para que outros autores criem plugins, estendendo as funcionalidades do programa.
-
-== Propósito ==
 O propósito das APIs é o de simplificar o desenvolvimento de programas e aplicações, através da abstração dos diversos elementos que compõem um software. Isso permite que o desenvolvedor não precise saber detalhadamente a implementação de todas as partes que compõem um sistema, mas sim, precisará saber como utilizar os serviços fornecidos pelas APIs de seu interesse e como se dará a interação destas com os outros elementos de seu software.
-
-== API Web ==
 É um conjunto de interfaces para transmissão de dados através do HTTP, geralmente expresso nos formatos JSON ou XML. A Web 2.0 vem abandonando o modelo de serviços SOAP em favor da técnica REST.
 Enquanto um usuário usufrui de um aplicativo ou site, este pode estar conectado a diversos outros sistemas e aplicativos via APIs sem que se perceba. Um exemplo popular é a rede social Twitter, sendo possível ler e publicar mensagens por meio de sua API. De maneira semelhante, é possível ler e publicar mensagens no Reddit.
-
-== Veja também ==
 Chamada de procedimento remoto
 Linguagem de descrição de interface
 Programação funcional
 REST, Transferência Representacional de Estado
 SOAP, Protocolo Simples de Acesso a Objetos
-
-== Referências ==
-
-== Ligações externas ==
 «Como criar uma boa API (how to design a good API)» (PDF) (em inglês)

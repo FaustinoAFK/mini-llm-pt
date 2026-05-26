@@ -1,12 +1,7 @@
 Um modelo de linguagem é um sistema de inteligência artificial que aprende a gerar ou processar texto baseado em exemplos de treinamento. Os modelos de linguagem são treinados em grandes quantidades de texto para aprender a prever a próxima palavra ou frase com base no contexto anterior. Eles podem ser usados para várias tarefas, como tradução automática, geração de texto, resumo automático e resposta a perguntas. Os modelos de linguagem mais recentes, como o GPT-3 da OpenAI, são baseados em redes neurais profundas e apresentam um desempenho impressionante em várias tarefas de processamento de linguagem.
-
-== Aplicações ==
 Os modelos de linguagem têm muitas aplicações em vários setores, incluindo tecnologia, mídia, negócios e saúde. Entretanto os desenvolvedores defendem que a cada dia essas aplicações devem se expandir e cobrir todas as áreas da vida.
-
 Processamento de linguagem natural: Os modelos de linguagem são usados para compreender e responder a perguntas em línguas naturais, como o português, o francês, o espanhol e especialmente o inglês.
 Geração de texto: Os modelos de linguagem podem ser usados para gerar descrições, resumos e notícias automáticas, além de conteúdo criativo, como poesia e ficção.
 Tradução automática: Os modelos de linguagem são usados para traduzir textos de uma língua para outra, permitindo que pessoas de diferentes países e culturas compartilhem informações e comuniquem-se.
 Análise de sentimento: Os modelos de linguagem são usados para analisar o tom e o sentimento de uma frase ou texto, o que é útil para avaliar a opinião dos clientes sobre um produto ou marca.
 Resumo automático: Os modelos de linguagem podem ser usados para resumir automaticamente documentos longos ou artigos, tornando-os mais acessíveis e fáceis de ler.
-
-== Referências ==

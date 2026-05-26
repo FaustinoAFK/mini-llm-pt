@@ -1,62 +1,34 @@
 O aprendizado supervisionado é a tarefa de aprendizado de máquina que consiste em aprender uma função que mapeia uma entrada para uma saída com base em pares de entrada-saída de exemplo. Ele infere uma função a partir de dados de treinamento rotulados consistindo de um conjunto de exemplos de treinamento. No aprendizado supervisionado, cada exemplo é um par que consiste em um objeto de entrada (normalmente um vetor) e um valor de saída desejado (também chamado de sinal de supervisão). Um algoritmo de aprendizado supervisionado analisa os dados de treinamento e produz uma função inferida, que pode ser usada para mapear novos exemplos. Um cenário ideal permitirá que o algoritmo determine corretamente os rótulos de classe para instâncias não vistas. Isso requer que o algoritmo de aprendizagem generalize a partir dos dados de treinamento para situações invisíveis de uma forma "razoável" (ver viés indutivo). Essa qualidade estatística de um algoritmo é medida por meio do chamado erro de generalização.
 A tarefa paralela na psicologia humana e animal é frequentemente chamada de aprendizado de conceitos.
-
-== Passos ==
 Para resolver um determinado problema de aprendizado supervisionado, é necessário realizar as seguintes etapas:
-
 Determinar o tipo de exemplos de treinamento. Antes de qualquer coisa, o usuário deve decidir que tipo de dados será usado como conjunto de treinamento. No caso de análise de textos manuscritos, por exemplo, pode ser um único caractere escrito à mão, uma palavra inteira escrita à mão ou uma linha inteira de escrita à mão.
 Reunir um conjunto de treinamento. O conjunto de treinamento precisa ser representativo do uso da função no mundo real. Assim, um conjunto de objetos de entrada é coletado e as saídas correspondentes também são coletadas, seja de especialistas humanos ou de medições.
 Determine a representação das características de entrada da função aprendida. A precisão da função aprendida depende fortemente de como o objeto de entrada é representado. Normalmente, o objeto de entrada é transformado em um vetor de características, que contém várias características que são descritivas do objeto. O número de características não deve ser muito grande, por causa da maldição da dimensionalidade; mas deve conter informações suficientes para prever com precisão a saída.
 Determinar a estrutura da função aprendida e o algoritmo de aprendizagem correspondente. Por exemplo, o engenheiro pode escolher usar máquinas de vetores de suporte ou árvores de decisão.
 Concluir o projeto. Executar o algoritmo de aprendizagem no conjunto de treinamento coletado. Alguns algoritmos de aprendizado supervisionado exigem que o usuário especifique certos parâmetros de controle. Esses parâmetros podem ser ajustados otimizando o desempenho em um subconjunto (denominado conjunto de validação) do conjunto de treinamento ou por meio de validação cruzada.
 Avaliar a precisão da função aprendida. Após o ajuste dos parâmetros e o aprendizado, o desempenho da função resultante deve ser medido em um conjunto de teste separado do conjunto de treinamento.
-
-== Escolha do algoritmo ==
 Está disponível uma ampla gama de algoritmos de aprendizado supervisionado, cada um com seus pontos fortes e fracos. Não existe um algoritmo de aprendizado único que funcione melhor em todos os problemas de aprendizado supervisionado (consulte o teorema da inexistência de almoço grátis).
 Existem quatro questões principais a serem consideradas na aprendizagem supervisionada:
-
-=== Equilíbrio entre viés e variância ===
 Uma primeira questão é o equilíbrio entre viés e variância. Imagine que temos disponíveis vários conjuntos de dados de treinamento diferentes, mas igualmente bons. Um algoritmo de aprendizagem é tendencioso para uma entrada particular
-
 x
-
-{\displaystyle x}
-
+displaystyle x
 se, quando treinado em cada um desses conjuntos de dados, estiver sistematicamente incorreto ao prever a saída correta para
-
 x
-
-{\displaystyle x}
-
+displaystyle x
 . Um algoritmo de aprendizagem tem alta variância para uma entrada particular
-
 x
-
-{\displaystyle x}
-
+displaystyle x
 se ele prevê diferentes valores de saída quando treinado em diferentes conjuntos de treinamento. O erro de previsão de um classificador aprendido está relacionado à soma do viés e da variância do algoritmo de aprendizagem. Geralmente, há uma disputa entre viés e variância. Um algoritmo de aprendizagem com viés baixo deve ser "flexível" para que possa se ajustar bem aos dados. Porém, se o algoritmo de aprendizado for muito flexível, ele se ajustará a cada conjunto de dados de treinamento de maneira diferente e, portanto, terá variância alta. Um aspecto fundamental de muitos métodos de aprendizagem supervisionada é que eles são capazes de equilibrar viés e variância (seja automaticamente ou fornecendo um parâmetro de viés/variância que o usuário pode ajustar).
-
-=== Complexidade da função e quantidade de dados de treinamento ===
 A segunda questão é a quantidade de dados de treinamento disponíveis em relação à complexidade da função (classificador ou função de regressão) "verdadeira". Se a função verdadeira for simples, um algoritmo de aprendizado "inflexível" com alto viés e baixa variância será capaz de aprendê-la com uma pequena quantidade de dados. Mas se a verdadeira função for altamente complexa (por exemplo, porque envolve interações complexas entre muitas características de entrada diferentes e se comporta de maneira diferente em diferentes partes do espaço de entrada), então a função só será capaz de aprender com uma grande quantidade de dados de treinamento e usando um algoritmo de aprendizagem "flexível" com viés baixo e variância alta. Existe uma demarcação clara entre a entrada e a saída desejada.
-
-=== Dimensionalidade do espaço de entrada ===
 Uma terceira questão é a dimensionalidade do espaço de entrada. Se os vetores de características de entrada tiverem um número muito alto de dimensões, o problema de aprendizado pode ser difícil, mesmo se a verdadeira função depender apenas de um pequeno número dessas características. Isso ocorre porque as muitas dimensões "extras" podem confundir o algoritmo de aprendizado e fazer com que ele tenha alta variância. Consequentemente, a alta dimensão de entrada normalmente requer o ajuste do classificador para ter baixa variância e viés alto. Na prática, se o engenheiro puder remover manualmente características irrelevantes dos dados de entrada, é provável que isso melhore a precisão da função aprendida. Além disso, existem muitos algoritmos para seleção de características que procuram identificar as características relevantes e descartar as irrelevantes. Esta é uma instância da estratégia mais geral de redução de dimensionalidade, que busca mapear os dados de entrada em um espaço de dimensão inferior antes de executar o algoritmo de aprendizado supervisionado.
-
-=== Ruído nos valores de saída ===
 Uma quarta questão é o grau de ruído nos valores de saída desejados (as variáveis alvo da supervisão). Se os valores de saída desejados costumam estar incorretos (por causa de erro humano ou erros do sensor), o algoritmo de aprendizado não deve tentar encontrar uma função que corresponda exatamente aos exemplos de treinamento. Tentar ajustar os dados com muito cuidado leva ao sobreajuste. Você pode sobreajustar mesmo quando não há erros de medição (ruído estocástico) se a função que está tentando aprender for muito complexa para o seu modelo de aprendizagem. Em tal situação, a parte da função de destino que não pode ser modelada "corrompe" seus dados de treinamento - esse fenômeno foi chamado de ruído determinístico. Quando qualquer um dos tipos de ruído está presente, é melhor usar um estimador de maior viés e menor variância.
 Na prática, existem várias abordagens para amenizar o ruído nos valores de saída, como a parada precoce para evitar o sobreajuste, bem como a detecção e remoção dos exemplos de treinamento ruidosos antes de treinar o algoritmo de aprendizado supervisionado. Existem vários algoritmos que identificam exemplos de treinamento ruidosos e remover os exemplos de treinamento ruidosos suspeitos antes do treinamento diminuiu o erro de generalização com significância estatística.
-
-=== Outros fatores a serem considerados ===
 Outros fatores a serem considerados ao escolher e aplicar um algoritmo de aprendizagem incluem o seguinte:
-
 Heterogeneidade dos dados. Se os vetores de características incluem características de muitos tipos diferentes (discretas, ordenadas discretas, contagens, valores contínuos), alguns algoritmos são mais fáceis de aplicar do que outros. Muitos algoritmos, incluindo máquinas de vetores de suporte, regressão linear,regressão logística, redes neurais e métodos de vizinhos mais próximos, requerem que as características de entrada sejam numéricas e escaladas para intervalos semelhantes (por exemplo, para o intervalo [-1,1]). Os métodos que empregam uma função de distância, como os métodos de vizinhos mais próximos e as máquinas de vetores de suporte com núcleos gaussianos, são particularmente sensíveis a isso. Uma vantagem das árvores de decisão é que elas lidam facilmente com dados heterogêneos.
 Redundância nos dados. Se as características de entrada contiverem informações redundantes (por exemplo, características altamente correlacionadas), alguns algoritmos de aprendizagem (por exemplo, regressão linear, regressão logística e métodos baseados em distância) terão um desempenho ruim devido às instabilidades numéricas. Esses problemas podem ser resolvidos com a imposição de alguma forma de regularização.
 Presença de interações e não linearidades. Se cada uma das características faz uma contribuição independente para a saída, então algoritmos baseados em funções lineares (por exemplo, regressão linear, regressão logística, máquinas de vetor de suporte, Bayes ingênuo) e funções de distância (por exemplo, métodos de vizinho mais próximo, máquinas de vetores de suporte com núcleos gaussianos) geralmente têm um bom desempenho. No entanto, se houver interações complexas entre as características, algoritmos como árvores de decisão e redes neurais funcionam melhor, porque são projetados especificamente para descobrir essas interações. Os métodos lineares também podem ser aplicados, mas o engenheiro deve especificar manualmente as interações ao usá-los.
 Ao considerar uma nova aplicação, o engenheiro pode comparar vários algoritmos de aprendizagem e determinar experimentalmente qual funciona melhor no problema em questão (consulte validação cruzada). Ajustar o desempenho de um algoritmo de aprendizado pode consumir muito tempo. Dados recursos fixos, geralmente é melhor gastar mais tempo coletando dados de treinamento adicionais e características mais informativas do que gastar tempo extra ajustando os algoritmos de aprendizagem.
-
-=== Algoritmos ===
 Os algoritmos de aprendizagem mais amplamente usados são:
-
 Máquinas de vetores de suporte
 Regressão linear
 Regressão logística
@@ -66,29 +38,16 @@ Análise de discriminantes lineares
 Algoritmo de k-vizinhos mais próximos
 Redes neurais (perceptron multicamadas)
 Aprendizagem por similaridade
-
-== Como funcionam os algoritmos de aprendizagem supervisionada ==
 Dado um conjunto de
-
 N
-
-{\displaystyle N}
-
+displaystyle N
 exemplos de treinamento da forma
-
-{
 (
-
 x
-
 1
-
 ,
-
 y
-
 1
-
 )
 ,
 .
@@ -96,704 +55,377 @@ y
 .
 ,
 (
-
 x
-
 N
-
 ,
-
 y
-
 N
-
 )
-}
-
-{\displaystyle \{(x_{1},y_{1}),...,(x_{N},\;y_{N})\}}
-
 em que
-
 x
-
 i
-
-{\displaystyle x_{i}}
-
+displaystyle x i
 é o vetor de características do
-
 i
-
-{\displaystyle i}
-
+displaystyle i
 -ésimo exemplo e
-
 y
-
 i
-
-{\displaystyle y_{i}}
-
+displaystyle y i
 é o seu rótulo (ou seja, classe), um algoritmo de aprendizagem busca uma função
-
 g
 :
 X
-→
 Y
-
-{\displaystyle g:X\to Y}
-
+displaystyle g:X to Y
 , em que
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 é o espaço de entrada e
-
 Y
-
-{\displaystyle Y}
-
+displaystyle Y
 é o espaço de saída. A função
-
 g
-
-{\displaystyle g}
-
+displaystyle g
 é um elemento de algum espaço de funções possíveis
-
 G
-
-{\displaystyle G}
-
+displaystyle G
 , geralmente chamado de espaço de hipóteses. Às vezes é conveniente representar
-
 g
-
-{\displaystyle g}
-
+displaystyle g
 usando uma função de pontuação
-
 f
 :
 X
-×
 Y
-→
-
 R
-
-{\displaystyle f:X\times Y\to \mathbb {R} }
-
+displaystyle f:X times Y to mathbb R
 de tal modo que
-
 g
-
-{\displaystyle g}
-
+displaystyle g
 é definido como retornando o
-
 y
-
-{\displaystyle y}
-
+displaystyle y
 valor que dá a pontuação mais alta:
-
 g
 (
 x
 )
-=
-
 arg
-⁡
 max
-
 y
-
 f
 (
 x
 ,
 y
 )
-
-{\displaystyle g(x)={\underset {y}{\arg \max }}\;f(x,y)}
-
+displaystyle g(x) underset y arg max ;f(x,y)
 . Seja
-
 F
-
-{\displaystyle F}
-
+displaystyle F
 o espaço das funções de pontuação.
 Embora
-
 G
-
-{\displaystyle G}
-
+displaystyle G
 e
-
 F
-
-{\displaystyle F}
-
+displaystyle F
 possam ser quaisquer espaços de funções, muitos algoritmos de aprendizagem são modelos probabilísticos onde
-
 g
-
-{\displaystyle g}
-
+displaystyle g
 assume a forma de um modelo de probabilidade condicional
-
 g
 (
 x
 )
-=
 P
 (
 y
-
-|
-
 x
 )
-
-{\displaystyle g(x)=P(y|x)}
-
+displaystyle g(x) P(y x)
 , ou
-
 f
-
-{\displaystyle f}
-
+displaystyle f
 assume a forma de um modelo de probabilidade conjunta
-
 f
 (
 x
 ,
 y
 )
-=
 P
 (
 x
 ,
 y
 )
-
-{\displaystyle f(x,y)=P(x,y)}
-
+displaystyle f(x,y) P(x,y)
 . Por exemplo, Bayes ingênuo e análise discriminantes lineares são modelos de probabilidade conjunta, enquanto a regressão logística é um modelo de probabilidade condicional.
 Existem duas abordagens básicas para escolher
-
 f
-
-{\displaystyle f}
-
+displaystyle f
 ou
-
 g
-
-{\displaystyle g}
-
+displaystyle g
 : minimização do risco empírico e minimização do risco estrutural. A minimização do risco empírico busca a função que melhor se ajusta aos dados de treinamento. A minimização do risco estrutural inclui uma função de penalidade que controla o equilíbrio entre viés e variância.
 Em ambos os casos, assume-se que o conjunto de treinamento consiste em uma amostra de pares independentes e identicamente distribuídos,
-
 (
-
 x
-
 i
-
 ,
-
 y
-
 i
-
 )
-
-{\displaystyle (x_{i},\;y_{i})}
-
+displaystyle (x i , ;y i )
 . Para medir o quão bem uma função se ajusta aos dados de treinamento, define-se uma função de perda
-
 L
 :
 Y
-×
 Y
-→
-
 R
-
-≥
 0
-
-{\displaystyle L:Y\times Y\to \mathbb {R} ^{\geq 0}}
-
+displaystyle L:Y times Y to mathbb R geq 0
 . Para um exemplo de treinamento
-
 (
-
 x
-
 i
-
 ,
-
 y
-
 i
-
 )
-
-{\displaystyle (x_{i},\;y_{i})}
-
+displaystyle (x i , ;y i )
 , a perda ao prever o valor
-
 y
-^
-
-{\displaystyle {\hat {y}}}
-
+displaystyle hat y
 é
-
 L
 (
-
 y
-
 i
-
 ,
-
 y
-^
-
 )
-
-{\displaystyle L(y_{i},{\hat {y}})}
-
+displaystyle L(y i , hat y )
 .
 O risco
-
 R
 (
 g
 )
-
-{\displaystyle R(g)}
-
+displaystyle R(g)
 da função
-
 g
-
-{\displaystyle g}
-
+displaystyle g
 é definido como a perda esperada de
-
 g
-
-{\displaystyle g}
-
+displaystyle g
 . Isso pode ser estimado a partir dos dados de treinamento como
-
 R
-
 e
 m
 p
-
 (
 g
 )
-=
-
 1
 N
-
-∑
-
 i
-
 L
 (
-
 y
-
 i
-
 ,
 g
 (
-
 x
-
 i
-
 )
 )
-
-{\displaystyle R_{emp}(g)={\frac {1}{N}}\sum _{i}L(y_{i},g(x_{i}))}
-
+displaystyle R emp (g) frac 1 N sum i L(y i ,g(x i ))
 .
-
-=== Minimização do risco empírico ===
 Na minimização do risco empírico, o algoritmo de aprendizagem supervisionada busca a função
-
 g
-
-{\displaystyle g}
-
+displaystyle g
 que minimiza
-
 R
 (
 g
 )
-
-{\displaystyle R(g)}
-
+displaystyle R(g)
 . Portanto, um algoritmo de aprendizagem supervisionada pode ser construído aplicando um algoritmo de otimização para encontrar
-
 g
-
-{\displaystyle g}
-
+displaystyle g
 .
 Quando
-
 g
-
-{\displaystyle g}
-
+displaystyle g
 é uma distribuição de probabilidade condicional
-
 P
 (
 y
-
-|
-
 x
 )
-
-{\displaystyle P(y|x)}
-
+displaystyle P(y x)
 e a função de perda é o oposto do logaritmo da função de verossimilhança:
-
 L
 (
 y
 ,
-
 y
-^
-
 )
-=
-−
 log
-⁡
 P
 (
 y
-
-|
-
 x
 )
-
-{\displaystyle L(y,{\hat {y}})=-\log P(y|x)}
-
+displaystyle L(y, hat y ) - log P(y x)
 , então a minimização do risco empírico é equivalente à estimativa de máxima verossimilhança.
 Quando
-
 G
-
-{\displaystyle G}
-
+displaystyle G
 contém muitas funções candidatas ou o conjunto de treinamento não é suficientemente grande, a minimização do risco empírico leva a alta variância e baixa generalização. O algoritmo de aprendizagem é capaz de memorizar os exemplos de treinamento sem generalizar bem. Isso é chamado de sobreajuste.
-
-=== Minimização do risco estrutural ===
 A minimização do risco estrutural visa evitar o sobreajuste, incorporando uma penalidade de regularização na otimização. A penalidade de regularização pode ser vista como a implementação de uma forma de navalha de Occam que prefere funções mais simples às mais complexas.
 Tem sido empregada uma ampla variedade de penalidades que correspondem a diferentes definições de complexidade. Por exemplo, considere o caso em que a função
-
 g
-
-{\displaystyle g}
-
+displaystyle g
 é uma função linear da forma
-
 g
 (
 x
 )
-=
-
-∑
-
 j
-=
 1
-
 d
-
-β
-
 j
-
 x
-
 j
-
-{\displaystyle g(x)=\sum _{j=1}^{d}\beta _{j}x_{j}}
-
+displaystyle g(x) sum j 1 d beta j x j
 .
 Uma penalidade de regularização popular é
-
-∑
-
 j
-
-β
-
 j
-
 2
-
-{\displaystyle \sum _{j}\beta _{j}^{2}}
-
+displaystyle sum j beta j 2
 , que é o quadrado da norma euclidiana dos pesos, também conhecida como norma
-
 L
-
 2
-
-{\displaystyle L_{2}}
-
+displaystyle L 2
 . Outras normas incluem a norma
-
 L
-
 1
-
-{\displaystyle L_{1}}
-
+displaystyle L 1
 ,
-
-∑
-
 j
-
-|
-
-β
-
 j
-
-|
-
-{\displaystyle \sum _{j}|\beta _{j}|}
-
+displaystyle sum j beta j
 , e a "norma"
-
 L
-
 0
-
-{\displaystyle L_{0}}
-
+displaystyle L 0
 , que é o número de
-
-β
-
 j
-
-{\displaystyle \beta _{j}}
-
+displaystyle beta j
 s diferentes de zero. A pena será denotada por
-
 C
 (
 g
 )
-
-{\displaystyle C(g)}
-
+displaystyle C(g)
 .
 O problema de otimização da aprendizagem supervisionada é encontrar a função
-
 g
-
-{\displaystyle g}
-
+displaystyle g
 que minimiza
-
 J
 (
 g
 )
-=
-
 R
-
 e
 m
 p
-
 (
 g
 )
-+
-λ
 C
 (
 g
 )
 .
-
-{\displaystyle J(g)=R_{emp}(g)+\lambda C(g).}
-
+displaystyle J(g) R emp (g) lambda C(g).
 O parâmetro
-
-λ
-
-{\displaystyle \lambda }
-
+displaystyle lambda
 controla o equilíbrio entre viés e variância. Quando
-
-λ
-=
 0
-
-{\displaystyle \lambda =0}
-
+displaystyle lambda 0
 , isso dá minimização de risco empírico com baixo viés e alta variância. Quando
-
-λ
-
-{\displaystyle \lambda }
-
+displaystyle lambda
 for grande, o algoritmo de aprendizagem terá alto viés e baixa variância. O valor de
-
-λ
-
-{\displaystyle \lambda }
-
+displaystyle lambda
 pode ser escolhido empiricamente por meio de validação cruzada.
 A penalidade de complexidade tem uma interpretação Bayesiana como o oposto do logaritmo da probabilidade a priori de
-
 g
-
-{\displaystyle g}
-
+displaystyle g
 ,
-
-−
 log
-⁡
 P
 (
 g
 )
-
-{\displaystyle -\log P(g)}
-
+displaystyle - log P(g)
 , nesse caso
-
 J
 (
 g
 )
-
-{\displaystyle J(g)}
-
+displaystyle J(g)
 é a probabilidade a posteriori de
-
 g
-
-{\displaystyle g}
-
+displaystyle g
 .
-
-== Treinamento generativo ==
 Os métodos de treinamento descritos acima são métodos de treinamento discriminativos, pois buscam encontrar uma função
-
 g
-
-{\displaystyle g}
-
+displaystyle g
 que discrimina bem entre os diferentes valores de saída (ver modelo discriminativo). Para o caso especial em que
-
 f
 (
 x
 ,
 y
 )
-=
 P
 (
 x
 ,
 y
 )
-
-{\displaystyle f(x,y)=P(x,y)}
-
+displaystyle f(x,y) P(x,y)
 é uma distribuição de probabilidade conjunta e a função de perda é o oposto do logaritmo da função de verossimilhança
-
-−
-
-∑
-
 i
-
 log
-⁡
 P
 (
-
 x
-
 i
-
 ,
-
 y
-
 i
-
 )
 ,
-
-{\displaystyle -\sum _{i}\log P(x_{i},y_{i}),}
-
+displaystyle - sum i log P(x i ,y i ),
 diz-se que um algoritmo de minimização de risco realiza treinamento generativo, porque
-
 f
-
-{\displaystyle f}
-
+displaystyle f
 pode ser considerado um modelo gerador que explica como os dados foram gerados. Os algoritmos de treinamento generativo são frequentemente mais simples e mais eficientes do ponto de vista computacional do que os algoritmos de treinamento discriminativo. Em alguns casos, a solução pode ser calculada de forma fechada como em Bayes ingênuo e análise discriminantes lineares.
-
-== Generalizações ==
 Existem várias maneiras pelas quais o problema de aprendizagem supervisionada padrão pode ser generalizado:
-
 Aprendizagem semissupervisionada: nesta configuração, os valores de saída desejados são fornecidos apenas para um subconjunto dos dados de treinamento. Os dados restantes não estão rotulados.
 Supervisão fraca: nesta configuração, fontes ruidosas, limitadas ou imprecisas são usadas para fornecer sinal de supervisão para rotular dados de treinamento.
 Aprendizagem ativa: em vez de assumir que todos os exemplos de treinamento são dados no início, os algoritmos de aprendizagem ativa coletam interativamente novos exemplos, normalmente fazendo consultas a um usuário humano. Frequentemente, as consultas são baseadas em dados não rotulados, que é um cenário que combina aprendizagem semissupervisionada com aprendizagem ativa.
 Previsão estruturada: quando o valor de saída desejado é um objeto complexo, como uma árvore de análise ou um gráfico rotulado, os métodos padrão devem ser estendidos.
 Aprendendo a ordenar: quando a entrada é um conjunto de objetos e a saída desejada é uma ordenação desses objetos, então, novamente, os métodos padrão devem ser estendidos.
-
-== Abordagens e algoritmos ==
 Aprendizagem analítica
 Rede neural artificial
 Retropropagação
@@ -827,8 +459,6 @@ Pré-processamento de dados
 Tratamento de conjuntos de dados não balanceados
 Aprendizagem relacional estatística
 Proaftn, um algoritmo de classificação multicritério
-
-== Aplicações ==
 Bioinformática
 Quimionformática
 Relação quantitativa estrutura-atividade
@@ -844,19 +474,11 @@ Reconhecimento de padrões
 Reconhecimento de fala
 A aprendizagem supervisionada é um caso especial de causalidade descendente em sistemas biológicos
 Classificação da forma terrestre usando imagens de satélite
-
-== Problemas gerais ==
 Teoria de aprendizagem computacional
 Viés indutivo
 Sobreajuste (aprendizagem de máquina)
 Probabilidades de associação de classes (não calibradas)
 Aprendizagem não supervisionada
 Espaços de versão
-
-== Ver também ==
 Lista de conjuntos de dados para pesquisa em aprendizagem de máquina
-
-== Referências ==
-
-== Ligações externas ==
 Software de aprendizagem de máquina de código aberto (MLOSS)

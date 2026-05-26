@@ -1,4806 +1,1750 @@
 Em geometria analítica, um vetor é uma classe de equipolência de segmentos de reta orientados, que possuem todos a mesma intensidade (também designada por norma ou módulo), mesma direção e mesmo sentido. Em alguns dos casos, a expressão vetor espacial também é utilizada.[carece de fontes?]
 Neste contexto, um vetor
-
 a
-
-{\displaystyle \mathbf {a} }
-
+displaystyle mathbf a
 pode ser representado por qualquer segmento de reta orientado, que seja membro da classe deste vetor (isto é, por qualquer segmento de reta orientado que possua o mesmo módulo, mesma direção e mesmo sentido de qualquer outro segmento da referida classe). Se o segmento
-
 A
 B
-
-¯
-
-{\displaystyle {\overline {AB}}}
-
+displaystyle overline AB
 (segmento de reta orientado do ponto A para o ponto B) for um representante do vetor
-
 a
-
 ,
-
-{\displaystyle \mathbf {a} ,}
-
+displaystyle mathbf a ,
 então podemos dizer que o vetor
-
 a
-
-{\displaystyle \mathbf {a} }
-
+displaystyle mathbf a
 é igual ao vetor
-
 A
 B
-
-→
-
 .
-
-{\displaystyle {\overrightarrow {AB}}.}
-
+displaystyle overrightarrow AB .
 Podemos ainda representar um vetor como um número complexo na forma
-
 z
-=
 a
-+
 b
 i
-
-{\displaystyle z=a+bi}
-
+displaystyle z a bi
 , onde
-
 a
-
-{\displaystyle a}
-
+displaystyle a
 representa a abcissa e
-
 b
-
-{\displaystyle b}
-
+displaystyle b
 representa a ordenada desse vetor.
-
-== Definição formal ==
 Um vetor é definido como sendo uma classe de equipolência de segmentos de reta orientados de
-
 V
-
 n
-
-{\displaystyle \mathbb {V} ^{n}}
-
+displaystyle mathbb V n
 , em que
-
 V
-
 n
-
-{\displaystyle \mathbb {V} ^{n}}
-
+displaystyle mathbb V n
 representa um espaço vetorial de n dimensões. Assim sendo, em um espaço vetorial de 3 dimensões (
-
 V
-
 3
-
-{\displaystyle \mathbb {V} ^{3}}
-
+displaystyle mathbb V 3
 ), cada vetor será dotado de três coordenadas, comumente denominadas x, y e z.
-
-== Importância dos vetores ==
 Os vetores desempenham um papel importante na física: velocidade e aceleração de um objeto e as forças que agem sobre ele são descritas por vetores. Os componentes de um vetor dependem do sistema de coordenadas usado para descrevê-lo. Outros objetos usados para descrever quantidades físicas são os pseudovetores e tensores.
 Os vetores têm aplicação em várias áreas do conhecimento, tanto técnico quanto científico, como física, engenharia e economia, por exemplo, sendo os elementos a partir dos quais se constrói o Cálculo Vetorial.
-
-== Módulo ou norma do vetor ==
 O módulo, norma, magnitude ou intensidade, de um vetor
-
 a
-
-{\displaystyle \mathbf {a} }
-
+displaystyle mathbf a
 representa-se por
-
-|
-
-|
-
 a
-
-|
-
-|
-
-{\displaystyle ||\mathbf {a} ||}
-
+displaystyle mathbf a
 e corresponde, do ponto de vista geométrico, ao seu comprimento (que, na figura acima, seria a distância AB).
 Fórmula de cálculo (para uma base ortonormal):
-
-|
-
-|
-
 a
-
-|
-
-|
-
-=
-
 x
-
 2
-
-+
-
 y
-
 2
-
-+
-
 z
-
 2
-
-{\displaystyle ||\mathbf {a} ||={\sqrt {x^{2}+y^{2}+z^{2}}}}
-
+displaystyle mathbf a sqrt x 2 y 2 z 2
 (dedução a partir do Teorema de Pitágoras)
-
-== Operações com vetores ==
 Muitas operações algébricas nos números reais possuem formas análogas para vetores. Os vetores podem ser adicionados, subtraídos, multiplicados por um número e invertidos. Essas operações obedecem às conhecidas leis da álgebra: comutatividade, associatividade e distributividade. A soma de dois vetores com o mesmo ponto inicial pode ser encontrada geometricamente usando a regra do paralelogramo. A multiplicação por um número positivo (comumente chamado escalar), nesse contexto, se resume a alterar a magnitude do vetor, isto é, alongando ou encurtando-o porém mantendo o seu sentido. A multiplicação por -1 preserva a magnitude mas inverte o sentido. As coordenadas cartesianas fornecem uma maneira sistemática de descrever e operar vetores. Como não há a multiplicação nem a divisão, também não há a potenciação nem a radiciação.
-
-=== Adição ===
 A decomposição dos vetores nos seus componentes horizontais e verticais, nos revela componentes de triângulos retângulos, nos quais podemos observar claramente a propriedade da adição dos vetores.
 Observemos o gráfico:
-
 Podemos verificar que:
-
 w
-→
-
-=
-
 v
-→
-
-+
-
 u
-→
-
-{\displaystyle {\vec {w}}={\vec {v}}+{\vec {u}}}
-
+displaystyle vec w vec v vec u
 e que:
-
 w
-
 x
-
-=
-
 v
-
 x
-
-+
-
 u
-
 x
-
-{\displaystyle w_{x}=v_{x}+u_{x}}
-
+displaystyle w x v x u x
 assim como:
-
 w
-
 y
-
-=
-
 v
-
 y
-
-+
-
 u
-
 y
-
 .
-
-{\displaystyle w_{y}=v_{y}+u_{y}.}
-
+displaystyle w y v y u y .
 Logo temos que, dados dois vetores:
-
 v
-→
-
 ,
-
 u
-→
-
-{\displaystyle {\vec {v}},{\vec {u}}}
-
+displaystyle vec v , vec u
 a sua adição resulta em:
-
 w
-→
-
-=
-⟨
-
 v
-
 x
-
-+
-
 u
-
 x
-
 ,
-
 v
-
 y
-
-+
-
 u
-
 y
-
-⟩
-
-{\displaystyle {\vec {w}}=\langle v_{x}+u_{x},v_{y}+u_{y}\rangle }
-
+displaystyle vec w langle v x u x ,v y u y rangle
 Expandindo para a forma tridimensional temos:
-
 w
-→
-
-=
-⟨
-
 v
-
 x
-
-+
-
 u
-
 x
-
 ,
-
 v
-
 y
-
-+
-
 u
-
 y
-
 ,
-
 v
-
 z
-
-+
-
 u
-
 z
-
-⟩
-
-{\displaystyle {\vec {w}}=\langle v_{x}+u_{x},v_{y}+u_{y},v_{z}+u_{z}\rangle }
-
-=== Subtração ===
-
+displaystyle vec w langle v x u x ,v y u y ,v z u z rangle
 Da mesma forma que no caso anterior temos a subtração como já aprendemos, também podemos demonstrar esta propriedade usando a decomposição em triângulos retângulos:
 Observemos o gráfico:
-
 Podemos verificar que:
-
 w
-→
-
-=
-
 v
-→
-
-−
-
 u
-→
-
-{\displaystyle {\vec {w}}={\vec {v}}-{\vec {u}}}
-
+displaystyle vec w vec v - vec u
 e que:
-
 w
-
 x
-
-=
-
 v
-
 x
-
-−
-
 u
-
 x
-
-{\displaystyle w_{x}=v_{x}-u_{x}}
-
+displaystyle w x v x -u x
 assim como:
-
 w
-
 y
-
-=
-
 v
-
 y
-
-−
-
 u
-
 y
-
 .
-
-{\displaystyle w_{y}=v_{y}-u_{y}.}
-
+displaystyle w y v y -u y .
 Logo temos que, dados dois vetores:
-
 v
-→
-
 ,
-
 u
-→
-
-{\displaystyle {\vec {v}},{\vec {u}}}
-
+displaystyle vec v , vec u
 a sua subtração resulta em:
-
 w
-→
-
-=
-⟨
-
 v
-
 x
-
-−
-
 u
-
 x
-
 ,
-
 v
-
 y
-
-−
-
 u
-
 y
-
-⟩
-
-{\displaystyle {\vec {w}}=\langle v_{x}-u_{x},v_{y}-u_{y}\rangle }
-
+displaystyle vec w langle v x -u x ,v y -u y rangle
 Expandindo para a forma tridimensional temos:
-
 w
-→
-
-=
-⟨
-
 v
-
 x
-
-−
-
 u
-
 x
-
 ,
-
 v
-
 y
-
-−
-
 u
-
 y
-
 ,
-
 v
-
 z
-
-−
-
 u
-
 z
-
-⟩
-
-{\displaystyle {\vec {w}}=\langle v_{x}-u_{x},v_{y}-u_{y},v_{z}-u_{z}\rangle }
-
-=== Multiplicação por escalares ===
-
+displaystyle vec w langle v x -u x ,v y -u y ,v z -u z rangle
 Definimos que se
-
 c
-∈
-
 R
-
-{\displaystyle c\in \mathbb {R} }
-
+displaystyle c in mathbb R
 expressando apenas valor numérico, então o denominamos escalar.
 O produto de um escalar por um vetor é encontrado pela notação
-
 w
-→
-
-=
 c
-
 a
-→
-
-{\displaystyle {\vec {w}}=c\ {\vec {a}}}
-
+displaystyle vec w c vec a
 que operamos:
-
 w
-→
-
-=
-⟨
 c
-
 a
-
 x
-
 ,
 c
-
 a
-
 y
-
 ,
 c
-
 a
-
 z
-
-⟩
-
-{\displaystyle {\vec {w}}=\langle c\ a_{x},c\ a_{y},c\ a_{z}\rangle }
-
+displaystyle vec w langle c a x ,c a y ,c a z rangle
 onde:
-
 w
-→
-
-{\displaystyle {\vec {w}}}
-
+displaystyle vec w
 é o vetor resultante;
-
 a
-→
-
-{\displaystyle {\vec {a}}}
-
+displaystyle vec a
 é o vetor parâmetro original;
-
 c
-
-{\displaystyle c}
-
+displaystyle c
 é o escalar.
 Esta operação pode ser observada graficamente ao lado:
 Note que todos os vetores gerados pela multiplicação por escalares são paralelos ao original, quando multiplicamos um vetor por
-
 (
-−
 1
 )
-
-{\displaystyle (-1)}
-
+displaystyle (-1)
 temos uma inversão de sentido e qualquer valor de escalar diferente de
-
 1
-
-{\displaystyle 1}
-
+displaystyle 1
 altera a magnitude do vetor.
-
-=== Produto escalar ===
 O produto escalar, também denominado produto interno, é o produto de dois vetores que resulta em um escalar, a operação que define o seu valor definimos abaixo.
 Consideremos dois vetores
-
 v
-→
-
 ,
-
 u
-→
-
 ,
-
-{\displaystyle {\vec {v}},{\vec {u}},}
-
+displaystyle vec v , vec u ,
 cujos componentes são notados por
-
 v
-
 d
-
-{\displaystyle v_{d}}
-
+displaystyle v d
 e
-
 u
-
 d
-
-{\displaystyle u_{d}}
-
+displaystyle u d
 respectivamente, sendo
-
 d
-
-{\displaystyle d}
-
+displaystyle d
 uma das dimensões:
-
-{
 x
 ,
 y
 ,
 z
-}
 ,
-
-{\displaystyle \{x,y,z\},}
-
+displaystyle x,y,z ,
 então o produto escalar é definido como:
-
 v
-→
-
-⋅
-
 u
-→
-
-=
-
 v
-
 x
-
 u
-
 x
-
-+
-
 v
-
 y
-
 u
-
 y
-
-+
-
 v
-
 z
-
 u
-
 z
-
-{\displaystyle {\vec {v}}\ \cdot \ {\vec {u}}=v_{x}u_{x}+v_{y}u_{y}+v_{z}u_{z}}
-
-=== Propriedades do produto escalar ===
+displaystyle vec v cdot vec u v x u x v y u y v z u z
 As propriedades do produto escalar são facilmente demonstráveis e estão na tabela abaixo, na mesma convencionamos que:
-
 v
-→
-
 ,
-
 u
-→
-
 ,
-
 w
-→
-
-{\displaystyle {\vec {v}},{\vec {u}},{\vec {w}}}
-
+displaystyle vec v , vec u , vec w
 são vetores em
-
 R
-
 3
-
 ;
-
-{\displaystyle \mathbb {R} ^{3};}
-
+displaystyle mathbb R 3 ;
 c
-
-{\displaystyle c}
-
+displaystyle c
 é um escalar.
-
 A demonstração das propriedades não é difícil, uma vez que todas são intuitivas. Para isto, basta efetuar a operação do produto escalar e utilizar regras básicas de operações algébricas.
-
-=== Produto vetorial ===
 As operações com vetores podem, muitas vezes, parecer estranhas a princípio, porém depois que entendemos a sua finalidade e o conceito do fundamento que está por trás de seu comportamento nos habituamos, podendo aproveitar dos recursos que estas operações podem nos oferecer. Um dos cálculos mais intrigantes dentro do universo dos vetores é o chamado produto vetorial, que é definido pela seguinte operação:
 Sejam os vetores
-
 v
-→
-
-=
-⟨
-
 v
-
 x
-
 ,
-
 v
-
 y
-
 ,
-
 v
-
 z
-
-⟩
 ,
-
 u
-→
-
-=
-⟨
-
 u
-
 x
-
 ,
-
 u
-
 y
-
 ,
-
 u
-
 z
-
-⟩
 ,
-
-{\displaystyle {\vec {v}}=\langle v_{x},v_{y},v_{z}\rangle ,{\vec {u}}=\langle u_{x},u_{y},u_{z}\rangle ,}
-
+displaystyle vec v langle v x ,v y ,v z rangle , vec u langle u x ,u y ,u z rangle ,
 o produto vetorial dos mesmos é:
-
 v
-→
-
-×
-
 u
-→
-
-=
-⟨
-
 v
-
 y
-
 u
-
 z
-
-−
-
 u
-
 y
-
 v
-
 z
-
 ,
-
 u
-
 x
-
 v
-
 z
-
-−
-
 v
-
 x
-
 u
-
 z
-
 ,
-
 v
-
 x
-
 u
-
 y
-
-−
-
 u
-
 x
-
 v
-
 y
-
-⟩
-
-{\displaystyle {\vec {v}}\times {\vec {u}}=\langle v_{y}u_{z}-u_{y}v_{z},u_{x}v_{z}-v_{x}u_{z},v_{x}u_{y}-u_{x}v_{y}\rangle }
-
+displaystyle vec v times vec u langle v y u z -u y v z ,u x v z -v x u z ,v x u y -u x v y rangle
 A razão desta definição está na operação geométrica entre dois vetores, que neste caso, objetiva-se em encontrar um vetor que seja, ao mesmo tempo, perpendicular aos dois vetores operados. Como a operação resulta em um novo vetor, ela é denominada de produto vetorial.
 A operação resume-se em encontrar coordenadas em cada eixo que sejam perpendiculares entre elas e de módulo igual a área formada pelo paralelogramo criado pela imagem dos dois vetores em cada um dos planos primários.
 Podemos observar que cada componente é igual à resultante de um determinante, o que nos habilita representá-los da seguinte forma:
-
 v
-→
-
-×
-
 u
-→
-
-=
-
-⟨
-
-|
-
 v
-
 y
-
 v
-
 z
-
 u
-
 y
-
 u
-
 z
-
-|
-
 ,
-
-|
-
 v
-
 z
-
 v
-
 x
-
 u
-
 z
-
 u
-
 x
-
-|
-
 ,
-
-|
-
 v
-
 x
-
 v
-
 y
-
 u
-
 x
-
 u
-
 y
-
-|
-
-⟩
-
-{\displaystyle {\vec {v}}\times {\vec {u}}=\left\langle {\begin{vmatrix}v_{y}&v_{z}\\u_{y}&u_{z}\end{vmatrix}},{\begin{vmatrix}v_{z}&v_{x}\\u_{z}&u_{x}\end{vmatrix}},{\begin{vmatrix}v_{x}&v_{y}\\u_{x}&u_{y}\end{vmatrix}}\right\rangle }
-
+displaystyle vec v times vec u left langle begin vmatrix v y v z u y u z end vmatrix , begin vmatrix v z v x u z u x end vmatrix , begin vmatrix v x v y u x u y end vmatrix right rangle
 Como temos um vetor tridimensional, podemos adotar a notação:
-
 v
-→
-
-×
-
 u
-→
-
-=
-
-|
-
 v
-
 y
-
 v
-
 z
-
 u
-
 y
-
 u
-
 z
-
-|
-
 i
-→
-
-+
-
-|
-
 v
-
 z
-
 v
-
 x
-
 u
-
 z
-
 u
-
 x
-
-|
-
 j
-→
-
-+
-
-|
-
 v
-
 x
-
 v
-
 y
-
 u
-
 x
-
 u
-
 y
-
-|
-
 k
-→
-
-{\displaystyle {\vec {v}}\times {\vec {u}}={\begin{vmatrix}v_{y}&v_{z}\\u_{y}&u_{z}\end{vmatrix}}{\vec {i}}+{\begin{vmatrix}v_{z}&v_{x}\\u_{z}&u_{x}\end{vmatrix}}{\vec {j}}+{\begin{vmatrix}v_{x}&v_{y}\\u_{x}&u_{y}\end{vmatrix}}{\vec {k}}}
-
+displaystyle vec v times vec u begin vmatrix v y v z u y u z end vmatrix vec i begin vmatrix v z v x u z u x end vmatrix vec j begin vmatrix v x v y u x u y end vmatrix vec k
 Que pode ser simplificada ainda mais se adotarmos a notação de determinante com três variáveis:
-
 v
-→
-
-×
-
 u
-→
-
-=
-
-|
-
 i
-→
-
 j
-→
-
 k
-→
-
 v
-
 x
-
 v
-
 y
-
 v
-
 z
-
 u
-
 x
-
 u
-
 y
-
 u
-
 z
-
-|
-
-{\displaystyle {\vec {v}}\times {\vec {u}}={\begin{vmatrix}{\vec {i}}&{\vec {j}}&{\vec {k}}\\v_{x}&v_{y}&v_{z}\\u_{x}&u_{y}&u_{z}\end{vmatrix}}}
-
+displaystyle vec v times vec u begin vmatrix vec i vec j vec k v x v y v z u x u y u z end vmatrix
 Em decorrência disto, temos um produto que se comporta de maneira idêntica a um determinante, onde todas as propriedades são iguais às apresentadas pelos mesmos.
-
-==== Propriedades do produto vetorial ====
 O produto vetorial é basicamente uma operação em forma de determinante. A tabela abaixo introduz as propriedades do mesmo:
-
 v
-→
-
 ,
-
 u
-→
-
 ,
-
 w
-→
-
-{\displaystyle {\vec {v}},{\vec {u}},{\vec {w}}}
-
+displaystyle vec v , vec u , vec w
 são vetores em
-
 V
-
 3
-
 ;
-
-{\displaystyle V^{3};}
-
+displaystyle V 3 ;
 c
-
-{\displaystyle c}
-
+displaystyle c
 é um escalar.
-
-=== Ângulo entre dois vetores ===
 Observemos o gráfico:
-
-==== Relação entre o ângulo e o produto escalar de dois vetores ====
 Dados dois vetores
-
 A
-→
-
 ,
-
 B
-→
-
 ,
-
-{\displaystyle {\vec {A}},{\vec {B}},}
-
+displaystyle vec A , vec B ,
 é possível demonstrar que o cosseno do ângulo entre os dois vetores é proporcional ao produto interno (escalar), relacionando-se da seguinte forma:
-
 A
-→
-
-⋅
-
 B
-→
-
-=
-
-|
-
 A
-→
-
-|
-
-|
-
 B
-→
-
-|
-
 cos
-⁡
 (
-θ
 )
-
-{\displaystyle {\vec {A}}\cdot {\vec {B}}=|{\vec {A}}||{\vec {B}}|\cos(\theta )}
-
-==== Demonstração ====
+displaystyle vec A cdot vec B vec A vec B cos( theta )
 Observemos o gráfico abaixo:
-
 O gráfico mostra dois vetores relacionados pelo ângulo
-
-θ
 .
-
-{\displaystyle \theta .}
-
+displaystyle theta .
 É importante notar que temos um triângulo, que pode ser generalizado pela lei dos cossenos, o que permite fazer a relação entre o ângulo e os dois vetores.
 Considerando os vetores na ilustração acima, é possível fazer o cálculo do módulo de sua diferença utilizando a conhecida relação da lei dos cossenos para o triângulo:
-
-|
-
 v
-→
-
-−
-
 u
-→
-
-|
-
 2
-
-=
-
-|
-
 v
-→
-
-|
-
 2
-
-+
-
-|
-
 u
-→
-
-|
-
 2
-
-−
 2
-
-|
-
 v
-→
-
-|
-
-|
-
 u
-→
-
-|
-
 cos
-⁡
 (
-θ
 )
-
-{\displaystyle |{\vec {v}}-{\vec {u}}|^{2}=|{\vec {v}}|^{2}+|{\vec {u}}|^{2}-2|{\vec {v}}||{\vec {u}}|\cos(\theta )}
-
+displaystyle vec v - vec u 2 vec v 2 vec u 2 -2 vec v vec u cos( theta )
 (
-
 v
-→
-
-−
-
 u
-→
-
 )
-⋅
 (
-
 v
-→
-
-−
-
 u
-→
-
 )
-=
-
-|
-
 v
-→
-
-|
-
 2
-
-+
-
-|
-
 u
-→
-
-|
-
 2
-
-−
 2
-
-|
-
 v
-→
-
-|
-
-|
-
 u
-→
-
-|
-
 cos
-⁡
 (
-θ
 )
-
-{\displaystyle ({\vec {v}}-{\vec {u}})\cdot ({\vec {v}}-{\vec {u}})=|{\vec {v}}|^{2}+|{\vec {u}}|^{2}-2|{\vec {v}}||{\vec {u}}|\cos(\theta )}
-
+displaystyle ( vec v - vec u ) cdot ( vec v - vec u ) vec v 2 vec u 2 -2 vec v vec u cos( theta )
 v
-→
-
-⋅
-
 v
-→
-
-−
 2
-
 v
-→
-
-⋅
-
 u
-→
-
-+
-
 u
-→
-
-⋅
-
 u
-→
-
-=
-
-|
-
 v
-→
-
-|
-
 2
-
-+
-
-|
-
 u
-→
-
-|
-
 2
-
-−
 2
-
-|
-
 v
-→
-
-|
-
-|
-
 u
-→
-
-|
-
 cos
-⁡
 (
-θ
 )
-
-{\displaystyle {\vec {v}}\cdot {\vec {v}}-2{\vec {v}}\cdot {\vec {u}}+{\vec {u}}\cdot {\vec {u}}=|{\vec {v}}|^{2}+|{\vec {u}}|^{2}-2|{\vec {v}}||{\vec {u}}|\cos(\theta )}
-
-|
-
+displaystyle vec v cdot vec v -2 vec v cdot vec u vec u cdot vec u vec v 2 vec u 2 -2 vec v vec u cos( theta )
 v
-→
-
-|
-
 2
-
-+
-
-|
-
 u
-→
-
-|
-
 2
-
-−
 2
-
 v
-→
-
-⋅
-
 u
-→
-
-=
-
-|
-
 v
-→
-
-|
-
 2
-
-+
-
-|
-
 u
-→
-
-|
-
 2
-
-−
 2
-
-|
-
 v
-→
-
-|
-
-|
-
 u
-→
-
-|
-
 cos
-⁡
 (
-θ
 )
-
-{\displaystyle |{\vec {v}}|^{2}+|{\vec {u}}|^{2}-2{\vec {v}}\cdot {\vec {u}}=|{\vec {v}}|^{2}+|{\vec {u}}|^{2}-2|{\vec {v}}||{\vec {u}}|\cos(\theta )}
-
-−
+displaystyle vec v 2 vec u 2 -2 vec v cdot vec u vec v 2 vec u 2 -2 vec v vec u cos( theta )
 2
-
 v
-→
-
-⋅
-
 u
-→
-
-=
-−
 2
-
-|
-
 v
-→
-
-|
-
-|
-
 u
-→
-
-|
-
 cos
-⁡
 (
-θ
 )
-
-{\displaystyle -2{\vec {v}}\cdot {\vec {u}}=-2|{\vec {v}}||{\vec {u}}|\cos(\theta )}
-
+displaystyle -2 vec v cdot vec u -2 vec v vec u cos( theta )
 Portanto:
-
 v
-→
-
-⋅
-
 u
-→
-
-=
-
-|
-
 v
-→
-
-|
-
-|
-
 u
-→
-
-|
-
 cos
-⁡
 (
-θ
 )
-
-{\displaystyle {\vec {v}}\cdot {\vec {u}}=|{\vec {v}}||{\vec {u}}|\cos(\theta )}
-
-=== Relação entre produto vetorial e ângulo entre vetores ===
+displaystyle vec v cdot vec u vec v vec u cos( theta )
 Seja os vetores
-
 v
-→
-
-{\displaystyle {\vec {v}}}
-
+displaystyle vec v
 e
-
 u
-→
-
-{\displaystyle {\vec {u}}}
-
+displaystyle vec u
 vetores em
-
 V
-
 3
-
 ,
-
-{\displaystyle V^{3},}
-
+displaystyle V 3 ,
 é possível provar que o módulo do vetor resultante do produto vetorial destes, é proporcional ao seno do ângulo
-
-θ
-
-{\displaystyle \theta }
-
+displaystyle theta
 entre os dois vetores, relacionando-se da seguinte forma:
-
-|
-
 v
-→
-
-×
-
 u
-→
-
-|
-
-=
-
-|
-
 v
-→
-
-|
-
-|
-
 u
-→
-
-|
-
 sen
-⁡
 (
-θ
 )
-
-{\displaystyle |{\vec {v}}\times {\vec {u}}|=|{\vec {v}}||{\vec {u}}|\operatorname {sen} (\theta )}
-
+displaystyle vec v times vec u vec v vec u operatorname sen ( theta )
 Comprovação: Façamos a operação conforme indicado na definição para verificar a evolução:
-
 v
-→
-
-×
-
 u
-→
-
-=
-⟨
-
 v
-
 y
-
 u
-
 z
-
-−
-
 u
-
 y
-
 v
-
 z
-
 ,
-
 v
-
 x
-
 u
-
 z
-
-−
-
 u
-
 x
-
 v
-
 z
-
 ,
-
 v
-
 x
-
 u
-
 y
-
-−
-
 u
-
 x
-
 v
-
 y
-
-⟩
-
-{\displaystyle {\vec {v}}\times {\vec {u}}=\langle v_{y}u_{z}-u_{y}v_{z},v_{x}u_{z}-u_{x}v_{z},v_{x}u_{y}-u_{x}v_{y}\rangle }
-
+displaystyle vec v times vec u langle v y u z -u y v z ,v x u z -u x v z ,v x u y -u x v y rangle
 De onde calculamos o seu módulo:
-
-|
-
 v
-→
-
-×
-
 u
-→
-
-|
-
 2
-
-=
 (
-
 v
-
 y
-
 u
-
 z
-
-−
-
 u
-
 y
-
 v
-
 z
-
 )
-
 2
-
-+
 (
-
 v
-
 x
-
 u
-
 z
-
-−
-
 u
-
 x
-
 v
-
 z
-
 )
-
 2
-
-+
 (
-
 v
-
 x
-
 u
-
 y
-
-−
-
 u
-
 x
-
 v
-
 y
-
 )
-
 2
-
-{\displaystyle |{\vec {v}}\times {\vec {u}}|^{2}=(v_{y}u_{z}-u_{y}v_{z})^{2}+(v_{x}u_{z}-u_{x}v_{z})^{2}+(v_{x}u_{y}-u_{x}v_{y})^{2}}
-
-|
-
+displaystyle vec v times vec u 2 (v y u z -u y v z ) 2 (v x u z -u x v z ) 2 (v x u y -u x v y ) 2
 v
-→
-
-×
-
 u
-→
-
-|
-
 2
-
-=
-
 v
-
 y
-
 2
-
 u
-
 z
-
 2
-
-−
 2
-
 v
-
 y
-
 u
-
 z
-
 u
-
 y
-
 v
-
 z
-
-+
-
 u
-
 y
-
 2
-
 v
-
 z
-
 2
-
-+
-
 v
-
 x
-
 2
-
 u
-
 z
-
 2
-
-−
 2
-
 v
-
 x
-
 u
-
 z
-
 u
-
 x
-
 v
-
 z
-
-+
-
 u
-
 x
-
 2
-
 v
-
 z
-
 2
-
-+
-
 v
-
 x
-
 2
-
 u
-
 y
-
 2
-
-−
 2
-
 v
-
 x
-
 u
-
 y
-
 u
-
 x
-
 v
-
 y
-
-+
-
 u
-
 x
-
 2
-
 v
-
 y
-
 2
-
-{\displaystyle |{\vec {v}}\times {\vec {u}}|^{2}=v_{y}^{2}u_{z}^{2}-2v_{y}u_{z}u_{y}v_{z}+u_{y}^{2}v_{z}^{2}+v_{x}^{2}u_{z}^{2}-2v_{x}u_{z}u_{x}v_{z}+u_{x}^{2}v_{z}^{2}+v_{x}^{2}u_{y}^{2}-2v_{x}u_{y}u_{x}v_{y}+u_{x}^{2}v_{y}^{2}}
-
-|
-
 v
-→
-
-×
-
 u
-→
-
-|
-
 2
-
-=
 (
-
 v
-
 x
-
 2
-
-+
-
 v
-
 y
-
 2
-
-+
-
 v
-
 z
-
 2
-
 )
 (
-
 u
-
 x
-
 2
-
-+
-
 u
-
 y
-
 2
-
-+
-
 u
-
 z
-
 2
-
 )
-−
 (
-
 v
-
 x
-
 u
-
 x
-
-+
-
 v
-
 y
-
 u
-
 y
-
-+
-
 v
-
 z
-
 u
-
 z
-
 )
-
 2
-
-{\displaystyle |{\vec {v}}\times {\vec {u}}|^{2}=(v_{x}^{2}+v_{y}^{2}+v_{z}^{2})(u_{x}^{2}+u_{y}^{2}+u_{z}^{2})-(v_{x}u_{x}+v_{y}u_{y}+v_{z}u_{z})^{2}}
-
 Como já sabemos, podemos aplicar as propriedades já estudadas para os vetores:
-
-|
-
 v
-→
-
-×
-
 u
-→
-
-|
-
 2
-
-=
-
-|
-
 v
-→
-
-|
-
 2
-
-|
-
 u
-→
-
-|
-
 2
-
-−
 (
-
 v
-→
-
-⋅
-
 u
-→
-
 )
-
 2
-
-{\displaystyle |{\vec {v}}\times {\vec {u}}|^{2}=|{\vec {v}}|^{2}|{\vec {u}}|^{2}-({\vec {v}}\cdot {\vec {u}})^{2}}
-
-|
-
+displaystyle vec v times vec u 2 vec v 2 vec u 2 -( vec v cdot vec u ) 2
 v
-→
-
-×
-
 u
-→
-
-|
-
 2
-
-=
-
-|
-
 v
-→
-
-|
-
 2
-
-|
-
 u
-→
-
-|
-
 2
-
-−
-
-|
-
 v
-→
-
-|
-
 2
-
-|
-
 u
-→
-
-|
-
 2
-
 cos
-
 2
-
-⁡
 (
-θ
 )
-
-{\displaystyle |{\vec {v}}\times {\vec {u}}|^{2}=|{\vec {v}}|^{2}|{\vec {u}}|^{2}-|{\vec {v}}|^{2}|{\vec {u}}|^{2}\cos ^{2}(\theta )}
-
-|
-
+displaystyle vec v times vec u 2 vec v 2 vec u 2 - vec v 2 vec u 2 cos 2 ( theta )
 v
-→
-
-×
-
 u
-→
-
-|
-
 2
-
-=
-
-|
-
 v
-→
-
-|
-
 2
-
-|
-
 u
-→
-
-|
-
 2
-
 [
-
 1
-−
-
 cos
-
 2
-
-⁡
 (
-θ
 )
-
 ]
-
-{\displaystyle |{\vec {v}}\times {\vec {u}}|^{2}=|{\vec {v}}|^{2}|{\vec {u}}|^{2}\left[1-\cos ^{2}(\theta )\right]}
-
-|
-
+displaystyle vec v times vec u 2 vec v 2 vec u 2 left[1- cos 2 ( theta ) right]
 v
-→
-
-×
-
 u
-→
-
-|
-
 2
-
-=
-
-|
-
 v
-→
-
-|
-
 2
-
-|
-
 u
-→
-
-|
-
 2
-
 sen
-
 2
-
-⁡
 (
-θ
 )
-
-{\displaystyle |{\vec {v}}\times {\vec {u}}|^{2}=|{\vec {v}}|^{2}|{\vec {u}}|^{2}\operatorname {sen} ^{2}(\theta )}
-
+displaystyle vec v times vec u 2 vec v 2 vec u 2 operatorname sen 2 ( theta )
 Lembremos que, se:
-
 a
-
 2
-
-=
-
 sen
-
 2
-
-⁡
 (
-θ
 )
 ,
-
-{\displaystyle a^{2}=\operatorname {sen} ^{2}(\theta ),}
-
+displaystyle a 2 operatorname sen 2 ( theta ),
 a
-=
 sen
-⁡
 (
-θ
 )
-
-{\displaystyle a=\operatorname {sen} (\theta )}
-
+displaystyle a operatorname sen ( theta )
 Quando
-
 0
-≤
-θ
-≤
-π
-
-{\displaystyle 0\leq \theta \leq \pi }
-
+displaystyle 0 leq theta leq pi
 logo:
-
-|
-
 v
-→
-
-×
-
 u
-→
-
-|
-
-=
-
-|
-
 v
-→
-
-|
-
-|
-
 u
-→
-
-|
-
 sen
-⁡
 (
-θ
 )
-
-{\displaystyle |{\vec {v}}\times {\vec {u}}|=|{\vec {v}}||{\vec {u}}|\operatorname {sen} (\theta )}
-
-==== Interpretação do produto vetorial ====
+displaystyle vec v times vec u vec v vec u operatorname sen ( theta )
 O vetor resultante do produto vetorial apresenta módulo igual à área do paralelogramo delimitado pelos dois vetores que lhe deram origem, observemos o gráfico abaixo:
-
 Como já sabemos, os vetores
-
 v
-→
-
 ,
-
 u
-→
-
-{\displaystyle {\vec {v}},{\vec {u}}}
-
+displaystyle vec v , vec u
 que mantêm um ângulo
-
-θ
-
-{\displaystyle \theta }
-
+displaystyle theta
 entre eles, quando multiplicados, podem ser expressos desta forma:
-
-|
-
 v
-→
-
-×
-
 u
-→
-
-|
-
-=
-
-|
-
 v
-→
-
-|
-
-|
-
 u
-→
-
-|
-
 sen
-⁡
 (
-θ
 )
-
-{\displaystyle |{\vec {v}}\times {\vec {u}}|=|{\vec {v}}||{\vec {u}}|\operatorname {sen} (\theta )}
-
+displaystyle vec v times vec u vec v vec u operatorname sen ( theta )
 Considere a seguinte separação:
-
-|
-
 v
-→
-
-×
-
 u
-→
-
-|
-
-=
-
-|
-
 v
-→
-
-|
-
-|
-
 u
-→
-
-|
-
 sen
-⁡
 (
-θ
 )
-
-⏟
-
-{\displaystyle |{\vec {v}}\times {\vec {u}}|=|{\vec {v}}|\ \underbrace {|{\vec {u}}|\operatorname {sen} (\theta )} }
-
-|
-
+displaystyle vec v times vec u vec v underbrace vec u operatorname sen ( theta )
 v
-→
-
-×
-
 u
-→
-
-|
-
-=
-
-|
-
 v
-→
-
-|
-
-⋅
-
 h
-
-{\displaystyle |{\vec {v}}\times {\vec {u}}|=|{\vec {v}}|\cdot \quad h}
-
+displaystyle vec v times vec u vec v cdot quad h
 Muito convenientemente, podemos verificar que
-
 h
-
-{\displaystyle h}
-
+displaystyle h
 é a altura do paralelogramo, que multiplicado pela norma do vetor
-
 v
-→
-
-{\displaystyle {\vec {v}}}
-
+displaystyle vec v
 nos dá a área do paralelogramo. Da mesma forma verifiquemos que o produto vetorial nos fornece um vetor perpendicular aos dois que lhe deram origem... Façamos:
-
 (
-
 v
-→
-
-×
-
 u
-→
-
 )
-⋅
-
 u
-→
-
-=
-
-|
-
 i
-→
-
 j
-→
-
 k
-→
-
 v
-
 x
-
 v
-
 y
-
 v
-
 z
-
 u
-
 x
-
 u
-
 y
-
 u
-
 z
-
-|
-
-⋅
-⟨
-
 v
-
 x
-
 ,
-
 v
-
 y
-
 ,
-
 v
-
 z
-
-⟩
-
-{\displaystyle ({\vec {v}}\times {\vec {u}})\cdot {\vec {u}}={\begin{vmatrix}{\vec {i}}&{\vec {j}}&{\vec {k}}\\v_{x}&v_{y}&v_{z}\\u_{x}&u_{y}&u_{z}\end{vmatrix}}\cdot \langle v_{x},v_{y},v_{z}\rangle }
-
+displaystyle ( vec v times vec u ) cdot vec u begin vmatrix vec i vec j vec k v x v y v z u x u y u z end vmatrix cdot langle v x ,v y ,v z rangle
 Pelas propriedades dos determinantes e do produto escalar temos:
-
 (
-
 v
-→
-
-×
-
 u
-→
-
 )
-⋅
-
 u
-→
-
-=
-
-|
-
 i
-→
-
 v
-
 x
-
 j
-→
-
 v
-
 y
-
 k
-→
-
 v
-
 z
-
 v
-
 x
-
 v
-
 y
-
 v
-
 z
-
 u
-
 x
-
 u
-
 y
-
 u
-
 z
-
-|
-
-{\displaystyle ({\vec {v}}\times {\vec {u}})\cdot {\vec {u}}={\begin{vmatrix}{\vec {i}}v_{x}&{\vec {j}}v_{y}&{\vec {k}}v_{z}\\v_{x}&v_{y}&v_{z}\\u_{x}&u_{y}&u_{z}\end{vmatrix}}}
-
+displaystyle ( vec v times vec u ) cdot vec u begin vmatrix vec i v x vec j v y vec k v z v x v y v z u x u y u z end vmatrix
 Sendo o determinante acima nulo, uma vez que uma das suas linhas é múltipla de outra:
-
 (
-
 v
-→
-
-×
-
 u
-→
-
 )
-⋅
-
 u
-→
-
-=
 0
-
-{\displaystyle ({\vec {v}}\times {\vec {u}})\cdot {\vec {u}}=0}
-
+displaystyle ( vec v times vec u ) cdot vec u 0
 Também teremos o mesmo resultado para o segundo vetor, visto que o mesmo também é uma das linhas do determinante, portanto o produto vetorial fornece um vetor perpendicular aos dois que lhe deram origem, visto que o cosseno do ângulo
-
-θ
-
-{\displaystyle \theta }
-
+displaystyle theta
 é nulo, ou seja, o ângulo é
-
-π
 2
-
 .
-
-{\displaystyle {\frac {\pi }{2}}.}
-
-==== Ângulos diretores ====
+displaystyle frac pi 2 .
 A relação entre produto escalar e cosseno do ângulo entre os vetores nos fornece uma outra possibilidade de referenciar os vetores aos eixos do sistema cartesiano, uma vez que temos versores primários para os eixos, podemos verificar qual o resultado do produto escalar entre estes e um vetor qualquer no espaço. Seja o vetor
-
 v
-→
-
-=
-⟨
-
 v
-
 x
-
 ,
-
 v
-
 y
-
 ,
-
 v
-
 z
-
-⟩
 ,
-
-{\displaystyle {\vec {v}}=\langle v_{x},v_{y},v_{z}\rangle ,}
-
+displaystyle vec v langle v x ,v y ,v z rangle ,
 calculemos o produto escalar entre ele e os vetores relacionados aos eixos:
-
 i
 ,
 j
 ,
 k
 :
-
-{\displaystyle i,j,k:}
-
+displaystyle i,j,k:
 v
-→
-
-⋅
 i
-=
-
-|
-
 v
-→
-
-|
-
-|
-
 i
-
-|
-
 cos
-⁡
 (
-θ
 )
-
-{\displaystyle {\vec {v}}\cdot i=|{\vec {v}}||i|\cos(\theta )}
-
+displaystyle vec v cdot i vec v i cos( theta )
 v
-
 x
-
-=
-
-|
-
 v
-→
-
-|
-
 cos
-⁡
 (
-θ
 )
-
-{\displaystyle v_{x}=|{\vec {v}}|\cos(\theta )}
-
+displaystyle v x vec v cos( theta )
 v
-
 x
-
-|
-
 v
-→
-
-|
-
-=
 cos
-⁡
 (
-θ
 )
-
-{\displaystyle {\frac {v_{x}}{|{\vec {v}}|}}=\cos(\theta )}
-
+displaystyle frac v x vec v cos( theta )
 Para este caso inicialmente façamos uma breve reflexão:
 Se para cada vetor de módulo unitário for feita a mesma operação acima, teremos três ângulos para
-
-θ
 ,
-
-{\displaystyle \theta ,}
-
+displaystyle theta ,
 os quais são os ângulos do vetor no espaço em relação aos eixos, por esta razão convencionou-se chamá-los de nomes especiais, que são
-
-α
 ,
-β
 ,
-γ
-
-{\displaystyle \alpha ,\beta ,\gamma }
-
+displaystyle alpha , beta , gamma
 respectivamente, para os vetores
-
 i
 ,
 j
 ,
 k
 .
-
-{\displaystyle i,j,k.}
-
+displaystyle i,j,k.
 Observemos, também, que a operação será sempre a mesma para cada eixo e o resultado será o valor da componente do vetor para o eixo dividido pela norma do mesmo, o que nos fornece três cossenos:
-
 v
-
 x
-
-|
-
 v
-→
-
-|
-
-=
 cos
-⁡
 (
-α
 )
-
-{\displaystyle {\frac {v_{x}}{|{\vec {v}}|}}=\cos(\alpha )}
-
+displaystyle frac v x vec v cos( alpha )
 v
-
 y
-
-|
-
 v
-→
-
-|
-
-=
 cos
-⁡
 (
-β
 )
-
-{\displaystyle {\frac {v_{y}}{|{\vec {v}}|}}=\cos(\beta )}
-
+displaystyle frac v y vec v cos( beta )
 v
-
 z
-
-|
-
 v
-→
-
-|
-
-=
 cos
-⁡
 (
-γ
 )
-
-{\displaystyle {\frac {v_{z}}{|{\vec {v}}|}}=\cos(\gamma )}
-
+displaystyle frac v z vec v cos( gamma )
 Os quais chamamos de cossenos diretores, pois direcionam o vetor no espaço sob a referência dos eixos. Em consequência disto, também chamamos os ângulos de ângulos diretores.
 Em consequência do que já vimos nas seções anteriores, temos a seguinte equação:
-
 cos
-
 2
-
-⁡
 (
-α
 )
-+
-
 cos
-
 2
-
-⁡
 (
-β
 )
-+
-
 cos
-
 2
-
-⁡
 (
-γ
 )
-=
 1
-
-{\displaystyle \cos ^{2}(\alpha )+\cos ^{2}(\beta )+\cos ^{2}(\gamma )=1}
-
+displaystyle cos 2 ( alpha ) cos 2 ( beta ) cos 2 ( gamma ) 1
 Também temos outra forma de referenciar o vetor, usando os cossenos diretores:
-
 v
-→
-
-=
-⟨
-
-|
-
 v
-→
-
-|
-
 cos
-⁡
 (
-α
 )
 ,
-
-|
-
 v
-→
-
-|
-
 cos
-⁡
 (
-β
 )
 ,
-
-|
-
 v
-→
-
-|
-
 cos
-⁡
 (
-γ
 )
-⟩
-
-{\displaystyle {\vec {v}}=\langle |{\vec {v}}|\cos(\alpha ),|{\vec {v}}|\cos(\beta ),|{\vec {v}}|\cos(\gamma )\rangle }
-
+displaystyle vec v langle vec v cos( alpha ), vec v cos( beta ), vec v cos( gamma ) rangle
 Que será útil em determinadas análises, inclusive quando parâmetros polares forem considerados.
-
-==== Projeções sobre vetores ====
 O produto escalar nos dá a possibilidade de encontrar a projeção de um vetor sobre o outro sem a necessidade de sabermos qual o ângulo entre os dois, isto é possível devido à equivalência algébrica do produto escalar com o cosseno do ângulo entre os dois vetores como vimos anteriormente.
 Sejam os vetores
-
 v
-→
-
-=
-⟨
-
 v
-
 x
-
 ,
-
 v
-
 y
-
 ,
-
 v
-
 z
-
-⟩
 ,
-
 u
-→
-
-=
-⟨
-
 u
-
 x
-
 ,
-
 u
-
 y
-
 ,
-
 u
-
 z
-
-⟩
 ,
-
-{\displaystyle {\vec {v}}=\langle v_{x},v_{y},v_{z}\rangle ,{\vec {u}}=\langle u_{x},u_{y},u_{z}\rangle ,}
-
+displaystyle vec v langle v x ,v y ,v z rangle , vec u langle u x ,u y ,u z rangle ,
 o produto escalar dos mesmos é:
-
 v
-→
-
-⋅
-
 u
-→
-
-=
-
-|
-
 v
-→
-
-|
-
-|
-
 u
-→
-
-|
-
 cos
-⁡
 (
-θ
 )
-
-{\displaystyle {\vec {v}}\cdot {\vec {u}}=|{\vec {v}}||{\vec {u}}|\cos(\theta )}
-
+displaystyle vec v cdot vec u vec v vec u cos( theta )
 de onde concluímos que:
-
 1
-
-|
-
 v
-→
-
-|
-
 v
-→
-
-⋅
-
 u
-→
-
-=
-
-|
-
 u
-→
-
-|
-
 cos
-⁡
 (
-θ
 )
-
-{\displaystyle {\frac {1}{|{\vec {v}}|}}{\vec {v}}\cdot {\vec {u}}=|{\vec {u}}|\cos(\theta )}
-
+displaystyle frac 1 vec v vec v cdot vec u vec u cos( theta )
 (
-
 v
-→
-
-|
-
 v
-→
-
-|
-
 )
-
-⋅
-
 u
-→
-
-=
-
-|
-
 u
-→
-
-|
-
 cos
-⁡
 (
-θ
 )
-
-{\displaystyle \left({\frac {\vec {v}}{|{\vec {v}}|}}\right)\cdot {\vec {u}}=|{\vec {u}}|\cos(\theta )}
-
+displaystyle left( frac vec v vec v right) cdot vec u vec u cos( theta )
 Observando o lado direito da equação observamos que a expressão corresponde à projeção do vetor
-
 u
-→
-
-{\displaystyle {\vec {u}}}
-
+displaystyle vec u
 sobre o vetor
-
 v
-→
-
 ,
-
-{\displaystyle {\vec {v}},}
-
+displaystyle vec v ,
 porém sob a forma escalar, ou seja, o valor corresponde ao comprimento (norma) da projeção, não contendo a informação acerca da direção e do sentido. Definimos, então, a projeção escalar do vetor
-
 u
-→
-
-{\displaystyle {\vec {u}}}
-
+displaystyle vec u
 sobre o vetor
-
 v
-→
-
 ,
-
-{\displaystyle {\vec {v}},}
-
+displaystyle vec v ,
 como:
-
 Prj
-
 v
-→
-
-⁡
-
 u
-→
-
-=
-
 (
-
 v
-→
-
-|
-
 v
-→
-
-|
-
 )
-
-⋅
-
 u
-→
-
-{\displaystyle \operatorname {Prj} _{\vec {v}}\ {\vec {u}}=\left({\frac {\vec {v}}{|{\vec {v}}|}}\right)\cdot {\vec {u}}}
-
+displaystyle operatorname Prj vec v vec u left( frac vec v vec v right) cdot vec u
 Observemos ainda outro fato esclarecedor: a projeção escalar de um vetor sobre o outro é o produto escalar do versor do vetor sobre o qual será projetado e o outro vetor. Intuitivamente, percebemos que o versor que contém a informação sobre a direção e sentido do vetor onde será projetado o valor e portanto, determina-o, visto que é no mesmo onde temos a informação sobre a inclinação.
 Seguindo este mesmo raciocínio, se multiplicarmos esta projeção, que é um valor escalar, pelo vetor unitário (versor), que usamos no cálculo anterior, teremos um vetor projeção criado como "imagem" do outro.
 Fazendo isto teremos:
-
 V
-
 Prj
-
 v
-→
-
-⁡
-
 u
-→
-
-=
-
 (
-
 v
-→
-
-⋅
-
 u
-→
-
-|
-
 v
-→
-
-|
-
 2
-
 )
-
 v
-→
-
-{\displaystyle V\operatorname {Prj} _{\vec {v}}\ {\vec {u}}=\left({\frac {{\vec {v}}\cdot {\vec {u}}}{|{\vec {v}}|^{2}}}\right){\vec {v}}}
-
-==== A desigualdade de Cauchy-Schwarz ====
+displaystyle V operatorname Prj vec v vec u left( frac vec v cdot vec u vec v 2 right) vec v
 Sejam os vetores
-
 v
-→
-
-=
-⟨
-
 v
-
 x
-
 ,
-
 v
-
 y
-
 ,
-
 v
-
 z
-
-⟩
 ,
-
 u
-→
-
-=
-⟨
-
 u
-
 x
-
 ,
-
 u
-
 y
-
 ,
-
 u
-
 z
-
-⟩
 ,
-
-{\displaystyle {\vec {v}}=\langle v_{x},v_{y},v_{z}\rangle ,{\vec {u}}=\langle u_{x},u_{y},u_{z}\rangle ,}
-
+displaystyle vec v langle v x ,v y ,v z rangle , vec u langle u x ,u y ,u z rangle ,
 é possível provar que o produto escalar relaciona-se com os módulos dos vetores de forma a satisfazer a seguinte desigualdade
-
-|
-
 v
-→
-
-⋅
-
 u
-→
-
-|
-
-≤
-
-|
-
 v
-→
-
-|
-
-|
-
 u
-→
-
-|
-
-{\displaystyle |{\vec {v}}\cdot {\vec {u}}|\leq |{\vec {v}}||{\vec {u}}|}
-
+displaystyle vec v cdot vec u leq vec v vec u
 Comprovação:
 Analisemos o produto escalar
-
 v
-→
-
-⋅
-
 u
-→
-
-{\displaystyle {\vec {v}}\cdot {\vec {u}}}
-
+displaystyle vec v cdot vec u
 separadamente:
-
 v
-→
-
-⋅
-
 u
-→
-
-=
-
-|
-
 v
-→
-
-|
-
-|
-
 u
-→
-
-|
-
 cos
-⁡
 (
-θ
 )
-
-{\displaystyle {\vec {v}}\cdot {\vec {u}}=|{\vec {v}}||{\vec {u}}|\cos(\theta )}
-
+displaystyle vec v cdot vec u vec v vec u cos( theta )
 Se quisermos o módulo do produto escalar teremos:
-
-|
-
 v
-→
-
-⋅
-
 u
-→
-
-|
-
-=
-
-|
-
 v
-→
-
-|
-
-|
-
 u
-→
-
-|
-
-|
-
 cos
-⁡
 (
-θ
 )
-
-|
-
-{\displaystyle |{\vec {v}}\cdot {\vec {u}}|=|{\vec {v}}||{\vec {u}}||\cos(\theta )|}
-
+displaystyle vec v cdot vec u vec v vec u cos( theta )
 porém,
-
 0
-≤
-
-|
-
 cos
-⁡
 (
-θ
 )
-
-|
-
-≤
 1
-
-{\displaystyle 0\leq |\cos(\theta )|\leq 1}
-
+displaystyle 0 leq cos( theta ) leq 1
 então:
-
 0
-≤
-
-|
-
 v
-→
-
-⋅
-
 u
-→
-
-|
-
-|
-
 v
-→
-
-|
-
-|
-
 u
-→
-
-|
-
-≤
 1
-
-{\displaystyle 0\leq {\frac {|{\vec {v}}\cdot {\vec {u}}|}{|{\vec {v}}||{\vec {u}}|}}\leq 1}
-
+displaystyle 0 leq frac vec v cdot vec u vec v vec u leq 1
 0
-≤
-
-|
-
 v
-→
-
-⋅
-
 u
-→
-
-|
-
-≤
-
-|
-
 v
-→
-
-|
-
-|
-
 u
-→
-
-|
-
-{\displaystyle 0\leq |{\vec {v}}\cdot {\vec {u}}|\leq |{\vec {v}}||{\vec {u}}|}
-
+displaystyle 0 leq vec v cdot vec u leq vec v vec u
 Como o lado esquerdo da inequação faz parte do módulo, podemos simplificar para:
-
-|
-
 v
-→
-
-⋅
-
 u
-→
-
-|
-
-≤
-
-|
-
 v
-→
-
-|
-
-|
-
 u
-→
-
-|
-
-{\displaystyle |{\vec {v}}\cdot {\vec {u}}|\leq |{\vec {v}}||{\vec {u}}|}
-
-== Produto misto ==
-
+displaystyle vec v cdot vec u leq vec v vec u
 Sejam os vetores
-
 v
-→
-
 ,
-
 u
-→
-
 ,
-
 w
-→
-
-{\displaystyle {\vec {v}},{\vec {u}},{\vec {w}}}
-
+displaystyle vec v , vec u , vec w
 em
-
 R
-
 3
-
 ,
-
-{\displaystyle \mathbb {R} ^{3},}
-
+displaystyle mathbb R 3 ,
 sobre estes definimos o produto misto como:
-
 (
-
 v
-→
-
-×
-
 u
-→
-
 )
-⋅
-
 w
-→
-
-=
-
-|
-
 w
-
 x
-
 w
-
 y
-
 w
-
 z
-
 v
-
 x
-
 v
-
 y
-
 v
-
 z
-
 u
-
 x
-
 u
-
 y
-
 u
-
 z
-
-|
-
-{\displaystyle ({\vec {v}}\times {\vec {u}})\cdot {\vec {w}}={\begin{vmatrix}w_{x}&w_{y}&w_{z}\\v_{x}&v_{y}&v_{z}\\u_{x}&u_{y}&u_{z}\end{vmatrix}}}
-
+displaystyle ( vec v times vec u ) cdot vec w begin vmatrix w x w y w z v x v y v z u x u y u z end vmatrix
 Em síntese, a operação do produto vetorial nos fornece um novo vetor perpendicular aos dois que lhe deram origem, por outro lado, o produto escalar deste vetor por outro nos fornece um escalar, que representa o produto misto. Observando estas operações mais detalhadamente, quando operamos o produto vetorial temos um vetor definido com os versores primários, sendo
-
 v
-→
-
-×
-
 u
-→
-
-=
-
 p
-→
-
 ,
-
-{\displaystyle {\vec {v}}\times {\vec {u}}={\vec {p}},}
-
+displaystyle vec v times vec u vec p ,
 temos:
-
 p
-→
-
-⋅
-
 w
-→
-
-=
 (
-
 p
-
 x
-
 i
-+
-
 p
-
 y
-
 j
-+
-
 p
-
 z
-
 k
 )
-⋅
 (
-
 w
-
 x
-
 i
-+
-
 w
-
 y
-
 j
-+
-
 w
-
 z
-
 k
 )
-
-{\displaystyle {\vec {p}}\cdot {\vec {w}}=(p_{x}i+p_{y}j+p_{z}k)\cdot (w_{x}i+w_{y}j+w_{z}k)}
-
+displaystyle vec p cdot vec w (p x i p y j p z k) cdot (w x i w y j w z k)
 p
-→
-
-⋅
-
 w
-→
-
-=
 (
-
 p
-
 x
-
 w
-
 x
-
 )
-
-|
-
 i
-
-|
-
 2
-
-+
 (
-
 p
-
 y
-
 w
-
 y
-
 )
-
-|
-
 j
-
-|
-
 2
-
-+
 (
-
 p
-
 z
-
 w
-
 z
-
 )
-
-|
-
 k
-
-|
-
 2
-
-{\displaystyle {\vec {p}}\cdot {\vec {w}}=(p_{x}w_{x})|i|^{2}+(p_{y}w_{y})|j|^{2}+(p_{z}w_{z})|k|^{2}}
-
+displaystyle vec p cdot vec w (p x w x ) i 2 (p y w y ) j 2 (p z w z ) k 2
 p
-→
-
-⋅
-
 w
-→
-
-=
 (
-
 p
-
 x
-
 w
-
 x
-
 )
-+
 (
-
 p
-
 y
-
 w
-
 y
-
 )
-+
 (
-
 p
-
 z
-
 w
-
 z
-
 )
-
-{\displaystyle {\vec {p}}\cdot {\vec {w}}=(p_{x}w_{x})+(p_{y}w_{y})+(p_{z}w_{z})}
-
+displaystyle vec p cdot vec w (p x w x ) (p y w y ) (p z w z )
 logo:
-
 p
-→
-
-⋅
-
 w
-→
-
-=
-
-|
-
 1
-
 1
-
 1
-
 v
-
 x
-
 v
-
 y
-
 v
-
 z
-
 u
-
 x
-
 u
-
 y
-
 u
-
 z
-
-|
-
 (
-
 w
-
 x
-
-+
-
 w
-
 y
-
-+
-
 w
-
 z
-
 )
-
-{\displaystyle {\vec {p}}\cdot {\vec {w}}={\begin{vmatrix}1&1&1\\v_{x}&v_{y}&v_{z}\\u_{x}&u_{y}&u_{z}\end{vmatrix}}(w_{x}+w_{y}+w_{z})}
-
+displaystyle vec p cdot vec w begin vmatrix 1 1 1 v x v y v z u x u y u z end vmatrix (w x w y w z )
 Que nos dá:
-
 (
-
 v
-→
-
-×
-
 u
-→
-
 )
-⋅
-
 w
-→
-
-=
-
-|
-
 w
-
 x
-
 w
-
 y
-
 w
-
 z
-
 v
-
 x
-
 v
-
 y
-
 v
-
 z
-
 u
-
 x
-
 u
-
 y
-
 u
-
 z
-
-|
-
-{\displaystyle ({\vec {v}}\times {\vec {u}})\cdot {\vec {w}}={\begin{vmatrix}w_{x}&w_{y}&w_{z}\\v_{x}&v_{y}&v_{z}\\u_{x}&u_{y}&u_{z}\end{vmatrix}}}
-
-=== Propriedades do produto misto ===
+displaystyle ( vec v times vec u ) cdot vec w begin vmatrix w x w y w z v x v y v z u x u y u z end vmatrix
 As propriedades do produto misto são análogas às dos determinantes em geral, apenas uma operação algébrica entre produtos devemos destacar:
 Comutativa entre produto escalar e produto vetorial em um produto misto:
 Dados três vetores:
-
 v
-→
-
 ,
-
 u
-→
-
 ,
-
 w
-→
-
-{\displaystyle {\vec {v}},{\vec {u}},{\vec {w}}}
-
+displaystyle vec v , vec u , vec w
 em
-
 R
-
 3
-
 ,
-
-{\displaystyle \mathbb {R} ^{3},}
-
+displaystyle mathbb R 3 ,
 podemos comutar os vetores e produtos tais que:
-
 v
-→
-
-⋅
 (
-
 u
-→
-
-×
-
 w
-→
-
 )
-=
 (
-
 v
-→
-
-×
-
 u
-→
-
 )
-⋅
-
 w
-→
-
-{\displaystyle {\vec {v}}\cdot ({\vec {u}}\times {\vec {w}})=({\vec {v}}\times {\vec {u}})\cdot {\vec {w}}}
-
+displaystyle vec v cdot ( vec u times vec w ) ( vec v times vec u ) cdot vec w
 No que se refere à operação em determinantes, a operação:
-
 v
-→
-
-⋅
 (
-
 u
-→
-
-×
-
 w
-→
-
 )
-=
-
-|
-
 v
-
 x
-
 v
-
 y
-
 v
-
 z
-
 u
-
 x
-
 u
-
 y
-
 u
-
 z
-
 w
-
 x
-
 w
-
 y
-
 w
-
 z
-
-|
-
-{\displaystyle {\vec {v}}\cdot ({\vec {u}}\times {\vec {w}})={\begin{vmatrix}v_{x}&v_{y}&v_{z}\\u_{x}&u_{y}&u_{z}\\w_{x}&w_{y}&w_{z}\end{vmatrix}}}
-
+displaystyle vec v cdot ( vec u times vec w ) begin vmatrix v x v y v z u x u y u z w x w y w z end vmatrix
 enquanto que:
-
 (
-
 v
-→
-
-×
-
 u
-→
-
 )
-⋅
-
 w
-→
-
-=
-
-|
-
 w
-
 x
-
 w
-
 y
-
 w
-
 z
-
 v
-
 x
-
 v
-
 y
-
 v
-
 z
-
 u
-
 x
-
 u
-
 y
-
 u
-
 z
-
-|
-
-{\displaystyle ({\vec {v}}\times {\vec {u}})\cdot {\vec {w}}={\begin{vmatrix}w_{x}&w_{y}&w_{z}\\v_{x}&v_{y}&v_{z}\\u_{x}&u_{y}&u_{z}\end{vmatrix}}}
-
+displaystyle ( vec v times vec u ) cdot vec w begin vmatrix w x w y w z v x v y v z u x u y u z end vmatrix
 Para fazer com que o primeiro determinante se torne o segundo basta permutar a mesma linha duas vezes dentro do determinante, ou seja, inverter o sinal do mesmo duas vezes, o que faz com que este retorne ao valor original. Algebricamente, os dois determinantes definem o mesmo valor quando operados. Isto define a operação como válida.
-
-== Vetores na Física ==
-
-=== Vetores velocidade e aceleração ===
 A trajetória de um ponto em movimento pode ser definida em cada instante t através do vetor de posição do ponto:
-
 r
-→
-
 (
 t
 )
-=
 x
 (
 t
 )
-
 e
-→
-
 x
-
-+
 y
 (
 t
 )
-
 e
-→
-
 y
-
-+
 z
 (
 t
 )
-
 e
-→
-
 z
-
-{\displaystyle {\vec {r}}(t)=x(t){\vec {e}}_{x}+y(t){\vec {e}}_{y}+z(t){\vec {e}}_{z}}
-
+displaystyle vec r (t) x(t) vec e x y(t) vec e y z(t) vec e z
 Cada uma das três componentes, x(t), y(t) e z(t), é uma função do tempo. Num intervalo de tempo
-
-Δ
 t
-=
-
 t
-
 2
-
-−
-
 t
-
 1
-
 ,
-
-{\displaystyle \Delta t=t_{2}-t_{1},}
-
+displaystyle Delta t t 2 -t 1 ,
 o deslocamento do ponto é:
-
-Δ
-
 r
-→
-
-=
-
 r
-→
-
 2
-
-−
-
 r
-→
-
 1
-
-{\displaystyle \Delta {\vec {r}}={\vec {r}}_{2}-{\vec {r}}_{1}}
-
+displaystyle Delta vec r vec r 2 - vec r 1
 onde
-
 r
-→
-
 1
-
-{\displaystyle {\vec {r}}_{1}}
-
+displaystyle vec r 1
 e
-
 r
-→
-
 2
-
-{\displaystyle {\vec {r}}_{2}}
-
+displaystyle vec r 2
 são os vetores posição nos instantes
-
 t
-
 1
-
-{\displaystyle t_{1}}
-
+displaystyle t 1
 e
-
 t
-
 2
-
 .
-
-{\displaystyle t_{2}.}
-
+displaystyle t 2 .
 O vetor obtido dividindo o deslocamento
-
-Δ
-
 r
-→
-
-{\displaystyle \Delta {\vec {r}}}
-
+displaystyle Delta vec r
 por
-
-Δ
 t
-
-{\displaystyle \Delta t}
-
+displaystyle Delta t
 é o vetor velocidade média, com a mesma direção e sentido do deslocamento
-
-Δ
-
 r
-→
-
 .
-
-{\displaystyle \Delta {\vec {r}}.}
-
+displaystyle Delta vec r .
 Define-se o vetor velocidade em cada instante, igual ao deslocamento dividido por
-
-Δ
 t
 ,
-
-{\displaystyle \Delta t,}
-
+displaystyle Delta t,
 no limite em que
-
-Δ
 t
-
-{\displaystyle \Delta t}
-
+displaystyle Delta t
 se aproxima de zero:
-
 a
-→
-
-=
-
 lim
-
-Δ
-→
 0
-
-Δ
-
 v
-→
-
-Δ
 t
-
-=
-
 d
-
 v
-→
-
 d
 t
-
-{\displaystyle {\vec {a}}=\lim _{\Delta \to 0}{\frac {\Delta {\vec {v}}}{\Delta t}}={\frac {d{\vec {v}}}{dt}}}
-
+displaystyle vec a lim Delta to 0 frac Delta vec v Delta t frac d vec v dt
 e as suas componentes serão as derivadas das componentes da velocidade:
-
 a
-→
-
-=
-
 v
-
 x
-
 .
-
 e
-→
-
 x
-
-+
-
 v
-
 y
-
 .
-
 e
-→
-
 y
-
-+
-
 v
-
 z
-
 .
-
 e
-→
-
 z
-
-=
-
 x
-
 .
 .
-
 e
-→
-
 x
-
-+
-
 y
-
 .
 .
-
 e
-→
-
 y
-
-+
-
 z
-
 .
 .
-
 e
-→
-
 z
-
-{\displaystyle {\vec {a}}={\overset {.}{v_{x}}}{\vec {e}}_{x}+{\overset {.}{v_{y}}}{\vec {e}}_{y}+{\overset {.}{v_{z}}}{\vec {e}}_{z}={\overset {..}{x}}{\vec {e}}_{x}+{\overset {..}{y}}{\vec {e}}_{y}+{\overset {..}{z}}{\vec {e}}_{z}}
-
+displaystyle vec a overset . v x vec e x overset . v y vec e y overset . v z vec e z overset .. x vec e x overset .. y vec e y overset .. z vec e z
 As equações de vetor velocidade e suas componentes da velocidade são as equações de movimento em 3 dimensões, escritas de forma vetorial. Como a igualdade de dois vetores implica a igualdade das suas componentes, temos
-
 v
-
 x
-
-=
-
 x
 .
-
 ,
-
 a
-
 x
-
-=
-
 v
-
 x
-
 .
-
 ,
-
 v
-
 x
-
-=
-
 x
-
 .
 .
-
-{\displaystyle v_{x}={\overset {.}{x}},a_{x}={\overset {.}{v_{x}}},v_{x}={\overset {..}{x}}}
-
+displaystyle v x overset . x ,a x overset . v x ,v x overset .. x
 e equações semelhantes para as componentes y e z. Portanto, o movimento em 3 dimensões é a sobreposição de 3 movimentos em uma dimensão, ao longo dos eixos x, y e z, e para cada um desses 3 movimentos verificam-se as equações de movimento ao longo de um eixo.
 Para cada uma das componentes cartesianas existe uma equação de movimento que relaciona a aceleração com a velocidade e a posição:
-
 a
-
 x
-
-−
-
 v
-
 x
-
 d
-
 v
-
 x
-
 d
 x
-
 a
-
 y
-
-−
-
 v
-
 y
-
 d
-
 v
-
 y
-
 d
 y
-
 a
-
 z
-
-−
-
 v
-
 z
-
 d
-
 v
-
 z
-
 d
 z
-
-{\displaystyle a_{x}-v_{x}{\frac {dv_{x}}{dx}}\quad a_{y}-v_{y}{\frac {dv_{y}}{dy}}\quad a_{z}-v_{z}{\frac {dv_{z}}{dz}}}
-
-=== Velocidade e aceleração relativas ===
+displaystyle a x -v x frac dv x dx quad a y -v y frac dv y dy quad a z -v z frac dv z dz
 A figura abaixo mostra os vetores posição de um mesmo ponto P em dois referenciais diferentes. O primeiro referencial tem eixos x, y, z e origem O. Os eixos e origem do segundo referencial foram designados
-
 x
-′
-
 ,
-
 y
-′
-
 ,
-
 z
-′
-
-{\displaystyle x',y',z'}
-
+displaystyle x',y',z'
 e
-
 O
-′
-
 .
-
-{\displaystyle O'.}
-
+displaystyle O'.
 A relação que existe entre o vetor posição
-
 r
-→
-
-{\displaystyle {\vec {r}}}
-
+displaystyle vec r
 em relação à origem O e o vetor posição
-
 r
-→
-
-′
-
-{\displaystyle {\vec {r}}\,'}
-
+displaystyle vec r ,'
 em relação à origem
-
 O
-′
-
-{\displaystyle O'}
-
+displaystyle O'
 é a seguinte:
-
 r
-→
-
-′
-
-=
-
 r
-→
-
-+
-
 r
-→
-
 o
-
-′
-
-{\displaystyle {\vec {r}}\,'={\vec {r}}+{\vec {r}}\,'_{o}}
-
+displaystyle vec r ,' vec r vec r ,' o
 onde
-
 r
-→
-
 o
-
-′
-
-{\displaystyle {\vec {r}}\,'_{o}}
-
+displaystyle vec r ,' o
 é o vetor de posição da primeira origem O em relação à segunda origem.
-
 Derivando essa expressão em relação ao tempo, obtemos a relação entre as velocidades:
-
 d
-
 r
-→
-
-′
-
 d
-
 t
-
-=
-
 d
-
 r
-→
-
 d
-
 t
-
-+
-
 d
-
 r
-→
-
 o
-
-′
-
 d
-
 t
-
-→
-
 v
-→
-
-′
-
-=
-
 v
-→
-
-+
-
 v
-→
-
 o
-
-′
-
-{\displaystyle {\frac {d{\vec {r}}\,'}{d_{t}}}={\frac {d{\vec {r}}}{d_{t}}}+{\frac {d{\vec {r}}\,'_{o}}{d_{t}}}\quad \rightarrow \quad {\vec {v}}\,'={\vec {v}}+{\vec {v}}\,'_{o}}
-
+displaystyle frac d vec r ,' d t frac d vec r d t frac d vec r ,' o d t quad rightarrow quad vec v ,' vec v vec v ,' o
 e derivando novamente obtemos a relação entre as acelerações:
-
 d
-
 v
-→
-
-′
-
 d
-
 t
-
-=
-
 d
-
 v
-→
-
 d
-
 t
-
-+
-
 d
-
 v
-→
-
 o
-
-′
-
 d
-
 t
-
-→
-
 a
-→
-
-′
-
-=
-
 a
-→
-
-+
-
 a
-→
-
 o
-
-′
-
-{\displaystyle {\frac {d{\vec {v}}\,'}{d_{t}}}={\frac {d{\vec {v}}}{d_{t}}}+{\frac {d{\vec {v}}\,'_{o}}{d_{t}}}\quad \rightarrow \quad {\vec {a}}\,'={\vec {a}}+{\vec {a}}\,'_{o}}
-
+displaystyle frac d vec v ,' d t frac d vec v d t frac d vec v ,' o d t quad rightarrow quad vec a ,' vec a vec a ,' o
 Consequentemente, a velocidade vetorial em relação a um segundo referencial é igual à velocidade vetorial em relação ao primeiro referencial, mais a velocidade vetorial do primeiro referencial em relação ao segundo. O mesmo princípio aplica-se ao vetor aceleração.
 Assim, por exemplo, se nos deslocarmos com velocidade vetorial dentro de um comboio, para obtermos a nossa velocidade vetorial em relação à Terra, teríamos de somar a velocidade vetorial do comboio em relação à Terra.
-
 Mas como a Terra se desloca em relação ao Sol, para encontramos a nossa velocidade em relação ao Sol teríamos de somar também a velocidade vetorial do ponto da Terra onde nos encontrarmos, em relação ao Sol. Em relação à Galaxia teríamos de somar a velocidade vetorial do Sol na galaxia, e assim sucessivamente.
 O princípio de adição de acelerações vetoriais relativas é aproveitado para treinar os candidatos a astronautas. Se o astronauta, a bordo de um avião, tropeça e cai para o chão,
 a sua aceleração vetorial durante a queda, em relação à Terra, é o vetor
-
 g
-→
-
-{\displaystyle {\vec {g}}}
-
+displaystyle vec g
 que aponta para o centro da Terra e tem módulo igual à aceleração da gravidade. Mas se o avião também estiver a cair livremente, a sua aceleração vetorial em relação à Terra será o mesmo vetor
-
 g
-→
-
 .
-
-{\displaystyle {\vec {g}}.}
-
+displaystyle vec g .
 Portanto, a aceleração vetorial do astronauta em relação ao avião será a diferença entre essas duas acelerações em relação à Terra, que é zero. Em relação ao avião, o astronauta não acelera em nenhuma direção, mas flutua no meio do avião, durante os segundos que o piloto conseguir manter o avião em queda livre.
-
-=== Produto escalar ===
-
 O produto escalar entre dois vetores
-
 a
-→
-
-{\displaystyle {\vec {a}}}
-
+displaystyle vec a
 e
-
 b
-→
-
-{\displaystyle {\vec {b}}}
-
+displaystyle vec b
 e o ângulo
-
-θ
-
-{\displaystyle \theta }
-
+displaystyle theta
 formado pelas duas direções. O produto a cos
-
-θ
-
-{\displaystyle \theta }
-
+displaystyle theta
 é igual à componente do vetor
-
 a
-→
-
-{\displaystyle {\vec {a}}}
-
+displaystyle vec a
 a direção paralela ao vetor
-
 b
-→
-
-{\displaystyle {\vec {b}}}
-
+displaystyle vec b
 e o produto b cos
-
-θ
-
-{\displaystyle \theta }
-
+displaystyle theta
 é igual à componente do vetor b na direção paralela ao vetor a. Assim, o produto escalar é igual ao produto do módulo de um dos vetores vezes a componente do segundo vetor na direção paralela ao primeiro.
 É designado de produto escalar, porque os módulos dos dois vetores e o ângulo entre as direções são grandezas escalares, que não dependem do referencial usado para os medir;
 consequentemente, o produto ab cos
-
-θ
-
-{\displaystyle \theta }
-
+displaystyle theta
 é também um escalar, independente do sistema de eixos usado.
 Duas retas que se cruzam num ponto definem dois ângulos
-
-θ
-
-{\displaystyle \theta }
-
+displaystyle theta
 e
-
 180
-
-∘
-
-−
-θ
 .
-
-{\displaystyle 180^{\circ }-\theta .}
-
+displaystyle 180 circ - theta .
 No caso dos vetores, não há ambiguidade na definição do ângulo, porque se deslocarmos os vetores para um vértice comum, o ângulo será a região dos pontos que estão deslocados no sentido dos dois vetores em relação ao vértice.
 O produto escalar entre dois vetores com módulos a e b estará sempre dentro do intervalo [-ab, ab]. Se o ângulo entre os vetores for agudo, cos
-
-θ
->
-θ
 ,
-
-{\displaystyle \theta >\theta ,}
-
+displaystyle theta theta ,
 o produto será positivo, no contrário será obtuso o produto sendo negativo. Se os vetores forem perpendiculares, o produto será nulo.
 O valor mínimo do produto, - ab, obtém-se no caso em que os vetores tenham a mesma direção mas sentidos opostos. O valor máximo, ab, é obtido no caso em que os vetores tenham a mesma direção e sentido.
-
 Como os versores têm todos módulo igual a 1, o produto entre dois versores é sempre igual ao cosseno do ângulo entre as suas direções. Assim, o ângulo entre duas direções no
 espaço é igual ao arco cosseno do produto escalar entre dois versores nessas direções:
-
-θ
-
 a
 b
-
-=
 a
 r
 c
@@ -4808,672 +1752,296 @@ c
 o
 s
 (
-
 e
-→
-
 a
-
 .
-
 e
-→
-
 b
-
 )
-
-{\displaystyle \theta _{ab}=arccos({\vec {e}}_{a}.{\vec {e}}_{b})}
-
+displaystyle theta ab arccos( vec e a . vec e b )
 No caso dos três versores cartesianos
-
 e
-→
-
 x
-
 ,
-
 e
-→
-
 y
-
 ,
-
 e
-→
-
 z
-
 ,
-
-{\displaystyle {\vec {e}}_{x},{\vec {e}}_{y},{\vec {e}}_{z},}
-
+displaystyle vec e x , vec e y , vec e z ,
 o produto escalar entre dois versores diferentes é zero, por serem perpendiculares, e o produto de um dos versores consigo próprio é 1. Esse resultado pode ser usado para obter outra expressão para o cálculo do produto escalar entre dois vetores
-
 a
-→
-
-{\displaystyle {\vec {a}}}
-
+displaystyle vec a
 e
-
 b
-→
-
-{\displaystyle {\vec {b}}}
-
+displaystyle vec b
 Usando a propriedade distributiva do produto escalar temos:
-
 a
-→
-
 .
-
 b
-→
-
-=
 (
-
 a
-
 x
-
 e
-→
-
 x
-
-+
-
 a
-
 y
-
 e
-→
-
 y
-
-+
-
 a
-
 z
-
 e
-→
-
 z
-
 )
 .
 (
-
 b
-
 x
-
 e
-→
-
 x
-
-+
-
 b
-
 y
-
 e
-→
-
 y
-
-+
-
 b
-
 z
-
 e
-→
-
 z
-
 )
-
-{\displaystyle {\vec {a}}.{\vec {b}}=(a_{x}{\vec {e}}_{x}+a_{y}{\vec {e}}_{y}+a_{z}{\vec {e}}_{z}).(b_{x}{\vec {e}}_{x}+b_{y}{\vec {e}}_{y}+b_{z}{\vec {e}}_{z})}
-
+displaystyle vec a . vec b (a x vec e x a y vec e y a z vec e z ).(b x vec e x b y vec e y b z vec e z )
 ou seja:
-
 a
-→
-
 .
-
 b
-→
-
-=
 (
-
 a
-
 x
-
 b
-
 x
-
-+
-
 a
-
 y
-
 b
-
 y
-
-+
-
 a
-
 z
-
 b
-
 z
-
 )
-
-{\displaystyle {\vec {a}}.{\vec {b}}=(a_{x}b_{x}+a_{y}b_{y}+a_{z}b_{z})}
-
-As componentes dos dois vetores são diferentes em diferentes referenciais, mas o produto (ax bx + ay by + az bz)deverá dar o mesmo resultado em qualquer referencial, já que
-
+displaystyle vec a . vec b (a x b x a y b y a z b z )
+As componentes dos dois vetores são diferentes em diferentes referenciais, mas o produto (ax bx ay by az bz)deverá dar o mesmo resultado em qualquer referencial, já que
 (
-
 a
-→
-
 ;
-
 b
-→
-
 )
-
-{\displaystyle ({\vec {a}};{\vec {b}})}
-
+displaystyle ( vec a ; vec b )
 é um escalar.
 Para calcularmos o produto escalar de um vetor consigo próprio, temos que elevar ao quadrado todos seus componentes vetoriais:
-
 a
-→
-
 .
-
 a
-→
-
-=
-
 a
-
 2
-
-=
-
 a
-
 x
-
 2
-
-+
-
 a
-
 y
-
 2
-
-+
-
 a
-
 z
-
 2
-
-{\displaystyle {\vec {a}}.{\vec {a}}=a^{2}=a_{x}^{2}+a_{y}^{2}+a_{z}^{2}}
-
+displaystyle vec a . vec a a 2 a x 2 a y 2 a z 2
 Assim, para calcular o módulo de um vetor com componentes (ax , ay , az) usa-se a expressão:
-
 a
-=
-
 a
-
 2
-
-=
-
 a
-
 x
-
 2
-
-+
-
 a
-
 y
-
 2
-
-+
-
 a
-
 z
-
 2
-
-{\displaystyle a={\sqrt {a^{2}}}={\sqrt {a_{x}^{2}+a_{y}^{2}+a_{z}^{2}}}}
-
-=== Vetores deslizantes ===
-
+displaystyle a sqrt a 2 sqrt a x 2 a y 2 a z 2
 Os vetores que são mais comumente estudados são denominados de vetores livres, que são considerados iguais se tiverem o mesmo módulo, direção e sentido, independentemente do ponto do espaço onde se encontrem. No caso das forças, não basta saber o módulo, direção e sentido. Se fixarmos o módulo, direção e sentido de uma força que vai ser aplicada numa porta para fechá-la, a forma como a porta será fechada dependerá também do ponto de aplicação dessa força. Quanto mais longe das dobradiças for aplicada a força, mais fácil será fechar a porta.
 Assim, as forças são realmente vetores deslizantes, que produzem o mesmo efeito em qualquer ponto da linha de ação (a linha reta que passa pelo ponto onde a força é aplicada,
 seguindo a direção da força) mas produzem efeitos diferentes quando aplicadas em diferentes linhas paralelas. No exemplo apresentado na figura , as três forças
-
 F
-→
-
 1
-
 ,
-
 F
-→
-
 2
-
 ;
-
 F
-→
-
 3
-
-{\displaystyle {\vec {F}}_{1},{\vec {F}}_{2};{\vec {F}}_{3}}
-
+displaystyle vec F 1 , vec F 2 ; vec F 3
 têm o mesmo módulo, direção e sentido; F1 e F2 são iguais, por terem também a mesma linha de ação, mas são diferentes de F3 que atua noutra linha de ação diferente.
-
-=== Adição de forças ===
-
 Duas forças
-
 F
-→
-
 1
-
 ;
-
 F
-→
-
 2
-
-{\displaystyle {\vec {F}}_{1};{\vec {F}}_{2}}
-
+displaystyle vec F 1 ; vec F 2
 com a mesma linha de ação podem ser deslocadas para um ponto comum e somadas nesse ponto. A força resultante estará na mesma linha de ação.
 Se as linhas de ação das duas forças forem diferentes, mas tiverem um ponto em comum,
 R, como acontece com as forças na figura a seguir, podemos somá-las como se mostra no lado direito da figura: deslocam-se as duas forças para o ponto de interseção R e nesse ponto aplica-se a regra do paralelogramo; a linha de ação da força resultante será a reta que passa por esse ponto de interseção.
 Quando as duas linhas de ação são paralelas, como é o caso da próxima figura, podemos usar
 o seguinte procedimento, ilustrado no lado direito da figura: desloca-se a força
-
 F
-→
-
 2
-
-{\displaystyle {\vec {F}}_{2}}
-
+displaystyle vec F 2
 na sua linha de ação
-
 L
-
 2
-
-{\displaystyle L_{2}}
-
+displaystyle L 2
 com a perpendicular que passa pelo ponto P. Nos pontos P e R podemos adicionar duas forças
-
 F
-→
-
 3
-
-{\displaystyle {\vec {F}}_{3}}
-
+displaystyle vec F 3
 e
-
-−
-
 F
-→
-
 3
-
-{\displaystyle -{\vec {F}}_{3}}
-
+displaystyle - vec F 3
 com a mesma linha de ação, já que a soma dessas duas forças é nula.
-
 No ponto P somamos as forças
-
 F
-→
-
 1
-
-{\displaystyle {\vec {F}}_{1}}
-
+displaystyle vec F 1
 e
-
 F
-→
-
 3
-
-{\displaystyle {\vec {F}}_{3}}
-
+displaystyle vec F 3
 sendo substituídas pela resultante
-
 F
-→
-
 4
-
-{\displaystyle {\vec {F}}_{4}}
-
+displaystyle vec F 4
 No ponto R somamos as forças
-
 F
-→
-
 2
-
-{\displaystyle {\vec {F}}_{2}}
-
+displaystyle vec F 2
 e
-
-−
-
 F
-→
-
 3
-
-{\displaystyle -{\vec {F}}_{3}}
-
+displaystyle - vec F 3
 substituindo-as pela resultante
-
 F
-→
-
 5
-
 .
-
-{\displaystyle {\vec {F}}_{5}.}
-
+displaystyle vec F 5 .
 As linhas de ação das forças F4 e F5 terão sempre um ponto de interseção S, onde podemos somá-las obtendo o resultado final
-
 F
-→
-
 6
-
-{\displaystyle {\vec {F}}_{6}}
-
+displaystyle vec F 6
 no ponto S.
 Observe na figura que, sempre que as direções e sentidos das forças forem iguais, o
 módulo da força resultante será igual à soma dos módulos das forças somadas
-
 F
-
 6
-
-=
-
 F
-
 1
-
-+
-
 F
-
 2
-
-{\displaystyle F_{6}=F_{1}+F_{2}}
-
+displaystyle F 6 F 1 F 2
 Para calcular as distâncias d1 e d2, entre as linhas de ação das forças somadas e a linha de ação
-
 L
-
 6
-
-{\displaystyle L_{6}}
-
+displaystyle L 6
 da força resultante, vemos na figura que h pode ser calculada nos dois triângulos:
-
 h
-=
-
 d
-
 1
-
 t
 a
 n
-θ
-=
-
 d
-
 1
-
 F
-
 1
-
 F
-
 3
-
 h
-=
-
 d
-
 2
-
 t
 a
 n
-β
-=
-
 d
-
 2
-
 F
-
 2
-
 F
-
 3
-
-{\displaystyle h=d_{1}tan\theta ={\frac {d_{1}F_{1}}{F_{3}}}\qquad \qquad \qquad h=d_{2}\;tan\beta ={\frac {d_{2}F_{2}}{F_{3}}}}
-
-== Versor ==
+displaystyle h d 1 tan theta frac d 1 F 1 F 3 qquad qquad qquad h d 2 ;tan beta frac d 2 F 2 F 3
 Um versor é um vetor de norma unitária, utilizado para indicar uma dada direcção, sentido e o ângulo formado com o eixo referencial.
 Dado um vetor
-
 v
-
-{\displaystyle \mathbf {v} }
-
+displaystyle mathbf v
 (de norma arbitrária) com a direção e sentido que pretendemos representar, o versor
-
 u
-^
-
-{\displaystyle \mathbf {\hat {u}} }
-
+displaystyle mathbf hat u
 com as mesmas caraterísticas obtém-se fazendo:
-
 u
-^
-
-=
-
 v
-
-|
-
-|
-
 v
-
-|
-
-|
-
-{\displaystyle \mathbf {\hat {u}} ={\frac {\mathbf {v} }{||\mathbf {v} ||}}}
-
+displaystyle mathbf hat u frac mathbf v mathbf v
 Versores podem ser utilizados como bases de um dado espaço vetorial
-
 V
-
 n
-
 .
-
-{\displaystyle \mathbb {V} ^{n}.}
-
+displaystyle mathbb V n .
 A condição necessária e suficiente para tanto, é que tais versores sejam linearmente independentes entre si. Uma propriedade altamente conveniente é que todo vetor pertencente ao espaço vetorial
-
 V
-
 n
-
-{\displaystyle \mathbb {V} ^{n}}
-
+displaystyle mathbb V n
 de base
-
 (
-
 a
-
 1
-
 ,
-
 a
-
 2
-
 ,
 .
 .
 .
 ,
-
 a
-
 n
-
 )
-
-{\displaystyle (\mathbf {a_{1}} ,\mathbf {a_{2}} ,...,\mathbf {a_{n}} )}
-
+displaystyle ( mathbf a 1 , mathbf a 2 ,..., mathbf a n )
 pode ser expresso como uma combinação linear dos versores base. Assim, dado um vetor genérico
-
 b
-
 ,
-
-{\displaystyle \mathbf {b} ,}
-
+displaystyle mathbf b ,
 temos que
-
 b
-
-=
-
 k
-
 1
-
 a
-
 1
-
-+
-
 k
-
 2
-
 a
-
 2
-
-+
 .
 .
 .
-+
-
 k
-
 n
-
 a
-
 n
-
 ,
-
-{\displaystyle \mathbf {b} =k_{1}\mathbf {a_{1}} +k_{2}\mathbf {a_{2}} +...+k_{n}\mathbf {a_{n}} ,}
-
+displaystyle mathbf b k 1 mathbf a 1 k 2 mathbf a 2 ... k n mathbf a n ,
 em que
-
 k
-
 i
-
-{\displaystyle k_{i}}
-
+displaystyle k i
 são números reais.
-
-== Ver também ==
-
-== Referências ==
-
-== Ligações externas ==
 Apostila on-line da Fundação CECIERJ
 «Módulo 'vetores'». no sistema e-física do Instituto de Física da USP.
 História dos vetores

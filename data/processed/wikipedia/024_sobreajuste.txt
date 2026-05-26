@@ -2,15 +2,9 @@ O sobreajuste (inglês: overfitting) é um termo usado em estatística para desc
 É comum que a amostra apresente desvios causados por erros de medição ou fatores aleatórios. Ocorre o sobreajuste quando o modelo se ajusta a estes. Um modelo sobreajustado apresenta alta precisão quando testado com seu conjunto de dados, porém tal modelo não é uma boa representação da realidade e por isso deve ser evitado.
 É bem comum que estes modelos apresentem considerável variância e que seus gráficos tenham várias pequenas oscilações, portanto espera-se que modelos representativos sejam convexos.
 Uma ferramenta para contornar o problema do sobreajuste é a regularização, que adiciona à função custo o valor dos parâmetros. Tal adição resulta na eliminação de parâmetros de pouca importância e, portanto, em um modelo mais convexo, do qual que se espera que seja mais representativo da realidade. Através da validação cruzada, em que testamos o nosso modelo em relação a uma parte reservada do conjunto de dados que não foi utilizada no treino do modelo em questão, é possível se ter uma ideia de se o modelo sofre de sobreajuste ou não.
-
-== Ver também ==
 Aprendizagem de máquina
 Regularização
 Variância
-
-== Referências ==
-
-== Bibliografia ==
 Coursera and Stanford University: Machine Learning e-course - Prof. Andrew Ng
 Miguel Cárdenas-Montes. Sobreajuste - Overfitting. Ciemat - Centro de Investigaciones Energéticas Medioambientales y Tecnológicas.
 Nate Silver. O Sinal e o Ruído. Editora Intrinseca, 2013 - 544 pp.

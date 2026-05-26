@@ -1,771 +1,395 @@
 Na matemática, uma matriz (plural: matrizes) é um arranjo retangular de números ou outros objetos matemáticos com elementos ou entradas organizados em linhas e colunas, satisfazendo geralmente certas propriedades de adição e multiplicação.
 Por exemplo,
-
 [
-
 1
-
 9
-
-−
 13
-
 20
-
 5
-
-−
 6
-
 ]
-
-{\displaystyle {\begin{bmatrix}1&9&-13\\20&5&-6\end{bmatrix}}}
-
-denota uma matriz com duas linhas e três colunas. Isto é frequentemente referido como uma "matriz dois por três", uma matriz 2 × 3, ou uma matriz de dimensão 2 × 3.
+displaystyle begin bmatrix 1 9 -13 20 5 -6 end bmatrix
+denota uma matriz com duas linhas e três colunas. Isto é frequentemente referido como uma "matriz dois por três", uma matriz 2 3, ou uma matriz de dimensão 2 3.
 Na álgebra linear, as matrizes são usadas como aplicações lineares. Na geometria, as matrizes são usadas para transformações geométricas (por exemplo, rotações) e mudanças de coordenadas. Na análise numérica, muitos problemas computacionais são resolvidos reduzindo-os a uma computação matricial, e isto envolve frequentemente computar com matrizes de enormes dimensões. As matrizes são usadas na maioria das áreas da matemática e em campos científicos, quer diretamente, quer através do seu uso na geometria e na análise numérica.
 As matrizes quadradas, matrizes com o mesmo número de linhas e colunas, desempenham um papel fundamental na teoria das matrizes. O determinante de uma matriz quadrada é um número associado à matriz, o qual é fundamental para o estudo de uma matriz quadrada; por exemplo, uma matriz quadrada é inversível se e somente se tiver um determinante não-nulo e os autovalores de uma matriz quadrada são as raízes do seu polinômio característico,
-
 det
 (
-λ
 I
-−
 A
 )
-
-{\displaystyle \det(\lambda I-A)}
-
+displaystyle det( lambda I-A)
 .
 A teoria das matrizes é o ramo da matemática que se foca no estudo das matrizes. Foi inicialmente um sub-ramo da álgebra linear, mas rapidamente cresceu para incluir assuntos relacionados com a teoria dos grafos, álgebra, combinatória e estatística.
-
-== História ==
 As matrizes têm uma longa história de aplicação na resolução de equações lineares, mas eram conhecidas como arranjos (arrays) até ao século XIX. O texto chinês Os Nove Capítulos da Arte Matemática, escrito entre os séculos X e II a.C., é o primeiro exemplo do uso de métodos de arranjo para resolver equações simultâneas, incluindo o conceito de determinantes. Em 1545, o matemático italiano Gerolamo Cardano introduziu o método na Europa quando publicou a Ars Magna. O matemático japonês Seki Kowa usou os mesmos métodos de arranjo para resolver equações simultâneas em 1683. O matemático holandês Jan de Witt representou transformações usando arranjos no seu livro de 1659, Elementos das Curvas (1659). Entre 1700 e 1710, Gottfried Wilhelm Leibniz publicitou o uso de arranjos para registar informações ou soluções e experimentou mais de 50 sistemas diferentes de arranjos. Cramer apresentou a sua regra em 1750.
 Este uso do termo matriz na matemática (uma palavra inglesa para "útero" no século XIX, do latim, bem como uma palavra de jargão na impressão, na biologia e na geologia) foi cunhado por James Joseph Sylvester em 1850, que compreendeu uma matriz como um objeto que dá origem a vários determinantes hoje chamados de menores, ou seja, determinantes de matrizes menores que derivam da original através da remoção de colunas e linhas. Num artigo de 1851, Sylvester explica:
-
 Defini em artigos anteriores uma "Matriz" como um arranjo retangular de termos, a partir do qual diferentes sistemas de determinantes podem ser engendrados a partir do útero de um pai comum.
-
 Arthur Cayley publicou um tratado sobre transformações geométricas utilizando matrizes que não eram versões rodadas dos coeficientes a serem investigados, como havia sido feito anteriormente. Em vez disso, ele definiu operações como adição, subtração, multiplicação e divisão como transformações dessas matrizes e mostrou que as propriedades associativa e distributiva se mantinham. Cayley investigou e demonstrou a propriedade não comutativa da multiplicação de matrizes, bem como a propriedade comutativa da adição de matrizes. A teoria inicial das matrizes havia limitado o uso de arranjos quase exclusivamente aos determinantes e as operações matriciais abstratas de Cayley foram revolucionárias. Ele foi fundamental na proposta de um conceito de matriz independente de sistemas de equações. Em 1858, Cayley publicou o seu A memoir on the theory of matrices no qual propôs e demonstrou o teorema de Cayley-Hamilton.
-O matemático inglês Cuthbert Edmund Cullis foi o primeiro a usar a notação moderna de colchetes para matrizes em 1913 e demonstrou simultaneamente o primeiro uso significativo da notação A = [ai,j] para representar uma matriz, onde ai,j refere-se à i-ésima linha e à j-ésima coluna.
-O estudo moderno dos determinantes surgiu de várias fontes. Problemas teórico-numéricos levaram Gauss a relacionar coeficientes de formas quadráticas, ou seja, expressões como x2 + xy − 2y2, e aplicações lineares em três dimensões a matrizes. Eisenstein desenvolveu ainda mais essas noções, incluindo a observação de que, na linguagem moderna, os produtos de matrizes são não comutativos. Cauchy foi o primeiro a provar afirmações gerais sobre determinantes, usando como definição do determinante de uma matriz A = [ai,j] o seguinte: substituir as potências ajk por aj,k no polinômio
-
+O matemático inglês Cuthbert Edmund Cullis foi o primeiro a usar a notação moderna de colchetes para matrizes em 1913 e demonstrou simultaneamente o primeiro uso significativo da notação A [ai,j] para representar uma matriz, onde ai,j refere-se à i-ésima linha e à j-ésima coluna.
+O estudo moderno dos determinantes surgiu de várias fontes. Problemas teórico-numéricos levaram Gauss a relacionar coeficientes de formas quadráticas, ou seja, expressões como x2 xy 2y2, e aplicações lineares em três dimensões a matrizes. Eisenstein desenvolveu ainda mais essas noções, incluindo a observação de que, na linguagem moderna, os produtos de matrizes são não comutativos. Cauchy foi o primeiro a provar afirmações gerais sobre determinantes, usando como definição do determinante de uma matriz A [ai,j] o seguinte: substituir as potências ajk por aj,k no polinômio
 a
-
 1
-
 a
-
 2
-
-⋯
-
 a
-
 n
-
-∏
-
 i
-<
 j
-
 (
-
 a
-
 j
-
-−
-
 a
-
 i
-
 )
 ,
-
-{\displaystyle a_{1}a_{2}\cdots a_{n}\prod _{i<j}(a_{j}-a_{i}),}
-
+displaystyle a 1 a 2 cdots a n prod i j (a j -a i ),
 onde
-
-∏
-
-{\displaystyle \textstyle \prod }
-
-denota o produto dos termos indicados. Ele também mostrou, em 1829, que os autovalores de matrizes simétricas são reais. Jacobi estudou "determinantes funcionais" — mais tarde chamados de determinantes jacobianos por Sylvester — que podem ser usados para descrever transformações geométricas num nível local (ou infinitesimal), ver acima. A obra Vorlesungen über die Theorie der Determinanten de Kronecker e Zur Determinantentheorie de Weierstrass, ambas publicadas em 1903, trataram os determinantes pela primeira vez de forma axiomática, em oposição a abordagens anteriores mais concretas, como a mencionada fórmula de Cauchy. Nessa altura, os determinantes estavam firmemente estabelecidos.
-Muitos teoremas foram primeiro estabelecidos apenas para matrizes pequenas; por exemplo, o teorema de Cayley-Hamilton foi provado para matrizes 2 × 2 por Cayley na memória supramencionada, e por Hamilton para matrizes 4 × 4. Frobenius, a trabalhar em formas bilineares, generalizou o teorema para todas as dimensões (1898). Também no final do século XIX, a eliminação de Gauss-Jordan (generalizando um caso especial agora conhecido como eliminação de Gauss) foi estabelecida por Wilhelm Jordan. No início do século XX, as matrizes alcançaram um papel central na álgebra linear, parcialmente devido ao seu uso na classificação dos sistemas de números hipercomplexos do século anterior.
+displaystyle textstyle prod
+denota o produto dos termos indicados. Ele também mostrou, em 1829, que os autovalores de matrizes simétricas são reais. Jacobi estudou "determinantes funcionais" mais tarde chamados de determinantes jacobianos por Sylvester que podem ser usados para descrever transformações geométricas num nível local (ou infinitesimal), ver acima. A obra Vorlesungen über die Theorie der Determinanten de Kronecker e Zur Determinantentheorie de Weierstrass, ambas publicadas em 1903, trataram os determinantes pela primeira vez de forma axiomática, em oposição a abordagens anteriores mais concretas, como a mencionada fórmula de Cauchy. Nessa altura, os determinantes estavam firmemente estabelecidos.
+Muitos teoremas foram primeiro estabelecidos apenas para matrizes pequenas; por exemplo, o teorema de Cayley-Hamilton foi provado para matrizes 2 2 por Cayley na memória supramencionada, e por Hamilton para matrizes 4 4. Frobenius, a trabalhar em formas bilineares, generalizou o teorema para todas as dimensões (1898). Também no final do século XIX, a eliminação de Gauss-Jordan (generalizando um caso especial agora conhecido como eliminação de Gauss) foi estabelecida por Wilhelm Jordan. No início do século XX, as matrizes alcançaram um papel central na álgebra linear, parcialmente devido ao seu uso na classificação dos sistemas de números hipercomplexos do século anterior.
 A criação da mecânica matricial por Heisenberg, Born e Jordan levou ao estudo de matrizes com infinitas linhas e colunas. Mais tarde, von Neumann realizou a formulação matemática da mecânica quântica, desenvolvendo ainda mais as noções da análise funcional, tais como operadores lineares em espaços de Hilbert, os quais, grosso modo, correspondem ao espaço euclidiano, mas com uma infinidade de direções independentes.
-
-=== Outros usos históricos da palavra "matriz" na matemática ===
 A palavra foi usada de formas invulgares por pelo menos dois autores de importância histórica.
-Bertrand Russell e Alfred North Whitehead no seu Principia Mathematica (1910–1913) usam a palavra "matriz" no contexto do seu axioma da redutibilidade. Eles propuseram este axioma como um meio para reduzir qualquer função a uma de tipo inferior, sucessivamente, de modo a que no "fundo" (ordem 0) a função seja idêntica à sua extensão:
-
+Bertrand Russell e Alfred North Whitehead no seu Principia Mathematica (1910 1913) usam a palavra "matriz" no contexto do seu axioma da redutibilidade. Eles propuseram este axioma como um meio para reduzir qualquer função a uma de tipo inferior, sucessivamente, de modo a que no "fundo" (ordem 0) a função seja idêntica à sua extensão:
 Demos o nome de matriz a qualquer função, de quantas variáveis forem, que não envolva quaisquer variáveis aparentes. Então, qualquer função possível além de uma matriz deriva de uma matriz usando a generalização, isto é, ao considerar a proposição de que a função em questão é verdadeira com todos os valores possíveis ou com algum valor de um dos argumentos, permanecendo o outro argumento ou argumentos indeterminados.
-
-Por exemplo, uma função Φ(x, y) de duas variáveis x e y pode ser reduzida a uma coleção de funções de uma única variável, tal como y, "considerando" a função para todos os valores possíveis de "indivíduos" ai substituídos no lugar de uma variável x. E então a coleção resultante de funções da única variável y, ou seja, ∀ai: Φ(ai, y), pode ser reduzida a uma "matriz" de valores "considerando" a função para todos os valores possíveis de "indivíduos" bj substituídos no lugar da variável y:
-
-∀
-
+Por exemplo, uma função (x, y) de duas variáveis x e y pode ser reduzida a uma coleção de funções de uma única variável, tal como y, "considerando" a função para todos os valores possíveis de "indivíduos" ai substituídos no lugar de uma variável x. E então a coleção resultante de funções da única variável y, ou seja, ai: (ai, y), pode ser reduzida a uma "matriz" de valores "considerando" a função para todos os valores possíveis de "indivíduos" bj substituídos no lugar da variável y:
 b
-
 j
-
-∀
-
 a
-
 i
-
 :
-ϕ
 (
-
 a
-
 i
-
 ,
-
 b
-
 j
-
 )
 .
-
-{\displaystyle \forall b_{j}\forall a_{i}\colon \phi (a_{i},b_{j}).}
-
+displaystyle forall b j forall a i colon phi (a i ,b j ).
 Alfred Tarski na sua Introdução à Lógica de 1941 usou a palavra "matriz" como sinônimo da noção de tabela de verdade, tal como usada na lógica matemática.
-
-== Definição ==
 Uma matriz é um arranjo retangular de números (ou outros objetos matemáticos), chamados de "entradas" da matriz. As matrizes estão sujeitas a operações padrão, tais como a adição e a multiplicação. Mais comumente, uma matriz sobre um corpo
-
 F
-
-{\displaystyle F}
-
+displaystyle F
 é um arranjo retangular de elementos de
-
 F
-
-{\displaystyle F}
-
+displaystyle F
 . Uma matriz real e uma matriz complexa são matrizes cujas entradas são, respetivamente, números reais ou números complexos. Tipos mais gerais de entradas são discutidos abaixo. Por exemplo, esta é uma matriz real:
-
 A
-
-=
-
 [
-
-−
 1.3
-
 0.6
-
 20.4
-
 5.5
-
 9.7
-
-−
 6.2
-
 ]
-
 .
-
-{\displaystyle \mathbf {A} ={\begin{bmatrix}-1.3&0.6\\20.4&5.5\\9.7&-6.2\end{bmatrix}}.}
-
+displaystyle mathbf A begin bmatrix -1.3 0.6 20.4 5.5 9.7 -6.2 end bmatrix .
 Os números (ou outros objetos) na matriz são chamados de suas entradas ou elementos. As linhas horizontais e verticais de entradas numa matriz são chamadas respetivamente de linhas e colunas.
-
-=== Tamanho ===
-O tamanho de uma matriz é definido pelo número de linhas e colunas que ela contém. Não há limite para o número de linhas e colunas que uma matriz (no sentido usual) pode ter, desde que sejam inteiros positivos. Uma matriz com m linhas e n colunas é chamada de matriz m × n, ou matriz m-por-n, onde m e n são chamadas as suas dimensões. Por exemplo, a matriz
-
+O tamanho de uma matriz é definido pelo número de linhas e colunas que ela contém. Não há limite para o número de linhas e colunas que uma matriz (no sentido usual) pode ter, desde que sejam inteiros positivos. Uma matriz com m linhas e n colunas é chamada de matriz m n, ou matriz m-por-n, onde m e n são chamadas as suas dimensões. Por exemplo, a matriz
 A
-
-{\displaystyle \mathbf {A} }
-
-acima é uma matriz 3 × 2.
+displaystyle mathbf A
+acima é uma matriz 3 2.
 Matrizes com uma única linha são chamadas de matrizes linha ou vetores linha, e aquelas com uma única coluna são chamadas de matrizes coluna ou vetores coluna. Uma matriz com o mesmo número de linhas e colunas é chamada de matriz quadrada. Uma matriz com um número infinito de linhas ou colunas (ou ambos) é chamada de matriz infinita. Em alguns contextos, tais como programas de computação algébrica, é útil considerar uma matriz sem linhas ou sem colunas, chamada de matriz vazia.
-
 Matrizes com uma única linha são chamadas de matrizes linha ou vetores linha, e aquelas com uma única coluna são chamadas de matrizes coluna ou vetores coluna. Uma matriz com o mesmo número de linhas e colunas é chamada de matriz quadrada. Uma matriz com um número infinito de linhas ou colunas (ou ambos) é chamada de matriz infinita. Em alguns contextos, tais como programas de computação algébrica, é útil considerar uma matriz sem linhas ou sem colunas, chamada de matriz vazia.
-
-== Notação ==
-Os detalhes da notação simbólica de matrizes variam amplamente, com algumas tendências predominantes. As matrizes são comumente escritas entre colchetes ou parênteses, de modo que uma matriz m × n
-
+Os detalhes da notação simbólica de matrizes variam amplamente, com algumas tendências predominantes. As matrizes são comumente escritas entre colchetes ou parênteses, de modo que uma matriz m n
 A
-
-{\displaystyle \mathbf {A} }
-
+displaystyle mathbf A
 é representada como
-
 A
-
-=
-
 [
-
 a
-
 11
-
 a
-
 12
-
-⋯
-
 a
-
 1
 n
-
 a
-
 21
-
 a
-
 22
-
-⋯
-
 a
-
 2
 n
-
-⋮
-
-⋮
-
-⋱
-
-⋮
-
 a
-
 m
 1
-
 a
-
 m
 2
-
-⋯
-
 a
-
 m
 n
-
 ]
-
-=
-
 (
-
 a
-
 11
-
 a
-
 12
-
-⋯
-
 a
-
 1
 n
-
 a
-
 21
-
 a
-
 22
-
-⋯
-
 a
-
 2
 n
-
-⋮
-
-⋮
-
-⋱
-
-⋮
-
 a
-
 m
 1
-
 a
-
 m
 2
-
-⋯
-
 a
-
 m
 n
-
 )
-
 .
-
-{\displaystyle \mathbf {A} ={\begin{bmatrix}a_{11}&a_{12}&\cdots &a_{1n}\\a_{21}&a_{22}&\cdots &a_{2n}\\\vdots &\vdots &\ddots &\vdots \\a_{m1}&a_{m2}&\cdots &a_{mn}\end{bmatrix}}={\begin{pmatrix}a_{11}&a_{12}&\cdots &a_{1n}\\a_{21}&a_{22}&\cdots &a_{2n}\\\vdots &\vdots &\ddots &\vdots \\a_{m1}&a_{m2}&\cdots &a_{mn}\end{pmatrix}}.}
-
+displaystyle mathbf A begin bmatrix a 11 a 12 cdots a 1n a 21 a 22 cdots a 2n vdots vdots ddots vdots a m1 a m2 cdots a mn end bmatrix begin pmatrix a 11 a 12 cdots a 1n a 21 a 22 cdots a 2n vdots vdots ddots vdots a m1 a m2 cdots a mn end pmatrix .
 Isto pode ser abreviado escrevendo apenas um único termo genérico, possivelmente com índices, como em
-
 A
-
-=
-
 (
-
 a
-
 i
 j
-
 )
-
 ,
-
 [
-
 a
-
 i
 j
-
 ]
-
 ,
-
 ou
-
 (
-
 a
-
 i
 j
-
 )
-
 1
-≤
 i
-≤
 m
 ,
-
 1
-≤
 j
-≤
 n
-
-{\displaystyle \mathbf {A} =\left(a_{ij}\right),\quad \left[a_{ij}\right],\quad {\text{ou}}\quad \left(a_{ij}\right)_{1\leq i\leq m,\;1\leq j\leq n}}
-
+displaystyle mathbf A left(a ij right), quad left[a ij right], quad text ou quad left(a ij right) 1 leq i leq m, ;1 leq j leq n
 ou
-
 A
-
-=
 (
-
 a
-
 i
 ,
 j
-
 )
-
 1
-≤
 i
 ,
 j
-≤
 n
-
-{\displaystyle \mathbf {A} =(a_{i,j})_{1\leq i,j\leq n}}
-
+displaystyle mathbf A (a i,j ) 1 leq i,j leq n
 no caso em que
-
 n
-=
 m
-
-{\displaystyle n=m}
-
+displaystyle n m
 .
 As matrizes são geralmente simbolizadas usando letras maiúsculas (como
-
 A
-
-{\displaystyle {\mathbf {A} }}
-
+displaystyle mathbf A
 nos exemplos acima), enquanto as letras minúsculas correspondentes, com dois índices subscritos (por exemplo,
-
 a
-
 11
-
-{\displaystyle a_{11}}
-
+displaystyle a 11
 , ou
-
 a
-
 1
 ,
 1
-
-{\displaystyle a_{1,1}}
-
+displaystyle a 1,1
 ), representam as entradas. Além de usar letras maiúsculas para simbolizar matrizes, muitos autores usam um estilo tipográfico especial, comumente redondo em negrito (não itálico), para distinguir ainda mais as matrizes de outros objetos matemáticos. Uma notação alternativa envolve o uso de um sublinhado duplo com o nome da variável, com ou sem estilo negrito, como em
-
 A
-_
-
-_
-
-{\displaystyle {\underline {\underline {A}}}}
-
+displaystyle underline underline A
 .
 A entrada na i-ésima linha e j-ésima coluna de uma matriz A é por vezes referida como a entrada
-
 i
 ,
 j
-
-{\displaystyle {i,j}}
-
+displaystyle i,j
 ou
-
 (
 i
 ,
 j
 )
-
-{\displaystyle (i,j)}
-
+displaystyle (i,j)
 da matriz, e comumente denotada por
-
 a
-
 i
 ,
 j
-
-{\displaystyle a_{i,j}}
-
+displaystyle a i,j
 ou
-
 a
-
 i
 j
-
-{\displaystyle a_{ij}}
-
+displaystyle a ij
 . Notações alternativas para essa entrada são
-
 A
-
 [
 i
 ,
 j
 ]
-
-{\displaystyle {\mathbf {A} [i,j]}}
-
+displaystyle mathbf A [i,j]
 e
-
 A
-
 i
 ,
 j
-
-{\displaystyle \mathbf {A} _{i,j}}
-
+displaystyle mathbf A i,j
 . Por exemplo, a entrada
-
 (
 1
 ,
 3
 )
-
-{\displaystyle (1,3)}
-
+displaystyle (1,3)
 da seguinte matriz
-
 A
-
-{\displaystyle \mathbf {A} }
-
+displaystyle mathbf A
 é 5 (também denotada por
-
 a
-
 13
-
-{\displaystyle a_{13}}
-
+displaystyle a 13
 ,
-
 a
-
 1
 ,
 3
-
-{\displaystyle a_{1,3}}
-
+displaystyle a 1,3
 ,
-
 A
-
 [
 1
 ,
 3
 ]
-
-{\displaystyle \mathbf {A} [1,3]}
-
+displaystyle mathbf A [1,3]
 ou
-
 A
-
 1
 ,
 3
-
-{\displaystyle {\mathbf {A} }_{1,3}}
-
+displaystyle mathbf A 1,3
 ):
-
 A
-
-=
-
 [
-
 4
-
-−
 7
-
 5
-
 0
-
-−
 2
-
 0
-
 11
-
 8
-
 19
-
 1
-
-−
 3
-
 12
-
 ]
-
-{\displaystyle \mathbf {A} ={\begin{bmatrix}4&-7&\color {red}{5}&0\\-2&0&11&8\\19&1&-3&12\end{bmatrix}}}
-
+displaystyle mathbf A begin bmatrix 4 -7 color red 5 0 -2 0 11 8 19 1 -3 12 end bmatrix
 Por vezes, as entradas de uma matriz podem ser definidas por uma fórmula, tal como
-
 a
-
 i
 ,
 j
-
-=
 f
 (
 i
 ,
 j
 )
-
-{\displaystyle a_{i,j}=f(i,j)}
-
+displaystyle a i,j f(i,j)
 . Por exemplo, cada uma das entradas da seguinte matriz
-
 A
-
-{\displaystyle \mathbf {A} }
-
+displaystyle mathbf A
 é determinada pela fórmula
-
 a
-
 i
 j
-
-=
 i
-−
 j
-
-{\displaystyle a_{ij}=i-j}
-
+displaystyle a ij i-j
 .
-
 A
-
-=
-
 [
-
 0
-
-−
 1
-
-−
 2
-
-−
 3
-
 1
-
 0
-
-−
 1
-
-−
 2
-
 2
-
 1
-
 0
-
-−
 1
-
 ]
-
-{\displaystyle \mathbf {A} ={\begin{bmatrix}0&-1&-2&-3\\1&0&-1&-2\\2&1&0&-1\end{bmatrix}}}
-
+displaystyle mathbf A begin bmatrix 0 -1 -2 -3 1 0 -1 -2 2 1 0 -1 end bmatrix
 Neste caso, a própria matriz é por vezes definida por essa fórmula, entre colchetes ou parênteses duplos. Por exemplo, a matriz acima é definida como
-
 A
-
-=
 [
 i
-−
 j
 ]
-
-{\displaystyle {\mathbf {A} }=[i-j]}
-
+displaystyle mathbf A [i-j]
 ou
-
 A
-
-=
 (
 (
 i
-−
 j
 )
 )
-
-{\displaystyle \mathbf {A} =((i-j))}
-
-. Se o tamanho da matriz for m × n, a fórmula
-
+displaystyle mathbf A ((i-j))
+. Se o tamanho da matriz for m n, a fórmula
 f
 (
 i
 ,
 j
 )
-
-{\displaystyle f(i,j)}
-
+displaystyle f(i,j)
 supramencionada é válida para qualquer
-
 i
-=
 1
 ,
-…
+...
 ,
 m
-
-{\displaystyle i=1,\dots ,m}
-
+displaystyle i 1, dots ,m
 e qualquer
-
 j
-=
 1
 ,
-…
+...
 ,
 n
-
-{\displaystyle j=1,\dots ,n}
-
-. Isto pode ser especificado separadamente ou indicado usando m × n como um subscrito. Por exemplo, a matriz
-
+displaystyle j 1, dots ,n
+. Isto pode ser especificado separadamente ou indicado usando m n como um subscrito. Por exemplo, a matriz
 A
-
-{\displaystyle \mathbf {A} }
-
-acima é de 3 × 4, e pode ser definida como
-
+displaystyle mathbf A
+acima é de 3 4, e pode ser definida como
 A
-
-=
 [
 i
-−
 j
 ]
 (
 i
-=
 1
 ,
 2
@@ -773,92 +397,54 @@ i
 3
 ;
 j
-=
 1
 ,
-…
+...
 ,
 4
 )
-
-{\displaystyle {\mathbf {A} }=[i-j](i=1,2,3;j=1,\dots ,4)}
-
+displaystyle mathbf A [i-j](i 1,2,3;j 1, dots ,4)
 ou
-
 A
-
-=
 [
 i
-−
 j
-
 ]
-
 3
-×
 4
-
-{\displaystyle \mathbf {A} =[i-j]_{3\times 4}}
-
+displaystyle mathbf A [i-j] 3 times 4
 .
-Algumas linguagens de programação utilizam arranjos (arrays) duplamente subscritos (ou arranjos de arranjos) para representar uma matriz de m × n. Algumas linguagens de programação começam a numeração dos índices do arranjo no zero, caso em que as entradas de uma matriz m × n são indexadas por
-
+Algumas linguagens de programação utilizam arranjos (arrays) duplamente subscritos (ou arranjos de arranjos) para representar uma matriz de m n. Algumas linguagens de programação começam a numeração dos índices do arranjo no zero, caso em que as entradas de uma matriz m n são indexadas por
 0
-≤
 i
-≤
 m
-−
 1
-
-{\displaystyle 0\leq i\leq m-1}
-
+displaystyle 0 leq i leq m-1
 e
-
 0
-≤
 j
-≤
 n
-−
 1
-
-{\displaystyle 0\leq j\leq n-1}
-
+displaystyle 0 leq j leq n-1
 . Este artigo segue a convenção mais comum na escrita matemática, onde a enumeração começa a partir do 1.
-O conjunto de todas as matrizes reais m × n é frequentemente denotado por
-
+O conjunto de todas as matrizes reais m n é frequentemente denotado por
 M
-
 (
 m
 ,
 n
 )
-
-{\displaystyle {\mathcal {M}}(m,n)}
-
+displaystyle mathcal M (m,n)
 , ou
-
 M
-
 m
-×
 n
-
 (
-
 R
-
 )
-
-{\displaystyle {\mathcal {M}}_{m\times n}(\mathbb {R} )}
-
-. O conjunto de todas as matrizes m × n sobre um outro corpo, ou sobre um anel R, é similarmente denotado por
-
+displaystyle mathcal M m times n ( mathbb R )
+. O conjunto de todas as matrizes m n sobre um outro corpo, ou sobre um anel R, é similarmente denotado por
 M
-
 (
 m
 ,
@@ -866,2425 +452,1158 @@ n
 ,
 R
 )
-
-{\displaystyle {\mathcal {M}}(m,n,R)}
-
+displaystyle mathcal M (m,n,R)
 , ou
-
 M
-
 m
-×
 n
-
 (
 R
 )
-
-{\displaystyle {\mathcal {M}}_{m\times n}(R)}
-
-. Se m = n, como no caso de matrizes quadradas, não se repete a dimensão:
-
+displaystyle mathcal M m times n (R)
+. Se m n, como no caso de matrizes quadradas, não se repete a dimensão:
 M
-
 (
 n
 ,
 R
 )
-
-{\displaystyle {\mathcal {M}}(n,R)}
-
+displaystyle mathcal M (n,R)
 , ou
-
 M
-
 n
-
 (
 R
 )
-
-{\displaystyle {\mathcal {M}}_{n}(R)}
-
+displaystyle mathcal M n (R)
 . Frequentemente,
-
 M
-
-{\displaystyle M}
-
+displaystyle M
 , ou
-
 Mat
-
-{\displaystyle \operatorname {Mat} }
-
+displaystyle operatorname Mat
 , é usado no lugar de
-
 M
-
-{\displaystyle {\mathcal {M}}}
-
+displaystyle mathcal M
 .
-
-== Operações básicas ==
 Diversas operações básicas podem ser aplicadas a matrizes. Algumas, como a transposição e a submatriz, não dependem da natureza das entradas. Outras, como a adição de matrizes, a multiplicação por escalar, a multiplicação de matrizes e as operações elementares em linha, envolvem operações nas entradas da matriz e, portanto, exigem que as entradas sejam números ou pertençam a um corpo ou a um anel.
 Nesta seção, supõe-se que as entradas da matriz pertençam a um anel fixo, que tipicamente é um corpo de números.
-
-=== Adição ===
-
 A adição e subtração de matrizes exigem matrizes de um tamanho consistente, e são calculadas entrada por entrada. A soma
-
 A
-
-+
-
 B
-
-{\displaystyle \mathbf {A} +\mathbf {B} }
-
+displaystyle mathbf A mathbf B
 e a diferença
-
 A
-
-−
-
 B
-
-{\displaystyle \mathbf {A} -\mathbf {B} }
-
-de duas matrizes m × n são:
-
+displaystyle mathbf A - mathbf B
+de duas matrizes m n são:
 (
-
 A
-
-+
-
 B
-
 )
-
 i
 ,
 j
-
-=
-
 A
-
 i
 ,
 j
-
-+
-
 B
-
 i
 ,
 j
-
 ,
-
 1
-≤
 i
-≤
 m
 ,
-
 1
-≤
 j
-≤
 n
 .
-
 (
-
 A
-
-−
-
 B
-
 )
-
 i
 ,
 j
-
-=
-
 A
-
 i
 ,
 j
-
-−
-
 B
-
 i
 ,
 j
-
 ,
-
 1
-≤
 i
-≤
 m
 ,
-
 1
-≤
 j
-≤
 n
 .
-
-{\displaystyle {\begin{aligned}(\mathbf {A} +\mathbf {B} )_{i,j}=\mathbf {A} _{i,j}+\mathbf {B} _{i,j},\quad 1\leq i\leq m,\quad 1\leq j\leq n.\\(\mathbf {A} -\mathbf {B} )_{i,j}=\mathbf {A} _{i,j}-\mathbf {B} _{i,j},\quad 1\leq i\leq m,\quad 1\leq j\leq n.\end{aligned}}}
-
+displaystyle begin aligned ( mathbf A mathbf B ) i,j mathbf A i,j mathbf B i,j , quad 1 leq i leq m, quad 1 leq j leq n. ( mathbf A - mathbf B ) i,j mathbf A i,j - mathbf B i,j , quad 1 leq i leq m, quad 1 leq j leq n. end aligned
 Por exemplo,
-
 [
-
 1
-
 3
-
 1
-
 1
-
 0
-
 0
-
 ]
-
-+
-
 [
-
 0
-
 0
-
 5
-
 7
-
 5
-
 0
-
 ]
-
-=
-
 [
-
 1
-+
 0
-
 3
-+
 0
-
 1
-+
 5
-
 1
-+
 7
-
 0
-+
 5
-
 0
-+
 0
-
 ]
-
-=
-
 [
-
 1
-
 3
-
 6
-
 8
-
 5
-
 0
-
 ]
-
-{\displaystyle {\begin{bmatrix}1&3&1\\1&0&0\end{bmatrix}}+{\begin{bmatrix}0&0&5\\7&5&0\end{bmatrix}}={\begin{bmatrix}1+0&3+0&1+5\\1+7&0+5&0+0\end{bmatrix}}={\begin{bmatrix}1&3&6\\8&5&0\end{bmatrix}}}
-
+displaystyle begin bmatrix 1 3 1 1 0 0 end bmatrix begin bmatrix 0 0 5 7 5 0 end bmatrix begin bmatrix 1 0 3 0 1 5 1 7 0 5 0 0 end bmatrix begin bmatrix 1 3 6 8 5 0 end bmatrix
 Propriedades familiares dos números estendem-se a estas operações com matrizes: por exemplo, a adição é comutativa, ou seja, a soma matricial não depende da ordem das parcelas:
-
 A
-
-+
-
 B
-
-=
-
 B
-
-+
-
 A
-
-{\displaystyle \mathbf {A} +\mathbf {B} =\mathbf {B} +\mathbf {A} }
-
+displaystyle mathbf A mathbf B mathbf B mathbf A
 .
-
-=== Multiplicação por escalar ===
-
 O produto
-
 c
-
 A
-
-{\displaystyle c\mathbf {A} }
-
+displaystyle c mathbf A
 de um número
-
 c
-
-{\displaystyle c}
-
+displaystyle c
 (também chamado de escalar neste contexto) e uma matriz
-
 A
-
-{\displaystyle \mathbf {A} }
-
+displaystyle mathbf A
 é computado multiplicando cada entrada de
-
 A
-
-{\displaystyle \mathbf {A} }
-
+displaystyle mathbf A
 por
-
 c
-
-{\displaystyle c}
-
+displaystyle c
 :
-
 (
 c
-
 A
-
 )
-
 i
 ,
 j
-
-=
 c
-⋅
-
 A
-
 i
 ,
 j
-
-{\displaystyle (c\mathbf {A} )_{i,j}=c\cdot \mathbf {A} _{i,j}}
-
+displaystyle (c mathbf A ) i,j c cdot mathbf A i,j
 Esta operação é chamada de multiplicação por escalar, mas o seu resultado não é denominado "produto escalar" para evitar confusão, uma vez que "produto escalar" é frequentemente usado como sinônimo de "produto interno". Por exemplo:
-
 2
-⋅
-
 [
-
 1
-
 8
-
-−
 3
-
 4
-
-−
 2
-
 5
-
 ]
-
-=
-
 [
-
 2
-⋅
 1
-
 2
-⋅
 8
-
 2
-⋅
-−
 3
-
 2
-⋅
 4
-
 2
-⋅
-−
 2
-
 2
-⋅
 5
-
 ]
-
-=
-
 [
-
 2
-
 16
-
-−
 6
-
 8
-
-−
 4
-
 10
-
 ]
-
-{\displaystyle 2\cdot {\begin{bmatrix}1&8&-3\\4&-2&5\end{bmatrix}}={\begin{bmatrix}2\cdot 1&2\cdot 8&2\cdot -3\\2\cdot 4&2\cdot -2&2\cdot 5\end{bmatrix}}={\begin{bmatrix}2&16&-6\\8&-4&10\end{bmatrix}}}
-
+displaystyle 2 cdot begin bmatrix 1 8 -3 4 -2 5 end bmatrix begin bmatrix 2 cdot 1 2 cdot 8 2 cdot -3 2 cdot 4 2 cdot -2 2 cdot 5 end bmatrix begin bmatrix 2 16 -6 8 -4 10 end bmatrix
 A subtração de matrizes é consistente com a composição da adição de matrizes com a multiplicação por escalar por
-
-−
 1
-
-{\displaystyle -1}
-
+displaystyle -1
 :
-
 A
-
-−
-
 B
-
-=
-
 A
-
-+
 (
-−
 1
 )
-⋅
-
 B
-
-{\displaystyle \mathbf {A} -\mathbf {B} =\mathbf {A} +(-1)\cdot \mathbf {B} }
-
-=== Matriz transposta ===
-
-A transposta de uma matriz m × n
-
+displaystyle mathbf A - mathbf B mathbf A (-1) cdot mathbf B
+A transposta de uma matriz m n
 A
-
-{\displaystyle \mathbf {A} }
-
-é a matriz n × m
-
+displaystyle mathbf A
+é a matriz n m
 A
-
 T
-
-{\displaystyle \mathbf {A} ^{\mathrm {T} }}
-
+displaystyle mathbf A mathrm T
 (também denotada por
-
 A
-
 t
 r
-
-{\displaystyle \mathbf {A} ^{\mathrm {tr} }}
-
+displaystyle mathbf A mathrm tr
 ou
-
 t
-
 A
-
-{\displaystyle ^{\mathrm {t} }\mathbf {A} }
-
+displaystyle mathrm t mathbf A
 ) formada pela transformação de linhas em colunas e vice-versa:
-
 (
-
 A
-
 T
-
 )
-
 i
 ,
 j
-
-=
-
 A
-
 j
 ,
 i
-
 .
-
-{\displaystyle \left(\mathbf {A} ^{\mathrm {T} }\right)_{i,j}=\mathbf {A} _{j,i}.}
-
+displaystyle left( mathbf A mathrm T right) i,j mathbf A j,i .
 Por exemplo:
-
 [
-
 1
-
 2
-
 3
-
 0
-
-−
 6
-
 7
-
 ]
-
 T
-
-=
-
 [
-
 1
-
 0
-
 2
-
-−
 6
-
 3
-
 7
-
 ]
-
-{\displaystyle {\begin{bmatrix}1&2&3\\0&-6&7\end{bmatrix}}^{\mathrm {T} }={\begin{bmatrix}1&0\\2&-6\\3&7\end{bmatrix}}}
-
+displaystyle begin bmatrix 1 2 3 0 -6 7 end bmatrix mathrm T begin bmatrix 1 0 2 -6 3 7 end bmatrix
 A transposta é compatível com a adição e a multiplicação por escalar, como expresso por
-
 (
 c
-
 A
-
 )
-
 T
-
-=
 c
 (
-
 A
-
 T
-
 )
-
-{\displaystyle (c\mathbf {A} )^{\mathrm {T} }=c(\mathbf {A} ^{\mathrm {T} })}
-
+displaystyle (c mathbf A ) mathrm T c( mathbf A mathrm T )
 e
-
 (
-
 A
-
-+
-
 B
-
 )
-
 T
-
-=
-
 A
-
 T
-
-+
-
 B
-
 T
-
-{\displaystyle (\mathbf {A} +\mathbf {B} )^{\mathrm {T} }=\mathbf {A} ^{\mathrm {T} }+\mathbf {B} ^{\mathrm {T} }}
-
+displaystyle ( mathbf A mathbf B ) mathrm T mathbf A mathrm T mathbf B mathrm T
 . Finalmente,
-
 (
-
 A
-
 T
-
 )
-
 T
-
-=
-
 A
-
-{\displaystyle (\mathbf {A} ^{\mathrm {T} })^{\mathrm {T} }=\mathbf {A} }
-
+displaystyle ( mathbf A mathrm T ) mathrm T mathbf A
 .
-
-=== Multiplicação de matrizes ===
-
 A multiplicação de duas matrizes corresponde à composição das transformações lineares representadas por cada matriz. Ela é definida se e somente se o número de colunas da matriz da esquerda for igual ao número de linhas da matriz da direita. Se
-
 A
-
-{\displaystyle \mathbf {A} }
-
-é uma matriz m × n e
-
+displaystyle mathbf A
+é uma matriz m n e
 B
-
-{\displaystyle \mathbf {B} }
-
-é uma matriz n × p, então o seu produto matricial
-
+displaystyle mathbf B
+é uma matriz n p, então o seu produto matricial
 A
 B
-
-{\displaystyle \mathbf {AB} }
-
-é a matriz m × p cujas entradas são dadas pelo produto escalar da linha correspondente de
-
+displaystyle mathbf AB
+é a matriz m p cujas entradas são dadas pelo produto escalar da linha correspondente de
 A
-
-{\displaystyle \mathbf {A} }
-
+displaystyle mathbf A
 e da coluna correspondente de
-
 B
-
-{\displaystyle \mathbf {B} }
-
+displaystyle mathbf B
 :
-
 [
-
 A
 B
-
 ]
-
 i
 ,
 j
-
-=
-
 a
-
 i
 ,
 1
-
 b
-
 1
 ,
 j
-
-+
-
 a
-
 i
 ,
 2
-
 b
-
 2
 ,
 j
-
-+
-⋯
-+
-
 a
-
 i
 ,
 n
-
 b
-
 n
 ,
 j
-
-=
-
-∑
-
 r
-=
 1
-
 n
-
 a
-
 i
 ,
 r
-
 b
-
 r
 ,
 j
-
 ,
-
-{\displaystyle [\mathbf {AB} ]_{i,j}=a_{i,1}b_{1,j}+a_{i,2}b_{2,j}+\cdots +a_{i,n}b_{n,j}=\sum _{r=1}^{n}a_{i,r}b_{r,j},}
-
+displaystyle [ mathbf AB ] i,j a i,1 b 1,j a i,2 b 2,j cdots a i,n b n,j sum r 1 n a i,r b r,j ,
 onde
-
 1
-≤
 i
-≤
 m
-
-{\displaystyle 1\leq i\leq m}
-
+displaystyle 1 leq i leq m
 e
-
 1
-≤
 j
-≤
 p
-
-{\displaystyle 1\leq j\leq p}
-
+displaystyle 1 leq j leq p
 . Por exemplo, a entrada sublinhada 2340 no produto é calculada como
-
 (
 2
-×
 1000
 )
-+
 (
 3
-×
 100
 )
-+
 (
 4
-×
 10
 )
-=
 2340
-
-{\displaystyle (2\times 1000)+(3\times 100)+(4\times 10)=2340}
-
+displaystyle (2 times 1000) (3 times 100) (4 times 10) 2340
 :
-
 [
-
 2
-_
-
 3
-_
-
 4
-_
-
 1
-
 0
-
 0
-
 ]
-
 [
-
 0
-
 1000
-_
-
 1
-
 100
-_
-
 0
-
 10
-_
-
 ]
-
-=
-
 [
-
 3
-
 2340
-_
-
 0
-
 1000
-
 ]
-
 .
-
-{\displaystyle {\begin{aligned}{\begin{bmatrix}{\underline {2}}&{\underline {3}}&{\underline {4}}\\1&0&0\\\end{bmatrix}}{\begin{bmatrix}0&{\underline {1000}}\\1&{\underline {100}}\\0&{\underline {10}}\\\end{bmatrix}}&={\begin{bmatrix}3&{\underline {2340}}\\0&1000\\\end{bmatrix}}.\end{aligned}}}
-
+displaystyle begin aligned begin bmatrix underline 2 underline 3 underline 4 1 0 0 end bmatrix begin bmatrix 0 underline 1000 1 underline 100 0 underline 10 end bmatrix begin bmatrix 3 underline 2340 0 1000 end bmatrix . end aligned
 A multiplicação de matrizes satisfaz as regras
-
 (
-
 A
 B
-
 )
-
 C
-
-=
-
 A
-
 (
-
 B
 C
-
 )
-
-{\displaystyle (\mathbf {AB} )\mathbf {C} =\mathbf {A} (\mathbf {BC} )}
-
+displaystyle ( mathbf AB ) mathbf C mathbf A ( mathbf BC )
 (associatividade), e
-
 (
-
 A
-
-+
-
 B
-
 )
-
 C
-
-=
-
 A
 C
-
-+
-
 B
 C
-
-{\displaystyle (\mathbf {A} +\mathbf {B} )\mathbf {C} =\mathbf {AC} +\mathbf {BC} }
-
+displaystyle ( mathbf A mathbf B ) mathbf C mathbf AC mathbf BC
 , bem como
-
 C
-
 (
-
 A
-
-+
-
 B
-
 )
-=
-
 C
 A
-
-+
-
 C
 B
-
-{\displaystyle \mathbf {C} (\mathbf {A} +\mathbf {B} )=\mathbf {CA} +\mathbf {CB} }
-
+displaystyle mathbf C ( mathbf A mathbf B ) mathbf CA mathbf CB
 (distributividade à esquerda e à direita), sempre que o tamanho das matrizes for tal que os vários produtos estejam definidos. O produto
-
 A
 B
-
-{\displaystyle \mathbf {AB} }
-
+displaystyle mathbf AB
 pode estar definido sem que
-
 B
 A
-
-{\displaystyle \mathbf {BA} }
-
+displaystyle mathbf BA
 esteja definido, nomeadamente se
-
 A
-
-{\displaystyle \mathbf {A} }
-
+displaystyle mathbf A
 e
-
 B
-
-{\displaystyle \mathbf {B} }
-
-forem matrizes m × n e n × k, respetivamente, e
-
+displaystyle mathbf B
+forem matrizes m n e n k, respetivamente, e
 m
-≠
 k
-
-{\displaystyle m\neq k}
-
+displaystyle m neq k
 . Mesmo que ambos os produtos estejam definidos, eles não precisam necessariamente de ser iguais, isto é:
-
 A
 B
-
-≠
-
 B
 A
-
 .
-
-{\displaystyle \mathbf {AB} \neq \mathbf {BA} .}
-
+displaystyle mathbf AB neq mathbf BA .
 Noutras palavras, a multiplicação de matrizes não é comutativa, num contraste acentuado com os números (racionais, reais ou complexos), cujo produto é independente da ordem dos fatores. Um exemplo de duas matrizes que não comutam entre si é:
-
 [
-
 1
-
 2
-
 3
-
 4
-
 ]
-
 [
-
 0
-
 1
-
 0
-
 0
-
 ]
-
-=
-
 [
-
 0
-
 1
-
 0
-
 3
-
 ]
-
 ,
-
-{\displaystyle {\begin{bmatrix}1&2\\3&4\\\end{bmatrix}}{\begin{bmatrix}0&1\\0&0\\\end{bmatrix}}={\begin{bmatrix}0&1\\0&3\\\end{bmatrix}},}
-
+displaystyle begin bmatrix 1 2 3 4 end bmatrix begin bmatrix 0 1 0 0 end bmatrix begin bmatrix 0 1 0 3 end bmatrix ,
 enquanto que
-
 [
-
 0
-
 1
-
 0
-
 0
-
 ]
-
 [
-
 1
-
 2
-
 3
-
 4
-
 ]
-
-=
-
 [
-
 3
-
 4
-
 0
-
 0
-
 ]
-
 .
-
-{\displaystyle {\begin{bmatrix}0&1\\0&0\\\end{bmatrix}}{\begin{bmatrix}1&2\\3&4\\\end{bmatrix}}={\begin{bmatrix}3&4\\0&0\\\end{bmatrix}}.}
-
+displaystyle begin bmatrix 0 1 0 0 end bmatrix begin bmatrix 1 2 3 4 end bmatrix begin bmatrix 3 4 0 0 end bmatrix .
 Além da multiplicação ordinária de matrizes recém-descrita, existem também outras operações em matrizes usadas com menos frequência que podem ser consideradas formas de multiplicação, tais como o produto de Hadamard e o produto de Kronecker. Elas surgem na resolução de equações matriciais, como a equação de Sylvester.
-
-=== Operações elementares em linha ===
-
 Existem três tipos de operações elementares em linha:
-
 adição de linhas, ou seja, somar uma linha a outra;
 multiplicação de linha, ou seja, multiplicar todas as entradas de uma linha por uma constante não-nula;
 troca de linhas, ou seja, permutar duas linhas de uma matriz.
 Estas operações são usadas de várias formas, incluindo a resolução de sistemas de equações lineares e a determinação de matrizes inversas usando a eliminação de Gauss e a eliminação de Gauss-Jordan, respetivamente.
-
-=== Submatriz ===
-Uma submatriz de uma matriz é uma matriz obtida através da exclusão de qualquer coleção de linhas ou colunas, ou ambas. Por exemplo, a partir da seguinte matriz 3 × 4, podemos construir uma submatriz 2 × 3 removendo a linha 3 e a coluna 2:
-
+Uma submatriz de uma matriz é uma matriz obtida através da exclusão de qualquer coleção de linhas ou colunas, ou ambas. Por exemplo, a partir da seguinte matriz 3 4, podemos construir uma submatriz 2 3 removendo a linha 3 e a coluna 2:
 A
-
-=
-
 [
-
 1
-
 2
-
 3
-
 4
-
 5
-
 6
-
 7
-
 8
-
 9
-
 10
-
 11
-
 12
-
 ]
-
-→
-
 [
-
 1
-
 3
-
 4
-
 5
-
 7
-
 8
-
 ]
-
 .
-
-{\displaystyle \mathbf {A} ={\begin{bmatrix}1&\color {red}{2}&3&4\\5&\color {red}{6}&7&8\\\color {red}{9}&\color {red}{10}&\color {red}{11}&\color {red}{12}\end{bmatrix}}\rightarrow {\begin{bmatrix}1&3&4\\5&7&8\end{bmatrix}}.}
-
+displaystyle mathbf A begin bmatrix 1 color red 2 3 4 5 color red 6 7 8 color red 9 color red 10 color red 11 color red 12 end bmatrix rightarrow begin bmatrix 1 3 4 5 7 8 end bmatrix .
 Os menores e cofatores de uma matriz são encontrados computando o determinante de certas submatrizes.
 Uma submatriz principal é uma submatriz quadrada obtida através da remoção de certas linhas e colunas. A definição varia de autor para autor. Segundo alguns autores, uma submatriz principal é uma submatriz na qual o conjunto de índices de linhas que restam é o mesmo que o conjunto de índices de colunas que restam. Outros autores definem uma submatriz principal como aquela em que as primeiras
-
 k
-
-{\displaystyle k}
-
+displaystyle k
 linhas e colunas, para algum número
-
 k
-
-{\displaystyle k}
-
+displaystyle k
 , são as que restam; este tipo de submatriz também tem sido chamado de submatriz principal líder.
-
-== Equações lineares ==
-
-As matrizes podem ser usadas para escrever e trabalhar de forma compacta com múltiplas equações lineares, isto é, sistemas de equações lineares. Por exemplo, se A é uma matriz m × n, x designa um vetor coluna (isto é, uma matriz n × 1) de n variáveis x1, x2, ..., xn, e b é um vetor coluna m × 1, então a equação matricial
-
+As matrizes podem ser usadas para escrever e trabalhar de forma compacta com múltiplas equações lineares, isto é, sistemas de equações lineares. Por exemplo, se A é uma matriz m n, x designa um vetor coluna (isto é, uma matriz n 1) de n variáveis x1, x2, ..., xn, e b é um vetor coluna m 1, então a equação matricial
 A
 x
-
-=
-
 b
-
-{\displaystyle \mathbf {Ax} =\mathbf {b} }
-
+displaystyle mathbf Ax mathbf b
 é equivalente ao sistema de equações lineares
-
 a
-
 1
 ,
 1
-
 x
-
 1
-
-+
-
 a
-
 1
 ,
 2
-
 x
-
 2
-
-+
-
-⋯
-+
-
 a
-
 1
 ,
 n
-
 x
-
 n
-
-=
-
 b
-
 1
-
-⋮
-
 a
-
 m
 ,
 1
-
 x
-
 1
-
-+
-
 a
-
 m
 ,
 2
-
 x
-
 2
-
-+
-
-⋯
-+
-
 a
-
 m
 ,
 n
-
 x
-
 n
-
-=
-
 b
-
 m
-
-{\displaystyle {\begin{aligned}a_{1,1}x_{1}+a_{1,2}x_{2}+&\cdots +a_{1,n}x_{n}=b_{1}\\&\ \ \vdots \\a_{m,1}x_{1}+a_{m,2}x_{2}+&\cdots +a_{m,n}x_{n}=b_{m}\end{aligned}}}
-
-Usando matrizes, isto pode ser resolvido de forma mais compacta do que seria possível escrevendo todas as equações separadamente. Se n = m e as equações forem independentes, então isto pode ser feito escrevendo
-
+displaystyle begin aligned a 1,1 x 1 a 1,2 x 2 cdots a 1,n x n b 1 vdots a m,1 x 1 a m,2 x 2 cdots a m,n x n b m end aligned
+Usando matrizes, isto pode ser resolvido de forma mais compacta do que seria possível escrevendo todas as equações separadamente. Se n m e as equações forem independentes, então isto pode ser feito escrevendo
 x
-
-=
-
 A
-
-−
 1
-
 b
-
-{\displaystyle \mathbf {x} =\mathbf {A} ^{-1}\mathbf {b} }
-
-onde A−1 é a matriz inversa de A. Se A não tiver inversa, as soluções — se existirem — podem ser encontradas usando a sua inversa generalizada.
-
-== Transformações lineares ==
-
-As matrizes e a multiplicação de matrizes revelam as suas características essenciais quando relacionadas com transformações lineares, também conhecidas como aplicações lineares. Uma matriz real m × n A dá origem a uma transformação linear
-
+displaystyle mathbf x mathbf A -1 mathbf b
+onde A 1 é a matriz inversa de A. Se A não tiver inversa, as soluções se existirem podem ser encontradas usando a sua inversa generalizada.
+As matrizes e a multiplicação de matrizes revelam as suas características essenciais quando relacionadas com transformações lineares, também conhecidas como aplicações lineares. Uma matriz real m n A dá origem a uma transformação linear
 R
-
 n
-
-→
-
 R
-
 m
-
-{\displaystyle \mathbb {R} ^{n}\to \mathbb {R} ^{m}}
-
+displaystyle mathbb R n to mathbb R m
 mapeando cada vetor x em
-
 R
-
 n
-
-{\displaystyle \mathbb {R} ^{n}}
-
+displaystyle mathbb R n
 para o produto (matricial) Ax, que é um vetor em
-
 R
-
 m
-
-{\displaystyle \mathbb {R} ^{m}}
-
+displaystyle mathbb R m
 . Inversamente, cada transformação linear
-
 f
 :
-
 R
-
 n
-
-→
-
 R
-
 m
-
-{\displaystyle f:\mathbb {R} ^{n}\to \mathbb {R} ^{m}}
-
-surge de uma única matriz m × n A: explicitamente, a entrada (i, j) de A é a i-ésima coordenada de f (ej}), onde ej = (0, ..., 0, 1, 0, ..., 0) é o vetor unitário com 1 na j-ésima posição e 0 nas restantes. Diz-se que a matriz A representa a aplicação linear f, e A é chamada a matriz de transformação de f.
-Por exemplo, a matriz 2 × 2
-
+displaystyle f: mathbb R n to mathbb R m
+surge de uma única matriz m n A: explicitamente, a entrada (i, j) de A é a i-ésima coordenada de f (ej ), onde ej (0, ..., 0, 1, 0, ..., 0) é o vetor unitário com 1 na j-ésima posição e 0 nas restantes. Diz-se que a matriz A representa a aplicação linear f, e A é chamada a matriz de transformação de f.
+Por exemplo, a matriz 2 2
 A
-
-=
-
 [
-
 a
-
 c
-
 b
-
 d
-
 ]
-
-{\displaystyle \mathbf {A} ={\begin{bmatrix}a&c\\b&d\end{bmatrix}}}
-
-pode ser vista como a transformação do quadrado unitário num paralelogramo com vértices em (0, 0), (a, b), (a + c, b + d) e (c, d). O paralelogramo retratado à direita é obtido multiplicando A sucessivamente por cada um dos vetores coluna
-
+displaystyle mathbf A begin bmatrix a c b d end bmatrix
+pode ser vista como a transformação do quadrado unitário num paralelogramo com vértices em (0, 0), (a, b), (a c, b d) e (c, d). O paralelogramo retratado à direita é obtido multiplicando A sucessivamente por cada um dos vetores coluna
 [
-
 0
-
 0
-
 ]
-
-{\displaystyle \left[{\begin{smallmatrix}0\\0\end{smallmatrix}}\right]}
-
+displaystyle left[ begin smallmatrix 0 0 end smallmatrix right]
 ,
-
 [
-
 1
-
 0
-
 ]
-
-{\displaystyle \left[{\begin{smallmatrix}1\\0\end{smallmatrix}}\right]}
-
+displaystyle left[ begin smallmatrix 1 0 end smallmatrix right]
 ,
-
 [
-
 1
-
 1
-
 ]
-
-{\displaystyle \left[{\begin{smallmatrix}1\\1\end{smallmatrix}}\right]}
-
+displaystyle left[ begin smallmatrix 1 1 end smallmatrix right]
 e
-
 [
-
 0
-
 1
-
 ]
-
-{\displaystyle \left[{\begin{smallmatrix}0\\1\end{smallmatrix}}\right]}
-
-. Estes vetores definem os vértices do quadrado unitário. A tabela seguinte mostra várias matrizes reais 2 × 2 com as aplicações lineares associadas de
-
+displaystyle left[ begin smallmatrix 0 1 end smallmatrix right]
+. Estes vetores definem os vértices do quadrado unitário. A tabela seguinte mostra várias matrizes reais 2 2 com as aplicações lineares associadas de
 R
-
 2
-
-{\displaystyle \mathbb {R} ^{2}}
-
+displaystyle mathbb R 2
 . O original a azul é mapeado para a grade e formas a verde. A origem (0, 0) está marcada com um ponto preto.
-
-Sob a correspondência biunívoca entre matrizes e aplicações lineares, a multiplicação de matrizes corresponde à composição de aplicações: se uma matriz k × m B representa outra aplicação linear
-
+Sob a correspondência biunívoca entre matrizes e aplicações lineares, a multiplicação de matrizes corresponde à composição de aplicações: se uma matriz k m B representa outra aplicação linear
 g
 :
-
 R
-
 m
-
-→
-
 R
-
 k
-
-{\displaystyle g:\mathbb {R} ^{m}\to \mathbb {R} ^{k}}
-
-, então a composição g ∘ f é representada por BA uma vez que
-
+displaystyle g: mathbb R m to mathbb R k
+, então a composição g f é representada por BA uma vez que
 (
 g
-∘
 f
 )
 (
-
 x
-
 )
-=
 g
 (
 f
 (
-
 x
-
 )
 )
-=
 g
 (
-
 A
 x
-
 )
-=
-
 B
-
 (
-
 A
 x
-
 )
-=
 (
-
 B
 A
-
 )
-
 x
-
 .
-
-{\displaystyle (g\circ f)(\mathbf {x} )=g(f(\mathbf {x} ))=g(\mathbf {Ax} )=\mathbf {B} (\mathbf {Ax} )=(\mathbf {BA} )\mathbf {x} .}
-
+displaystyle (g circ f)( mathbf x ) g(f( mathbf x )) g( mathbf Ax ) mathbf B ( mathbf Ax ) ( mathbf BA ) mathbf x .
 A última igualdade resulta da associatividade da multiplicação de matrizes supramencionada.
 O posto (ou característica) de uma matriz A é o número máximo de vetores linha linearmente independentes da matriz, que é o mesmo que o número máximo de vetores coluna linearmente independentes. Equivalentemente, é a dimensão da imagem da aplicação linear representada por A. O teorema do núcleo e da imagem afirma que a dimensão do núcleo de uma matriz mais o seu posto é igual ao número de colunas da matriz.
-
-== Matriz quadrada ==
-
-Uma matriz quadrada é uma matriz com o mesmo número de linhas e colunas. Uma matriz n × n é conhecida como uma matriz quadrada de ordem n. Quaisquer duas matrizes quadradas da mesma ordem podem ser somadas e multiplicadas.
+Uma matriz quadrada é uma matriz com o mesmo número de linhas e colunas. Uma matriz n n é conhecida como uma matriz quadrada de ordem n. Quaisquer duas matrizes quadradas da mesma ordem podem ser somadas e multiplicadas.
 As entradas
-
 a
-
 i
 i
-
-{\displaystyle a_{ii}}
-
+displaystyle a ii
 formam a diagonal principal de uma matriz quadrada. Elas situam-se na linha imaginária que vai do canto superior esquerdo ao canto inferior direito da matriz.
 Matrizes quadradas de uma dada dimensão formam um anel não comutativo, que é um dos exemplos mais comuns de um anel não comutativo.
-
-=== Tipos principais ===
-
-==== Matriz diagonal e triangular ====
 Se todas as entradas de A abaixo da diagonal principal forem zero, A é chamada de matriz triangular superior. Similarmente, se todas as entradas de A acima da diagonal principal forem zero, A é chamada de matriz triangular inferior. Se todas as entradas fora da diagonal principal forem zero, A é chamada de matriz diagonal.
-
-==== Matriz identidade ====
-
-A matriz identidade In de tamanho n é a matriz n × n na qual todos os elementos na diagonal principal são iguais a 1 e todos os outros elementos são iguais a 0, por exemplo,
-
+A matriz identidade In de tamanho n é a matriz n n na qual todos os elementos na diagonal principal são iguais a 1 e todos os outros elementos são iguais a 0, por exemplo,
 I
-
 1
-
-=
-
 [
-
 1
-
 ]
-
 ,
-
 I
-
 2
-
-=
-
 [
-
 1
-
 0
-
 0
-
 1
-
 ]
-
 ,
-
-⋮
-
 I
-
 n
-
-=
-
 [
-
 1
-
 0
-
-⋯
-
 0
-
 0
-
 1
-
-⋯
-
 0
-
-⋮
-
-⋮
-
-⋱
-
-⋮
-
 0
-
 0
-
-⋯
-
 1
-
 ]
-
-{\displaystyle {\begin{aligned}\mathbf {I} _{1}&={\begin{bmatrix}1\end{bmatrix}},\\[4pt]\mathbf {I} _{2}&={\begin{bmatrix}1&0\\0&1\end{bmatrix}},\\[4pt]\vdots &\\[4pt]\mathbf {I} _{n}&={\begin{bmatrix}1&0&\cdots &0\\0&1&\cdots &0\\\vdots &\vdots &\ddots &\vdots \\0&0&\cdots &1\end{bmatrix}}\end{aligned}}}
-
+displaystyle begin aligned mathbf I 1 begin bmatrix 1 end bmatrix , [4pt] mathbf I 2 begin bmatrix 1 0 0 1 end bmatrix , [4pt] vdots [4pt] mathbf I n begin bmatrix 1 0 cdots 0 0 1 cdots 0 vdots vdots ddots vdots 0 0 cdots 1 end bmatrix end aligned
 É uma matriz quadrada de ordem n, e também um tipo especial de matriz diagonal. Chama-se matriz identidade porque a multiplicação por ela deixa uma matriz inalterada:
-
 A
 I
-
 n
-
-=
-
 I
-
 m
-
 A
-
-=
-
 A
-
-{\displaystyle \mathbf {AI} _{n}=\mathbf {I} _{m}\mathbf {A} =\mathbf {A} }
-
-para qualquer matriz m × n A.
+displaystyle mathbf AI n mathbf I m mathbf A mathbf A
+para qualquer matriz m n A.
 Um múltiplo escalar de uma matriz identidade é chamado de matriz escalar.
-
-==== Matriz simétrica ou antissimétrica ====
-Uma matriz quadrada A que é igual à sua transposta, isto é, A = AT, é uma matriz simétrica. Se, em vez disso, A for igual ao negativo da sua transposta, isto é, A = −AT, então A é uma matriz antissimétrica. Nas matrizes complexas, a simetria é frequentemente substituída pelo conceito de matrizes hermitianas, que satisfazem A∗ = A, onde a estrela ou asterisco denota a transposta conjugada da matriz, isto é, a transposta do complexo conjugado de A.
+Uma matriz quadrada A que é igual à sua transposta, isto é, A AT, é uma matriz simétrica. Se, em vez disso, A for igual ao negativo da sua transposta, isto é, A AT, então A é uma matriz antissimétrica. Nas matrizes complexas, a simetria é frequentemente substituída pelo conceito de matrizes hermitianas, que satisfazem A A, onde a estrela ou asterisco denota a transposta conjugada da matriz, isto é, a transposta do complexo conjugado de A.
 Pelo teorema espetral, matrizes reais simétricas e matrizes complexas hermitianas têm uma base própria (eigenbasis); isto é, todo vetor é exprimível como uma combinação linear de autovetores. Em ambos os casos, todos os autovalores são reais. Este teorema pode ser generalizado para situações de dimensão infinita relacionadas a matrizes com infinitas linhas e colunas.
-
-==== Matriz inversível e a sua inversa ====
 Uma matriz quadrada A é chamada de inversível ou não singular se existir uma matriz B tal que
-
 A
 B
-
-=
-
 B
 A
-
-=
-
 I
-
 n
-
 ,
-
-{\displaystyle \mathbf {AB} =\mathbf {BA} =\mathbf {I} _{n},}
-
-onde In é a matriz identidade de n × n com 1 em cada entrada na diagonal principal e 0 nas restantes. Se B existir, é única e é chamada de matriz inversa de A, denotada por A−1.
+displaystyle mathbf AB mathbf BA mathbf I n ,
+onde In é a matriz identidade de n n com 1 em cada entrada na diagonal principal e 0 nas restantes. Se B existir, é única e é chamada de matriz inversa de A, denotada por A 1.
 Existem muitos algoritmos para testar se uma matriz quadrada é inversível e, se o for, computar a sua inversa. Um dos mais antigos, que ainda é de uso comum, é a eliminação de Gauss.
-
-==== Matriz definida ====
-
 Uma matriz real simétrica A é chamada definida positiva se a forma quadrática associada
-
 f
 (
-
 x
-
 )
-=
-
 x
-
 T
-
 A
 x
-
-{\displaystyle f(\mathbf {x} )=\mathbf {x} ^{\mathrm {T} }\mathbf {Ax} }
-
+displaystyle f( mathbf x ) mathbf x mathrm T mathbf Ax
 tiver um valor positivo para todo vetor não nulo x em
-
 R
-
 n
-
-{\displaystyle \mathbb {R} ^{n}}
-
+displaystyle mathbb R n
 . Se f(x) produzir apenas valores negativos, então A é definida negativa; se f produzir valores tanto negativos quanto positivos, então A é indefinida. Se a forma quadrática f produzir apenas valores não-negativos (positivos ou zero), a matriz simétrica é chamada de semidefinida positiva (ou se apenas valores não-positivos, então semidefinida negativa); consequentemente a matriz é indefinida exatamente quando não é nem semidefinida positiva nem semidefinida negativa.
-Uma matriz simétrica é definida positiva se, e somente se, todos os seus autovalores forem positivos, ou seja, a matriz é semidefinida positiva e é inversível. A tabela à direita mostra duas possibilidades para matrizes 2 × 2. Os autovalores de uma matriz diagonal são simplesmente as entradas ao longo da diagonal, e por isso, nestes exemplos, os autovalores podem ser lidos diretamente a partir das próprias matrizes. A primeira matriz possui dois autovalores que são ambos positivos, enquanto que a segunda possui um que é positivo e outro que é negativo.
+Uma matriz simétrica é definida positiva se, e somente se, todos os seus autovalores forem positivos, ou seja, a matriz é semidefinida positiva e é inversível. A tabela à direita mostra duas possibilidades para matrizes 2 2. Os autovalores de uma matriz diagonal são simplesmente as entradas ao longo da diagonal, e por isso, nestes exemplos, os autovalores podem ser lidos diretamente a partir das próprias matrizes. A primeira matriz possui dois autovalores que são ambos positivos, enquanto que a segunda possui um que é positivo e outro que é negativo.
 Permitir como entrada dois vetores diferentes produz, em vez disso, a forma bilinear associada a A:
-
 B
-
 A
-
 (
-
 x
-
 ,
-
 y
-
 )
-=
-
 x
-
 T
-
 A
 y
-
 .
-
-{\displaystyle B_{\mathbf {A} }(\mathbf {x} ,\mathbf {y} )=\mathbf {x} ^{\mathrm {T} }\mathbf {Ay} .}
-
+displaystyle B mathbf A ( mathbf x , mathbf y ) mathbf x mathrm T mathbf Ay .
 No caso de matrizes complexas, aplicam-se a mesma terminologia e resultados, com matriz simétrica, forma quadrática, forma bilinear e transposta xT substituídos, respetivamente, por matriz hermitiana, forma hermitiana, forma sesquilinear e transposta conjugada xH.
-
-==== Matriz ortogonal ====
-
 Uma matriz ortogonal é uma matriz quadrada com entradas reais cujas colunas e linhas são vetores unitários ortogonais (isto é, vetores ortonormais). Equivalentemente, uma matriz A é ortogonal se a sua transposta for igual à sua inversa:
-
 A
-
 T
-
-=
-
 A
-
-−
 1
-
 ,
-
-{\displaystyle \mathbf {A} ^{\mathrm {T} }=\mathbf {A} ^{-1},\,}
-
+displaystyle mathbf A mathrm T mathbf A -1 , ,
 o que implica
-
 A
-
 T
-
 A
-
-=
-
 A
-
 A
-
 T
-
-=
-
 I
-
 n
-
 ,
-
-{\displaystyle \mathbf {A} ^{\mathrm {T} }\mathbf {A} =\mathbf {A} \mathbf {A} ^{\mathrm {T} }=\mathbf {I} _{n},}
-
+displaystyle mathbf A mathrm T mathbf A mathbf A mathbf A mathrm T mathbf I n ,
 onde In é a matriz identidade de tamanho n.
-Uma matriz ortogonal A é necessariamente inversível (com a inversa A−1 = AT), unitária (A−1 = A*), e normal (A*A = AA*). O determinante de qualquer matriz ortogonal é +1 ou −1. Uma matriz ortogonal especial é uma matriz ortogonal com determinante +1. Como uma transformação linear, toda a matriz ortogonal com determinante +1 é uma rotação pura sem reflexão, ou seja, a transformação preserva a orientação da estrutura transformada, enquanto que toda a matriz ortogonal com determinante −1 inverte a orientação, isto é, é uma composição de uma reflexão pura e uma rotação (possivelmente nula). As matrizes identidade têm determinante 1 e são rotações puras por um ângulo zero.
+Uma matriz ortogonal A é necessariamente inversível (com a inversa A 1 AT), unitária (A 1 A ), e normal (A A AA ). O determinante de qualquer matriz ortogonal é 1 ou 1. Uma matriz ortogonal especial é uma matriz ortogonal com determinante 1. Como uma transformação linear, toda a matriz ortogonal com determinante 1 é uma rotação pura sem reflexão, ou seja, a transformação preserva a orientação da estrutura transformada, enquanto que toda a matriz ortogonal com determinante 1 inverte a orientação, isto é, é uma composição de uma reflexão pura e uma rotação (possivelmente nula). As matrizes identidade têm determinante 1 e são rotações puras por um ângulo zero.
 O análogo complexo de uma matriz ortogonal é uma matriz unitária.
-
-=== Principais operações ===
-
-==== Traço ====
 O traço, tr(A) de uma matriz quadrada A é a soma das suas entradas diagonais. Embora a multiplicação de matrizes não seja comutativa como mencionado acima, o traço do produto de duas matrizes é independente da ordem dos fatores:
-
 tr
-⁡
 (
-
 A
 B
-
 )
-=
 tr
-⁡
 (
-
 B
 A
-
 )
 .
-
-{\displaystyle \operatorname {tr} (\mathbf {AB} )=\operatorname {tr} (\mathbf {BA} ).}
-
+displaystyle operatorname tr ( mathbf AB ) operatorname tr ( mathbf BA ).
 Isto é imediato a partir da definição da multiplicação de matrizes:
-
 tr
-⁡
 (
-
 A
 B
-
 )
-=
-
-∑
-
 i
-=
 1
-
 m
-
-∑
-
 j
-=
 1
-
 n
-
 a
-
 i
 j
-
 b
-
 j
 i
-
-=
 tr
-⁡
 (
-
 B
 A
-
 )
 .
-
-{\displaystyle \operatorname {tr} (\mathbf {AB} )=\sum _{i=1}^{m}\sum _{j=1}^{n}a_{ij}b_{ji}=\operatorname {tr} (\mathbf {BA} ).}
-
-Resulta que o traço do produto de mais de duas matrizes é independente das permutações cíclicas das matrizes; no entanto, isso não se aplica, em geral, a permutações arbitrárias. Por exemplo, tr(ABC) ≠ tr(BAC), em geral. Além disso, o traço de uma matriz é igual ao da sua transposta, isto é,
-
+displaystyle operatorname tr ( mathbf AB ) sum i 1 m sum j 1 n a ij b ji operatorname tr ( mathbf BA ).
+Resulta que o traço do produto de mais de duas matrizes é independente das permutações cíclicas das matrizes; no entanto, isso não se aplica, em geral, a permutações arbitrárias. Por exemplo, tr(ABC) tr(BAC), em geral. Além disso, o traço de uma matriz é igual ao da sua transposta, isto é,
 tr
-⁡
 (
-
 A
-
 )
-=
 tr
-⁡
 (
-
 A
-
 T
-
 )
 .
-
-{\displaystyle \operatorname {tr} (\mathbf {A} )=\operatorname {tr} (\mathbf {A} ^{\mathrm {T} }).}
-
-==== Determinante ====
-
+displaystyle operatorname tr ( mathbf A ) operatorname tr ( mathbf A mathrm T ).
 O determinante de uma matriz quadrada A (denotado por det(A) ou
-
-|
-
 A
-
-|
-
-{\displaystyle |\mathbf {A} |}
-
+displaystyle mathbf A
 ) é um número que codifica certas propriedades da matriz. Uma matriz é inversível se e somente se o seu determinante for não nulo. O seu valor absoluto é igual à área (em
-
 R
-
 2
-
-{\displaystyle \mathbb {R} ^{2}}
-
+displaystyle mathbb R 2
 ) ou volume (em
-
 R
-
 3
-
-{\displaystyle \mathbb {R} ^{3}}
-
+displaystyle mathbb R 3
 ) da imagem do quadrado (ou cubo) unitário, enquanto o seu sinal corresponde à orientação da aplicação linear correspondente: o determinante é positivo se, e somente se, a orientação for preservada.
-O determinante de matrizes 2 × 2 é dado por
-
+O determinante de matrizes 2 2 é dado por
 det
-
 [
-
 a
-
 b
-
 c
-
 d
-
 ]
-
-=
 a
 d
-−
 b
 c
 .
-
-{\displaystyle \det {\begin{bmatrix}a&b\\c&d\end{bmatrix}}=ad-bc.}
-
-O determinante de matrizes 3 × 3 envolve seis termos (regra de Sarrus). A mais extensa fórmula de Leibniz generaliza estas duas fórmulas para todas as dimensões.
+displaystyle det begin bmatrix a b c d end bmatrix ad-bc.
+O determinante de matrizes 3 3 envolve seis termos (regra de Sarrus). A mais extensa fórmula de Leibniz generaliza estas duas fórmulas para todas as dimensões.
 O determinante de um produto de matrizes quadradas é igual ao produto dos seus determinantes:
-
 det
 (
-
 A
 B
-
 )
-=
 det
 (
-
 A
-
 )
-⋅
 det
 (
-
 B
-
 )
 ,
-
-{\displaystyle \det(\mathbf {AB} )=\det(\mathbf {A} )\cdot \det(\mathbf {B} ),}
-
+displaystyle det( mathbf AB ) det( mathbf A ) cdot det( mathbf B ),
 ou usando uma notação alternativa:
-
-|
-
 A
 B
-
-|
-
-=
-
-|
-
 A
-
-|
-
-⋅
-
-|
-
 B
-
-|
-
 .
-
-{\displaystyle |\mathbf {AB} |=|\mathbf {A} |\cdot |\mathbf {B} |.}
-
-Adicionar um múltiplo de qualquer linha a outra linha, ou um múltiplo de qualquer coluna a outra coluna, não altera o determinante. Intercambiar duas linhas ou duas colunas afeta o determinante multiplicando-o por −1. Usando estas operações, qualquer matriz pode ser transformada numa matriz triangular inferior (ou superior), e para tais matrizes, o determinante é igual ao produto das entradas na diagonal principal; isto fornece um método para calcular o determinante de qualquer matriz. Finalmente, a expansão de Laplace expressa o determinante em termos de menores, ou seja, determinantes de matrizes menores. Esta expansão pode ser usada para uma definição recursiva de determinantes (tomando como caso base o determinante de uma matriz 1 × 1, que é a sua única entrada, ou mesmo o determinante de uma matriz 0 × 0, que é 1), que pode ser visto como equivalente à fórmula de Leibniz. Os determinantes podem ser usados para resolver sistemas lineares usando a Regra de Cramer, onde a divisão dos determinantes de duas matrizes quadradas relacionadas é igual ao valor de cada uma das variáveis do sistema.
-
-==== Autovalores e autovetores ====
-
+displaystyle mathbf AB mathbf A cdot mathbf B .
+Adicionar um múltiplo de qualquer linha a outra linha, ou um múltiplo de qualquer coluna a outra coluna, não altera o determinante. Intercambiar duas linhas ou duas colunas afeta o determinante multiplicando-o por 1. Usando estas operações, qualquer matriz pode ser transformada numa matriz triangular inferior (ou superior), e para tais matrizes, o determinante é igual ao produto das entradas na diagonal principal; isto fornece um método para calcular o determinante de qualquer matriz. Finalmente, a expansão de Laplace expressa o determinante em termos de menores, ou seja, determinantes de matrizes menores. Esta expansão pode ser usada para uma definição recursiva de determinantes (tomando como caso base o determinante de uma matriz 1 1, que é a sua única entrada, ou mesmo o determinante de uma matriz 0 0, que é 1), que pode ser visto como equivalente à fórmula de Leibniz. Os determinantes podem ser usados para resolver sistemas lineares usando a Regra de Cramer, onde a divisão dos determinantes de duas matrizes quadradas relacionadas é igual ao valor de cada uma das variáveis do sistema.
 Um número
-
-λ
-
-{\displaystyle \lambda }
-
+displaystyle lambda
 e um vetor não nulo
-
 v
-
-{\displaystyle \mathbf {v} }
-
+displaystyle mathbf v
 que satisfaçam
-
 A
-
 v
-
-=
-λ
-
 v
-
-{\displaystyle \mathbf {A} \mathbf {v} =\lambda \mathbf {v} }
-
+displaystyle mathbf A mathbf v lambda mathbf v
 são chamados de autovalor e autovetor de
-
 A
-
-{\displaystyle \mathbf {A} }
-
+displaystyle mathbf A
 , respetivamente. O número
-
-λ
-
-{\displaystyle \lambda }
-
+displaystyle lambda
 é um autovalor de uma matriz
-
 n
-×
 n
-
-{\displaystyle n\times n}
-
+displaystyle n times n
 A
-
-{\displaystyle \mathbf {A} }
-
+displaystyle mathbf A
 se, e somente se, a matriz
-
 A
-
-−
-λ
-
 I
-
 n
-
-{\displaystyle \mathbf {A} -\lambda \mathbf {I} _{n}}
-
+displaystyle mathbf A - lambda mathbf I n
 não for inversível, o que é logicamente equivalente a
-
 det
 (
-
 A
-
-−
-λ
-
 I
-
 n
-
 )
-=
 0.
-
-{\displaystyle \det(\mathbf {A} -\lambda \mathbf {I} _{n})=0.}
-
+displaystyle det( mathbf A - lambda mathbf I n ) 0.
 O polinômio
-
 p
-
 A
-
-{\displaystyle p_{\mathbf {A} }}
-
+displaystyle p mathbf A
 numa indeterminada
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 dado pela avaliação do determinante
-
 det
 (
 X
-
 I
-
 n
-
-−
-
 A
-
 )
-
-{\displaystyle \det(X\mathbf {I} _{n}-\mathbf {A} )}
-
+displaystyle det(X mathbf I n - mathbf A )
 é chamado de polinômio característico de
-
 A
-
-{\displaystyle \mathbf {A} }
-
+displaystyle mathbf A
 . É um polinômio mônico de grau
-
 n
-
-{\displaystyle n}
-
+displaystyle n
 . Portanto, a equação polinomial
-
 p
-
 A
-
 (
-λ
 )
-=
 0
-
-{\displaystyle p_{\mathbf {A} }(\lambda )=0}
-
+displaystyle p mathbf A ( lambda ) 0
 possui no máximo
-
 n
-
-{\displaystyle n}
-
+displaystyle n
 soluções diferentes, isto é, autovalores da matriz. Eles podem ser complexos mesmo que as entradas de
-
 A
-
-{\displaystyle \mathbf {A} }
-
+displaystyle mathbf A
 sejam reais. De acordo com o teorema de Cayley-Hamilton,
-
 p
-
 A
-
 (
-
 A
-
 )
-=
-
 0
-
-{\displaystyle p_{\mathbf {A} }(\mathbf {A} )=\mathbf {0} }
-
+displaystyle p mathbf A ( mathbf A ) mathbf 0
 , ou seja, o resultado da substituição da própria matriz no seu polinômio característico produz a matriz nula.
-
-== Aspectos computacionais ==
 Os cálculos matriciais podem frequentemente ser realizados com diferentes técnicas. Muitos problemas podem ser resolvidos tanto por algoritmos diretos quanto por abordagens iterativas. Por exemplo, os autovetores de uma matriz quadrada podem ser obtidos encontrando uma sequência de vetores xn que convergem para um autovetor quando n tende ao infinito.
 Para escolher o algoritmo mais apropriado para cada problema específico, é importante determinar tanto a eficácia quanto a precisão de todos os algoritmos disponíveis. O domínio que estuda estes assuntos é chamado de álgebra linear numérica. Tal como noutras situações numéricas, dois aspetos principais são a complexidade dos algoritmos e a sua estabilidade numérica.
 Determinar a complexidade de um algoritmo significa encontrar limites superiores ou estimativas de quantas operações elementares, tais como adições e multiplicações de escalares, são necessárias para executar algum algoritmo, por exemplo, a multiplicação de matrizes. Calcular o produto matricial de duas matrizes n-por-n usando a definição dada acima requer n3 multiplicações, uma vez que para qualquer uma das n2 entradas do produto, são necessárias n multiplicações. O algoritmo de Strassen supera este algoritmo "ingênuo"; ele precisa apenas de n2.807 multiplicações. Algoritmos de multiplicação de matrizes teoricamente mais rápidos, mas impraticáveis, foram desenvolvidos, assim como acelerações para este problema usando algoritmos paralelos ou sistemas de computação distribuída como o MapReduce.
-Em muitas situações práticas, são conhecidas informações adicionais sobre as matrizes envolvidas. Um caso importante diz respeito às matrizes esparsas, ou seja, matrizes cujas entradas são maioritariamente zero. Existem algoritmos especificamente adaptados para, por exemplo, resolver sistemas lineares Ax = b para matrizes esparsas A, tal como o método dos gradientes conjugados.
+Em muitas situações práticas, são conhecidas informações adicionais sobre as matrizes envolvidas. Um caso importante diz respeito às matrizes esparsas, ou seja, matrizes cujas entradas são maioritariamente zero. Existem algoritmos especificamente adaptados para, por exemplo, resolver sistemas lineares Ax b para matrizes esparsas A, tal como o método dos gradientes conjugados.
 Um algoritmo é, grosso modo, numericamente estável se pequenos desvios nos valores de entrada não levarem a grandes desvios no resultado. Por exemplo, pode-se calcular a inversa de uma matriz computando a sua matriz adjunta:
-
 A
-
-−
 1
-
-=
 adj
-⁡
 (
-
 A
-
 )
-
 /
-
 det
 (
-
 A
-
 )
 .
-
-{\displaystyle \mathbf {A} ^{-1}=\operatorname {adj} (\mathbf {A} )/\det(\mathbf {A} ).}
-
+displaystyle mathbf A -1 operatorname adj ( mathbf A )/ det( mathbf A ).
 No entanto, isto pode levar a erros de arredondamento significativos se o determinante da matriz for muito pequeno. A norma de uma matriz pode ser usada para capturar o condicionamento de problemas algébricos lineares, tais como a computação da inversa de uma matriz.
-
-== Decomposição ==
-
 Existem vários métodos para transformar matrizes numa forma mais facilmente acessível. Eles são geralmente referidos como técnicas de decomposição de matrizes ou fatoração de matrizes. Estas técnicas são de interesse porque podem facilitar as computações.
-A decomposição LU fatora matrizes como um produto de matrizes triangulares inferior (L) e superior (U). Uma vez que esta decomposição é calculada, sistemas lineares podem ser resolvidos de forma mais eficiente por uma técnica simples chamada substituição progressiva e regressiva. Da mesma forma, as inversas de matrizes triangulares são algoritmicamente mais fáceis de calcular. A eliminação de Gauss é um algoritmo semelhante; ela transforma qualquer matriz na forma escalonada. Ambos os métodos procedem multiplicando a matriz por matrizes elementares adequadas, que correspondem a permutar linhas ou colunas e adicionar múltiplos de uma linha a outra linha. A decomposição em valores singulares (SVD) expressa qualquer matriz A como um produto UDV∗, onde U e V são matrizes unitárias e D é uma matriz diagonal.
-
-A decomposição em autovalores ou diagonalização expressa A como um produto VDV−1, onde D é uma matriz diagonal e V é uma matriz inversível adequada. Se A puder ser escrita nesta forma, é chamada de matriz diagonalizável. Mais genericamente, e aplicável a todas as matrizes, a decomposição de Jordan transforma uma matriz na forma normal de Jordan, ou seja, matrizes cujas únicas entradas não-nulas são os autovalores λ1 a λn de A, colocados na diagonal principal, e possivelmente entradas iguais a um diretamente acima da diagonal principal, como mostrado à direita. Dada a decomposição em autovalores, a n-ésima potência de A (isto é, a multiplicação de matrizes iterada n vezes) pode ser calculada através de
-
+A decomposição LU fatora matrizes como um produto de matrizes triangulares inferior (L) e superior (U). Uma vez que esta decomposição é calculada, sistemas lineares podem ser resolvidos de forma mais eficiente por uma técnica simples chamada substituição progressiva e regressiva. Da mesma forma, as inversas de matrizes triangulares são algoritmicamente mais fáceis de calcular. A eliminação de Gauss é um algoritmo semelhante; ela transforma qualquer matriz na forma escalonada. Ambos os métodos procedem multiplicando a matriz por matrizes elementares adequadas, que correspondem a permutar linhas ou colunas e adicionar múltiplos de uma linha a outra linha. A decomposição em valores singulares (SVD) expressa qualquer matriz A como um produto UDV , onde U e V são matrizes unitárias e D é uma matriz diagonal.
+A decomposição em autovalores ou diagonalização expressa A como um produto VDV 1, onde D é uma matriz diagonal e V é uma matriz inversível adequada. Se A puder ser escrita nesta forma, é chamada de matriz diagonalizável. Mais genericamente, e aplicável a todas as matrizes, a decomposição de Jordan transforma uma matriz na forma normal de Jordan, ou seja, matrizes cujas únicas entradas não-nulas são os autovalores 1 a n de A, colocados na diagonal principal, e possivelmente entradas iguais a um diretamente acima da diagonal principal, como mostrado à direita. Dada a decomposição em autovalores, a n-ésima potência de A (isto é, a multiplicação de matrizes iterada n vezes) pode ser calculada através de
 A
-
 n
-
-=
 (
-
 V
 D
 V
-
-−
 1
-
 )
-
 n
-
-=
-
 V
 D
 V
-
-−
 1
-
 V
 D
 V
-
-−
 1
-
-…
-
+...
 V
 D
 V
-
-−
 1
-
-=
-
 V
 D
-
 n
-
 V
-
-−
 1
-
-{\displaystyle \mathbf {A} ^{n}=(\mathbf {VDV} ^{-1})^{n}=\mathbf {VDV} ^{-1}\mathbf {VDV} ^{-1}\ldots \mathbf {VDV} ^{-1}=\mathbf {VD} ^{n}\mathbf {V} ^{-1}}
-
+displaystyle mathbf A n ( mathbf VDV -1 ) n mathbf VDV -1 mathbf VDV -1 ldots mathbf VDV -1 mathbf VD n mathbf V -1
 e a potência de uma matriz diagonal pode ser calculada tomando as potências correspondentes das entradas diagonais, o que é muito mais fácil do que fazer a exponenciação para A em vez disso. Isto pode ser usado para computar a exponencial de matrizes eA, uma necessidade que surge frequentemente na resolução de equações diferenciais lineares, logaritmos de matrizes e raízes quadradas de matrizes. Para evitar situações numericamente mal condicionadas, outros algoritmos, tais como a decomposição de Schur, podem ser empregues.
-
-== Aspetos algébricos abstratos e generalizações ==
 As matrizes podem ser generalizadas de diferentes formas. A álgebra abstrata utiliza matrizes com entradas em corpos mais gerais ou mesmo em anéis, enquanto a álgebra linear codifica as propriedades das matrizes na noção de aplicações lineares. É possível considerar matrizes com infinitas colunas e linhas. Outra extensão são os tensores, que podem ser vistos como arranjos de números de dimensões superiores, em contraste com os vetores, que podem frequentemente ser compreendidos como sequências de números, ao passo que as matrizes são arranjos de números retangulares ou bidimensionais. As matrizes, sujeitas a certos requisitos, tendem a formar grupos conhecidos como grupos de matrizes. Da mesma forma, sob certas condições, as matrizes formam anéis conhecidos como anéis de matrizes. Embora o produto de matrizes não seja em geral comutativo, certas matrizes formam corpos por vezes chamados de corpos de matrizes. (No entanto, o termo "corpo de matrizes" é ambíguo, referindo-se também a certas formas de campos físicos que mapeiam continuamente os pontos de algum espaço para matrizes.) Em geral, matrizes sobre qualquer anel e a sua multiplicação podem ser representadas como as setas e a composição de setas numa categoria, a categoria das matrizes sobre esse anel. Os objetos desta categoria são números naturais, representando as dimensões das matrizes.
-
-=== Matrizes com entradas num corpo ou anel ===
 Este artigo foca-se em matrizes cujas entradas são números reais ou complexos. No entanto, as matrizes podem ser consideradas com tipos de entradas muito mais gerais do que números reais ou complexos. Como um primeiro passo de generalização, qualquer corpo, isto é, um conjunto onde as operações de adição, subtração, multiplicação e divisão estão definidas e bem-comportadas, pode ser usado em vez de
-
 R
-
-{\displaystyle \mathbb {R} }
-
+displaystyle mathbb R
 ou
-
 C
-
-{\displaystyle \mathbb {C} }
-
+displaystyle mathbb C
 , por exemplo, números racionais ou corpos finitos. Por exemplo, a teoria de códigos faz uso de matrizes sobre corpos finitos. Onde quer que os autovalores sejam considerados, como estes são raízes de um polinômio, eles podem existir apenas num corpo maior do que o das entradas da matriz. Por exemplo, podem ser complexos no caso de uma matriz com entradas reais. A possibilidade de reinterpretar as entradas de uma matriz como elementos de um corpo maior (por exemplo, para ver uma matriz real como uma matriz complexa cujas entradas calham de ser todas reais) permite então considerar que cada matriz quadrada possui um conjunto completo de autovalores. Em alternativa, pode-se considerar desde o início apenas matrizes com entradas num corpo algebricamente fechado, como
-
 C
-
-{\displaystyle \mathbb {C} }
-
+displaystyle mathbb C
 .
-Matrizes cujas entradas são polinômios, e, mais genericamente, matrizes com entradas num anel R são amplamente utilizadas na matemática. Os anéis são uma noção mais geral do que os corpos na medida em que uma operação de divisão não precisa de existir. As mesmíssimas operações de adição e multiplicação de matrizes estendem-se também a este contexto. O conjunto M(n, R) (também denotado Mn(R)) de todas as matrizes quadradas n × n sobre R é um anel chamado de anel de matrizes, isomorfo ao anel de endomorfismos do R-módulo à esquerda
-
+Matrizes cujas entradas são polinômios, e, mais genericamente, matrizes com entradas num anel R são amplamente utilizadas na matemática. Os anéis são uma noção mais geral do que os corpos na medida em que uma operação de divisão não precisa de existir. As mesmíssimas operações de adição e multiplicação de matrizes estendem-se também a este contexto. O conjunto M(n, R) (também denotado Mn(R)) de todas as matrizes quadradas n n sobre R é um anel chamado de anel de matrizes, isomorfo ao anel de endomorfismos do R-módulo à esquerda
 R
-
 n
-
-{\displaystyle R^{n}}
-
+displaystyle R n
 . Se o anel R for comutativo, ou seja, a sua multiplicação é comutativa, então o anel M(n, R) é também uma álgebra associativa sobre R. O determinante de matrizes quadradas sobre um anel comutativo R ainda pode ser definido usando a fórmula de Leibniz; uma tal matriz é inversível se e somente se o seu determinante for inversível em R, generalizando a situação sobre um corpo F, onde todo elemento não nulo é inversível. Matrizes sobre superanéis são chamadas de supermatrizes.
-As matrizes nem sempre têm todas as suas entradas no mesmo anel — ou sequer num anel qualquer. Um caso especial mas comum são as matrizes em blocos, que podem ser consideradas como matrizes cujas próprias entradas são matrizes. As entradas não precisam de ser matrizes quadradas e, portanto, não precisam de ser membros de nenhum anel; mas para as multiplicar, os seus tamanhos devem satisfazer certas condições: cada par de submatrizes que são multiplicadas na formação do produto global deve ter tamanhos compatíveis.
-
-=== Relação com as aplicações lineares ===
+As matrizes nem sempre têm todas as suas entradas no mesmo anel ou sequer num anel qualquer. Um caso especial mas comum são as matrizes em blocos, que podem ser consideradas como matrizes cujas próprias entradas são matrizes. As entradas não precisam de ser matrizes quadradas e, portanto, não precisam de ser membros de nenhum anel; mas para as multiplicar, os seus tamanhos devem satisfazer certas condições: cada par de submatrizes que são multiplicadas na formação do produto global deve ter tamanhos compatíveis.
 Aplicações lineares
-
 R
-
 n
-
-→
-
 R
-
 m
-
-{\displaystyle \mathbb {R} ^{n}\to \mathbb {R} ^{m}}
-
-são equivalentes a matrizes m × n, conforme descrito acima. Mais geralmente, qualquer aplicação linear f : V → W entre espaços vetoriais de dimensão finita pode ser descrita por uma matriz A = (aij), após a escolha de bases v1, ..., vn de V, e w1, ..., wm de W (de forma que n é a dimensão de V e m é a dimensão de W), de tal modo que
-
+displaystyle mathbb R n to mathbb R m
+são equivalentes a matrizes m n, conforme descrito acima. Mais geralmente, qualquer aplicação linear f : V W entre espaços vetoriais de dimensão finita pode ser descrita por uma matriz A (aij), após a escolha de bases v1, ..., vn de V, e w1, ..., wm de W (de forma que n é a dimensão de V e m é a dimensão de W), de tal modo que
 f
 (
-
 v
-
 j
-
 )
-=
-
-∑
-
 i
-=
 1
-
 m
-
 a
-
 i
 ,
 j
-
 w
-
 i
-
 para
-
 j
-=
 1
 ,
-…
+...
 ,
 n
 .
-
-{\displaystyle f(\mathbf {v} _{j})=\sum _{i=1}^{m}a_{i,j}\mathbf {w} _{i}\qquad {\mbox{para}}\ j=1,\ldots ,n.}
-
+displaystyle f( mathbf v j ) sum i 1 m a i,j mathbf w i qquad mbox para j 1, ldots ,n.
 Por outras palavras, a coluna j de A expressa a imagem de vj em termos dos vetores da base wi de W; assim, esta relação determina univocamente as entradas da matriz A. A matriz depende da escolha das bases: diferentes escolhas de bases dão origem a matrizes diferentes, mas equivalentes. Muitas das noções concretas acima podem ser reinterpretadas a esta luz, por exemplo, a matriz transposta AT descreve a transposta de uma aplicação linear dada por A, no que diz respeito às bases duais.
 Estas propriedades podem ser reformuladas mais naturalmente: a categoria das matrizes com entradas num corpo
-
 k
-
-{\displaystyle k}
-
+displaystyle k
 com a multiplicação como composição é equivalente à categoria de espaços vetoriais de dimensão finita e aplicações lineares sobre este corpo.
-Mais geralmente, o conjunto de matrizes m × n pode ser usado para representar as aplicações R-lineares entre os módulos livres
-
+Mais geralmente, o conjunto de matrizes m n pode ser usado para representar as aplicações R-lineares entre os módulos livres
 R
-
 m
-
-{\displaystyle R^{m}}
-
+displaystyle R m
 e
-
 R
-
 n
-
-{\displaystyle R^{n}}
-
-para um anel arbitrário R com unidade. Quando n = m, a composição destas aplicações é possível, e isto dá origem ao anel de matrizes de matrizes n × n representando o anel de endomorfismos de
-
+displaystyle R n
+para um anel arbitrário R com unidade. Quando n m, a composição destas aplicações é possível, e isto dá origem ao anel de matrizes de matrizes n n representando o anel de endomorfismos de
 R
-
 n
-
-{\displaystyle R^{n}}
-
+displaystyle R n
 .
-
-=== Grupos de matrizes ===
-
 Um grupo é uma estrutura matemática que consiste num conjunto de objetos juntamente com uma operação binária, isto é, uma operação que combina quaisquer dois objetos para formar um terceiro, sujeita a certos requisitos. Um grupo no qual os objetos são matrizes
-
 n
-×
 n
-
-{\displaystyle n\times n}
-
+displaystyle n times n
 inversíveis e a operação de grupo é a multiplicação de matrizes é chamado de grupo de matrizes de grau
-
 n
-
-{\displaystyle n}
-
+displaystyle n
 . Todo este grupo de matrizes é um subgrupo de (ou seja, um grupo menor contido dentro de) o grupo de todas as matrizes
-
 n
-×
 n
-
-{\displaystyle n\times n}
-
+displaystyle n times n
 inversíveis, o grupo linear geral de grau
-
 n
-
-{\displaystyle n}
-
+displaystyle n
 .
 Qualquer propriedade de matrizes quadradas que seja preservada sob produtos e inversas de matrizes pode ser usada para definir um grupo de matrizes. Por exemplo, o conjunto de todas as matrizes
-
 n
-×
 n
-
-{\displaystyle n\times n}
-
+displaystyle n times n
 cujo determinante é 1 forma um grupo chamado o grupo linear especial de grau
-
 n
-
-{\displaystyle n}
-
+displaystyle n
 . O conjunto de matrizes ortogonais, determinado pela condição
-
 M
-
 T
-
 M
-
-=
-
 I
-
 ,
-
-{\displaystyle \mathbf {M} ^{\mathrm {T} }\mathbf {M} =\mathbf {I} ,}
-
-forma o grupo ortogonal. Toda matriz ortogonal tem um determinante 1 ou −1. As matrizes ortogonais com determinante 1 formam um grupo chamado o grupo ortogonal especial.
+displaystyle mathbf M mathrm T mathbf M mathbf I ,
+forma o grupo ortogonal. Toda matriz ortogonal tem um determinante 1 ou 1. As matrizes ortogonais com determinante 1 formam um grupo chamado o grupo ortogonal especial.
 Todo grupo finito é isomorfo a um grupo de matrizes, como se pode ver considerando a representação regular do grupo simétrico. Grupos gerais podem ser estudados usando grupos de matrizes, que são comparativamente bem compreendidos, usando a teoria de representação.
-
-=== Matrizes infinitas ===
 Também é possível considerar matrizes com infinitas linhas e colunas. As operações básicas introduzidas acima são definidas da mesma forma neste caso. A multiplicação de matrizes, no entanto, e todas as operações que dela derivam são significativas apenas quando restritas a certas matrizes, uma vez que a soma que figura na definição acima do produto matricial conterá uma infinidade de parcelas. Uma forma fácil de contornar esta questão é restringir a matrizes finitárias cujas linhas (ou colunas) contêm todas apenas um número finito de termos não-nulos. Tal como no caso finito (ver acima), onde as matrizes descrevem aplicações lineares, as matrizes infinitas podem ser usadas para descrever operadores em espaços de Hilbert, onde surgem questões de convergência e continuidade. Contudo, o ponto de vista explícito das matrizes tende a ofuscar a questão, sendo antes utilizadas as ferramentas abstratas e mais poderosas da análise funcional, relacionando matrizes com aplicações lineares (como no caso finito acima), mas impondo restrições adicionais de convergência e continuidade.
-
-=== Matriz vazia ===
-Uma matriz vazia é uma matriz na qual o número de linhas ou colunas (ou ambos) é zero. As matrizes vazias podem ser um caso base útil para certas construções recursivas, e podem ajudar a lidar com aplicações envolvendo o espaço vetorial trivial. Por exemplo, se A for uma matriz 3 × 0 e B for uma matriz 0 × 3, então AB é a matriz nula 3 × 3 correspondente à aplicação nula de um espaço de 3 dimensões V nele próprio, enquanto que BA é uma matriz 0 × 0. Não existe uma notação comum para matrizes vazias, mas a maioria dos sistemas de computação algébrica permite criá-las e computar com elas. O determinante da matriz 0 × 0 é convencionalmente definido como 1, consistente com o produto vazio que ocorre na fórmula de Leibniz para o determinante. Este valor também é necessário para manter a consistência com o caso 2 × 2 da identidade de Desnanot-Jacobi que relaciona determinantes aos determinantes de matrizes menores.
-
-=== Matrizes com entradas num semianel ===
+Uma matriz vazia é uma matriz na qual o número de linhas ou colunas (ou ambos) é zero. As matrizes vazias podem ser um caso base útil para certas construções recursivas, e podem ajudar a lidar com aplicações envolvendo o espaço vetorial trivial. Por exemplo, se A for uma matriz 3 0 e B for uma matriz 0 3, então AB é a matriz nula 3 3 correspondente à aplicação nula de um espaço de 3 dimensões V nele próprio, enquanto que BA é uma matriz 0 0. Não existe uma notação comum para matrizes vazias, mas a maioria dos sistemas de computação algébrica permite criá-las e computar com elas. O determinante da matriz 0 0 é convencionalmente definido como 1, consistente com o produto vazio que ocorre na fórmula de Leibniz para o determinante. Este valor também é necessário para manter a consistência com o caso 2 2 da identidade de Desnanot-Jacobi que relaciona determinantes aos determinantes de matrizes menores.
 Um semianel é semelhante a um anel, mas os elementos não precisam de ter inversos aditivos, portanto, não se pode fazer subtrações livremente nele. A definição de adição e multiplicação de matrizes com entradas num anel aplica-se a matrizes com entradas num semianel sem modificações. Matrizes de tamanho fixo com entradas num semianel formam um monoide comutativo
-
 Mat
-⁡
 (
 m
 ,
@@ -3292,354 +1611,176 @@ n
 ;
 R
 )
-
-{\displaystyle \operatorname {Mat} (m,n;R)}
-
+displaystyle operatorname Mat (m,n;R)
 sob a adição. Matrizes quadradas de tamanho fixo com entradas num semianel formam um semianel
-
 Mat
-⁡
 (
 n
 ;
 R
 )
-
-{\displaystyle \operatorname {Mat} (n;R)}
-
+displaystyle operatorname Mat (n;R)
 sob a adição e a multiplicação.
-O determinante de uma matriz quadrada n × n
-
+O determinante de uma matriz quadrada n n
 M
-
-{\displaystyle M}
-
+displaystyle M
 com entradas num semianel comutativo
-
 R
-
-{\displaystyle R}
-
+displaystyle R
 não pode ser definido em geral porque a definição envolveria inversos aditivos dos elementos do semianel. O que desempenha esse papel, em vez disso, é o par de determinantes positivo e negativo
-
 det
-
-+
-
 M
-=
-
-∑
-
-σ
-∈
 Alt
-⁡
 (
 n
 )
-
 M
-
 1
-σ
 (
 1
 )
-
-⋯
-
 M
-
 n
-σ
 (
 n
 )
-
-{\displaystyle \det \nolimits _{+}M=\sum _{\sigma \in \operatorname {Alt} (n)}M_{1\sigma (1)}\cdots M_{n\sigma (n)}}
-
+displaystyle det nolimits M sum sigma in operatorname Alt (n) M 1 sigma (1) cdots M n sigma (n)
 det
-
-−
-
 M
-=
-
-∑
-
-σ
-∈
 Sym
-⁡
 (
 n
 )
-∖
 Alt
-⁡
 (
 n
 )
-
 M
-
 1
-σ
 (
 1
 )
-
-⋯
-
 M
-
 n
-σ
 (
 n
 )
-
-{\displaystyle \det \nolimits _{-}M=\sum _{\sigma \in \operatorname {Sym} (n)\setminus \operatorname {Alt} (n)}M_{1\sigma (1)}\cdots M_{n\sigma (n)}}
-
+displaystyle det nolimits - M sum sigma in operatorname Sym (n) setminus operatorname Alt (n) M 1 sigma (1) cdots M n sigma (n)
 onde as somas são tomadas sobre permutações pares e permutações ímpares, respetivamente.
-
-=== Matrizes com entradas numa categoria ===
 Matrizes e a sua multiplicação podem ser definidas com entradas que são objetos de uma categoria equipada com um "produto tensorial" semelhante à multiplicação num anel, tendo coprodutos semelhantes à adição num anel, sendo que o primeiro é distributivo sobre o segundo. No entanto, a multiplicação assim definida pode ser associativa apenas num sentido mais fraco que o habitual. Estas fazem parte de uma estrutura maior chamada bicategoria de matrizes. Segue-se a descrição completa do resumo acima para os leitores interessados.
 Seja
-
 (
-
 C
-
 ,
-⊗
 ,
 I
 )
-
-{\displaystyle ({\mathcal {C}},\otimes ,I)}
-
+displaystyle ( mathcal C , otimes ,I)
 uma categoria monoidal que satisfaz as duas seguintes condições:
-
 Todos os (pequenos) coprodutos existem; em particular, seja
-
-∅
-
-{\displaystyle \varnothing }
-
+displaystyle varnothing
 um objeto inicial.
 O funtor
-
-⊗
-
-{\displaystyle \otimes }
-
+displaystyle otimes
 é distributivo sobre os coprodutos; isto é, para todo objeto
-
 X
-
-{\displaystyle X}
-
+displaystyle X
 e uma família de objetos
-
 (
-
 Y
-
 i
-
 )
-
 i
-∈
 I
-
-{\displaystyle (Y_{i})_{i\in I}}
-
+displaystyle (Y i ) i in I
 em
-
 C
-
-{\displaystyle {\mathcal {C}}}
-
+displaystyle mathcal C
 , os
-
 C
-
-{\displaystyle {\mathcal {C}}}
-
+displaystyle mathcal C
 -morfismos canónicos
-
-∐
-
 i
-∈
 I
-
 (
 X
-⊗
-
 Y
-
 i
-
 )
-→
 X
-⊗
-
-∐
-
 i
-∈
 I
-
 Y
-
 i
-
-{\displaystyle \coprod _{i\in I}(X\otimes Y_{i})\to X\otimes \coprod _{i\in I}Y_{i}}
-
-∐
-
+displaystyle coprod i in I (X otimes Y i ) to X otimes coprod i in I Y i
 i
-∈
 I
-
 (
-
 Y
-
 i
-
-⊗
 X
 )
-→
-
 (
-
-∐
-
 i
-∈
 I
-
 Y
-
 i
-
 )
-
-⊗
 X
-
-{\displaystyle \coprod _{i\in I}(Y_{i}\otimes X)\to \left(\coprod _{i\in I}Y_{i}\right)\otimes X}
-
+displaystyle coprod i in I (Y i otimes X) to left( coprod i in I Y i right) otimes X
 são isomorfismos. Em particular, os morfismos canónicos
-
-∅
-→
 X
-⊗
-∅
-
-{\displaystyle \varnothing \to X\otimes \varnothing }
-
+displaystyle varnothing to X otimes varnothing
 e
-
-∅
-→
-∅
-⊗
 X
-
-{\displaystyle \varnothing \to \varnothing \otimes X}
-
+displaystyle varnothing to varnothing otimes X
 são isomorfismos.
 Então, a bicategoria de
-
 C
-
-{\displaystyle {\mathcal {C}}}
-
+displaystyle mathcal C
 -matrizes
-
 Mat
-⁡
 (
-
 C
-
 )
-
-{\displaystyle \operatorname {Mat} ({\mathcal {C}})}
-
+displaystyle operatorname Mat ( mathcal C )
 é definida da seguinte forma:
-
 Os objetos são os conjuntos.
 Um 1-morfismo
-
 M
 :
 A
-→
 B
-
-{\displaystyle M\colon A\to B}
-
+displaystyle M colon A to B
 é uma aplicação
-
 M
 :
 A
-×
 B
-→
 Ob
-⁡
 (
-
 C
-
 )
-
-{\displaystyle M\colon A\times B\to \operatorname {Ob} ({\mathcal {C}})}
-
+displaystyle M colon A times B to operatorname Ob ( mathcal C )
 ; isto é simplesmente uma matriz sobre
-
 C
-
-{\displaystyle {\mathcal {C}}}
-
+displaystyle mathcal C
 .
 A composição dos 1-morfismos
-
 M
 :
 A
-→
 B
-
-{\displaystyle M\colon A\to B}
-
+displaystyle M colon A to B
 e
-
 N
 :
 B
-→
 C
-
-{\displaystyle N\colon B\to C}
-
+displaystyle N colon B to C
 , que pode ser entendida como a multiplicação de matrizes, é
-
 (
 N
-∘
 M
 )
 (
@@ -3647,21 +1788,14 @@ a
 ,
 c
 )
-=
-
-∐
-
 b
-∈
 B
-
 M
 (
 a
 ,
 b
 )
-⊗
 N
 (
 b
@@ -3669,74 +1803,41 @@ b
 c
 )
 .
-
-{\displaystyle (N\circ M)(a,c)=\coprod _{b\in B}M(a,b)\otimes N(b,c).}
-
+displaystyle (N circ M)(a,c) coprod b in B M(a,b) otimes N(b,c).
 O 1-morfismo identidade em
-
 A
-
-{\displaystyle A}
-
+displaystyle A
 é
-
 id
-
 A
-
-⁡
 (
 a
 ,
 b
 )
-=
-
-{
-
 I
-
 a
-=
 b
-
-∅
-
 a
-≠
 b
-
 .
-
-{\displaystyle \operatorname {id} _{A}(a,b)={\begin{cases}I&a=b\\\varnothing &a\neq b\end{cases}}.}
-
+displaystyle operatorname id A (a,b) begin cases I a b varnothing a neq b end cases .
 Um 2-morfismo entre os 1-morfismos
-
 M
 ,
 N
 :
 A
-→
 B
-
-{\displaystyle M,N\colon A\to B}
-
+displaystyle M,N colon A to B
 é uma família de
-
 C
-
-{\displaystyle {\mathcal {C}}}
-
+displaystyle mathcal C
 -morfismos
-
 (
-
 f
-
 a
 b
-
 :
 M
 (
@@ -3744,270 +1845,134 @@ a
 ,
 b
 )
-→
 N
 (
 a
 ,
 b
 )
-
 )
-
 (
 a
 ,
 b
 )
-∈
 A
-×
 B
-
-{\displaystyle (f_{ab}\colon M(a,b)\to N(a,b))_{(a,b)\in A\times B}}
-
+displaystyle (f ab colon M(a,b) to N(a,b)) (a,b) in A times B
 . A definição de composição vertical e horizontal dos 2-morfismos é natural: a composição vertical é a composição componente a componente de
-
 C
-
-{\displaystyle {\mathcal {C}}}
-
+displaystyle mathcal C
 -morfismos; a composição horizontal é a que deriva da funtorialidade de
-
-⊗
-
-{\displaystyle \otimes }
-
+displaystyle otimes
 e da propriedade universal dos coprodutos.
 Em geral, a bicategoria de matrizes não precisa de ser uma 2-categoria estrita. Por exemplo, a composição de 1-morfismos pode não ser associativa no sentido estrito usual, mas apenas até um isomorfismo coerente.
-
-== Aplicações ==
 Existem inúmeras aplicações de matrizes, tanto na matemática quanto noutras ciências. Algumas delas apenas tiram proveito da representação compacta de um conjunto de números numa matriz. Por exemplo, a mineração de texto e a compilação automatizada de tesauros fazem uso de matrizes documento-termo (document-term matrices), tais como a tf-idf, para rastrear frequências de certas palavras em vários documentos.
-Números complexos podem ser representados por matrizes reais particulares 2 × 2 através de
-
+Números complexos podem ser representados por matrizes reais particulares 2 2 através de
 a
-+
 i
 b
-↔
-
 [
-
 a
-
-−
 b
-
 b
-
 a
-
 ]
-
 ,
-
-{\displaystyle a+ib\leftrightarrow {\begin{bmatrix}a&-b\\b&a\end{bmatrix}},}
-
-sob as quais a adição e a multiplicação de números complexos e matrizes correspondem entre si. Por exemplo, matrizes de rotação 2 × 2 representam a multiplicação por um número complexo de valor absoluto 1, como acima. Uma interpretação semelhante é possível para os quatérnios e as álgebras de Clifford em geral.
+displaystyle a ib leftrightarrow begin bmatrix a -b b a end bmatrix ,
+sob as quais a adição e a multiplicação de números complexos e matrizes correspondem entre si. Por exemplo, matrizes de rotação 2 2 representam a multiplicação por um número complexo de valor absoluto 1, como acima. Uma interpretação semelhante é possível para os quatérnios e as álgebras de Clifford em geral.
 Na teoria dos jogos e na economia, a matriz de ganhos (payoff matrix) codifica o ganho para dois jogadores, dependendo de qual de um determinado conjunto (finito) de estratégias os jogadores escolhem. O resultado esperado do jogo, quando ambos os jogadores jogam estratégias mistas, é obtido multiplicando esta matriz em ambos os lados por vetores que representam as estratégias. O teorema minimax, central na teoria dos jogos, está intimamente relacionado com a teoria da dualidade dos programas lineares, que são frequentemente formulados em termos de produtos matriz-vetor.
 Técnicas antigas de criptografia, como a Cifra de Hill, também usavam matrizes. No entanto, devido à natureza linear das matrizes, estes códigos são comparativamente fáceis de quebrar. A computação gráfica usa matrizes para representar objetos; para calcular transformações de objetos usando matrizes de rotação afins para realizar tarefas como projetar um objeto tridimensional numa tela bidimensional, correspondendo a uma observação teórica de câmara; e para aplicar convoluções de imagem como nitidez, desfoque, deteção de bordas e muito mais. Matrizes sobre um anel de polinômios são importantes no estudo da teoria de controle.
 A química faz uso de matrizes de várias formas, particularmente desde a utilização da teoria quântica para discutir a ligação molecular e a espectroscopia. Exemplos são a matriz de sobreposição e a matriz de Fock usadas na resolução das equações de Roothaan para obter os orbitais moleculares do método de Hartree-Fock.
-
-=== Teoria dos grafos ===
-
 A matriz de adjacência de um grafo finito é uma noção básica da teoria dos grafos. Regista quais os vértices do grafo que estão conectados por uma aresta. Matrizes contendo apenas dois valores diferentes (1 e 0 significando, por exemplo, "sim" e "não", respetivamente) são chamadas de matrizes lógicas. A matriz de distâncias (ou de custos) contém informações sobre as distâncias das arestas. Estes conceitos podem ser aplicados a websites conectados por hiperligações, ou a cidades conectadas por estradas, etc., caso em que (a não ser que a rede de conexão seja extremamente densa) as matrizes tendem a ser esparsas, isto é, contêm poucas entradas não nulas. Portanto, algoritmos de matrizes especificamente adaptados podem ser usados na teoria de redes.
-
-=== Análise e geometria ===
 A matriz hessiana de uma função diferenciável
-
 f
 :
-
 R
-
 n
-
-→
-
 R
-
-{\displaystyle f:\mathbb {R} ^{n}\to \mathbb {R} }
-
-consiste nas segundas derivadas de ƒ em relação às várias direções de coordenadas, ou seja,
-
+displaystyle f: mathbb R n to mathbb R
+consiste nas segundas derivadas de em relação às várias direções de coordenadas, ou seja,
 H
 (
 f
 )
-=
-
 [
-
-∂
-
 2
-
 f
-
-∂
-
 x
-
 i
-
-∂
-
 x
-
 j
-
 ]
-
 .
-
-{\displaystyle H(f)=\left[{\frac {\partial ^{2}f}{\partial x_{i}\,\partial x_{j}}}\right].}
-
-Ela codifica informações sobre o comportamento local de crescimento da função: dado um ponto crítico x = (x1, ..., xn), ou seja, um ponto onde as primeiras derivadas parciais
-
-∂
+displaystyle H(f) left[ frac partial 2 f partial x i , partial x j right].
+Ela codifica informações sobre o comportamento local de crescimento da função: dado um ponto crítico x (x1, ..., xn), ou seja, um ponto onde as primeiras derivadas parciais
 f
-
 /
-
-∂
-
 x
-
 i
-
-{\displaystyle \partial f/\partial x_{i}}
-
+displaystyle partial f/ partial x i
 de f se anulam, a função possui um mínimo local se a matriz hessiana for definida positiva. A programação quadrática pode ser usada para encontrar mínimos ou máximos globais de funções quadráticas intimamente relacionadas com as associadas a matrizes (ver acima).
 Outra matriz frequentemente usada em situações geométricas é a matriz jacobiana de uma aplicação diferenciável
-
 f
 :
-
 R
-
 n
-
-→
-
 R
-
 m
-
-{\displaystyle f:\mathbb {R} ^{n}\to \mathbb {R} ^{m}}
-
+displaystyle f: mathbb R n to mathbb R m
 . Se f1, ..., fm denotarem as componentes de f, então a matriz jacobiana é definida como
-
 J
 (
 f
 )
-=
-
 [
-
-∂
-
 f
-
 i
-
-∂
-
 x
-
 j
-
 ]
-
 1
-≤
 i
-≤
 m
 ,
 1
-≤
 j
-≤
 n
-
 .
-
-{\displaystyle J(f)=\left[{\frac {\partial f_{i}}{\partial x_{j}}}\right]_{1\leq i\leq m,1\leq j\leq n}.}
-
-Se n > m, e se o posto da matriz jacobiana atingir o seu valor máximo m, f é localmente inversível nesse ponto, pelo teorema da função implícita.
+displaystyle J(f) left[ frac partial f i partial x j right] 1 leq i leq m,1 leq j leq n .
+Se n m, e se o posto da matriz jacobiana atingir o seu valor máximo m, f é localmente inversível nesse ponto, pelo teorema da função implícita.
 As equações diferenciais parciais podem ser classificadas considerando a matriz de coeficientes dos operadores diferenciais de maior ordem da equação. Para equações diferenciais parciais elípticas esta matriz é definida positiva, o que tem uma influência decisiva no conjunto de possíveis soluções da equação em questão.
 O método dos elementos finitos é um método numérico importante para resolver equações diferenciais parciais, amplamente aplicado na simulação de sistemas físicos complexos. Tenta aproximar a solução de alguma equação por funções lineares por partes, onde as partes são escolhidas em relação a uma grade suficientemente fina, o que, por sua vez, pode ser reescrito como uma equação matricial.
-
-=== Teoria das probabilidades e estatística ===
-
-Matrizes estocásticas são matrizes quadradas cujas linhas são vetores de probabilidade, ou seja, cujas entradas são não-negativas e somam um. As matrizes estocásticas são usadas para definir cadeias de Markov com um número finito de estados. Uma linha da matriz estocástica fornece a distribuição de probabilidade para a próxima posição de alguma partícula atualmente no estado que corresponde à linha. As propriedades da cadeia de Markov — como os estados absorventes, isto é, estados que qualquer partícula alcança eventualmente — podem ser lidas nos autovetores das matrizes de transição.
+Matrizes estocásticas são matrizes quadradas cujas linhas são vetores de probabilidade, ou seja, cujas entradas são não-negativas e somam um. As matrizes estocásticas são usadas para definir cadeias de Markov com um número finito de estados. Uma linha da matriz estocástica fornece a distribuição de probabilidade para a próxima posição de alguma partícula atualmente no estado que corresponde à linha. As propriedades da cadeia de Markov como os estados absorventes, isto é, estados que qualquer partícula alcança eventualmente podem ser lidas nos autovetores das matrizes de transição.
 A estatística também faz uso de matrizes de muitas formas diferentes. A estatística descritiva preocupa-se em descrever conjuntos de dados, que podem ser frequentemente representados como matrizes de dados, as quais podem então ser sujeitas a técnicas de redução de dimensionalidade. A matriz de covariância codifica a variância mútua de várias variáveis aleatórias. Outra técnica que usa matrizes são os mínimos quadrados lineares, um método que aproxima um conjunto finito de pares (x1, y1), (x2, y2), ..., (xN, yN), por uma função linear
-
 y
-
 i
-
-≈
 a
-
 x
-
 i
-
-+
 b
 ,
-
 i
-=
 1
 ,
-…
+...
 ,
 N
-
-{\displaystyle y_{i}\approx ax_{i}+b,\quad i=1,\ldots ,N}
-
+displaystyle y i approx ax i b, quad i 1, ldots ,N
 que pode ser formulada em termos de matrizes, relacionada com a decomposição em valores singulares das matrizes.
 Matrizes aleatórias são matrizes cujas entradas são números aleatórios, sujeitas a distribuições de probabilidade adequadas, tal como a distribuição normal matricial. Além da teoria das probabilidades, elas são aplicadas em domínios que vão desde a teoria dos números até à física.
-
-=== Mecânica quântica e física de partículas ===
 O primeiro modelo da mecânica quântica (Heisenberg, 1925) usou matrizes de dimensão infinita para definir os operadores que assumiram o papel de variáveis como a posição, o momento e a energia da física clássica. (Isto é por vezes referido como mecânica matricial.) As matrizes, tanto de dimensão finita como infinita, têm sido empregues para muitos propósitos na mecânica quântica. Um exemplo particular é a matriz de densidade, uma ferramenta usada para calcular as probabilidades dos resultados de medições realizadas em sistemas físicos.
 As transformações lineares e as simetrias associadas desempenham um papel central na física moderna. Por exemplo, as partículas elementares na teoria quântica de campos são classificadas como representações do grupo de Lorentz da relatividade especial e, mais especificamente, pelo seu comportamento sob o grupo de spin. Representações concretas envolvendo as matrizes de Pauli e matrizes gama mais gerais são uma parte integral da descrição física dos férmions, que se comportam como espinorres. Para os três quarks mais leves, existe uma representação na teoria de grupos envolvendo o grupo unitário especial SU(3); para os seus cálculos, os físicos usam uma representação matricial conveniente conhecida como as matrizes de Gell-Mann, que também são usadas para o grupo de calibre SU(3) que forma a base da descrição moderna das interações nucleares fortes, a cromodinâmica quântica. A matriz de Cabibbo-Kobayashi-Maskawa, por sua vez, expressa o facto de que os estados básicos dos quarks que são importantes para as interações fracas não são os mesmos, mas estão linearmente relacionados com os estados básicos dos quarks que definem partículas com massas específicas e distintas.
 Outra matriz serve como ferramenta-chave para descrever os testes de espalhamento que formam a pedra angular da física experimental de partículas: reações de colisão, como as que ocorrem em aceleradores de partículas, onde partículas que não interagem dirigem-se umas contra as outras e colidem numa pequena zona de interação, com um novo conjunto de partículas que não interagem como resultado, podem ser descritas como o produto escalar dos estados das partículas emergentes e uma combinação linear dos estados das partículas incidentes. A combinação linear é dada por uma matriz conhecida como matriz S, que codifica todas as informações sobre as possíveis interações entre as partículas.
-
-=== Modos normais ===
 Uma aplicação geral das matrizes na física é a descrição de sistemas harmônicos linearmente acoplados. As equações de movimento de tais sistemas podem ser descritas na forma matricial, com uma matriz de massa multiplicando uma velocidade generalizada para dar o termo cinético, e uma matriz de força multiplicando um vetor de deslocamento para caracterizar as interações. A melhor forma de obter soluções é determinar os autovetores do sistema, os seus modos normais, diagonalizando a equação matricial. Técnicas como esta são cruciais quando se trata da dinâmica interna de moléculas: as vibrações internas de sistemas que consistem em átomos componentes mutuamente ligados. Elas também são necessárias para descrever vibrações mecânicas e oscilações em circuitos elétricos.
-
-=== Óptica geométrica ===
 A óptica geométrica fornece ainda mais aplicações para as matrizes. Nesta teoria aproximativa, a natureza ondulatória da luz é negligenciada. O resultado é um modelo no qual os raios de luz são, de facto, raios geométricos. Se a deflexão dos raios de luz por elementos ópticos for pequena, a ação de uma lente ou elemento refletor num dado raio de luz pode ser expressa como a multiplicação de um vetor de duas componentes com uma matriz de dois por dois chamada de matriz de transferência de raios: as componentes do vetor são a inclinação do raio de luz e a sua distância em relação ao eixo óptico, enquanto a matriz codifica as propriedades do elemento óptico. Existem dois tipos de matrizes, a saber: uma matriz de refração que descreve a refração numa superfície de lente, e uma matriz de translação, que descreve a translação do plano de referência para a próxima superfície de refração, onde outra matriz de refração se aplica.
 O sistema óptico, consistindo numa combinação de lentes e elementos refletores, é simplesmente descrito pela matriz resultante do produto das matrizes dos componentes.
 O cálculo de Jones modela a polarização de uma fonte de luz como um vetor
-
 2
-×
 2
-
-{\displaystyle 2\times 2}
-
+displaystyle 2 times 2
 , e os efeitos de filtros ópticos neste vetor de polarização como uma matriz.
-
-=== Eletrônica ===
 Circuitos eletrônicos que são compostos por componentes lineares (tais como resistores, indutores e capacitores) obedecem às leis de Kirchhoff, o que leva a um sistema de equações lineares que pode ser descrito com uma equação matricial que relaciona as correntes e tensões da fonte com as correntes e tensões resultantes em cada ponto do circuito, e onde as entradas da matriz são determinadas pelo circuito.
-
-== Referências ==
-
-== Bibliografia ==
-Callioli, Carlos A.; Domingues, Hygino H.; Costa, Roberto C. F. (1990). Álgebra Linear e Aplicações (PDF) 6ª ed. São Paulo: Atual. ISBN 9788570562975
-
-=== Referências matemáticas ===
-
-=== Referências de física ===
-
-=== Referências históricas ===
+Callioli, Carlos A.; Domingues, Hygino H.; Costa, Roberto C. F. (1990). Álgebra Linear e Aplicações (PDF) 6a ed. São Paulo: Atual. ISBN 9788570562975

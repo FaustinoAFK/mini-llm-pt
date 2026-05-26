@@ -3,72 +3,34 @@ Le Coadic, pesquisador da área da Ciência da Informação, destaca que o valor
 Informação enquanto conceito carrega uma diversidade de significados, do uso habitual ao uso técnico. Genericamente, o conceito de informação está intimamente ligado às noções de restrição, comunicação, controle, dados, forma, instrução, conhecimento, significado, estímulo, padrão, percepção e representação de conhecimento.
 É comum nos dias de hoje ouvir-se falar sobre a Era da Informação, o advento da "Era do Conhecimento" ou sociedade do conhecimento. Como a sociedade da informação, a tecnologia da informação, a ciência da informação e a ciência da computação em informática são assuntos e ciências recorrentes na atualidade, a palavra "informação" é frequentemente utilizada sem muita consideração pelos vários significados que adquiriu ao longo do tempo, tornando-se portanto, no principal recurso da sociedade no século XXI.
 As novas tecnologias, os novos mercados, as novas mídias, os novos consumidores desta Era da Informação e do conhecimento, conseguiram transformar o mundo em uma grande sociedade, globalizada e globalizante.
-
-== Etimologia ==
 De acordo com o Dicionário Contemporâneo da Língua Portuguesa, informação vem do latim informatio,onis, ("delinear, conceber ideia"), ou seja, dar forma ou moldar na mente, como em educação, instrução ou treinamento.
-A palavra do grego antigo para forma era μορφή (morphe; cf. morfo) e também εἶδος (eidos) "tipo, ideia, forma, 'aquilo que se vê', configuração", a última palavra foi usada famosamente em um sentido filosófico técnico por Platão (e mais tarde Aristóteles) para denotar a ou essência de algo (ver Teoria das ideias).
-
-== Informação como mensagem ==
+A palavra do grego antigo para forma era (morphe; cf. morfo) e também (eidos) "tipo, ideia, forma, 'aquilo que se vê', configuração", a última palavra foi usada famosamente em um sentido filosófico técnico por Platão (e mais tarde Aristóteles) para denotar a ou essência de algo (ver Teoria das ideias).
 Informação é o estado de um sistema de interesse (curiosidade). Mensagem é a informação materializada.
 Informação é a qualidade da mensagem que um emissor envia para um ou mais receptores. Essa informação, comporta um elemento de sentido, um significado transmitido a um ser consciente por meio da mensagem transmitida. Informação é sempre sobre alguma coisa (tamanho de um parâmetro, ocorrência de um evento etc.). Vista desta maneira, a informação não tem de ser precisa. Ela pode ser verdadeira ou mentirosa, ou apenas um som (como o de um beijo). Mesmo um ruído inoportuno feito para inibir o fluxo de comunicação e criar equívoco, seria, sob esse ângulo, uma forma de informação. Um ruído é usado na teoria da comunicação para se referir a qualquer coisa que interfira na comunicação. Todavia, em termos gerais, quanto maior a quantidade de informação na mensagem recebida, mais precisa ela é.
 Este modelo assume que há um emissor definido e ao menos um receptor. Refinamentos do modelo assumem a existência de uma linguagem comum entendida pelo emissor e ao menos por um dos receptores. Uma variação importante identifica a informação como algo que pode ser comunicado por uma mensagem do emissor para um receptor capaz de compreender a mensagem. Todavia, ao exigir a existência de um emissor definido, o modelo da informação como mensagem não acrescenta qualquer significado à ideia de que a informação é algo que pode ser extraída de um ambiente, por exemplo, através de observação, leitura ou medição.
 Informação é um termo com muitos significados dependendo do contexto, mas como regra é relacionada de perto com conceitos tais como significado, conhecimento, instrução, comunicação, representação e estímulo mental. Declarado simplesmente, informação é uma mensagem recebida e entendida. Em termos de dados, podem ser definida como uma coleção de factos dos quais conclusões podem ser extraídas. Existem muitos outros aspectos da informação visto que ela é o conhecimento adquirido através do estudo, experiência ou instrução. Mas, acima de tudo, informação é o resultado do processamento, manipulação e organização de dados numa forma que se some ao conhecimento da pessoa que o recebe.
 A teoria da comunicação analisa a medida numérica da incerteza de um resultado. A teoria da comunicação tende a usar o conceito de entropia da informação, geralmente atribuído a Claude Shannon. Outra forma de informação é a informação Fisher, um conceito de R.A. Fisher.
 Mesmo que informação e dados sejam frequentemente usados como sinônimos, eles realmente são coisas muito diferentes. Dados representam um conjunto de fatos não associados e como tal, não têm utilidade até que tenham sido apropriadamente avaliados. Pela avaliação, uma vez que haja alguma relação significativa entre os dados e estes possam mostrar alguma relevância, são então convertidos em informação. Agora, estes mesmos dados podem ser usados com diferentes propósitos. Assim, até que os dados expressem alguma informação, não são úteis.
-
-=== Medindo a entropia da informação ===
 A visão da informação como mensagem entrou em destaque com a publicação em 1948 de uma influente dissertação de Claude Shannon, A Mathematical Theory of Communication. Esta dissertação fornece as fundações da teoria da informação e dota a palavra informação não somente de significado técnico mas também de medida. Se o dispositivo emissor é igualmente capaz de enviar qualquer um dentre um conjunto de
-
 N
-
-{\displaystyle N}
-
+displaystyle N
 mensagens, então a medida preferida da "informação produzida quando uma mensagem é escolhida do conjunto" é o logaritmo da base dois de
-
 N
-
-{\displaystyle N}
-
+displaystyle N
 (esta medida é chamada auto-informação). Neste artigo, Shannon prossegue:
-
 Um meio complementar de medir informação é fornecido pela teoria algorítmica da informação. Em resumo, ela mede o conteúdo de informação duma lista de símbolos baseando-se em quão previsíveis eles são, ou, mais especificamente, quão fácil é computar a lista através de um programa de computador: o conteúdo de informação de uma seqüência é o número de bits do menor programa capaz de computá-lo. A seqüência abaixo deveria ter uma medida de informação algorítmica muito baixa dado que é um padrão perfeitamente previsível e a medida que o padrão continua, a medida não deveria alterar-se. A informação de Shannon deveria retornar a mesma medida de informação para cada símbolo, visto que são estatisticamente aleatórios, e cada novo símbolo incrementaria a medida:
-
-123456789101112131415161718192021
 É importante reconhecer as limitações da teoria de informação tradicional e da teoria algorítmica de informação da perspectiva do significado humana. Por exemplo, ao referir-se ao conteúdo significante de uma mensagem, Shannon observou: "frequentemente, mensagens possuem significado; estes aspectos semânticos da comunicação são irrelevantes para o problema de engenharia. O aspecto significativo é que a mensagem real é uma selecionada de um conjunto de mensagens possíveis" (grifo no original).
 Michael Reddy observou que "'sinais' da teoria matemática são 'padrões que podem ser trocados'. Não há mensagem contida no sinal, os sinais expressam a capacidade de escolher dentre um conjunto de mensagens possíveis." Em teoria da informação, "o sistema deve ser projetado para operar com qualquer seleção possível, não apenas com aquela que será realmente escolhida, visto que esta é desconhecida ao tempo do projeto".
 É considerada hoje em dia como um importante recurso que intervém no desenvolvimento, na sobrevivência e na normalização do relacionamento entre os povos.
-
-== Informação como padrão ==
-
 Informação é qualquer padrão representado. Esta visão não assume nem exatidão nem partes que se comuniquem diretamente, mas em vez disso, assume uma separação entre o obje(c)to e sua representação, bem como o envolvimento de alguém capaz de entender este relacionamento. Logo, este ponto de vista parece exigir uma mente consciente. Considere-se o seguinte exemplo: a estatística econômica representa uma economia, todavia de forma não precisa. O que é geralmente denominado como dados em computação, estatística e outros campos, são formas de informação neste sentido. Os padrões eletromagnéticos numa rede de computadores e dispositivos periféricos estão relacionados a algo além do padrão em si mesmo, tais como caracteres de texto para serem exibidos e entradas de teclado. Sinais, signos e símbolos estão também nesta categoria. Por outro lado, de acordo com a semiótica, dados são símbolos com uma sintaxe determinada e informação são dados com uma determinada semântica. Pintura e desenho contém informação ao nível em que representam algo tal como uma miscelânea de objetos sobre uma mesa, um retrato ou uma paisagem. Em outras palavras, quando um padrão de alguma coisa é transposta para o padrão de alguma outra coisa, o último é a informação. Este tipo de informação ainda assume algum envolvimento da mente consciente, seja da entidade construindo a representação, ou da entidade que a interpreta.
-
-== Informação e Semiótica ==
 Beynon-Davies explica o conceito multi-facetado de informação em termos de sinais e de sistemas de signos-sinais. Os signos em si, podem ser considerados em termos de quatro níveis inter-dependentes, camadas ou ramos da semiótica: pragmática, semântica, sintaxe e empirismo. Estas quatro camadas servem para conectar o mundo social, por um lado com o mundo físico ou técnico, por outro lado ...
 Pragmática está preocupada com o propósito de comunicação. A pragmáticas relaciona a questão dos sinais com o contexto no qual os sinais são usados. O foco da pragmática é sobre as intenções dos agentes reais subjacentes ao comportamento comunicativo. Em outras palavras, a pragmática estabelece uma ligação do idioma com a ação.
-Semântica se preocupa com o significado de uma mensagem transmitida em um ato comunicativo. A semântica considera o conteúdo da comunicação. A semântica é o estudo do significado dos sinais — a associação entre sinais e comportamento. A semântica pode ser considerada como o estudo da relação entre símbolos e seus referentes ou conceitos, particularmente a forma como os sinais se relacionam com o comportamento humano.
+Semântica se preocupa com o significado de uma mensagem transmitida em um ato comunicativo. A semântica considera o conteúdo da comunicação. A semântica é o estudo do significado dos sinais a associação entre sinais e comportamento. A semântica pode ser considerada como o estudo da relação entre símbolos e seus referentes ou conceitos, particularmente a forma como os sinais se relacionam com o comportamento humano.
 Sintaxe está preocupada com o formalismo utilizado para representar uma mensagem. A sintaxe como uma área estuda a forma de comunicação em termos de lógica e gramática dos sistemas de signos. A sintaxe é dedicada ao estudo da forma e não ao conteúdo de sinais e sistemas de signos.
-
-== Outras visões da informação ==
-
-=== Informação como estímulo sensorial ===
 Frequentemente, a informação é vista como um tipo de estímulo a um organismo ou a um determinado dispositivo. Neste sentido, a informação é um conhecimento inscrito ou gravado sob uma forma escrita, oral ou audiovisual. A informação comporta então um elemento de sentido, sendo um significado transmitido a um ser consciente por meio de uma mensagem veiculada em um meio que pode ser impresso, um sinal elétrico, uma onda sonora, etc.
-
-=== Informação como uma influência que leva a transformação ===
 Informação é qualquer tipo de padrão que influencia a formação ou transformação de outros padrões. Neste sentido, não há necessidade de que uma mente consciente perceba, muito menos reconheça, tal padrão.
-
-=== Informação como uma propriedade na física ===
 Informação tem um papel bem definido em física. Exemplos disto incluem o fenômeno da armadilha quântica, onde partículas podem interagir sem qualquer referência a sua separação ou à velocidade da luz.
-
-=== Informação e dados ===
 As palavras informação e dados, são intercambiáveis em muitos contextos. Todavia, não são sinônimos. Por exemplo, de acordo com a observação de Adam M. Gadomski (1993), dados são tudo que pode ser processado e as informações são dados que descrevem um domínio físico ou abstra(c)to. Knuth aponta que o termo dados se refere a representação do valor ou quantidade medida ao passo que informação, quando usada em um sentido técnico, é o significado daquele dado.
-
-=== Informação como registros ===
 Registros (ou registosPE) são uma forma especializada de informação. Essencialmente, registros são informações produzidas como subprodutos de actividades comerciais ou transações, ou conscientemente como um registo de tais actividades ou transações e retidas em virtude do seu valor. Primariamente o seu valor é como evidência das atividades da organização, mas eles também podem ser conservados por seu valor informativo. O gerenciamento de registros (Records management) de sons garantem que a integridade dos registros seja preservada enquanto forem necessários.
 Informação como transformador da sociedade
 Vivemos uma Sociedade da Informação construída com base nas tecnologias da comunicação e informação, fluindo através de velocidades e quantidades inimagináveis e representando uma profunda mudança na organização da sociedade e da economia. A informação passa a ser o principal fator de produção, capaz de interferir em qualquer contexto social. Tecnologias de comunicação e informação estão adentrando na sociedade de modo a facilitar a recepção, o uso e a geração dessas informações, em pró do desenvolvimento sociocultural.
-
-== Referências ==
-
-== Bibliografia ==
-
-== Ver também ==

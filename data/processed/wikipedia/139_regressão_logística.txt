@@ -1,6 +1,5 @@
 A regressão logística é uma técnica estatística que tem como objetivo produzir, a partir de um conjunto de observações, um modelo que permita a predição de valores tomados por uma variável categórica, frequentemente binária, a partir de uma série de variáveis explicativas contínuas e/ou binárias.
 A regressão logística é amplamente usada em ciências médicas e sociais, e tem outras denominações, como modelo logístico, modelo logit, e classificador de máxima entropia. A regressão logística é utilizada em áreas como as seguintes:
-
 Em medicina, permite por exemplo determinar os factores que caracterizam um grupo de indivíduos doentes em relação a indivíduos sãos;
 No domínio dos seguros, permite encontrar fracções da clientela que sejam sensíveis a determinada política securitária em relação a um dado risco particular;
 Em instituições financeiras, pode detectar os grupos de risco para a subscrição de um crédito;
@@ -10,433 +9,213 @@ Em comparação com as técnicas conhecidas em regressão, em especial a regress
 Enquanto método de predição para variáveis categóricas, a regressão logística é comparável às técnicas supervisionadas propostas em aprendizagem automática (árvores de decisão, redes neurais, etc.), ou ainda a análise discriminante preditiva em estatística exploratória. É possível de as colocar em concorrência para escolha do modelo mais adaptado para um certo problema preditivo a resolver.
 Trata-se de um modelo de regressão para variáveis dependentes ou de resposta binomialmente distribuídas. É útil para modelar a probabilidade de um evento ocorrer como função de outros factores. É um modelo linear generalizado que usa como função de ligação a função logit.
 Assunções:
-
 Relação linear entre o vetor das variáveis explicativas X e o logit da variável resposta Y
 Ausência de multicolinearidade
 Valor esperado dos resíduos igual a zero
 Ausência de heterocedasticidade
 Não pressupõe normalidade dos resíduos nem homogeneidade de variâncias.
 Por isso torna preferível em situações práticas.
-
-== Aplicações ==
 A regressão logística é usada em vários campos, incluindo o aprendizado de máquina (machine learning), a maioria dos campos médicos e ciências sociais. Por exemplo, o Trauma and Injury Severity Score (TRISS), que é amplamente utilizado para prever a mortalidade em pacientes feridos, foi originalmente desenvolvido por Boyd et al. usando regressão logística. Muitas outras escalas médicas usadas para avaliar a severidade de doenças em pacientes têm sido desenvolvidas utilizando a regressão logística. A regressão logística pode ser utilizada para prever o risco de desenvolver uma dada doença (por exemplo, diabetes ou doença arterial coronária), baseado em características observadas do paciente (idade, sexo, índice de massa corporal, resultados de vários testes de sangue, etc, etc.). Um outro exemplo de uso da regressão logística seria para prever, por exemplo, se um eleitor votará em um dado partido baseado na idade, na renda, no sexo, na raça, no estado de residência, os votos em eleições precedentes, etc. do eleitor. A técnica também pode ser utilizada na engenharia, especialmente para predizer a probabilidade de falha em um dado processo, sistema ou produto. Ela também é utilizada em marketing na previsão da propensão de um cliente para comprar um produto, interromper a assinatura de um serviço, etc. Em economia ela pode ser utilizada para prever a probabilidade de uma pessoa estar trabalhando, de um proprietário optar por uma hipoteca. Campos aleatórios condicionais, uma extensão da regressão logística ao dados seqüênciais, são utilizados em processamento de linguagem natural.
-
-== Descrição ==
 A regressão logística analisa dados distribuídos binomialmente da forma
-
 Y
-
 i
-
-∼
 B
 (
-
 p
-
 i
-
 ,
-
 n
-
 i
-
 )
 ,
-
 for
-
 i
-=
 1
 ,
-…
+...
 ,
 m
 ,
-
-{\displaystyle Y_{i}\ \sim B(p_{i},n_{i}),{\text{ for }}i=1,\dots ,m,}
-
+displaystyle Y i sim B(p i ,n i ), text for i 1, dots ,m,
 onde os números de ensaios de Bernoulli ni são conhecidos e as probabilidades de êxito pi são desconhecidas. Um exemplo desta distribuição é a percentagem de sementes (pi) que germinam depois de ni serem plantadas.
 O modelo é então obtido na base de que cada ensaio (valor de i) e o conjunto de variáveis explicativas/independentes possa informar acerca da probabilidade final. Estas variáveis explicativas podem-se ver como um vector Xi k-dimensional e o modelo toma então a forma
-
 p
-
 i
-
-=
 E
-⁡
-
 (
-
 Y
-
 i
-
 n
-
 i
-
-|
-
 X
-
 i
-
 )
-
 .
-
-{\displaystyle p_{i}=\operatorname {E} \left(\left.{\frac {Y_{i}}{n_{i}}}\right|X_{i}\right).\,\!}
-
+displaystyle p i operatorname E left( left. frac Y i n i right X i right). , !
 Os logits das probabilidades binomiais desconhecidas (i.e., os logaritmos dos odds) são modelados como uma função linear dos Xi.
-
 logit
-⁡
 (
-
 p
-
 i
-
 )
-=
 ln
-⁡
-
 (
-
 p
-
 i
-
 1
-−
-
 p
-
 i
-
 )
-
-=
-
-β
-
 0
-
-+
-
-β
-
 1
-
 x
-
 1
 ,
 i
-
-+
-⋯
-+
-
-β
-
 k
-
 x
-
 k
 ,
 i
-
 .
-
-{\displaystyle \operatorname {logit} (p_{i})=\ln \left({\frac {p_{i}}{1-p_{i}}}\right)=\beta _{0}+\beta _{1}x_{1,i}+\cdots +\beta _{k}x_{k,i}.}
-
-Note-se que um elemento particular de Xi pode ser ajustado a 1 para todo o i obtendo-se um intercepto no modelo. Os parâmetros desconhecidos βj são habitualmente estimados através de máxima verossimilhança.
-A interpretação dos valores estimados do parâmetro βj é similar aos efeitos aditivos em log odds ratio para uma unidade de mudança na jésima variável explicativa. No caso de uma variável explicativa dicotómica, por exemplo o género,
-
+displaystyle operatorname logit (p i ) ln left( frac p i 1-p i right) beta 0 beta 1 x 1,i cdots beta k x k,i .
+Note-se que um elemento particular de Xi pode ser ajustado a 1 para todo o i obtendo-se um intercepto no modelo. Os parâmetros desconhecidos j são habitualmente estimados através de máxima verossimilhança.
+A interpretação dos valores estimados do parâmetro j é similar aos efeitos aditivos em log odds ratio para uma unidade de mudança na jésima variável explicativa. No caso de uma variável explicativa dicotómica, por exemplo o género,
 e
-
-β
-
-{\displaystyle e^{\beta }}
-
+displaystyle e beta
 é o estimador de odds ratio de ter o resultado para, por exemplo, homens comparados com mulheres.
 O modelo tem uma formulação equivalente dada por
-
 p
-
 i
-
-=
-
 1
-
 1
-+
-
 e
-
-−
 (
-
-β
-
 0
-
-+
-
-β
-
 1
-
 x
-
 1
 ,
 i
-
-+
-⋯
-+
-
-β
-
 k
-
 x
-
 k
 ,
 i
-
 )
-
 .
-
-{\displaystyle p_{i}={\frac {1}{1+e^{-(\beta _{0}+\beta _{1}x_{1,i}+\cdots +\beta _{k}x_{k,i})}}}.\,\!}
-
-Esta forma funcional é habitualmente identificada como um perceptron (ou perceptrão em português europeu) de uma camada simples ou rede neuronal artificial de uma só camada. Uma rede neuronal de uma só camada calcula uma saída contínua em vez de uma função por troços. A derivada de pi em relação a X = x1...xk é calculada na forma geral:
-
+displaystyle p i frac 1 1 e -( beta 0 beta 1 x 1,i cdots beta k x k,i ) . , !
+Esta forma funcional é habitualmente identificada como um perceptron (ou perceptrão em português europeu) de uma camada simples ou rede neuronal artificial de uma só camada. Uma rede neuronal de uma só camada calcula uma saída contínua em vez de uma função por troços. A derivada de pi em relação a X x1...xk é calculada na forma geral:
 y
-=
-
 1
-
 1
-+
-
 e
-
-−
 f
 (
 X
 )
-
-{\displaystyle y={\frac {1}{1+e^{-f(X)}}}}
-
+displaystyle y frac 1 1 e -f(X)
 onde f(X) é uma função analítica em X. Com esta escolha, a rede de camada simples é idêntica ao modelo de regressão logística. Esta função tem uma derivada contínua, a qual permite ser usada na propagação para trás. Esta função também é preferida pois a sua derivada é facilmente calculável:
-
 y
-′
-
-=
 y
 (
 1
-−
 y
 )
-
 d
-
 f
-
 d
-
 X
-
-{\displaystyle y'=y(1-y){\frac {\mathrm {d} f}{\mathrm {d} X}}\,\!}
-
-== Extensões ==
+displaystyle y' y(1-y) frac mathrm d f mathrm d X , !
 Existem diversas extensões do modelo para tratar variáveis dependentes multicategóricas e/ou ordinais, tais como a regressão politómica. A classificação em várias classes por regressão logística é conhecida como logit multinomial. Uma extensão do modelo logístico para ajustar conjuntos de variáveis independentes é o campo aleatório condicional.
-
-== Exemplo ==
 Seja p(x) a probabilidade de êxito quando o valor da variável preditiva é x. Então, seja
-
 p
 (
 x
 )
-=
-
 1
-
 1
-+
-
 e
-
-−
 (
-
 B
-
 0
-
-+
-
 B
-
 1
-
 x
 )
-
-=
-
 e
-
 B
-
 0
-
-+
-
 B
-
 1
-
 x
-
 1
-+
-
 e
-
 B
-
 0
-
-+
-
 B
-
 1
-
 x
-
 .
-
-{\displaystyle p(x)={\frac {1}{1+e^{-(B_{0}+B_{1}x)}}}={\frac {e^{B_{0}+B_{1}x}}{1+e^{B_{0}+B_{1}x}}}.}
-
 Depois de alguma álgebra prova-se que
-
 p
 (
 x
 )
-
 1
-−
 p
 (
 x
 )
-
-=
-
 e
-
 B
-
 0
-
-+
-
 B
-
 1
-
 x
-
 ,
-
-{\displaystyle {\frac {p(x)}{1-p(x)}}=e^{B_{0}+B_{1}x},}
-
+displaystyle frac p(x) 1-p(x) e B 0 B 1 x ,
 onde
-
 p
 (
 x
 )
-
 1
-−
 p
 (
 x
 )
-
-{\displaystyle {\frac {p(x)}{1-p(x)}}}
-
+displaystyle frac p(x) 1-p(x)
 são os odds favoráveis (êxito).
-Se tomarmos um valor de exemplo, digamos p(50) = 2/3, então
-
+Se tomarmos um valor de exemplo, digamos p(50) 2/3, então
 p
 (
 50
 )
-
 1
-−
 p
 (
 50
 )
-
-=
-
 2
 3
-
 1
-−
-
 2
 3
-
-=
 2.
-
-{\displaystyle {\frac {p(50)}{1-p(50)}}={\frac {\frac {2}{3}}{1-{\frac {2}{3}}}}=2.}
-
-Quando x = 50, um êxito é duas vezes mais provável que uma falha, ou seja, pode dizer-se simplesmente que os odds são 2 para 1.
-
-== Ver também ==
+displaystyle frac p(50) 1-p(50) frac frac 2 3 1- frac 2 3 2.
+Quando x 50, um êxito é duas vezes mais provável que uma falha, ou seja, pode dizer-se simplesmente que os odds são 2 para 1.
 Rede neural artificial
 Mineração de dados
 Análise linear discriminante
 Perceptron
 Modelo probit
 Modelo de Jarrow-Turnbull
-
-== Referências ==
-
-=== Fontes ===
 Agresti, Alan. (2002). Categorical Data Analysis. [S.l.]: New York: Wiley-Interscience. ISBN 0-471-36093-7
 Amemiya, T. (1985). Advanced Econometrics. [S.l.]: Harvard University Press. ISBN 0-674-00560-0
 Balakrishnan, N. (1991). Handbook of the Logistic Distribution. [S.l.]: Marcel Dekker, Inc. ISBN 978-0824785871
 Green, William H. (2003). Econometric Analysis, fifth edition. [S.l.]: Prentice Hall. ISBN 0-13-066189-9
 Hosmer, David W.; Stanley Lemeshow (2000). Applied Logistic Regression, 2nd ed. [S.l.]: New York; Chichester, Wiley. ISBN 0-471-35632-8
-
-== Ligações externas ==
 «Web-based logistic regression calculator» (em inglês)
 «A highly optimized Maximum Entropy modeling package» (em inglês)
 «MALLET Java library, includes a trainer for logistic models» (em inglês)
