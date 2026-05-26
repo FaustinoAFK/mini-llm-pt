@@ -1,0 +1,120 @@
+O perceptron foi inventado em 1943 por Warren McCulloch e Walter Pitts. A primeira implementação de hardware foi a máquina Mark I Perceptron construída em 1957 por Frank Rosenblatt no Cornell Aeronautical Laboratory. Ele pode ser visto como o tipo mais simples de rede neural feedforward: um classificador linear.
+
+
+== Definição ==
+O perceptron é um classificador binário que mapeia sua entrada 
+  
+    
+      
+        x
+      
+    
+    {\displaystyle x}
+  
+ (um vetor de valor real) para um valor de saída 
+  
+    
+      
+        f
+        (
+        x
+        )
+      
+    
+    {\displaystyle f(x)}
+  
+ (uma valor binário simples) através da matriz.
+
+  
+    
+      
+        f
+        (
+        x
+        )
+        =
+        
+          
+            {
+            
+              
+                
+                  1
+                
+                
+                  
+                    if 
+                  
+                  w
+                  ⋅
+                  x
+                  +
+                  b
+                  ≥
+                  0
+                
+              
+              
+                
+                  0
+                
+                
+                  
+                    else
+                  
+                
+              
+            
+            
+          
+        
+      
+    
+    {\displaystyle f(x)={\begin{cases}1&{\text{if }}w\cdot x+b\geq 0\\0&{\text{else}}\end{cases}}}
+  
+
+Onde 
+  
+    
+      
+        w
+      
+    
+    {\displaystyle w}
+  
+ é um vetor de peso real e 
+  
+    
+      
+        w
+        ⋅
+        x
+      
+    
+    {\displaystyle w\cdot x}
+  
+ é o produto escalar (que computa uma soma com pesos) e 
+  
+    
+      
+        b
+      
+    
+    {\displaystyle b}
+  
+ é o viés (do inglês "bias"), um termo constante que não depende de qualquer valor de entrada.
+
+
+== Implementação em Python ==
+
+
+== Implementação em C# ==
+
+
+== Implementação em Ruby ==
+
+
+== Implementação em Java ==
+
+
+== Referências ==

@@ -1,0 +1,2081 @@
+Nas redes neurais artificiais, as redes neurais recorrentes (RNNs) são projetadas para processar dados sequenciais, como texto, fala e séries temporais, onde a ordem dos elementos é importante. Ao contrário das redes neurais feedforward, que processam as entradas de forma independente, as RNNs utilizam conexões recorrentes, onde a saída de um neurônio num passo de tempo é retroalimentada como entrada para a rede no passo de tempo seguinte. Isto permite que as RNNs capturem dependências temporais e padrões dentro de sequências.
+O bloco de construção fundamental da RNN é a unidade recorrente, que mantém um estado oculto — uma forma de memória que é atualizada em cada passo de tempo com base na entrada atual e no estado oculto anterior. Este mecanismo de feedback permite que a rede aprenda com entradas passadas e incorpore esse conhecimento no seu processamento atual. As RNNs têm sido aplicadas com sucesso a tarefas como reconhecimento de caligrafia conectada e não segmentada, reconhecimento de fala, processamento de linguagem natural e tradução automática neural.
+No entanto, as RNNs tradicionais sofrem com o problema do desvanecimento do gradiente, que limita a sua capacidade de aprender dependências de longo alcance. Esta questão foi abordada pelo desenvolvimento da arquitetura de memória de longo e curto prazo (LSTM) em 1997, tornando-a a variante RNN padrão para lidar com dependências de longo prazo. Mais tarde, as unidades recorrentes fechadas (GRUs) foram introduzidas como uma alternativa computacionalmente mais eficiente.
+Nos últimos anos, os transformers, que dependem de mecanismos de autoatenção em vez de recorrência, tornaram-se a arquitetura dominante para muitas tarefas de processamento de sequência, particularmente no processamento de linguagem natural, devido ao seu manuseio superior de dependências de longo alcance e maior paralelizabilidade. Apesar disso, as RNNs continuam a ser relevantes para aplicações onde a eficiência computacional, o processamento em tempo real ou a natureza sequencial inerente dos dados são cruciais.
+
+
+== História ==
+
+
+=== Antes da era moderna ===
+Uma das origens das RNNs foi a neurociência. A palavra "recorrente" é usada para descrever estruturas em forma de laço na anatomia. Em 1901, Cajal observou "semicírculos recorrentes" no córtex cerebelar formados por fibras paralelas, células de Purkinje e células granulares. Em 1933, Lorente de Nó descobriu "conexões recíprocas recorrentes" pelo método de Golgi, e propôs que os laços excitatórios explicavam certos aspetos do reflexo vestíbulo-ocular. Durante a década de 1940, várias pessoas propuseram a existência de feedback (retroalimentação) no cérebro, o que contrastava com a compreensão anterior do sistema neural como uma estrutura puramente feedforward (alimentação direta). Hebb considerou o "circuito reverberante" como uma explicação para a memória de curto prazo. O artigo de McCulloch e Pitts (1943), que propôs o modelo de neurônio de McCulloch-Pitts, considerou redes que contêm ciclos. A atividade atual de tais redes pode ser afetada por uma atividade num passado indefinidamente distante. Ambos estavam interessados em laços fechados como possíveis explicações para, por exemplo, a epilepsia e a causalgia. A inibição recorrente foi propota em 1946 como um mecanismo de feedback negativo no controlo motor. Os laços de feedback neural foram um tópico comum de discussão nas Conferências Macy. Consulte para uma revisão extensiva de modelos de redes neurais recorrentes na neurociência.
+
+Frank Rosenblatt, em 1960, publicou os "perceptrons de acoplamento cruzado em malha fechada" (close-loop cross-coupled perceptrons), que são redes perceptron de 3 camadas cuja camada intermediária contém conexões recorrentes que mudam por meio de uma regra de aprendizagem hebbiana. Mais tarde, em Principles of Neurodynamics (1961), ele descreveu as redes perceptron de "acoplamento cruzado em malha fechada" e "retroacopladas", e fez estudos teóricos e experimentais para a aprendizagem hebbiana nestas redes, notando que uma rede perceptron totalmente acoplada de forma cruzada é equivalente a uma rede feedforward infinitamente profunda.
+Redes semelhantes foram publicadas por Kaoru Nakano em 1971, por Shun'ichi Amari em 1972, e por William A. Little em 1974, que foi reconhecido por Hopfield no seu artigo de 1982.
+Outra origem da RNN foi a mecânica estatística. O modelo de Ising foi desenvolvido por Wilhelm Lenz e Ernst Ising na década de 1920 como um modelo mecânico estatístico simples de ímãs em equilíbrio. Glauber, em 1963, estudou o modelo de Ising evoluindo no tempo como um processo em direção ao equilíbrio (Dinâmica de Glauber), adicionando a componente temporal.
+O modelo de Sherrington–Kirkpatrick do vidro de spin, publicado em 1975, é a rede de Hopfield com inicialização aleatória. Sherrington e Kirkpatrick descobriram que é altamente provável que a função de energia do modelo SK tenha muitos mínimos locais. No artigo de 1982, Hopfield aplicou esta teoria recentemente desenvolvida para estudar a rede de Hopfield com funções de ativação binárias. Num artigo de 1984, ele estendeu isto para funções de ativação contínuas. Tornou-se um modelo padrão para o estudo de redes neurais através da mecânica estatística.
+
+
+=== Moderna ===
+As redes RNN modernas baseiam-se principalmente em duas arquiteturas: LSTM e BRNN.
+No ressurgimento das redes neurais na década de 1980, as redes recorrentes foram estudadas novamente. Por vezes, eram chamadas de "redes iteradas". Dois trabalhos iniciais influentes foram a rede de Jordan (1986) e a rede de Elman (1990), que aplicaram a RNN ao estudo da psicologia cognitiva. Em 1993, um sistema neural de compressor de histórico resolveu uma tarefa de "Deep Learning Muito Profundo" que exigia mais de 1000 camadas subsequentes numa RNN desdobrada no tempo.
+As redes de memória de longo e curto prazo (LSTM) foram inventadas por Hochreiter e Schmidhuber em 1995 e estabeleceram recordes de precisão em múltiplos domínios de aplicação. Tornou-se a escolha padrão para a arquitetura RNN.
+As redes neurais recorrentes bidirecionais (BRNN) usam duas RNNs que processam a mesma entrada em direções opostas. Estas duas são frequentemente combinadas, dando origem à arquitetura LSTM bidirecional.
+Por volta de 2006, o LSTM bidirecional começou a revolucionar o reconhecimento de fala, superando modelos tradicionais em certas aplicações de voz. Eles também melhoraram o reconhecimento de fala de vocabulário extenso e a síntese texto-fala e foram utilizados na pesquisa por voz do Google e no ditado em dispositivos Android. Quebraram recordes em melhorias na tradução automática, modelagem de linguagem e no processamento multilíngue de linguagem. Além disso, o LSTM combinado com redes neurais convolucionais (CNNs) melhorou a legendagem automática de imagens.
+A ideia de transdução de sequência codificador-decodificador foi desenvolvida no início da década de 2010. Os artigos mais frequentemente citados como os criadores que produziram o seq2seq são dois artigos de 2014. Uma arquitetura seq2seq emprega duas RNNs, tipicamente LSTM, um "codificador" e um "decodificador", para transdução de sequência, como a tradução automática. Elas tornaram-se o estado da arte na tradução automática e foram fundamentais no desenvolvimento de mecanismos de atenção e transformers.
+
+
+== Configurações ==
+
+Um modelo baseado em RNN pode ser decomposto em duas partes: configuração e arquitetura. Várias RNNs podem ser combinadas num fluxo de dados, e o fluxo de dados em si é a configuração. Cada RNN pode ter qualquer arquitetura, incluindo LSTM, GRU, etc.
+
+
+=== Padrão ===
+
+As RNNs apresentam-se em muitas variantes. Falando de forma abstrata, uma RNN é uma função 
+  
+    
+      
+        
+          f
+          
+            θ
+          
+        
+      
+    
+    {\displaystyle f_{\theta }}
+  
+ do tipo 
+  
+    
+      
+        (
+        
+          x
+          
+            t
+          
+        
+        ,
+        
+          h
+          
+            t
+          
+        
+        )
+        ↦
+        (
+        
+          y
+          
+            t
+          
+        
+        ,
+        
+          h
+          
+            t
+            +
+            1
+          
+        
+        )
+      
+    
+    {\displaystyle (x_{t},h_{t})\mapsto (y_{t},h_{t+1})}
+  
+, onde
+
+  
+    
+      
+        
+          x
+          
+            t
+          
+        
+      
+    
+    {\displaystyle x_{t}}
+  
+: vetor de entrada;
+
+  
+    
+      
+        
+          h
+          
+            t
+          
+        
+      
+    
+    {\displaystyle h_{t}}
+  
+: vetor oculto;
+
+  
+    
+      
+        
+          y
+          
+            t
+          
+        
+      
+    
+    {\displaystyle y_{t}}
+  
+: vetor de saída;
+
+  
+    
+      
+        θ
+      
+    
+    {\displaystyle \theta }
+  
+: parâmetros da rede neural.
+Em outras palavras, é uma rede neural que mapeia uma entrada 
+  
+    
+      
+        
+          x
+          
+            t
+          
+        
+      
+    
+    {\displaystyle x_{t}}
+  
+ para uma saída 
+  
+    
+      
+        
+          y
+          
+            t
+          
+        
+      
+    
+    {\displaystyle y_{t}}
+  
+, com o vetor oculto 
+  
+    
+      
+        
+          h
+          
+            t
+          
+        
+      
+    
+    {\displaystyle h_{t}}
+  
+ desempenhando o papel de "memória", um registo parcial de todos os pares entrada-saída anteriores. A cada passo, ela transforma a entrada numa saída e modifica a sua "memória" para ajudá-la a realizar melhor o processamento futuro.
+A ilustração à direita pode ser enganadora para muitos, porque as topologias práticas de redes neurais são frequentemente organizadas em "camadas" e o desenho dá essa aparência. No entanto, o que parecem ser camadas são, na verdade, diferentes passos no tempo, "desdobrados" para produzir a aparência de camadas.
+
+
+=== RNN Empilhada ===
+Uma RNN empilhada (stacked RNN), ou RNN profunda (deep RNN), é composta por múltiplas RNNs empilhadas umas sobre as outras. Abstratamente, está estruturada da seguinte forma:
+A camada 1 tem o vetor oculto 
+  
+    
+      
+        
+          h
+          
+            1
+            ,
+            t
+          
+        
+      
+    
+    {\displaystyle h_{1,t}}
+  
+, parâmetros 
+  
+    
+      
+        
+          θ
+          
+            1
+          
+        
+      
+    
+    {\displaystyle \theta _{1}}
+  
+, e mapeia 
+  
+    
+      
+        
+          f
+          
+            
+              θ
+              
+                1
+              
+            
+          
+        
+        :
+        (
+        
+          x
+          
+            0
+            ,
+            t
+          
+        
+        ,
+        
+          h
+          
+            1
+            ,
+            t
+          
+        
+        )
+        ↦
+        (
+        
+          x
+          
+            1
+            ,
+            t
+          
+        
+        ,
+        
+          h
+          
+            1
+            ,
+            t
+            +
+            1
+          
+        
+        )
+      
+    
+    {\displaystyle f_{\theta _{1}}:(x_{0,t},h_{1,t})\mapsto (x_{1,t},h_{1,t+1})}
+  
+.
+A camada 2 tem o vetor oculto 
+  
+    
+      
+        
+          h
+          
+            2
+            ,
+            t
+          
+        
+      
+    
+    {\displaystyle h_{2,t}}
+  
+, parâmetros 
+  
+    
+      
+        
+          θ
+          
+            2
+          
+        
+      
+    
+    {\displaystyle \theta _{2}}
+  
+, e mapeia 
+  
+    
+      
+        
+          f
+          
+            
+              θ
+              
+                2
+              
+            
+          
+        
+        :
+        (
+        
+          x
+          
+            1
+            ,
+            t
+          
+        
+        ,
+        
+          h
+          
+            2
+            ,
+            t
+          
+        
+        )
+        ↦
+        (
+        
+          x
+          
+            2
+            ,
+            t
+          
+        
+        ,
+        
+          h
+          
+            2
+            ,
+            t
+            +
+            1
+          
+        
+        )
+      
+    
+    {\displaystyle f_{\theta _{2}}:(x_{1,t},h_{2,t})\mapsto (x_{2,t},h_{2,t+1})}
+  
+.
+...
+A camada 
+  
+    
+      
+        n
+      
+    
+    {\displaystyle n}
+  
+ tem o vetor oculto 
+  
+    
+      
+        
+          h
+          
+            n
+            ,
+            t
+          
+        
+      
+    
+    {\displaystyle h_{n,t}}
+  
+, parâmetros 
+  
+    
+      
+        
+          θ
+          
+            n
+          
+        
+      
+    
+    {\displaystyle \theta _{n}}
+  
+, e mapeia 
+  
+    
+      
+        
+          f
+          
+            
+              θ
+              
+                n
+              
+            
+          
+        
+        :
+        (
+        
+          x
+          
+            n
+            −
+            1
+            ,
+            t
+          
+        
+        ,
+        
+          h
+          
+            n
+            ,
+            t
+          
+        
+        )
+        ↦
+        (
+        
+          x
+          
+            n
+            ,
+            t
+          
+        
+        ,
+        
+          h
+          
+            n
+            ,
+            t
+            +
+            1
+          
+        
+        )
+      
+    
+    {\displaystyle f_{\theta _{n}}:(x_{n-1,t},h_{n,t})\mapsto (x_{n,t},h_{n,t+1})}
+  
+.
+Cada camada opera como uma RNN independente, e a sequência de saída de cada camada é usada como a sequência de entrada para a camada superior. Não há um limite conceptual para a profundidade de uma RNN empilhada.
+
+
+=== Bidirecional ===
+
+Uma RNN bidirecional (biRNN) é composta por duas RNNs: uma processa a sequência de entrada numa direção, e a outra na direção oposta. Abstratamente, está estruturada da seguinte forma:
+A RNN para a frente (forward) processa numa direção:
+
+  
+    
+      
+        
+          f
+          
+            θ
+          
+        
+        (
+        
+          x
+          
+            0
+          
+        
+        ,
+        
+          h
+          
+            0
+          
+        
+        )
+        =
+        (
+        
+          y
+          
+            0
+          
+        
+        ,
+        
+          h
+          
+            1
+          
+        
+        )
+        ,
+        
+          f
+          
+            θ
+          
+        
+        (
+        
+          x
+          
+            1
+          
+        
+        ,
+        
+          h
+          
+            1
+          
+        
+        )
+        =
+        (
+        
+          y
+          
+            1
+          
+        
+        ,
+        
+          h
+          
+            2
+          
+        
+        )
+        ,
+        …
+      
+    
+    {\displaystyle f_{\theta }(x_{0},h_{0})=(y_{0},h_{1}),f_{\theta }(x_{1},h_{1})=(y_{1},h_{2}),\dots }
+  
+
+A RNN para trás (backward) processa na direção oposta:
+
+  
+    
+      
+        
+          f
+          
+            
+              θ
+              ′
+            
+          
+          ′
+        
+        (
+        
+          x
+          
+            N
+          
+        
+        ,
+        
+          h
+          
+            N
+          
+          ′
+        
+        )
+        =
+        (
+        
+          y
+          
+            N
+          
+          ′
+        
+        ,
+        
+          h
+          
+            N
+            −
+            1
+          
+          ′
+        
+        )
+        ,
+        
+          f
+          
+            
+              θ
+              ′
+            
+          
+          ′
+        
+        (
+        
+          x
+          
+            N
+            −
+            1
+          
+        
+        ,
+        
+          h
+          
+            N
+            −
+            1
+          
+          ′
+        
+        )
+        =
+        (
+        
+          y
+          
+            N
+            −
+            1
+          
+          ′
+        
+        ,
+        
+          h
+          
+            N
+            −
+            2
+          
+          ′
+        
+        )
+        ,
+        …
+      
+    
+    {\displaystyle f'_{\theta '}(x_{N},h_{N}')=(y'_{N},h_{N-1}'),f'_{\theta '}(x_{N-1},h_{N-1}')=(y'_{N-1},h_{N-2}'),\dots }
+  
+
+As duas sequências de saída são então concatenadas para dar a saída total: 
+  
+    
+      
+        (
+        (
+        
+          y
+          
+            0
+          
+        
+        ,
+        
+          y
+          
+            0
+          
+          ′
+        
+        )
+        ,
+        (
+        
+          y
+          
+            1
+          
+        
+        ,
+        
+          y
+          
+            1
+          
+          ′
+        
+        )
+        ,
+        …
+        ,
+        (
+        
+          y
+          
+            N
+          
+        
+        ,
+        
+          y
+          
+            N
+          
+          ′
+        
+        )
+        )
+      
+    
+    {\displaystyle ((y_{0},y_{0}'),(y_{1},y_{1}'),\dots ,(y_{N},y_{N}'))}
+  
+.
+A RNN bidirecional permite que o modelo processe um token tanto no contexto do que o precedeu quanto do que o sucedeu. Ao empilhar várias RNNs bidirecionais juntas, o modelo pode processar um token de forma cada vez mais contextual. O modelo ELMo (2018) é um LSTM bidirecional empilhado que recebe entradas no nível de caractere e produz embeddings no nível da palavra.
+
+
+=== Codificador-decodificador ===
+
+Duas RNNs podem ser executadas ponta a ponta numa configuração codificador-decodificador (encoder-decoder). A RNN codificadora processa uma sequência de entrada numa sequência de vetores ocultos, e a RNN decodificadora processa a sequência de vetores ocultos para uma sequência de saída, com um mecanismo de atenção opcional. Isto foi usado para construir tradutores de tradução automática neural no estado da arte durante o período de 2014–2017. Este foi um passo fundamental para o desenvolvimento dos transformers.
+
+
+=== PixelRNN ===
+Uma RNN pode processar dados com mais de uma dimensão. A PixelRNN processa dados bidimensionais, com muitas direções possíveis. Por exemplo, a direção linha a linha processa uma grade 
+  
+    
+      
+        n
+        ×
+        n
+      
+    
+    {\displaystyle n\times n}
+  
+ de vetores 
+  
+    
+      
+        
+          x
+          
+            i
+            ,
+            j
+          
+        
+      
+    
+    {\displaystyle x_{i,j}}
+  
+ na seguinte ordem:
+
+  
+    
+      
+        
+          x
+          
+            1
+            ,
+            1
+          
+        
+        ,
+        
+          x
+          
+            1
+            ,
+            2
+          
+        
+        ,
+        …
+        ,
+        
+          x
+          
+            1
+            ,
+            n
+          
+        
+        ,
+        
+          x
+          
+            2
+            ,
+            1
+          
+        
+        ,
+        
+          x
+          
+            2
+            ,
+            2
+          
+        
+        ,
+        …
+        ,
+        
+          x
+          
+            2
+            ,
+            n
+          
+        
+        ,
+        …
+        ,
+        
+          x
+          
+            n
+            ,
+            n
+          
+        
+      
+    
+    {\displaystyle x_{1,1},x_{1,2},\dots ,x_{1,n},x_{2,1},x_{2,2},\dots ,x_{2,n},\dots ,x_{n,n}}
+  
+
+O BiLSTM diagonal usa dois LSTMs para processar a mesma grade. Um processa do canto superior esquerdo para o canto inferior direito, de forma que processa 
+  
+    
+      
+        
+          x
+          
+            i
+            ,
+            j
+          
+        
+      
+    
+    {\displaystyle x_{i,j}}
+  
+ dependendo do seu estado oculto e estado de célula no topo e no lado esquerdo: 
+  
+    
+      
+        
+          h
+          
+            i
+            −
+            1
+            ,
+            j
+          
+        
+        ,
+        
+          c
+          
+            i
+            −
+            1
+            ,
+            j
+          
+        
+      
+    
+    {\displaystyle h_{i-1,j},c_{i-1,j}}
+  
+ e 
+  
+    
+      
+        
+          h
+          
+            i
+            ,
+            j
+            −
+            1
+          
+        
+        ,
+        
+          c
+          
+            i
+            ,
+            j
+            −
+            1
+          
+        
+      
+    
+    {\displaystyle h_{i,j-1},c_{i,j-1}}
+  
+. O outro processa do canto superior direito para o canto inferior esquerdo.
+
+
+== Arquiteturas ==
+
+
+=== Totalmente recorrente ===
+
+As redes neurais totalmente recorrentes (FRNN) conectam as saídas de todos os neurônios às entradas de todos os neurônios. Em outras palavras, é uma rede totalmente conectada. Esta é a topologia de rede neural mais geral, pois todas as outras topologias podem ser representadas definindo alguns pesos de conexão para zero, de forma a simular a falta de conexões entre esses neurônios.
+
+
+=== Hopfield ===
+
+A rede de Hopfield é uma RNN na qual todas as conexões entre camadas têm o mesmo tamanho. Ela requer entradas estacionárias e não é, portanto, uma RNN geral, uma vez que não processa sequências de padrões. No entanto, ela garante que irá convergir. Se as conexões forem treinadas usando a aprendizagem hebbiana, a rede de Hopfield pode funcionar como uma memória endereçável por conteúdo robusta, resistente a alterações de conexão.
+
+
+=== Redes de Elman e redes de Jordan ===
+
+Uma rede de Elman é uma rede de três camadas (organizadas horizontalmente como x, y e z na ilustração) com a adição de um conjunto de unidades de contexto (u na ilustração). A camada intermediária (oculta) está conectada a estas unidades de contexto, fixadas com um peso de um. Em cada passo de tempo, a entrada é alimentada para a frente e uma regra de aprendizagem é aplicada. As conexões fixas de retorno guardam uma cópia dos valores anteriores das unidades ocultas nas unidades de contexto (uma vez que elas se propagam sobre as conexões antes da regra de aprendizagem ser aplicada). Assim, a rede pode manter uma espécie de estado, permitindo-lhe realizar tarefas como a previsão de sequências que estão além do poder de um perceptron multicamadas padrão.
+As redes de Jordan são semelhantes às redes de Elman. As unidades de contexto são alimentadas a partir da camada de saída em vez da camada oculta. As unidades de contexto numa rede de Jordan também são chamadas de camada de estado. Têm uma conexão recorrente com elas próprias.
+As redes de Elman e Jordan também são conhecidas como "Redes recorrentes simples" (SRN).
+
+Rede de Elman
+
+  
+    
+      
+        
+          
+            
+              
+                
+                  h
+                  
+                    t
+                  
+                
+              
+              
+                
+                =
+                
+                  σ
+                  
+                    h
+                  
+                
+                (
+                
+                  W
+                  
+                    h
+                  
+                
+                
+                  x
+                  
+                    t
+                  
+                
+                +
+                
+                  U
+                  
+                    h
+                  
+                
+                
+                  h
+                  
+                    t
+                    −
+                    1
+                  
+                
+                +
+                
+                  b
+                  
+                    h
+                  
+                
+                )
+              
+            
+            
+              
+                
+                  y
+                  
+                    t
+                  
+                
+              
+              
+                
+                =
+                
+                  σ
+                  
+                    y
+                  
+                
+                (
+                
+                  W
+                  
+                    y
+                  
+                
+                
+                  h
+                  
+                    t
+                  
+                
+                +
+                
+                  b
+                  
+                    y
+                  
+                
+                )
+              
+            
+          
+        
+      
+    
+    {\displaystyle {\begin{aligned}h_{t}&=\sigma _{h}(W_{h}x_{t}+U_{h}h_{t-1}+b_{h})\\y_{t}&=\sigma _{y}(W_{y}h_{t}+b_{y})\end{aligned}}}
+  
+
+Rede de Jordan
+
+  
+    
+      
+        
+          
+            
+              
+                
+                  h
+                  
+                    t
+                  
+                
+              
+              
+                
+                =
+                
+                  σ
+                  
+                    h
+                  
+                
+                (
+                
+                  W
+                  
+                    h
+                  
+                
+                
+                  x
+                  
+                    t
+                  
+                
+                +
+                
+                  U
+                  
+                    h
+                  
+                
+                
+                  s
+                  
+                    t
+                  
+                
+                +
+                
+                  b
+                  
+                    h
+                  
+                
+                )
+              
+            
+            
+              
+                
+                  y
+                  
+                    t
+                  
+                
+              
+              
+                
+                =
+                
+                  σ
+                  
+                    y
+                  
+                
+                (
+                
+                  W
+                  
+                    y
+                  
+                
+                
+                  h
+                  
+                    t
+                  
+                
+                +
+                
+                  b
+                  
+                    y
+                  
+                
+                )
+              
+            
+            
+              
+                
+                  s
+                  
+                    t
+                  
+                
+              
+              
+                
+                =
+                
+                  σ
+                  
+                    s
+                  
+                
+                (
+                
+                  W
+                  
+                    s
+                    ,
+                    s
+                  
+                
+                
+                  s
+                  
+                    t
+                    −
+                    1
+                  
+                
+                +
+                
+                  W
+                  
+                    s
+                    ,
+                    y
+                  
+                
+                
+                  y
+                  
+                    t
+                    −
+                    1
+                  
+                
+                +
+                
+                  b
+                  
+                    s
+                  
+                
+                )
+              
+            
+          
+        
+      
+    
+    {\displaystyle {\begin{aligned}h_{t}&=\sigma _{h}(W_{h}x_{t}+U_{h}s_{t}+b_{h})\\y_{t}&=\sigma _{y}(W_{y}h_{t}+b_{y})\\s_{t}&=\sigma _{s}(W_{s,s}s_{t-1}+W_{s,y}y_{t-1}+b_{s})\end{aligned}}}
+  
+
+Variáveis e funções
+
+  
+    
+      
+        
+          x
+          
+            t
+          
+        
+      
+    
+    {\displaystyle x_{t}}
+  
+: vetor de entrada
+
+  
+    
+      
+        
+          h
+          
+            t
+          
+        
+      
+    
+    {\displaystyle h_{t}}
+  
+: vetor da camada oculta
+
+  
+    
+      
+        
+          s
+          
+            t
+          
+        
+      
+    
+    {\displaystyle s_{t}}
+  
+: vetor de "estado"
+
+  
+    
+      
+        
+          y
+          
+            t
+          
+        
+      
+    
+    {\displaystyle y_{t}}
+  
+: vetor de saída
+
+  
+    
+      
+        W
+      
+    
+    {\displaystyle W}
+  
+, 
+  
+    
+      
+        U
+      
+    
+    {\displaystyle U}
+  
+ e 
+  
+    
+      
+        b
+      
+    
+    {\displaystyle b}
+  
+: matrizes de parâmetros e vetor
+
+  
+    
+      
+        σ
+      
+    
+    {\displaystyle \sigma }
+  
+: Funções de ativação
+
+
+=== Long short-term memory ===
+
+A Long short-term memory (LSTM) é a arquitetura RNN mais amplamente utilizada. Foi projetada para resolver o problema do desvanecimento do gradiente. A LSTM é normalmente aumentada por portas recorrentes chamadas "portas de esquecimento" (forget gates). A LSTM impede que erros propagados para trás desapareçam ou explodam. Em vez disso, os erros podem fluir para trás através de um número ilimitado de camadas virtuais desdobradas no espaço. Ou seja, a LSTM pode aprender tarefas que exigem memórias de eventos que aconteceram milhares ou até milhões de passos de tempo discretos antes. Topologias do tipo LSTM específicas para problemas podem ser desenvolvidas. A LSTM funciona mesmo com longos atrasos entre eventos significativos e pode lidar com sinais que misturam componentes de baixa e alta frequência.
+Muitas aplicações usam pilhas de LSTMs, ao que se chama "LSTM profundo". A LSTM pode aprender a reconhecer linguagens dependentes do contexto, ao contrário dos modelos anteriores baseados em modelos ocultos de Markov (HMM) e conceitos semelhantes.
+
+
+=== Gated recurrent unit ===
+
+A Gated recurrent unit (GRU), introduzida em 2014, foi projetada como uma simplificação da LSTM. Elas são usadas na forma completa e em várias variantes ainda mais simplificadas. Possuem menos parâmetros que a LSTM, pois não têm uma porta de saída.
+Verificou-se que o seu desempenho na modelagem de música polifônica e na modelagem de sinais de fala era semelhante ao da memória de longo e curto prazo. Parece não haver uma diferença particular de desempenho entre LSTM e GRU.
+
+
+==== Memória associativa bidirecional ====
+
+Introduzida por Bart Kosko, uma rede de memória associativa bidirecional (BAM) é uma variante de uma rede de Hopfield que armazena dados associativos como um vetor. A bidirecionalidade provém da passagem de informações através de uma matriz e da sua transposta. Tipicamente, a codificação bipolar é preferida em relação à codificação binária dos pares associativos. Recentemente, modelos BAM estocásticos usando o passo de Markov são otimizados para maior estabilidade da rede e relevância para aplicações do mundo real.
+Uma rede BAM tem duas camadas, qualquer uma das quais pode ser acionada como uma entrada para recordar uma associação e produzir uma saída na outra camada.
+
+
+=== Echo state ===
+
+As redes de estado de eco (ESN) possuem uma camada oculta aleatória esparsamente conectada. Os pesos dos neurônios de saída são a única parte da rede que pode mudar (ser treinada). As ESNs são boas em reproduzir certas séries temporais. Uma variante para neurônios de pico (spiking neurons) é conhecida como uma máquina de estado líquido.
+
+
+=== Recursiva ===
+
+Uma rede neural recursiva é criada aplicando o mesmo conjunto de pesos recursivamente sobre uma estrutura diferenciável do tipo grafo, atravessando a estrutura numa ordem topológica. Tais redes são tipicamente também treinadas pelo modo reverso da diferenciação automática. Elas podem processar representações distribuídas de estrutura, como termos lógicos. Um caso especial de redes neurais recursivas é a RNN, cuja estrutura corresponde a uma cadeia linear. Redes neurais recursivas têm sido aplicadas no processamento de linguagem natural. A rede de tensor neural recursiva usa uma função de composição baseada em tensores para todos os nós da árvore.
+
+
+=== Máquinas de Turing neurais ===
+
+As máquinas de Turing neurais (NTMs) são um método de estender redes neurais recorrentes acoplando-as a recursos de memória externos com os quais interagem. O sistema combinado é análogo a uma máquina de Turing ou a uma arquitetura de von Neumann, mas é diferenciável de ponta a ponta, permitindo que seja treinado eficientemente com descida de gradiente.
+Os computadores neurais diferenciáveis (DNCs) são uma extensão das máquinas de Turing neurais, permitindo a utilização de quantidades difusas de cada endereço de memória e um registro de cronologia.
+Os autômatos de pilha de redes neurais (NNPDA) são semelhantes aos NTMs, mas as fitas são substituídas por pilhas analógicas que são diferenciáveis e treinadas. Desta forma, são semelhantes em complexidade a reconhecedores de gramáticas livres de contexto (CFGs).
+As redes neurais recorrentes são Turing completas e podem executar programas arbitrários para processar sequências arbitrárias de entradas.
+
+
+== Treinamento ==
+
+
+=== Teacher forcing ===
+Uma RNN pode ser treinada para se tornar num modelo generativo condicional de sequências, também conhecido como autorregressão.
+Concretamente, consideremos o problema da tradução automática, ou seja, dada uma sequência 
+  
+    
+      
+        (
+        
+          x
+          
+            1
+          
+        
+        ,
+        
+          x
+          
+            2
+          
+        
+        ,
+        …
+        ,
+        
+          x
+          
+            n
+          
+        
+        )
+      
+    
+    {\displaystyle (x_{1},x_{2},\dots ,x_{n})}
+  
+ de palavras em inglês, o modelo deve produzir uma sequência 
+  
+    
+      
+        (
+        
+          y
+          
+            1
+          
+        
+        ,
+        …
+        ,
+        
+          y
+          
+            m
+          
+        
+        )
+      
+    
+    {\displaystyle (y_{1},\dots ,y_{m})}
+  
+ de palavras em francês. Isto deve ser resolvido por um modelo seq2seq.
+Durante o treinamento, a metade codificadora do modelo iria primeiro ingerir 
+  
+    
+      
+        (
+        
+          x
+          
+            1
+          
+        
+        ,
+        
+          x
+          
+            2
+          
+        
+        ,
+        …
+        ,
+        
+          x
+          
+            n
+          
+        
+        )
+      
+    
+    {\displaystyle (x_{1},x_{2},\dots ,x_{n})}
+  
+, e então a metade decodificadora começaria a gerar uma sequência 
+  
+    
+      
+        (
+        
+          
+            
+              
+                y
+                ^
+              
+            
+          
+          
+            1
+          
+        
+        ,
+        
+          
+            
+              
+                y
+                ^
+              
+            
+          
+          
+            2
+          
+        
+        ,
+        …
+        ,
+        
+          
+            
+              
+                y
+                ^
+              
+            
+          
+          
+            l
+          
+        
+        )
+      
+    
+    {\displaystyle ({\hat {y}}_{1},{\hat {y}}_{2},\dots ,{\hat {y}}_{l})}
+  
+. O problema é que se o modelo cometer um erro logo no início, digamos em 
+  
+    
+      
+        
+          
+            
+              
+                y
+                ^
+              
+            
+          
+          
+            2
+          
+        
+      
+    
+    {\displaystyle {\hat {y}}_{2}}
+  
+, os tokens subsequentes também provavelmente serão erros. Isto torna ineficiente para o modelo obter um sinal de aprendizagem, uma vez que o modelo aprenderia maioritariamente a deslocar 
+  
+    
+      
+        
+          
+            
+              
+                y
+                ^
+              
+            
+          
+          
+            2
+          
+        
+      
+    
+    {\displaystyle {\hat {y}}_{2}}
+  
+ em direção a 
+  
+    
+      
+        
+          y
+          
+            2
+          
+        
+      
+    
+    {\displaystyle y_{2}}
+  
+, mas não os outros.
+O teacher forcing faz com que o decodificador use a sequência de saída correta para gerar a próxima entrada na sequência. Assim, por exemplo, ele veria 
+  
+    
+      
+        (
+        
+          y
+          
+            1
+          
+        
+        ,
+        …
+        ,
+        
+          y
+          
+            k
+          
+        
+        )
+      
+    
+    {\displaystyle (y_{1},\dots ,y_{k})}
+  
+ para gerar 
+  
+    
+      
+        
+          
+            
+              
+                y
+                ^
+              
+            
+          
+          
+            k
+            +
+            1
+          
+        
+      
+    
+    {\displaystyle {\hat {y}}_{k+1}}
+  
+.
+
+
+=== Método do gradiente ===
+
+O método do gradiente (descida de gradiente) é um algoritmo de otimização iterativo de primeira ordem para encontrar o mínimo de uma função. Em redes neurais, pode ser usado para minimizar o termo de erro alterando cada peso em proporção à derivada do erro em relação a esse peso, desde que as funções de ativação não lineares sejam diferenciáveis.
+O método padrão para treinar RNNs por descida de gradiente é o algoritmo de "retropropagação através do tempo" (BPTT), que é um caso especial do algoritmo geral de retropropagação. Uma variante online computacionalmente mais dispendiosa é chamada "Real-Time Recurrent Learning" ou RTRL, que é uma instância de diferenciação automática no modo de acumulação para a frente com vetores tangentes empilhados. Ao contrário do BPTT, este algoritmo é local no tempo, mas não local no espaço.
+Neste contexto, local no espaço significa que o vetor de pesos de uma unidade pode ser atualizado usando apenas informações armazenadas nas unidades conectadas e na própria unidade, de tal forma que a complexidade de atualização de uma única unidade é linear em relação à dimensionalidade do vetor de pesos. Local no tempo significa que as atualizações ocorrem continuamente (online) e dependem apenas do passo de tempo mais recente, em vez de múltiplos passos de tempo dentro de um dado horizonte temporal, como no BPTT. As redes neurais biológicas parecem ser locais tanto em relação ao tempo quanto ao espaço.
+Para calcular recursivamente as derivadas parciais, o RTRL tem uma complexidade de tempo de O(número de ocultos x número de pesos) por passo de tempo para calcular as matrizes jacobianas, enquanto o BPTT requer apenas O(número de pesos) por passo de tempo, à custa do armazenamento de todas as ativações diretas dentro do dado horizonte temporal. Existe um híbrido online entre BPTT e RTRL com complexidade intermédia, juntamente com variantes para tempo contínuo.
+Um problema importante com a descida de gradiente para arquiteturas RNN padrão é que os gradientes de erro desaparecem exponencialmente depressa com o tamanho do intervalo de tempo entre eventos importantes.
+ A LSTM combinada com um método de aprendizagem híbrido BPTT/RTRL tenta superar estes problemas. Este problema também é resolvido na rede neural independentemente recorrente (IndRNN) ao reduzir o contexto de um neurônio ao seu próprio estado passado; a informação entre neurônios pode então ser explorada nas camadas seguintes. Memórias de diferentes alcances, incluindo a memória de longo prazo, podem ser aprendidas sem os problemas de desvanecimento e explosão do gradiente.
+O algoritmo online chamado retropropagação recursiva causal (causal recursive backpropagation - CRBP) implementa e combina os paradigmas BPTT e RTRL para redes localmente recorrentes. Funciona com as redes localmente recorrentes mais gerais. O algoritmo CRBP pode minimizar o termo de erro global. Este fato melhora a estabilidade do algoritmo, fornecendo uma visão unificadora de técnicas de cálculo de gradiente para redes recorrentes com feedback local.
+Uma abordagem para o cálculo de informações de gradiente em RNNs com arquiteturas arbitrárias é baseada na derivação diagramática de gráficos de fluxo de sinal. Utiliza o algoritmo de lote (batch) BPTT, baseado no teorema de Lee para cálculos de sensibilidade de rede. Foi proposto por Wan e Beaufays, enquanto a sua versão online rápida foi proposta por Campolucci, Uncini e Piazza.
+
+
+=== Classificação temporal conexionista ===
+A classificação temporal conexionista (CTC) é uma função de perda especializada para o treinamento de RNNs para problemas de modelagem de sequência em que o tempo é variável.
+
+
+=== Métodos de otimização global ===
+O treinamento dos pesos numa rede neural pode ser modelado como um problema não linear de otimização global. Uma função objetivo pode ser formada para avaliar a aptidão ou o erro de um determinado vetor de pesos da seguinte forma: Primeiro, os pesos na rede são definidos de acordo com o vetor de pesos. A seguir, a rede é avaliada contra a sequência de treinamento. Normalmente, a diferença quadrática somada entre as previsões e os valores alvo especificados na sequência de treinamento é usada para representar o erro do vetor de pesos atual. Técnicas arbitrárias de otimização global podem então ser utilizadas para minimizar esta função objetivo.
+O método de otimização global mais comum para treinar RNNs são os algoritmos genéticos, especialmente em redes não estruturadas.
+Inicialmente, o algoritmo genético é codificado com os pesos da rede neural de uma forma predefinida, em que um gene no cromossomo representa uma ligação de peso. Toda a rede é representada como um único cromossomo. A função de aptidão é avaliada da seguinte forma:
+
+Cada peso codificado no cromossomo é atribuído à respetiva ligação de peso da rede.
+O conjunto de treinamento é apresentado à rede, que propaga os sinais de entrada para a frente.
+O erro quadrático médio é devolvido à função de aptidão.
+Esta função impulsiona o processo de seleção genética.
+Muitos cromossomos compõem a população; por conseguinte, muitas redes neurais diferentes são evoluídas até que um critério de paragem seja satisfeito. Um esquema de paragem comum pode ser:
+
+Quando a rede neural tiver aprendido uma certa percentagem dos dados de treinamento.
+Quando o valor mínimo do erro quadrático médio for atingido.
+Quando o número máximo de gerações de treinamento for alcançado.
+A função de aptidão avalia o critério de paragem à medida que recebe o recíproco do erro quadrático médio de cada rede durante o treinamento. Por conseguinte, o objetivo do algoritmo genético é maximizar a função de aptidão, reduzindo o erro quadrático médio.
+Outras técnicas de otimização global (e/ou evolutiva) podem ser utilizadas para procurar um bom conjunto de pesos, como o recristalização simulada ou a otimização por enxame de partículas.
+
+
+== Outras arquiteturas ==
+
+
+=== Independently RNN (IndRNN) ===
+A rede neural independentemente recorrente (IndRNN) aborda os problemas de desvanecimento e explosão do gradiente na RNN totalmente conectada tradicional. Cada neurônio numa camada recebe apenas o seu próprio estado passado como informação de contexto (em vez da conectividade total a todos os outros neurônios nesta camada) e, portanto, os neurônios são independentes do histórico uns dos outros. A retropropagação do gradiente pode ser regulada para evitar o desvanecimento e a explosão do gradiente, de forma a manter a memória de curto ou longo prazo. A informação entre neurônios é explorada nas camadas seguintes. A IndRNN pode ser treinada de forma robusta com funções não lineares não saturadas, como a ReLU. Redes profundas podem ser treinadas usando conexões de salto (skip connections).
+
+
+=== Compressor de histórico neural ===
+O compressor de histórico neural (neural history compressor) é uma pilha não supervisionada de RNNs. No nível de entrada, ele aprende a prever a sua próxima entrada a partir das entradas anteriores. Apenas as entradas imprevisíveis de alguma RNN na hierarquia se tornam entradas para a RNN do nível superior seguinte, a qual, portanto, recalcula o seu estado interno apenas raramente. Cada RNN de nível superior estuda, assim, uma representação comprimida da informação na RNN abaixo. Isto é feito de tal forma que a sequência de entrada pode ser reconstruída com precisão a partir da representação no nível mais alto.
+O sistema minimiza efetivamente o comprimento da descrição ou o logaritmo negativo da probabilidade dos dados. Dada muita previsibilidade aprendível na sequência de dados de entrada, a RNN de nível mais alto pode usar a aprendizagem supervisionada para classificar facilmente até mesmo sequências profundas com longos intervalos entre eventos importantes.
+É possível destilar a hierarquia de RNNs em duas RNNs: o "agrupador" (chunker) "consciente" (nível superior) e o automatizador "subconsciente" (nível inferior). Uma vez que o agrupador aprendeu a prever e comprimir as entradas que são imprevisíveis pelo automatizador, então o automatizador pode ser forçado, na próxima fase de aprendizagem, a prever ou imitar, através de unidades adicionais, as unidades ocultas do agrupador (que muda mais lentamente). Isso torna mais fácil para o automatizador aprender memórias apropriadas, que mudam raramente, através de longos intervalos. Por sua vez, isto ajuda o automatizador a tornar previsíveis muitas das suas entradas outrora imprevisíveis, de modo a que o agrupador se possa focar nos restantes eventos imprevisíveis.
+Um modelo generativo superou parcialmente o problema do desvanecimento do gradiente da diferenciação automática ou retropropagação em redes neurais em 1992. Em 1993, um sistema desse tipo resolveu uma tarefa de "Deep Learning Muito Profundo" que exigia mais de 1000 camadas subsequentes numa RNN desdobrada no tempo.
+
+
+=== RNNs de segunda ordem ===
+As RNNs de segunda ordem usam pesos de ordem superior 
+  
+    
+      
+        w
+        
+          
+
+          
+          
+            i
+            j
+            k
+          
+        
+      
+    
+    {\displaystyle w{}_{ijk}}
+  
+ em vez dos pesos padrão 
+  
+    
+      
+        w
+        
+          
+
+          
+          
+            i
+            j
+          
+        
+      
+    
+    {\displaystyle w{}_{ij}}
+  
+, e os estados podem ser um produto. Isto permite um mapeamento direto para uma máquina de estados finitos, tanto no treinamento como na representação. A Long short-term memory é um exemplo disto, mas não tem esses mapeamentos formais ou provas de estabilidade.
+
+
+=== Rede neural recorrente hierárquica ===
+As redes neurais recorrentes hierárquicas (HRNN) conectam os seus neurônios de várias formas para decompor o comportamento hierárquico em subprogramas úteis. Tais estruturas hierárquicas da cognição estão presentes em teorias de memória apresentadas pelo filósofo Henri Bergson, cujas visões filosóficas inspiraram modelos hierárquicos.
+As redes neurais recorrentes hierárquicas são úteis na previsão, ajudando a prever as componentes de inflação desagregadas do índice de preços ao consumidor (IPC). O modelo HRNN aproveita as informações de níveis mais altos na hierarquia do IPC para aprimorar as previsões de nível mais baixo. A avaliação de um conjunto de dados substancial do índice IPC-U dos EUA demonstra o desempenho superior do modelo HRNN em comparação com vários métodos estabelecidos de previsão da inflação.
+
+
+=== Rede perceptron multicamadas recorrente ===
+Geralmente, uma rede perceptron multicamadas recorrente (rede RMLP) consiste em subredes em cascata, contendo cada uma delas múltiplas camadas de nós. Cada subrede é feedforward, exceto a última camada, que pode ter conexões de feedback. Cada uma destas subredes está ligada apenas por conexões feedforward.
+
+
+=== Modelo de múltiplas escalas de tempo ===
+Uma rede neural recorrente de múltiplas escalas de tempo (MTRNN) é um modelo computacional baseado em neurônios que pode simular a hierarquia funcional do cérebro através da auto-organização, dependendo da conexão espacial entre os neurônios e de tipos distintos de atividades neuronais, cada uma com propriedades de tempo distintas. Com estas atividades neuronais tão variadas, sequências contínuas de qualquer conjunto de comportamentos são segmentadas em primitivas reutilizáveis, que por sua vez são flexivelmente integradas em diversos comportamentos sequenciais. A aprovação biológica desse tipo de hierarquia foi discutida na teoria da função cerebral baseada na predição da memória de Hawkins no seu livro On Intelligence. Tal hierarquia também está de acordo com as teorias de memória postuladas pelo filósofo Henri Bergson, as quais foram incorporadas num modelo MTRNN.
+
+
+=== Redes memristivas ===
+Greg Snider, da HP Labs, descreve um sistema de computação cortical com nanodispositivos memristivos. Os memristores (resistores de memória) são implementados por materiais de película fina nos quais a resistência é ajustada eletricamente através do transporte de íons ou vacâncias de oxigênio dentro do filme. O projeto SyNAPSE da DARPA tem financiado a IBM Research e os HP Labs, em colaboração com o Departamento de Sistemas Cognitivos e Neurais (CNS) da Universidade de Boston, para desenvolver arquiteturas neuromórficas que possam ser baseadas em sistemas memristivos.As redes memristivas são um tipo particular de rede neural física que têm propriedades muito semelhantes às redes de (Little-)Hopfield, pois possuem dinâmica contínua, uma capacidade de memória limitada e relaxamento natural através da minimização de uma função que é assintótica ao modelo de Ising. Neste sentido, a dinâmica de um circuito memristivo tem a vantagem, em comparação com uma rede resistor-capacitor, de ter um comportamento não linear mais interessante. Desse ponto de vista, a engenharia de redes memristivas analógicas representa um tipo peculiar de engenharia neuromórfica em que o comportamento do dispositivo depende do roteamento (wiring) ou da topologia do circuito.
+A evolução destas redes pode ser estudada analiticamente usando variações da Equação de Caravelli-Traversa-Di Ventra.
+
+
+=== Tempo contínuo ===
+Uma rede neural recorrente de tempo contínuo (CTRNN) utiliza um sistema de equações diferenciais ordinárias para modelar os efeitos dos sinais de entrada sobre um neurônio. Elas são tipicamente analisadas pela teoria de sistemas dinâmicos. Muitos modelos de RNN na neurociência são de tempo contínuo.
+Para um neurônio 
+  
+    
+      
+        i
+      
+    
+    {\displaystyle i}
+  
+ na rede com ativação 
+  
+    
+      
+        
+          y
+          
+            i
+          
+        
+      
+    
+    {\displaystyle y_{i}}
+  
+, a taxa de variação da ativação é dada por:
+
+  
+    
+      
+        
+          τ
+          
+            i
+          
+        
+        
+          
+            
+              
+                y
+                ˙
+              
+            
+          
+          
+            i
+          
+        
+        =
+        −
+        
+          y
+          
+            i
+          
+        
+        +
+        
+          ∑
+          
+            j
+            =
+            1
+          
+          
+            n
+          
+        
+        
+          w
+          
+            j
+            i
+          
+        
+        σ
+        (
+        
+          y
+          
+            j
+          
+        
+        −
+        
+          Θ
+          
+            j
+          
+        
+        )
+        +
+        
+          I
+          
+            i
+          
+        
+        (
+        t
+        )
+      
+    
+    {\displaystyle \tau _{i}{\dot {y}}_{i}=-y_{i}+\sum _{j=1}^{n}w_{ji}\sigma (y_{j}-\Theta _{j})+I_{i}(t)}
+  
+
+Onde:
+
+  
+    
+      
+        
+          τ
+          
+            i
+          
+        
+      
+    
+    {\displaystyle \tau _{i}}
+  
+ : Constante de tempo do nó pós-sináptico
+
+  
+    
+      
+        
+          y
+          
+            i
+          
+        
+      
+    
+    {\displaystyle y_{i}}
+  
+ : Ativação do nó pós-sináptico
+
+  
+    
+      
+        
+          
+            
+              
+                y
+                ˙
+              
+            
+          
+          
+            i
+          
+        
+      
+    
+    {\displaystyle {\dot {y}}_{i}}
+  
+ : Taxa de variação da ativação do nó pós-sináptico
+
+  
+    
+      
+        w
+        
+          
+
+          
+          
+            j
+            i
+          
+        
+      
+    
+    {\displaystyle w{}_{ji}}
+  
+ : Peso da conexão do nó pré para o pós-sináptico
+
+  
+    
+      
+        σ
+        (
+        x
+        )
+      
+    
+    {\displaystyle \sigma (x)}
+  
+ : Sigmoide de x, ex.: 
+  
+    
+      
+        σ
+        (
+        x
+        )
+        =
+        1
+        
+          /
+        
+        (
+        1
+        +
+        
+          e
+          
+            −
+            x
+          
+        
+        )
+      
+    
+    {\displaystyle \sigma (x)=1/(1+e^{-x})}
+  
+.
+
+  
+    
+      
+        
+          y
+          
+            j
+          
+        
+      
+    
+    {\displaystyle y_{j}}
+  
+ : Ativação do nó pré-sináptico
+
+  
+    
+      
+        
+          Θ
+          
+            j
+          
+        
+      
+    
+    {\displaystyle \Theta _{j}}
+  
+ : Viés (bias) do nó pré-sináptico
+
+  
+    
+      
+        
+          I
+          
+            i
+          
+        
+        (
+        t
+        )
+      
+    
+    {\displaystyle I_{i}(t)}
+  
+ : Entrada (se alguma) para o nó
+As CTRNNs têm sido aplicadas à robótica evolutiva, onde foram usadas para abordar visão, cooperação, e comportamento cognitivo mínimo.
+Note que, pelo teorema da amostragem de Shannon, as redes neurais recorrentes de tempo discreto podem ser vistas como redes neurais recorrentes de tempo contínuo onde as equações diferenciais se transformaram em equações de diferenças equivalentes. Essa transformação pode ser pensada como ocorrendo após as funções de ativação do nó pós-sináptico 
+  
+    
+      
+        
+          y
+          
+            i
+          
+        
+        (
+        t
+        )
+      
+    
+    {\displaystyle y_{i}(t)}
+  
+ terem sido filtradas por um filtro passa-baixo, mas antes da amostragem.
+Elas são, de fato, redes neurais recursivas com uma estrutura particular: a de uma cadeia linear. Enquanto as redes neurais recursivas operam em qualquer estrutura hierárquica, combinando representações-filho em representações-pai, as redes neurais recorrentes operam na progressão linear do tempo, combinando o passo de tempo anterior e uma representação oculta na representação para o passo de tempo atual.
+De uma perspectiva de série temporal, as RNNs podem aparecer como versões não lineares de filtros de resposta ao impulso finito (FIR) e resposta ao impulso infinito (IIR) e também como um modelo autorregressivo não linear exógeno (NARX). A RNN tem resposta ao impulso infinita, enquanto a rede neural convolucional tem resposta ao impulso finito. Ambas as classes de redes exibem comportamento dinâmico temporal. Uma rede recorrente de impulso finito é um grafo acíclico dirigido que pode ser desenrolado e substituído por uma rede neural estritamente feedforward, enquanto uma rede recorrente de impulso infinito é um grafo cíclico dirigido que não pode ser desenrolado.
+O efeito da aprendizagem baseada em memória para o reconhecimento de sequências também pode ser implementado por um modelo mais de base biológica que utiliza o mecanismo de silenciamento exibido em neurônios com uma atividade de disparo (spiking) de frequência relativamente alta.
+Estados armazenados adicionais e o armazenamento sob controle direto da rede podem ser adicionados tanto a redes de impulso infinito quanto a redes de impulso finito. Outra rede ou grafo também pode substituir o armazenamento se isso incorporar atrasos de tempo ou tiver laços de feedback. Tais estados controlados são referidos como estados controlados por porta (gated states) ou memória fechada (gated memory) e fazem parte de redes long short-term memory (LSTMs) e gated recurrent units. Isto também é chamado de Rede Neural de Feedback (FNN).
+
+
+== Bibliotecas ==
+As bibliotecas modernas fornecem implementações otimizadas em tempo de execução das funcionalidades acima ou permitem acelerar o loop lento através da compilação just-in-time.
+
+Apache Singa
+Caffe: Criada pelo Berkeley Vision and Learning Center (BVLC). Suporta tanto CPU quanto GPU. Desenvolvida em C++, e possui invólucros (wrappers) para Python e MATLAB.
+Chainer: Totalmente em Python, suporte de produção para CPU, GPU e treinamento distribuído.
+Deeplearning4j: Aprendizado profundo em Java e Scala no Spark habilitado para múltiplas GPUs.
+Flux: inclui interfaces para RNNs, incluindo GRUs e LSTMs, escrita em Julia.
+Keras: API de alto nível, fornecendo um invólucro para muitas outras bibliotecas de aprendizado profundo.
+Microsoft Cognitive Toolkit
+MXNet: um framework de aprendizado profundo de código aberto usado para treinar e implantar redes neurais profundas.
+PyTorch: Tensores e redes neurais dinâmicas em Python com aceleração de GPU.
+TensorFlow: Biblioteca semelhante ao Theano licenciada sob a Apache 2.0 com suporte para CPU, GPU e a TPU proprietária do Google, além de dispositivos móveis.
+Theano: Uma biblioteca de aprendizado profundo para Python com uma API amplamente compatível com a biblioteca NumPy.
+Torch: Um framework de computação científica com suporte para algoritmos de aprendizado de máquina, escrito em C e Lua.
+
+
+== Aplicações ==
+As aplicações de redes neurais recorrentes incluem:
+
+Tradução automática
+Controle de robôs
+Previsão de séries temporais
+Reconhecimento de fala
+Síntese de fala
+Interface cérebro-computador
+Detecção de anomalias em séries temporais
+Modelo texto para vídeo
+Previsão de energia
+Aprendizagem de ritmo
+Composição musical
+Aprendizagem de gramática
+Reconhecimento de caligrafia
+Reconhecimento de ações humanas
+Deteção de homologia de proteínas
+Previsão de localização subcelular de proteínas
+Várias tarefas de previsão na área da gestão de processos de negócio
+Previsão em percursos de cuidados médicos
+Previsão de interrupções de plasma de fusão em reatores (código de Rede Neural Recorrente de Fusão - FRNN) 
+
+
+== Referências ==
+
+
+== Leitura adicional ==
+Mandic, Danilo P.; Chambers, Jonathon A. (2001). Recurrent Neural Networks for Prediction: Learning Algorithms, Architectures and Stability. [S.l.]: Wiley. ISBN 978-0-471-49517-8 
+Grossberg, Stephen (2013). «Recurrent Neural Networks». Scholarpedia. 8 (2): 1888. Bibcode:2013SchpJ...8.1888G. ISSN 1941-6016. doi:10.4249/scholarpedia.1888 
+Recurrent Neural Networks – lista de artigos sobre RNN pelo grupo de Jürgen Schmidhuber no Dalle Molle Institute for Artificial Intelligence Research

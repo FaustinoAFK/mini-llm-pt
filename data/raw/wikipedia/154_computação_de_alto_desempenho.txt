@@ -1,0 +1,24 @@
+Computação de alto desempenho ou HPC (do inglês High-performance computing), em ciência da computação, se refere às tecnologias utilizadas por computadores em cluster para criar sistemas de processamento capazes de fornecer um desempenho muito alto, alcançando petaflops, normalmente usando computação paralela.
+A expressão é amplamente utilizada essencialmente para sistemas de processamento utilizados no campo científico.
+Os atuais sistemas computacionais mais difundidos, que exploram tecnologias HPC, são instalações que requerem investimentos significativos e cuja gestão requer a utilização de pessoal especializado de alto nível. A complexidade intrínseca e a rápida evolução tecnológica dessas ferramentas também exigem que esse pessoal interaja profundamente com os usuários finais (os especialistas dos diversos setores científicos em que esses sistemas são utilizados), para permitir um uso eficiente das ferramentas.
+
+
+== No Brasil ==
+Pode-se ter acesso a recursos computacionais de alto desempenho através do Sistema Nacional de Processamento de Alto Desempenho (SINAPAD), rede de centros de computação de alto desempenho instituída pelo Ministério da Ciência, Tecnologia e Inovação (MCTI) e coordenada pelo Laboratório Nacional de Computação Científica.
+
+
+== Ver também ==
+Computação em nuvem
+Computação em grelha
+Computação paralela
+Sistema de processamento distribuído
+
+
+== Referências ==
+
+
+== Ligações Externas ==
+HPCwire
+Top 500 supercomputadores
+Rocks Clusters Open-Source High Performance Linux Clusters
+Artigos de notícias e relatórios de políticas sobre computação científica de alto desempenho

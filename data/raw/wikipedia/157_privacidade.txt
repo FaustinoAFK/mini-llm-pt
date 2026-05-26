@@ -1,0 +1,83 @@
+Privacidade (calcado no inglês privacy) é o direito à reserva de informações pessoais e da própria vida pessoal: the right to be let alone (literalmente "o direito de ser deixado em paz"), segundo o jurista norte-americano Louis Brandeis, que foi provavelmente o primeiro a formular o conceito de direito à privacidade, juntamente com Samuel Warren. Brandeis inspirou-se na leitura da obra do filósofo Ralph Waldo Emerson, que propunha a solidão como critério e fonte de liberdade.
+Pode ser também entendida como a vontade de controlar a exposição e a disponibilidade de informações acerca de si mesmo, o que é chamado de regulação dos limites: a quantidade de controle que um indivíduo exerce sobre a entrada e saída de declarações de si mesmo e a quantidade de contato que se tem com outras pessoas. Esse processo tem implicações diretas no tipo de relação que o indivíduo exerce com e sobre outras pessoas em sua vida.
+Relaciona-se, também, com a capacidade de existir na sociedade de forma anônima (inclusive pelo disfarce de um pseudônimo ou por um identidade falsa).
+A noção de privacidade pessoal surge entre os séculos XVII e XVIII.: as construções passam a oferecer quartos privados; passa a fazer sentido a elaboração de diários pessoais. Desde então, a privacidade atravessa um percurso que vai da inexistência "forçada" à abolição espontânea, passando pelo fortalecimento do senso coletivo de privacidade. Hoje, segundo a comunicóloga argentina Paula Sibilia, vivemos a "intimidade como espetáculo", ou seja, a privacidade inserida na sociedade do espetáculo, situação ilustrada por fenômenos de mídia e comportamento - redes sociais, blogs, reality shows (Big Brother e similares), biografias e revistas de fofocas. Segundo a autora, as pessoas abdicam espontaneamente da sua privacidade, movidas  pela necessidade de obter destaque e reconhecimento.
+
+
+== Privacidade como direito universal ==
+O artigo 12 da "Declaração Universal dos Direitos Humanos" adotada pela Assembleia Geral das Nações Unidas estabelece que o direito à vida privada é um direito humano:
+
+O artigo 17 do "Pacto Internacional dos Direitos Civis e Políticos" adotado pela  Assembleia Geral das Nações Unidas, consagra, a esse respeito, o seguinte:
+
+Túlio Vianna, professor de Direito da UFMG, divide o direito à privacidade em três outros direitos que, em conjunto, caracterizam a privacidade:
+
+Direito de não ser monitorado, entendido como direito de não ser visto, ouvido, entre outros;
+Direito de não ser registrado, entendido como direito de não ter imagens gravadas, conversas gravadas, entre outros;
+Direito de não ser reconhecido, entendido como direito de não ter imagens e conversas anteriormente gravadas publicadas na Internet em outros meios de comunicação.
+Para o autor, "o direito à privacidade, concebido como uma tríade de direitos - direito de não ser monitorado, direito de não ser registrado e direito de não ser reconhecido (direito de não ter registros pessoais publicados) - transcende, pois, nas sociedades informacionais, os limites de mero direito de interesse privado para se tornar um dos fundamentos do Estado democrático de direito"
+Segundo o cypherpunk Eric Hughes, "privacidade é o poder de revelar-se seletivamente ao mundo." De modo semelhante, o cientista da informação Rainer Kuhlen concebe o conceito de "privacidade" (Privatheit) não apenas como proteção de dados ou como o direito de ser deixado em paz, mas também como "autonomia informacional" (informationelle Selbstbestimmung) ou seja, a capacidade de escolher e utilizar o conhecimento e a informação autonomamente, em um ambiente eletrônico, e de determinar quais atributos de si serão usados por outros.
+
+
+== Legislação brasileira ==
+
+
+=== Constituição Federal de 1988 ===
+Art. 5º Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:
+X - são invioláveis a intimidade, a vida privada, a honra e a imagem das pessoas, assegurado o direito a indenização pelo dano material ou moral decorrente de sua violação;
+
+
+=== Lei 12.527/2011 - LAI - Lei de Acesso à Informação ===
+A LAI define informação pessoal:Art. 4º, IV - informação pessoal: aquela relacionada à pessoa natural identificada ou identificável;
+as quais Art 31. § 1, 
+I - terão seu acesso restrito, independentemente de classificação de sigilo e pelo prazo máximo de 100 (cem) anos a contar da sua data de produção, a agentes públicos legalmente autorizados e à pessoa a que elas se referirem; e 
+II - poderão ter autorizada sua divulgação ou acesso por terceiros diante de previsão legal ou consentimento expresso da pessoa a que elas se referirem.
+
+
+== OCDE e proteção à privacidade ==
+A Organização para a Cooperação e Desenvolvimento Econômico (OCDE) publicou em 1980 diretrizes relativas à política internacional sobre a proteção da privacidade e dos fluxos transfronteiriços de dados pessoais. Elas representam um consenso internacional sobre a orientação geral a respeito da coleta e do gerenciamento da informação pessoal. Em 2013, essas diretrizes foram atualizadas.
+
+
+=== Princípios básicos de aplicação nacional ===
+Princípio de limitação da coleta: Deve haver limites para a coleta de dados pessoais e esta deve estar de acordo com a lei e justa e, quando apropriado, com o conhecimento ou consentimento do sujeito dos dados.
+Princípio de qualidade dos dados: Os dados pessoais devem ser relevantes para os propósitos para os quais eles serão utilizados e, na medida necessária para esses propósitos, devendo ser precisos, completos e mantidos atualizados.
+Finalidade especificação princípio: Os propósitos para os quais os dados pessoais são coletados devem ser especificados, o mais tardar, no momento da coleta de dados e o uso subsequente limitado ao cumprimento desses propósitos ou outros que não sejam incompatíveis com esses fins e serão especificados em cada ocasião de mudança de propósito.
+Princípio de limitação de uso: Os dados pessoais não devem ser divulgados, disponibilizados ou utilizados para outros fins que não os especificados de acordo com o Parágrafo 9, exceto com o consentimento do titular dos dados ou pela autoridade da lei.
+Princípio de segurança: Técnicas de segurança devem ser utilizadas para proteger os dados pessoais contra riscos perda, ou acesso indevido, destruição, alteração, uso e divulgação de dados não autorizados.
+Princípio da transparência: Deve haver uma política geral de transparência sobre desenvolvimentos, práticas e políticas com respeito a dados pessoais. Deve haver meios para estabelecer a existência e a natureza dos dados pessoais, e os principais objetivos de seu uso, bem como a identidade e a localização do controlador de dados.
+Princípio da participação individual: Os indivíduos devem ter o direito:
+A - obter do controlador de dados, ou de outra forma, a confirmação de se o controlador de dados possui ou não dados relacionados a eles;
+B - ter comunicado a eles, dados relacionados a eles
+dentro de um prazo razoável;
+por um custo, se houver, que não seja excessivo;
+de maneira razoável; e
+de uma forma que seja inteligível para eles;
+C – receber explicações sobre recusas a pedidos feito nos termos das alíneas (a) e (b) e para contestar essa negação; e
+D – verificar dados relativos a eles e, se se necessário
+E - que os dados sejam apagados, corrigidos, completados ou alterados.
+Princípio de responsabilização. O responsável pelo tratamento de dados deve ser responsabilizado pelo cumprimento das medidas que implementam os princípios mencionados acima.
+
+
+=== Princípios básicos de aplicação internacional: Fluxo livre e restrições legítimas ===
+[16] O controlador de dados permanece responsável por dados pessoais sob seu controle independentemente da localização dos dados.
+[17] Os países membros devem abster-se de restringir os fluxos transfronteiriços de dados pessoais entre si e outros países, desde que os outros países observem substancialmente estas Diretrizes ou existam salvaguardas suficientes, incluindo mecanismos eficazes de aplicação e medidas adequadas implementado pelo controlador de dados, para garantir um nível proteção contínuo e consistente com estas Diretrizes.
+[18] Quaisquer restrições aos fluxos transfronteiriços de dados pessoais devem ser proporcionais aos riscos apresentados, tendo em conta a sensibilidade dos dados e a finalidade e contexto do processamento.
+
+
+== Selo de privacidade ==
+Diversos sites na internet possuem selos de privacidade que certificam que o site possui uma política de privacidade e que segue essa política. As práticas de segurança, estão de acordo com o que foi proposto em suas políticas, dando ao usuário uma maior garantia de que o site cumpre com as políticas de privacidade definidas. As organizações que emitem o selo de privacidade não verificam se as práticas nessa políticas são abusivas, apenas se o site viola ou não sua política de privacidade. Para a garantia dessas políticas, essas organizações realizam uma análise no site e em suas práticas de coleta e uso das informações pessoais dos usuários, passando o site por um processo de auditoria e avaliação.
+
+
+== Ver também ==
+Liberdade
+Direito civil
+Anonymous
+Comissão Nacional de Protecção de Dados
+Propriedade privada
+Inviolabilidade do domicílio
+Privacidade digital
+Política de privacidade
+Proteção de dados
+Criptografia
+
+
+== Referências ==

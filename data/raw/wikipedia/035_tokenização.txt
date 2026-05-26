@@ -1,0 +1,53 @@
+Tokenização é o processo de converter ativos, sejam eles tangíveis ou intangíveis, em tokens digitais que são registrados em uma blockchain. Esses tokens representam frações do ativo original e podem ser negociados de forma mais fácil e acessível no ambiente digital. Esse conceito surgiu no âmbito da criptoeconomia, com a promessa de democratizar o acesso a investimentos e aumentar a eficiência dos mercados financeiros.
+
+
+== Como funciona ==
+A tokenização transforma um ativo em diversas unidades digitais, cada uma representando uma parte proporcional do valor total. Esses tokens podem ser comprados, vendidos ou transferidos entre indivíduos ou entidades, e as transações são registradas de maneira segura e transparente em uma blockchain. Um dos principais atrativos da tokenização é a possibilidade de fracionar ativos valiosos — como imóveis, obras de arte, ou até mesmo royalties musicais — em partes menores, permitindo que investidores menores possam adquirir frações desses ativos.
+
+
+== Tipos de ativos tokenizáveis ==
+Imóveis: A tokenização de propriedades permite que um imóvel seja dividido em pequenas partes, representadas por tokens digitais. Investidores podem adquirir frações de uma propriedade, sem a necessidade de comprá-la integralmente, o que democratiza o acesso ao mercado imobiliário.
+Títulos e ações: Empresas podem emitir ações ou títulos tokenizados, permitindo que investidores adquiram frações de ações, reduzindo barreiras de entrada para pequenos investidores.
+Royalties e propriedade intelectual: Artistas e criadores podem tokenizar os direitos de royalties sobre suas músicas ou outros produtos criativos, vendendo frações desses direitos para investidores.
+
+
+== Benefícios ==
+Liquidez: Ativos tradicionalmente ilíquidos, como imóveis ou participações privadas, podem ser negociados de forma mais fácil em plataformas digitais.
+Acessibilidade: A tokenização permite que investidores adquiram pequenas frações de ativos de alto valor, o que aumenta o acesso a uma gama mais ampla de oportunidades de investimento.
+Transparência e segurança: A blockchain oferece um registro transparente e imutável das transações, garantindo confiança entre os participantes do mercado e reduzindo o risco de fraudes.
+
+
+== Desafios e regulação ==
+Apesar de suas vantagens, a tokenização enfrenta desafios, especialmente no que diz respeito à regulação. A maioria dos tokens representa ativos financeiros e, portanto, estão sujeitos às leis de valores mobiliários de diversos países. Além disso, a falta de padronização entre diferentes blockchains e a necessidade de mercados secundários mais robustos são questões a serem resolvidas para o desenvolvimento completo desse mercado.
+
+
+== Aplicações reais ==
+Empresas como BlackRock, Goldman Sachs e Siemens começaram a explorar o uso da tokenização para tornar ativos mais líquidos e acessíveis. Setores como o imobiliário, financeiro e de arte estão entre os que mais podem se beneficiar dessa tecnologia.
+A tokenização é uma inovação promissora, com o potencial de transformar os mercados financeiros e democratizar o acesso a ativos valiosos. Com o avanço da tecnologia blockchain e o amadurecimento regulatório, a tokenização pode se tornar um dos motores da nova economia digital.
+
+
+=== Tokenização em pagamentos ===
+No setor de meios de pagamento, a tokenização é utilizada para substituir os dados sensíveis de um cartão — como número, validade e código de segurança — por um identificador criptográfico chamado *token*. Esse token pode ser armazenado em sistemas de comércio eletrônico, carteiras digitais e aplicativos de pagamento, reduzindo a exposição dos dados reais do portador. A prática é amplamente adotada por redes de pagamento internacionais como Visa e Mastercard.
+A técnica segue padrões definidos por entidades como a EMVCo e o PCI Security Standards Council, que estabelecem requisitos para criação, armazenamento e uso seguro desses tokens em transações digitais.
+No Brasil, a tokenização é descrita pela ABECS como um mecanismo essencial para reduzir riscos de fraude e simplificar o cumprimento das normas de segurança do setor de cartões.
+A tokenização de cartões é amplamente empregada em:
+
+pagamentos recorrentes e modelos de assinatura
+carteiras digitais (como Apple Pay e Google Wallet)
+checkouts de e-commerce
+sistemas antifraude comportamental
+aplicativos móveis
+Entre os principais benefícios estão:
+
+redução da exposição de dados sensíveis
+menor risco de fraude em ambientes online
+continuidade de credenciais, facilitando aprovação de transações
+simplificação da conformidade com PCI DSS
+De acordo com análises técnicas da IBM, a tokenização também contribui para reduzir o impacto de eventuais violações de dados, uma vez que tokens não podem ser utilizados fora do contexto autorizado.
+
+
+== Referências ==
+
+
+== Leitura adicional ==
+Drex e tokenização ainda enfrentam muitos desafios para 'dominar' o sistema financeiro, debatem especialistas na CVM - CoinTelegraph, 10 de outubro de 2024

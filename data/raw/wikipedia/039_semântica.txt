@@ -1,0 +1,43 @@
+Semântica (do grego σημαντικός, sēmantiká, plural neutro de sēmantikós, derivado de sema, sinal) é o estudo do significado. Incide sobre a relação entre significantes, tais como palavras, frases, sinais e símbolos, e o que eles representam, a sua denotação.
+A semântica linguística estuda o significado usado por seres humanos para se expressar através da linguagem. Outras formas de semântica incluem a semântica nas linguagens de programação, lógica formal e semiótica.
+A semântica contrapõe-se com frequência à sintaxe, caso em que a primeira se ocupa do que algo significa, enquanto a segunda se debruça sobre as estruturas ou padrões formais do modo como esse algo é expresso (por exemplo, as relações entre predicados e seus argumentos). Dependendo da concepção de significado das palavras leva em consideração:
+
+Sinonímia: É a relação que se estabelece entre duas palavras ou mais que apresentam significados iguais ou semelhantes, ou seja, os sinônimos. Exemplos: Cômico - engraçado / Débil - fraco, frágil / Distante - afastado, remoto.
+Antonímia: É a relação que se estabelece entre duas palavras ou mais que apresentam significados diferentes, contrários, isto é, os antônimos: Exemplos. Economizar - gastar / Bem - mal / Bom - ruim.
+Homonímia: É a relação entre duas ou mais palavras que, apesar de possuírem significados diferentes, possuem a mesma estrutura fonológica, ou seja, os homônimos.
+
+As homônimas podem ser:
+
+Homógrafas: palavras iguais na escrita e diferentes na pronúncia. Exemplos: gosto (substantivo) - gosto / (1ª pessoa singular presente indicativo do verbo gostar) / sua (pronome) de você, de si - sua (verbo) de suar;
+Homófonas: palavras iguais na pronúncia e diferentes na escrita. Exemplos: cela (substantivo) - sela (verbo) / cessão (substantivo) - sessão (substantivo) / cerrar (verbo) - serrar (verbo) / concerto (substantivo) - conserto (1ª pessoa singular presente indicativo do verbo consertar);
+Perfeitas: palavras iguais na pronúncia e na escrita. Exemplos: cura (verbo) - cura (substantivo) / verão (verbo) - verão (substantivo) / cedo (verbo) - cedo (advérbio);
+Paronímia: É a relação que se estabelece entre duas ou mais palavras que possuem significados diferentes, mas são muito parecidas na pronúncia e na escrita, isto é, os parônimos: Exemplos: cavaleiro - cavalheiro / absolver - absorver / comprimento - cumprimento/ aura (atmosfera) - áurea (dourada) / conjectura (suposição) - conjuntura (situação decorrente dos acontecimentos) / descriminar (desculpabilizar) - discriminar (diferenciar) / desfolhar (tirar ou perder as folhas) - folhear (passar as folhas de uma publicação) / despercebido (não notado) - desapercebido (desacautelado) / geminada (duplicada) - germinada (que germinou) / mugir (soltar mugidos) - mungir (ordenhar) / percursor (que percorre) - precursor (que antecipa os outros) / sobrescrever (endereçar) - subscrever (aprovar, assinar) / veicular (transmitir) - vincular (ligar) / descrição - discrição / onicolor - unicolor.
+Polissemia: É a propriedade que uma mesma palavra tem de apresentar vários significados. Exemplos: Ele ocupa um alto posto na empresa. / Abasteci meu carro no posto da esquina. / Os convites eram de graça. / Os fiéis agradecem a graça recebida.
+Homonímia: Identidade fonética entre formas de significados e origem completamente distintos. Exemplos: São (Presente do verbo ser) - São (santo)
+Hiperônimo: é uma palavra que pertence ao mesmo campo semântico de outra mas com o sentido mais abrangente, podendo ter várias possibilidades para um único hipônimo.
+Por exemplo, a palavra flor está associada a todos os tipos de flores: rosa, dália, violeta, etc.
+
+Hipônimo: têm sentido mais restrito que os hiperônimos, ou seja, hipônimo é um vocábulo mais específico. Por exemplo: Observar, examinar, olhar, enxergar são hipônimos de ver.
+Hiperônimo e hipônimo são dois termos usados pela semântica moderna. São elementos importantes na coesão do texto evitando repetições através da retomada de ideias anteriores.
+Conotação e Denotação:
+
+Conotação: é o uso da palavra com um significado diferente do original, criado pelo contexto. Exemplos: Você tem um coração de pedra.
+Denotação: é o uso da palavra com o seu sentido original. Exemplos: Pedra é um corpo duro e sólido, da natureza das rochas. A construção de um muro de pedras.
+
+
+== Ver também ==
+Semiótica
+
+
+== Referências ==
+
+
+== Ligações externas ==
+«semanticsarchive.net» (em inglês) 
+«Site ensinando sobre semântica» (em inglês) 
+«Noam Chomsky, Universidade de Harvard, 30 de outubro de 2007 (vídeo)» (em inglês) 
+«Ray Jackendoff, Conceito de semântica, Universidade de Harvard, 13 de Novembro de 2007 (vídeo)» (em inglês) 
+«Sistema de semânticas» (em inglês) 
+«Semântica: uma entrevista com Jerry Fodor» (PDF). ReVEL, vol. 5, n. 8, 2007. Tradução de Gabriel de Ávila Othero e Gustavo Brauner 
+«PIRES DE OLIVEIRA, Roberta; BASSO, Renato Miguel. A Semântica, a pragmática e os seus mistérios. ReVEL, v. 5, n. 8, 2007» (PDF) 
+«Dicionário de Semântica»

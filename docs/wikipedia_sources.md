@@ -80,7 +80,7 @@ Esta é uma lista candidata. Alguns artigos podem redirecionar para outro títul
 - [Tokenização](https://pt.wikipedia.org/wiki/Tokeniza%C3%A7%C3%A3o)
 - [Lematização](https://pt.wikipedia.org/wiki/Lematiza%C3%A7%C3%A3o)
 - [Radicalização](https://pt.wikipedia.org/wiki/Radicaliza%C3%A7%C3%A3o)
-- [Análise sintática](https://pt.wikipedia.org/wiki/An%C3%A1lise_sint%C3%A1tica)
+- [Análise sintática](https://pt.wikipedia.org/wiki/Sintaxe)
 - [Análise semântica](https://pt.wikipedia.org/wiki/Sem%C3%A2ntica)
 - [Semântica vetorial](https://pt.wikipedia.org/wiki/Sem%C3%A2ntica_vetorial)
 - [Word embedding](https://pt.wikipedia.org/wiki/Word_embedding)

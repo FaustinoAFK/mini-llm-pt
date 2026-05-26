@@ -1,0 +1,110 @@
+Inferência estatística é um ramo da Estatística cujo objetivo é fazer afirmações a partir de um conjunto de valores representativo (amostra) sobre um universo (população), assume-se que a população é muito maior do que o conjunto de dados observados, a amostra. Tal tipo de afirmação deve sempre vir acompanhada de uma medida de precisão sobre sua veracidade. Para realizar este trabalho, o estatístico coleta informações de dois tipos, experimentais (as amostras) e aquelas que obtém na literatura. As duas principais escolas de inferência são a inferência frequencista (ou clássica) e a inferência bayesiana.
+A inferência estatística é geralmente distinta da estatística descritiva. A descrição estatística pode ser vista como a simples apresentação dos fatos, nos quais o modelo de decisões feito pelo analista tem pouca influência. É natural que análises estatísticas avancem, indo da descrição para a inferência de padrões. Essa última tarefa depende do modelo usado e/ou criado pelo analista dos dados.
+A inferência estatística faz proposições sobre um universo, usando dados tirados de um universo com algum tipo de amostragem. Dada um hipótese sobre um universo, para o qual nós queremos tirar inferências, a inferência estatística consiste em (primeiramente) selecionar um modelo estatístico do processo que gera os dados e (segundamente) deduzir as proposições a partir do modelo.
+Konishi & Kitagawa afirmam, "A maior parte dos problemas na inferência estatística podem ser considerados problemas relacionados à modelagem estatística". De forma relacionada, Sir David Cox disse que, "Como a tradução do problema da matéria é feita para o modelo estatístico é com frequência a parte mais crítica de uma análise".
+A conclusão de uma inferência estatística é uma proposição estatística. Algumas formas comuns de proposições estatísticas são as seguintes:
+
+Estimativa por ponto. Ex. Um valor particular que melhor aproxima algum parâmetro de interesse;
+Estimativa por intervalo. Ex. Um intervalo de confiança (ou estimativa por conjunto), ex. um intervalo construído ao usar um conjunto de dados tirados de um universo de forma que, baixo amostragens repetidas de tais conjuntos de dados, tais intervalos conteriam o verdadeiro valor parâmetro com a probabilidade no dito nível de confiança.
+Intervalo de credibilidade. Ex. um conjunto de valores contendo, por exemplo, 95% de crença posterior.
+Rejeição de uma hipótese.
+Clustering ou classificação de pontos de dados em grupos.
+
+
+== Modelos e suposições ==
+
+Qualquer inferência estatística requer algumas suposições. Um modelo estatístico é um conjunto de suposições preocupadas com a geração dos dados observados e seus similares. Descrições de modelos estatísticos normalmente enfatizam o papel das quantidades de universo de interesse, sobre os quais desejamos tirar inferência. Estatísticas descriptivas são tipicamente usadas como um passo preliminar à inferências mais formais.
+
+
+=== Níveis de modelos/suposições ===
+Estatísticos distinguem entre três níveis de suposições de modelagem;
+
+Paramétrico completo: As distribuições de probabilidade descrevendo o processo de geração de dados são assumidas como completamente descritas por uma família de distribuições de probabilidade envolvendo apenas um número finito de parâmetros desconhecidos. Por exemplo, um pode assumir que a distribuição dos valores do universo é verdadeiramente Normal, com média e variação desconhecidas, e que os conjuntos de dados são gerados pela amostragem aleatória "simples". A família de modelos lineares generalizados é uma classe amplamente usada e flexível de modelos paramétricos.
+Não-paramétrico: As suposições feitas sobre o processo de geração dedadas são muito menores que nas estatísticas paramétricas e podem ser mínimas. Por exemplo, toda distribuição de probabilidade contínua tem um valor médio, o qual pode ser estimado usando a média da amostragem ou o estimador de Hodges-Lehmann, o qual tem boas propriedades quando os dados surgem desde amostragens aleatórias simples.
+Semi-paramétrico: Este termo tipicamente implica suposições entre abordagens completas e não-paramétricas. Por exemplo, um pode assumir que uma distribuição de população tem uma média finita. Além disso, um pode assumir que o nível de resposta média na população depende, de forma verdadeiramente linear, de algumas covariações (uma suposição paramétrica) mas não fazer qualquer suposição paramétrica descrevendo a variação ao redor da média (ex. sobre a presença ou forma possível de qualquer heteroscedasticidade). Mais generalizadamente, modelos semi-paramétricos podem com frequência ser separados entre "estruturais" e componentes de "variação aleatória". Um componente é tratado de forma paramétrica e o outro não. O bem conhecido modelo de Cox é um conjunto de suposições semi-paramétricas.
+
+
+=== Importância de modelos/suposições válidas ===
+Não importa o nível da suposição feita, inferências calibradas corretamente em geral requerem que essas suposições estejam corretas; ex. que os mecanismos de geração de dados realmente foram corretamente especificados.
+Suposições incorretas de amostragens aleatórias simples podem invalidar a inferência estatística. Suposições semi- e completamente paramétricas complexas também são causas de preocupação. Por exemplo, assumir incorretamente que o modelo Cox pode em alguns casos levar à conclusões falhas. Suposições incorretas de Normalidade na população também pode invalidar algumas formas de inferências baseadas em regressão. O uso de qualquer modelo paramétrico é visto ceticamente pela maior parte de expertos em amostragem de populações humanas: "a maior parte dos estatísticos de amostragem, quando lidam com intervalos de confiança, se limitam à fazer afirmações sobre estimativas baseadas em amostras muito grandes, onde o teorema central do limite garante que essas estimativas terão distribuições que são minimamente normais". Em particular, uma distribuição normal "seria uma suposição totalmente irrealista e catastroficamente boba a se fazer se estivéssemos lidando com qualquer tipo de população econômica". Aqui, o teorema central do limite afirma que a distribuição da média da amostra "para amostras muito grandes" é aproximadamente normalmente distribuída, se a distribuição não tem uma cauda longa.
+
+
+==== Aproximando distribuições ====
+Dada a dificuldade em especificar distribuições exatas de amostras estatísticas, vários métodos tem sido desenvolvidos para aproxima-las.
+Com amostras finitas, os resultados de aproximação medem o quanto se aproxima uma distribuição limite de uma distribuição de amostragem: Por exemplo, com 10.000 amostras independentes, a distribuição normal se aproxima (até dois dígitos de precisão) da distribuição da média da amostra para várias distribuições de população, através do teorema Berry-Esseen. Ainda assim, para vários objetivos práticos, a aproximação normal dá uma boa aproximação à média da distribuição da amostra quando há 10 (ou mais) amostras independentes, de acordo com estudos de simulação e experiências estatísticas. Seguindo o trabalho de Kolmogorov em 1950, a estatística avançada usa a teoria de aproximação e a análise funcional para quantificar o erra da aproximação. Nesta abordagem, a geometria métrica das distribuições de probabilidade é estudada; esta abordagem quantifica os erros de aproximação com, por exemplo, a divergência Kullback-Leibler, divergência Bregman, e a distância de Hellinger.
+Com amostras indefinidamente grandes, resultados limite como o teorema central do limite descrevem a distribuição limite da amostragem estatística, se ela existe. Resultados limite não são afirmações sobre amostras finitas, e de fato são irrelevantes para amostras finitas. No entanto, a teoria assintótica de distribuições limite é com frequência evocada em trabalhos com amostras finitas. Por exemplo, resultados limite são com frequência evocados para justificar os métodos dos momentos generalizados que são populares em econometria e bioestatística. A magnitude da diferença entre a distribuição limite e a verdadeira distribuição (formalmente, a aproximação de erro) pode ser avaliada usando simulações. A aplicação heurística de resultados limite para amostras finitas é uma prática comum em várias aplicações, especialmente com modelos de baixa-dimensão com funções de verossimilhança log-concavas (tais como as com um parâmetro das famílias exponenciais).
+
+
+=== Modelos baseados na randomização ===
+Ver também: Amostragem (estatística) e Atribuição aleatória
+Para um dado conjunto de dados que foi produzido por um desenho de randomização, a distribuição de randomização de uma estatística (baixa a hipótese nula) é definida pela avaliação do teste estatístico de todos os planos que poderiam ser gerados pelo desenho de randomização. Em inferência frequencista, a randomização permite que as inferências sejam baseadas nas distribuições de randomização ao invés de um modelo subjetivo, e isto é importante especialmente em pesquisas de amostra e desenhos de experimentos.Inferência estatística a partir de estudos de randomização é também mais direta do que em muitas outras situações. Na inferência bayesiana, a randomização é também importante: na pesquisa de amostra, o uso de amostras sem reposição garante a possibilidade de intercâmbio das amostras com a população; nos experimentos de randomização, a randomização garante uma suposição em falta aleatória para a informação covariante.
+A randomização objetiva permite procedimentos propriamente indutivos. Muitos estatísticos preferem análise baseados na randomização dos dados que foram gerados por procedimentos de randomização bem definidos. No entanto, é verdade que nos campos da ciência com conhecimento teórico e controle experimental desenvolvido, experimentos randômicos podem aumentar os custos da experimentação sem melhorar a qualidade das inferências. Similarmente, resultados a partir de experimentos randômicos são recomendados por autoridades estatísticas para permitir inferências de maior grau de confiança do que os estudos observacionais do mesmo fenômeno. No entanto, um bom estudo observacional pode ser melhor que um experimento randômico ruim.
+A análise estatística de um experimento randômico pode ser baseada no esquema de randomização afirmado no protocolo do experimento e não precisa de um modelo subjetivo.
+No entanto, a qualquer momento, algumas hipóteses não podem ser testadas usando modelos estatísticos objetivos, que descrevem precisamente os experimentos randômicos ou as amostras aleatórias. Em alguns casos, tais estudos randômicos são não econômicos ou não éticos.
+
+
+==== Análise baseada em modelo de experimentos aleatórios ====
+É prática padrão se referir ao modelo estatístico, frequentemente um modelo linear, quando se analisa os dados de experimentos randômicos. No entanto, o esquema de randomização guia as escolhas de um modelo estatístico. Não é possível escolher um modelo apropriado sem saber o esquema de randomização. Resultados seriamente enganosos podem ser obtidos ao analisar dados de experimentos randômicos enquanto ignorando o protocolo do experimento; erros comuns são incluem esquecer o bloqueio usado em um experimento e confundir medidas repetidas da mesma unidade experimental com réplicas independentes do tratamento aplicado para diferencias unidades experimentais.
+
+
+== Paradigmas para inferência ==
+Diferentes escolas de inferência estatística tem se tornado estabelecidas. Estas escolas, ou "paradigmas", não são mutuamente excludentes, e métodos que funcionam bem sob um paradigma com frequência tem interpretações atraentes sob outros paradigmas.
+Bandyopadhyay & Forster descrevem quatro paradigmas: "(i) estatística clássica ou estatística de erro, (ii) estatística bayesiana, (iii) estatística baseada na verossimilhança, e (iv) a estatística baseada em Informação Akaikeana Criterion". O paradigma clássico (ou frequencista), o paradigma bayesiano, e o paradigma baseado no AIC são resumidos abaixo. O paradigma baseado na verossimilhança é essencialmente um sub-paradigma do paradigma baseado no AIC.
+
+
+=== Inferência frequencista ===
+Ver também: Inferência frequencista
+Este paradigma calibra a plausibilidade das proposições ao considerar amostras repetidas de uma distribuição de população para produzir conjuntos de dados similares ao que se tem em mãos. Ao considerar as características dos conjuntos de dados sob amostras repetidas, as propriedades frequencistas de uma proposição estatística podem ser quantificadas - apesar de que na prática esta quantificação pode ser desafiadora.
+
+
+==== Exemplos de inferência frequencista ====
+Valor-p
+Intervalo de confiança
+
+
+==== Inferência frequencista, objetividade, e teoria da decisão ====
+Uma interpretação da inferência frequencista (ou inferência clássica) é que ela é aplicável apenas em termos de probabilidade de frequência; isto é, em termos de amostras repetidas de uma população. No entanto, a abordagem de Neyman desenvolve esses procedimentos em termos de probabilidades pré-experimentais. Isto é, antes de realizar o experimento, se decide uma regra para chegar a uma conclusão de forma que a probabilidade de estar correto seja controlada em uma forma viável: de forma que a probabilidade não precise ter uma interpretação frequencista ou de amostra repetida. Em contaste, a inferência bayesiana funciona em termos de probabilidades condicionais (ex. probabilidades condicionais nos dados observados), comparadas às probabilidades marginais (mas condicionas sob parâmetros desconhecidos) usadas em abordagens frequencistas.
+Os procedimentos frequencistas de teste significativo e intervalos de confiança podem ser construídos sem preocupação por por funções de utilidade. No entanto, alguns elementos da estatística frequencista, tal como a teoria de decisão estatística, sim incorporam funções de utilidade. Em particular, desenvolvimentos frequencistas de inferência ótima (tais como estimativas imparciais de variação mínima, ou teste uniforme mais potente) fazem uso de funções de perda, que tomam o papel de funções de utilidade (negativa). Funções de perda não precisam explicitamente afirmadas para que os teóricos estatísticos provem que um procedimento estatístico tem uma propriedade ótima.No entanto, funções de perda são com frequência úteis para contar propriedade ótimas: por exemplo, estimativas de média imparcial são ótimas sob valores absolutos de funções de perda, no que elas minimizam a perda esperada, e estimativas de mínimos quadrados são ótimas sob erros de funções de perda quadradas, no que minimizam a perda esperada.
+Enquanto que estatísticos usando inferência frequencista devem escolher, eles mesmos, os parâmetros de interesse, e as estimativas/testes de estatística a seres usadas, a ausência de utilidades obviamente explicitas e distribuições anteriores tem ajudado os procedimentos frequencistas a se tornarem amplamente vistos como "objetivos".
+
+
+=== Inferência bayesiana ===
+Ver também: Inferência bayesiana
+O cálculo bayesiano descreve graus de crença usando a "linguagem" da probabilidade; crenças são positivas, o seu integral tem o valor um, e obedecem a axiomas de probabilidade. A inferência bayesiana faz uso de crenças posteriores disponíveis como a base para fazer as proposições estatísticas. Há várias justificativas diferentes para usar a abordagem bayesiana.
+
+
+==== Exemplos de inferência bayesiana ====
+Intervalo de credibilidade para estimativa por intervalo
+Fator bayesiano para comparação de modelos
+
+
+==== Inferência bayesiana, subjetividade, e teoria da decisão ====
+Muitas inferências bayesianas informais são baseadas nos resumos  "intuitivamente razoáveis" do posterior. Por exemplo, a média posterior, mediana e moda, mais alta densidade posterior de intervalos, e Fatores bayesianos podem todos ser motivamos desta forma. Enquanto que a função de utilidade de um usuário não precisa ser afirmada para este tipo de inferência, estes resumos dependem todos (até determinado ponto) em crenças afirmadas anteriormente, e são geralmente vistas como conclusões subjetivas. Métodos de construção anterior que não requerem input externo tem sido propostos, mas não ainda completamente desenvolvidos.
+Formalmente. a inferência bayasiana é calibrada com referência a uma utilidade explicitamente afirmada, ou função de perda; a "regra de Bayes" é a aquela que maximiza as utilidades esperadas, tomando a média da incerteza posterior. A inferência bayesiana formal, então, automaticamente fornece decisões ótimas em um sentido teorético de decisão. Dadas suposições, dados e utilidade, a inferência bayesiana pode ser usada para essencialmente qualquer problema, apesar de que nem toda inferência estatística precise ter uma interpretação bayesiana. Análises que não são formalmente bayesianos podem ser (logicamente) incoerentes/ uma característica dos procedimentos bayesianos que usa anteriores próprios (ex. aqueles integráveis ao valor um) é que elas tem a garantia de serem coerentes. Alguns defensores da inferência bayesiana afirmam que a inferência deve ocorrer nesta condição de decisão teorética, e que a inferência bayesiana não deveria concluir com a avaliação e resume de crenças posteriores.
+
+
+=== Inferência baseada no AIC ===
+
+
+==== Descrição de comprimento mínimo ====
+
+O princípio de descrição de comprimento mínimo foi desenvolvido a partir de ideias da teoria da informação e da teoria da complexidade de Kolmogorov. O princípio seleciona modelos estatísticos que comprimem os dados ao máximo, a inferência procede sem assumir "mecanismos geradores de dados" ou modelos de probabilidade contrafactuais ou não-falsificáveis para os dados, como pode ocorrer em abordagens frequencistas ou Bayesianas.
+No entanto, se um "mecanismo gerador de dados" existe na realidade, então de acordo com o teorema de codificação da fonte de Shannon ele fornece a descrição de comprimento mínimo dos dados, em média e assintoticamente. Em minimizar o comprimento da descrição (ou complexidade da descrição), a estimativa de descrição de comprimento mínimo é similar a estimativa da máxima verossimilhança e estimativa do máximo a posteriori (usando probabilidade a priori de entropia máxima). No entanto, a descrição de comprimento mínimo evita assumir que o modelo de probabilidade subjacente é conhecido; o princípio de descrição de comprimento mínimo também pode ser aplicado sem premissas como de que os dados vieram de amostragem independente, por exemplo.
+O princípio de descrição de comprimento mínimo foi aplicado em teoria de códigos, em teoria da informação, em regressão linear, e em mineração de dados.
+A avaliação de procedimentos de inferência baseada em descrição de comprimento mínimo geralmente utiliza técnicas ou critérios de teoria de complexidade computacional.
+
+
+==== Inferência fiducial ====
+Inferência fiducial era uma abordagem de inferência estatística baseada em probabilidade fiduciária, também conhecida como "distribuição fiduciária". Em trabalhos subsequentes, essa abordagem foi considerada mal definida, extremamente limitada em sua aplicabilidade, e até mesmo falaciosa. No entanto, esse argumento é o mesmo que dizia que uma distribuição fiduciária não é uma distribuição de probabilidade válida e, uma vez que isso não invalidou a aplicação de intervalos de confiança, isso não necessariamente invalida as conclusões de um argumento fiduciário. Foi feita uma tentativa de reinterpretar os primeiros trabalhos de Fisher sobre argumento fiduciário como uma caso especial de teoria de inferência usando probabilidades superiores e inferiores.
+
+
+==== Inferência estrutural ====
+Partindo de ideias de Fisher e Pitman de 1938 a 1939, George A. Barnard desenvolveu a "inferência estrutural" ou "inferência pivotal", uma abordagem usando probabilidades invariantes em famílias de grupos. Barnard reformulou os argumentos por trás da inferência fiducial em uma classe restrita de modelos nos quais os procedimentos "fiduciários" seriam bem definidos e úteis.
+
+
+== Ver também ==
+Inferência bayesiana
+Estatística descritiva
+
+
+== Referências ==

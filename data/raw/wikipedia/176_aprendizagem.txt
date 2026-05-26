@@ -1,0 +1,297 @@
+Aprendizagem é o processo pelo qual as competências, habilidades, conhecimentos, comportamento ou valores são adquiridos ou modificados, como resultado de estudo, experiência, formação, raciocínio e observação. Este processo pode ser analisado a partir de diferentes perspectivas, de forma que há diferentes teorias de aprendizagem. Aprendizagem é uma das funções mentais mais importantes em humanos e animais e também pode ser aplicada a sistemas artificiais.
+Aprendizagem humana está relacionada à educação e desenvolvimento pessoal. Deve ser devidamente orientada e é favorecida quando o indivíduo está motivado. O estudo da aprendizagem utiliza os conhecimentos e teorias da neuropsicologia, psicologia, educação e pedagogia. Outra característica da aprendizagem é a temporalidade e a ciclicidade dos conteúdos a serem aprendidos, que além de estruturantes e acumulativos (não se pode aprender a interpretar um texto escrito, sem antes aprender a ler), estão atrelados e podem variar de acordo as necessidades de um sujeito e de um tempo histórico.
+Aprendizagem como um estabelecimento de novas relações entre o ser e o meio ambiente tem sido objeto de vários estudos empíricos em animais e seres humanos. O processo de aprendizagem pode ser medido através das curvas de aprendizagem, que mostram a importância da repetição de certas predisposições fisiológicas, de "tentativa e erro" e de períodos de descanso, após o qual se pode acelerar o progresso. Esses estudos também mostram o relacionamento da aprendizagem com os reflexos condicionados. Algumas pesquisas começam a revelar que os sonhos têm um papel muito importante na aprendizagem e na formação de memória. Por exemplo, alguns cientistas observaram que, durante o sono o cérebro recorda coisas que aprendeu recentemente. Durante o sono de ondas lentas, a mente recorda novas memórias. Em seguida, no sono REM - em que acontecem os sonhos - o cérebro trabalha para guardar essas memórias por um longo prazo.
+
+
+== Histórico ==
+
+
+=== Antiguidade ===
+A aprendizagem vem sendo estudada e sistematizada desde os povos da antiguidade oriental. Já no Egito, na China e na Índia a finalidade era transmitir as tradições e os costumes.
+Na antiguidade clássica, na Grécia e em Roma, a aprendizagem passou a seguir duas linhas opostas porém complementares:
+
+A "pedagogia da personalidade", que visava a formação individual; e
+A "pedagogia humanista", que desenvolvia os indivíduos numa linha onde o sistema de ensino era representativo da realidade social e dava ênfase à aprendizagem universal.
+
+
+=== Idade Média ===
+Durante a Idade Média, a aprendizagem e consequentemente o ensino (aqui ambos seguem o mesmo rumo) devem muito à tenacidade da Igreja. Embora a censura fosse uma realidade, a Igreja teve o mérito de fundar Universidades e estimular o estudo aprofundado da natureza, do cosmo e da realidade humana.
+No final daquele período, iniciou-se a separação entre as teorias da aprendizagem e do ensino com a independência em relação ao clero. Devido às modificações que ocorreram com o advento do humanismo e da Reforma, no século XVI, e sua ampliação a partir da Revolução Francesa, as teorias do ensino-aprendizagem tomaram novos caminhos.
+
+
+=== Século XVII ao início do Século XX ===
+Do século XVII até o início do século XX, a doutrina central sobre a aprendizagem era demonstrar cientificamente que determinados processos universais regiam os princípios da aprendizagem, tentando explicar as causas e formas de seu funcionamento, forçando uma metodologia que visava enquadrar o comportamento num sistema unificado de leis, a exemplo da sistematização efetuada pelos cientistas para a explicação dos demais fenômenos das ciências naturais.
+Muitos acreditavam que a aprendizagem estava intimamente ligada somente ao condicionamento. Um exemplo de experiência sobre o condicionamento foi realizada pelo fisiólogo russo, Ivan Pavlov, que condicionou cães a salivarem ao som de campainhas.
+
+
+=== A partir de 1930 ===
+Na década de 1930 os cientistas Edwin R. Guthrie, Clark L. Hull e Edward C. Tolman pesquisaram sobre as leis que regem a aprendizagem.
+Guthrie acreditava que as respostas, ao invés das percepções ou os estados mentais, poderiam formar os componentes da aprendizagem.
+Hull afirmava que a força do hábito, além dos estímulos originados pelas recompensas, constituía um dos principais aspectos da aprendizagem, a qual se dava num processo gradual.
+Tolman seguia a linha de raciocínio de que o princípio objetivo visado pelo sujeito era a base comportamental para a aprendizagem. Percebendo o ser humano na sociedade em que está inserido, se faz necessário uma maior observação de seu estado emocional.
+
+
+== Definição de aprendizagem ==
+A definição de aprendizagem é difícil de ser realizada em razão da necessidade dela não se confundir com outros conceitos. Isso se deve ao fato de aprendizagem ser um conceito natural e não um conceito artificialmente criado.
+
+
+=== Uma definição com base no paradigma comportamentalista ===
+A definição a seguir é clássica criada dentro do modelo da psicologia comportamentalista:
+"Aprendizagem é o processo pelo qual uma atividade tem origem ou é modificada pela reação a uma situação encontrada, desde que as características da mudança de atividade não possam ser explicadas por tendências inatas de respostas, maturação ou  estados temporários do organismo (por exemplo, fadiga, drogas, etc.)'".
+Essa definição inicial serve para que possamos fazer algumas importantes diferença entre atividades de aprendizagem e outras que não são.
+
+
+==== Diferenças entre aprendizagem e tendências inatas ====
+O comportamento inato pode ser classificado em 3 tipos de atividades: reflexos, tropismos e instintos. Numa primeira abordagem ao problema parece não haver motivos para confundir aprendizagem e comportamento inato. A questão surge quando, no estudo de determinados instintos (comportamentos complexos presentes em nosso código genético), existe uma abertura para variações ambientais.
+O caso clássico que podemos citar aqui é o comportamento de imprinting apresentados por aves. No imprinting a ave está geneticamente programada a aceitar uma variação no estímulo ambiental "mãe". Em razão dessa variação até mesmo humanos podem ser identificados como sendo a "mãe" daquela ave.
+
+
+==== Diferença entre maturação e aprendizagem ====
+Como os processos de maturação também envolvem mudança é
+preciso saber quais dessas mudanças são ocasionados pelo crescimento, propriamente dito, ou pela aprendizagem. Isso seria fácil se, assim como os
+comportamentos inatos, não houvesse casos em que determinadas atividades complexas (como a aquisição da linguagem em seres humanos) não fossem ao mesmo tempo produto de processos de maturação biológica e de exposição a variações ambientais. Como é notório, uma criança somente começa a falar a partir de certa idade, no entanto, ela falará o idioma a qual ela está exposta.
+
+
+==== Diferença entre fadiga e aprendizagem ====
+A fadiga pode ser vista quando após uma atividade repetida muitas vezes em curto espaço de tempo seja identificada uma perda da sua eficiência. Ou seja, a fadiga é um produto da prática.
+O interesse disso é que a aprendizagem também guarda uma
+estreita relação com a prática que a produz. No entanto, ao contrário da fadiga a curva da aprendizagem melhora com a prática. Desse modo, o que parece haver é que uma prática intensa sem muitos intervalos poderia levar a uma perda momentânea
+de eficiência da atividade, mas em espaços de tempo maiores levaria ao aumento
+da eficiência da aprendizagem.
+A fadiga desse modo pode ser considerada como um estado
+temporário do organismo e, portanto, não pode ser confundida com a aprendizagem. O mesmo raciocínio se aplica ao uso de drogas que promove alterações
+no comportamento resultantes do seu uso e não de uma aprendizagem.
+
+
+=== Uma definição com base em um paradigma cognitivista ===
+Dentro de uma perspectiva mais cognitiva podemos ter a seguinte definição de aprendizagem:
+ "A aprendizagem é uma mudança relativamente duradoura de comportamento resultante da experiência. Ela ocorre quando os organismos se beneficiam da experiência para que seus futuros comportamentos sejam mais bem adaptados ao ambiente."
+Inicialmente, é preciso explicar que a noção de comportamento aqui exposta comporta também estados mentais como pensamentos, sentimentos, imagens mentais, etc. Depois a definição deixar claro que as mudanças ocorridas nos comportamentos são resultados da experiência (e não da programação genética ou estados momentâneos, por exemplo). Isso é importante, pois uma coisa que todas as
+teorias da aprendizagem tende a concordar é que a aprendizagem provoca algum tipo de mudança .
+Depois
+a definição acima se liga a perspectiva evolucionista em ciência ao mostrar que
+as mudanças ocorrem para beneficiar o organismo no seu processo de adaptação ao
+meio (o que não significa que mudando o meio determinada aprendizagem deixe
+de ser benéfica). Isso é essencial para se compreender a natureza adaptativa da
+aprendizagem humana. Uma das evidências que podemos trazer aqui para justificar
+essa ideia é o fato de que bebês humanos aprendem desde o nascimento e com grande velocidade. E que toda essa aprendizagem dos primeiros dias é quase toda
+ela não consciente e sem grande necessidade de intervenção social programa (ensino).
+Ela
+também apresenta uma característica de toda aprendizagem que estava ausente na definição anterior: a sua durabilidade no tempo. Essa característica é de suma
+importância, pois mostra a estreita relação entre aprendizagem e memória. De
+fato, como se verá, muito do que hoje podemos falar sobre os processos de
+aprendizagem vem dos estudos sobre o funcionamento da nossa memória,
+principalmente da aprendizagem de conteúdos mais explícitos, como são aqueles presentes na atividade escolar. No entanto, como é claro ainda persistem como
+na parte anterior os problemas de atividades ou comportamentos fronteiriços (imprinting, aquisição da linguagem, etc.).
+
+
+==== Características da aprendizagem ====
+Em razão disso, Pozo (2002) prefere não criar uma definição
+formal de aprendizagem. Acreditar ser mais útil pensar em quais seriam as
+melhores características para uma boa aprendizagem. Ele sugere três:
+a) a aprendizagem produz mudanças duradouras;
+b) a aprendizagem deve ser transferível para outras situações;
+c) a aprendizagem é consequência direta da prática realizada.
+O ser humano nasce potencialmente inclinado a aprender, necessitando de estímulos externos e internos (motivação, necessidade) para o aprendizado. Há aprendizados que podem ser considerados natos, como o ato de aprender a falar, a andar, necessitando que ele passe pelo processo de maturação física, psicológica e social. Na maioria dos casos a aprendizagem se dá no meio social e temporal em que o indivíduo convive; sua conduta muda, normalmente, por esses fatores, e por predisposições genéticas.
+
+
+== Processo de aprendizagem ==
+Segundo os behavioristas, a aprendizagem é uma aquisição de comportamentos através de relações entre ambiente e comportamento, ocorridas numa história de contingências, estabelecendo uma relação funcional entre Ambiente e Comportamento
+Apresenta como principais características:
+
+O indivíduo é visto como ativo em todo o processo;
+A aprendizagem é sinônimo de comportamento adquirido;
+O reforço é um dos principais motores da aprendizagem;
+A aprendizagem é vista como uma modelagem do comportamento.
+Em algumas abordagens cognitivas, considera-se que o homem não pode ser considerado um ser passivo. Enfatiza a importância dos processos mentais no processo de aprendizagem, na forma como se percebe, seleciona, organiza e atribui significados aos objetos e acontecimentos.
+É um processo dinâmico, centrado nos processos cognitivos, em que temos:
+
+INDIVÍDUO → INFORMAÇÃO → CODIFICAÇÃO → RECODIFICAÇÃO → PROCESSAMENTO → APRENDIZAGEM
+
+De uma perspectiva humanista existe uma valorização do potencial humano assumindo-o como ponto de partida para a compreensão do processo de aprendizagem. Considera que as pessoas podem controlar seu próprio destino, possuem liberdade para agir e que o comportamento delas é consequência da escolha humana. Os princípios que regem tal abordagem são a autodireção e o valor da experiência no processo de aprendizagem.
+Preocuparam-se em tornar a aprendizagem significativa, valorizando a compreensão em detrimento da memorização tendo em conta, as características do sujeito, as suas experiências anteriores e as suas motivações:
+
+O indivíduo é visto como responsável por decidir o que quer aprender; e
+Aprendizagem é vista como algo espontâneo e misterioso.
+Numa abordagem social, as pessoas aprendem observando outras pessoas no interior do contexto social. Nessa abordagem a aprendizagem é em função da interacção da pessoa com outras pessoas, sendo irrelevante condições biológicas.O ser humano nasce como uma 'tábula rasa', sendo moldado pelo contato com a sociedade.
+
+
+=== O processo de aprendizagem na abordagem de Vygotsky ===
+O ponto de partida desta análise é a concepção vygotskyana de que o pensamento verbal não é uma forma de comportamento natural e inata, mas é determinado por um processo histórico-cultural e tem propriedades e leis específicas que não podem ser encontradas nas formas naturais de pensamento e fala. Uma vez admitido o caráter histórico do pensamento verbal, devemos considerá-lo sujeito a todas as premissas do materialismo histórico, que são válidas para qualquer fenômeno histórico na sociedade humana. (Vygotsky, 1993 p. 44). Sendo o pensamento sujeito às interferências históricas às quais está o indivíduo submetido, entende-se que, o processo de aquisição da ortografia, a alfabetização e o uso autônomo da linguagem escrita são resultantes não apenas do processo pedagógico de ensino-aprendizagem propriamente dito, mas das relações subjacentes a isto.
+Vygotsky diz ainda que o pensamento propriamente dito é gerado pela motivação, isto é, por nossos desejos e necessidades, nossos interesses e emoções. Por trás de cada pensamento há uma tendência afetivo-volitiva. Uma compreensão plena e verdadeira do pensamento de outrem só é possível quando entendemos sua base afetivo-volitiva (Vygotsky, 1991 p. 101). Desta forma não seria válido estudar as dificuldades de aprendizagem sem considerar os aspectos afetivos. Avaliar o estágio de desenvolvimento, ou realizar testes psicométricos não supre de respostas as questões levantadas. É necessário fazer uma análise do contexto emocional, das relações afetivas, do modo como a criança está situada historicamente no mundo.
+Na abordagem de Vygotsky a linguagem tem um papel de construtor e de propulsor do pensamento, afirma que aprendizado não é desenvolvimento, o aprendizado adequadamente organizado resulta em desenvolvimento mental e põe em movimento vários processos de desenvolvimento que, de outra forma, seriam impossíveis de acontecer (Vygotsky, 1991 p. 101). A linguagem seria então o motor do pensamento, contrariando assim a concepção desenvolvimentista que considera o desenvolvimento a base para a aquisição da linguagem. Vygotsky defende que os processos de desenvolvimento não coincidem com os processos de aprendizagem, uma vez que o desenvolvimento progride de forma mais lenta, indo atrás do processo de aprendizagem. Isto ocorre de forma sequencial. (Vygotsky, 1991 p. 102)
+
+
+=== O processo de aprendizagem na abordagem de Piaget ===
+
+
+==== O papel da equilibração ====
+Nos estudos de Piaget, a teoria da equilibração, de uma maneira geral, trata de um ponto de equilíbrio entre a assimilação e a acomodação, e assim, é considerada como um mecanismo autorregulador, necessária para assegurar à criança uma interação eficiente dela com o meio ambiente. (Wadsworth, 1996) Piaget postula que todo esquema de assimilação tende a alimentar-se, isto é, a incorporar elementos que lhe são exteriores e compatíveis com a sua natureza. E postula também que todo esquema de assimilação é obrigado a se acomodar aos elementos que assimila, isto é, a se modificar em função de suas particularidades, mas, sem com isso, perder sua continuidade (portanto, seu fechamento enquanto ciclo de processos interdependentes), nem seus poderes anteriores de assimilação. (Piaget,1975, p. 14)
+Em outras palavras, Piaget (1975) define que o equilíbrio cognitivo implica afirmar a presença necessária de acomodações nas estruturas; bem como a  conservação de tais estruturas em caso de acomodações bem sucedidas. Esta equilibração é necessária porque se uma pessoa só assimilasse, desenvolveria apenas alguns esquemas cognitivos, esses muito amplos, comprometendo sua capacidade de diferenciação;  em contrapartida, se uma pessoa só acomodasse, desenvolveria uma grande quantidade de esquemas cognitivos, porém muito pequenos, comprometendo seu esquema de generalização de tal forma que a maioria das coisas seriam vistas sempre como diferentes, mesmo pertencendo à mesma classe. Essa noção de equilibração foi a base para o conceito, desenvolvido por Paín, sobre as modalidades de aprendizagem, que se servem dos conceitos de assimilação e acomodação, na descrição de sua estrutura processual.
+Segundo Wadsworth, se a criança não consegue assimilar o estímulo, ela tenta, então, fazer uma acomodação, modificando um esquema ou criando um esquema novo. Quando isso é feito, ocorre a assimilação do estímulo e, nesse momento, o equilíbrio é alcançado. (Wadsworth, 1996)
+Segundo a teoria da equilibração, a integração pode ser vista como uma tarefa de assimilação, enquanto que a diferenciação seria uma tarefa de acomodação, contudo, há conservação mútua do todo e das partes.
+É de Piaget o postulado de que o pleno desenvolvimento da personalidade sob seus aspectos mais intelectuais é indissociável do conjunto das relações afetivas, sociais e morais que constituem a vida da instituição educacional. À primeira vista, o desabrochamento da personalidade parece depender sobretudo dos fatores afetivos; na realidade, a educação forma um todo indissociável e não é possível formar personalidades autônomas no domínio moral se o indivíduo estiver submetido a uma coerção intelectual tal que o limite a aprender passivamente, sem tentar descobrir por si mesmo a verdade: se ele é passivo intelectualmente não será livre moralmente. Mas reciprocamente, se sua moral consiste exclusivamente numa submissão à vontade adulta e se as únicas relações sociais que constituem as relações de aprendizagem são as que ligam cada estudante individualmente a um professor que detém todos os poderes, ele não pode tampouco ser ativo intelectualmente. (Piaget, 1982)
+Piaget afirma que "adquirida a linguagem, a socialização do pensamento manifesta-se pela elaboração de conceitos e relações e pela constituição de regras. É justamente na medida, até, que o pensamento verbo-conceptual é transformado pela sua natureza coletiva que ele se torna capaz de comprovar e investigar a verdade, em contraste com os atos práticos dos atos da inteligência sensório-motora e à sua busca de êxito ou satisfação". (Piaget, 1975 p. 115)
+
+
+=== O processo de aprendizagem pós-piagetiano ===
+Paín (1989) descreve as modalidades de aprendizagem sintomática tomando por base o postulado piagetiano. Descreve como a assimilação e a acomodação atuam no modo como o sujeito aprende e como isso pode ser sintomatizado, tendo assim características de um excesso ou escassez de um desses movimentos, afetando o resultado final. Na abordagem de Piaget, o sujeito está em constante equilibração. Paín parte desse pressuposto e afirma que as dificuldades de aprendizagem podem estar relacionadas a uma hiperatuação de uma dessas formas, somada a uma hipoatuação da outra gerando as modalidades de aprendizagem sintomática a seguir:
+
+
+==== Hiperassimilação ====
+Sendo a assimilação o movimento do processo de adaptação pelo qual os elementos do meio são alterados para serem incorporados pelo sujeito, numa aprendizagem sintomatizada pode ocorrer uma exacerbação desse movimento, de modo que o aprendiz não se resigna ao aprender. Há o predomínio dos aspectos subjetivos sobre os objetivos. Esta sintomatização vem acompanhada da hipoacomodação.
+
+
+==== Hipoacomodação ====
+A acomodação consiste em adaptar-se para que ocorra a internalização. A sintomatização da acomodação pode dar-se pela resistência em acomodar, ou seja, numa dificuldade de internalizar os objetos (Fernández, 1991 p. 110).
+
+
+==== Hiperacomodação ====
+Acomodar-se é abrir-se para a internalização, o exagero disto pode levar a uma pobreza de contato com a subjetividade, levando à submissão e à obediência acrítica. Essa sintomatização está associada a hipoassimilação.
+
+
+==== Hipoassimilação ====
+Nesta sintomatização ocorre uma assimilação pobre, o que resulta  na pobreza no contato com o objeto, de modo a não transformá-lo, não assimilá-lo de todo, apenas acomodá-lo.
+A aprendizagem normal pressupõe que os movimentos de assimilação e acomodação estão em equilíbrio.  O que caracteriza a sintomatização no aprender é predomínio de um movimento sobre o outro. Quando há o predomínio da assimilação, as dificuldades de aprendizagem são da ordem da não resignação, o que leva o sujeito a interpretar os objetos de modo subjetivo, não internalizando as características próprias do objeto. Quando a acomodação predomina, o sujeito não empresta sentido subjetivo aos objetos, antes, resigna-se sem criticidade.
+O sistema educativo pode produzir sujeito muito acomodativos se a reprodução dos padrões for mais valorizada que o desenvolvimento da autonomia e da criatividade. Um sujeito que apresente uma sintomatização na modalidade hiperacomodativa / hipoassimilativa pode não ser visto como tendo "problemas de aprendizagem", pois consegue reproduzir os modelos com precisão.
+
+
+=== O processo de aprendizagem em outras concepções ===
+O mito de que o Behaviorismo considera que o processo de aprendizagem se dá baseado na relação estímulo-resposta é uma noção falha de alguns leigos em educação.O aprender esta diretamente relacionado a relação entre o indivíduo e seu meio e como esse atua sobre ele. Falar em behaviorismo é fala de diversos tipos de behaviorismo, sendo os mais comuns o Behaviorismo Radical e o Interbehaviorismo. Essa noção leiga refere-se a linha teórica ao Behaviorismo Metodológico, que não existe desde a década de 30.
+
+
+== O papel da memória na aprendizagem ==
+Independente da escola de pensamento seguida, sabe-se que o indivíduo desde o nascimento, utilizando seu campo perceptual, vai ampliando seu repertório e construindo conceitos, em função do meio que o cerca.
+Estes conceitos são regidos por mecanismos de memória onde as imagens dos sentidos são fixadas e relembradas por associação a cada nova experiência. Os efeitos da aprendizagem são retidos na memória, onde este processo é reversível até um certo tempo, pois depende do estímulo ou necessidade de fixação, podendo depois ser sucedido por uma mudança neural duradoura.
+
+
+=== Memória de curto prazo ===
+A memória de curto prazo é reversível e temporária, acredita-se que decorra de um mecanismo fisiológico, por exemplo um impulso eletroquímico gerando um impulso sináptico, que pode manter vivo um traço da memória por um período de tempo limitado, isto é, depois de passado certo período, acredita-se que esta informação se desvanece. Logo a memória de curto prazo pouco importa para a aprendizagem.
+
+
+=== Memória de longo prazo ===
+A memória permanente, ou memória de longo prazo, depende de transformações na estrutura química ou física dos neurônios.
+Aparentemente as mudanças sinápticas têm uma importância primordial nos estímulos que levam aos mecanismos de lembranças como imagens, odores, sons, etc, que, avulsos parecem ter uma localização definida, parecendo ser de certa forma blocos desconexos, que ao serem ativados montam a lembrança do evento que é novamente sentida pelo indivíduo, como por exemplo, a lembrança da confecção de um bolo pela avó pela associação da lembrança de um determinado odor.
+
+
+== As influências e os processos ==
+A aprendizagem é influenciada pela inteligência, motivação, e, segundo alguns teóricos, pela hereditariedade (existem controvérsias), onde o estímulo, o impulso, o reforço e a resposta são os elementos básicos para o processo de fixação das novas informações absorvidas e processadas pelo indivíduo.
+O processo de aprendizagem é de suma importância para o estudo do comportamento. Alguns autores afirmam que certos processos neuróticos, ou neuroses, nada mais são que uma aprendizagem distorcida, e que a ação recomendada para algumas psicopatologias são um redirecionamento para a absorção da nova aprendizagem que substituirá a antiga, de forma a minimizar as sintomatizações que perturbam o indivíduo. Isto é, através da reaprendizagem (reeducação) ou da intervenção profissional através da Psicopedagogia. Reuven Feuerstein, autor da Teoria da modificabilidade cognitiva estrutural, afirma que o ser humano pode "aprender" a ser inteligente. Segundo ele, mesmo pessoas portadoras de deficiências e, consideradas incapazes de aprender podem desenvolver a capacidade para o aprendizado.
+
+
+=== A motivação ===
+Aprende-se melhor e mais depressa se houver interesse pelo assunto que se está a estudar. Motivado, um indivíduo possui uma atitude activa e empenhada no processo de aprendizagem e, por isso, aprende melhor. A relação entre a aprendizagem e a motivação é dinâmica: é frequente o Homem interessar-se por um assunto, empenhar-se, quando começa a aprender. A motivação pode ocorrer durante o processo de aprendizagem.
+
+
+=== Os conhecimentos anteriores ===
+Os conhecimentos anteriores que um indivíduo possui sobre um assunto podem condicionar a aprendizagem. Há conhecimentos, aprendizagens prévias, que, se não tiverem sido concretizadas, não permitem a possibilidade de se aprender. Uma nova aprendizagem só se concretiza quando o material novo se incorpora, se relaciona, com os conhecimentos e saberes que se possui.
+
+
+=== A quantidade de informação ===
+A possibilidade de um ser humano aprender novas informações é limitada: não é possível integrar grandes quantidades de informação ao mesmo tempo. É necessário proceder-se a uma selecção da informação relevante, organizando-a de modo a poder ser gerida em termos de aprendizagem.
+
+
+=== A diversidade das atividades ===
+Quanto mais diversificadas forem as abordagens a um tema, quanto mais diferenciadas as tarefas, maior é a motivação e a concentração e melhor decorre a aprendizagem.
+
+
+=== A planificação e a organização ===
+A forma como se aprende pode determinar, em grande parte, o que se aprende. A definição clara de objetivos, a seleção de estratégias, é essencial para uma aprendizagem bem sucedida. Contudo, isto não basta: é necessário planificar, organizar o trabalho por etapas, e ir avaliando os resultados. Para além de estes processos serem mais eficientes, a planificação e a organização promovem o controle dos processos de aprendizagem e, deste modo, a autonomia de cada ser humano.
+
+
+=== A cooperação ===
+A forma como cada ser humano encara um problema e a forma como o soluciona é diferente. Por isso, determinados tipos de problemas são mais bem resolvidos e a aprendizagem é mais eficaz se existir trabalho de forma cooperativa com os outros. A aprendizagem cooperativa, ao implicar a interação e a ajuda mútua, possibilita a resolução de problemas complexos de forma mais eficaz e elaborada.
+
+
+== Estilos de aprendizagem ==
+Cada indivíduo apresenta um conjunto de estratégias cognitivas que mobilizam o processo de aprendizagem. Em outras palavras, cada pessoa aprende a seu modo, estilo e ritmo. Embora haja discordâncias entre os estudiosos, estes são quatro categorias representativas dos estilos de aprendizagem:
+
+Visual: aprendizagem centrada na visualização;
+Auditiva: centrada na audição;
+Leitura/escrita: aprendizagem através de textos;
+Ativa: aprendizagem através do fazer;
+Olfativa : através do cheiro pode possibilitar conhecimento já adquirido anteriormente, como o deitar de gases, são exemplos de uma aprendizagem olfactiva.
+
+
+=== Aprendizagem Associativa ===
+A associação é um tema que reside na observação de que o indivíduo percebe algo em seu meio pelas sensações, o resultado é a consciência de algo no mundo exterior que pode ser definida como ideia. Portanto, a associação leva às ideias, e para tal, é necessária a proximidade do objeto ou ocorrência no espaço e no tempo; deve haver uma similaridade; frequência de observação; além da proeminência e da atração da atenção aos objetos em questão. Estes objetos de estudo para a aprendizagem podem ser por exemplo uma alavanca que gera determinado impulso, que ao ser acionada gera o impulso tantas vezes quantas for acionada. A associação ocorre quando o indivíduo em questão acionar outra alavanca similar à primeira esperando o mesmo impulso da outra. O que levou ao indivíduo acionar a segunda alavanca, foi a ideia gerada através da associação entre os objetos (alavancas).
+Um grupo liderado pelos pesquisadores Guthrie e Hull sustentava que as associações se davam entre estímulos e respostas, estes eram passíveis de observação.
+A teoria da aprendizagem associativa, ou a capacidade que o indivíduo tem para associar um estímulo que antes parecia não ter importância a uma determinada resposta, ocorre pelo condicionamento, em que o reforço gera novas condutas.
+Porém, as teorias de estímulo e resposta não mostraram os mecanismos da aprendizagem, pois não levaram em conta os processos interiores do indivíduo. (Há que se diferenciar aprendizagem de condicionamento).
+Tolman, pesquisou que as associações através do estímulo geravam uma impressão sensorial subjetiva.
+
+
+=== Aprendizagem Condicionada ===
+O reforçamento, é uma noção que provém da descoberta da possibilidade que é possível reforçar um padrão comportamental através de métodos onde são utilizadas as recompensas ou castigos.
+A é uma proposta para integrar alunos e professores durante a aprendizagem em sala de aula, de modo a possibilitar a construção de conhecimentos por meio das interações.
+
+
+=== A aprendizagem reflexiva como estratégia para a formação profissional ===
+A melhoria da qualidade da prática docente, facilita o aprendizado de novos modos de ensino e expande estratégias de aprendizagem.
+Na formação de Docentes é necessário ter em conta, como princípio básico, a actuação, tornando a sua prática para muito além das meios tradicionais de ensino.
+O princípio da aprendizagem reflexiva, considerada por alguns autores, trata da urgência em formar profissionais, que venham a espelhar a sua própria prática, na esperança de que a reflexão será um meio de desenvolvimento do pensamento e da acção.
+A dificuldade em decifrar este conhecimento, reside no facto das acções serem activas, de forma diversificada em às teorias, que são mais estáticas. Desta forma, ao descrever o conhecimento empregue numa determinada acção, com o intuito de a compreender, o futuro docente, estará a praticar um processo de estrutura do seu saber.
+
+
+=== Outras escolas de aprendizagem ===
+Atualmente, muitos profissionais da área educacional contestam a existência de uma validade universal na teoria da associação. Estes afirmam a importância de outros fatores na aprendizagem. Exemplo típico, são os educadores que seguem a linha gestaltista, estes defendem que os processos mais importantes da aprendizagem envolvem uma reestruturação das relações com o meio e não simplesmente uma associação das mesmas.
+Existem também, os educadores que estudam os aspectos psicológicos da linguagem, ou psicolinguistas. Estes, por sua vez, sustentam que a aprendizagem de uma língua abrange um número de palavras e locuções muito grande para ser explicado pela teoria associativa.
+Alguns pesquisadores afirmam que a aprendizagem linguística se baseia numa estrutura básica de organização elemento.
+Outras correntes de pensamento afirmam que as teorias da aprendizagem incluem o papel da motivação além dos estágios da aprendizagem, os processos e a natureza da evocação, do esquecimento e da recuperação de informações ou memória.
+Na pesquisa sobre a aprendizagem, ainda existem os conceitos não passíveis de quantificação, como os processos cognição|cognitivos, a imagem, a vontade e a consciência|conscientização.
+
+
+== As lacunas do experimentalismo ==
+
+A teoria geral da aprendizagem utilizando métodos experimentalistas  encontrou muitas lacunas. Começaram surgir então teorias que aparentemente demonstravam não ser possível teorização da aprendizagem através de um único método, ou sistema. Estas teorias convergiram para um raciocínio sistêmico ao invés de sistemático. Se começou a pensar na utilização de métodos que explicassem a aprendizagem de forma dinâmica, e não estática.
+
+
+== Processo de aprendizagem nas organizações ==
+O processo de aprendizagem organizacional segundo Godoy é a aquisição, aplicação de conhecimento e experiência em ações de processos.
+Este processo é importante por que ele visa a inovação e o constante desenvolvimento da organização, captando novas ferramentas que auxiliam na busca pelo resultado.
+A aprendizagem carrega extrema importância para as organizações, pois ela tem como principal responsabilidade misturar todos os conhecimentos dos  colaboradores e com isso direcionar os objetivos assim alcançando todas as metas e resultados positivos.
+O processo de aprendizagem pode ser dificultado por uma série de ameaças como ideologias, estruturas rígidas, padrões de desempenhos, pressões por legitimação ou justificação e forças ambientais. Neste contexto, o processo de aprendizado nas organizações, pode ser facilitado quando o gestor assume um papel de facilitador da formação de juízo, respeitando os valores e a experiência daqueles que compõem a organização.
+Na organização o processo de aprendizagem parte dos seguintes pressupostos (Adaptação, Compartilhamento de pressupostos, Desenvolvimento de conhecimento sobre relação ação-resultado, Experiências em ações de processos e Experiência Elementar):
+
+
+=== Adaptação ===
+É o aspecto que define como será o processo de aprendizagem do funcionário, ela pode ser tanto benéfica quanto maléfica. Ela ocorre tanto no nível individual quanto coletivo e pode ser impactada pelos níveis de estresses, como estresse de desempenho (não atingimento de metas) e estresse disjuntivo (conflito entre subgrupos e indivíduos) e são padrões de comportamentos conflitantes que geram estes estresses.
+
+
+=== Compartilhamento de pressupostos ===
+Baseia-se na ideia de compartilhamento afirmando que as organizações aprendem a partir dos indivíduos e os indivíduos aprendem a partir das organizações, assimilando regras, rotinas, crenças e modelos mentais. Há conhecimentos que excedem o dos indivíduos e que estão construídos no tecido da organização.
+
+
+=== Desenvolvimento de conhecimento sobre relação ação-resultado ===
+Ela parte da visão de organização como sistema de ações propositais, grupo de indivíduos que se engajam em atividades coordenadas que transformam direta ou indiretamente em conjunto de inputs ou outputs e relacionam a efetividade desse sistema à qualidade da base de conhecimento disponível para a organização fazer escolhas estratégicas.
+
+
+=== Experiências em ações de processos ===
+Baseia-se na ideia de que a experiência se ensina e constitui a partir da consideração das curvas de aprendizagem e da premissa que a experiência adquirida pela repetição de um conjunto de atividades gera melhor conhecimento e antecipação do ambiente, possibilitando à organização lidar de modo mais eficaz com este ambiente.
+
+
+== Ver também ==
+
+
+== Referências ==
+
+
+== Bibliografia ==
+PIAGET, Jean. Seis Estudos de Psicologia; tradução Maria Alice Magalhães D’Amorim e Paulo Sérgio Lima Silva.23ª edição, Rio de Janeiro: Forence Universitária,1998.
+PIAGET, Jean. O Juízo Moral na Criança. São Paulo, Summus, 1994
+PIAGET, Jean e INHELDER, Bärbel. A psicologia da criança. São Paulo : DIFEL, 1982.
+PIAGET, Jean. Como se desarolla la mente del niño. In : PIAGET, Jean et allii. Los años postergados: la primera infância. Paris : UNICEF, 1975.
+PIAGET, Jean. Biologia e Conhecimento. 2ª Ed. Vozes : Petrópolis, 1996.
+VYGOTSKY, L. S. Pensamento e Linguagem. São Paulo, Martins Fontes, 1993
+WADSWORTH, Barry. Inteligência e Afetividade da Criança. 4ª Ed. São Paulo, Enio Matheus Guazzelli, 1996.
+Vayer,Pierre.Roncin,Charles. Psicologia Actual e Desenvolvimento da criança. Instituto Piaget
+Gonçalves, Susana. Teorias da aprendizagem, praticas de ensino. ESEC.2001
+Sprinthall, n; sprinthall, R. 1993 Psicologia educacional. Mcgraw hill
+ANTONELLO, C. S.; GODOY, A. S. Aprendizagem Organizacional no Brasil.. 1. ed. Porto Alegre: Bookman, 2011. 604 p.
+SILVA, Vilson Ferreira da. Avaliação da aprendizagem escolar no ensino fundamental. Florianópolis: Bookess Editora, 2010. ISBN 9788580450101
+
+
+== Ligações externas ==
+Teorias da Aprendizagem
+As orientações metodológicas do processo ensino-aprendizagem
+pedagogy.ir: learning environment, learning performance & lifelong learning

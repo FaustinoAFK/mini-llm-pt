@@ -1,0 +1,90 @@
+Extrair Transformar Carregar (do inglês Extract Transform Load, abreviado ETL), é o processo onde uma ferramenta computacional coleta dados de diferentes fontes e os processa para serem realmente usados na empresa no setor financeiro-administrativo nas decisões de negócios; são ferramentas de software cuja função é a extração de dados de diversos sistemas, transformação desses dados conforme regras de negócios e por fim o carregamento dos dados geralmente para um repositório de dados (Data Mart e/ou Data Warehouse), porém nada impede que também seja para enviar os dados para um determinado sistema da organização. A extração e carregamento são obrigatórios para o processo, sendo a transformação/limpeza opcional, mas que são boas práticas, tendo em vista que os dados já foram encaminhados para o sistema de destino.
+É considerada uma das fases mais críticas do Data Warehouse e/ou Data Mart.
+Os projetos de data warehouse consolidam dados de diferentes fontes. A maioria dessas fontes tendem a ser bancos de dados relacionais ou arquivo de texto (texto plano), mas podem existir outras fontes. Um sistema ETL tem que ser capaz de se comunicar com as bases de dados e ler diversos formatos de arquivos utilizados por toda a organização. Essa pode ser uma tarefa não trivial, e muitas fontes de dados podem não ser acessadas com facilidade.
+
+
+== Ferramentas ==
+Algumas das ferramentas conhecidas de ETL são IBM InfoSphere DataStage , Informática Power Center,  SAP BusinessObjects Data Services ,Microsoft SQL Server Integration Services (SSIS),  Pentaho Data Integration,  Oracle Data Integrator (ODI), entre outras.
+
+
+== Processo ETL ==
+O processo de Extração, Transformação e Carregamento (Extract, Transform, Load – ETL) é um processo que envolve:
+
+Extração de dados de fontes externas
+Transformação dos dados para atender às necessidades de negócios
+Carregamento dos dados
+ETL é importante, pois é a forma pela qual os dados são efetivamente carregados no Data Warehouse. Este artigo assume que os dados são sempre carregados no DW, contudo, ETL pode ser aplicado a um processo de carregamento de qualquer base de dados.
+
+
+=== Extração ===
+A primeira parte do processo de ETL é a extração de dados dos sistemas de origem. A maioria dos projetos de data warehouse consolidam dados extraídos de diferentes sistemas de origem. Cada sistema pode também utilizar um formato ou organização de dados diferente. Formatos de dados comuns são bases de dados relacionais e flat files (também conhecidos como arquivos planos), mas podem incluir estruturas de bases de dados não relacionais, como o IMS ou outras estruturas de dados, como VSAM ou ISAM. A extração converte para um determinado formato para a entrada no processamento da transformação.
+
+
+=== Transformação ===
+O estágio de transformação aplica uma série de regras ou funções aos dados extraídos para derivar os dados a serem carregados. Algumas fontes de dados necessitarão de muito pouca manipulação de dados. Em outros casos, podem ser necessários um ou mais de um dos seguintes tipos de transformação:
+
+Seleção de apenas determinadas colunas para carregar (ou a seleção de nenhuma coluna para não carregar)
+Tradução de valores codificados (se o sistema de origem armazena 1 para sexo masculino e 2 para feminino, mas o data warehouse armazena M para masculino e F para feminino, por exemplo), o que é conhecido como limpeza de dados.
+Codificação de valores de forma livre (mapeando “Masculino”,“1” e “Sr.” para M, por exemplo)
+Derivação de um novo valor calculado (montante_vendas = qtde * preço_unitário, por exemplo)
+Junção de dados provenientes de diversas fontes
+Resumo de várias linhas de dados (total de vendas para cada loja e para cada região, por exemplo)
+Geração de valores de chaves substitutas (surrogate keys)
+Transposição ou rotação (transformando múltiplas colunas em múltiplas linhas ou vice-versa)
+Quebra de uma coluna em diversas colunas (como por exemplo, colocando uma lista separada por vírgulas e especificada como uma cadeia em uma coluna com valores individuais em diferentes colunas).
+
+
+=== Carregamento ===
+A fase de carregamento consiste na colocação dos dados no Data Warehouse (DW). Dependendo das necessidades da organização, este processo varia amplamente. Alguns data warehouses podem substituir as informações existentes semanalmente, com dados cumulativos e atualizados, ao passo que outro DW (ou até mesmo outras partes do mesmo DW, conhecidos como Data Mart) podem adicionar dados a cada hora. A temporização e o alcance de reposição ou acréscimo constituem opções de projeto estratégicas que dependem do tempo disponível e das necessidades de negócios. Sistemas mais complexos podem manter um histórico e uma pista de auditoria de todas as mudanças sofridas pelos dados.
+
+
+== Desafios ==
+Os processos de ETL podem ser bastante complexos e problemas operacionais significativos podem ocorrer com sistemas de ETL desenvolvidos inapropriadamente.
+A gama de valores e a qualidade dos dados em um sistema operacional podem ficar fora das expectativas dos desenvolvedores quando as regras de validação e transformação são especificadas. O perfil dos dados de uma fonte durante a análise dos dados é altamente recomendável para identificar as condições dos dados que precisarão ser gerenciados pelas especificações de regras de transformação.
+A escalabilidade de um sistema de ETL durante o seu ciclo de vida de uso precisa ser estabelecido durante a análise. Isto inclui o conhecimento dos volumes de dados que terão que ser processados no âmbito dos Acordos de Nível de Serviço ( Service Level Agreements – SLA). O tempo disponível para extrair dados dos sistemas de origem pode variar, o que pode significar que a mesma quantidade de dados pode ter que ser processada em menos tempo. Alguns sistemas de ETL têm que ser escalados para processar terabytes de dados para atualizar data warehouses com dezenas de terabytes de dados. Volumes crescentes de dados podem requerer um desenho que possa escalar de processamento diário de lotes para processamento intra-diário de microlotes para a integração com filas de mensagens para garantir a continuidade da transformação e da atualização.
+
+
+== Processamento em Paralelo ==
+Um desenvolvimento recente dos softwares de ETL foi a implementação de processamento em paralelo. Isto permitiu o desenvolvimento de vários métodos para melhorar a performance geral dos processos de ETL no tratamento de grandes volumes de dados.
+Existem três tipos primários de paralelismos implementados em aplicações de ETL:
+
+
+=== Dados ===
+Pela divisão de um único arquivo sequencial em arquivos de dados menores para permitir acesso em paralelo.
+
+
+=== Pipeline ===
+Permitindo a execução simultânea de diversos componentes no mesmo fluxo de dados. Um exemplo seria a leitura de um valor no registro 1 e ao mesmo tempo juntar dois campos no registro 2.
+
+
+=== Componente ===
+A execução simultânea de múltiplos processos em diferentes fluxos de dados no mesmo job. A classificação de um arquivo de entrada concomitantemente com a de duplicação de outro arquivo seria um exemplo de um paralelismo de componentes.
+Os três tipos de paralelismo estão normalmente combinados em um único job.
+Uma dificuldade adicional é assegurar que os dados que estão sendo carregados sejam relativamente consistentes. Uma vez que múltiplas bases de dados de origem apresentam diferentes ciclos de atualização (algumas podem ser atualizados em espaços de alguns minutos, ao passo que outras podem levar dias ou semanas), um sistema de ETL pode precisar reter determinados dados até que todas as fontes sejam sincronizadas. Analogamente, quando um warehouse tem que ser reconciliado com o conteúdo de um sistema de origem ou com o livro razão, faz-se necessária a implementação de pontos de sincronização e reconciliação.
+
+
+== Casos de usos ==
+O ETL é pode ser usado em algumas ações como por exemplo:
+
+
+=== Armazenamento de dados ===
+Dados de diferentes fontes são combinados e amazenados em um único banco de dados para posterior analise coletiva para fins comerciais.
+
+
+=== Machine learning e inteligência artificial ===
+O Machine Learning é um processo automatizado que usa técnicas de inteligência artificial para aprender e analisar os dados armzenados, sem a necessidade de criar manualmente os modelos analíticos.
+
+
+=== Integração de dados de marketing e dados de Internet das Coisas ===
+Este é o processo que coleta todos os dados de marketing (clientes, redes sociais, análise da web) e dados de equipamentos com Internet das Coisas (em inglês IoT, que reunem dados através dos sensores), então utilizando o processo de ETL move-se esses dados para um único banco de dados, preparando-os para análise.
+
+
+=== Réplica do banco de dados ===
+A réplicação de banco de dados utiliza o processo de ETL para verificar os dados de todos os bancos de dados locais (Oracle, Cloud SQL, MySQL, Microsoft SQL Server, PostgreSQL, MongoDB), em seguida copia-os para um único armazenamento de dados na nuvem, em um processo contínuo de atualização.
+
+
+=== Migração para a nuvem ===
+Buscando economizar dinheiro as empresas estão migrando as aplicações e os dados para a nuvem utilizando o processo de ETL, tornando essas aplicações escalonáveis e aumentando a proteção desses dados.
+
+
+== Referências ==

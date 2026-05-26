@@ -1,0 +1,836 @@
+Em álgebra linear, o produto escalar é uma função binária definida entre dois vetores que fornece um número real (também chamado "escalar") como resultado. É o produto interno padrão do espaço euclidiano.
+Algebricamente, o produto escalar de dois vetores é formado pela multiplicação de seus componentes correspondentes e pela soma dos produtos resultantes. Geometricamente, é o produto das magnitudes euclidianas dos dois vetores e o cosseno do ângulo entre eles.
+O produto vetorial, que é outra operação possível de ser definir para vetores fornece, por outro lado, um novo vetor.
+
+
+== Definição ==
+
+
+=== Geométrica ===
+
+O produto escalar de dois vetores A e B, que se representa por 
+  
+    
+      
+        ⋅
+      
+    
+    {\displaystyle \cdot }
+  
+ ou ainda por um traço vertical | é o resultado do produto do comprimento (também chamado de norma ou módulo) de B pela projeção escalar de A em B.
+
+  
+    
+      
+        
+          A
+        
+        ⋅
+        
+          B
+        
+        =
+        
+          ‖
+          
+            A
+          
+          ‖
+        
+        
+          ‖
+          
+            B
+          
+          ‖
+        
+        cos
+        ⁡
+        θ
+      
+    
+    {\displaystyle \mathbf {A} \cdot \mathbf {B} =\left\|\mathbf {A} \right\|\left\|\mathbf {B} \right\|\cos \theta }
+  
+
+Onde θ é o ângulo formado pelos vetores e ||A|| e ||B|| são seus comprimentos.
+Essa expressão somente contém uma definição do comprimento de um vetor como a raiz quadrada do seu produto escalar, mas não fornece meios de se calcular o comprimento do vetor.
+
+  
+    
+      
+        
+          A
+        
+        ⋅
+        
+          A
+        
+        =
+        
+          ‖
+          
+            A
+          
+          ‖
+        
+        
+          ‖
+          
+            A
+          
+          ‖
+        
+        cos
+        ⁡
+        0
+        =
+        
+          
+            ‖
+            
+              A
+            
+            ‖
+          
+          
+            2
+          
+        
+      
+    
+    {\displaystyle \mathbf {A} \cdot \mathbf {A} =\left\|\mathbf {A} \right\|\left\|\mathbf {A} \right\|\cos 0=\left\|\mathbf {A} \right\|^{2}}
+  
+
+Entretanto, essa expressão permite o cálculo do ângulo θ entre os vetores:
+
+  
+    
+      
+        θ
+        =
+        arccos
+        ⁡
+        
+          
+            
+              
+                A
+              
+              ⋅
+              
+                B
+              
+            
+            
+              
+                ‖
+                
+                  A
+                
+                ‖
+              
+              
+                ‖
+                
+                  B
+                
+                ‖
+              
+            
+          
+        
+      
+    
+    {\displaystyle \theta =\arccos {\frac {\mathbf {A} \cdot \mathbf {B} }{\left\|\mathbf {A} \right\|\left\|\mathbf {B} \right\|}}}
+  
+
+Note que não é necessário mencionar nenhum sistema de coordenadas para se obter o valor do produto escalar. A formula acima é válida independente do sistema de coordenadas.
+Fisicamente, se A  fosse uma força, o produto escalar mediria o quanto da força A estaria sendo aplicada na direção de B. Isto só é válido, entretanto, se o vetor B for unitário. Do contrário, a magnitude da projeção de A em B ("o quanto da força A está aplicado na direção de B") deve ser obtida por A · (B / |B|), visto que B / |B| representa o vetor unitário na direção de B.
+
+
+=== Algébrica ===
+Em um sistema de coordenadas ortonormal de n dimensões, onde escrevemos os vetores A e B em termos de componentes como
+
+  
+    
+      
+        
+          A
+        
+        =
+        
+          (
+          
+            
+              a
+              
+                1
+              
+            
+            ,
+            
+              a
+              
+                2
+              
+            
+            ,
+            ⋯
+            ,
+            
+              a
+              
+                n
+              
+            
+          
+          )
+        
+      
+    
+    {\displaystyle \mathbf {A} =\left(a_{1},a_{2},\cdots ,a_{n}\right)}
+  
+ e
+
+  
+    
+      
+        
+          B
+        
+        =
+        
+          (
+          
+            
+              b
+              
+                1
+              
+            
+            ,
+            
+              b
+              
+                2
+              
+            
+            ,
+            ⋯
+            ,
+            
+              b
+              
+                n
+              
+            
+          
+          )
+        
+        ,
+      
+    
+    {\displaystyle \mathbf {B} =\left(b_{1},b_{2},\cdots ,b_{n}\right),}
+  
+
+o produto escalar entre A e B é:
+
+  
+    
+      
+        
+          A
+        
+        ⋅
+        
+          B
+        
+        =
+        
+          ∑
+          
+            i
+            =
+            1
+          
+          
+            n
+          
+        
+        
+          a
+          
+            i
+          
+        
+        
+          b
+          
+            i
+          
+        
+        =
+        
+          a
+          
+            1
+          
+        
+        
+          b
+          
+            1
+          
+        
+        +
+        
+          a
+          
+            2
+          
+        
+        
+          b
+          
+            2
+          
+        
+        +
+        ⋯
+        +
+        
+          a
+          
+            n
+          
+        
+        
+          b
+          
+            n
+          
+        
+      
+    
+    {\displaystyle \mathbf {A} \cdot \mathbf {B} =\sum _{i=1}^{n}a_{i}b_{i}=a_{1}b_{1}+a_{2}b_{2}+\cdots +a_{n}b_{n}}
+  
+
+Note que a interpretação do produto escalar como a projeção do vetor na direção de outro, neste caso, está longe de ser óbvia. No entanto a expressão acima nos fornece uma forma de obter o comprimento de um vetor qualquer em termos de suas componentes:
+
+  
+    
+      
+        
+          ‖
+          
+            A
+          
+          ‖
+        
+        =
+        
+          
+            
+              A
+            
+            ⋅
+            
+              A
+            
+          
+        
+        =
+        
+          
+            
+              a
+              
+                1
+              
+              
+                2
+              
+            
+            +
+            
+              a
+              
+                2
+              
+              
+                2
+              
+            
+            +
+            ⋯
+            +
+            
+              a
+              
+                n
+              
+              
+                2
+              
+            
+          
+        
+      
+    
+    {\displaystyle \left\|\mathbf {A} \right\|={\sqrt {\mathbf {A} \cdot \mathbf {A} }}={\sqrt {a_{1}^{2}+a_{2}^{2}+\cdots +a_{n}^{2}}}}
+  
+
+
+=== Projeção escalar ===
+A projeção escalar de um vetor a em direção a um vetor b é dada por:
+
+  
+    
+      
+        
+          a
+          
+            b
+          
+        
+        =
+        ‖
+        a
+        ‖
+        cos
+        ⁡
+        θ
+      
+    
+    {\displaystyle a_{b}=\|a\|\cos \theta }
+  
+,
+onde 
+  
+    
+      
+        θ
+      
+    
+    {\displaystyle \theta }
+  
+ é o ângulo entre a e b. 
+Em termos da definição geométrica do produto escalar, este pode ser reescrito como 
+
+  
+    
+      
+        
+          a
+          
+            b
+          
+        
+        =
+        a
+        ⋅
+        
+          
+            
+              b
+              ^
+            
+          
+        
+      
+    
+    {\displaystyle a_{b}=a\cdot {\widehat {b}}}
+  
+,
+onde 
+  
+    
+      
+        
+          
+            
+              b
+              ^
+            
+          
+        
+        =
+        b
+        
+          /
+        
+        ‖
+        b
+        ‖
+      
+    
+    {\displaystyle {\widehat {b}}=b/\lVert b\rVert }
+  
+ é o vetor unitário na direção de b.
+O produto escalar é, portanto, caracterizado geometricamente por 
+
+  
+    
+      
+        a
+        ⋅
+        b
+        =
+        
+          a
+          
+            b
+          
+        
+        ‖
+        b
+        ‖
+        =
+        
+          b
+          
+            a
+          
+        
+        ‖
+        a
+        ‖
+      
+    
+    {\displaystyle a\cdot b=a_{b}\lVert b\rVert =b_{a}\lVert a\rVert }
+  
+.
+
+
+== Propriedades ==
+
+Sejam A e B dois vetores com "n" linhas e 1 coluna, ou seja, de dimensões iguais. O produto escalar de vetores tem as seguintes propriedades:
+
+Comutativa: 
+  
+    
+      
+        
+          A
+        
+        ⋅
+        
+          B
+        
+        =
+        
+          B
+        
+        ⋅
+        
+          A
+        
+      
+    
+    {\displaystyle \mathbf {A} \cdot \mathbf {B} =\mathbf {B} \cdot \mathbf {A} }
+  
+ .
+Distributiva em relação à soma de vetores: 
+  
+    
+      
+        
+          A
+        
+        ⋅
+        
+          (
+          
+            
+              B
+            
+            +
+            
+              C
+            
+          
+          )
+        
+        =
+        
+          A
+        
+        ⋅
+        
+          B
+        
+        +
+        
+          A
+        
+        ⋅
+        
+          C
+        
+      
+    
+    {\displaystyle \mathbf {A} \cdot \left(\mathbf {B} +\mathbf {C} \right)=\mathbf {A} \cdot \mathbf {B} +\mathbf {A} \cdot \mathbf {C} }
+  
+.
+Multiplicação por escalar: 
+  
+    
+      
+        
+          (
+          
+            
+              n
+              
+                1
+              
+            
+            
+              A
+            
+          
+          )
+        
+        ⋅
+        
+          (
+          
+            
+              n
+              
+                2
+              
+            
+            
+              B
+            
+          
+          )
+        
+        =
+        
+          (
+          
+            
+              n
+              
+                1
+              
+            
+            
+              n
+              
+                2
+              
+            
+          
+          )
+        
+        
+          (
+          
+            
+              A
+            
+            ⋅
+            
+              B
+            
+          
+          )
+        
+      
+    
+    {\displaystyle \left(n_{1}\mathbf {A} \right)\cdot \left(n_{2}\mathbf {B} \right)=\left(n_{1}n_{2}\right)\left(\mathbf {A} \cdot \mathbf {B} \right)}
+  
+
+Soma de quadrados:
+  
+    
+      
+        
+          
+            A
+            
+              T
+            
+          
+        
+        ⋅
+        
+          A
+        
+        =
+        
+          
+            [
+            
+              
+                
+                  
+                    a
+                    
+                      1
+                    
+                  
+                
+                
+                  
+                    a
+                    
+                      2
+                    
+                  
+                
+                
+                  .
+                  .
+                  .
+                
+                
+                  
+                    a
+                    
+                      n
+                    
+                  
+                
+              
+            
+            ]
+          
+        
+        
+          
+            [
+            
+              
+                
+                  
+                    a
+                    
+                      1
+                    
+                  
+                
+              
+              
+                
+                  
+                    a
+                    
+                      2
+                    
+                  
+                
+              
+              
+                
+                  .
+                  .
+                  .
+                
+              
+              
+                
+                  
+                    a
+                    
+                      n
+                    
+                  
+                
+              
+            
+            ]
+          
+        
+        =
+        
+          a
+          
+            1
+          
+        
+        ⋅
+        
+          a
+          
+            1
+          
+        
+        +
+        
+          a
+          
+            2
+          
+        
+        ⋅
+        
+          a
+          
+            2
+          
+        
+        +
+        .
+        .
+        .
+        +
+        
+          a
+          
+            n
+          
+        
+        ⋅
+        
+          a
+          
+            n
+          
+        
+        =
+        
+          ∑
+          
+            i
+            =
+            1
+          
+          
+            n
+          
+        
+        
+          
+            (
+          
+        
+        
+          
+            
+              a
+              
+                i
+              
+            
+          
+          
+            2
+          
+        
+        
+          
+            )
+          
+        
+      
+    
+    {\displaystyle \mathbf {A^{T}} \cdot \mathbf {A} ={\begin{bmatrix}a_{1}&a_{2}&...&a_{n}\end{bmatrix}}{\begin{bmatrix}a_{1}\\a_{2}\\...\\a_{n}\end{bmatrix}}=a_{1}\cdot a_{1}+a_{2}\cdot a_{2}+...+a_{n}\cdot a_{n}=\sum _{i=1}^{n}{\bigl (}{a_{i}}^{2}{\bigr )}}
+  
+, ou seja, a multiplicação de um vetor pelo seu transposto é igual à soma de seus elementos ao quadrado. Note que essa soma é um número escalar, ou, o que é equivalente, uma matriz de dimensões 1X1.
+
+
+== Referências ==

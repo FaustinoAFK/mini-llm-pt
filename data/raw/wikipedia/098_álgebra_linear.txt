@@ -1,0 +1,67 @@
+Álgebra linear é um ramo da matemática que surgiu do estudo detalhado de sistemas de equações lineares, sejam elas algébricas ou diferenciais. A álgebra linear utiliza alguns conceitos e estruturas fundamentais da matemática como vetores, espaços vetoriais, transformações lineares, sistemas de equações lineares e matrizes.
+
+
+== História ==
+Muitas das ferramentas básicas da álgebra linear, particularmente aquelas relacionadas com a solução de sistemas de equações lineares, datam da antiguidade, como a eliminação gaussiana, citada pela primeira vez por volta do século II d.c., embora muitas dessas ferramentas não tenham sido isoladas e consideradas separadamente até os séculos XVII e XVIII. O método dos mínimos quadrados, usado pela primeira vez por Carl Friedrich Gauss no final do século XVIII, é uma aplicação inicial e significante das ideias da álgebra linear.
+O assunto começou a tomar sua forma atual em meados do século XIX, que viu muitas noções e métodos de séculos anteriores abstraídas e generalizadas como o início da álgebra abstrata. Matrizes e tensores foram introduzidos como objetos matemáticos abstratos e bem estudados na virada do século XX. O uso de tais objetos na relatividade geral, estatística e mecânica quântica fez muito para espalhar o assunto para além da matemática pura.
+
+
+== Sistemas de equações lineares ==
+
+Um sistema de equações lineares (abreviadamente, sistema linear) é um conjunto finito de equações lineares nas mesmas variáveis. Uma equação linear nas incógnitas x1,x2,...,xn é uma equação que pode se colocada na forma de equação abaixo:
+a na seguinte forma padrão.
+a1x1+ a2x2+ ... + anxn= b
+Dizemos que a constante ak é o coeficiente de xk e b é o termo constante da equação.  
+
+
+== Geometria analítica ==
+
+A geometria analítica, também pode ser chamada geometria de coordenadas e que antigamente recebia o nome de geometria cartesiana, é o estudo da geometria através dos princípios da álgebra. Em geral, é usado o sistema de coordenadas cartesianas para manipular equações para planos, retas, curvas e círculos, geralmente em duas dimensões, mas por vezes também em três ou mais dimensões. Alguns pensam que a introdução da geometria analítica constituiu o início da matemática moderna. Os estudos iniciais da Geometria Analítica se deram no século XVII , e devem-se ao filósofo e matemático francês René Descartes (1596 - 1650), inventor das coordenadas cartesianas (assim chamadas em sua homenagem), que permitiram a representação numérica de propriedades geométricas.
+
+
+== Espaços vetoriais ==
+
+Espaços vetoriais são um tema central na matemática moderna; assim, a álgebra linear é largamente usada em álgebra abstrata e análise funcional. A álgebra linear também tem sua representação concreta em geometria analítica.
+
+
+== Transformação linear ==
+
+Em Matemática, uma transformação linear é um tipo particular de função entre dois espaços vetoriais que preserva as operações de adição vetorial e multiplicação por escalar. Uma transformação linear também pode ser chamada de aplicação linear ou mapa linear. No caso em que o domínio e contradomínio coincidem, é usada a expressão operador linear. Na linguagem da álgebra abstrata, uma transformação linear é um homomorfismo de espaços vetoriais.
+
+
+== Teoremas fundamentais ==
+Teorema do Núcleo e da Imagem
+Teorema Espectral
+Teorema dos Valores Singulares
+Teorema de Cayley-Hamilton
+Todo espaço vetorial possui uma base.
+Quaisquer duas bases do espaço vetorial têm a mesma cardinalidade; equivalentemente, a dimensão de um espaço vetorial é bem definido.
+Uma matriz quadrada é inversível se e somente se seu determinante for diferente de zero.
+A matriz é inversível se e somente se a transformação linear representada pela matriz é um isomorfismo.
+
+
+== Aplicações ==
+Programação linear
+Processamento de imagens
+Física matemática
+Estatística
+Mercado Financeiro
+
+
+== Referências ==
+
+
+== Ver também ==
+
+Álgebra não linear
+Regra de Cramer
+Subespaço vetorial
+Vetor
+Equação linear
+
+
+=== Livros online ===
+
+
+== Ligações externas ==
+Calculadora online para solucionar um sistema de equações usando a regra de Cramer

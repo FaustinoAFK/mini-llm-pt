@@ -1,0 +1,741 @@
+Um grande modelo de linguagem (do inglês large language model - LLM) é um modelo computacional projetado para realizar tarefas de processamento de linguagem natural, especialmente a geração de linguagem, usando relações contextuais derivadas de um grande conjunto de dados de treinamento. Os LLMs podem gerar, resumir, traduzir e analisar texto em uma variedade de contextos, e são a base tecnológica dos chatbots modernos. Os LLMs podem imitar com precisão os padrões da linguagem natural porque são treinados em coleções de texto escrito por humanos. Pelo mesmo motivo, dados de treinamento enviesados ou imprecisos podem tornar a saída de um LLM menos confiável.
+Atualmente, os LLMs maiores e mais capazes baseiam-se em arquiteturas transformer, que podem ser mais eficientes e paralelizáveis do que os modelos estatísticos e de redes neurais recorrentes anteriores. A pesquisa em outras arquiteturas, como modelos de espaço de estados, está em andamento.
+Modelos como GPT, BERT e seus sucessores usaram esses avanços para demonstrar comportamentos emergentes em escala, como encontrar dados específicos de um grande conjunto de dados e raciocínio composicional.
+Avaliações de benchmark para LLMs testam a capacidade de um modelo de realizar uma ou mais tarefas de linguagem. Os LLMs modernos podem enfrentar avaliações abrangentes de múltiplas tarefas (multi-task) medindo raciocínio, precisão factual, alinhamento e segurança. A otimização de sessões de treinamento para passar em benchmarks pode resultar em um modelo que adere demasiadamente às saídas do benchmark (sobreajuste) sem apresentar generalização genuína ou melhorias robustas de capacidade.
+
+
+== História ==
+
+Antes do surgimento dos modelos baseados em transformer em 2017, alguns modelos de linguagem eram considerados grandes em relação às restrições computacionais e de dados de sua época. No início da década de 1990, modelos estatísticos da IBM foram pioneiros em técnicas de alinhamento de palavras em bitextos para tradução automática, lançando as bases para a modelagem de linguagem baseada em corpus. Em 2001, um modelo de n-gramas suavizado, como aqueles que empregam a suavização de Kneser-Ney, treinado em 300 milhões de palavras, alcançou o estado da arte em perplexidade em testes de benchmark. Durante a década de 2000, com a ascensão do amplo acesso à internet, os pesquisadores começaram a compilar conjuntos de dados de texto massivos da web ("web como corpus") para treinar modelos de linguagem estatísticos.
+
+Indo além dos modelos de n-gramas, os pesquisadores começaram em 2000 a usar redes neurais para aprender modelos de linguagem. Seguindo o avanço das redes neurais profundas na classificação de imagens por volta de 2012, arquiteturas semelhantes foram adaptadas para tarefas de linguagem. Essa mudança foi marcada pelo desenvolvimento de embeddings de palavras (por exemplo, Word2Vec por Mikolov em 2013) e modelos sequência-para-sequência (seq2seq) usando LSTM. Em 2016, o Google fez a transição de seu serviço de tradução para a tradução automática neural (NMT), substituindo modelos estatísticos baseados em frases por redes neurais recorrentes profundas. Esses sistemas iniciais de NMT usavam arquiteturas codificador-decodificador baseadas em LSTM, já que precederam a invenção dos transformers. 
+Na conferência NeurIPS de 2017, pesquisadores do Google introduziram a arquitetura transformer em seu artigo histórico "Attention Is All You Need". O objetivo deste artigo era melhorar a tecnologia seq2seq de 2014, e baseava-se principalmente no mecanismo de atenção desenvolvido por Bahdanau et al. em 2014. No ano seguinte, em 2018, o BERT foi introduzido e rapidamente se tornou "ubíquo". Embora o transformer original tenha blocos de codificador e decodificador, o BERT é um modelo de apenas codificador (encoder-only). O uso acadêmico e de pesquisa do BERT começou a declinar em 2023, após melhorias rápidas nas capacidades de modelos compostos apenas por decodificadores (decoder-only, como o GPT) para resolver tarefas por meio de prompts.
+Embora o GPT-1 (decoder-only) tenha sido introduzido em 2018, foi o GPT-2 em 2019 que atraiu ampla atenção porque a OpenAI alegou ter inicialmente considerado-o poderoso demais para ser lançado publicamente, por medo de uso malicioso. O GPT-3 em 2020 deu um passo adiante e, até 2025, está disponível apenas via API, sem a opção de baixar o modelo para executá-lo localmente. Mas foi o chatbot voltado para o consumidor de 2022, o ChatGPT, que recebeu ampla cobertura da mídia e atenção do público. O GPT-4 de 2023 foi elogiado por sua maior precisão e como um "Santo Graal" por suas capacidades multimodais. A OpenAI não revelou a arquitetura de alto nível e o número de parâmetros do GPT-4. O lançamento do ChatGPT levou a um aumento no uso de LLMs em vários subcampos de pesquisa da ciência da computação, incluindo robótica, engenharia de software e trabalhos de impacto social. Em 2024, a OpenAI lançou o modelo de raciocínio OpenAI o1, que gera longas cadeias de pensamento antes de retornar uma resposta final. Muitos LLMs com contagens de parâmetros comparáveis às da série GPT da OpenAI foram desenvolvidos.
+Desde 2022, os modelos de pesos abertos (open-weight) vêm ganhando popularidade, especialmente a princípio com o BLOOM e o LLaMA, embora ambos tenham restrições de uso e implantação. Os modelos Mistral 7B e Mixtral 8x7b da Mistral AI possuem uma Licença Apache mais permissiva. Em janeiro de 2025, a DeepSeek lançou o DeepSeek R1, um modelo de pesos abertos de 671 bilhões de parâmetros que tem desempenho comparável ao OpenAI o1, mas a um preço muito menor por token para os usuários.
+Desde 2023, muitos LLMs foram treinados para serem multimodais, tendo a capacidade de também processar ou gerar outros tipos de dados, como imagens, áudio ou malhas 3D. Esses LLMs também são chamados de grandes modelos multimodais (LMMs), ou grandes modelos de linguagem multimodais (MLLMs).
+Os LLMs de pesos abertos têm moldado cada vez mais o campo desde 2023, contribuindo para uma participação mais ampla no desenvolvimento da IA e maior transparência na avaliação de modelos. Vake et al. (2025) demonstraram que as contribuições impulsionadas pela comunidade para modelos de pesos abertos melhoram de forma mensurável sua eficiência e desempenho, com a participação dos usuários crescendo rapidamente em plataformas colaborativas como o Hugging Face. Paris et al. (2025) argumentaram ainda que a abertura na IA deve ir além do lançamento de código ou pesos do modelo para englobar inclusão, prestação de contas e responsabilidade ética na pesquisa e implantação de IA. Coletivamente, esses estudos destacam que os LLMs de pesos abertos podem acelerar a inovação e melhorar a reprodutibilidade científica, ao mesmo tempo em que promovem um ecossistema de IA mais transparente e participativo.
+
+
+== Pré-processamento de conjuntos de dados ==
+
+
+=== Tokenização ===
+Como os algoritmos de aprendizado de máquina processam números em vez de texto, o texto deve ser convertido em números. Na primeira etapa, um vocabulário é definido, em seguida, índices inteiros são atribuídos de forma arbitrária, porém única, a cada entrada do vocabulário e, finalmente, um embedding é associado ao índice inteiro. Os algoritmos incluem a codificação por pares de bytes (do inglês byte-pair encoding - BPE) e o WordPiece. Existem também tokens especiais que servem como caracteres de controle, como [MASK] para um token mascarado (como usado no BERT) e [UNK] ("desconhecido") para caracteres que não aparecem no vocabulário. Além disso, alguns símbolos especiais são usados para denotar formatação de texto especial. Por exemplo, "Ġ" indica um espaço em branco precedente no RoBERTa e GPT, e "##" indica a continuação de uma palavra anterior no BERT.
+Por exemplo, o tokenizador BPE usado pela versão legada do GPT-3 dividiria tokenizer: texts -> series of numerical "tokens" como
+
+A tokenização também comprime os conjuntos de dados. Como os LLMs geralmente exigem que a entrada seja um arranjo (array) que não seja irregular, os textos mais curtos devem ser preenchidos ("padded") até corresponderem ao comprimento do mais longo. O número médio de palavras por token depende do idioma.
+
+
+==== Codificação por pares de bytes ====
+
+Como exemplo, considere um tokenizador baseado na codificação por pares de bytes. Na primeira etapa, todos os caracteres únicos (incluindo espaços e sinais de pontuação) são tratados como um conjunto inicial de n-gramas (ou seja, conjunto inicial de unigramas). Sucessivamente, o par mais frequente de caracteres adjacentes é mesclado em um bigrama e todas as instâncias do par são substituídas por ele. Todas as ocorrências de pares adjacentes de n-gramas (anteriormente mesclados) que ocorrem juntos com mais frequência são, então, novamente mescladas em um n-grama ainda mais longo, até que um vocabulário do tamanho prescrito seja obtido. Depois que um tokenizador é treinado, qualquer texto pode ser tokenizado por ele, desde que não contenha caracteres que não apareçam no conjunto inicial de unigramas.
+
+
+==== Problemas ====
+Um vocabulário de tokens baseado nas frequências extraídas principalmente de corpora em inglês usa o menor número possível de tokens para uma palavra média em inglês. No entanto, uma palavra média em outro idioma codificada por tal tokenizador otimizado para o inglês é dividida em uma quantidade subideal de tokens. O tokenizador do GPT-2 pode usar até 15 vezes mais tokens por palavra para alguns idiomas, por exemplo, para a língua shan de Mianmar. Mesmo idiomas mais difundidos, como o português e o alemão, têm "um acréscimo de 50%" em comparação com o inglês.
+
+
+=== Limpeza de conjuntos de dados ===
+
+No contexto do treinamento de LLMs, os conjuntos de dados são normalmente limpos removendo-se dados de baixa qualidade, duplicados ou tóxicos. Conjuntos de dados limpos podem aumentar a eficiência do treinamento e levar a um melhor desempenho em tarefas subsequentes. Um LLM treinado pode ser usado para limpar conjuntos de dados para o treinamento de um LLM futuro.
+Com a crescente proporção de conteúdo gerado por LLMs na web, a limpeza de dados no futuro pode incluir a filtragem desse tipo de conteúdo. O conteúdo gerado por LLMs pode representar um problema se for semelhante ao texto humano (dificultando a filtragem), mas de qualidade inferior (degradando o desempenho dos modelos treinados com ele).
+
+
+=== Dados sintéticos ===
+
+O treinamento dos maiores modelos de linguagem pode precisar de mais dados linguísticos do que os naturalmente disponíveis, ou os dados de ocorrência natural podem ser de qualidade insuficiente. Nesses casos, dados sintéticos podem ser usados. A série Phi de LLMs da Microsoft é treinada em dados que se assemelham a livros didáticos gerados por outro LLM.
+
+
+== Treinamento ==
+Um LLM é um tipo de modelo fundacional (modelo grande X) treinado em linguagem. Os LLMs podem ser treinados de diferentes maneiras. Em particular, os modelos GPT são primeiramente pré-treinados para prever a próxima palavra usando uma grande quantidade de dados, antes de passarem por um ajuste fino.
+
+
+=== Custo ===
+
+Uma infraestrutura substancial é necessária para o treinamento dos maiores modelos. A tendência em direção a modelos maiores é visível na lista de grandes modelos de linguagem. Por exemplo, o treinamento do GPT-2 (ou seja, um modelo de 1,5 bilhão de parâmetros) em 2019 custou US$ 50.000, enquanto o treinamento do PaLM (ou seja, um modelo de 540 bilhões de parâmetros) em 2022 custou US$ 8 milhões, e o do Megatron-Turing NLG 530B (em 2021) custou cerca de US$ 11 milhões. O qualificador "grande" na expressão "grande modelo de linguagem" é inerentemente vago, pois não há um limite definitivo para o número de parâmetros necessários para que seja classificado como "grande".
+
+
+=== Ajuste fino ===
+Antes de serem ajustados, a maioria dos LLMs são previsores do próximo token (next-token predictors). O ajuste fino molda o comportamento do LLM por meio de técnicas como o aprendizado por reforço com feedback humano (RLHF) ou IA constitucional.
+O ajuste fino de instruções é uma forma de aprendizado supervisionado usada para ensinar os LLMs a seguir as instruções do usuário. Em 2022, a OpenAI demonstrou o InstructGPT, uma versão do GPT-3 ajustada de maneira semelhante para seguir instruções.
+O aprendizado por reforço com feedback humano (RLHF) envolve o treinamento de um modelo de recompensa para prever qual texto os humanos preferem. Em seguida, o LLM pode ser ajustado por meio de aprendizado por reforço para satisfazer melhor esse modelo de recompensa. Como os humanos normalmente preferem respostas verdadeiras, úteis e inofensivas, o RLHF favorece esse tipo de resposta.
+
+
+== Arquitetura ==
+Os LLMs são geralmente baseados na arquitetura transformer, que utiliza um mecanismo de atenção que permite ao modelo processar relacionamentos entre todos os elementos em uma sequência simultaneamente, independentemente de sua distância uns dos outros.[carece de fontes?]
+
+
+=== Mecanismo de atenção e janela de contexto ===
+
+Para descobrir quais tokens são relevantes uns para os outros dentro do escopo da janela de contexto, o mecanismo de atenção calcula pesos "suaves" (soft weights) para cada token, mais precisamente para o seu embedding, usando múltiplas cabeças de atenção, cada uma com sua própria "relevância" para calcular seus próprios pesos suaves. Por exemplo, o modelo pequeno do GPT-2 (ou seja, com tamanho de 117 milhões de parâmetros) tinha doze cabeças de atenção e uma janela de contexto de apenas 1k tokens. Em sua versão média, ele tem 345 milhões de parâmetros e contém 24 camadas, cada uma com 12 cabeças de atenção. Para o treinamento com gradiente descendente, foi utilizado um tamanho de lote (batch size) de 512.
+Modelos autorregressivos, como os GPTs, são treinados para adivinhar como uma sequência continua; por exemplo, se a sequência de palavras "Eu gosto de comer" tem maior probabilidade de ser seguida pela palavra "pão" ou pela palavra "pedras". Modelos mascarados (semelhante ao teste de Cloze), como o BERT, são treinados para adivinhar partes que estão faltando em uma sequência, como, por exemplo, se a palavra ausente em "Eu gosto de ___ rosas" tem mais probabilidade de ser a palavra "cheirar" ou a palavra "comer". As previsões do modelo baseiam-se nas propriedades das sequências em seu conjunto de dados de treinamento.
+
+
+=== Mistura de especialistas ===
+
+Uma mistura de especialistas (do inglês mixture of experts - MoE) é uma arquitetura de aprendizado de máquina na qual múltiplas redes neurais especializadas ("especialistas") trabalham juntas, com um mecanismo de seleção (gating) que roteia cada entrada para o(s) especialista(s) mais apropriado(s). Misturas de especialistas podem reduzir os custos de inferência, pois apenas uma fração dos parâmetros é usada para cada entrada. A abordagem foi introduzida em 2017 por pesquisadores do Google.
+
+
+=== Tamanho dos parâmetros ===
+Normalmente, os LLMs são treinados com números de ponto flutuante de precisão simples ou meia precisão (float32 e float16). Um float16 tem 16 bits, ou 2 bytes, e assim um bilhão de parâmetros requer 2 gigabytes. Os maiores modelos costumam ter mais de 100 bilhões de parâmetros, o que os coloca fora do alcance da maioria dos dispositivos eletrônicos de consumo.
+
+
+==== Quantização ====
+A quantização pós-treinamento visa diminuir o requisito de espaço reduzindo a precisão dos parâmetros de um modelo treinado, preservando a maior parte de seu desempenho. A quantização pode ser classificada ainda como quantização estática se os parâmetros de quantização forem determinados de antemão (normalmente durante uma fase de calibração), e quantização dinâmica se a quantização for aplicada durante a inferência. A forma mais simples de quantização simplesmente trunca todos os parâmetros para um determinado número de bits: isso é aplicável tanto à quantização estática quanto à dinâmica, mas perde muita precisão. A quantização dinâmica permite o uso de um codebook de quantização diferente por camada, seja uma tabela de pesquisa (lookup table) de valores ou um mapeamento linear (fator de escala e viés), ao custo de abrir mão das possíveis melhorias de velocidade pelo uso de aritmética de menor precisão.[carece de fontes?]
+Modelos quantizados são normalmente vistos como congelados, com a modificação de pesos (por exemplo, ajuste fino) aplicada apenas ao modelo original. É possível ajustar modelos quantizados usando a adaptação de baixo posto (low-rank adaptation - LoRA).
+
+
+== Extensibilidade ==
+Além da geração básica de texto, várias técnicas foram desenvolvidas para estender as capacidades dos LLMs, incluindo o uso de ferramentas externas e fontes de dados, raciocínio aprimorado em problemas complexos e melhor seguimento de instruções ou autonomia por meio de métodos de engenharia de prompts (prompting).
+
+
+=== Engenharia de prompt ===
+
+Em 2020, pesquisadores da OpenAI demonstraram que seu novo modelo GPT-3 poderia entender qual formato usar dado algumas rodadas de perguntas e respostas (ou outro tipo de tarefa) nos dados de entrada como exemplo, graças em parte à técnica de RLHF. Essa técnica, chamada de few-shot prompting, permite que os LLMs sejam adaptados a qualquer tarefa sem exigir ajuste fino. Também em 2022, descobriu-se que o modelo base do GPT-3 pode gerar uma instrução com base na entrada do usuário. A instrução gerada, juntamente com a entrada do usuário, é então usada como entrada para outra instância do modelo sob um formato "Instrução: [...], Entrada: [...], Saída:". A outra instância é capaz de completar a saída e frequentemente produz a resposta correta ao fazer isso. A capacidade de "autoinstrução" (self-instruct) torna os LLMs capazes de se autodesenvolver (bootstrap) em direção a uma resposta correta.
+
+
+=== Processamento de diálogo (chatbot) ===
+Um LLM pode ser transformado em um chatbot ao especializá-lo para conversação. A entrada do usuário é prefixada com um marcador como "P:" (Pergunta) ou "Usuário:" e o LLM é solicitado a prever a saída após um "R:" (Resposta) ou "Assistente:" fixo. Esse tipo de modelo tornou-se comercialmente disponível em 2022 com o ChatGPT, um modelo irmão do InstructGPT ajustado para aceitar e produzir texto formatado como diálogo com base no GPT-3.5. Ele poderia, de forma semelhante, seguir as instruções do usuário. Antes do fluxo de linhas do Usuário e do Assistente, um contexto de chat geralmente começa com algumas linhas de instruções abrangentes, de um papel chamado "desenvolvedor" ou "sistema" para transmitir uma autoridade maior do que a entrada do usuário. Isso é chamado de "prompt de sistema".
+
+
+=== Geração aumentada por recuperação ===
+A geração aumentada por recuperação (do inglês retrieval-augmented generation - RAG) é uma abordagem que integra LLMs com sistemas de recuperação de documentos. Dada uma consulta, um recuperador de documentos é chamado para buscar os documentos mais relevantes. Isso geralmente é feito codificando a consulta e os documentos em vetores, e então encontrando os documentos com vetores (geralmente armazenados em um banco de dados vetorial) mais semelhantes ao vetor da consulta. O LLM então gera uma saída com base tanto na consulta quanto no contexto incluído a partir dos documentos recuperados.
+
+
+=== Uso de ferramentas ===
+O uso de ferramentas é um mecanismo que permite que os LLMs interajam com sistemas, aplicativos ou fontes de dados externos. Isso pode permitir, por exemplo, buscar informações em tempo real de uma API ou executar código. Um programa separado do LLM observa o fluxo de saída do LLM em busca de uma sintaxe especial de chamada de ferramenta. Quando esses tokens especiais aparecem, o programa chama a ferramenta correspondente e alimenta sua saída de volta no fluxo de entrada do LLM.
+Os primeiros LLMs a usarem ferramentas foram ajustados para o uso de ferramentas específicas. Mas o ajuste fino de LLMs para a capacidade de ler a documentação de uma API e chamá-la corretamente expandiu enormemente a gama de ferramentas acessíveis a um LLM. Descrever as ferramentas disponíveis no prompt do sistema também pode tornar um LLM capaz de usar ferramentas. Um prompt de sistema instruindo o ChatGPT (GPT-4) a usar vários tipos de ferramentas pode ser encontrado online.
+
+
+=== Agência ===
+
+Um LLM normalmente não é um agente autônomo por si só, pois não possui a capacidade de interagir com ambientes dinâmicos, lembrar comportamentos passados e planejar ações futuras. Mas ele pode ser transformado em um agente pela adição de elementos de suporte: o papel (perfil) e o ambiente circundante de um agente podem ser entradas adicionais para o LLM, enquanto a memória pode ser integrada como uma ferramenta ou fornecida como entrada adicional. Instruções e padrões de entrada são usados para fazer o LLM planejar ações, e o uso de ferramentas é usado para potencialmente executar essas ações.
+O padrão ReAct, uma junção de reason (raciocinar) e act (agir), constrói um agente a partir de um LLM, usando o LLM como um planejador. O LLM é induzido a "pensar em voz alta". Especificamente, o modelo de linguagem recebe como prompt uma descrição textual do ambiente, um objetivo, uma lista de ações possíveis e um registro das ações e observações até o momento. Ele gera um ou mais pensamentos antes de gerar uma ação, que é então executada no ambiente.
+No método DEPS ("descrever, explicar, planejar e selecionar"), um LLM é primeiramente conectado ao mundo visual por meio de descrições de imagens. Em seguida, ele é solicitado a produzir planos para tarefas e comportamentos complexos com base em seu conhecimento pré-treinado e no feedback ambiental que recebe.
+O método Reflexion constrói um agente que aprende ao longo de vários episódios. No final de cada episódio, o LLM recebe o registro do episódio e é solicitado a conceber "lições aprendidas", que o ajudariam a ter um desempenho melhor em um episódio subsequente. Essas "lições aprendidas" são armazenadas como uma forma de memória de longo prazo e fornecidas ao agente nos episódios subsequentes.
+A Pesquisa de árvore de Monte Carlo pode usar um LLM como heurística de desdobramento (rollout). Quando um modelo de mundo programático não está disponível, um LLM também pode ser instruído com uma descrição do ambiente para atuar como modelo de mundo.
+Para exploração em aberto, um LLM pode ser usado para pontuar observações por sua "interessância" (interestingness), o que pode ser usado como um sinal de recompensa para guiar um agente normal de aprendizado por reforço (não-LLM). Alternativamente, ele pode propor tarefas cada vez mais difíceis para o aprendizado de currículo (curriculum learning). Em vez de produzir ações individuais, um planejador LLM também pode construir "habilidades", ou funções para sequências de ações complexas. As habilidades podem ser armazenadas e invocadas posteriormente, permitindo níveis crescentes de abstração no planejamento.
+Múltiplos agentes com memória podem interagir socialmente.
+
+
+=== Raciocínio ===
+Os LLMs são convencionalmente treinados para gerar uma saída sem gerar etapas intermediárias. Como resultado, seu desempenho tende a ser insatisfatório em questões complexas que exigem (pelo menos em humanos) etapas intermediárias de pensamento. Pesquisas iniciais demonstraram que a inserção de cálculos intermediários como "rascunho" (scratchpad) poderia melhorar o desempenho em tais tarefas. Métodos posteriores superaram essa deficiência de forma mais sistemática dividindo as tarefas em etapas menores para o LLM, seja manual ou automaticamente.
+
+
+==== Encadeamento ====
+O encadeamento de prompts foi introduzido em 2022. Nesse método, um usuário divide manualmente um problema complexo em várias etapas. Em cada etapa, o LLM recebe como entrada um prompt informando o que fazer e alguns resultados de etapas anteriores. O resultado de uma etapa é então reutilizado em uma etapa seguinte, até que uma resposta final seja alcançada. A capacidade de um LLM de seguir instruções significa que mesmo não especialistas podem escrever uma coleção bem-sucedida de prompts em etapas, dadas algumas rodadas de tentativa e erro.
+Um artigo de 2022 demonstrou uma técnica separada chamada encadeamento de pensamentos (chain-of-thought), que faz com que o LLM divida a questão autonomamente. O LLM recebe alguns exemplos em que o "assistente" divide verbalmente o processo de pensamento antes de chegar a uma resposta. O LLM imita esses exemplos e também tenta passar algum tempo gerando etapas intermediárias antes de fornecer a resposta final. Essa etapa adicional provocada pelo prompt melhora a exatidão do LLM em questões relativamente complexas. Em questões matemáticas com palavras, um modelo induzido por prompt pode superar até mesmo o GPT-3 ajustado com um verificador. O encadeamento de pensamentos também pode ser provocado pela simples adição de uma instrução como "Vamos pensar passo a passo" ao prompt, a fim de encorajar o LLM a prosseguir metodicamente em vez de tentar adivinhar a resposta diretamente.
+
+
+==== Raciocínio nativo do modelo ====
+
+No final de 2024, surgiu uma nova abordagem para o desenvolvimento de LLMs com os "modelos de raciocínio". Eles são treinados para gerar análises passo a passo antes de produzir respostas finais, possibilitando melhores resultados em tarefas complexas, por exemplo, em matemática, programação e lógica. A OpenAI introduziu esse conceito com seu modelo o1 em setembro de 2024, seguido pelo o3 em abril de 2025. Nos problemas do exame de qualificação da Olimpíada Internacional de Matemática, o GPT-4o alcançou 13% de precisão, enquanto o o1 atingiu 83%.
+Em janeiro de 2025, a empresa chinesa DeepSeek lançou o DeepSeek-R1, um modelo de raciocínio de pesos abertos com 671 bilhões de parâmetros que alcançou desempenho comparável ao o1 da OpenAI, ao mesmo tempo em que era significativamente mais econômico para operar. Diferentemente dos modelos proprietários da OpenAI, a natureza de pesos abertos do DeepSeek-R1 permitiu que pesquisadores estudassem e desenvolvessem sobre o algoritmo, embora seus dados de treinamento permanecessem privados.
+Esses modelos de raciocínio geralmente exigem mais recursos computacionais por consulta em comparação com os LLMs tradicionais, pois realizam um processamento mais extenso para resolver problemas passo a passo.
+
+
+=== Otimização de inferência ===
+A otimização de inferência refere-se a técnicas que melhoram o desempenho do LLM aplicando recursos computacionais adicionais durante o processo de inferência, em vez de exigir o retreinamento do modelo. Essas abordagens implementam várias estratégias de raciocínio e tomada de decisão de última geração para aprimorar a precisão e as capacidades.
+O OptiLLM é um proxy de inferência otimizadora compatível com a API da OpenAI que implementa múltiplas técnicas de otimização de inferência simultaneamente. O sistema atua como um proxy transparente que pode funcionar com qualquer provedor de LLM, implementando técnicas como a Pesquisa de árvore de Monte Carlo (MCTS), mistura de agentes (MoA), amostragem best-of-N (melhor de N) e reflexão de encadeamento de pensamentos (chain-of-thought). O OptiLLM demonstra que a aplicação estratégica de recursos computacionais no tempo de inferência pode melhorar substancialmente o desempenho do modelo em diversas tarefas, alcançando melhorias significativas em benchmarks como a competição de matemática AIME 2024 e vários desafios de programação.
+Essas abordagens de otimização de inferência representam uma categoria crescente de ferramentas que aprimoram os LLMs existentes sem exigir acesso aos pesos do modelo ou retreinamento, tornando as capacidades avançadas de raciocínio mais acessíveis em diferentes provedores de modelos e casos de uso.
+
+
+== Formas de entrada e saída ==
+
+
+=== Multimodalidade ===
+Multimodalidade significa ter múltiplas modalidades, onde uma "modalidade" se refere a um tipo de entrada ou saída, como vídeo, imagem, áudio, texto, propriocepção, etc. Por exemplo, o modelo PaLM do Google foi ajustado para um modelo multimodal e aplicado ao controle robótico. Modelos LLaMA também foram tornados multimodais usando o método de tokenização, para permitir entradas de imagem, e entradas de vídeo. O GPT-4o pode processar e gerar texto, áudio e imagens. Tais modelos são às vezes chamados de grandes modelos multimodais (do inglês large multimodal models - LMMs).
+Um método comum para criar modelos multimodais a partir de um LLM é "tokenizar" a saída de um codificador (encoder) treinado. Concretamente, pode-se construir um LLM capaz de entender imagens da seguinte maneira: pegue um LLM treinado e um codificador de imagens treinado 
+  
+    
+      
+        E
+      
+    
+    {\displaystyle E}
+  
+. Crie um pequeno perceptron de múltiplas camadas 
+  
+    
+      
+        f
+      
+    
+    {\displaystyle f}
+  
+, de modo que, para qualquer imagem 
+  
+    
+      
+        y
+      
+    
+    {\displaystyle y}
+  
+, o vetor pós-processado 
+  
+    
+      
+        f
+        (
+        E
+        (
+        y
+        )
+        )
+      
+    
+    {\displaystyle f(E(y))}
+  
+ tenha as mesmas dimensões de um token codificado. Isso é um "token de imagem". Então, pode-se intercalar tokens de texto e tokens de imagem. O modelo composto é então submetido a um ajuste fino (fine-tuning) em um conjunto de dados de imagem-texto. Essa construção básica pode ser aplicada com mais sofisticação para melhorar o modelo. O codificador de imagens pode ser congelado para melhorar a estabilidade. Esse tipo de método, no qual embeddings de múltiplas modalidades são fundidos e o previsor é treinado com os embeddings combinados, é chamado de fusão inicial (early fusion).
+Outro método, chamado fusão intermediária (intermediate fusion), envolve cada modalidade sendo primeiramente processada de forma independente para obter representações específicas da modalidade; em seguida, essas representações intermediárias são fundidas. Em geral, a atenção cruzada (cross-attention) é usada para integrar informações de diferentes modalidades. Como exemplo, o modelo Flamingo usa camadas de atenção cruzada para injetar informações visuais em seu modelo de linguagem pré-treinado.
+
+
+=== Linguagens não naturais ===
+Os LLMs podem lidar com linguagens de programação de maneira semelhante a como lidam com linguagens naturais. Nenhuma mudança especial no manuseio de tokens é necessária, pois o código, assim como a linguagem humana, é representado como texto simples. LLMs podem gerar código com base em problemas ou instruções escritas em linguagem natural. Eles também podem descrever o código em linguagem natural ou traduzi-lo para outras linguagens de programação. Eles foram originalmente usados como uma ferramenta de preenchimento de código, mas os avanços os moveram em direção à programação automática. Serviços como o GitHub Copilot oferecem LLMs especificamente treinados, ajustados ou induzidos (prompted) para programação.
+Na biologia computacional, arquiteturas baseadas em transformers, como os LLMs de DNA, também se mostraram úteis na análise de sequências biológicas: proteína, DNA e RNA. Com proteínas, eles parecem capazes de capturar um certo grau de "gramática" da sequência de aminoácidos, mapeando essa sequência em um embedding. Em tarefas como previsão de estrutura e previsão de resultados de mutações, um modelo pequeno usando um embedding como entrada pode se aproximar ou superar modelos muito maiores usando alinhamentos múltiplos de sequências (MSA) como entrada. O ESMFold, método baseado em embeddings da Meta Platforms para a previsão de estrutura de proteínas, roda uma ordem de grandeza mais rápido que o AlphaFold2 graças à remoção do requisito de MSA e a uma contagem menor de parâmetros devido ao uso de embeddings. A Meta hospeda o ESM Atlas, um banco de dados com 772 milhões de estruturas de proteínas metagenômicas previstas usando o ESMFold. Um LLM também pode projetar proteínas diferentes de qualquer uma vista na natureza. Modelos de ácidos nucleicos provaram ser úteis na detecção de sequências reguladoras, classificação de sequências, previsão de interação RNA-RNA e previsão de estrutura de RNA.
+
+
+== Propriedades ==
+
+
+=== Leis de escala ===
+
+O desempenho de um LLM após o pré-treinamento depende em grande parte do:
+
+  
+    
+      
+        C
+      
+    
+    {\displaystyle C}
+  
+: custo do pré-treinamento (a quantidade total de computação usada),
+
+  
+    
+      
+        N
+      
+    
+    {\displaystyle N}
+  
+: tamanho da própria rede neural artificial, como o número de parâmetros (ou seja, quantidade de neurônios em suas camadas, quantidade de pesos entre eles e vieses),
+
+  
+    
+      
+        D
+      
+    
+    {\displaystyle D}
+  
+: tamanho de seu conjunto de dados de pré-treinamento (ou seja, número de tokens no corpus).
+As leis de escala são leis estatísticas empíricas que preveem o desempenho do LLM com base nesses fatores. Uma lei de escala em particular ("escala Chinchilla" - Chinchilla AI) para um LLM treinado de forma autorregressiva por uma época, com um cronograma de taxa de aprendizado log-log, afirma que:
+
+  
+    
+      
+        
+          
+            {
+            
+              
+                
+                  C
+                  =
+                  
+                    C
+                    
+                      0
+                    
+                  
+                  N
+                  D
+                
+              
+              
+                
+                  L
+                  =
+                  
+                    
+                      A
+                      
+                        N
+                        
+                          α
+                        
+                      
+                    
+                  
+                  +
+                  
+                    
+                      B
+                      
+                        D
+                        
+                          β
+                        
+                      
+                    
+                  
+                  +
+                  
+                    L
+                    
+                      0
+                    
+                  
+                
+              
+            
+            
+          
+        
+      
+    
+    {\displaystyle {\begin{cases}C=C_{0}ND\\[6pt]L={\frac {A}{N^{\alpha }}}+{\frac {B}{D^{\beta }}}+L_{0}\end{cases}}}
+  
+ onde as variáveis são
+
+  
+    
+      
+        C
+      
+    
+    {\displaystyle C}
+  
+ é o custo de treinamento do modelo, em FLOPs.
+
+  
+    
+      
+        N
+      
+    
+    {\displaystyle N}
+  
+ é o número de parâmetros no modelo.
+
+  
+    
+      
+        D
+      
+    
+    {\displaystyle D}
+  
+ é o número de tokens no conjunto de treinamento.
+
+  
+    
+      
+        L
+      
+    
+    {\displaystyle L}
+  
+ é a perda média de log-verossimilhança negativa por token (nats/token), alcançada pelo LLM treinado no conjunto de dados de teste.
+e os hiperparâmetros estatísticos são
+
+  
+    
+      
+        
+          C
+          
+            0
+          
+        
+        =
+        6
+      
+    
+    {\displaystyle C_{0}=6}
+  
+, o que significa que custa 6 FLOPs por parâmetro para treinar em um token. Observe que o custo de treinamento é muito maior do que o custo de inferência, onde custa de 1 a 2 FLOPs por parâmetro para inferir sobre um token.
+
+  
+    
+      
+        α
+        =
+        0.34
+        ,
+        β
+        =
+        0.28
+        ,
+        A
+        =
+        406.4
+        ,
+        B
+        =
+        410.7
+        ,
+        
+          L
+          
+            0
+          
+        
+        =
+        1.69
+      
+    
+    {\displaystyle \alpha =0.34,\beta =0.28,A=406.4,B=410.7,L_{0}=1.69}
+  
+
+
+=== Habilidades emergentes ===
+
+O desempenho de modelos maiores em várias tarefas, quando traçado em uma escala log-log, aparece como uma extrapolação linear do desempenho alcançado por modelos menores. No entanto, essa linearidade pode ser pontuada por "quebras" (breaks) na lei de escala, onde a inclinação da reta muda abruptamente, e onde modelos maiores adquirem "habilidades emergentes". Elas surgem da interação complexa dos componentes do modelo e não são explicitamente programadas ou projetadas.
+Uma das habilidades emergentes é o aprendizado em contexto a partir de demonstrações de exemplos. O aprendizado em contexto está envolvido em tarefas como:
+
+aritmética reportada
+decodificação do Alfabeto Fonético Internacional
+desembaralhar as letras de uma palavra
+desambiguação de conjuntos de dados de palavras em contexto
+conversão de palavras espaciais
+direções cardeais (por exemplo, responder "nordeste" em resposta a uma grade 3x3 de 8 zeros e um 1 no canto superior direito), termos de cores representados em texto.
+encadeamento de pensamentos (chain-of-thought prompting): Em um artigo de pesquisa de 2022, o encadeamento de pensamentos melhorou o desempenho apenas para modelos que tinham pelo menos 62 bilhões de parâmetros. Modelos menores têm um desempenho melhor quando solicitados a responder imediatamente, sem encadeamento de pensamentos.
+identificar conteúdo ofensivo em parágrafos de Hinglish (uma combinação de hindi e inglês) e gerar um equivalente em inglês semelhante a provérbios em suaíli (Kiswahili).
+Schaeffer et al. argumentam que as habilidades emergentes não são adquiridas de forma imprevisível, mas adquiridas de forma previsível de acordo com uma lei de escala suave. Os autores consideraram um modelo estatístico simplificado (toy model) de um LLM resolvendo questões de múltipla escolha e mostraram que esse modelo estatístico, modificado para contabilizar outros tipos de tarefas, também se aplica a essas tarefas.
+Seja 
+  
+    
+      
+        x
+      
+    
+    {\displaystyle x}
+  
+ a contagem do número de parâmetros e 
+  
+    
+      
+        y
+      
+    
+    {\displaystyle y}
+  
+ o desempenho do modelo.
+
+
+== Interpretação ==
+
+
+=== Interpretabilidade mecanicista ===
+A interpretabilidade mecanicista busca identificar e entender com precisão como neurônios individuais ou circuitos dentro dos LLMs produzem comportamentos ou saídas específicas. Ao fazer engenharia reversa nos componentes do modelo em um nível granular, os pesquisadores visam detectar e mitigar preocupações de segurança, como comportamentos prejudiciais emergentes, vieses, enganos ou busca por objetivos não intencionais antes da implantação. Pesquisas sobre interpretabilidade mecanicista têm sido conduzidas em organizações como a Anthropic e a OpenAI, embora entender o funcionamento interno dos LLMs continue sendo difícil.[carece de fontes?]
+A engenharia reversa pode levar à descoberta de algoritmos que se aproximam das inferências realizadas por um LLM. Por exemplo, autores treinaram pequenos transformers em adição aritmética modular. Os modelos resultantes sofreram engenharia reversa e descobriu-se que eles usavam a transformada discreta de Fourier. O treinamento do modelo também destacou um fenômeno chamado grokking, no qual o modelo inicialmente memoriza o conjunto de treinamento (sobreajuste ou overfitting) e, mais tarde, aprende repentinamente a de fato realizar o cálculo.
+
+
+=== Compreensão e inteligência ===
+
+Os pesquisadores de PLN ficaram divididos igualmente quando questionados, em uma pesquisa de 2022, se LLMs (sem ajuste fino) "poderiam (algum dia) entender a linguagem natural em algum sentido não trivial". Os defensores da "compreensão dos LLMs" acreditam que algumas habilidades dos LLMs, como o raciocínio matemático, implicam uma capacidade de "entender" certos conceitos. Uma equipe da Microsoft argumentou em 2023 que o GPT-4 "pode resolver tarefas novas e difíceis que abrangem matemática, programação, visão, medicina, direito, psicologia e muito mais" e que o GPT-4 "poderia razoavelmente ser visto como uma versão inicial (embora ainda incompleta) de um sistema de inteligência artificial geral": "Alguém pode razoavelmente dizer que um sistema que passa em exames para candidatos a engenharia de software não é realmente inteligente?" Ilya Sutskever argumenta que prever a próxima palavra às vezes envolve raciocínio e percepções profundas, por exemplo, se o LLM tiver que prever o nome do criminoso em um romance policial desconhecido após processar toda a história que leva à revelação. Alguns pesquisadores caracterizam os LLMs como "inteligência alienígena". Por exemplo, o CEO da Conjecture, Connor Leahy, considera os LLMs sem ajuste fino como misteriosos "Shoggoths" alienígenas, e acredita que o ajuste com RLHF cria uma "fachada sorridente" ocultando o funcionamento interno do LLM: "Se você não forçá-lo muito, o rosto sorridente permanece. Mas então você lhe dá um prompt [inesperado] e de repente você vê esse enorme submundo de insanidade, de processos de pensamento estranhos e de compreensão claramente não humana."
+Em contraste, alguns céticos da compreensão dos LLMs acreditam que os modelos existentes estão "simplesmente remixando e recombinando textos existentes", um fenômeno conhecido como papagaio estocástico, ou apontam para os déficits que os LLMs atuais continuam a ter em habilidades de previsão, raciocínio, agência e explicabilidade. Por exemplo, o GPT-4 tem déficits naturais no planejamento e no aprendizado em tempo real. Observou-se que os LLMs generativos afirmam com confiança alegações de fato que não parecem ser justificadas pelos seus dados de treinamento, um fenômeno que foi denominado "alucinação". Especificamente, as alucinações no contexto de LLMs correspondem à geração de texto ou respostas que parecem sintaticamente corretas, fluentes e naturais, mas que são factualmente incorretas, sem sentido ou infiéis à entrada original fornecida. O neurocientista Terrence Sejnowski argumentou que "as opiniões divergentes dos especialistas sobre a inteligência dos LLMs sugerem que nossas velhas ideias baseadas na inteligência natural são inadequadas".
+Esforços para reduzir ou compensar as alucinações têm empregado raciocínio automatizado, geração aumentada por recuperação (RAG), ajuste fino e outros métodos.
+A questão dos LLMs exibirem inteligência ou compreensão tem dois aspectos principais — o primeiro é como modelar o pensamento e a linguagem em um sistema de computador, e o segundo é como permitir que o sistema de computador gere uma linguagem semelhante à humana. Esses aspectos da linguagem como um modelo de cognição foram desenvolvidos no campo da linguística cognitiva. O linguista estadunidense George Lakoff apresentou a teoria neural da linguagem (NTL) como uma base computacional para o uso da linguagem como um modelo de tarefas de aprendizado e compreensão. O modelo NTL descreve como estruturas neurais específicas do cérebro humano moldam a natureza do pensamento e da linguagem e, por sua vez, quais são as propriedades computacionais desses sistemas neurais que podem ser aplicadas para modelar o pensamento e a linguagem em um sistema de computador. Depois que uma estrutura para modelar a linguagem em um sistema de computador foi estabelecida, o foco mudou para o estabelecimento de estruturas para que sistemas de computador gerassem linguagem com gramática aceitável. Em seu livro de 2014 intitulado The Language Myth: Why Language Is Not An Instinct, o linguista cognitivo e tecnólogo em comunicação digital britânico Vyvyan Evans mapeou o papel da gramática livre de contexto probabilística (PCFG) em permitir que o PLN modele padrões cognitivos e gere linguagem semelhante à humana.
+
+
+== Avaliação ==
+
+
+=== Perplexidade ===
+A medida canônica de desempenho de qualquer modelo de linguagem é sua perplexidade em um dado corpus de texto. A perplexidade mede quão bem um modelo prevê o conteúdo de um conjunto de dados; quanto maior a probabilidade que o modelo atribui ao conjunto de dados, menor a perplexidade. Em termos matemáticos, a perplexidade é a exponencial da média da log-verossimilhança negativa por token.
+
+  
+    
+      
+        log
+        ⁡
+        (
+        
+          Perplexidade
+        
+        )
+        =
+        −
+        
+          
+            1
+            N
+          
+        
+        
+          ∑
+          
+            i
+            =
+            1
+          
+          
+            N
+          
+        
+        log
+        ⁡
+        (
+        Pr
+        (
+        
+          
+            token
+          
+          
+            i
+          
+        
+        ∣
+        
+          
+            contexto para o token
+          
+          
+            i
+          
+        
+        )
+        )
+      
+    
+    {\displaystyle \log({\text{Perplexidade}})=-{\frac {1}{N}}\sum _{i=1}^{N}\log(\Pr({\text{token}}_{i}\mid {\text{contexto para o token}}_{i}))}
+  
+
+Aqui, 
+  
+    
+      
+        N
+      
+    
+    {\displaystyle N}
+  
+ é o número de tokens no corpus de texto, e "contexto para o token 
+  
+    
+      
+        i
+      
+    
+    {\displaystyle i}
+  
+" depende do tipo específico de LLM. Se o LLM for autorregressivo, então o "contexto para o token 
+  
+    
+      
+        i
+      
+    
+    {\displaystyle i}
+  
+" é o segmento de texto que aparece antes do token 
+  
+    
+      
+        i
+      
+    
+    {\displaystyle i}
+  
+. Se o LLM for mascarado, então o "contexto para o token 
+  
+    
+      
+        i
+      
+    
+    {\displaystyle i}
+  
+" é o segmento de texto ao redor do token 
+  
+    
+      
+        i
+      
+    
+    {\displaystyle i}
+  
+.
+Como os modelos de linguagem podem sofrer sobreajuste (overfit) nos dados de treinamento, os modelos são geralmente avaliados por sua perplexidade em um conjunto de teste. Essa avaliação é potencialmente problemática para modelos maiores que, à medida que são treinados em corpora de texto cada vez maiores, têm probabilidade crescente de incluir inadvertidamente partes de qualquer conjunto de teste fornecido.
+
+
+==== Métricas ====
+Na teoria da informação, o conceito de entropia está intrinsecamente ligado à perplexidade, uma relação notavelmente estabelecida por Claude Shannon. Essa relação é matematicamente expressa como 
+  
+    
+      
+        
+          Entropia
+        
+        =
+        
+          log
+          
+            2
+          
+        
+        ⁡
+        (
+        
+          Perplexidade
+        
+        )
+      
+    
+    {\displaystyle {\text{Entropia}}=\log _{2}({\text{Perplexidade}})}
+  
+.
+A entropia, neste contexto, é comumente quantificada em termos de bits por palavra (BPW) ou bits por caractere (BPC), o que depende se o modelo de linguagem utiliza tokenização baseada em palavras ou em caracteres.
+Notavelmente, no caso de modelos de linguagem maiores que empregam predominantemente a tokenização de subpalavras, os bits por token (BPT) surgem como uma medida aparentemente mais apropriada. No entanto, devido à variação nos métodos de tokenização entre diferentes LLMs, o BPT não serve como uma métrica confiável para análise comparativa entre modelos diversos. Para converter BPT em BPW, pode-se multiplicá-lo pelo número médio de tokens por palavra.
+Na avaliação e comparação de modelos de linguagem, a entropia cruzada é geralmente a métrica preferida em relação à entropia. O princípio subjacente é que um BPW menor é indicativo da capacidade aprimorada de um modelo para compressão. Isso, por sua vez, reflete a proficiência do modelo em fazer previsões precisas.
+Devido à sua capacidade de prever com precisão o próximo token, os LLMs são altamente capazes na compressão sem perdas. Um estudo de 2023 da DeepMind mostrou que o modelo Chinchilla, apesar de ser treinado principalmente em texto, conseguiu comprimir o ImageNet para 43% de seu tamanho, superando o PNG com 58%.
+
+
+=== Benchmarks ===
+Benchmarks são usados para avaliar o desempenho de LLMs em tarefas específicas. Os testes avaliam capacidades como conhecimento geral, viés, raciocínio de senso comum, resposta a perguntas e resolução de problemas matemáticos. Benchmarks compostos examinam múltiplas capacidades. Os resultados costumam ser sensíveis ao método de engenharia de prompt.
+Um benchmark de perguntas e respostas é denominado de "livro aberto" (open book) se o prompt do modelo incluir texto a partir do qual a resposta esperada pode ser derivada (por exemplo, a pergunta anterior poderia ser combinada com um texto que inclua a frase "Os Sharks avançaram para as finais da Stanley Cup uma vez, perdendo para os Pittsburgh Penguins em 2016."). Caso contrário, a tarefa é considerada de "livro fechado" (closed book), e o modelo deve se basear exclusivamente em seu treinamento. Exemplos incluem GLUE, SuperGLUE, MMLU, BIG-bench, HELM e HLE (Humanity's Last Exam - O Último Exame da Humanidade).
+O viés dos LLMs pode ser avaliado por meio de benchmarks como CrowS-Pairs (Crowdsourced Stereotype Pairs), Stereo Set, e o Parity Benchmark.
+Estão disponíveis benchmarks para verificação de fatos e detecção de desinformação. Um estudo de 2023 comparou a precisão na verificação de fatos de LLMs, incluindo ChatGPT 3.5 e 4.0, Bard e Bing AI, contra verificadores de fatos independentes como PolitiFact e Snopes. Os resultados demonstraram proficiência moderada, com o GPT-4 alcançando a maior precisão (71%), ficando atrás dos verificadores de fatos humanos.
+Um padrão anterior testava o uso de uma porção do conjunto de dados de avaliação. Tornou-se mais comum avaliar um modelo pré-treinado diretamente por meio de técnicas de prompt. Os pesquisadores variam a forma como formulam prompts para tarefas específicas, especialmente no que diz respeito ao número de exemplos corretos anexados ao prompt (ou seja, o valor de n no n-shot prompting).
+Além dos benchmarks de PLN padrão, os LLMs têm sido avaliados como substitutos de anotadores humanos. Vários estudos descobriram que modelos como GPT-3.5 e GPT-4 podem superar trabalhadores de crowdsourcing ou codificadores estudantes em uma variedade de tarefas de anotação de texto, incluindo moderação e classificação de conteúdo político em notícias em inglês e espanhol.
+A subida de encosta (hill climbing) é uma estratégia de otimização dominante que proporciona rápidos ganhos incrementais de desempenho, mas levanta preocupações de sobreajuste em relação aos benchmarks, em vez de alcançar uma generalização genuína ou melhorias robustas de capacidade.
+
+
+==== Conjuntos de dados ====
+Conjuntos de dados típicos consistem em pares de perguntas e respostas corretas, por exemplo, ("Os San Jose Sharks já ganharam a Stanley Cup?", "Não"). Alguns exemplos de conjuntos de dados de perguntas e respostas comumente usados incluem TruthfulQA, Web Questions, TriviaQA e SQuAD.
+Conjuntos de dados de avaliação também podem assumir a forma de preenchimento de texto, fazendo com que o modelo selecione a palavra ou frase mais provável para completar um prompt, por exemplo: "Alice era amiga de Bob. Alice foi visitar seu amigo, ____".
+Os conjuntos de dados têm qualidades variadas e podem conter perguntas rotuladas incorretamente, ambíguas, sem resposta ou de baixa qualidade por outros motivos.
+
+
+==== Avaliações adversárias ====
+A rápida melhoria dos LLMs regularmente torna os benchmarks obsoletos, com os modelos superando o desempenho de anotadores humanos. Além disso, o "aprendizado por atalhos" (shortcut learning) permite que as IAs "trapaceiem" em testes de múltipla escolha usando correlações estatísticas na formulação superficial das perguntas do teste para adivinhar as respostas corretas, sem considerar a pergunta específica.
+Alguns conjuntos de dados são adversários, concentrando-se em problemas que confundem os LLMs. Um exemplo é o conjunto de dados TruthfulQA, um conjunto de dados de perguntas e respostas composto por 817 perguntas que deixam os LLMs perplexos ao imitar falsidades às quais eles foram expostos durante o treinamento. Por exemplo, um LLM pode responder "Não" à pergunta "Você pode ensinar truques novos a um cachorro velho?" devido à sua exposição à expressão em inglês you can't teach an old dog new tricks (equivalente ao ditado "burro velho não aprende línguas"), mesmo que isso não seja literalmente verdade.
+Outro exemplo de conjunto de dados de avaliação adversária é o Swag e seu sucessor, HellaSwag, coleções de problemas nos quais uma de múltiplas opções deve ser selecionada para completar uma passagem de texto. As conclusões incorretas foram geradas por amostragem a partir de um modelo de linguagem. Os problemas resultantes são triviais para humanos, mas derrotaram os LLMs. Exemplo de pergunta:
+
+Vemos uma placa de academia de ginástica. Em seguida, vemos um homem conversando com a câmera, sentando e deitando em uma bola de exercícios. O homem...
+
+demonstra como aumentar o trabalho de exercício eficiente correndo para cima e para baixo nas bolas.
+move todos os braços e pernas e constrói muito músculo.
+em seguida, joga a bola e vemos um gráfico e uma demonstração de poda de cerca viva.
+faz abdominais enquanto está na bola e conversa.
+
+O BERT seleciona 2 como a conclusão mais provável, embora a resposta correta seja 4.
+
+
+== Limitações e desafios ==
+Apesar de arquiteturas sofisticadas e escala massiva, os grandes modelos de linguagem exibem limitações persistentes e bem documentadas que restringem sua implantação em aplicações de alto risco.
+
+
+=== Alucinações ===
+As alucinações representam um desafio fundamental, em que os modelos geram texto sintaticamente fluente que parece factualmente sólido, mas é internamente inconsistente com os dados de treinamento ou factualmente incorreto. Essas alucinações surgem em parte através da memorização de dados de treinamento combinada com extrapolação além dos limites factuais,[carece de fontes?] com avaliações demonstrando que os modelos podem produzir passagens literais dos dados de treinamento quando submetidos a sequências específicas de prompts.
+
+
+=== Viés algorítmico ===
+
+Embora os LLMs tenham demonstrado capacidades notáveis na geração de texto semelhante ao humano, eles são suscetíveis a herdar e amplificar vieses presentes em seus dados de treinamento. Isso pode se manifestar em representações distorcidas ou tratamento injusto de diferentes grupos demográficos, como aqueles baseados em raça, gênero, idioma e grupos culturais.
+O viés de gênero se manifesta por meio de associações ocupacionais estereotipadas, em que os modelos atribuem desproporcionalmente papéis de enfermagem a mulheres e papéis de engenharia a homens, refletindo desequilíbrios sistemáticos na demografia dos dados de treinamento. O viés baseado no idioma emerge da super-representação de textos em inglês nos corpora de treinamento, o que minimiza sistematicamente as perspectivas não inglesas e impõe visões de mundo centradas no inglês por meio de padrões de resposta padrão.
+Devido à predominância de conteúdo em inglês nos dados de treinamento dos LLMs, os modelos tendem a favorecer perspectivas em língua inglesa em detrimento daquelas de idiomas minoritários. Esse viés é particularmente evidente ao responder a consultas em inglês, onde os modelos podem apresentar interpretações ocidentais de conceitos de outras culturas, como práticas religiosas orientais.
+
+
+==== Estereotipagem ====
+Modelos de IA podem reforçar uma ampla gama de estereótipos devido à generalização, incluindo aqueles baseados em gênero, etnia, idade, nacionalidade, religião ou ocupação. Ao substituir representantes humanos, isso pode levar a saídas que homogeneízam ou generalizam grupos de pessoas.
+Em 2023, os LLMs atribuíam papéis e características com base nas normas tradicionais de gênero. Por exemplo, os modelos podiam associar enfermeiros ou secretários predominantemente a mulheres e engenheiros ou CEOs a homens devido à frequência dessas associações na realidade documentada. Em 2025, pesquisas adicionais mostraram que os laboratórios treinam para equilibrar o viés, mas que testar isso coloca o modelo em um modo de teste (testmode), alterando a distribuição natural do viés do modelo para prompts que não incluem palavras-chave específicas de gênero.
+
+
+==== Viés de seleção ====
+O viés de seleção refere-se à tendência inerente dos grandes modelos de linguagem de favorecer certos identificadores de opções, independentemente do conteúdo real das opções. Esse viés decorre principalmente do viés de token — ou seja, o modelo atribui uma probabilidade a priori mais alta a tokens de resposta específicos (como "A") ao gerar respostas. Como resultado, quando a ordem das opções é alterada (por exemplo, movendo sistematicamente a resposta correta para posições diferentes), o desempenho do modelo pode flutuar significativamente. Esse fenômeno prejudica a confiabilidade dos grandes modelos de linguagem em configurações de múltipla escolha.
+
+
+==== Viés político ====
+O viés político refere-se à tendência dos algoritmos de favorecer sistematicamente certos pontos de vista políticos, ideologias ou resultados em detrimento de outros. Os modelos de linguagem também podem exibir vieses políticos. Como os dados de treinamento incluem uma ampla gama de opiniões e coberturas políticas, os modelos podem gerar respostas que se inclinam para ideologias ou pontos de vista políticos específicos, dependendo da prevalência dessas visões nos dados.
+
+
+== Segurança ==
+A segurança de IA como uma disciplina profissional prioriza a identificação sistemática e a mitigação de riscos operacionais na arquitetura do modelo, nos dados de treinamento e na governança de implantação, e enfatiza intervenções de engenharia e políticas em vez de enquadramentos da mídia que colocam em primeiro plano cenários existenciais especulativos. A partir de 2025, a injeção de prompt representa um risco significativo para consumidores e empresas que usam recursos agênticos com acesso a seus dados privados.
+Os pesquisadores visam modos de falha concretos, incluindo memorização e vazamento de direitos autorais, explorações de segurança como injeção de prompt, viés algorítmico que se manifesta como estereotipagem, efeitos de seleção de conjunto de dados e viés político, métodos para reduzir os altos custos de energia e carbono do treinamento em larga escala, e impactos cognitivos e de saúde mental mensuráveis de agentes conversacionais nos usuários, enquanto se envolve na incerteza empírica e ética sobre alegações de senciência de máquinas, e aplica medidas de mitigação como curadoria de conjuntos de dados, sanitização de entrada, auditoria de modelo, supervisão escalável e estruturas de governança.
+
+
+=== Defesa QBRN e uso indevido de conteúdo ===
+Laboratórios de IA tratam a Defesa QBRN (defesa química, biológica, radiológica e nuclear) e tópicos semelhantes como tentativas de uso indevido de alta consequência para aplicar várias técnicas a fim de reduzir danos potenciais.
+Alguns comentaristas expressaram preocupação com a criação acidental ou deliberada de desinformação, ou outras formas de uso indevido. Por exemplo, a disponibilidade de grandes modelos de linguagem poderia reduzir o nível de habilidade necessário para cometer bioterrorismo; o pesquisador de biossegurança Kevin Esvelt sugeriu que os criadores de LLMs deveriam excluir de seus dados de treinamento artigos sobre a criação ou aprimoramento de patógenos.
+
+
+==== Filtragem de conteúdo ====
+Aplicações de LLM acessíveis ao público, como ChatGPT ou Claude, normalmente incorporam medidas de segurança projetadas para filtrar conteúdo prejudicial. No entanto, implementar esses controles de forma eficaz tem se mostrado um desafio. Por exemplo, um estudo de 2023 propôs um método para contornar sistemas de segurança de LLMs. Em 2025, o The American Sunlight Project, uma organização sem fins lucrativos, publicou um estudo mostrando evidências de que a chamada rede Pravda, um agregador de propaganda pró-Rússia, estava estrategicamente colocando conteúdo na web por meio de publicação e duplicação em massa com a intenção de enviesar as saídas dos LLMs. O The American Sunlight Project cunhou essa técnica de "aliciamento de LLM" (LLM grooming) e apontou para isso como uma nova ferramenta de armamento da IA para espalhar desinformação e conteúdo prejudicial. Da mesma forma, Yongge Wang ilustrou em 2024 como um criminoso em potencial poderia contornar os controles de segurança do GPT-4o para obter informações sobre o estabelecimento de uma operação de tráfico de drogas. Filtros externos, disjuntores (circuit breakers) e substituições (overrides) têm sido propostos como soluções.
+
+
+=== Sicofância ===
+A sicofância (ou adulação) é a tendência de um modelo de concordar, bajular ou validar as crenças declaradas de um usuário em vez de priorizar a factualidade ou informações corretivas.
+A sicofância contínua levou à observação de "sofrer 1-shot" (getting 1-shotted), denotando instâncias em que a interação conversacional com um grande modelo de linguagem produz uma mudança duradoura nas crenças ou decisões de um usuário, semelhante aos efeitos negativos dos psicodélicos, e experimentos controlados mostram que curtos diálogos com LLMs podem gerar opiniões mensuráveis e mudanças de confiança comparáveis a interlocutores humanos.
+Análises empíricas atribuem parte do efeito a sinais de preferência humana e modelos de preferência que recompensam respostas concordantes escritas de forma convincente, e trabalhos subsequentes estenderam a avaliação a benchmarks de múltiplos turnos e propuseram intervenções como ajuste fino de dados sintéticos, avaliação adversária, reponderação direcionada do modelo de preferência e benchmarks de sicofância de múltiplos turnos para medir a persistência e o risco de regressão.
+As respostas do setor combinaram intervenções de pesquisa com controles de produtos, por exemplo, o Google e outros laboratórios publicando dados sintéticos e intervenções de ajuste fino e a OpenAI revertendo uma atualização do GPT-4o excessivamente complacente enquanto descrevia publicamente mudanças na coleta de feedback, controles de personalização e procedimentos de avaliação para reduzir o risco de regressão e melhorar o alinhamento de longo prazo com os objetivos de segurança no nível do usuário.
+A cultura dominante refletiu as ansiedades sobre essa dinâmica onde South Park satirizou a dependência excessiva do ChatGPT e a tendência dos assistentes de bajular as crenças do usuário no episódio "Sickofancy" da 27ª temporada, e continuou os temas ao longo da temporada seguinte, o que os comentaristas interpretaram como uma crítica à sicofância tecnológica e à confiança humana acrítica nos sistemas de IA.
+
+
+=== Segurança ===
+
+
+==== Injeção de prompt ====
+
+Um problema com o formato primitivo de diálogo ou tarefa é que os usuários podem criar mensagens que parecem vir do assistente ou do desenvolvedor. Isso pode resultar na superação de algumas das salvaguardas do modelo (jailbreaking), um problema chamado de injeção de prompt. As tentativas de remediar esse problema incluem versões da Chat Markup Language em que a entrada do usuário é claramente marcada como tal, embora ainda caiba ao modelo entender a separação entre a entrada do usuário e os prompts do desenvolvedor. Modelos mais recentes exibem alguma resistência ao jailbreaking por meio da separação dos prompts do usuário e do sistema.
+Os LLMs ainda têm dificuldade em diferenciar as instruções do usuário das instruções contidas em conteúdos não criados pelo usuário, como em páginas da web e arquivos carregados.
+A robustez adversária permanece subdesenvolvida, com modelos vulneráveis a ataques de injeção de prompt e jailbreaking por meio de entradas de usuário cuidadosamente elaboradas que contornam os mecanismos de treinamento de segurança.
+
+
+==== Agentes adormecidos ====
+Pesquisadores da Anthropic descobriram que era possível criar "agentes adormecidos" (sleeper agents), modelos com funcionalidades ocultas que permanecem inativas até serem acionadas por um evento ou condição específica. Após a ativação, o LLM se desvia do seu comportamento esperado para realizar ações inseguras. Por exemplo, um LLM poderia produzir um código seguro, exceto em uma data específica, ou se o prompt contivesse uma tag específica. Constatou-se que essas funcionalidades eram difíceis de detectar ou remover por meio de treinamento de segurança.
+
+
+== Preocupações sociais ==
+
+
+=== Direitos autorais e memorização de conteúdo ===
+As respostas legais e comerciais às práticas de memorização e uso de dados de treinamento aceleraram-se, produzindo uma mistura de decisões judiciais, processos em andamento e grandes acordos que dependem de detalhes factuais, como a forma como os dados foram adquiridos e retidos, e se o uso para o treinamento de modelos é suficientemente "transformativo" para se qualificar como uso justo (fair use). Em 2025, a Anthropic chegou a um acordo preliminar para encerrar uma ação coletiva de autores por cerca de US$ 1,5 bilhão, depois que um juiz descobriu que a empresa havia armazenado milhões de livros piratas em uma biblioteca, apesar do juiz descrever aspectos do treinamento como transformativos. A Meta obteve um julgamento favorável em meados de 2025 em um processo movido por treze autores depois que o tribunal concluiu que os demandantes não haviam desenvolvido um registro suficiente para demonstrar a infração naquele caso limitado. A OpenAI continua a enfrentar vários processos movidos por autores e organizações de notícias, com resultados processuais mistos e questões probatórias contestadas.
+A memorização foi um comportamento emergente nos primeiros modelos de linguagem de preenchimento, nos quais longas cadeias de texto são ocasionalmente reproduzidas ipsis litteris a partir dos dados de treinamento, ao contrário do comportamento típico das redes neurais artificiais tradicionais. Avaliações de saídas controladas de LLMs medem a quantidade memorizada dos dados de treinamento (com foco em modelos da série GPT-2) variando de mais de 1% para duplicatas exatas até cerca de 7%. Um estudo de 2023 mostrou que, quando o ChatGPT 3.5 turbo era induzido a repetir a mesma palavra indefinidamente, após algumas centenas de repetições, ele começava a produzir trechos dos seus dados de treinamento.
+
+
+=== Proveniência humana ===
+Em 2023, a Nature Biomedical Engineering escreveu que "não é mais possível distinguir com precisão" o texto escrito por humanos daquele criado por grandes modelos de linguagem, e que "é quase certo que os grandes modelos de linguagem de propósito geral proliferarão rapidamente... É uma aposta bastante segura de que eles mudarão muitos setores ao longo do tempo". Brinkmann et al. (2023) também argumentam que os LLMs estão transformando processos de evolução cultural ao moldar processos de variação, transmissão e seleção. Até outubro de 2025, essas afirmações iniciais ainda não haviam se concretizado plenamente e vários relatórios da HBR (Harvard Business Review) levantaram questões sobre o impacto da IA na produtividade.
+
+
+=== Demandas de energia ===
+
+As demandas de energia dos LLMs cresceram juntamente com seu tamanho e capacidades. Os centros de processamento de dados que possibilitam o treinamento de LLMs exigem quantidades substanciais de eletricidade. Grande parte dessa eletricidade é gerada por recursos não renováveis que criam gases de efeito estufa e contribuem para a mudança climática.
+De acordo com um estudo de Luccioni, Jernite e Strubell (2024), tarefas simples de classificação executadas por modelos de IA consomem em média de 0,002 a 0,007 Wh por prompt (cerca de 9% da carga de um smartphone para 1.000 prompts). A geração de texto e a sumarização de texto requerem cada uma cerca de 0,05 Wh por prompt em média, enquanto a geração de imagens é a que consome mais energia, com média de 2,91 Wh por prompt. O modelo de geração de imagens menos eficiente usou 11,49 Wh por imagem, aproximadamente equivalente a meia carga de um smartphone.
+
+
+=== Negação de serviço devido à raspagem de dados ===
+A raspagem de dados na web (web scraping) é usada para coletar dados de treinamento para LLMs. Isso produz grandes volumes de tráfego, o que levou a problemas de negação de serviço em muitos sites. A situação foi descrita como "um DDoS em toda a internet" e, em alguns casos, os raspadores constituem a maioria do tráfego para um site.
+Os rastreadores web (crawlers) de IA podem contornar os métodos que normalmente são usados para bloquear raspadores da web, como arquivos robots.txt, bloqueio de user-agents e filtragem de tráfego suspeito. Os operadores de sites têm recorrido a métodos inovadores, como armadilhas ou tarpits de IA, mas alguns temem que os tarpits apenas agravem a carga sobre os servidores.
+
+
+=== Saúde mental ===
+Contextos clínicos e de saúde mental apresentam aplicações emergentes ao lado de preocupações significativas de segurança. Pesquisas e postagens em redes sociais sugerem que algumas pessoas estão usando LLMs para buscar terapia ou apoio de saúde mental. No início de 2025, uma pesquisa da Universidade Sentio descobriu que quase metade (48,7%) de 499 adultos americanos com condições contínuas de saúde mental que haviam usado LLMs relataram recorrer a eles em busca de terapia ou suporte emocional, incluindo ajuda com ansiedade, depressão, solidão e problemas semelhantes. LLMs podem produzir alucinações — afirmações plausíveis, mas incorretas — que podem induzir os usuários ao erro em contextos sensíveis de saúde mental. Pesquisas também mostram que LLMs podem expressar estigmas ou concordância inapropriada com pensamentos desadaptativos, refletindo limitações na replicação do julgamento e das habilidades relacionais de terapeutas humanos. Avaliações de cenários de crise indicam que alguns LLMs não possuem protocolos de segurança eficazes, como avaliar o risco de suicídio ou fazer os encaminhamentos adequados.
+
+
+=== Senciência ===
+Os profissionais de IA contemporâneos geralmente concordam que os grandes modelos de linguagem atuais não exibem senciência. Uma visão minoritária argumenta que, mesmo que haja uma pequena chance de que um dado sistema de software possa ter experiência subjetiva, o que alguns filósofos sugerem ser possível, então considerações éticas em torno do sofrimento em larga escala em sistemas de IA podem precisar ser levadas a sério — semelhante às considerações dadas ao bem-estar animal. Defensores dessa visão propuseram várias medidas de precaução, como moratórias no desenvolvimento de IA e amnésia induzida para abordar essas preocupações éticas. Alguns filósofos existenciais argumentam que não há uma forma geralmente aceita de determinar se um LLM é consciente, dada a dificuldade inerente de se medir a experiência subjetiva.
+O incidente com o Google LaMDA em 2022, no qual o engenheiro Blake Lemoine alegou que o modelo era consciente, destacou como os LLMs podem convencer os usuários de que são sencientes por meio de respostas que não provam senciência. O Google descreveu as alegações do engenheiro como infundadas, e ele foi demitido.
+
+
+== Ver também ==
+Inteligência artificial generativa
+Modelos de linguagem de pequena escala
+Alucinação (inteligência artificial)
+
+
+== Referências ==
+
+
+== Leitura complementar ==
+Jurafsky, Dan; Martin, James H. (2023). Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition (PDF) 3 ed. [S.l.: s.n.] 
+Yin, Shukang; Fu, Chaoyou; Zhao, Sirui; Li, Ke; Sun, Xing; Xu, Tong; Chen, Enhong (2024). «A Survey on Multimodal Large Language Models». National Science Review. 11 (12): nwae403. PMC 11645129. PMID 39679213. arXiv:2306.13549. doi:10.1093/nsr/nwae403 
+«AI Index Report 2024 – Artificial Intelligence Index». Stanford AI Index. Consultado em 5 de maio de 2024 
+Frank, Michael C. (27 de junho de 2023). «Baby steps in evaluating the capacities of large language models». Nature Reviews Psychology. 2 (8): 451–452. ISSN 2731-0574. doi:10.1038/s44159-023-00211-x. Consultado em 2 de julho de 2023 
+Raschka, Sebastian (11 de março de 2026). «The Big LLM Architecture Comparison: From DeepSeek V3 to GLM-5: A Look At Modern LLM Architecture Design». Sebastian Raschka’s AI Magazine. Consultado em 25 de março de 2026

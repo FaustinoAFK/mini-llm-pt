@@ -1,0 +1,57 @@
+Em Lógica, inferência ou ilação  é operação intelectual mediante a qual se afirma a verdade de uma proposição em decorrência de sua ligação com outras proposições já reconhecidas como verdadeiras.  Consiste, portanto,  em derivar conclusões a partir de  premissas  conhecidas ou decididamente verdadeiras. A conclusão também é chamada de idiomática.
+
+
+== Definição ==
+O processo pelo qual uma conclusão é inferida a partir de múltiplas observações é chamado processo dedutivo ou indutivo, dependendo do contexto. A conclusão pode ser correta, incorreta, correta dentro de um certo grau de precisão ou correta em certas situações. Conclusões inferidas a partir de observações múltiplas podem ser testadas por observações adicionais.
+
+
+=== Exemplos de Inferência ===
+Aristóteles definiu uma série de silogismos,  que podem ser usados ​​como blocos de construção para o raciocínio mais complexo. Começamos com o mais famoso de todos eles: 
+
+Todos os homens são mortais
+Sócrates é um homem
+Portanto, Sócrates é mortal.
+O processo acima é chamado de dedutivo.
+As premissas e a conclusão são verdadeiras, mas a lógica segue junto com inferência. Mas a verdade da conclusão nem sempre se segue da verdade das premissas. A validade de uma inferência depende da forma da inferência. Isto é, a palavra "válido" não se refere à verdade das premissas ou da conclusão, mas sim a forma da inferência. Uma inferência pode ser válida, mesmo se as partes são falsas, e pode ser falsa, mesmo se as partes são verdadeiras. Mas uma forma válida e com premissas verdadeiras sempre terá uma conclusão verdadeira.
+Considere o seguinte exemplo: 
+
+A - Todos os frutos são doces.
+B  - A banana é uma fruta.
+C  - Portanto, a banana é doce.
+Agora voltamos a uma forma inválida:
+
+Todo A é B.
+C é um B.
+Portanto, C é um A.
+Para mostrar que esta forma é inválida, buscamos demonstrar como ela pode levar a partir de premissas verdadeiras para uma conclusão falsa. 
+
+Todas as maçãs são frutas. (Correto)
+Bananas são frutas. (Correto)
+Portanto, as bananas são maçãs. (Errado)
+Um argumento válido com premissas falsas podem levar a uma falsa conclusão: 
+
+Todas as pessoas gordas são gregas.
+John Lennon era gordo.
+Portanto, John Lennon era grego.
+Quando um argumento válido é usado para derivar uma conclusão falsa de premissas falsas, a inferência é válida, pois segue a forma de uma inferência correta. 
+Um argumento válido pode também ser usado para derivar uma conclusão verdadeira a partir de premissas falsas: 
+
+Todas as pessoas gordas são musicistas
+John Lennon era gordo
+Portanto, John Lennon era um músico
+Neste caso, temos duas falsas premissas que implicam uma conclusão verdadeira.
+
+
+==== Inferência incorreta ====
+Uma inferência incorreta é conhecida como uma falácia. Os filósofos que estudam lógica informal compilaram grandes listas delas, e os psicólogos cognitivos têm documentado inúmeros casos onde tendemos a conclusões errôneas, principalmente em questões mais contra intuitivas. 
+
+
+==== Inferência logica automática ====
+Os sistemas de IA primeiro providenciaram "inferência logica automática". Uma vez que estes já foram temas de investigação extremamente popular, levaram a aplicações industriais sob a forma de sistemas especialistas e depois  "business rule engines". 
+O trabalho de um sistema de inferência é o de estender uma base de conhecimento automaticamente. A base de conhecimento (KB) é um conjunto de proposições que representam o que o sistema sabe sobre o mundo. Várias técnicas podem ser utilizadas pelo sistema para estender KB por meio de inferências válidas.
+
+
+== Ver também ==
+Silogismo
+Inferência estatística
+Regra de inferência

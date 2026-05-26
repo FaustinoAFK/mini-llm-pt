@@ -1,0 +1,128 @@
+Prospecção de dados (português europeu) ou mineração de dados (português brasileiro) (também conhecida pelo termo inglês data mining) é o processo de explorar dados à procura de padrões consistentes, como regras de associação ou sequências temporais, para detectar relacionamentos sistemáticos entre variáveis, detectando assim novos subconjuntos de dados. Também pode ser definida como o processo que objetiva encontrar dados potencialmente úteis em meio a uma grande quantidade de dados incompletos e confusos.
+No campo da administração, a mineração de dados é o uso da tecnologia da informação para descobrir regras, identificar fatores e tendências-chave, descobrir padrões e relacionamentos ocultos em grandes bancos de dados para auxiliar a tomada de decisões sobre estratégia e vantagens competitivas.
+Esse é um tópico recente em ciência da computação, mas utiliza várias técnicas da estatística, recuperação de informação, inteligência artificial e reconhecimento de padrões.
+
+
+== Visão geral ==
+A mineração de dados é formada por um conjunto de ferramentas e técnicas que através do uso de algoritmos de aprendizagem ou classificação baseados em redes neurais e estatística, são capazes de explorar um conjunto de dados, extraindo ou ajudando a evidenciar padrões nestes dados e auxiliando na descoberta de conhecimento. Esse conhecimento pode ser apresentado por essas ferramentas de diversas formas: agrupamentos, hipóteses, regras, árvores de decisão, grafos, ou dendrogramas.
+O ser humano sempre aprendeu observando padrões, formulando hipóteses e testando-as para descobrir regras. A novidade da era do computador é o volume enorme de dados que não pode mais ser examinado à procura de padrões em um prazo razoável. A solução é instrumentalizar o próprio computador para detectar relações que sejam novas e úteis. A mineração de dados (MD) surge para essa finalidade e pode ser aplicada tanto para a pesquisa científica como para impulsionar a lucratividade da empresa madura, inovadora e competitiva. Também a multidisciplinaridade da mineração de dados pode ser considerada inevitável devido à integração de diversas áreas de conhecimento no processo de análise, abordando áreas de pesquisas que envolvem estatística, matemática e a computação, as quais são disciplinas fundamentais para realização do processo de mineração de dados.
+Diariamente as empresas acumulam grande volume de dados em seus aplicativos operacionais. São dados brutos que dizem quem comprou o quê, onde, quando e em que quantidade. É a informação vital para o dia-a-dia da empresa. Se fizermos estatística ao final do dia para repor estoques e detectar tendências de compra, estaremos praticando business intelligence (BI). Se analisarmos os dados com estatística de modo mais refinado, à procura de padrões de vinculações entre as variáveis registradas, então estaremos fazendo mineração de dados. Buscamos com a MD conhecer melhor os clientes,  seus padrões de consumo e motivações. A MD resgata em organizações grandes o papel do dono atendendo no balcão e conhecendo sua clientela. Através da MD, esses dados agora podem agregar valor às decisões da empresa, sugerir tendências, desvendar particularidades dela e de seu meio ambiente e permitir ações melhor informadas aos seus gestores.
+Pode-se então diferenciar o business intelligence (BI) da mineração de dados (MD) como dois patamares distintos de atuação. O primeiro busca subsidiar a empresa com conhecimento novo e útil acerca do seu meio ambiente e funciona no plano estratégico. O Segundo visa obter a partir dos dados operativos brutos, informação útil para subsidiar a tomada de decisão nos escalões médios e altos da empresa e funciona no plano táctico.
+
+
+== Etapas da mineração de dados ==
+Os passos fundamentais de uma mineração bem sucedida a partir de fontes de dados (bancos de dados, relatórios, logs de acesso, transações, etc.)  consistem de uma limpeza (consistência, preenchimento de informações, remoção de ruído e redundâncias, etc.). Disto nascem os repositórios organizados (Data Marts e Data Warehouses).
+É a partir deles que se pode selecionar algumas colunas para atravessarem o processo de mineração. Tipicamente, este processo não é o final da história: de forma interativa e frequentemente usando visualização gráfica, um analista refina e conduz o processo até que os padrões apareçam. Observe que todo esse processo parece indicar uma hierarquia, algo que começa em instâncias elementares (embora volumosas) e terminam em um ponto relativamente concentrado.
+Encontrar padrões requer que os dados brutos sejam sistematicamente "simplificados" de forma a desconsiderar aquilo que é específico e privilegiar e/ou valorizar tudo o que for generalizado. Em um determinado produto uma única data pode apenas significar que esse cliente em particular procurava grande quantidade desse produto naquele exato momento. Mas isso provavelmente não indica nenhuma tendência de mercado.
+
+
+=== Tipos de informação obtidos com a Mineração de Dados ===
+Com o uso da Mineração de dados, é possível descobrir informações relacionadas a associações, sequências,classificação, aglomeração e prognósticos.
+
+Associações: São ocorrências ligadas a um único evento. Por exemplo:um estudos de modelos de compra em supermercados pode revelar que, na compra de salgadinhos de milho, compra-se também um refrigerante tipo cola em 65% das vezes: mas, quando há uma promoção, o refrigerante é comprado em 85% das vezes.Com essas informações, os gerentes podem tomar decisões mais acertadas pois aprenderam a respeito da rentabilidade de uma promoção.
+Sequências: Na sequência os eventos estão ligados ao longo do tempo. Pode-se descobrir, por exemplo, que quando se compra uma casa, em 65% as vezes se adquire uma nova geladeira no período de duas semanas; e que em 45% das vezes, um fogão também é comprado um mês após a compra da residência.
+Classificação: Reconhece modelos que descrevem o grupo ao qual o item pertence por meio do exame dos itens já classificados e pela inferência de um conjunto de regras. Exemplo: empresas de operadoras de cartões de crédito e companhias telefônicas preocupam-se com a perda de clientes regulares, a classificação pode ajudar a descobrir as características de clientes que provavelmente virão abandona-las e oferecer um modelo para ajudar os gerentes a prever quem são, de modo que se elabore antecipadamente campanhas especiais para reter esses clientes.
+Aglomeração (clustering): Funciona de maneira semelhante a classificação quando ainda não foram definidos grupos. Uma ferramenta de data mining descobrirá diferentes agrupamentos dentro da massa de dados. Por exemplo ao encontrar grupos de afinidades para cartões bancários ou ao dividir o banco de dados em categorias de clientes com base na demografia e em investimentos pessoais.
+Prognóstico: Embora todas essas aplicações envolvam previsões, os prognósticos as utilizam de modo diferente. Partem de uma série de valores existentes para prever quais serão os outros valores. Por exemplo um prognóstico pode descobrir padrões nos dados que ajudam os gerentes a estimar o valor futuro de variáveis com números de vendas.
+Esses sistemas realizam uma análise de alto nível quanto a padrões ou tendências, mas também podem esmiuçar os dados para revelar mais detalhes, se necessário. Existem aplicações de data mining para todas as áreas funcionais da empresa, bem como para o trabalho científico ou governamental. É como usar o data mining para analisar detalhadamente padrões em dados sobre consumidores e, a partir disso, montar campanhas de marketing um-a-um ou identificar clientes lucrativos. (LAUDON & LAUDON, 2011, p. 159)
+
+
+== Localizando padrões ==
+Padrões são unidades de informação que se repetem. A tarefa de localizar padrões não é privilégio da mineração de dados. O cérebro dos seres humanos utiliza-se de processos similares, pois muito do conhecimento que temos em nossa mente é, de certa forma, um processo que depende da localização de padrões. Para exemplificar esses conceitos, vamos propor um breve exercício de indução de regras abstratas. Nosso objetivo é tentar obter alguma expressão genérica para a seguinte seqüência:
+
+Seqüência original: ABCXYABCZKABDKCABCTUABEWLABCWO
+
+Observe atentamente essa seqüência de letras e tente encontrar alguma coisa relevante. Veja algumas possibilidades:
+Passo 1: A primeira etapa é perceber que existe uma seqüência de letras que se repete bastante. Encontramos as sequências "AB" e "ABC" e observamos que elas ocorrem com freqüência superior à das outras sequências.
+Passo 2: Após determinarmos as sequências "ABC" e "AB", verificamos que elas segmentam o padrão original em diversas unidades independentes:
+
+"ABCXY"
+"ABCZK"
+"ABDKC"
+"ABCTU"
+"ABEWL"
+"ABCWO"
+
+Passo 3: Fazem-se agora induções, que geram algumas representações genéricas dessas unidades:
+
+"ABC??" "ABD??" "ABE??" e "AB???",
+
+onde '?' representa qualquer letra
+No final desse processo, toda a seqüência original foi substituída por regras genéricas indutivas, o que simplificou (reduziu) a informação original a algumas expressões simples. Esta explicação é um dos pontos essenciais da mineração de dados, como se pode fazer para extrair certos padrões de dados brutos. Contudo, mais importante do que simplesmente obter essa redução de informação, esse processo nos permite gerar formas de predizer futuras ocorrências de padrões.
+
+
+=== Exemplo prático ===
+Vamos observar aqui apenas um pequeno exemplo prático do que podemos utilizar com as expressões abstratas genéricas que obtivemos. Uma dessas expressões nos diz que toda vez que encontramos a seqüência "AB", podemos inferir que iremos encontrar mais três caracteres e isto completaria um "padrão". Nesta forma abstrata ainda pode ficar difícil de perceber a relevância deste resultado. Por isso vamos usar uma representação mais próxima da realidade.
+Imagine que a letra 'A' esteja representando um item qualquer de um registro comercial. Por exemplo, a letra 'A' poderia significar "aquisição de pão" em uma transação de supermercado. A letra 'B' poderia, por exemplo, significar "aquisição de leite". A letra 'C' é um indicador de que o leite que foi adquirido é do tipo desnatado. É interessante notar que a obtenção de uma regra com as letras "AB" quer dizer, na prática, que toda vez que alguém comprou pão, também comprou leite. Esses dois atributos estão associados e isto foi revelado pelo processo de descoberta de padrões.
+Esta associação já nos fará pensar em colocar "leite" e "pão" mais próximos um do outro no supermercado, pois assim estaríamos facilitando a aquisição conjunta desses dois produtos. Mas a coisa pode ir além disso, bastando continuar nossa exploração da indução.
+Suponha que a letra 'X' signifique "manteiga sem sal", e que a letra 'Z' signifique "manteiga com sal". A letra 'T' poderia significar "margarina". Parece que poderíamos tentar unificar todas essas letras através de um único conceito, uma ideia que resuma uma característica essencial de todos esses itens. Introduzimos a letra 'V', que significaria "manteiga/margarina", ou "coisas que passamos no pão". Fizemos uma indução orientada a atributos, substituímos uma série de valores distintos (mas similares) por um nome só.
+Ao fazer isso estamos perdendo um pouco das características dos dados originais. Após essa transformação, já não sabemos mais o que é manteiga e o que é margarina. Essa perda de informação é fundamental na indução e é um dos fatores que permitem o aparecimento de padrões mais gerais. A vantagem desse procedimento é de que basta codificar a seqüência original substituindo a letra 'V' em todos os lugares devidos. Assim fica essa seqüência transformada:
+
+ABCVYABCVKABDKCABCVUABEWLABCVO
+
+Daqui, o sistema de mineração de dados irá extrair, entre outras coisas, a expressão "ABCV", que irá revelar algo muito interessante:
+
+A maioria dos usuários que adquiriram pão e leite desnatado
+também adquiriram manteiga ou margarina.
+
+De posse desta regra, fica fácil imaginar uma disposição nas prateleiras do supermercado para incentivar ainda mais este hábito. Em linguagem mais lógica, pode-se dizer que pão e leite estão associados (implicam) na aquisição de manteiga, isto é, 
+  
+    
+      
+        P
+        a
+        o
+        ,
+        L
+        e
+        i
+        t
+        e
+        →
+        M
+        a
+        n
+        t
+        e
+        i
+        g
+        a
+      
+    
+    {\displaystyle Pao,Leite\rightarrow Manteiga}
+  
+.
+
+
+== Exemplos Reais ==
+
+
+=== Vestibular PUC-RJ ===
+Utilizando as técnicas da mineração de dados, um programa de obtenção de conhecimento depois de examinar milhares de alunos forneceu a seguinte regra: se o candidato é do sexo feminino, trabalha e teve aprovação com boas notas no vestibular, então não efetivava a matrícula. Estranho, ninguém havia pensado nisso. Mas uma reflexão justifica a regra oferecida pelo programa: de acordo com os costumes do Rio de Janeiro, uma mulher em idade de vestibular, se trabalha é porque precisa, e neste caso deve ter feito inscrição para ingressar na universidade pública gratuita. Se teve boas notas provavelmente foi aprovada na universidade pública onde efetivará matrícula. Claro que há exceções: pessoas que moram em frente à PUC, pessoas mais velhas, de alto poder aquisitivo e que voltaram a estudar por outras razões que ter uma profissão, etc.. Mas a grande maioria obedece à regra anunciada.
+
+
+=== Estado civil x cargos de servidores da SEFAZ-AM ===
+Com o uso de Data Mining foram verificadas correlações entre o estado civil e salários da Secretaria de Fazenda do Estado do Amazonas. Notava-se que cerca de 80% dos servidores de maior poder aquisitivo deste órgão eram divorciados/desquitados, enquanto que em outras instituições, como por exemplo na Secretaria de Educação (composta em sua maioria por professores), esta média de divorciados/desquitados era inferior a 30%.
+Longe de parecer coincidência, os dados sugerem que servidores com maior poder aquisitivo se envolvam com relações extra-conjugais, resultando geralmente em desfazimento do casamento. Ou que com poder aquisitivo individual mais elevado não haveria razão para manter um casamento indesejado.
+
+
+== Ferramentas de software ==
+Existem muitas ferramentas de software para o desenvolvimento de modelos de mineração de dados, tanto livres  quanto comerciais, tais como:
+
+
+== Ver também ==
+Cross Industry Standard Process for Data Mining
+Arquitetura de dados
+Administração de dados
+Modelagem de dados
+Banco de Dados
+Agrupamento incremental de documentos
+
+
+== Referências ==
+
+
+== Ligações externas ==
+Mineração de dados no Open Directory Project
+Programa de Mineração de Dados, Universidade da Florida Central
+Tutoriais de Andrew Moore da Universidade Carnegie Mellon

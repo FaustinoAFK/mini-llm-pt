@@ -1,0 +1,241 @@
+Sistema especialista se divide em duas palavras, que são Sistema - "Conjunto de elementos, materiais ou ideais, entre os quais se possa encontrar ou definir alguma relação" e Especialista - "Pessoa que se consagra com particular interesse e cuidado a certo estudo. Conhecedor, perito", sendo uma classe de programa de computador desenvolvido por pesquisadores de Inteligência artificial durante os anos 1970 e aplicado comercialmente durante os anos 1980. Em síntese, são programas constituídos por uma série de regras (às vezes também heurísticas) que analisam informações (normalmente fornecidas pelo usuário do sistema) sobre uma classe específica de problema (ou domínio de problema).
+
+Um termo relacionado é wizard (software) (em inglês). Como um sistema especialista, um wizard também é um programa de computador interativo que auxilia o usuário a resolver um problema. Normalmente, o termo wizard é empregado para designar programas que pesquisam uma base de dados procurando por critérios informados pelo usuário. Infelizmente, a distinção entre essas duas definições não é universal, e alguns programas baseados em regras são também chamados de wizards.
+Um sistema especialista (SE) é desenvolvido a partir da necessidade de se processar informações não numéricas, é capaz de apresentar conclusões sobre um determinado tema, desde que devidamente orientado e "alimentado".
+Um sistema especialista é uma forma de sistema baseado no conhecimento especialmente projetado para emular a especialização humana de algum domínio específico. Um SE irá possuir uma base de conhecimento formada de fatos e regras sobre o domínio, tal como um especialista humano faria, e devem ser capazes de oferecer sugestões e conselhos aos usuários.
+Sistemas Multi-Especialistas são uma tendência moderna, visto que muitos problemas não são possíveis de se resolver com apenas um profissional especialista, mas apenas com toda uma equipe multidisciplinar. Nesse caso, o programa se torna especialista em dois ou mais ramos de áreas científicas distintas, e usa esses conhecimentos de forma integrada para fornecer o melhor aconselhamento possível.
+
+
+== Histórico ==
+
+
+=== Década de 1980 ===
+No início, segundo Passos [l989], as estratégias de resolução de problemas de propósitos gerais da inteligência artificial (IA), se mostraram muito ineficientes na solução de problemas complexos.
+
+
+=== Década de 1970 ===
+Na década de 1970, ficou claro para os pesquisadores de IA que para conseguir que seus sistemas resolvessem satisfatoriamente problemas reais, era necessário incorporar neles grandes quantidades de conhecimentos sobre o problema. Isto fez surgir a necessidade o campo da "Engenharia do Conhecimento" que procura formas de viabilizar a utilização de conhecimentos de especialistas na solução de problemas complexos.
+Esta tecnologia resultante desse campo de estudos, chamado Sistemas Especialistas, hoje é bastante usada em aplicações comerciais.
+Os sistemas especialistas da década de 1970 utilizavam raciocínio lógico estrito, ignorando a incerteza, e logo se mostraram impraticáveis para a maioria dos domínios do mundo real. A geração seguinte de sistemas especialistas empregava técnicas probabilísticas, principalmente em domínios médicos. Apesar dos promissores resultados iniciais, não aumentaram a sua escala devido ao número elevado de probabilidades exigidas na distribuição conjunta total.
+Em meados da década de 1970, foram desenvolvidas as abordagens baseadas em regras para a incerteza, que usavam como fundamento o sucesso de sistemas baseados em regras lógicas, acrescentando uma espécie de "fator de improvisação" a cada regra para acomodar a incerteza. Estes métodos serviram de base para inúmeros sistemas especialistas em medicina e outras áreas.
+
+
+=== Década de 1960 ===
+Foi criado o sistema Dendral em 1968
+
+
+== Tipos de problemas solucionados por sistemas especialistas ==
+Tipicamente, os problemas que podem ser solucionados por um sistema especialista são do tipo que seria atendido por um especialista humano - um médico ou outro profissional (na maioria dos casos). Especialistas reais no domínio do problema (que normalmente é bem específico, como por exemplo "'diagnosticar doenças de pele em adolescentes'") fornecem regras gerais indicando como analisariam o problema, tanto explicitamente com a ajuda de um analista de sistema experiente, como implicitamente, fazendo com que estes especialistas analisem casos de teste e usando programas de computador para analisar os dados de teste e, de forma limitada, derivar regras dessa análise.
+Os sistemas especialistas trabalham com problemas cada vez mais difíceis, assim eles necessitam usar todas as técnicas disponíveis de Inteligência Artificial.
+A fim de escolher o método mais apropriado (ou uma combinação de métodos) para um determinado problema, é necessário analisá-lo em várias dimensões-chaves.
+Abaixo encontram-se os critérios que dão origem as classes de problemas e as classes propriamente ditas:
+
+O problema pode ser decomposto em um conjunto (ou quase isto) de subproblemas independentes, menores e mais fáceis?
+- Decomponíveis;
+- Não-decomponíveis.
+Certos passo em direção à solução podem ser ignorados ou pelo menos desfeitos caso fique provado que são imprudentes?
+- Ignoráveis: as etapas para a solução podem ser ignoradas. Exemplo: demonstração de teoremas;
+- Recuperáveis: as etapas para a solução podem ser desfeitas. Exemplo: quebra-cabeça de 8;
+- Irrecuperáveis: as etapas para a solução não podem ser desfeitas. Exemplo: xadrez.
+A recuperabilidade de um problema tem papel importante na determinação da complexidade da estrutura de controle necessária para a solução do problema.
+- Ignoráveis: estrutura de controle simples que nunca retrocede;
+- Recuperáveis: estrutura de controle ligeiramente mais complicada (utilizará o retrocesso com uma estrutura de pilha na qual as decisões de pilha na qual as decisões são gravadas se precisarem ser desfeitas mais tarde), que às vezes comete erros;
+- Irrecuperáveis: sistema que depende muito esforço para tomar decisões (sistema de planejamento no qual toda uma sequência de passos é analisada de antemão, para descobrir onde levará, antes do primeiro passo ser realmente tomado), já que são definitivas.
+O universo do problema é previsível?
+- Com resultado certo: podemos usar planejamento para gerar uma sequência de operadores que certamente levará a uma solução. Exemplo: quebra-cabeça de 8;
+- Com resultado incerto: podemos usar planejamento para, na melhor das hipóteses, gerar uma sequência de operadores com boas chances de levar a uma solução. Exemplo: bridge, truco, canastra. Para solucionar problemas desse tipo precisamos permitir que um processo de revisão de planos ocorra durante a execução do plano e que seja fornecida a realimentação necessária.
+Uma boa solução para o problema pode ser considerada óbvia sem haver comparação com todas as soluções possíveis?
+- Aceitam qualquer caminho: podem ser solucionados em tempo razoável através do uso de heurísticas que sugerem bons caminhos a serem explorados. Exemplo: lógica de predicados para saber se Marcos ainda vive;
+- Só aceitam o melhor caminho: não existe a possibilidade de usarmos qualquer heurística que possa prever a melhor solução, portanto, será realizada uma busca mais exaustiva. Exemplo: problema do Caixeiro Viajante, encontrar a rota mais curta.
+A solução desejada é um estado do mundo ou um caminho para um estado?
+- A solução é um estado do mundo. Exemplo: a compreensão da linguagem natural;
+- A solução é um caminho para um estado. Exemplo: o problema das jarras d'água.
+Há necessidade absoluta de grande quantidade de conhecimento para resolver o problema, ou o conhecimento é importante apenas para limitar a busca?
+- Muito conhecimento é importante apenas para restringir a busca. Exemplo: xadrez.
+- Muito conhecimento é necessário até mesmo para que se possa reconhecer uma solução. Exemplo: folhar jornais diários para decidir qual deles apoia o governo e qual apoia a oposição nas próximas eleições.
+Um computador que simplesmente receba o problema tem condições de retornar a solução, ou esta exige a interação entre o computador e a pessoa?
+- Solitário: o computador recebe a descrição de um problema e produz uma resposta sem nenhuma comunicação imediata e sem pedir nenhuma explicação sobre o processo de raciocínio. Exemplo: demonstrar um teorema;
+- Conversacional: existe comunicação intermediária entre uma pessoa e o computador, para proporcionar assistência adicional ao computador ou para proporcionar informações adicionais ao usuário, ou ambos. Exemplo: produzir um diagnóstico médico.
+Não existe uma única maneira de resolver todos os problemas. Ao contrário, se analisarmos nossos problemas cuidadosamente e classificarmos nossos métodos de solução de acordo com o tipo de problema aos quais se adaptam, seremos capazes de trazer para cada novo problema muito do que aprendemos na solução de outros problemas semelhantes.
+Tipos de raciocínio diagnóstico existem três tipos básicos de raciocínio diagnóstico:
+1) o raciocínio fisiopatológico;
+2) o raciocínio por reconhecimento de padrões;
+3) o raciocínio probabilístico;
+O raciocínio fisiopatológico é o mais difícil de simular em um programa de computador. Quando um paciente descreve história de febre há seis semanas, seguida três semanas depois por dor no quadrante superior direito de crescente severidade, o médico começa a imaginar uma massa que cresce e estabelece pressão em estruturas sensíveis à dor. Começa então a pensar em um abscesso hepático ou em um nódulo maligno com centro necrótico, causando resposta inflamatória.
+
+
+== Objetivos de sistemas especialistas ==
+O objetivo do sistema especialista é bastante restrito, considerando o objetivo dos modelos psicológicos: os SE's são conhecidos para reproduzir o comportamento de especialistas humanos na resolução de problemas do mundo real, mas o domínio destes problemas é altamente restrito.
+Os primeiros sistemas especialistas que obtiveram sucesso em seus objetivos foram os sistemas Dendral e Mycin.
+A partir dessa época, vários sistemas foram desenvolvidos e resolveram diversos problemas, em diferentes domínios, como por exemplo, agricultura, química, sistemas de computadores, eletrônica, engenharia, geologia, gerenciamento de informações, direito, matemática, física e medicina.
+Algumas aplicações dos principais sistemas desenvolvidos entre os anos 70 e 80:
+Dendral: determinar a fórmula estrutural dos compostos químicos.
+Mycin: manipulações algébricas na física e na matemática.
+HEURISCO: resolver problemas em diversas áreas, como por exemplo em jogos de xadrez, na biologia e até mesmo na matemática.
+
+
+== Applicato ==
+Se por um lado sistemas especialistas se destacaram na pesquisa em IA por achar aplicação prática no mundo real, por outro lado essa aplicação tem sido restrita. Sistemas especialistas são notoriamente limitados no domínio do conhecimento - um exemplo interessante e divertido é aquele onde um pesquisador de IA utilizou o sistema especialista de "doença de pele" para diagnosticar sarampo em seu carro enferrujado - e portanto propenso a cometer erros que um especialista humano facilmente detectaria.
+Além disso, uma vez que a mística em torno do tema diminuiu, vários programadores perceberam que sistemas especialistas simples eram essencialmente versões ligeiramente mais elaboradas de programas procedurais que eles já vinham utilizando há bastante tempo. Sendo assim, algumas das técnicas de sistemas especialistas podem ser encontradas em vários programas complexos sem qualquer alarde em relação a isso.
+Hayes-Roth divide aplicativos de sistemas especialistas em 10 categorias ilustradas na tabela a seguir. Os aplicativos de exemplo não estavam na tabela original de Hayes-Roth e alguns deles surgiram bem depois. Qualquer aplicativo que não tenha notas de rodapé é descrito no livro Hayes-Roth. Além disso, embora essas categorias forneçam uma estrutura intuitiva para descrever o espaço de aplicativos de sistemas especialistas, elas não são categorias rígidas e, em alguns casos, um aplicativo pode mostrar traços de mais de uma categoria.
+
+Hearsay  foi uma tentativa inicial de resolver o reconhecimento de voz por meio de um sistema especialista. Na maioria das vezes, essa categoria de sistemas especialistas não teve tanto sucesso. Hearsay e todos os sistemas de interpretação são essencialmente sistemas de reconhecimento de padrões que procuram padrões em dados ruidosos. No caso do Hearsay, reconhece fonemas em um fluxo de áudio. Outros exemplos anteriores foram a análise de dados do sonar para detectar submarinos russos. Esses tipos de sistemas se mostraram muito mais acessíveis a uma solução de AI de rede neural do que a uma abordagem baseada em regras.
+CADUCEUS e MYCIN eram sistemas de diagnóstico médico. O usuário descreve seus sintomas no computador como faria com um médico e o computador retorna um diagnóstico médico.
+Dendral foi uma ferramenta para estudar a formação de hipóteses na identificação de moléculas orgânicas. O problema geral que ele resolveu - projetar uma solução devido a um conjunto de restrições - foi uma das áreas mais bem-sucedidas dos primeiros sistemas especialistas aplicados a domínios comerciais, como configuradores de computadores VAX da Digital Equipment Corporation (DEC) e aplicativos para empréstimos hipotecários.
+SMH PAL é um sistema especializado para a avaliação de alunos com múltiplas deficiências.
+Mistral é um sistema especialista para monitorar a segurança de barragens, desenvolvido nos anos 90 por Ismes (Itália). Ele obtém dados de um sistema de monitoramento automático e realiza um diagnóstico do estado da barragem. Sua primeira cópia, instalada em 1992 na barragem de Ridracoli (Itália), ainda está operacional 24/7/365. Foi instalado em várias barragens na Itália e no exterior (por exemplo, barragem de Itaipu no Brasil) e em deslizamentos de terra sob o nome de Eydenet e em monumentos sob o nome de Kaleidos. Mistral é uma marca registrada da CESI.
+
+
+== Sistemas especialistas versus sistemas de solução de problemas ==
+A principal diferença entre um sistema especialista e um programa tradicional está na maneira como o conhecimento sobre o domínio do problema é codificado. Em aplicações tradicionais, o conhecimento sobre o domínio do problema é codificado tanto nas instruções propriamente ditas quanto nas estruturas de dados.
+Já na abordagem de sistema especialista, todo o conhecimento relativo ao domínio do problema é codificado exclusivamente nas estruturas de dados. Nenhum conhecimento é armazenado nas instruções ou nos programas propriamente ditos. Vários benefícios surgem imediatamente dessa estratégia.
+Um exemplo pode ajudar a destacar a diferença entre a abordagem procedural tradicional e a abordagem de sistemas especialistas, como o exemplo do problema da declaração de imposto de renda.
+Na abordagem tradicional, as estruturas de dados armazenam as informações do contribuinte e das alíquotas de imposto, e um programa representa o conhecimento necessário para a declaração de imposto de renda, contendo os comandos que relacionam as informações do contribuinte com as alíquotas e os cálculos necessários para realizar a declaração. É essa representação do conhecimento que é difícil para um especialista em impostos compreender ou modificar.
+Na abordagem de sistema especialista, a informação sobre o contribuinte e as alíquotas, bem como os cálculos necessários, estão novamente armazenadas em estruturas de dados, mas o conhecimento que descreve o relacionamento entre elas também é armazenado nas estruturas de dados.
+O programa de um sistema especialista é independente do conhecimento do domínio do problema (no nosso exemplo, do conhecimento das alíquotas e rendas do contribuinte e do relacionamento entre elas, os cálculos) e serve para processar estruturas de dados independente da natureza do problema que essas estruturas descrevem.
+Por exemplo, há programas interativos específicos para capturar descrição de dados, programas para capturar e organizar as descrições, programas para processar as declarações que representam relacionamentos semânticos dentro do domínio do problema e um algoritmo para controlar a sequência de processamento e o foco.
+A arquitetura geral de um sistema especialista compreende dois componentes principais: um conjunto de declarações totalmente dependentes do domínio do problema e que é chamado de base de conhecimento ou base de regras, e um programa independente do domínio do problema (apesar de altamente dependente das estruturas de dados) chamado de motor de inferência.
+
+
+== Usuários envolvidos com sistemas especialistas ==
+Há geralmente 3 tipos de usuário envolvidos com sistemas especialistas.
+
+Primeiramente entre esses tipos há o usuário final, aquele indivíduo que utiliza o sistema para auxiliá-lo na resolução de problemas;
+Após há os envolvidos com a construção e manutenção do sistema: especialista no domínio do problema, que constrói a base de conhecimento; e
+Um engenheiro de conhecimento, que auxilia o especialista a representar o conhecimento e que determina a técnica de inferência necessária para se conseguir solucionar um problema.
+
+
+== Motor de inferência ==
+O motor de inferência é um elemento essencial para a existência de um sistema especialista. É o núcleo do sistema.
+É por intermédio dele que os fatos e regras e heurística que compõem a base de conhecimento são aplicados no processo de resolução do problema.
+A capacidade do motor de inferência é baseada em uma combinação de procedimentos de raciocínios que se processam de forma regressiva e progressiva.
+Na forma de raciocínio progressivo, as informações são fornecidas ao sistema pelo usuário, que com suas respostas, estimulam o desencadeamento do processo de busca, navegando através da base de conhecimento, procurando pelos fatos, regras e heurísticas que melhor se aplicam a cada situação. O sistema continua nesta interação com o usuário, até encontrar a solução para o problema a ele submetido.
+No modelo de raciocínio regressivo, os procedimentos de inferência dão- se de forma inversa. O sistema parte de uma opinião conclusiva sobre o assunto, podendo ser inclusive oriunda do próprio usuário, e inicia uma pesquisa pelas informações por meio das regras e fatos da base de conhecimento, procurando provar se aquela conclusão é a mais adequada solução para o problema analisado.
+Se uma premissa (IF) é consistente para o problema, o sistema continua com a cláusula IF (condição), tornando-a Then (conclusão) para a próxima pesquisa na base de conhecimento, até que encontre uma regra que o (IF) não seja considerado conclusão para outra regra. Ao mesmo tempo em que o sistema poderá iniciar uma nova pergunta ao usuário para obter informações adicionais.
+
+
+== Árvores de Decisão ==
+É a maneira mais comum de se representar o conhecimento em IA. Uma árvore possui vários nós, e de cada nó podem sair ramos que levam a outros nós. O programa vai percorrer esses caminhos, e ao encontrar a solução, retorna ao usuário a resposta encontrada e/ou o procedimento utilizado para encontrá-la. Árvores de decisão são muito utilizadas para descrever linhas de comportamento, e também para percorrer todas as opções possíveis de raciocínio a partir de um problema proposto. Para percorrer uma árvore, podem ser utilizados diversos processos de busca.
+BUSCA:
+Profundidade X Largura
+A busca em Profundidade escolhe um caminho na árvore de decisão e o percorre até o fim deste, enquanto a busca por Largura vai testando gradativamente cada possibilidade, sem se aprofundar demais em cada um dos caminhos.
+Busca Heurística
+Analisa logicamente os dados do problema de forma a escolher qual o caminho mais provável de se encontrar a solução.
+Estratégias de Controle
+Métodos mais avançados que vão interagir heurísticas com buscas gradativas em largura e profundidade, procurando a maneira mais rápida e segura para resolver o problema.
+
+
+== Base de Conhecimento ==
+A base de conhecimento do sistema proposto consistirá da integração de sub bases de conhecimento constituídas pelas regras que reflitam o conhecimento, as necessidades de informações, periodicidades e o nível de acesso de cada usuário de cada segmento da organização.
+Desta forma teríamos, em uma empresa, por exemplo, bases de conhecimento de publicidade, setor de pessoal, setor de vendas, contabilidade, ou seja, de cada área específica da organização seria extraída uma sub-base de conhecimento, que, integradas, comporiam a base de regras dos especialistas da empresa, representando suas necessidades. Estas bases são implementadas pelo engenheiro do conhecimento, que corresponde, nos sistemas tradicionais, ao analista de sistema.
+Outra base que fará parte do sistema especialista é uma base de informações estratégicas criada pelo próprio sistema especialista, mediante a integração com outros sistemas internos e externos à instituição. Isto permitirá a criação de visões, resumos, cenários, extraídos das diversas fontes de informações que alimentam o sistema especialista, no modo on-line, permitindo atualização, sempre que houver alterações nas fontes de informações.
+Haverá também bases de conhecimento independentes, constituídas de regras gramaticais que permitirão, ao analisador semântico, entender as diversas solicitações de informações de cada segmento da empresa, ¾ são solicitações pré-definidas pelos especialistas para compor os resumos especializados, bem como as possíveis solicitações adicionais ocorridas eventualmente por qualquer usuário do sistema.
+No caso de um sistema de informações para apoio a usuários finais de bibliotecas, as bases constituintes do sistema especialista deverão conter, além do acervo bibliográfico da organização, conhecimentos sobre elaboração de estratégias de busca, e de características específicas das bases de dados disponíveis na biblioteca.
+
+
+== Agentes ==
+Em IA, costuma-se definir como Agentes as diversas entidades que participam do processo de execução do programa. Normalmente, cada agente é um bloco de código independente no programa, embora também costumem ser considerados agentes os usuários, máquinas e computadores agregados ao programa.
+
+
+== Redes Neurais ==
+São programas em que o raciocínio funciona de maneira paralela entre diversos agentes (que seriam como “neurônios”). Esses programas têm como característica marcante a capacidade de reconhecer padrões em um certo conjunto de entradas de dados, portanto são muito usados em programas de aprendizagem e de reconhecimento de padrões sensitivos e de dados.
+
+
+== Passos do Desenvolvimento de Sistemas Especialistas ==
+Primeira Etapa:
+Seleção do Problema
+O primeiro passo é selecionar o "problema."
+
+Escolher um problema no qual você já está familiarizado com o domínio.
+Escolher um problema que está causando transtorno a um grande número de pessoas.
+Selecione um "problema" fictício para o primeiro projeto, sistema especialista.
+Conseguir um especialista que esteja disposto a trabalhar com você.
+Saber do especialista o que é a taxa de precisão esperada do protótipo.
+Utilizar a prototipagem rápida, abordagem interativa: construir um pouco, testar um pouco.
+O próximo passo no processo de engenharia do conhecimento é a aquisição de conhecimentos.
+Segunda Etapa:
+Aquisição de Conhecimento
+
+Antes de entrevistar o especialista, certifique-se que você é familiar / confortável com o domínio.
+A primeira sessão com o perito deve ser uma aula introdutória sobre o assunto.
+Tenha uma abordagem sistemática para a aquisição do conhecimento.
+Incorporar as contribuições e comentários do especialista para o sistema especialista.
+Pegar os manuais e documentações sobre o assunto.
+Gravações das sessões de aquisição de conhecimento, se o perito permitir.
+Terceiro Passo:
+Representação do Conhecimento.
+Trata-se de representar o conhecimento na base de conhecimento como regras, frames, scripts, redes semânticas, ou híbridas.
+
+Tenta usar o método de representação que mais se assemelha ao modo como o perito pensa e expressa seu conhecimento.
+Considerar se a incerteza deve desempenhar um papel no seu sistema.
+Considerar a forma dos dados: forma orientada de dados ou uma forma meta-dirigida, ou ambos.
+Quarto passo:
+Codificação de Conhecimento
+
+Lembre-se primeiro determinar as exigências das tarefas.
+Tentar desenvolver a base de conhecimento em um formato modular para a facilidade de atualização.
+Você precisa de uma adequada interface para o usuário, mas concentre-se na base de conhecimento.
+Usar um iterativo, a abordagem incremental para o desenvolvimento de seu protótipo de sistema especialista.
+Quinto passo:
+Teste de Conhecimento e Avaliação
+
+Para verificação e validação do protótipo do sistema especialista: verificar a consistência do conhecimento / lógica de ter um conjunto representativo de casos de teste (casos difíceis e subcasos especiais). Executar o sistema especialista contra casos documentados e comparar o resultado com resultados históricos. Utilize testes de verificação com pessoas leigas na área e outros especialistas para testarem o sistema.
+Para a avaliação do protótipo do sistema especialista: os usuários avaliam o projeto de fatores humanos do sistema (ou seja, instruções, comentários em texto livre, a facilidade de capacidades, atualização, tempo de resposta, e apresentação de conclusões, a capacidade de reiniciar, a capacidade do usuário para oferecer grau de certeza, os gráficos, a habilidade para fazer backup em uma pergunta anterior, etc.)
+Sexto passo:
+Implementação e Manutenção
+
+Treinar os usuários sobre como usar o sistema.
+Proporcionar uma boa documentação sobre o sistema.
+Atribuir a uma pessoa ou grupo a manter o sistema.
+Instruir a equipe de manutenção sobre a manutenção do sistema / usar o Shell.
+Não se esqueça de considerar o custo de uma licença de tempo de execução, para que várias cópias do sistema especialista possam ser usadas por toda a organização.
+
+
+== Vantagens da utilização de Sistemas Especialistas ==
+Os benefícios advindos da utilização da técnica de sistema especialista são diferentes daqueles obtidos pelos sistemas tradicionais, por tratar-se de sistemas dotados de inteligência e conhecimento. Dentre outras vantagens, podemos destacar:
+
+- Um sistema especialista é capaz de estender as facilidades de tomada de decisão para muitas pessoas. O conhecimento dos especialistas pode ser distribuído, de forma que possa ser utilizado por um grande número de pessoas;
+- Um sistema especialista pode melhorar a produtividade e desempenho de seus usuários, considerando que o provê com um vasto conhecimento, que, certamente, em condições normais, demandaria mais tempo para assimilá-lo e, consequentemente, utilizá-lo em suas tomadas de decisão;
+- Sistemas especialistas reduzem o grau de dependência que as organizações mantêm quando se vêem em situações críticas, inevitáveis, como, por exemplo, a falta de um especialista. As pessoas morrem, ficam doentes, tiram férias e até optam por melhores ofertas de trabalhos; ao assim proceder, tornam as organizações em que trabalham vulneráveis e extremamente dependentes de suas decisões. Ao registrar o conhecimento de empregados nos sistemas especialistas, promove-se uma significativa redução no grau de dependência entre empresa e presença física do empregado;
+- Sistemas especialistas são ferramentas adequadas para serem utilizadas em treinamentos de grupos de pessoas, de forma rápida e agradável, podendo servir, após o treinamento, como instrumento para coleta de informações sobre o desempenho dos treinandos, obtendo subsídios para reformulação das lições para a obtenção de melhor desempenho, além de prestar suporte imediato para os treinamentos durante a utilização dos conhecimentos na realização de suas tarefas diárias.
+
+
+== O usuário final ==
+O usuário final normalmente interage com um sistema especialista através de um diálogo, por exemplo:
+
+P. Você sabe para qual restaurante você quer ir?
+R. Não.
+P. Há algum tipo de comida em particular que você goste?
+R. Não sei.
+P. Você gosta de comida apimentada?
+R. Não.
+P. Normalmente você bebe vinho durante a refeição?
+R. Sim.
+P. Quando você bebe vinho, é vinho francês?
+R. Por que?
+Como podemos ver nesse diálogo, o sistema está orientando o usuário através de um conjunto de perguntas cujo propósito é determinar um grupo de restaurantes que podem ser recomendados.
+O diálogo se inicia com o sistema perguntando ao usuário se ele já sabe que restaurante escolher (uma funcionalidade comum a sistemas especialistas), e imediatamente ilustra uma característica dos sistemas especialistas: o usuário pode decidir não responder a uma pergunta. Em sistemas especialistas, os diálogos não são pré-planejados. Não há uma estrutura de controle fixa. Os diálogos são extraídos da informação atual e do conteúdo da base de conhecimento. Em função disso, não ser capaz de responder a uma determinada pergunta não interrompe o processo de consulta (ou a utilização do sistema, como preferir).
+Outra diferença significativa entre um sistema especialista e um sistema tradicional é ilustrada pela resposta dada pelo sistema quando o usuário responde uma pergunta com outra pergunta, como a resposta "porque" do exemplo acima. A resposta seria:
+
+R. Eu estou tentando determinar que tipo de restaurante devo sugerir. Até agora, culinária chinesa não é uma opção. Provavelmente, culinária francesa seja uma boa opção. Eu sei que se o cliente for um bebedor de vinhos e o vinho preferido for francês, então há uma evidencia forte de que a escolha do restaurante deve incluir os franceses.
+É bastante complexa a tarefa de implementar um sistema genérico de explicações (para responder perguntas tipo "porque" e "como") em um sistema tradicional. A resposta de um sistema especialista para a pergunta "porque" é exibir a base da estrutura de conhecimento.
+É uma regra: um conjunto de proposições anteriores que, se verdadeiras, permitem a inferência de uma consequência.
+
+
+== Quando os Sistemas Especialistas São Utilizados ==
+De um modo geral, sempre que um problema não pode ser algoritmizado, ou sua solução conduza a um processamento muito demorado, os Sistemas Especilistas podem ser uma saída, pois possuem o seu mecanismo apoiado em processos heurísticos.
+Preservar e transmitir o conhecimento de um especialista humano em uma determinada área.
+Um Sistema Especialista não é influenciado por elementos externos a ele, como ocorre com o especialista humano, para as mesmas condições deverá fornecer sempre o mesmo conjunto de decisões.
+
+
+== Ferramentas que auxiliam no desenvolvimento de sistemas especialistas ==
+Historicamente foram desenvolvidas diversas ferramentas com o intuito de auxiliar no processo de implementação de SE. Dentre elas pode-se destacar:
+
+Prolog: é uma linguagem de programação que se enquadra no paradigma de Programação em Lógica Matemática. É uma linguagem de uso geral que é especialmente associada com a inteligência artificial e linguística computacional.
+Expert SINTA: é uma ferramenta visual para criação de sistemas especialistas que usa regras de produção desenvolvido pelo Laboratório de Inteligência Artificial da Universidade Federal do Ceará. Ele pode ser baixado deste endereço [1];
+
+
+== Referências ==
+
+
+== Ligações externas ==

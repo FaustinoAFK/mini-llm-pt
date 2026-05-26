@@ -1,0 +1,60 @@
+== Transformer ==
+O Transformer é uma arquitetura de aprendizado profundo introduzida por pesquisadores do Google em 2017. Baseado no mecanismo de atenção, o Transformer tornou-se um modelo fundamental no campo da Inteligência artificial, especialmente para tarefas de processamento de linguagem natural (NLP). Diferentemente de modelos anteriores que utilizavam redes neurais recorrentes (RNNs) ou redes neurais convolucionais (CNNs), o Transformer processa dados de entrada em paralelo, tornando-o mais eficiente e escalável. Essa arquitetura possibilitou avanços significativos em Tradução automática, geração de texto e outras tarefas baseadas em sequências, sendo também adaptada para domínios além do texto, como Visão computacional e processamento de áudio.
+
+
+=== História ===
+O Transformer foi apresentado pela primeira vez no artigo Attention Is All You Need (Vaswani et al., 2017), publicado em junho de 2017 por uma equipe de pesquisadores do Google Brain e Google Research. Os autores — Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser e Illia Polosukhin — propuseram a arquitetura como uma solução para as limitações das RNNs e CNNs no manejo de dependências de longo alcance em dados sequenciais. O artigo demonstrou que o Transformer superava os modelos existentes em tarefas de tradução automática, sendo mais paralelizado e exigindo menos tempo de treinamento.
+Em 2018, o Google começou a utilizar modelos baseados em Transformer, como o BERT (BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding), para melhorar a compreensão de consultas de busca. Até 2020, o Google Translate substituiu seus modelos baseados em RNN por uma arquitetura híbrida Transformer-encodificador-RNN-decodificador, consolidando ainda mais o papel do Transformer no avanço das capacidades de IA.
+
+
+=== Detalhes Técnicos ===
+A arquitetura do Transformer é construída em torno do conceito de autoatenção (self-attention), que permite ao modelo ponderar a importância de diferentes partes da sequência de entrada em relação umas às outras. Isso difere das RNNs, que processam dados sequencialmente, e das CNNs, que dependem de janelas de tamanho fixo.
+Os principais componentes do Transformer incluem:
+
+Mecanismo de Autoatenção: Calcula pontuações de atenção para cada elemento da sequência de entrada, utilizando atenção de produto escalar escalonada.
+Atenção Multi-Cabeça: Permite ao modelo capturar relações complexas nos dados, executando múltiplos mecanismos de atenção em paralelo.
+Codificação Posicional: Como o Transformer não processa dados sequencialmente, utiliza codificações senoidais posicionais (ver exemplo) para fornecer informações sobre a ordem dos elementos na sequência.
+Estrutura Codificador-Decodificador: O Transformer original é composto por camadas de autoatenção e redes neurais feed-forward tanto no codificador quanto no decodificador.
+
+
+=== Aplicações ===
+A arquitetura Transformer tem sido aplicada a uma ampla gama de tarefas, incluindo:
+
+Tradução Automática: A aplicação original do Transformer, onde alcançou resultados de ponta em benchmarks como o WMT
+.
+Geração de Texto: Modelos como o GPT (Generative Pre-trained Transformer) da OpenAI usam Transformers apenas com decodificador para gerar textos coerentes e contextuais.
+Resposta a Perguntas e Sumarização: Modelos como BERT e o T5 (Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer) têm se destacado em tarefas que exigem compreensão semântica.
+Visão Computacional: Os Vision Transformers (ViTs) adaptam a arquitetura para tarefas de imagem como classificação e detecção.
+Processamento de Fala: Transformers têm sido utilizados em modelos como o Whisper da OpenAI para transcrição automática.
+
+
+=== Impacto e Desenvolvimentos ===
+A introdução do Transformer levou ao desenvolvimento de diversos modelos de grande influência:
+
+BERT (2018): Codificador bidirecional usado em tarefas de NLP.
+GPT (2018–atual): Decodificador Transformer criado pela OpenAI com foco em geração de texto.
+T5 (Text-to-Text Transfer Transformer): Modelo do Google que trata toda tarefa de NLP como um problema de texto para texto.
+Esses modelos são considerados modelos fundacionais, ou seja, grandes modelos pré-treinados capazes de serem ajustados para tarefas específicas com pouco treinamento adicional.
+
+
+=== Limitações e Críticas ===
+Apesar de seu sucesso, o Transformer apresenta limitações:
+
+Requisitos Computacionais: Modelos grandes como GPT e T5 exigem múltiplas GPUs ou TPUs, tornando-os inacessíveis para muitos pesquisadores. Ver Efficient Transformers: A Survey.
+Interpretabilidade: A complexidade do mecanismo de atenção torna difícil entender o raciocínio do modelo.
+Eficiência de Dados: O desempenho ótimo requer grandes volumes de dados.
+Pesquisas estão em andamento com variantes como o DistilBERT, Longformer, e ALBERT para mitigar esses problemas.
+
+
+== Referências ==
+Vaswani, A., et al. (2017). Attention Is All You Need.
+Devlin, J., et al. (2018). BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.
+Radford, A., et al. (2018). Improving Language Understanding by Generative Pre-Training.
+Raffel, C., et al. (2019). Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer.
+
+
+== Veja também ==
+Inteligência artificial
+Processamento de linguagem natural
+Redes neurais artificiais
+ChatGPT

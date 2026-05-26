@@ -1,0 +1,257 @@
+Algoritmo guloso, algoritmo ganancioso (também conhecido como algoritmo ávido, algoritmo voraz ou ainda algoritmo míope) é a denominação dada para a técnica de projeto de algoritmos que tenta resolver o problema fazendo a escolha localmente ótima em cada fase com a esperança de encontrar uma correspondência global ótima.
+Na solução de alguns problemas combinatórios a estratégia gulosa pode assegurar a obtenção de soluções ótimas, o que não é muito comum. No entanto, quando o problema a ser resolvido pertencer à classe NP-completo ou NP-difícil, a estratégia gulosa torna-se atrativa para a obtenção de solução aproximada em tempo polinomial.
+
+
+== Conceitos básicos ==
+
+
+=== Componentes ===
+Em geral o algoritmo guloso tem cinco componentes:
+
+Um conjunto candidato, a partir do qual é criada uma solução.
+Uma função de seleção, que selecciona o melhor candidato para ser adicionado à solução.
+Uma função de viabilidade, que é usada para determinar se um candidato pode ser utilizado para contribuir para uma solução.
+Uma função objetivo, que atribui um valor a uma solução, ou uma solução parcial.
+Uma função de solução, que irá indicar quando tivermos descoberto uma solução completa.
+
+
+=== Algoritmo ===
+
+
+=== Desempenho ===
+A avaliação de qualidade da solução obtida por um algoritmo é feita através da comparação com um limite inferior para a solução do problema, o que pode ser expresso pela seguinte fórmula:
+
+  
+    
+      
+        
+          
+            
+              
+                x
+                
+                  H
+                
+              
+              (
+              I
+              )
+            
+            
+              
+                x
+                
+                  ∗
+                
+              
+              (
+              I
+              )
+            
+          
+        
+      
+    
+    {\displaystyle {\frac {x^{H}(I)}{x^{*}(I)}}}
+  
+, onde 
+  
+    
+      
+        
+          x
+          
+            H
+          
+        
+        (
+        I
+        )
+      
+    
+    {\displaystyle x^{H}(I)}
+  
+ é o valor da solução heurística (aproximada) e 
+  
+    
+      
+        
+          x
+          
+            ∗
+          
+        
+        (
+        I
+        )
+      
+    
+    {\displaystyle x^{*}(I)}
+  
+é o valor da solução ótima.
+
+
+== Informações relevantes ==
+
+
+=== Características ===
+Jamais se arrepende de uma decisão, as escolhas realizadas são definitivas;
+Não leva em consideração as consequências de suas decisões;
+Podem fazer cálculos repetitivos;
+Nem sempre produz a melhor solução (depende da quantidade de informação fornecida);
+Quanto mais informações, maior a chance de produzir uma solução melhor.
+
+
+=== Algoritmos gulosos vs programação dinâmica ===
+Em um algoritmo de programação dinâmica a escolha pode depender da solução dos subproblemas, enquanto um algoritmo guloso vai tentar escolher a melhor solução naquele momento.
+A solução dos problemas na programação dinâmica parte de baixo para cima, enquanto um algoritmo guloso vai de cima para baixo, ou seja, na programação dinâmica, as soluções para todos os subproblemas são calculadas partindo dos menores subproblemas para os maiores.
+Os resultados dos subproblemas na programação dinâmica são salvos, facilitando a prova de correção.
+
+
+=== Vantagens ===
+Simples e de fácil implementação;
+Algoritmos de rápida execução;
+Podem fornecer a melhor solução (estado ideal).
+
+
+=== Desvantagens ===
+Nem sempre conduz a soluções ótimas globais. Podem efetuar cálculos repetitivos.
+Escolhe o caminho que, à primeira vista, é mais econômico.
+Pode entrar em loop se não detectar a expansão de estados repetidos.
+Pode tentar desenvolver um caminho infinito.
+
+
+== Exemplos ==
+
+
+=== Árvore de extensão mínima ===
+O primeiro algoritmo a encontrar uma árvore de extensão mínima foi desenvolvido pelo cientista checo Otakar Borůvka em 1926 (veja algoritmo de Boruvka). Seu propósito era fornecer uma cobertura elétrica eficiente na área rural da cidade de Morávia do Sul. Existem hoje dois algoritmos comummente usados, o algoritmo de Prim e o algoritmo de Kruskal. Todos são algoritmos gulosos exatos que rodam em tempo polinomial, então o problema de encontrar tais árvores pertence a classe de complexidade P.
+
+
+=== Problema do empacotamento ===
+No problema de bin packing (ou problema do empacotamento), objetos de diferentes volumes devem ser embalados em um número finito de bandejas ou recipientes de volume V de uma forma que minimize o número de recipientes utilizados. Na teoria da complexidade computacional, este é um problema de combinatória NP-difícil.
+Podem ser utilizadas heurísticas gulosas para obtenção de uma solução aproximada, tais como: algoritmo first fit, algoritmo best fit, dentre outros.
+
+
+=== Problema de programação de tarefas independentes ===
+Dado um conjunto de n tarefas independentes com duração t1, t2, ..., tn e m processadores idênticos que funcionam em paralelo, inicialmente ociosos.
+Distribuir  as n tarefas pelos m processadores minimizando o tempo de término da última tarefa é um problema NP-difícil param ≥ 2.
+
+
+==== Heurística 1 ====
+Alocar as tarefa aleatoriamente aos processadores, sempre que ficarem ociosos. Neste caso a solução terá performance:
+
+  
+    
+      
+        
+          
+            
+              
+                x
+                
+                  H
+                
+              
+              (
+              I
+              )
+            
+            
+              
+                x
+                
+                  ∗
+                
+              
+              (
+              I
+              )
+            
+          
+        
+        ≤
+        2
+        −
+        
+          
+            1
+            m
+          
+        
+      
+    
+    {\displaystyle {\frac {x^{H}(I)}{x^{*}(I)}}\leq 2-{\frac {1}{m}}}
+  
+
+
+==== Heurística 2 ====
+Sempre que um processador ficar ocioso aloca-se a tarefa de maior duração ainda não processada (empates são resolvidos arbitrariamente). Neste caso a solução terá performance:
+
+  
+    
+      
+        
+          
+            
+              
+                x
+                
+                  H
+                
+              
+              (
+              I
+              )
+            
+            
+              
+                x
+                
+                  ∗
+                
+              
+              (
+              I
+              )
+            
+          
+        
+        ≤
+        
+          
+            4
+            3
+          
+        
+        −
+        
+          
+            1
+            
+              3
+              m
+            
+          
+        
+      
+    
+    {\displaystyle {\frac {x^{H}(I)}{x^{*}(I)}}\leq {\frac {4}{3}}-{\frac {1}{3m}}}
+  
+
+Observa-se que a heurística 2 é superior à heurística 1.
+
+
+== Ver também ==
+Coloração de grafos
+Árvore de extensão mínima
+Problema do empacotamento
+Divisão e conquista
+
+
+== Referências ==
+
+
+== Bibliografia ==
+Brassard, Gilles; Bratley, Paul. Algorithmics theory & practice. New Jersey. Prentice-Hall, 1988. ISBN: 0-13-023243-2.
+Campello, Ruy E.; Maculan, Nelson. Algoritmos e heurísticas: desenvolvimento e avaliação de performance. Niterói. EDUFF, 1994. ISBN: 85-228-0134-7.
