@@ -4,6 +4,7 @@ import re
 import time
 from datetime import date
 from pathlib import Path
+from urllib.error import HTTPError, URLError
 from urllib.parse import unquote, urlencode, urlparse
 from urllib.request import Request, urlopen
 
@@ -12,8 +13,10 @@ SOURCES_PATH = "docs/wikipedia_sources.md"
 OUTPUT_DIR = "data/raw/wikipedia"
 MANIFEST_PATH = "data/raw/wikipedia/MANIFEST.md"
 WIKIPEDIA_API_URL = "https://pt.wikipedia.org/w/api.php"
-USER_AGENT = "mini-llm-pt/0.1 educational dataset builder"
+USER_AGENT = "mini-llm-pt/0.1 educational dataset builder (private educational project)"
 LICENSE_NAME = "CC BY-SA"
+DEFAULT_RETRIES = 3
+DEFAULT_RETRY_SLEEP = 10.0
 
 
 LINK_PATTERN = re.compile(
@@ -56,7 +59,52 @@ def slugify(text):
     return text[:80] or "artigo"
 
 
-def fetch_plaintext_article(title):
+def fetch_json_with_retries(url, retries=DEFAULT_RETRIES, retry_sleep=DEFAULT_RETRY_SLEEP):
+    """Faz uma requisição HTTP com retry simples para erros temporários."""
+    last_error = None
+
+    for attempt in range(1, retries + 1):
+        request = Request(url, headers={"User-Agent": USER_AGENT})
+
+        try:
+            with urlopen(request, timeout=30) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except HTTPError as error:
+            last_error = error
+
+            if error.code == 429:
+                retry_after = error.headers.get("Retry-After")
+                wait_seconds = float(retry_after) if retry_after else retry_sleep * attempt
+                print(
+                    f"  Aviso: limite da Wikipedia atingido (429). "
+                    f"Tentativa {attempt}/{retries}. Aguardando {wait_seconds:.1f}s..."
+                )
+                time.sleep(wait_seconds)
+                continue
+
+            if 500 <= error.code < 600:
+                wait_seconds = retry_sleep * attempt
+                print(
+                    f"  Aviso: erro HTTP temporário {error.code}. "
+                    f"Tentativa {attempt}/{retries}. Aguardando {wait_seconds:.1f}s..."
+                )
+                time.sleep(wait_seconds)
+                continue
+
+            raise
+        except URLError as error:
+            last_error = error
+            wait_seconds = retry_sleep * attempt
+            print(
+                f"  Aviso: erro de conexão. "
+                f"Tentativa {attempt}/{retries}. Aguardando {wait_seconds:.1f}s..."
+            )
+            time.sleep(wait_seconds)
+
+    raise last_error
+
+
+def fetch_plaintext_article(title, retries=DEFAULT_RETRIES, retry_sleep=DEFAULT_RETRY_SLEEP):
     """Baixa o texto puro de um artigo usando a API pública da Wikipedia."""
     params = {
         "action": "query",
@@ -70,11 +118,7 @@ def fetch_plaintext_article(title):
 
     query = urlencode(params, encoding="utf-8")
     url = f"{WIKIPEDIA_API_URL}?{query}"
-
-    request = Request(url, headers={"User-Agent": USER_AGENT})
-
-    with urlopen(request, timeout=30) as response:
-        payload = json.loads(response.read().decode("utf-8"))
+    payload = fetch_json_with_retries(url, retries=retries, retry_sleep=retry_sleep)
 
     pages = payload.get("query", {}).get("pages", {})
     page = next(iter(pages.values()))
@@ -125,7 +169,7 @@ def write_manifest(entries, manifest_path):
     manifest_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def ingest(limit=None, sleep_seconds=0.3):
+def ingest(limit=None, sleep_seconds=2.0, retries=DEFAULT_RETRIES, retry_sleep=DEFAULT_RETRY_SLEEP):
     sources_path = Path(SOURCES_PATH)
     output_dir = Path(OUTPUT_DIR)
     manifest_path = Path(MANIFEST_PATH)
@@ -145,7 +189,11 @@ def ingest(limit=None, sleep_seconds=0.3):
         print(f"[{index}/{len(links)}] Baixando: {original_title}")
 
         try:
-            article = fetch_plaintext_article(original_title)
+            article = fetch_plaintext_article(
+                original_title,
+                retries=retries,
+                retry_sleep=retry_sleep,
+            )
             filename = f"{index:03d}_{slugify(article['title'])}.txt"
             file_path = output_dir / filename
             file_path.write_text(article["text"] + "\n", encoding="utf-8")
@@ -193,12 +241,29 @@ def main():
     parser.add_argument(
         "--sleep",
         type=float,
-        default=0.3,
+        default=2.0,
         help="Tempo de espera entre requisições, em segundos.",
+    )
+    parser.add_argument(
+        "--retries",
+        type=int,
+        default=DEFAULT_RETRIES,
+        help="Quantidade de tentativas por artigo quando houver erro temporário.",
+    )
+    parser.add_argument(
+        "--retry-sleep",
+        type=float,
+        default=DEFAULT_RETRY_SLEEP,
+        help="Espera base entre retries em segundos.",
     )
     args = parser.parse_args()
 
-    ingest(limit=args.limit, sleep_seconds=args.sleep)
+    ingest(
+        limit=args.limit,
+        sleep_seconds=args.sleep,
+        retries=args.retries,
+        retry_sleep=args.retry_sleep,
+    )
 
 
 if __name__ == "__main__":
