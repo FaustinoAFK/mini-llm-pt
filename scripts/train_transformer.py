@@ -1,3 +1,4 @@
+from copy import deepcopy
 from pathlib import Path
 
 import torch
@@ -57,6 +58,10 @@ def main():
     )
     optimizer = torch.optim.AdamW(model.parameters(), lr=LEARNING_RATE)
 
+    best_val_loss = float("inf")
+    best_step = None
+    best_model_state_dict = None
+
     model.train()
     for step in range(MAX_ITERS):
         logits, loss = model(x_train, y_train)
@@ -68,18 +73,30 @@ def main():
         if step % EVAL_INTERVAL == 0 or step == MAX_ITERS - 1:
             train_loss = estimate_loss(model, x_train, y_train)
             val_loss = estimate_loss(model, x_val, y_val)
+
+            if val_loss < best_val_loss:
+                best_val_loss = val_loss
+                best_step = step
+                best_model_state_dict = deepcopy(model.state_dict())
+
             print(
                 f"step {step}: "
                 f"train loss {train_loss:.4f} | "
-                f"val loss {val_loss:.4f}"
+                f"val loss {val_loss:.4f} | "
+                f"best val {best_val_loss:.4f} at step {best_step}"
             )
 
     checkpoint_path = Path(CHECKPOINT_PATH)
     checkpoint_path.parent.mkdir(parents=True, exist_ok=True)
 
+    if best_model_state_dict is None:
+        best_model_state_dict = model.state_dict()
+        best_step = MAX_ITERS - 1
+        best_val_loss = estimate_loss(model, x_val, y_val)
+
     torch.save(
         {
-            "model_state_dict": model.state_dict(),
+            "model_state_dict": best_model_state_dict,
             "vocab_size": tokenizer.vocab_size,
             "stoi": tokenizer.stoi,
             "itos": tokenizer.itos,
@@ -90,19 +107,25 @@ def main():
             "n_head": N_HEAD,
             "n_layer": N_LAYER,
             "dropout": DROPOUT,
+            "best_step": best_step,
+            "best_val_loss": best_val_loss,
         },
         checkpoint_path,
     )
 
-    print(f"\nCheckpoint salvo em: {checkpoint_path}")
+    print(
+        f"\nMelhor checkpoint salvo em: {checkpoint_path} "
+        f"| step {best_step} | val loss {best_val_loss:.4f}"
+    )
 
+    model.load_state_dict(best_model_state_dict)
     model.eval()
     start = torch.tensor([[train_ids[0]]], dtype=torch.long)
     with torch.no_grad():
         generated_ids = model.generate(start, max_new_tokens=200)[0].tolist()
     generated_text = "".join(tokenizer.itos[i] for i in generated_ids)
 
-    print("\n--- Texto gerado ---")
+    print("\n--- Texto gerado pelo melhor checkpoint ---")
     print(generated_text)
 
 
