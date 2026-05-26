@@ -20,6 +20,24 @@ SECTION_TITLES_TO_DROP = {
     "fontes",
 }
 
+NOISY_TERMS = {
+    "displaystyle",
+    "textstyle",
+    "scriptstyle",
+    "frac",
+    "sqrt",
+    "mathrm",
+    "mathit",
+    "mathbf",
+    "operatorname",
+    "left",
+    "right",
+    "begin",
+    "end",
+    "align",
+    "matrix",
+}
+
 ALLOWED_CHARS_PATTERN = re.compile(
     r"[^0-9A-Za-zÀ-ÖØ-öø-ÿÇç\s\.,;:!?¿¡'\"“”‘’«»\-\(\)\[\]/%ºª]"
 )
@@ -38,13 +56,27 @@ def is_section_heading(line):
     return bool(re.fullmatch(r"=+\s*[^=]+\s*=+", line.strip()))
 
 
+def has_noisy_terms(line):
+    lowered = line.lower()
+    return any(term in lowered for term in NOISY_TERMS)
+
+
 def has_too_much_symbol_noise(line):
     compact = re.sub(r"\s+", "", line)
     if len(compact) < 20:
         return False
 
     letters = sum(char.isalpha() for char in compact)
-    return letters / len(compact) < 0.35
+    return letters / len(compact) < 0.45
+
+
+def has_too_many_numbers(line):
+    tokens = line.split()
+    if len(tokens) < 6:
+        return False
+
+    numeric_tokens = sum(token.strip(".,;:!?()[]/%").isdigit() for token in tokens)
+    return numeric_tokens / len(tokens) > 0.35
 
 
 def should_drop_line(line):
@@ -66,7 +98,13 @@ def should_drop_line(line):
     if stripped.startswith("Portal:"):
         return True
 
+    if has_noisy_terms(stripped):
+        return True
+
     if has_too_much_symbol_noise(stripped):
+        return True
+
+    if has_too_many_numbers(stripped):
         return True
 
     return False
@@ -82,8 +120,8 @@ def clean_wikipedia_text(text):
     """Limpa um texto raw da Wikipedia para uso como dataset.
 
     A limpeza remove títulos de seção, linhas com muito ruído simbólico,
-    marcações matemáticas e caracteres incomuns que prejudicam o tokenizer
-    por caractere.
+    marcações matemáticas, termos comuns de LaTeX/MediaWiki e caracteres
+    incomuns que prejudicam o tokenizer por caractere.
     """
     text = normalize_text(text)
     cleaned_lines = []
@@ -97,6 +135,9 @@ def clean_wikipedia_text(text):
         line = clean_line(line)
 
         if not line:
+            continue
+
+        if should_drop_line(line):
             continue
 
         cleaned_lines.append(line)
@@ -132,6 +173,8 @@ def write_manifest(entries, manifest_path):
         "- normalização Unicode NFKC;",
         "- remoção de títulos de seção no formato `== seção ==`;",
         "- remoção de linhas com excesso de símbolos;",
+        "- remoção de linhas com termos LaTeX/MediaWiki como `displaystyle`, `frac` e `sqrt`;",
+        "- remoção de linhas dominadas por números;",
         "- filtragem de caracteres incomuns para reduzir ruído no CharTokenizer;",
         "- normalização de espaços.",
         "",
