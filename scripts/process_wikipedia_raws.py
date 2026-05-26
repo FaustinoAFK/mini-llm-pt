@@ -1,5 +1,6 @@
 import argparse
 import re
+import unicodedata
 from pathlib import Path
 
 
@@ -19,13 +20,31 @@ SECTION_TITLES_TO_DROP = {
     "fontes",
 }
 
+ALLOWED_CHARS_PATTERN = re.compile(
+    r"[^0-9A-Za-zÀ-ÖØ-öø-ÿÇç\s\.,;:!?¿¡'\"“”‘’«»\-\(\)\[\]/%ºª]"
+)
+
 
 def normalize_text(text):
     """Normaliza espaços e quebras de linha sem destruir parágrafos."""
+    text = unicodedata.normalize("NFKC", text)
     text = text.replace("\r\n", "\n").replace("\r", "\n")
     text = re.sub(r"[ \t]+", " ", text)
     text = re.sub(r"\n{3,}", "\n\n", text)
     return text.strip()
+
+
+def is_section_heading(line):
+    return bool(re.fullmatch(r"=+\s*[^=]+\s*=+", line.strip()))
+
+
+def has_too_much_symbol_noise(line):
+    compact = re.sub(r"\s+", "", line)
+    if len(compact) < 20:
+        return False
+
+    letters = sum(char.isalpha() for char in compact)
+    return letters / len(compact) < 0.35
 
 
 def should_drop_line(line):
@@ -34,6 +53,9 @@ def should_drop_line(line):
 
     if not stripped:
         return False
+
+    if is_section_heading(stripped):
+        return True
 
     if lowered in SECTION_TITLES_TO_DROP:
         return True
@@ -44,14 +66,24 @@ def should_drop_line(line):
     if stripped.startswith("Portal:"):
         return True
 
+    if has_too_much_symbol_noise(stripped):
+        return True
+
     return False
+
+
+def clean_line(line):
+    line = ALLOWED_CHARS_PATTERN.sub(" ", line)
+    line = re.sub(r"\s+", " ", line)
+    return line.strip()
 
 
 def clean_wikipedia_text(text):
     """Limpa um texto raw da Wikipedia para uso como dataset.
 
-    O objetivo não é fazer uma limpeza agressiva, mas remover ruídos óbvios
-    e normalizar o texto para treino.
+    A limpeza remove títulos de seção, linhas com muito ruído simbólico,
+    marcações matemáticas e caracteres incomuns que prejudicam o tokenizer
+    por caractere.
     """
     text = normalize_text(text)
     cleaned_lines = []
@@ -60,6 +92,11 @@ def clean_wikipedia_text(text):
         line = line.strip()
 
         if should_drop_line(line):
+            continue
+
+        line = clean_line(line)
+
+        if not line:
             continue
 
         cleaned_lines.append(line)
@@ -89,6 +126,14 @@ def write_manifest(entries, manifest_path):
         "# Manifesto de textos processados da Wikipedia",
         "",
         "Este manifesto registra os arquivos gerados a partir de `data/raw/wikipedia/`.",
+        "",
+        "Limpeza aplicada:",
+        "",
+        "- normalização Unicode NFKC;",
+        "- remoção de títulos de seção no formato `== seção ==`;",
+        "- remoção de linhas com excesso de símbolos;",
+        "- filtragem de caracteres incomuns para reduzir ruído no CharTokenizer;",
+        "- normalização de espaços.",
         "",
         "| raw | processed | raw chars | processed chars |",
         "|---|---|---:|---:|",
