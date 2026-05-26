@@ -18,13 +18,13 @@ BLOCK_SIZE = 32
 BATCH_SIZE = 16
 EVAL_BATCH_SIZE = 16
 EVAL_NUM_BATCHES = 20
-MAX_ITERS = 300
+MAX_ITERS = 1000
 LEARNING_RATE = 1e-3
 N_EMBD = 64
 N_HEAD = 4
 N_LAYER = 2
 DROPOUT = 0.1
-EVAL_INTERVAL = 30
+EVAL_INTERVAL = 100
 
 
 def build_tensors(ids, block_size):
@@ -130,6 +130,8 @@ def main():
             "batch_size": BATCH_SIZE,
             "eval_batch_size": EVAL_BATCH_SIZE,
             "eval_num_batches": EVAL_NUM_BATCHES,
+            "max_iters": MAX_ITERS,
+            "eval_interval": EVAL_INTERVAL,
             "n_embd": N_EMBD,
             "n_head": N_HEAD,
             "n_layer": N_LAYER,
