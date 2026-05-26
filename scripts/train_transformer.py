@@ -3,6 +3,7 @@ from pathlib import Path
 
 import torch
 
+from src.batching import get_batch
 from src.data_loader import read_text_file
 from src.evaluation import estimate_loss
 from src.models.transformer import MiniTransformerLanguageModel
@@ -14,6 +15,7 @@ TRAIN_PATH = "data/splits/train.txt"
 VAL_PATH = "data/splits/val.txt"
 CHECKPOINT_PATH = "checkpoints/transformer.pt"
 BLOCK_SIZE = 32
+BATCH_SIZE = 16
 MAX_ITERS = 300
 LEARNING_RATE = 1e-3
 N_EMBD = 64
@@ -64,7 +66,8 @@ def main():
 
     model.train()
     for step in range(MAX_ITERS):
-        logits, loss = model(x_train, y_train)
+        batch_x, batch_y = get_batch(x_train, y_train, BATCH_SIZE)
+        logits, loss = model(batch_x, batch_y)
 
         optimizer.zero_grad(set_to_none=True)
         loss.backward()
@@ -81,6 +84,7 @@ def main():
 
             print(
                 f"step {step}: "
+                f"batch loss {loss.item():.4f} | "
                 f"train loss {train_loss:.4f} | "
                 f"val loss {val_loss:.4f} | "
                 f"best val {best_val_loss:.4f} at step {best_step}"
@@ -103,6 +107,7 @@ def main():
             "unk_token": tokenizer.unk_token,
             "start_id": train_ids[0],
             "block_size": BLOCK_SIZE,
+            "batch_size": BATCH_SIZE,
             "n_embd": N_EMBD,
             "n_head": N_HEAD,
             "n_layer": N_LAYER,
