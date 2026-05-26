@@ -59,6 +59,56 @@ def test_transformer_generate_adds_tokens():
     assert generated.shape == (1, 6)
 
 
+def test_transformer_generate_accepts_temperature_and_top_k():
+    vocab_size = 10
+    block_size = 4
+    model = MiniTransformerLanguageModel(
+        vocab_size=vocab_size,
+        block_size=block_size,
+        n_embd=16,
+        n_head=4,
+        n_layer=2,
+    )
+    idx = torch.tensor([[1]])
+
+    generated = model.generate(
+        idx,
+        max_new_tokens=5,
+        temperature=0.8,
+        top_k=3,
+    )
+
+    assert generated.shape == (1, 6)
+
+
+def test_transformer_generate_rejects_invalid_temperature():
+    model = MiniTransformerLanguageModel(
+        vocab_size=10,
+        block_size=4,
+        n_embd=16,
+        n_head=4,
+        n_layer=2,
+    )
+    idx = torch.tensor([[1]])
+
+    with pytest.raises(ValueError):
+        model.generate(idx, max_new_tokens=1, temperature=0)
+
+
+def test_transformer_generate_rejects_invalid_top_k():
+    model = MiniTransformerLanguageModel(
+        vocab_size=10,
+        block_size=4,
+        n_embd=16,
+        n_head=4,
+        n_layer=2,
+    )
+    idx = torch.tensor([[1]])
+
+    with pytest.raises(ValueError):
+        model.generate(idx, max_new_tokens=1, top_k=0)
+
+
 def test_transformer_rejects_sequence_longer_than_block_size():
     vocab_size = 10
     block_size = 4
