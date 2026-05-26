@@ -7,7 +7,7 @@ from src.tokenizer.bpe_tokenizer import BPETokenizer
 
 TRAIN_PATH = "data/splits/train.txt"
 TOKENIZER_PATH = "artifacts/tokenizers/bpe.json"
-NUM_MERGES = 500
+NUM_MERGES = 1000
 
 
 def main():
