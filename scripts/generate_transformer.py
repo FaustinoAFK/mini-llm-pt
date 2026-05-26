@@ -5,6 +5,8 @@ from src.models.transformer import MiniTransformerLanguageModel
 
 CHECKPOINT_PATH = "checkpoints/transformer.pt"
 MAX_NEW_TOKENS = 300
+TEMPERATURE = 0.8
+TOP_K = 10
 
 
 def main():
@@ -27,11 +29,16 @@ def main():
     context = torch.tensor([[start_id]], dtype=torch.long)
 
     with torch.no_grad():
-        generated_ids = model.generate(context, max_new_tokens=MAX_NEW_TOKENS)[0].tolist()
+        generated_ids = model.generate(
+            context,
+            max_new_tokens=MAX_NEW_TOKENS,
+            temperature=TEMPERATURE,
+            top_k=TOP_K,
+        )[0].tolist()
 
     generated_text = "".join(itos[i] for i in generated_ids)
 
-    print("--- Texto gerado ---")
+    print(f"--- Texto gerado | temperature={TEMPERATURE} | top_k={TOP_K} ---")
     print(generated_text)
 
 
