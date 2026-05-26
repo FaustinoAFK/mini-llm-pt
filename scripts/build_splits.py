@@ -30,6 +30,10 @@ def read_processed_texts(processed_dir):
     return texts
 
 
+def normalize_path(path):
+    return str(path).replace("\\", "/")
+
+
 def validate_ratios(train_ratio, val_ratio, test_ratio):
     total = train_ratio + val_ratio + test_ratio
     if abs(total - 1.0) > 1e-8:
@@ -102,15 +106,15 @@ def write_manifest(
     ]
 
     for file_path, _ in train_items:
-        lines.append(f"- {str(file_path).replace('\\\\', '/')}")
+        lines.append(f"- {normalize_path(file_path)}")
 
     lines.extend(["", "### val", ""])
     for file_path, _ in val_items:
-        lines.append(f"- {str(file_path).replace('\\\\', '/')}")
+        lines.append(f"- {normalize_path(file_path)}")
 
     lines.extend(["", "### test", ""])
     for file_path, _ in test_items:
-        lines.append(f"- {str(file_path).replace('\\\\', '/')}")
+        lines.append(f"- {normalize_path(file_path)}")
 
     manifest_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
