@@ -27,7 +27,6 @@ Ordem dos eventos - As causas precisam preceder no tempo os efeitos observados.
 Na área da saúde a natureza da associação causal foi formulada por Hence e adaptada por Robert Koch em 1877 para demonstração da relação causal entre microrganismos e patologias, fundando-se a proposta de Koch basicamente nos mesmos princípios enunciado acima, ou seja: força da associação, ou conectividade (correlação nem sempre implica causalidade); sequência temporal (assimetria); transitividade (evidência experimental); previsibilidade e estabilidade dos resultados.
 Recolhimento de dados;
 Proposta de uma ou mais hipóteses;
-Realização de uma experiência controlada, para testar a validade da(s) hipótese(s);
 Análise dos resultados;
 Interpretar os dados e tirar conclusões, o que serve para a formulação de novas hipóteses;
 Publicação dos resultados em monografias, dissertações, teses, artigos ou livros aceitos por universidades e ou reconhecidos pela comunidade científica.
@@ -82,13 +81,11 @@ Removedor de metadados
 Formas de armazenamento de dados
 O que os metadados revelam sobre um indivíduo - Michell Hilton [ligação inativa]
 
-Git pronuncia-se [git] (ou / t/ em inglês britânico) é um sistema de controle de versões distribuído, usado principalmente no desenvolvimento de software, mas pode ser usado para registrar o histórico de edições de qualquer tipo de arquivo (Exemplo: alguns livros digitais são disponibilizados no GitHub e escrito aos poucos publicamente). O Git foi inicialmente projetado e desenvolvido por Linus Torvalds para o desenvolvimento do kernel Linux, mas foi adotado por muitos outros projetos.
 O Git é um software livre, distribuído sob os termos da versão 2 da GNU General Public License. Sua manutenção é atualmente supervisionada por Junio Hamano.
 Eu sou um desgraçado egocêntrico, então batizo todos os meus projetos com meu nome. Primeiro Linux, agora Git.
 Isto é especialmente irônico, pois o próprio Linus resistiu à ideia de escolher o nome Linux para o núcleo do sistema operacional criado por ele, por ser "too complacent" ("muito arrogante", em tradução livre).
 O desenvolvimento do Git surgiu após vários desenvolvedores do kernel (núcleo) do Linux decidirem desistir de acessar ao sistema do BitKeeper, que é um software proprietário. O acesso gratuito ao BitKeeper foi removido pelo detentor dos direitos autorais, Larry McVoy, depois de acusar Andrew Tridgell de usar de engenharia reversa nos protocolos do BitKeeper, alegando violação da licença do mesmo. Tridgell demonstrou, em uma apresentação na Linux.Conf.Au, realizada em 2005, que o processo de engenharia reversa utilizado não foi mais do que simplesmente direcionar um telnet para a porta apropriada de um servidor BitKeeper e digitar "help" (ajuda).
 De qualquer forma, os SCVs que olhei dificultam as coisas. Uma delas (a maior delas, na verdade) que estive trabalhando é fazer este processo ser realmente eficiente. Se leva meio minuto para aplicar um patch e ainda lembrar o que mudou, etc (e francamente, isso é rápido para a maioria dos SCVs por aí para um projeto do tamanho do Linux), daí uma série de 250 e-mails (que não é estranho acontecer quando eu sincronizo com o Andrew, por exemplo) demora duas horas. Se um dos patches no meio do processo não é aplicado, as coisas ficam realmente muito feias.
-Agora, o BK (BitKeeper) não era um inferno também (na verdade, comparado com todo o resto, o BK é um inferno em velocidade, geralmente em uma ou duas ordens de magnitude), e levou cerca de 10-15 segundos por e-mail quando mesclei meus arquivos com o Andrew. MESMO ASSIM, com o BK isso não era um problema tão grande, visto que mesclas de arquivos de BK BK eram tão fáceis, eu nunca precisei das lentas mesclas por e-mail com nenhum dos outros desenvolvedores principais. Então um "mesclador" de um SCV baseado em patches precisaria ser realmente mais rápido que o BK. O que realmente é extremamente difícil.
 (Se a aplicação de um patch demora três segundos, até mesmo uma série grande de patches não é um problema: se eu for notificado em um minuto ou dois que falhou na metade do caminho, sem problemas, eu posso então simplesmente arrumar manualmente. É por isso que a latência é crítica - se eu tivesse que fazer as coisas efetivamente "desconectado", eu não poderia, por definição, arrumar as coisas quando problemas aparecessem).
 Torvalds teve vários critérios para o projeto:
 Suportar um fluxo distribuído, como o BitKeeper
@@ -114,7 +111,6 @@ O lixo se acumula se não for limpo
 Empacotamento periódico explícito de objetos
 Outra propriedade do Git é que ele salva o estado (snapshot) dos diretórios de arquivos. Os sistemas mais antigos de controle de versão de código fonte, Sistemas de Controle de Código Fonte (SCCF) e Sistemas de Controle de Revisão (SCR), trabalhavam em cima de arquivos individuais, enfatizando o espaço em disco ganho por intercalação de deltas (SCCF) ou por codificação de deltas (RCS) entre versões (mais similares). Sistemas de controle de versão posteriores mantiveram esta noção de arquivos possuírem uma identidade através de múltiplas revisões de um projeto. Porém, Torvalds rejeitou esse conceito. Consequentemente, o Git não salva relacionamentos entre revisão de arquivos em nenhum nível abaixo da árvore de diretório do código fonte.
 Relacionamentos inexplícitos de revisão remete a consequências significativas:
-Renomeação de arquivos são feitos de forma implícita. Uma queixa comum no CVS é que este usa o nome do arquivo para identificar o seu histórico de revisões. Então, não é possível mover ou renomear um arquivo sem interromper ou renomear seu histórico,o que, consequentemente, faz com que o histórica seja impreciso. A maioria dos controles de revisão pós-CVS resolve este problema por dar um tipo de identidade por nome único invariável para cada arquivo (um tipo de nó-i) que continua mesmo após renomeações. O Git não salva este tipo de identificador, e isso é uma vantagem alegada por Torvalds. Arquivos de código fonte, às vezes, são divididos, mesclados ou simplesmente renomeados. Salvar todas estas mudanças como simples renomes poderia congelar uma descrição imprecisa do que aconteceu na história real do mesmo (que é imutável). Git resolve este problema por detectar renomes enquanto navega pela história dos estados invés de gravá-los quando o estado é criado. (Para ser breve, dado um arquivo numa revisão N, um arquivo de mesmo nome numa revisão N-1 é seu ancestral comum. Porém, quando não existe arquivo com um nome parecido na revisão N-1, o Git procura por um arquivo que existiu apenas na revisão N-1 e que era similar ao arquivo novo). No entanto, não é necessário mais tempo de processamento intensivo toda vez que o histórico é revisado. Existem também numerosas opções para ajustar estas heurísticas.
 O Git implementa várias estratégias de merge (mescla de arquivos); uma não padrão pode ser selecionada durante um merge:
 resolve (resolver): o tradicional algoritmo de merge em três vias.
 octopus (polvo): Este é o padrão quando efetuado merge em mais de duas heads.
@@ -235,9 +231,7 @@ Linguagem de descrição de interface
 Programação funcional
 REST, Transferência Representacional de Estado
 SOAP, Protocolo Simples de Acesso a Objetos
-«Como criar uma boa API (how to design a good API)» (PDF) (em inglês)
 
-Linguística computacional ou processamento de língua natural (PLN, em inglês Natural Language Processing, sigla NLP) é um campo multidisciplinar que envolve a Inteligência Artificial, a Informática, a Estatística e a Linguística e que se utiliza de processos computacionais para manipulação da linguagem humana. Os linguistas computacionais almejam desenvolver, através de modelos lógico-formais ou estatísticos de línguas naturais, sistemas com capacidade de reconhecer e produzir informação apresentada em linguagem natural.
 A disciplina foi originalmente desenvolvida por cientistas da computação especializados na aplicação de computadores para o processamento de línguas naturais. Linguistas computacionais muitas vezes trabalham como membros de equipes interdisciplinares, incluindo linguistas (pessoas com formação específica na área), pessoas com conhecimentos sólidos das línguas relevantes para um determinado projeto e cientistas da computação. Em geral, a linguística computacional conta com o envolvimento de linguistas, cientistas da computação, especialistas em inteligência artificial, matemáticos, lógicos, filósofos, cientistas cognitivos, psicólogos cognitivos, psicolinguistas, antropólogos e neurocientistas, entre outros.
 A linguística computacional possui abordagens tanto teóricas quanto aplicadas. Sua vertente teórica se ocupa de questões em linguística teórica e ciência cognitiva, enquanto a aplicada se concentra sobre os resultados práticos da manipulação mecânica da linguagem humana.
 A linguística computacional como área antecede os estudos de inteligência artificial, campo ao qual é geralmente associada. As origens desta disciplina remontam à década de 1950 e se devem em grande parte aos esforços dos Estados Unidos em usar computadores para traduzir automaticamente documentos redigidos em outras línguas(especialmente russo) para o inglês. Como computadores podem fazer cálculos aritméticos muito mais rápido e com maior precisão do que humanos, pensou-se que seria apenas uma questão de tempo até que os detalhes técnicos pudessem ser aprimorados para permitir a mesma capacidade notável para processar linguagem. Apesar de os resultados obtidos pela tradução automática não serem ainda perfeitos, uma qualidade bastante razoável de tradução já é possível para vários tipos de textos. Isso evidencia a consolidação desta área de pesquisa voltada ao desenvolvimento de métodos, algoritmos e softwares que levam um computador à condição de lidar com uma língua natural de forma útil e sensata aos olhos humanos.
@@ -270,7 +264,6 @@ CompLin Computação e Linguagem Natural, grupo de pesquisa sobre linguística c
 Natural language toolkit
 Computational Linguistics revista científica publicada por The MIT Press
 CICLing annual conferences on Computational Linguistics
-Livro gratuito de Introdução à Linguística Computacional(em inglês) (Internet Archive copy)
 Language Technology World
 Ferramentas para processamento de língua natural
 Edição da ReVEL destinada à Linguística Computacional e de Corpus
@@ -279,11 +272,6 @@ Aplicações típicas do reconhecimento de padrões incluem reconhecimento de fa
 FAN (rede neural)
 Teoria dos Padrões
 C.M. van der Walt e E. Barnard (2006). Data characteristics that determine classifier performance. Proceedings of the Sixteenth Annual Symposium of the Pattern Recognition Association of South Africa: [s.n.] pp. 160 165. ISBN 34523432. Consultado em 17 de maio de 2019. Arquivado do original em 7 de fevereiro de 2012
-Phiroz Bhagat (2005). Pattern Recognition in Industry. [S.l.]: Elsevier. ISBN 0-08-044538-1
-Richard O. Duda, Peter E. Hart, David G. Stork. Pattern classification 2 ed. Nova Iorque: Wiley. ISBN 0-471-05669-3 !CS1 manut: Nomes múltiplos: lista de autores (link)
-Dietrich Paulus e Joachim Hornegger (1998). Applied Pattern Recognition 2 ed. [S.l.]: Vieweg. ISBN 3-528-15558-2
-J. Schuermann (1996). Pattern Classification: A Unified View of Statistical and Neural Approaches. [S.l.]: Wiley Sons. ISBN 0-471-13534-8
-Sholom Weiss e Casimir Kulikowski (1991). Computer Systems That Learn. [S.l.]: Morgan Kaufmann. ISBN 1-55860-065-5
 Sítio da Associação Internacional de Reconhecimento de Padrões - IAPR
 
 Visão computacional é a ciência e tecnologia das máquinas que enxergam. Ela desenvolve teoria e tecnologia para a construção de sistemas artificiais que obtém informação de imagens ou quaisquer dados multidimensionais. Exemplos de aplicações incluem o controle de processos (como robôs industriais ou veículos autônomos), detecção de eventos, organização de informação, modelagem de objetos ou ambientes e interação (atrelado a interação humano-computador).
@@ -315,7 +303,6 @@ Processamento de imagens
 Reconhecimento de padrões
 Sistema de visão
 Enciclopédia de Visão Artificial (em Português e Espanhol)
-(em inglês) Computer Vision: Algorithms and Applications
 
 Os bancos de dados tornaram-se a principal fonte de armazenamento de dados para sistemas de informação e segurança. Frequentemente, eles permanecem por muitos anos sem alterações significativas em sua estrutura sistemática.
 Os bancos de dados são operados por Sistemas Gerenciadores de Bancos de Dados (SGBD), que surgiram na década de 1970. Antes do advento desses sistemas, as aplicações utilizavam os sistemas de arquivos do sistema operacional para armazenar suas informações. Na década de 1980, a tecnologia de SGBDs relacionais passou a dominar o mercado e, atualmente, é amplamente utilizada em praticamente todos os bancos de dados.
@@ -401,14 +388,10 @@ Visão
 Generalizadores
 CNET News.com article, An
 
-Ian Goodfellow, Yoshua Bengio and Aaron Courville: Deep Learning (Adaptive Computation and Machine Learning), MIT Press, Cambridge (USA), 2016. ISBN 978-0262035613.
-Léon Bottou, Patrick Haffner, Paul G. Howard, Patrice Simard, Yoshua Bengio, Yann LeCun: High Quality Document Image Compression with DjVu, In: Journal of Electronic Imaging, Band 7, 1998, S. 410 425 doi:10.1117/1.482609
 Bengio, Yoshua; Schuurmans, Dale; Lafferty, John; Williams, Chris K. I. and Culotta, Aron (eds.), Advances in Neural Information Processing Systems 22 (NIPS'22), December 7th 10th, 2009, Vancouver, BC, Neural Information Processing Systems (NIPS) Foundation, 2009
 Y. Bengio, Dong-Hyun Lee, Jorg Bornschein, Thomas Mesnard, Zhouhan Lin: Towards Biologically Plausible Deep Learning, arXiv.org, 2016
-Bengio contributed one chapter to Architects of Intelligence: The Truth About AI from the People Building it, Packt Publishing, 2018, ISBN 978-1-78-913151-2, by the American futurist Martin Ford.
 «Página oficial»
 List of publications
-Yoshua Bengio (em inglês) no Mathematics Genealogy Project
 
 Há um interesse comercial considerável na área por causa de sua aplicação ao raciocínio automatizado, tradução automática, resposta a perguntas, coleta de notícias, categorização de texto, ativação por voz, arquivamento e análise de conteúdo em larga escala.
 Em 1970, William A. Woods introduziu a rede de transição aumentada (ATN) para representar a entrada de linguagem natural. Em vez de regras de estrutura frasal, os ATNs usaram um conjunto equivalente de autômatos de estado finito que eram chamadas recursivamente. Os ATNs e seu formato mais geral, chamados de "ATNs generalizados", continuaram a ser usados por vários anos.
@@ -428,16 +411,12 @@ Extração de informação aberta
 Marcação de partes da fala
 Reconhecimento de fala
 
-A Lei Geral de Proteção de Dados Pessoais (com sigla LGPD ou LGPDP), ou Lei no 13.709/2018, é uma lei federal brasileira promulgada em 2018, que estabelece normas para a proteção e tratamento de dados pessoais em território nacional, bem como a proteção de direitos fundamentais, particularmente a privacidade, a honra e a intimidade. A LGPD também alterou os artigos 7o e 16o do chamado Marco Civil da Internet, lei federal que traz normas legais referentes ao uso da Internet no território brasileiro.
 A legislação se fundamenta em diversos valores, como o respeito à privacidade; à autodeterminação informativa; às liberdades individuais de expressão, de opinião, de informação e de comunicação; à inviolabilidade da intimidade, da honra e da imagem; ao desenvolvimento econômico e tecnológico e a inovação; à livre iniciativa, livre concorrência e defesa do consumidor e aos direitos humanos de liberdade e dignidade das pessoas humanas.
 A LGPD cria um conjunto de novos conceitos jurídicos (por exemplo "dados pessoais sensíveis" e "tratamento de dados pessoais"), estabelece as condições nas quais os dados pessoais podem ser tratados, define um conjunto de direitos para os titulares dos dados, gera obrigações específicas para os controladores e operadores de dados pessoais, e cria uma série de procedimentos e normas para que haja maior cautela possível no tratamento desses dados e em seu compartilhamento com terceiros.
 Toda informação relacionada à pessoa natural identificada (ou identificável) que tratem de aspetos raciais étnicos, de convicção religiosa, de opinião política, de visão filosófica, de filiação a sindicato, bem como aqueles referentes à saúde, à vida sexual, à informações genéticas ou biométricas, sempre que os mesmos estiverem vinculados a uma pessoa natural.
 Além do fato de o projeto de lei ter sido fruto da aglutinação de outras propostas que há muito tempo vinham tramitando paralelamente sobre o tema, os escândalos de privacidade do Facebook em que a empresa Cambridge Analytica utilizou de dados dos usuários para que pudessem fazer uma campanha política mais assertiva e customizada na eleição de Donald Trump em 2016 também trouxeram visibilidade para o assunto.
 Em novembro de 2010 teve início no Brasil o debate sobre a proteção de dados pessoais, com o propósito de se elaborar uma lei específica sobre o tema. Até abril de 2011 foram colhidas manifestações por meio de um blog mantido pelo Ministério da Justiça na plataforma Cultura Digital, do Ministério da Cultura. O resultado desse primeiro debate nunca chegou a ser enviado pelo Poder Executivo ao Congresso Nacional.
-Em junho de 2012, o Deputado Milton Monti (PR-SP) apresentou na Câmara dos Deputados o Projeto de Lei no 4060, como produto das discussões do V Congresso Brasileiro da Indústria da Comunicação. E em 2014, o Senador Vital do Rêgo apresentou o PLS 181/2014.
 Em janeiro de 2015 o governo federal reiniciou, sob a gestão da Secretaria Nacional do Consumidor do Ministério da Justiça, o debate público para a elaboração de um anteprojeto de lei. As duas consultas públicas somaram 2.500 contribuições nacionais e internacionais, de todos os setores, além de incontáveis eventos presenciais de debate. O texto resultante foi apresentado publicamente em outubro do mesmo ano.
-Em maio de 2016, na véspera de seu afastamento do governo, a então presidente Dilma Rousseff encaminhou ao Congresso, em regime de urgência, o anteprojeto de lei, recebido como Projeto de Lei no 5276/2016. Em julho de 2016, o presidente interino Michel Temer retirou o regime de urgência e o PL 5276/16 tramitou formalmente na Câmara dos Deputados apensado ao 4060/12.
-Em julho de 2018 o Projeto Lei da Câmara 53/2018 foi aprovado no plenário do Senado. A Lei Geral de Proteção de Dados foi sancionada em 14 de agosto de 2018, publicada no Diário Oficial da União em 15 de agosto de 2018, e republicada parcialmente no mesmo dia, em edição extra. O início da vigência seria em 18 meses desde a publicação.
 O projeto sofreu vetos. Sob a alegação, bastante questionada, de vício de iniciativa, Temer vetou a criação da Autoridade Nacional de Proteção de Dados (ANPD), órgão de fiscalização.
 Relação das definições estabelecidas pela LGPD:
 Dado pessoal: informação relacionada a pessoa natural identificada ou identificável;
@@ -465,7 +444,6 @@ A informação direta é aquela que permite a imediata individualização da pes
 A informação indireta é a que permite por meio da reunião de informações, chegar à identificação do sujeito.
 identificação direta: um cliente, ao fazer uma compra on-line, informa seu nome completo e CPF, ou seja, a loja virtual com essas informações consegue identificar o indivíduo que realizou a compra.
 Em outras palavras, a identificação indireta ocorre quando associamos informações, que isoladamente não conseguem identificar um indivíduo, para descobrimos a identidade de uma pessoa.
-Princípios que guiam o tratamento de dados pessoais previstos na Lei Geral de Proteção de Dados Pessoais (LGPD Lei no 13.709/2018):
 Princípio da boa-fé
 Princípio da finalidade
 Princípio da adequação
@@ -558,7 +536,6 @@ Regulamento Geral sobre a Proteção de Dados
 Autoridade Nacional de Proteção de Dados
 Lei No 13.709, de 14 de agosto de 2018
 
-Reconhecimento de fala é uma área interdisciplinar originária da linguística computacional cujo objetivo é desenvolver métodos e tecnologias que permitam o reconhecimento e a transcrição de linguagem falada de maneira automática. As tecnologias de reconhecimento de fala são normalmente conhecidas pela sigla em inglês ASR de Automatic Speech Recognition (reconhecimento automático de fala), Computer Speech Recognition (reconhecimento de fala por computador) ou STT de Speech to Text (fala para texto).
 Os sistemas de reconhecimento de fala podem ser classificados por requererem, ou não, que o usuário treine o sistema a reconhecer seus padrões particulares de fala, por ter a habilidade de reconhecer fala contínua ou por requerer que o usuário fale pausadamente, e pelo tamanho do vocabulário que é capaz de reconhecer (pequeno, da ordem de dezenas a centenas de palavras, ou grande, com milhares de palavras).
 Sistemas que requerem pouco treinamento podem capturar continuamente a fala com um amplo vocabulário, em ritmo normal, com precisão de cerca de 98% (duas palavras erradas em cem) enquanto sistemas que não requerem treinamento podem reconhecer um número pequeno de palavras como, por exemplo, os dez dígitos do sistema decimal. Tais sistemas são populares por direcionar chamadas telefônicas recebidas, em grandes organizações, aos seus destinos. Além disso, sistemas com vocabulário restrito podem ser usados para implementar comandos por voz, uma vez que se torna mais fácil para o sistema reconhecer palavras ou frases previamente estabelecidas. Essas palavras podem ser interpretadas pelo sistema como comandos e programadas para a execução de uma rotina específica pelo sistema.
 Sistemas comerciais para reconhecimento da fala têm estado disponíveis desde os anos 90, porém é interessante notar que, apesar do aparente sucesso dessa tecnologia, poucas pessoas os usam.
@@ -573,7 +550,6 @@ As tecnologias de reconhecimento de fala tem seu início conjuntamente com a ind
 Nos campos de linguística computacional e probabilidade, um n-grama é uma sequência contígua de n itens de uma determinada amostra de texto ou fala. Os itens podem ser fonemas, sílabas, letras, palavras ou pares de bases de acordo com a aplicação. Os n-gramas normalmente são coletados de um corpus de texto ou fala.
 Usando prefixos numéricos latinos, um n -grama de tamanho 1 é referido como um "unigrama"; o tamanho 2 é um " bigrama " (ou um "digrama"); o tamanho 3 é um " trigrama ". Os números cardinais são às vezes usados, por exemplo, "quatro grama", "cinco grama" e assim por diante. Em biologia computacional, um polímero ou oligômero de tamanho conhecido é chamado k-mero, em vez de n-grama, com nomes específicos usando prefixos numéricos gregos, como "monômero", "dímero", "trímero", "tetrâmero", "pentamer".
 A Figura 1 mostra várias sequências de exemplo e as sequências de 1 grama, 2 gramas e 3 gramas correspondentes.
-Aqui estão outros exemplos; esses são 3 gramas e 4 gramas no nível da palavra (e contagens do número de vezes que apareceram) do corpus Google n-gram (em inglês).
 3-gramas
 ceramics collectables collectibles (55)
 ceramics collectables fine (130)
@@ -588,42 +564,10 @@ serve as the indication (72)
 serve as the indicator (120)
 Um modelo de n-grama modela sequências, principalmente linguagens naturais, usando as propriedades estatísticas de n-gramas.
 Essa ideia pode ser rastreada até um experimento do trabalho de Claude Shannon em teoria da informação. Shannon fez a pergunta: dada uma sequência de letras (por exemplo, a sequência "para ex"), qual é a probabilidade da próxima letra? A partir dos dados de treinamento, pode-se derivar uma distribuição de probabilidade para a próxima letra, dado um histórico de tamanho
-n
 : a 0,4, b 0,00001, c 0, ....; onde as probabilidades de todas as "próximas letras" possíveis somam 1,0.
 Mais concisamente, um modelo n -gram prevê
-x
-i
 baseado em
-x
-i
-(
-n
-1
-)
-,
-...
-,
-x
-i
-1
 . Em termos de probabilidade, isso é
-P
-(
-x
-i
-x
-i
-(
-n
-1
-)
-,
-...
-,
-x
-i
-1
-)
 Observe que em um modelo de linguagem simples de n- grama , a probabilidade de uma palavra, condicionada a algum número de palavras anteriores (uma palavra em um modelo de bigrama, duas palavras em um modelo de trigrama, etc.) pode ser descrita como seguindo uma distribuição categórica (muitas vezes chamada de forma imprecisa de "distribuição multinomial").
 Na prática, as distribuições de probabilidade são suavizadas atribuindo probabilidades diferentes de zero a palavras não vistas ou n-gramas; veja as técnicas de suavização .
 Modelos de n -gram são amplamente usados no processamento estatístico de linguagem natural. No reconhecimento de fala, os fonemas e sequências de fonemas são modelados usando uma distribuição de n-grama. Para análise, as palavras são modeladas de forma que cada n-grama seja composto por n palavras. Para a identificação da linguagem, sequências de caracteres / grafemas (ppor exemplo, letras do alfabeto) são modeladas para diferentes idiomas. Para sequências de caracteres, os trigramas que podem ser gerados a partir de "bom dia" são "bom", "om ", "m d", " di" e "dia", contando o caractere de espaço como um grama (às vezes o início e o fim de um texto são modelados explicitamente, adicionando-se" b "," bo ","ia "e" a "). Para sequências de palavras, os trigramas que podem ser gerados a partir de "o cachorro cheirava a gambá" são " o cachorro", "o cachorro cheirava", "cachorro cheirava a", "cheirava a gambá", e "a gambá ".
@@ -632,8 +576,6 @@ Outra crítica que foi feita é que os modelos de linguagem de Markov, incluindo
 Na prática, modelos de n -grama têm se mostrado extremamente eficazes na modelagem de dados de linguagem, que é um componente central em aplicativos modernos de linguagem estatística.
 Um problema ao usar modelos de linguagem n-gram são palavras fora do vocabulário (do ingles, OOV, out-of-vocabulary). Eles são encontrados em linguística computacional e processamento de linguagem natural quando os textos de entrada incluem palavras que não estavam presentes em um dicionário ou banco de dados do sistema durante sua preparação. Por padrão, quando um modelo de idioma é estimado, todo o vocabulário observado é usado. Em alguns casos, pode ser necessário estimar o modelo de linguagem com um vocabulário fixo específico. Nesse cenário, os n-gramas no corpus que contêm uma palavra fora do vocabulário são ignorados. As probabilidades de n-gram são suavizadas em todas as palavras do vocabulário, mesmo que não tenham sido observadas.
 n-gramas também podem ser usados para correspondência aproximada eficiente. Ao converter uma sequência de itens em um conjunto de n-gramas, ela pode ser embutida em um espaço vetorial, permitindo assim que a sequência seja comparada a outras sequências de maneira eficiente. Por exemplo, se convertermos strings com apenas letras do alfabeto inglês em um único caractere de 3 gramas, obteremos um espaço de
-26
-3
 dimensões (a primeira dimensão mede o número de ocorrências de "aaa", a segunda "aab" e assim por diante para todas as combinações possíveis de três letras). Usando essa representação, perdemos informações sobre a string. Por exemplo, ambas as strings "abc" e "bca" dão origem exatamente aos mesmos 2 gramas "bc" (embora "ab", "bc" não seja o mesmo que "bc", "ca" ). No entanto, sabemos empiricamente que se duas sequências de texto real têm uma representação vetorial semelhante (medida pela similaridade por cosseno), é provável que sejam semelhantes. Outras métricas também foram aplicadas a vetores de n -gramas com resultados variáveis, às vezes melhores. Por exemplo, os escores z já foram usados para comparar documentos examinando quantos desvios-padrão cada n -grama difere de sua ocorrência média em uma grande coleção, ou corpus de texto, de documentos (que formam o vetor de "fundo").
 Também é possível adotar uma abordagem em princípios para as estatísticas de n-gramas, modelando similaridade como a probabilidade de que duas strings tenham vindo da mesma fonte diretamente em termos de um problema na inferência bayesiana .
 Os n-gramas são usados em várias áreas da ciência da computação, linguística computacional e matemática aplicada.
@@ -646,32 +588,6 @@ melhorar o desempenho de recuperação na análise de sequência genética como 
 identificar o idioma de um texto, ou a espécie da qual uma pequena sequência de DNA foi retirada
 criptanálise
 Considere um n-grama onde as unidades são caracteres e um texto com t caracteres. O espaço que este n -gram requer é exponencial:
-n
-(
-t
-2
-(
-n
-1
-)
-)
-i
-1
-n
-1
-2
-i
-n
-,
-t
-N
-n
-2
-(
-t
-1
-)
-n
 Para escolher um valor para n em um modelo de n -grama, é necessário encontrar o trade-off correto entre a estabilidade da estimativa e sua adequação. Isso significa que o trigrama é uma escolha comum com grandes corpora de treinamento (milhões de palavras), enquanto um bigrama é frequentemente usado com os menores.
 Existem problemas de equilíbrio de peso entre gramas pouco frequentes (por exemplo, um nome próprio que aparace nos dados de treino) e gramas frequentes. Além disso, os itens não vistos nos dados de treinamento terão uma probabilidade de 0,0 caso não haja suavização. Para dados não vistos, mas plausíveis, de uma amostra, pode-se introduzir pseudocontas. As pseudocontas são geralmente motivadas por motivos bayesianos.
 Na prática, é necessário suavizar as distribuições de probabilidade atribuindo também probabilidades diferentes de zero a palavras ou n-gramas não- vistas. A razão é que para os modelos derivados diretamente do n -gram, contagens de freqüência têm problemas graves quando confrontado com qualquer n-grams que explicitamente não foram vistas antes - o problema da frequência zero. Vários métodos de suavização são usados, desde a suavização simples "adicionar um" (suavização de Laplace, atribuir uma contagem de 1 a n-gramas invisíveis) até modelos mais sofisticados, como modelos de desconto Good Turing . Alguns desses métodos são equivalentes a atribuir uma distribuição anterior às probabilidades dos n-gramas e usar a inferência Bayesiana para calcular as probabilidades posteriores de n-gramas resultantes.
@@ -696,10 +612,8 @@ Kernel string
 MinHash
 Extração de recursos
 Problema comum de substring mais longo
-Christopher D. Manning, Hinrich Schütze, Foundations of Statistical Natural Language Processing, MIT Press: 1999.ISBN 0-262-13360-1ISBN 0-262-13360-1 .
 White, Owen; Dunning, Ted; Sutton, Granger; Adams, Mark; Venter, J.Craig; Fields, Chris (1993). «A quality control algorithm for dna sequencing projects». Nucleic Acids Research. 21: 3829 3838. PMC 309901. PMID 8367301. doi:10.1093/nar/21.16.3829
 Frederick J. Damerau, Markov Models and Linguistic Theory . Mouton. Haia, 1971.
-Figueroa, Alejandro; Atkinson, John (2012). «Contextual Language Models For Ranking Answers To Natural Language Definition Questions». Computational Intelligence. 28: 528 548. doi:10.1111/j.1467-8640.2012.00426.x
 Brocardo, Marcelo Luiz; Issa Traore; Sherif Saad; Isaac Woungang (2013). Authorship Verification for Short Messages Using Stylometry (PDF). IEEE Intl. Conference on Computer, Information and Telecommunication Systems (CITS)
 Google Book do Google n -gram espectador e banco de dados -grams Web n (Setembro de 2006)
 Serviço web n -grams da Microsoft
@@ -724,7 +638,6 @@ A liberdade de redistribuir o programa executável (em formato binário) necessa
 A OSI optou pelo termo Open Source para afastar-se do estigma filosófico e político do termo "software livre". A disponibilidade do código-fonte não é condição suficiente para que o software seja considerado de código aberto. É necessário satisfazer dez critérios, inspirados na Definição Debian de Software Livre:
 Código-fonte: o programa precisa obrigatoriamente incluir código-fonte e permitir a distribuição tanto do código-fonte quanto do programa já compilado;
 Trabalhos derivados: a licença deve permitir modificações e trabalhos derivados e deve permitir que estes sejam distribuídos sob os mesmos termos da licença do software original;
-Integridade do código-fonte do(a) autor(a): a licença pode proibir que se distribua o código-fonte original modificado desde que a licença permita a distribuição de patch files com a finalidade de modificar o programa em tempo de compilação;
 Não à discriminação contra pessoas ou grupos: a licença não pode discriminar contra pessoas ou grupos;
 Não à discriminação contra fins de utilização: a licença não pode restringir o uso do programa para um fim específico, como uso no comércio, ou em pesquisa genética, por exemplo;
 Distribuição de licença: Os direitos atribuídos ao programa através da licença são automaticamente aplicados a todas as pessoas para as quais o programa é redistribuído, sem a necessidade de definição ou aceitação de uma nova licença;
@@ -790,24 +703,12 @@ Os resultados dessa pesquisa apresentam dados a respeito do perfil dos usuários
 Na apresentação do documento, afirma-se que "o SL/CA ameaça fortemente o modelo de pacotes (plataformas e sistemas operacionais), componentes de software (enquanto a ênfase de sua utilização for como produto) e produtos customizáveis, exatamente porque esses modelos têm na apropriabilidade (manter códigos fechados) um fator essencial de concorrência". Ainda, considera que os modelos de serviços e de software embarcado - que possuem objetivo mais específico e considerados menos importantes no que diz respeito a sua apropriação por meio de códigos fechados - representam as maiores oportunidades de investimento.
 Finalmente, a pesquisa aponta que o SL/CA está se profissionalizando no país e começa a sair da periferia da indústria em direção ao seu centro, e tem despertado a atenção de muitos, desde usuários e desenvolvedores que se posicionam contra a apropriação restritiva do conhecimento, passando por corporações que enxergam no SL/CA uma oportunidade de se desfazer de uma taxa de monopólio restritiva para seus negócios.
 
-Depuração (em inglês: debugging, debug) é o processo de encontrar e reduzir defeitos num aplicativo de software ou mesmo em hardware. Erros de software incluem aqueles que previnem o programa de ser executado e aqueles que produzem um resultado inesperado.
 Existe alguma controvérsia em relação a quem usou pela primeira vez o termo bug -- mas é possível que seu uso tenha se dado anteriormente ao famoso uso feito por Grace Hopper, notável desenvolvedora da Marinha dos Estados Unidos.
 Quanto ao termo debug, aceita-se em geral que foi usado pela primeira vez por Glenford J Myers no seu livro, Software Reliability: Principles and Practices, em 1976.
 De forma geral, a depuração é uma tarefa difícil e trabalhosa, e a dificuldade varia de acordo com o ambiente de desenvolvimento, o que inclui a linguagem de programação e as ferramentas disponíveis, como depuradores. Depuradores são ferramentas que permitem ao programador monitorar a execução de um programa, pará-lo e reiniciá-lo, ativar pontos de parada, alterar áreas de memória e, em alguns casos, voltar no tempo.
 De forma geral, linguagens de alto nível tornam a depuração mais fácil, pois fornecem mais ferramentas para identificar erros, como o tratamento de exceções. Em linguagens de baixo nível, erros de código podem causar problemas difíceis de serem identificados, como corrupção de memória. Nesse caso, depuradores de memória podem ser necessários.
 Para a depuração de hardware, assim como software de baixo nível (como BIOS, firmware e drivers de dispositivo) instrumentos como osciloscópios, analisadores lógicos e emuladores são frequentemente usados.
 A depuração começa com a tentativa de reprodução do problema, o que pode não ser uma tarefa simples, como em computação paralela. Após a reprodução, o problema deve ser reduzido até sua essência, para facilitar a depuração. É um processo iterativo em que para cada redução, uma nova execução é feita para assegurar a reprodução do problema. Como analogia, pode-se considerar esse processo de redução como uma forma de divisão e conquista. Para automatizar a redução da entrada, métodos de depuração delta podem ser usados. A redução pode ser feita com a simplificação das entradas do programa. Por exemplo, um programa que falha na leitura de milhares registros pode ter o problema associado a somente um deles, somente um registro possui valores que fazem o problema se manifestar; pode-se reduzir a quantidade de registros lidos até que reste somente um, o causador do problema. No caso de erro de software, a redução é chamada de isolamento de código. Após a identificação dum problema em certo código, pode-se percorrer o código fonte para isolar a origem do problema, a partir de módulos, passando por subrotinas e chegando na linha exata.
-David J. Agans (2002). Debugging. The Nine Indispensable Rules for Finding Even the Most Elusive Software and Hardware Problems. [S.l.]: AMACOM. ISBN 0-8144-7168-4
-Bill Blunden (2003). Software Exorcism. A Handbook for Debugging and Optimizing Legacy Code. [S.l.]: APress. ISBN 1-59059-234-4
-Frederick Phillips Brooks (1995). The Mythical Man-Month. Essays on Software Engineering. [S.l.]: Pearson Addison Wesley. ISBN 0-201-00650-2
-Ann R. Ford, Toby J. Teorey (2002). Practical Debugging in C . [S.l.]: Prentice Hall. ISBN 0-13-065394-2
-Robert Metzger (2003). Debugging by Thinking. A Multidisciplinary Approach. [S.l.]: Digital Press. ISBN 1-55558-307-5
-Glenford J Myers (2004). Software Reliability. Principles and Practices 2 ed. [S.l.]: John Wiley Sons inc. ISBN 0-471-62765-8
-Glenford J Myers (2004). The Art of Software Testing. [S.l.]: John Wiley Sons inc. ISBN 0-471-04328-1
-John Robbins (2000). Debugging Applications. [S.l.]: Microsoft Press. ISBN 0-7356-0886-5
-Matthew A. Telles, Yuan Hsieh, Matt Telles (2001). The Science of Debugging. [S.l.]: The Coriolis Group. ISBN 1-57610-917-8 !CS1 manut: Nomes múltiplos: lista de autores (link)
-Andreas Zeller (2005). Why Programs Fail. A Guide to Systematic Debugging. [S.l.]: Morgan Kaufmann. ISBN 1-55860-866-4
-Terence Parr (18 de setembro de 2004). «The Essentials of Debugging» (em inglês). University of San Francisco. Consultado em 2 de setembro de 2024
 Depurador
 Programação
 Teste de software
@@ -816,40 +717,17 @@ Teste de software
 São estruturas eficientes e simples em relação ao tratamento computacional, diferentemente dos grafos. Há inúmeros problemas no mundo real que podem ser modelados e resolvidos através das árvores. Estruturas de pastas de um sistema operacional, interfaces gráficas, bancos de dados e sites da Internet são exemplos de aplicações de árvores.
 Uma árvore é formada por um conjunto de elementos que armazenam informações chamados nodos ou nós. Toda a árvore possui o elemento chamado raiz, que possui ligações para outros elementos denominados ramos ou filhos. Estes ramos podem estar ligados a outros elementos que também podem possuir outros ramos. O elemento que não possui ramos é conhecido como nó folha, nó terminal ou nó externo.
 Formalmente, definimos uma árvore
-T
 como um conjunto finito de zero ou mais nodos tal que:
 se o número de nodos
-0
 , temos uma árvore vazia, ou
 se o número de nodos
-0
 existe um nó especialmente denominado raiz de
-T
 os nós restantes formam
-m
-0
 conjuntos disjuntos
-p
-1
-,
-p
-2
-,
-.
-.
-.
-,
-p
-m
 , cada um desses conjuntos é uma árvore em si, chamada subárvore da raiz de
-T
 , ou simplesmente subárvore.
 O número máximo de filhos em um nodo é chamado ordem da árvore. Uma árvore binária é aquela de ordem 2, i.e., em que cada elemento possui no máximo 2 filhos.
 Há diversas formas de representação de uma árvore: hierárquica, diagrama de inclusão, diagrama de barras, numeração por níveis, por aninhamento.
-A hierárquica é parecida com um organograma de uma empresa, linhas unem dois nodos e indicam o relacionamento lógico entre eles. Tradicionalmente desenha-se a raiz na parte superior e todos os nodos subordinados na parte inferior, mas o contrário também é possível. Na figura acima, o item (a) é um exemplo desta representação.
-Em um diagrama de barras, linhas são usadas para mostrar a hierarquia dos nodos. A raiz possui a linha de maior tamanho e os nodos irmãos possuem linhas de tamanhos iguais. Método bastante utilizado na criação de índices de livros. É similar à indentação usada em linguagens de programação. O item (b) da imagem ao lado indica como seria a árvore do item (a) usando essa representação.
-Usando numeração por níveis o nodo raiz recebe o número um e todos os nodos seguintes recebem uma numeração sequencial, sempre antecedidos pela numeração de seus nodos superiores. Item (e) da figura à direita representa a árvore (a) com representação por níveis.
-Na representação por aninhamento, também conhecida por "representação por parênteses aninhados", a sucessão de parênteses reproduz as relações entre os nodos, aninhando um nodo filho ao seu pai. Como exemplo temos o item (d) da imagem ao lado representando a árvore (a).
 Uma das operações importantes consiste em percorrer cada elemento da árvore uma única vez. Esse percurso, também chamado de travessia da árvore, pode ser feito em pré-ordem (os filhos de um nó são processados após o nó) ou em pós-ordem (os filhos são processados antes do nó). Em árvores binárias é possível ainda fazer uma travessia em-ordem, em que se processa o filho à esquerda, o nó, e finalmente o filho à direita.
 O algoritmo abaixo descreve uma travessia pré-ordem:
 PercursoPreordem(nó):
@@ -862,15 +740,12 @@ Outra operação utilizada nas árvores de pesquisa é a travessia da raiz até 
 Árvore AVL
 Árvore ordenada
 Árvore rubro-negra
-Árvore 2-3
-Árvore 2-3-4
 Árvore B
 Árvore B
 Árvore hiperbólica
 Árvore splay
 Árvore scapegoat
 Topologia em árvore
-«QMatica.com» (em inglês) - Site interativo sobre AVL (árvores balanceadas por altura)
 Algol.dev (Português e inglês) - Artigo sobre árvores.
 
 Há uma forte relação da área da ciência de dados com a inteligência artificial, uma vez que o principal profissional que lida com o desenvolvimento, manutenção e fiscalização de inteligências artificiais e machine learning é o cientistas de dados.
@@ -901,89 +776,16 @@ O estudo de corpora (plural de corpus) apresenta muitas vantagens. Em vez de con
 
 A função sigmoide é uma função matemática de amplo uso em campos como a economia e a computação. O nome "sigmoide" vem da forma em S do seu gráfico.
 Ela é definida como:
-f
-(
-x
-)
-1
-1
-e
-x
 para todo
-x
 real.
 Ela é solução da equação diferencial:
-d
-y
-d
-x
-(
-y
-)
-(
-1
-y
-)
-.
 com
-y
 entre 0 e 1.
 A função sigmoide pode ser reescrita como:
-f
-(
-x
-)
-1
-1
-e
-x
-e
-x
-/
-2
-e
-x
-/
-2
-e
-x
-/
-2
-1
-2
-1
-2
-e
-x
-/
-2
-e
-x
-/
-2
-e
-x
-/
-2
-e
-x
-/
-2
-1
-2
-1
-2
 tanh
-(
-x
-2
-)
 Um exemplo de código para Octave, que aplica a função a um escalar ou a alguma matriz:
-function f sigmoid(z)
-f 1./(1 exp(-z));
 No MATLAB a função sigmf possui dois valores de ajustes da sigmoide. O primeiro indica o grau de inclinação da curva, enquanto o segundo indica o ponto médio da curva, ou seja, para que valor de x a sigmoide vai assumir valor 0.5 no eixo y (centro da sigmoide).
 Um exemplo de código para o Matlab:
-x 0:0.5:20 //definimos x como um vetor de valores que vai de 0 a 20 em um intervalo de 0.5, ou seja, x 0 , 0.5, 1, 1.5, ... , 19.5, 20
 s1 sigmf(x,[1 5]) // s1 será uma sigmoide cujo centro é no 5
 s2 sigmf(x,[0.5 5]) // s2 será uma sigmoide cujo centro é no 5, porém com uma inclinação mais suave que anterior
 s3 sigmf(x,[0.5 10]) // s3 será uma sigmoide cujo centro é no 10, com a mesma inclinação que anterior

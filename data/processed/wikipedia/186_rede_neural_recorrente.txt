@@ -8,435 +8,49 @@ As redes neurais recorrentes bidirecionais (BRNN) usam duas RNNs que processam a
 A ideia de transdução de sequência codificador-decodificador foi desenvolvida no início da década de 2010. Os artigos mais frequentemente citados como os criadores que produziram o seq2seq são dois artigos de 2014. Uma arquitetura seq2seq emprega duas RNNs, tipicamente LSTM, um "codificador" e um "decodificador", para transdução de sequência, como a tradução automática. Elas tornaram-se o estado da arte na tradução automática e foram fundamentais no desenvolvimento de mecanismos de atenção e transformers.
 Um modelo baseado em RNN pode ser decomposto em duas partes: configuração e arquitetura. Várias RNNs podem ser combinadas num fluxo de dados, e o fluxo de dados em si é a configuração. Cada RNN pode ter qualquer arquitetura, incluindo LSTM, GRU, etc.
 As RNNs apresentam-se em muitas variantes. Falando de forma abstrata, uma RNN é uma função
-f
 do tipo
-(
-x
-t
-,
-h
-t
-)
-(
-y
-t
-,
-h
-t
-1
-)
 , onde
-x
-t
 : vetor de entrada;
-h
-t
 : vetor oculto;
-y
-t
 : vetor de saída;
 : parâmetros da rede neural.
 Em outras palavras, é uma rede neural que mapeia uma entrada
-x
-t
 para uma saída
-y
-t
 , com o vetor oculto
-h
-t
 desempenhando o papel de "memória", um registo parcial de todos os pares entrada-saída anteriores. A cada passo, ela transforma a entrada numa saída e modifica a sua "memória" para ajudá-la a realizar melhor o processamento futuro.
 A ilustração à direita pode ser enganadora para muitos, porque as topologias práticas de redes neurais são frequentemente organizadas em "camadas" e o desenho dá essa aparência. No entanto, o que parecem ser camadas são, na verdade, diferentes passos no tempo, "desdobrados" para produzir a aparência de camadas.
 Uma RNN empilhada (stacked RNN), ou RNN profunda (deep RNN), é composta por múltiplas RNNs empilhadas umas sobre as outras. Abstratamente, está estruturada da seguinte forma:
 A camada 1 tem o vetor oculto
-h
-1
-,
-t
 , parâmetros
-1
 , e mapeia
-f
-1
-:
-(
-x
-0
-,
-t
-,
-h
-1
-,
-t
-)
-(
-x
-1
-,
-t
-,
-h
-1
-,
-t
-1
-)
-.
 A camada 2 tem o vetor oculto
-h
-2
-,
-t
 , parâmetros
-2
 , e mapeia
-f
-2
-:
-(
-x
-1
-,
-t
-,
-h
-2
-,
-t
-)
-(
-x
-2
-,
-t
-,
-h
-2
-,
-t
-1
-)
-.
-...
 A camada
-n
 tem o vetor oculto
-h
-n
-,
-t
 , parâmetros
-n
 , e mapeia
-f
-n
-:
-(
-x
-n
-1
-,
-t
-,
-h
-n
-,
-t
-)
-(
-x
-n
-,
-t
-,
-h
-n
-,
-t
-1
-)
-.
 Uma RNN bidirecional (biRNN) é composta por duas RNNs: uma processa a sequência de entrada numa direção, e a outra na direção oposta. Abstratamente, está estruturada da seguinte forma:
 A RNN para a frente (forward) processa numa direção:
-f
-(
-x
-0
-,
-h
-0
-)
-(
-y
-0
-,
-h
-1
-)
-,
-f
-(
-x
-1
-,
-h
-1
-)
-(
-y
-1
-,
-h
-2
-)
-,
-...
 A RNN para trás (backward) processa na direção oposta:
-f
-(
-x
-N
-,
-h
-N
-)
-(
-y
-N
-,
-h
-N
-1
-)
-,
-f
-(
-x
-N
-1
-,
-h
-N
-1
-)
-(
-y
-N
-1
-,
-h
-N
-2
-)
-,
-...
 As duas sequências de saída são então concatenadas para dar a saída total:
-(
-(
-y
-0
-,
-y
-0
-)
-,
-(
-y
-1
-,
-y
-1
-)
-,
-...
-,
-(
-y
-N
-,
-y
-N
-)
-)
-.
 A RNN bidirecional permite que o modelo processe um token tanto no contexto do que o precedeu quanto do que o sucedeu. Ao empilhar várias RNNs bidirecionais juntas, o modelo pode processar um token de forma cada vez mais contextual. O modelo ELMo (2018) é um LSTM bidirecional empilhado que recebe entradas no nível de caractere e produz embeddings no nível da palavra.
 Duas RNNs podem ser executadas ponta a ponta numa configuração codificador-decodificador (encoder-decoder). A RNN codificadora processa uma sequência de entrada numa sequência de vetores ocultos, e a RNN decodificadora processa a sequência de vetores ocultos para uma sequência de saída, com um mecanismo de atenção opcional. Isto foi usado para construir tradutores de tradução automática neural no estado da arte durante o período de 2014 2017. Este foi um passo fundamental para o desenvolvimento dos transformers.
 Uma RNN pode processar dados com mais de uma dimensão. A PixelRNN processa dados bidimensionais, com muitas direções possíveis. Por exemplo, a direção linha a linha processa uma grade
-n
-n
 de vetores
-x
-i
-,
-j
 na seguinte ordem:
-x
-1
-,
-1
-,
-x
-1
-,
-2
-,
-...
-,
-x
-1
-,
-n
-,
-x
-2
-,
-1
-,
-x
-2
-,
-2
-,
-...
-,
-x
-2
-,
-n
-,
-...
-,
-x
-n
-,
-n
 O BiLSTM diagonal usa dois LSTMs para processar a mesma grade. Um processa do canto superior esquerdo para o canto inferior direito, de forma que processa
-x
-i
-,
-j
-h
-i
-1
-,
-j
-,
-c
-i
-1
-,
-j
-e
-h
-i
-,
-j
-1
-,
-c
-i
-,
-j
-1
 . O outro processa do canto superior direito para o canto inferior esquerdo.
 As redes neurais totalmente recorrentes (FRNN) conectam as saídas de todos os neurônios às entradas de todos os neurônios. Em outras palavras, é uma rede totalmente conectada. Esta é a topologia de rede neural mais geral, pois todas as outras topologias podem ser representadas definindo alguns pesos de conexão para zero, de forma a simular a falta de conexões entre esses neurônios.
 As redes de Jordan são semelhantes às redes de Elman. As unidades de contexto são alimentadas a partir da camada de saída em vez da camada oculta. As unidades de contexto numa rede de Jordan também são chamadas de camada de estado. Têm uma conexão recorrente com elas próprias.
 As redes de Elman e Jordan também são conhecidas como "Redes recorrentes simples" (SRN).
 Rede de Elman
-h
-t
-h
-(
-W
-h
-x
-t
-U
-h
-h
-t
-1
-b
-h
-)
-y
-t
-y
-(
-W
-y
-h
-t
-b
-y
-)
 Rede de Jordan
-h
-t
-h
-(
-W
-h
-x
-t
-U
-h
-s
-t
-b
-h
-)
-y
-t
-y
-(
-W
-y
-h
-t
-b
-y
-)
-s
-t
-s
-(
-W
-s
-,
-s
-s
-t
-1
-W
-s
-,
-y
-y
-t
-1
-b
-s
-)
 Variáveis e funções
-x
-t
 : vetor de entrada
-h
-t
 : vetor da camada oculta
-s
-t
 : vetor de "estado"
-y
-t
 : vetor de saída
-W
-,
-U
-e
-b
 : matrizes de parâmetros e vetor
 : Funções de ativação
 A Gated recurrent unit (GRU), introduzida em 2014, foi projetada como uma simplificação da LSTM. Elas são usadas na forma completa e em várias variantes ainda mais simplificadas. Possuem menos parâmetros que a LSTM, pois não têm uma porta de saída.
@@ -449,79 +63,14 @@ Os autômatos de pilha de redes neurais (NNPDA) são semelhantes aos NTMs, mas a
 As redes neurais recorrentes são Turing completas e podem executar programas arbitrários para processar sequências arbitrárias de entradas.
 Uma RNN pode ser treinada para se tornar num modelo generativo condicional de sequências, também conhecido como autorregressão.
 Concretamente, consideremos o problema da tradução automática, ou seja, dada uma sequência
-(
-x
-1
-,
-x
-2
-,
-...
-,
-x
-n
-)
-de palavras em inglês, o modelo deve produzir uma sequência
-(
-y
-1
-,
-...
-,
-y
-m
-)
 de palavras em francês. Isto deve ser resolvido por um modelo seq2seq.
 Durante o treinamento, a metade codificadora do modelo iria primeiro ingerir
-(
-x
-1
-,
-x
-2
-,
-...
-,
-x
-n
-)
 , e então a metade decodificadora começaria a gerar uma sequência
-(
-y
-1
-,
-y
-2
-,
-...
-,
-y
-l
-)
 . O problema é que se o modelo cometer um erro logo no início, digamos em
-y
-2
-y
-2
 em direção a
-y
-2
 , mas não os outros.
 O teacher forcing faz com que o decodificador use a sequência de saída correta para gerar a próxima entrada na sequência. Assim, por exemplo, ele veria
-(
-y
-1
-,
-...
-,
-y
-k
-)
 para gerar
-y
-k
-1
-.
 O método do gradiente (descida de gradiente) é um algoritmo de otimização iterativo de primeira ordem para encontrar o mínimo de uma função. Em redes neurais, pode ser usado para minimizar o termo de erro alterando cada peso em proporção à derivada do erro em relação a esse peso, desde que as funções de ativação não lineares sejam diferenciáveis.
 Para calcular recursivamente as derivadas parciais, o RTRL tem uma complexidade de tempo de O(número de ocultos x número de pesos) por passo de tempo para calcular as matrizes jacobianas, enquanto o BPTT requer apenas O(número de pesos) por passo de tempo, à custa do armazenamento de todas as ativações diretas dentro do dado horizonte temporal. Existe um híbrido online entre BPTT e RTRL com complexidade intermédia, juntamente com variantes para tempo contínuo.
 Um problema importante com a descida de gradiente para arquiteturas RNN padrão é que os gradientes de erro desaparecem exponencialmente depressa com o tamanho do intervalo de tempo entre eventos importantes.
@@ -541,91 +90,25 @@ A função de aptidão avalia o critério de paragem à medida que recebe o rec�
 Outras técnicas de otimização global (e/ou evolutiva) podem ser utilizadas para procurar um bom conjunto de pesos, como o recristalização simulada ou a otimização por enxame de partículas.
 Um modelo generativo superou parcialmente o problema do desvanecimento do gradiente da diferenciação automática ou retropropagação em redes neurais em 1992. Em 1993, um sistema desse tipo resolveu uma tarefa de "Deep Learning Muito Profundo" que exigia mais de 1000 camadas subsequentes numa RNN desdobrada no tempo.
 As RNNs de segunda ordem usam pesos de ordem superior
-w
-i
-j
-k
 em vez dos pesos padrão
-w
-i
-j
 , e os estados podem ser um produto. Isto permite um mapeamento direto para uma máquina de estados finitos, tanto no treinamento como na representação. A Long short-term memory é um exemplo disto, mas não tem esses mapeamentos formais ou provas de estabilidade.
 As redes neurais recorrentes hierárquicas (HRNN) conectam os seus neurônios de várias formas para decompor o comportamento hierárquico em subprogramas úteis. Tais estruturas hierárquicas da cognição estão presentes em teorias de memória apresentadas pelo filósofo Henri Bergson, cujas visões filosóficas inspiraram modelos hierárquicos.
 As redes neurais recorrentes hierárquicas são úteis na previsão, ajudando a prever as componentes de inflação desagregadas do índice de preços ao consumidor (IPC). O modelo HRNN aproveita as informações de níveis mais altos na hierarquia do IPC para aprimorar as previsões de nível mais baixo. A avaliação de um conjunto de dados substancial do índice IPC-U dos EUA demonstra o desempenho superior do modelo HRNN em comparação com vários métodos estabelecidos de previsão da inflação.
 A evolução destas redes pode ser estudada analiticamente usando variações da Equação de Caravelli-Traversa-Di Ventra.
 Uma rede neural recorrente de tempo contínuo (CTRNN) utiliza um sistema de equações diferenciais ordinárias para modelar os efeitos dos sinais de entrada sobre um neurônio. Elas são tipicamente analisadas pela teoria de sistemas dinâmicos. Muitos modelos de RNN na neurociência são de tempo contínuo.
 Para um neurônio
-i
 na rede com ativação
-y
-i
 , a taxa de variação da ativação é dada por:
-i
-y
-i
-y
-i
-j
-1
-n
-w
-j
-i
-(
-y
-j
-j
-)
-I
-i
-(
-t
-)
 Onde:
-i
 : Constante de tempo do nó pós-sináptico
-y
-i
 : Ativação do nó pós-sináptico
-y
-i
 : Taxa de variação da ativação do nó pós-sináptico
-w
-j
-i
 : Peso da conexão do nó pré para o pós-sináptico
-(
-x
-)
 : Sigmoide de x, ex.:
-(
-x
-)
-1
-/
-(
-1
-e
-x
-)
-.
-y
-j
 : Ativação do nó pré-sináptico
-j
 : Viés (bias) do nó pré-sináptico
-I
-i
-(
-t
-)
 : Entrada (se alguma) para o nó
 As CTRNNs têm sido aplicadas à robótica evolutiva, onde foram usadas para abordar visão, cooperação, e comportamento cognitivo mínimo.
-y
-i
-(
-t
-)
 terem sido filtradas por um filtro passa-baixo, mas antes da amostragem.
 Elas são, de fato, redes neurais recursivas com uma estrutura particular: a de uma cadeia linear. Enquanto as redes neurais recursivas operam em qualquer estrutura hierárquica, combinando representações-filho em representações-pai, as redes neurais recorrentes operam na progressão linear do tempo, combinando o passo de tempo anterior e uma representação oculta na representação para o passo de tempo atual.
 De uma perspectiva de série temporal, as RNNs podem aparecer como versões não lineares de filtros de resposta ao impulso finito (FIR) e resposta ao impulso infinito (IIR) e também como um modelo autorregressivo não linear exógeno (NARX). A RNN tem resposta ao impulso infinita, enquanto a rede neural convolucional tem resposta ao impulso finito. Ambas as classes de redes exibem comportamento dinâmico temporal. Uma rede recorrente de impulso finito é um grafo acíclico dirigido que pode ser desenrolado e substituído por uma rede neural estritamente feedforward, enquanto uma rede recorrente de impulso infinito é um grafo cíclico dirigido que não pode ser desenrolado.
@@ -656,6 +139,4 @@ Previsão de localização subcelular de proteínas
 Várias tarefas de previsão na área da gestão de processos de negócio
 Previsão em percursos de cuidados médicos
 Previsão de interrupções de plasma de fusão em reatores (código de Rede Neural Recorrente de Fusão - FRNN)
-Mandic, Danilo P.; Chambers, Jonathon A. (2001). Recurrent Neural Networks for Prediction: Learning Algorithms, Architectures and Stability. [S.l.]: Wiley. ISBN 978-0-471-49517-8
-Grossberg, Stephen (2013). «Recurrent Neural Networks». Scholarpedia. 8 (2): 1888. Bibcode:2013SchpJ...8.1888G. ISSN 1941-6016. doi:10.4249/scholarpedia.1888
 Recurrent Neural Networks lista de artigos sobre RNN pelo grupo de Jürgen Schmidhuber no Dalle Molle Institute for Artificial Intelligence Research

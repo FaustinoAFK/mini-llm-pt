@@ -1,109 +1,36 @@
-A pesquisa ou busca binária (em inglês binary search algorithm ou binary chop) é um algoritmo de busca em vetores que segue o paradigma de divisão e conquista. Ela parte do pressuposto de que o vetor está ordenado e realiza sucessivas divisões do espaço de busca comparando o elemento buscado (chave) com o elemento no meio do vetor. Se o elemento do meio do vetor for a chave, a busca termina com sucesso. Caso contrário, se o elemento do meio vier antes do elemento buscado, então a busca continua na metade posterior do vetor. E finalmente, se o elemento do meio vier depois da chave, a busca continua na metade anterior do vetor.
 A complexidade desse algoritmo é da ordem de
-(
 log
-2
-n
-)
 , em que
-n
 é o tamanho do vetor de busca. Apresenta-se mais eficiente que a Busca linear cuja ordem é
-O
-(
-n
-)
-.
 Dado uma lista
-A
 de
-n
 elementos com os valores
-A
-0
-,
-A
-1
-,
-A
-2
-,
-.
-.
-.
-,
-A
-n
-1
 ordenada de tal modo que
-A
-0
-A
-1
-A
-2
-.
-.
-.
-A
-n
-1
 , e um valor para pesquisa
-T
 , a seguinte rotina usa pesquisa binária para achar o índice de
-T
 em
-A
-.
 Defina
-L
 para 0 e
-R
 para
-n
-1
 Se
-L
-R
 a pesquisa termina sem sucesso
 Defina
-m
 (o índice do meio da lista) para
-L
-R
-2
 arredondado
 Se
-A
-m
-T
 , defina
-L
 para
-m
-1
 e volte ao segundo passo
 Se
-A
-m
-T
 , defina
-R
 para
-m
-1
 e volte ao segundo passo.
 Se
-A
-m
-T
 , a pesquisa está feita, o índice de
-T
 é
-m
 Um pseudo-código recursivo para esse algoritmo, dados V o vetor com elementos comparáveis e e o elemento que se deseja encontrar:
 BUSCA-BINÁRIA(V[], início, fim, e)
 i recebe o índice do meio entre início e fim
-se (v[i] e) entao
 devolva o índice i elemento e encontrado
 fimse
 se (inicio fim) entao

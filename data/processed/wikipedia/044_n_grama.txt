@@ -1,7 +1,6 @@
 Nos campos de linguística computacional e probabilidade, um n-grama é uma sequência contígua de n itens de uma determinada amostra de texto ou fala. Os itens podem ser fonemas, sílabas, letras, palavras ou pares de bases de acordo com a aplicação. Os n-gramas normalmente são coletados de um corpus de texto ou fala.
 Usando prefixos numéricos latinos, um n -grama de tamanho 1 é referido como um "unigrama"; o tamanho 2 é um " bigrama " (ou um "digrama"); o tamanho 3 é um " trigrama ". Os números cardinais são às vezes usados, por exemplo, "quatro grama", "cinco grama" e assim por diante. Em biologia computacional, um polímero ou oligômero de tamanho conhecido é chamado k-mero, em vez de n-grama, com nomes específicos usando prefixos numéricos gregos, como "monômero", "dímero", "trímero", "tetrâmero", "pentamer".
 A Figura 1 mostra várias sequências de exemplo e as sequências de 1 grama, 2 gramas e 3 gramas correspondentes.
-Aqui estão outros exemplos; esses são 3 gramas e 4 gramas no nível da palavra (e contagens do número de vezes que apareceram) do corpus Google n-gram (em inglês).
 3-gramas
 ceramics collectables collectibles (55)
 ceramics collectables fine (130)
@@ -16,42 +15,10 @@ serve as the indication (72)
 serve as the indicator (120)
 Um modelo de n-grama modela sequências, principalmente linguagens naturais, usando as propriedades estatísticas de n-gramas.
 Essa ideia pode ser rastreada até um experimento do trabalho de Claude Shannon em teoria da informação. Shannon fez a pergunta: dada uma sequência de letras (por exemplo, a sequência "para ex"), qual é a probabilidade da próxima letra? A partir dos dados de treinamento, pode-se derivar uma distribuição de probabilidade para a próxima letra, dado um histórico de tamanho
-n
 : a 0,4, b 0,00001, c 0, ....; onde as probabilidades de todas as "próximas letras" possíveis somam 1,0.
 Mais concisamente, um modelo n -gram prevê
-x
-i
 baseado em
-x
-i
-(
-n
-1
-)
-,
-...
-,
-x
-i
-1
 . Em termos de probabilidade, isso é
-P
-(
-x
-i
-x
-i
-(
-n
-1
-)
-,
-...
-,
-x
-i
-1
-)
 Observe que em um modelo de linguagem simples de n- grama , a probabilidade de uma palavra, condicionada a algum número de palavras anteriores (uma palavra em um modelo de bigrama, duas palavras em um modelo de trigrama, etc.) pode ser descrita como seguindo uma distribuição categórica (muitas vezes chamada de forma imprecisa de "distribuição multinomial").
 Na prática, as distribuições de probabilidade são suavizadas atribuindo probabilidades diferentes de zero a palavras não vistas ou n-gramas; veja as técnicas de suavização .
 Modelos de n -gram são amplamente usados no processamento estatístico de linguagem natural. No reconhecimento de fala, os fonemas e sequências de fonemas são modelados usando uma distribuição de n-grama. Para análise, as palavras são modeladas de forma que cada n-grama seja composto por n palavras. Para a identificação da linguagem, sequências de caracteres / grafemas (ppor exemplo, letras do alfabeto) são modeladas para diferentes idiomas. Para sequências de caracteres, os trigramas que podem ser gerados a partir de "bom dia" são "bom", "om ", "m d", " di" e "dia", contando o caractere de espaço como um grama (às vezes o início e o fim de um texto são modelados explicitamente, adicionando-se" b "," bo ","ia "e" a "). Para sequências de palavras, os trigramas que podem ser gerados a partir de "o cachorro cheirava a gambá" são " o cachorro", "o cachorro cheirava", "cachorro cheirava a", "cheirava a gambá", e "a gambá ".
@@ -60,8 +27,6 @@ Outra crítica que foi feita é que os modelos de linguagem de Markov, incluindo
 Na prática, modelos de n -grama têm se mostrado extremamente eficazes na modelagem de dados de linguagem, que é um componente central em aplicativos modernos de linguagem estatística.
 Um problema ao usar modelos de linguagem n-gram são palavras fora do vocabulário (do ingles, OOV, out-of-vocabulary). Eles são encontrados em linguística computacional e processamento de linguagem natural quando os textos de entrada incluem palavras que não estavam presentes em um dicionário ou banco de dados do sistema durante sua preparação. Por padrão, quando um modelo de idioma é estimado, todo o vocabulário observado é usado. Em alguns casos, pode ser necessário estimar o modelo de linguagem com um vocabulário fixo específico. Nesse cenário, os n-gramas no corpus que contêm uma palavra fora do vocabulário são ignorados. As probabilidades de n-gram são suavizadas em todas as palavras do vocabulário, mesmo que não tenham sido observadas.
 n-gramas também podem ser usados para correspondência aproximada eficiente. Ao converter uma sequência de itens em um conjunto de n-gramas, ela pode ser embutida em um espaço vetorial, permitindo assim que a sequência seja comparada a outras sequências de maneira eficiente. Por exemplo, se convertermos strings com apenas letras do alfabeto inglês em um único caractere de 3 gramas, obteremos um espaço de
-26
-3
 dimensões (a primeira dimensão mede o número de ocorrências de "aaa", a segunda "aab" e assim por diante para todas as combinações possíveis de três letras). Usando essa representação, perdemos informações sobre a string. Por exemplo, ambas as strings "abc" e "bca" dão origem exatamente aos mesmos 2 gramas "bc" (embora "ab", "bc" não seja o mesmo que "bc", "ca" ). No entanto, sabemos empiricamente que se duas sequências de texto real têm uma representação vetorial semelhante (medida pela similaridade por cosseno), é provável que sejam semelhantes. Outras métricas também foram aplicadas a vetores de n -gramas com resultados variáveis, às vezes melhores. Por exemplo, os escores z já foram usados para comparar documentos examinando quantos desvios-padrão cada n -grama difere de sua ocorrência média em uma grande coleção, ou corpus de texto, de documentos (que formam o vetor de "fundo").
 Também é possível adotar uma abordagem em princípios para as estatísticas de n-gramas, modelando similaridade como a probabilidade de que duas strings tenham vindo da mesma fonte diretamente em termos de um problema na inferência bayesiana .
 Os n-gramas são usados em várias áreas da ciência da computação, linguística computacional e matemática aplicada.
@@ -74,32 +39,6 @@ melhorar o desempenho de recuperação na análise de sequência genética como 
 identificar o idioma de um texto, ou a espécie da qual uma pequena sequência de DNA foi retirada
 criptanálise
 Considere um n-grama onde as unidades são caracteres e um texto com t caracteres. O espaço que este n -gram requer é exponencial:
-n
-(
-t
-2
-(
-n
-1
-)
-)
-i
-1
-n
-1
-2
-i
-n
-,
-t
-N
-n
-2
-(
-t
-1
-)
-n
 Para escolher um valor para n em um modelo de n -grama, é necessário encontrar o trade-off correto entre a estabilidade da estimativa e sua adequação. Isso significa que o trigrama é uma escolha comum com grandes corpora de treinamento (milhões de palavras), enquanto um bigrama é frequentemente usado com os menores.
 Existem problemas de equilíbrio de peso entre gramas pouco frequentes (por exemplo, um nome próprio que aparace nos dados de treino) e gramas frequentes. Além disso, os itens não vistos nos dados de treinamento terão uma probabilidade de 0,0 caso não haja suavização. Para dados não vistos, mas plausíveis, de uma amostra, pode-se introduzir pseudocontas. As pseudocontas são geralmente motivadas por motivos bayesianos.
 Na prática, é necessário suavizar as distribuições de probabilidade atribuindo também probabilidades diferentes de zero a palavras ou n-gramas não- vistas. A razão é que para os modelos derivados diretamente do n -gram, contagens de freqüência têm problemas graves quando confrontado com qualquer n-grams que explicitamente não foram vistas antes - o problema da frequência zero. Vários métodos de suavização são usados, desde a suavização simples "adicionar um" (suavização de Laplace, atribuir uma contagem de 1 a n-gramas invisíveis) até modelos mais sofisticados, como modelos de desconto Good Turing . Alguns desses métodos são equivalentes a atribuir uma distribuição anterior às probabilidades dos n-gramas e usar a inferência Bayesiana para calcular as probabilidades posteriores de n-gramas resultantes.
@@ -124,10 +63,8 @@ Kernel string
 MinHash
 Extração de recursos
 Problema comum de substring mais longo
-Christopher D. Manning, Hinrich Schütze, Foundations of Statistical Natural Language Processing, MIT Press: 1999.ISBN 0-262-13360-1ISBN 0-262-13360-1 .
 White, Owen; Dunning, Ted; Sutton, Granger; Adams, Mark; Venter, J.Craig; Fields, Chris (1993). «A quality control algorithm for dna sequencing projects». Nucleic Acids Research. 21: 3829 3838. PMC 309901. PMID 8367301. doi:10.1093/nar/21.16.3829
 Frederick J. Damerau, Markov Models and Linguistic Theory . Mouton. Haia, 1971.
-Figueroa, Alejandro; Atkinson, John (2012). «Contextual Language Models For Ranking Answers To Natural Language Definition Questions». Computational Intelligence. 28: 528 548. doi:10.1111/j.1467-8640.2012.00426.x
 Brocardo, Marcelo Luiz; Issa Traore; Sherif Saad; Isaac Woungang (2013). Authorship Verification for Short Messages Using Stylometry (PDF). IEEE Intl. Conference on Computer, Information and Telecommunication Systems (CITS)
 Google Book do Google n -gram espectador e banco de dados -grams Web n (Setembro de 2006)
 Serviço web n -grams da Microsoft

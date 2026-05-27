@@ -28,24 +28,6 @@ Daqui, o sistema de mineração de dados irá extrair, entre outras coisas, a ex
 A maioria dos usuários que adquiriram pão e leite desnatado
 também adquiriram manteiga ou margarina.
 De posse desta regra, fica fácil imaginar uma disposição nas prateleiras do supermercado para incentivar ainda mais este hábito. Em linguagem mais lógica, pode-se dizer que pão e leite estão associados (implicam) na aquisição de manteiga, isto é,
-P
-a
-o
-,
-L
-e
-i
-t
-e
-M
-a
-n
-t
-e
-i
-g
-a
-.
 Utilizando as técnicas da mineração de dados, um programa de obtenção de conhecimento depois de examinar milhares de alunos forneceu a seguinte regra: se o candidato é do sexo feminino, trabalha e teve aprovação com boas notas no vestibular, então não efetivava a matrícula. Estranho, ninguém havia pensado nisso. Mas uma reflexão justifica a regra oferecida pelo programa: de acordo com os costumes do Rio de Janeiro, uma mulher em idade de vestibular, se trabalha é porque precisa, e neste caso deve ter feito inscrição para ingressar na universidade pública gratuita. Se teve boas notas provavelmente foi aprovada na universidade pública onde efetivará matrícula. Claro que há exceções: pessoas que moram em frente à PUC, pessoas mais velhas, de alto poder aquisitivo e que voltaram a estudar por outras razões que ter uma profissão, etc.. Mas a grande maioria obedece à regra anunciada.
 Longe de parecer coincidência, os dados sugerem que servidores com maior poder aquisitivo se envolvam com relações extra-conjugais, resultando geralmente em desfazimento do casamento. Ou que com poder aquisitivo individual mais elevado não haveria razão para manter um casamento indesejado.
 Existem muitas ferramentas de software para o desenvolvimento de modelos de mineração de dados, tanto livres quanto comerciais, tais como:

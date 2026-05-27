@@ -1,1430 +1,225 @@
 É uma aplicação eficiente da regra da cadeia em redes neurais. A retropropagação calcula o gradiente de uma função de perda em relação aos pesos da rede para um único exemplo de entrada-saída, e o faz de forma eficiente, calculando o gradiente uma camada de cada vez, iterando para trás a partir da última camada para evitar cálculos redundantes de termos intermediários na regra da cadeia; isso pode ser derivado por meio da programação dinâmica.
 A retropropagação teve múltiplas descobertas e descobertas parciais, com uma história e terminologia emaranhadas. Veja a seção de história para mais detalhes. Alguns outros nomes para a técnica incluem "modo reverso da diferenciação automática" ou "acumulação reversa".
 A retropropagação calcula o gradiente no espaço de pesos de uma rede neural feedforward (de alimentação direta), em relação a uma função de perda. Denota-se:
-x
 : entrada (vetor de características)
-y
 : saída alvo
 Para classificação, a saída será um vetor de probabilidades de classe (por exemplo,
-(
-0.1
-,
-0.7
-,
-0.2
-)
 , e a saída alvo é uma classe específica, codificada pela one-hot/variável dummy (por exemplo,
-(
-0
-,
-1
-,
-0
-)
-).
-C
 : função de perda ou "função de custo"
 Para classificação, esta é geralmente a entropia cruzada (XC, perda logarítmica), enquanto para regressão é geralmente a perda de erro quadrático (SEL).
-L
 : o número de camadas
-W
-l
-(
-w
-j
-k
-l
-)
 : os pesos entre a camada
-l
-1
-e
-l
 , onde
-w
-j
-k
-l
 é o peso entre o
-k
 -ésimo nó na camada
-l
-1
 e o
-j
 -ésimo nó na camada
-l
-f
-l
 : funções de ativação na camada
-l
-a
-j
-l
 : ativação do
-j
 -ésimo nó na camada
-l
-.
 A rede em geral é uma combinação de composição de funções e multiplicação de matrizes:
-g
-(
-x
-)
-:
-f
-L
-(
-W
-L
-f
-L
-1
-(
-W
-L
-1
-f
-1
-(
-W
-1
-x
-)
-)
-)
 Para um conjunto de treinamento, haverá um conjunto de pares de entrada-saída,
-(
-x
-i
-,
-y
-i
-)
 . Para cada par de entrada-saída
-(
-x
-i
-,
-y
-i
-)
 no conjunto de treinamento, a perda do modelo naquele par é o custo da diferença entre a saída prevista
-g
-(
-x
-i
-)
 e a saída alvo
-y
-i
-:
-C
-(
-y
-i
-,
-g
-(
-x
-i
-)
-)
 Note a distinção: durante a avaliação do modelo, os pesos são fixos enquanto as entradas variam (e a saída alvo pode ser desconhecida), e a rede termina com a camada de saída (não inclui a função de perda). Durante o treinamento do modelo, o par de entrada-saída é fixo enquanto os pesos variam, e a rede termina com a função de perda.
 A retropropagação calcula o gradiente para um par de entrada-saída fixo
-(
-x
-i
-,
-y
-i
-)
 , onde os pesos
-w
-j
-k
-l
 podem variar. Cada componente individual do gradiente,
-C
-/
-w
-j
-k
-l
-,
 pode ser calculado pela regra da cadeia; mas fazer isso separadamente para cada peso é ineficiente. A retropropagação calcula o gradiente de forma eficiente evitando cálculos duplicados e não calculando valores intermediários desnecessários, calculando o gradiente de cada camada especificamente o gradiente da entrada ponderada de cada camada, denotado por
-l
 de trás para frente.
 Informalmente, o ponto-chave é que, como a única maneira de um peso em
-W
-l
 afetar a perda é através do seu efeito na próxima camada, e o faz linearmente,
-l
 são os únicos dados de que você precisa para calcular os gradientes dos pesos na camada
-l
 , e então os gradientes dos pesos da camada anterior podem ser calculados por
-l
-1
 e repetidos recursivamente. Isso evita a ineficiência de duas maneiras. Primeiro, evita a duplicação porque, ao calcular o gradiente na camada
-l
 , é desnecessário recalcular todas as derivadas nas camadas posteriores
-l
-1
-,
-l
-2
-,
-...
 a cada vez. Segundo, evita cálculos intermediários desnecessários, porque em cada estágio calcula diretamente o gradiente dos pesos em relação à saída final (a perda), em vez de calcular desnecessariamente as derivadas dos valores das camadas ocultas em relação às mudanças nos pesos
-a
-j
-l
-/
-w
-j
-k
-l
-.
 A retropropagação pode ser expressa para redes feedforward simples em termos de multiplicação de matrizes, ou mais geralmente em termos do grafo adjunto.
 Dado um par de entrada-saída
-(
-x
-,
-y
-)
 , a perda é:
-C
-(
-y
-,
-f
-L
-(
-W
-L
-f
-L
-1
-(
-W
-L
-1
-f
-2
-(
-W
-2
-f
-1
-(
-W
-1
-x
-)
-)
-)
-)
-)
 Para calcular isso, começa-se com a entrada
-x
 e trabalha-se para a frente; denote a entrada ponderada de cada camada oculta como
-z
-l
 e a saída da camada oculta
-l
 como a ativação
-a
-l
 . Para a retropropagação, a ativação
-a
-l
 , bem como as derivadas
-(
-f
-l
-)
 (avaliadas em
-z
-l
 ), devem ser armazenadas em cache para uso durante a passagem para trás.
 A derivada da perda em termos das entradas é dada pela regra da cadeia; note que cada termo é uma derivada total, avaliada no valor da rede (em cada nó) na entrada
-x
-:
-d
-C
-d
-a
-L
-d
-a
-L
-d
-z
-L
-d
-z
-L
-d
-a
-L
-1
-d
-a
-L
-1
-d
-z
-L
-1
-d
-z
-L
-1
-d
-a
-L
-2
-...
-d
-a
-1
-d
-z
-1
-z
-1
-x
-,
 onde
-d
-a
-L
-d
-z
-L
 é uma matriz diagonal.
 Esses termos são: a derivada da função de perda; as derivadas das funções de ativação; e as matrizes de pesos:
-d
-C
-d
-a
-L
-(
-f
-L
-)
-W
-L
-(
-f
-L
-1
-)
-W
-L
-1
-(
-f
-1
-)
-W
-1
-.
 O gradiente
 é a transposta da derivada da saída em termos da entrada, de modo que as matrizes são transpostas e a ordem de multiplicação é invertida, mas as entradas são as mesmas:
-x
-C
-(
-W
-1
-)
-T
-(
-f
-1
-)
-...
-(
-W
-L
-1
-)
-T
-(
-f
-L
-1
-)
-(
-W
-L
-)
-T
-(
-f
-L
-)
-a
-L
-C
-.
 A retropropagação consiste então essencialmente em avaliar essa expressão da direita para a esquerda (equivalentemente, multiplicar a expressão anterior para a derivada da esquerda para a direita), calculando o gradiente em cada camada ao longo do caminho; há uma etapa adicional, porque o gradiente dos pesos não é apenas uma subexpressão: há uma multiplicação extra.
 Introduzindo a quantidade auxiliar
-l
 para os produtos parciais (multiplicando da direita para a esquerda), interpretada como o "erro no nível
-l
 " e definida como o gradiente dos valores de entrada no nível
-l
-:
-l
-:
-(
-f
-l
-)
-(
-W
-l
-1
-)
-T
-(
-f
-l
-1
-)
-(
-W
-L
-1
-)
-T
-(
-f
-L
-1
-)
-(
-W
-L
-)
-T
-(
-f
-L
-)
-a
-L
-C
-.
 Note que
-l
 é um vetor, de comprimento igual ao número de nós no nível
-l
 ; cada componente é interpretado como o "custo atribuível a (ao valor de) esse nó".
 O gradiente dos pesos na camada
-l
 é então:
-W
-l
-C
-l
-(
-a
-l
-1
-)
-T
-.
 O fator de
-a
-l
-1
 deve-se ao fato de que os pesos
-W
-l
 entre o nível
-l
-1
-e
-l
 afetam o nível
-l
 proporcionalmente às entradas (ativações): as entradas são fixas, os pesos variam.
-O
-l
 pode ser facilmente calculado recursivamente, indo da direita para a esquerda, como:
-l
-1
-:
-(
-f
-l
-1
-)
-(
-W
-l
-)
-T
-l
-.
 Os gradientes dos pesos podem, portanto, ser calculados usando algumas multiplicações de matrizes para cada nível; isto é a retropropagação.
 Comparado a computar ingenuamente para a frente (usando o
-l
 para ilustração):
-1
-(
-f
-1
-)
-(
-W
-2
-)
-T
-(
-f
-2
-)
-(
-W
-L
-1
-)
-T
-(
-f
-L
-1
-)
-(
-W
-L
-)
-T
-(
-f
-L
-)
-a
-L
-C
-2
-(
-f
-2
-)
-(
-W
-L
-1
-)
-T
-(
-f
-L
-1
-)
-(
-W
-L
-)
-T
-(
-f
-L
-)
-a
-L
-C
-L
-1
-(
-f
-L
-1
-)
-(
-W
-L
-)
-T
-(
-f
-L
-)
-a
-L
-C
-L
-(
-f
-L
-)
-a
-L
-C
-,
 Existem duas diferenças principais na retropropagação:
 Calcular
-l
-1
 em termos de
-l
 evita a óbvia multiplicação duplicada das camadas
-l
 e posteriores.
 Multiplicar começando de
-a
-L
-C
 propagando o erro para trás significa que cada passo simplesmente multiplica um vetor (
-l
 ) pelas matrizes de pesos
-(
-W
-l
-)
-T
 e derivadas das ativações
-(
-f
-l
-1
-)
 . Em contrapartida, multiplicar para a frente, começando das alterações numa camada anterior, significa que cada multiplicação multiplica uma matriz por uma matriz. Isso é muito mais custoso e corresponde a rastrear cada caminho possível de uma mudança em uma camada
-l
 para a frente até as mudanças na camada
-l
-2
 (para multiplicar
-W
-l
-1
 por
-W
-l
-2
 , com multiplicações adicionais para as derivadas das ativações), o que calcula desnecessariamente as quantidades intermediárias de como as mudanças de peso afetam os valores dos nós ocultos.
-(
-x
-1
-,
-x
-2
-,
-t
-)
 onde
-x
-1
-e
-x
-2
 são as entradas para a rede e t é a saída correta (a saída que a rede deve produzir dadas essas entradas, quando tiver sido treinada). A rede inicial, dados
-x
-1
-e
-x
-2
 , calculará uma saída y que provavelmente difere de t (dados os pesos aleatórios). Uma função de perda
-L
-(
-t
-,
-y
-)
 é usada para medir a discrepância entre a saída alvo t e a saída calculada y. Para problemas de análise de regressão, o erro quadrático pode ser usado como uma função de perda; para classificação, a entropia cruzada categórica pode ser usada.
 Como exemplo, considere um problema de regressão usando o erro quadrático como perda:
-L
-(
-t
-,
-y
-)
-(
-t
-y
-)
-2
-E
-,
 onde E é a discrepância ou erro.
 Considere a rede em um único caso de treinamento:
-(
-1
-,
-1
-,
-0
-)
 . Assim, as entradas
-x
-1
-e
-x
-2
 são 1 e 1, respectivamente, e a saída correta, t, é 0. Agora, se a relação for plotada entre a saída da rede y no eixo horizontal e o erro E no eixo vertical, o resultado é uma parábola. O mínimo da parábola corresponde à saída y que minimiza o erro E. Para um único caso de treinamento, o mínimo também toca o eixo horizontal, o que significa que o erro será zero e a rede pode produzir uma saída y que corresponda exatamente à saída alvo t. Portanto, o problema de mapeamento de entradas para saídas pode ser reduzido a um problema de otimização de encontrar uma função que produza o erro mínimo.
-y
-x
-1
-w
-1
-x
-2
-w
-2
-,
 onde
-w
-1
-e
-w
-2
 Neste exemplo, ao injetar os dados de treinamento
-(
-1
-,
-1
-,
-0
-)
 , a função de perda torna-se
-E
-(
-t
-y
-)
-2
-y
-2
-(
-x
-1
-w
-1
-x
-2
-w
-2
-)
-2
-(
-w
-1
-w
-2
-)
-2
-.
 Então, a função de perda
-E
 assume a forma de um cilindro parabólico com sua base direcionada ao longo de
-w
-1
-w
-2
 . Como todos os conjuntos de pesos que satisfazem
-w
-1
-w
-2
 Um algoritmo comumente usado para encontrar o conjunto de pesos que minimiza o erro é a descida de gradiente. Pela retropropagação, a direção de descida mais íngreme é calculada a partir da função de perda em relação aos pesos sinápticos atuais. Então, os pesos podem ser modificados ao longo da direção de descida mais íngreme, e o erro é minimizado de forma eficiente.
 O método de descida de gradiente envolve o cálculo da derivada da função de perda em relação aos pesos da rede. Isto é normalmente feito usando a retropropagação. Assumindo um neurônio de saída, a função de erro quadrático é
-E
-L
-(
-t
-,
-y
-)
 onde
-L
 é a perda para a saída
-y
 e o valor alvo
-t
-,
-t
 é a saída alvo para uma amostra de treinamento, e
-y
 é a saída real do neurônio de saída.
 Nesta seção, a ordem dos índices de peso é invertida em relação à seção anterior:
-w
-i
-j
 é o peso da
-i
 -ésima para a
-j
 -ésima unidade. Para cada neurônio
-j
 , sua saída
-o
-j
 é definida como
-o
-j
-(
 net
-j
-)
-(
-k
-1
-n
-w
-k
-j
-x
-k
-)
-,
 onde a função de ativação
 é não linear e diferenciável sobre a região de ativação (a ReLU não é diferenciável em um ponto). Uma função de ativação historicamente usada é a função logística:
-(
-z
-)
-1
-1
-e
-z
 que tem uma derivada conveniente de:
-d
-d
-z
-(
-z
-)
-(
-1
-(
-z
-)
-)
 A entrada
 net
-j
 para um neurônio é a soma ponderada das saídas
-o
-k
 dos neurônios anteriores. Se o neurônio estiver na primeira camada após a camada de entrada, as
-o
-k
 da camada de entrada são simplesmente as entradas
-x
-k
 para a rede. O número de unidades de entrada para o neurônio é
-n
 . A variável
-w
-k
-j
 denota o peso entre o neurônio
-k
 da camada anterior e o neurônio
-j
 da camada atual.
 O cálculo da derivada parcial do erro em relação a um peso
-w
-i
-j
 é feito usando a regra da cadeia duas vezes:
 No último fator do lado direito da equação acima, apenas um termo na soma
 net
-j
-w
-i
-j
 , de modo que
 Se o neurônio estiver na primeira camada após a camada de entrada,
-o
-i
 é apenas
-x
-i
-.
 A derivada da saída do neurônio
-j
 em relação à sua entrada é simplesmente a derivada parcial da função de ativação:
 que para a função de ativação logística
-o
-j
 net
-j
 net
-j
-(
 net
-j
-)
-(
 net
-j
-)
-(
-1
-(
 net
-j
-)
-)
-o
-j
-(
-1
-o
-j
-)
 Esta é a razão pela qual a retropropagação exige que a função de ativação seja diferenciável. (No entanto, a função de ativação ReLU, que é não diferenciável em 0, tornou-se bastante popular, por exemplo, na AlexNet)
 O primeiro fator é simples de avaliar se o neurônio estiver na camada de saída, porque então
-o
-j
-y
-e
 Se a metade do erro quadrático for usada como função de perda, podemos reescrevê-la como
-E
-o
-j
-E
-y
-y
-1
-2
-(
-t
-y
-)
-2
-y
-t
 No entanto, se
-j
 estiver em uma camada interna arbitrária da rede, encontrar a derivada de
-E
 em relação a
-o
-j
 é menos óbvio.
 Considerando
-E
 como uma função cujas entradas são todos os neurônios
-L
-u
-,
-v
-,
-...
-,
-w
 que recebem entrada do neurônio
-j
-,
-E
-(
-o
-j
-)
-o
-j
-E
-(
-n
-e
-t
-u
-,
 net
-v
-,
-...
-,
-n
-e
-t
-w
-)
-o
-j
 e calculando a derivada total em relação a
-o
-j
 , obtém-se uma expressão recursiva para a derivada:
 Portanto, a derivada em relação a
-o
-j
 pode ser calculada se todas as derivadas em relação às saídas
-o
-l
 da próxima camada aquelas mais próximas do neurônio de saída forem conhecidas. [Nota: se algum dos neurônios no conjunto
-L
 não estivesse conectado ao neurônio
-j
-w
-i
-j
 e a derivada parcial correspondente sob o somatório desapareceria para 0.]
 Substituindo a Eq. 2, Eq. 3, Eq. 4 e a Eq. 5 na Eq. 1, obtemos:
-E
-w
-i
-j
-E
-o
-j
-o
-j
 net
-j
 net
-j
-w
-i
-j
-E
-o
-j
-o
-j
 net
-j
-o
-i
-E
-w
-i
-j
-o
-i
-j
 com
-j
-E
-o
-j
-o
-j
 net
-j
-L
-(
-t
-,
-o
-j
-)
-o
-j
-d
-(
 net
-j
-)
-d
 net
-j
 se
-j
 for um neurônio de saída,
-(
-l
-L
-w
-j
-l
-l
-)
-d
-(
 net
-j
-)
-d
 net
-j
 se
-j
 for um neurônio interno.
 se
 for a função logística e o erro for o erro quadrático:
-j
-E
-o
-j
-o
-j
 net
-j
-(
-o
-j
-t
-j
-)
-o
-j
-(
-1
-o
-j
-)
 se
-j
 for um neurônio de saída,
-(
-l
-L
-w
-j
-l
-l
-)
-o
-j
-(
-1
-o
-j
-)
 se
-j
 for um neurônio interno.
 Para atualizar o peso
-w
-i
-j
-0
 . A mudança no peso precisa refletir o impacto sobre
-E
 de um aumento ou diminuição em
-w
-i
-j
 . Se
-E
-w
-i
-j
-0
 , um aumento em
-w
-i
-j
 aumenta
-E
 ; inversamente, se
-E
-w
-i
-j
-0
 , um aumento em
-w
-i
-j
 diminui
-E
 . O novo
-w
-i
-j
-1
 , garante que
-w
-i
-j
 mude de forma a sempre diminuir
-E
 . Em outras palavras, na equação imediatamente abaixo,
-E
-w
-i
-j
 sempre altera
-w
-i
-j
 de tal modo que
-E
 seja diminuído:
-w
-i
-j
-E
-w
-i
-j
-o
-i
-j
 Usando uma matriz hessiana de derivadas de segunda ordem da função de erro, o algoritmo de Levenberg-Marquardt frequentemente converge mais rápido do que a descida de gradiente de primeira ordem, especialmente quando a topologia da função de erro é complicada. Ele também pode encontrar soluções em contagens menores de nós para as quais outros métodos poderiam não convergir. A matriz hessiana pode ser aproximada pela matriz de informação de Fisher.
 Como exemplo, considere uma rede feedforward simples. Na
-l
 -ésima camada, temos
-x
-i
-(
-l
-)
-,
-a
-i
-(
-l
-)
-f
-(
-x
-i
-(
-l
-)
-)
-,
-x
-i
-(
-l
-1
-)
-j
-W
-i
-j
-a
-j
-(
-l
-)
 onde
-x
 são as pré-ativações,
-a
 são as ativações e
-W
 é a matriz de pesos. Dada uma função de perda
-L
 , a retropropagação de primeira ordem estabelece que
-L
-a
-j
-(
-l
-)
-j
-W
-i
-j
-L
-x
-i
-(
-l
-1
-)
-,
-L
-x
-j
-(
-l
-)
-f
-(
-x
-j
-(
-l
-)
-)
-L
-a
-j
-(
-l
-)
 e a retropropagação de segunda ordem estabelece que
-2
-L
-a
-j
-1
-(
-l
-)
-a
-j
-2
-(
-l
-)
-j
-1
-j
-2
-W
-i
-1
-j
-1
-W
-i
-2
-j
-2
-2
-L
-x
-i
-1
-(
-l
-1
-)
-x
-i
-2
-(
-l
-1
-)
-,
-2
-L
-x
-j
-1
-(
-l
-)
-x
-j
-2
-(
-l
-)
-f
-(
-x
-j
-1
-(
-l
-)
-)
-f
-(
-x
-j
-2
-(
-l
-)
-)
-2
-L
-a
-j
-1
-(
-l
-)
-a
-j
-2
-(
-l
-)
-j
-1
-j
-2
-f
-(
-x
-j
-1
-(
-l
-)
-)
-L
-a
-j
-1
-(
-l
-)
 onde
 é o símbolo delta de Dirac (neste contexto discreto, o Delta de Kronecker).
 Derivadas de ordem arbitrária em grafos computacionais arbitrários podem ser calculadas com a retropropagação, mas com expressões mais complexas para ordens superiores.
 A função de perda é uma função que mapeia valores de uma ou mais variáveis para um número real representando intuitivamente algum "custo" associado a esses valores. Para a retropropagação, a função de perda calcula a diferença entre a saída da rede e a sua saída esperada, depois que um exemplo de treinamento se propagou pela rede.
 A expressão matemática da função de perda deve satisfazer duas condições para que possa ser usada na retropropagação. O primeiro é que ela pode ser escrita como uma média
-E
-1
-n
-x
-E
-x
 sobre as funções de erro
-E
-x
 , para
-n
 exemplos de treinamento individuais,
-x
 . A razão para este pressuposto é que o algoritmo de retropropagação calcula o gradiente da função de erro para um único exemplo de treinamento, o qual precisa ser generalizado para a função de erro geral. O segundo pressuposto é que ela pode ser escrita como uma função das saídas da rede neural.
 Sejam
-y
-,
-y
 vetores em
-R
-n
-.
 Selecione uma função de erro
-E
-(
-y
-,
-y
-)
 que meça a diferença entre duas saídas. A escolha padrão é o quadrado da distância euclidiana entre os vetores
-y
-e
-y
-:
-E
-(
-y
-,
-y
-)
-1
-2
-y
-y
-2
 A função de erro sobre
-n
 exemplos de treinamento pode então ser escrita como uma média das perdas sobre exemplos individuais:
-E
-1
-2
-n
-x
-(
-y
-(
-x
-)
-y
-(
-x
-)
-)
-2
 A descida de gradiente com retropropagação não tem garantia de encontrar o mínimo global da função de erro, mas apenas um mínimo local; além disso, tem dificuldade em cruzar platôs na paisagem da função de erro. Este problema, causado pela não convexidade das funções de erro nas redes neurais, foi por muito tempo considerado uma grande desvantagem, mas Yann LeCun et al. argumentam que, em muitos problemas práticos, não é.
 A retropropagação requer que as derivadas das funções de ativação sejam conhecidas no momento do projeto da rede.
 A retropropagação foi derivada repetidamente, pois é essencialmente uma aplicação eficiente da regra da cadeia (escrita pela primeira vez por Gottfried Wilhelm Leibniz em 1676) para as redes neurais.
@@ -1433,17 +228,14 @@ Precursores da retropropagação apareceram na teoria do controle ótimo desde a
 A retropropagação moderna foi publicada pela primeira vez por Seppo Linnainmaa como "modo reverso da diferenciação automática" (1970) para redes conectadas discretas de funções aninhadas diferenciáveis.
 Em 1982, Paul Werbos aplicou a retropropagação a MLPs da maneira que se tornou padrão. Werbos descreveu como desenvolveu a retropropagação em uma entrevista. Em 1971, durante o seu doutorado, desenvolveu a retropropagação para matematizar o "fluxo de energia psíquica" de Freud. Ele enfrentou repetidas dificuldades em publicar o trabalho, conseguindo apenas em 1981. Ele também afirmou que "a primeira aplicação prática da retropropagação foi para estimar um modelo dinâmico para prever o nacionalismo e as comunicações sociais em 1974" por ele.
 Em 1985, o método também foi descrito por David Parker. Yann LeCun propôs uma forma alternativa de retropropagação para redes neurais na sua tese de doutorado em 1987.
-A descida de gradiente demorou bastante tempo a alcançar aceitação. Algumas objeções iniciais foram: não havia garantias de que a descida de gradiente pudesse alcançar um mínimo global, apenas um mínimo local; os neurônios eram "conhecidos" pelos fisiologistas por produzirem sinais discretos (0/1), e não contínuos, e com sinais discretos não há gradiente a ser calculado. Veja a entrevista com Geoffrey Hinton, que recebeu o Prémio Nobel de Física de 2024 pelas suas contribuições na área.
 Várias aplicações no treinamento de redes neurais através da retropropagação contribuíram para a sua aceitação, por vezes alcançando popularidade fora dos círculos de pesquisa.
 Em 1989, Dean A. Pomerleau publicou o ALVINN, uma rede neural treinada para conduzir autonomamente usando a retropropagação.
 A LeNet foi publicada em 1989 para reconhecer códigos postais escritos à mão.
 Em 1993, Eric Wan venceu um concurso internacional de reconhecimento de padrões através da retropropagação.
 Sugeriu-se que a retropropagação de erros explica os componentes do potencial relacionado a eventos (ERP) do cérebro humano, como o N400 e o P600.
 Em 2023, um algoritmo de retropropagação foi implementado num processador fotônico por uma equipa da Universidade de Stanford.
-Goodfellow, Ian; Bengio, Yoshua; Courville, Aaron (2016). «Back-Propagation and Other Differentiation Algorithms». Deep Learning. [S.l.]: MIT Press. pp. 200 220. ISBN 978-0-262-03561-3
 Nielsen, Michael A. (2015). «How the backpropagation algorithm works». Neural Networks and Deep Learning. [S.l.]: Determination Press
 McCaffrey, James (outubro de 2012). «Neural Network Back-Propagation for Programmers». MSDN Magazine. Cópia arquivada em 21 de agosto de 2022
-Rojas, Raúl (1996). «The Backpropagation Algorithm» (PDF). Neural Networks: A Systematic Introduction. Berlim: Springer. ISBN 3-540-60505-3
 Tutorial de redes neurais com backpropagation na Wikiversity
 Bernacki, Mariusz; W odarczyk, Przemys aw (2004). «Principles of training multi-layer neural network using backpropagation»
 Karpathy, Andrej (2016). «Lecture 4: Backpropagation, Neural Networks 1». CS231n. Stanford University. Cópia arquivada em 17 de outubro de 2025 via YouTube

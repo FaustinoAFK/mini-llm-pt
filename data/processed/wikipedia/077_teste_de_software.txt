@@ -44,7 +44,6 @@ Um script de teste é a combinação de um caso de teste, um procedimento de tes
 A especificação de teste é chamada plano de teste.
 KOSCIANSKI, A., Soares (2006). M. S. Qualidade de Software. [S.l.]: Novatec
 PRESSMAN, R. S. (2002). Engenharia de Software. [S.l.]: McGraw Hill
-MYERS, Glenford J. (2004). The Art of Software Testing 2 ed. Nova Jérsei: John Wiley Sons. ISBN 0-471-46912-2
 ARAYA, MARCIO SAN (Teacher FAC SENAC)
 Anexo:Lista de instituições pela qualidade
 Qualidade de software

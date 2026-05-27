@@ -1,12 +1,5 @@
 Em ciência da computação, programação funcional é um padrão de programação que trata a computação como uma avaliação de funções matemáticas, evitando estados ou dados mutáveis. Ela enfatiza a aplicação de funções, em contraste da programação imperativa (que enfatiza mudanças no estado do programa). Enfatizando as expressões ao invés de comandos, as expressões são utilizados para cálculo de valores com dados imutáveis.
 Uma função, neste sentido, pode ter ou não ter parâmetros (valores de entrada da função) e um simples valor de retorno (resultado da função). A definição de uma função descreve como a função será avaliada em termos de outras funções. Por exemplo, a função
-f
-(
-x
-)
-x
-2
-2
 é definida em termos de funções de exponenciação e adição. Do mesmo modo, a linguagem deve oferecer funções básicas que não requerem definições adicionais.
 Linguagens de programação funcionais, especialmente as puramente funcionais, têm sido mais usadas academicamente que no desenvolvimento comercial de software. Entretanto, algumas linguagens notáveis usadas na indústria e no comércio incluem Erlang (aplicações concorrentes), R (estatística), OCaml (quantitative trading), Mathematica (matemática simbólica) J, K (análise financeira) e XSLT. Importantes influências na programação funcional foram o cálculo lambda, as linguagens de programação APL e Lisp, e mais recentemente ML, Haskell, OCaml, F e Elixir.
 O cálculo lambda, desenvolvido na década de 1930 por Alonzo Church, é um sistema formal de computação construído a partir da aplicação de funções. Em 1937, Alan Turing provou que o cálculo lambda e as máquinas de Turing são modelos de computação equivalentes, mostrando que o cálculo lambda é Turing completo. O cálculo lambda forma a base de todas as linguagens de programação funcionais. Uma formulação teórica equivalente, a lógica combinatória, foi desenvolvida por Moses Schönfinkel e Haskell Curry nas décadas de 1920 e 1930.
@@ -16,13 +9,7 @@ Na década de 1970, Guy L. Steele e Gerald Jay Sussman desenvolveram a linguagem
 Mais recentemente, tem encontrado uso em nichos como o CAD paramétrico na linguagem OpenSCAD, construída sobre o framework CGAL, embora a sua restrição à reatribuição de valores (todos os valores são tratados como constantes) tenha gerado confusão entre os utilizadores que não estão familiarizados com a programação funcional como conceito.
 A programação funcional continua a ser utilizada em ambientes comerciais.
 As funções de ordem superior são funções que podem receber outras funções como argumentos ou retorná-las como resultados. No cálculo, um exemplo de uma função de ordem superior é o operador diferencial
-d
-/
-d
-x
 , que retorna a derivada de uma função
-f
-.
 As funções de ordem superior estão intimamente relacionadas com as funções de primeira classe, uma vez que tanto as funções de ordem superior como as funções de primeira classe permitem funções como argumentos e resultados de outras funções. A distinção entre as duas é sutil: "ordem superior" descreve um conceito matemático de funções que operam sobre outras funções, enquanto "primeira classe" é um termo da ciência da computação para entidades de linguagem de programação que não têm restrições quanto ao seu uso (assim, funções de primeira classe podem aparecer em qualquer lugar do programa onde outras entidades de primeira classe, como números, podem, incluindo como argumentos para outras funções e como os seus valores de retorno).
 As funções de ordem superior permitem a aplicação parcial ou o currying, uma técnica que aplica uma função aos seus argumentos um de cada vez, com cada aplicação retornando uma nova função que aceita o argumento seguinte. Isto permite que um programador expresse de forma sucinta, por exemplo, a função sucessora como o operador de adição aplicado parcialmente ao número natural um.
 As funções puras (ou expressões) não têm efeitos colaterais (na memória ou I/O). Isto significa que as funções puras têm várias propriedades úteis, muitas das quais podem ser usadas para otimizar o código:
@@ -37,8 +24,6 @@ As linguagens funcionais podem ser categorizadas por utilizarem a avaliação es
 falha sob a avaliação estrita devido à divisão por zero no terceiro elemento da lista. Sob a avaliação preguiçosa, a função de comprimento (length) retorna o valor 4 (ou seja, o número de itens na lista), uma vez que avaliá-la não tenta avaliar os termos que compõem a lista. Resumindo, a avaliação estrita avalia sempre totalmente os argumentos da função antes de invocar a função. A avaliação preguiçosa não avalia os argumentos da função a menos que os seus valores sejam necessários para avaliar a própria chamada da função.
 A estratégia de implementação habitual para a avaliação preguiçosa em linguagens funcionais é a redução de grafos. A avaliação preguiçosa é usada por defeito em várias linguagens funcionais puras, incluindo Miranda, Clean e Haskell.
 Os programas funcionais não têm declarações de atribuição, isto é, o valor de uma variável num programa funcional nunca muda depois de definido. Isto elimina quaisquer hipóteses de efeitos colaterais, porque qualquer variável pode ser substituída pelo seu valor real em qualquer ponto da execução. Por conseguinte, os programas funcionais são referencialmente transparentes.
-Considere a declaração de atribuição em C x x 10; isto muda o valor atribuído à variável x. Digamos que o valor inicial de x era 1, então duas avaliações consecutivas da variável x produzem 10 e 100, respetivamente. Claramente, substituir x x 10 por 10 ou 100 dá a um programa um significado diferente, e por isso a expressão não é referencialmente transparente. Na verdade, as declarações de atribuição nunca são referencialmente transparentes.
-Agora, considere que outra função como int plusOne(int x) return x 1; é transparente, pois não muda implicitamente a entrada x e, portanto, não tem tais efeitos colaterais.Os programas funcionais usam exclusivamente este tipo de função e são, portanto, referencialmente transparentes.
 As estruturas de dados puramente funcionais são frequentemente representadas de uma forma diferente das suas contrapartes imperativas. Por exemplo, o arranjo (array) com tempos de acesso e atualização constantes é um componente básico da maioria das linguagens imperativas, e muitas estruturas de dados imperativas, como a tabela de hash e o heap binário, baseiam-se em arranjos. Os arranjos podem ser substituídos por mapas ou listas de acesso aleatório, que admitem implementação puramente funcional, mas têm tempos de acesso e atualização logarítmicos. As estruturas de dados puramente funcionais têm persistência, uma propriedade de manter as versões anteriores da estrutura de dados inalteradas. Em Clojure, estruturas de dados persistentes são usadas como alternativas funcionais às suas contrapartes imperativas. Vetores persistentes, por exemplo, usam árvores para atualização parcial. Chamar o método de inserção resultará na criação de alguns, mas não de todos os nós.
 A programação funcional é muito diferente da programação imperativa. As diferenças mais significativas decorrem do facto de a programação funcional evitar efeitos colaterais, que são usados na programação imperativa para implementar estado e I/O. A programação funcional pura evita completamente os efeitos colaterais e proporciona transparência referencial.
 As funções de ordem superior são raramente utilizadas na programação imperativa mais antiga. Um programa imperativo tradicional pode usar um laço para percorrer e modificar uma lista. Um programa funcional, por outro lado, provavelmente usaria uma função de ordem superior "map" que recebe uma função e uma lista, gerando e retornando uma nova lista através da aplicação da função a cada item da lista.
@@ -63,7 +48,6 @@ Em C , as classes anônimas não são necessárias, porque os fechamentos e os l
 Muitos padrões de projeto orientados a objetos são expressáveis em termos de programação funcional: por exemplo, o padrão strategy dita simplesmente o uso de uma função de ordem superior, e o padrão visitor corresponde vagamente a um catamorfismo, ou fold.
 Da mesma forma, a ideia de dados imutáveis da programação funcional é frequentemente incluída nas linguagens de programação imperativas, por exemplo o tuple (tupla) no Python, que é um arranjo imutável, e o Object.freeze() no JavaScript.
 A programação em lógica pode ser vista como uma generalização da programação funcional, na qual as funções são um caso especial de relações.
-Por exemplo, a função, mother(X) Y, (cada X tem apenas uma mãe Y) pode ser representada pela relação mother(X, Y). Enquanto as funções têm um padrão estrito de entrada-saída para os argumentos, as relações podem ser consultadas com qualquer padrão de entradas e saídas. Considere o seguinte programa em lógica:
 O programa pode ser consultado, tal como um programa funcional, para gerar mães a partir dos filhos:
 Mas também pode ser consultado de trás para a frente, para gerar filhos:
 Pode até mesmo ser utilizado para gerar todas as instâncias da relação de mãe:
@@ -85,15 +69,12 @@ Graham, Paul. ANSI Common LISP. Englewood Cliffs, New Jersey: Prentice Hall, 199
 Pratt, Terrence, W. and Marvin V. Zelkowitz. Programming Languages: Design and Implementation. 3rd ed. Englewood Cliffs, New Jersey: Prentice Hall, 1996.
 Salus, Peter H. Functional and Logic Programming Languages. Vol. 4 of Handbook of Programming Languages. Indianapolis, Indiana: Macmillan Technical Publishing, 1998.
 Thompson, Simon. Haskell: The Craft of Functional Programming. Harlow, England: Addison-Wesley Longman Limited, 1996.
-Abelson, Hal; Sussman, Gerald Jay (1985). Structure and Interpretation of Computer Programs. [S.l.]: MIT Press. ISBN 978-0-262-51036-3
 Cousineau, Guy; Michel Mauny. The Functional Approach to Programming. Cambridge, Reino Unido: Cambridge University Press, 1998.
 Curry, Haskell Brooks; Feys, Robert; Craig, William. Combinatory Logic. Volume I. North-Holland Publishing Company, Amesterdão, 1958.
-Curry, Haskell B.; Hindley, J. Roger; Seldin, Jonathan P. (1972). Combinatory Logic. II. Amesterdão: North Holland. ISBN 978-0-7204-2208-5
 Dominus, Mark Jason. Higher-Order Perl. Morgan Kaufmann. 2005.
 Felleisen, Matthias; Findler, Robert; Flatt, Matthew; Krishnamurthi, Shriram (2018). How to Design Programs. [S.l.]: MIT Press
 Graham, Paul. ANSI Common LISP. Englewood Cliffs, Nova Jérsia: Prentice Hall, 1996.
 MacLennan, Bruce J. Functional Programming: Practice and Theory. Addison-Wesley, 1990.
-Michaelson, Greg (10 de abril de 2013). An Introduction to Functional Programming Through Lambda Calculus (em inglês). [S.l.]: Courier Corporation. ISBN 978-0-486-28029-5
 O'Sullivan, Brian; Stewart, Don; Goerzen, John (2008). Real World Haskell. [S.l.]: O'Reilly
 Pratt, Terrence W.; Marvin Victor Zelkowitz. Programming Languages: Design and Implementation. 3.a ed. Englewood Cliffs, Nova Jérsia: Prentice Hall, 1996.
 Salus, Peter H. Functional and Logic Programming Languages. Vol. 4 de Handbook of Programming Languages. Indianápolis, Indiana: Macmillan Technical Publishing, 1998.

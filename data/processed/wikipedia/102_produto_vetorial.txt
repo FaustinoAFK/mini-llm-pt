@@ -1,20 +1,7 @@
 A notação do produto vetorial entre dois vetores a e b do espaço vetorial
-R
-3
 é a b (em manuscritos, alguns matemáticos escrevem a b para evitar a confusão com a letra x).
 Podemos defini-lo como
-a
-b
-n
-a
-b
-s
-i
-n
 onde é a medida do ângulo entre a e b (0 180 ) no plano definido pelos dois vetores, e
-n
-n
-n
 também o é.
 Uma forma fácil de determinar o sentido do vetor resultante é a regra da mão direita. Se um sistema de coordenadas é destro, basta apontar o indicador na direção do primeiro operando e o dedo médio na direção do segundo operando. Desta forma, o vetor resultante é dado pela direção do polegar.
 O produto vetorial é classificado como um pseudovetor porque inverte frente à reflexão.
@@ -32,143 +19,25 @@ Além disso, dois vetores não nulos a e b são paralelos se e somente se a b 0.
 Esta é uma fórmula útil e bem conhecida,
 a qual é mais fácil de memorizar como “BAC menos CAB”. Esta fórmula é muito útil para simplificar cálculos com vetores na física. É importante notar, entretanto, que esta fórmula não se aplica quando do uso do operador nabla.
 Um caso especial com respeito a gradiente em cálculo vetorial é:
-(
-f
-)
-(
-f
-)
-(
-)
-f
 grad
-(
 div
-f
-)
 laplacian
-f
-.
 Este é um caso especial da mais geral decomposição Hodge
-d
-d
 do Laplaciano Hodge.
 Outra identidade útil de Lagrange é
-a
-b
-2
-a
-b
-2
-a
-2
-b
-2
-.
 Este é um caso especial da multiplicatividade
-v
-w
-v
-w
 da norma na álgebra de quaternion.
 Os vetores unitários i, j e k, para uma dado sistema ortogonal de coordenadas, satisfazem as seguintes igualdades:
 i j k j k i k i j
 j i -k k j -i i k -j
 Com estas regras, as coordenadas do resultado do produto vetorial de dois vetores podem ser calculadas facilmente, sem a necessidade de se determinar qualquer ângulo. Seja:
-e
 Então
 A notação acima também pode ser escrita formalmente como o determinante de uma matriz:
-a
-b
 det
-[
-i
-j
-k
-a
-1
-a
-2
-a
-3
-b
-1
-b
-2
-b
-3
-]
 O determinante de três vetores pode ser recuperado como
 det (a, b, c) a (b c).
 Intuitivamente, o produto vetorial pode ser descrito pelo método de Sarrus, onde
-i
-j
-k
-i
-j
-a
-1
-a
-2
-a
-3
-a
-1
-a
-2
-b
-1
-b
-2
-b
-3
-b
-1
-b
-2
 Para os primeiros três vetores unitários, multiplique os elementos na diagonal da direita (ex. a primeira diagonal conteria i, a2, e b3). Para os três últimos vetores unitários, multiplique os elementos na diagonal da esquerda e então os multiplique por -1 (ex. a última diagonal conteria k, a2, e b1). O produto vetorial seria definido pela soma destes produtos:
-i
-(
-a
-2
-b
-3
-)
-j
-(
-a
-3
-b
-1
-)
-k
-(
-a
-1
-b
-2
-)
-i
-(
-a
-3
-b
-2
-)
-j
-(
-a
-1
-b
-3
-)
-k
-(
-a
-2
-b
-1
-)
 O produto vetorial também pode ser descrito em termos de quaternions. Note por exemplo que as relações entre produtos vetoriais acima i, j, e k concordam com a relação multiplicativa entre os quaternions i, j, e k. Em geral, se representamos um vetor [a1, a2, a3] como o quaternion a1i a2j a3k, obtemos o produto vetorial tomando seus produtos e descartando a parte real do resultado (a parte real será o negativo do produto escalar de dois vetores). Mais sobre a conexão entre multiplicação de quaternion, operações de vetores e geometria pode ser encontrado em quaternions e rotação espacial.
 O produto vetorial ocorre na fórmula do operador vetorial rotacional.
 O produto vetorial pode também ser utilizado para calcular a normal de um triângulo ou outro polígono, o que é importante no ramo da computação gráfica e do desenvolvimento de jogos eletrônicos, para permitir efeitos que simulam iluminação e assim obter gráficos mais realistas.
@@ -178,8 +47,6 @@ Esse produto vetorial 7-dimensional tem as seguintes propriedades em comum com o
 x (ay bz) ax y bx z
 (ay bz) x ay x bz x.
 É anticomutativo:
-x y y x 0
-x (x y) y (x y) 0
 Temos:
 Diferente do produto vetorial tridimensional, não satisfaz a identidade de Jacobi (a igualdade se manteria em 3 dimensões):
 Os parágrafos a seguir contêm expressões em itálico que ainda necessitam tradução

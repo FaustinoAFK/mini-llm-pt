@@ -10,5 +10,4 @@ Em 29 de julho de 2015, o GitHub anunciou que havia captado US 250 milhões em f
 Em 2016, o GitHub ficou em 14o lugar na lista Forbes Cloud 100.
 Em 28 de fevereiro de 2018, o GitHub foi vítima do segundo maior ataque de negação de serviço distribuído (DDoS) da história, com o tráfego de entrada chegando a um pico de cerca de 1,35 terabit por segundo.
 Em 4 de junho de 2018, a Microsoft anunciou que havia chegado a um acordo para adquirir o GitHub por US 7,5 bilhões. A compra foi encerrada em 26 de outubro de 2018.
-«Logical Awesome» (em inglês). - criadores do GitHub
 «Github». Página do GitHub

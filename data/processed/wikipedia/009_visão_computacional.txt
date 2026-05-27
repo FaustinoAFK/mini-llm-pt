@@ -27,4 +27,3 @@ Processamento de imagens
 Reconhecimento de padrões
 Sistema de visão
 Enciclopédia de Visão Artificial (em Português e Espanhol)
-(em inglês) Computer Vision: Algorithms and Applications

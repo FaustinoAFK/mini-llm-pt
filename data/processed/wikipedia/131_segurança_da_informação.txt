@@ -28,7 +28,6 @@ Erros de hardware ou de software: falhas no processamento, erros de comunicaçã
 Erros humanos: entrada de dados incorreta, montagem errada de disco ou perda de um disco.
 Para evitar a perda destes dados é necessário manter um backup confiável, armazenado geograficamente distante dos dados originais.
 Em 1988, um estudante colocou na internet um programa malicioso (malware), escrito em linguagem C, derrubando milhares de computadores pelo mundo, que foi identificado e removido logo após. Mas até hoje há controvérsias de que ele não foi completamente removido da rede. Até hoje não se sabe qual era seu objetivo, o que se sabe é que ele tentava descobrir todas as senhas que o usuário digitava. Mas esse programa se autocopiava em todos os computadores em que o estudante invadia. Essa “brincadeira” não durou muito, pois o estudante foi descoberto pouco tempo depois, processado e condenado a liberdade condicional, e teve que pagar uma alta multa.
-Em 15 de outubro de 2008, a Microsoft liberou um bugfix de emergência para corrigir a vulnerabilidade MS08-067, através da qual o worm prevalece-se para poder se espalhar. As aplicações da atualização automática se aplicam somente para o Windows XP SP2, SP3, Windows 2000 SP4 e Windows Vista; o Windows XP SP1 e versões mais antigas não são mais suportados.
 Em janeiro de 2009, o número estimado de computadores infectados variou entre 9 e 15 milhões. Em 13 de fevereiro de 2009, a Microsoft oferecia US 250mil em recompensa para qualquer informação que levasse à condenação e à prisão de pessoas por trás da criação e/ou distribuição do Conficker.
 Através dessas informações históricas percebemos que os antivírus devem estar cada vez mais atualizados, porque estão surgindo novos vírus rapidamente, e com a mesma velocidade deve ser lançado atualizações para os bancos de dados dos antivírus para que os mesmos sejam identificados e excluídos. Com a criação da internet essa propagação de vírus é muito rápida e muito perigosa, pois se não houver a atualização dos antivírus o computador e usuário estão vulneráveis, pois com a criação da internet várias empresas começarão a utilizar internet como exemplo empresas mais precisamente bancos, mas como é muito vulnerável esse sistema, pois existem vírus que tem a capacidade de ler o teclado (in/out), instruções privilegiadas como os keyloggers. Com esses vírus é possível ler a senha do usuário que acessa sua conta no banco, com isso é mais indicado utilizar um teclado virtual para digitar as senhas ou ir diretamente ao banco.
 Depois de identificado o potencial de ataque, as organizações têm que decidir o nível de segurança a estabelecer para uma rede ou sistema os recursos físicos e lógicos a necessitar de proteção. No nível de segurança devem ser quantificados os custos associados aos ataques e os associados à implementação de mecanismos de proteção para minimizar a probabilidade de ocorrência de um ataque.
@@ -81,14 +80,10 @@ definir os processos de gestão da Segurança da Informação.
 Entre as vantagens de investir na gestão de riscos voltada para a segurança da informação estão a priorização das ações de acordo com a necessidade e os objetivos da empresa e a utilização de métricas e indicadores de resultados.
 Vazamento de dados
 ISO/IEC 42001 Sistema de Gestão de Inteligência Artificial
-Terpstra, John (2005). Segurança para Linux. RJ: Elsevier. ISBN 85-352-1599-9
 Melhorar a usabilidade de Gerenciamento de senha com políticas de senha padronizados
-Claudia Dias, Segurança e Auditoria da Tecnologia da Informação, 2000, Editora: Axcel Books 142, ISBN 85-7323-231-9
 Brostoff, S. (2004). Improving password system effectiveness. Tese de Doutorado. University College London.
-Morris, R. Thompson, K. (1979). Password security: a case history. Communications of the ACM, 22, 594-597.
 Sieberg, D. (2005). Hackers shift focus to financial gain. CNN.com - Special Reports - Online Security. Publicado em 26 de setembro de 2005.
 Smith, R.E. (2002). The strong password dilemma. Authentication: From Passwords to Public Keys. Chapter 6. Addison-Wesley.
-«Computer Security Institute» (em inglês)
 «CERT.PT»
 «CERT.br»
 «Glossário de Segurança da Informação» publicado pelo Gabinete de Segurança Institucional

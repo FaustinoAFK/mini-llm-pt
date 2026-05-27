@@ -78,7 +78,6 @@ Neste sentido, em que a máquina é apenas um caso muito especial de sistema cap
 IA: mais consensual se admitidos conceitos imprecisos e generalistas de inteligência e artificial.
 IC: trata da inteligência, e.g. tomada racional de decisões, no contexto computacional.
 Outros conceitos relacionados: IM (de máquina), IT (tecnológica), IP (primária, primitiva, de primata)
-Considere esta ontologia como o (I)ABC da IT, i.e. da tecnologia em inteligência, da inteligência em tecnologia, ou variante.
 Observe o hiato entre IC e IM.
 Reitere a reflexão sobre o computador não ser necessariamente eletrônico, ou com transístores de silício.
 Pense ao seu redor em todos os sistemas complexos, que (potencialmente) computam:
@@ -113,8 +112,6 @@ Economia computacional
 Robótica epigenética
 Mineração de dados
 Computação bioinspirada
-Computational Intelligence: An Introduction by Andries Engelbrecht. Wiley Sons. ISBN 0-470-84870-7
-Computational intelligence in complex decision systems Intelligência computacional em sistemas de decisão complexos. Da Ruan. Belgian Nuclear Research Centre (SCK CEN). Atlantis Press. ISSN: 1875-7650
 «Associação Brasileira de Inteligência Computacional (ABRICOM)»
 «Inteligência Computacional (Scholarpedia)»
 «Blog de Sistemas Inteligentes en Madri D»

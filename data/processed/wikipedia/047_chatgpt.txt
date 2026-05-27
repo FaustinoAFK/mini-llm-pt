@@ -1,4 +1,3 @@
-ChatGPT (do inglês: Chat Generative Pre-trained Transformer) é um chatbot desenvolvido pela OpenAI e lançado em 30 de novembro de 2022. O nome "ChatGPT" combina "Chat", referindo-se à sua funcionalidade de chatbot, e "GPT", que significa Generative Pre-trained Transformer (Transformador Pré-treinado Generativo, em tradução livre), um tipo de modelo de linguagem grande (Large Language Model, LLM, na sigla em inglês). Com base em um LLM, ele usa como contexto, prompts e respostas sucessivas para prever as palavras que seriam mais adequadas, de acordo com as ideias da empresa, para compor a nova resposta; o algoritmo para essa previsão resulta do seu treinamento. Assim, o ChatGPT também permite que utilizadores refinem e direcionem uma conversa para a duração, formato, estilo, nível de detalhe e linguagem desejados.
 Em janeiro de 2023, o ChatGPT tinha se tornado a aplicação de software de consumo de crescimento mais rápido da história, conquistando mais de 100 milhões de utilizadores e contribuindo para o crescimento da avaliação da OpenAI para 29 bilhões de dólares. O lançamento do ChatGPT estimulou o desenvolvimento de produtos concorrentes, incluindo Gemini, Ernie Bot, LLaMA, Claude e Grok. A Microsoft lançou o Copilot, baseado no GPT-4 da OpenAI. Alguns observadores manifestaram preocupação sobre o potencial do ChatGPT e de programas semelhantes para substituir ou atrofiar a inteligência humana, permitir o plágio ou alimentar a desinformação.
 O ChatGPT é creditado por iniciar o boom da IA, que levou a um investimento rápido e sem precedentes e à atenção do público no campo da inteligência artificial.
 A revista Time revelou que, para construir um sistema de segurança contra conteúdos nocivos (por exemplo, abuso sexual, violência, racismo, sexismo), a OpenAI utilizou trabalhadores terceirizados quenianos que ganham menos de 2 dólares por hora para rotular conteúdo prejudicial. Estes rótulos foram usados para treinar um modelo para detectar tal conteúdo no futuro. Os trabalhadores terceirizados foram expostos a conteúdos "tóxicos" e traumáticos; um trabalhador descreveu a tarefa como "tortura". O parceiro de terceirização da OpenAI foi a Sama, uma empresa de dados de treino com sede em São Francisco, Califórnia.
@@ -19,7 +18,6 @@ Em outubro de 2023, o mais recente modelo de geração de imagens da OpenAI, DAL
 Em maio de 2023, a OpenAI lançou uma aplicação iOS para o ChatGPT. A aplicação suporta sincronização de histórico de conversa e entrada de voz (usando o Whisper, um modelo de reconhecimento de fala da OpenAI).[carece de fontes?]
 Em julho de 2023, a OpenAI revelou uma aplicação Android, inicialmente lançada no Bangladesh, Brasil, Índia e EUA. A aplicação foi posteriormente disponibilizada em todo o mundo. A OpenAI está a trabalhar na integração do ChatGPT com API assistentes do Android.
 Poucos dias antes do lançamento do serviço de suporte ao programador de software da OpenAI, em 27 de fevereiro de 2023, o Snapchat lançou, para a sua base de utilizadores paga do Snapchat Plus, um chatbot ChatGPT personalizado chamado "My AI".
-O ChatGPT funciona melhor em inglês, mas também funciona na maioria dos outros idiomas, com vários graus de precisão.
 A OpenAI encontrou-se com o presidente islandês Guðni Th. Jóhannesson em 2022. Em 2023, a OpenAI trabalhou com uma equipa de 40 voluntários islandeses para aprimorar as habilidades de conversação em islandês do ChatGPT como parte das tentativas da Islândia de preservar a língua islandesa.
 Os jornalistas da PC Mag conduziram um teste para determinar as capacidades de tradução do ChatGPT, do Google Bard (Gemini),e do Microsoft Bing e compararam-nos com o Google Tradutor. Eles "pediram a falantes bilingues de sete línguas que fizessem um teste cego". Os idiomas testados foram o polaco, francês, coreano, espanhol, árabe, tagalo e amárico. Eles chegaram à conclusão de que o ChatGPT era melhor que o Google Translate e outros chatbots.
 Investigadores japoneses compararam as habilidades de tradução do japonês para o inglês do ChatGPT (GPT-4), Bing, Bard e DeepL e descobriram que o ChatGPT forneceu as melhores traduções, observando que "as traduções dos chatbots de IA eram muito melhores do que as do DeepL - presumivelmente por causa da sua capacidade de capturar o contexto".
@@ -76,13 +74,6 @@ Media relacionados com ChatGPT no Wikimedia Commons
 «Página oficial»
 «O fenômeno Chat GPT explicada por Alexeï Grinbaum» (em francês)
 «ChatGPT Prompt Engineering for Developers». , curso por Andrew Ng e OpenAI.
-«ChatGPT consegue escrever um episódio de podcast?» (em inglês). podcast Planet Money, Instituto NPR (maio de 2023).
-«O Chat GPT fará mais mal do que bem?» (em inglês). debate de Gary Marcus e Keith Teare, Instituto Open to Debate (fevereiro de 2023).
 The Cost of AI, ganhos e perdas projetadas em nível mundial, Pay Stubs
 «Chat.d-ID assistente virtual do ChatGPT»
 Videos:
-«Study finds ChatGPT struggles with public health referrals» (em inglês). CBS (junho de 2023)
-«What if ChatGPT had a body?» (em inglês). ABC (março de 2023)
-«What is ChatGPT?» (em inglês). BBC (janeiro de 2023)
-«How good is ChatGPT?» (em inglês). CNN (janeiro de 2023)
-«Cheating With ChatGPT» (em inglês). The Wall Street Journal (dezembro de 2022)

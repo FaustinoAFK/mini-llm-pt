@@ -3,9 +3,6 @@ Em clustering, um conjunto de entradas é dividido em grupos. De maneira diferen
 A estimativa de densidades encontra a distribuição de entradas em algum espaço.
 A redução dimensional simplifica as entradas ao mapeá-las para um espaço de menor dimensão. A modelagem de tópicos é um problema relacionado, em que é fornecida ao programa uma lista de documentos em linguagem natural, solicitando que encontre documentos tratando de tópicos similares.
 Para uma melhor performance no contexto de generalização, a complexidade da hipótese deveria combinar com a complexidade da função subjacente aos dados. Se a hipótese é menos complexa que a função, então o modelo sub-ajustou (underfitting) os dados. Se a complexidade do modelo é aumentada em resposta, então o erro de treinamento diminui. Mas se a hipótese é muito complexa, então o modelo foi sobreajustado (overfitting), e a generalização será mais pobre.
-x
-D
-r
 onde r é esparso. Falando genericamente, se assume que n é maior que d para permitir a liberdade para uma representação esparsa.
 Em mineração de dados, a detecção de anomalias (também detecção de outliers ) é a identificação de itens, eventos ou observações raros que levantam suspeitas por serem significativamente diferentes da maioria dos dados. Normalmente, os itens anômalos se referem a algum tipo de problema, como fraude bancária, defeito estrutural, problemas médicos ou erros em um texto. Anomalias são também referidas como outliers, ruído, desvios e exceções.
 Em 2015, o serviço de streaming de música Spotify criou a playlist chamada Descobertas da Semana, que funciona como uma curadoria digital. O algoritmo responsável por esta playlist utiliza técnicas de Filtragem Colaborativa, Processamento de Linguagem Natural e Processamento de Sinais de Áudio através de Redes Neurais Convolucionais para compor a playlist semanalmente.
@@ -32,13 +29,4 @@ Inteligência computacional
 Neurociência computacional
 Curso online no Coursera, ministrado por Andrew Ng. Utiliza GNU Octave. O curso é uma versão livre do curso da Stanford University ministrado por Ng, cujas aulas também estão disponíveis gratuitamente.
 Brocardo ML, Traore I, Woungang I, Obaidat MS. "Authorship verification using deep belief network systems". Int J Commun Syst. 2017. doi:10.1002/dac.3259
-Trevor Hasti, Robert Tibshirani e Jerome H. Friedman (2001). The Elements of Statistical Learning, Springer. ISBN 0-387-95284-5.
-Pedro Domingos (September 2015), The Master Algorithm, Basic Books, ISBN 978-0-465-06570-7
-Mehryar Mohri, Afshin Rostamizadeh, Ameet Talwalkar (2012). Foundations of Machine Learning, The MIT Press. ISBN 978-0-262-01825-8.
-Ian H. Witten and Eibe Frank (2011). Data Mining: Practical machine learning tools and techniques Morgan Kaufmann, 664pp., ISBN 978-0-12-374856-0.
-David J. C. MacKay. Information Theory, Inference, and Learning Algorithms Cambridge: Cambridge University Press, 2003. ISBN 0-521-64298-1
-Richard O. Duda, Peter E. Hart, David G. Stork (2001) Pattern classification (2nd edition), Wiley, New York, ISBN 0-471-05669-3.
-Christopher Bishop (1995). Neural Networks for Pattern Recognition, Oxford University Press. ISBN 0-19-853864-2.
-Vladimir Vapnik (1998). Statistical Learning Theory. Wiley-Interscience, ISBN 0-471-03003-1.
-Ray Solomonoff, An Inductive Inference Machine, IRE Convention Record, Section on Information Theory, Part 2, pp., 56-62, 1957.
 Ray Solomonoff, "An Inductive Inference Machine" Um relato privado que circulou na Dartmouth Summer Research Conference sobre IA em 1956.

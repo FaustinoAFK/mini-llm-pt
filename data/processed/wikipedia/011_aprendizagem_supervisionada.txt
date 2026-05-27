@@ -1,9 +1,6 @@
 Determinar o tipo de exemplos de treinamento. Antes de qualquer coisa, o usuário deve decidir que tipo de dados será usado como conjunto de treinamento. No caso de análise de textos manuscritos, por exemplo, pode ser um único caractere escrito à mão, uma palavra inteira escrita à mão ou uma linha inteira de escrita à mão.
 Reunir um conjunto de treinamento. O conjunto de treinamento precisa ser representativo do uso da função no mundo real. Assim, um conjunto de objetos de entrada é coletado e as saídas correspondentes também são coletadas, seja de especialistas humanos ou de medições.
-x
 se, quando treinado em cada um desses conjuntos de dados, estiver sistematicamente incorreto ao prever a saída correta para
-x
-x
 Heterogeneidade dos dados. Se os vetores de características incluem características de muitos tipos diferentes (discretas, ordenadas discretas, contagens, valores contínuos), alguns algoritmos são mais fáceis de aplicar do que outros. Muitos algoritmos, incluindo máquinas de vetores de suporte, regressão linear,regressão logística, redes neurais e métodos de vizinhos mais próximos, requerem que as características de entrada sejam numéricas e escaladas para intervalos semelhantes (por exemplo, para o intervalo [-1,1]). Os métodos que empregam uma função de distância, como os métodos de vizinhos mais próximos e as máquinas de vetores de suporte com núcleos gaussianos, são particularmente sensíveis a isso. Uma vantagem das árvores de decisão é que elas lidam facilmente com dados heterogêneos.
 Máquinas de vetores de suporte
 Regressão linear
@@ -14,316 +11,69 @@ Análise de discriminantes lineares
 Algoritmo de k-vizinhos mais próximos
 Redes neurais (perceptron multicamadas)
 Dado um conjunto de
-N
 exemplos de treinamento da forma
-(
-x
-1
-,
-y
-1
-)
-,
-.
-.
-.
-,
-(
-x
-N
-,
-y
-N
-)
 em que
-x
-i
 é o vetor de características do
-i
 -ésimo exemplo e
-y
-i
-g
-:
-X
-Y
 , em que
-X
 é o espaço de entrada e
-Y
 é o espaço de saída. A função
-g
 é um elemento de algum espaço de funções possíveis
-G
 , geralmente chamado de espaço de hipóteses. Às vezes é conveniente representar
-g
 usando uma função de pontuação
-f
-:
-X
-Y
-R
 de tal modo que
-g
 é definido como retornando o
-y
 valor que dá a pontuação mais alta:
-g
-(
-x
-)
 arg
 max
-y
-f
-(
-x
-,
-y
-)
 . Seja
-F
 o espaço das funções de pontuação.
 Embora
-G
-e
-F
-g
 assume a forma de um modelo de probabilidade condicional
-g
-(
-x
-)
-P
-(
-y
-x
-)
 , ou
-f
 assume a forma de um modelo de probabilidade conjunta
-f
-(
-x
-,
-y
-)
-P
-(
-x
-,
-y
-)
 . Por exemplo, Bayes ingênuo e análise discriminantes lineares são modelos de probabilidade conjunta, enquanto a regressão logística é um modelo de probabilidade condicional.
 Existem duas abordagens básicas para escolher
-f
 ou
-g
 : minimização do risco empírico e minimização do risco estrutural. A minimização do risco empírico busca a função que melhor se ajusta aos dados de treinamento. A minimização do risco estrutural inclui uma função de penalidade que controla o equilíbrio entre viés e variância.
-(
-x
-i
-,
-y
-i
-)
 . Para medir o quão bem uma função se ajusta aos dados de treinamento, define-se uma função de perda
-L
-:
-Y
-Y
-R
-0
 . Para um exemplo de treinamento
-(
-x
-i
-,
-y
-i
-)
 , a perda ao prever o valor
-y
 é
-L
-(
-y
-i
-,
-y
-)
-.
 O risco
-R
-(
-g
-)
 da função
-g
 é definido como a perda esperada de
-g
 . Isso pode ser estimado a partir dos dados de treinamento como
-R
-e
-m
-p
-(
-g
-)
-1
-N
-i
-L
-(
-y
-i
-,
-g
-(
-x
-i
-)
-)
-.
-g
 que minimiza
-R
-(
-g
-)
-g
-.
 Quando
-g
 é uma distribuição de probabilidade condicional
-P
-(
-y
-x
-)
 e a função de perda é o oposto do logaritmo da função de verossimilhança:
-L
-(
-y
-,
-y
-)
 log
-P
-(
-y
-x
-)
 , então a minimização do risco empírico é equivalente à estimativa de máxima verossimilhança.
 Quando
-G
 A minimização do risco estrutural visa evitar o sobreajuste, incorporando uma penalidade de regularização na otimização. A penalidade de regularização pode ser vista como a implementação de uma forma de navalha de Occam que prefere funções mais simples às mais complexas.
 Tem sido empregada uma ampla variedade de penalidades que correspondem a diferentes definições de complexidade. Por exemplo, considere o caso em que a função
-g
 é uma função linear da forma
-g
-(
-x
-)
-j
-1
-d
-j
-x
-j
-.
 Uma penalidade de regularização popular é
-j
-j
-2
 , que é o quadrado da norma euclidiana dos pesos, também conhecida como norma
-L
-2
 . Outras normas incluem a norma
-L
-1
-,
-j
-j
 , e a "norma"
-L
-0
 , que é o número de
-j
 s diferentes de zero. A pena será denotada por
-C
-(
-g
-)
-.
-g
 que minimiza
-J
-(
-g
-)
-R
-e
-m
-p
-(
-g
-)
-C
-(
-g
-)
-.
 O parâmetro
 controla o equilíbrio entre viés e variância. Quando
-0
 , isso dá minimização de risco empírico com baixo viés e alta variância. Quando
 pode ser escolhido empiricamente por meio de validação cruzada.
 A penalidade de complexidade tem uma interpretação Bayesiana como o oposto do logaritmo da probabilidade a priori de
-g
-,
 log
-P
-(
-g
-)
 , nesse caso
-J
-(
-g
-)
 é a probabilidade a posteriori de
-g
-.
 Os métodos de treinamento descritos acima são métodos de treinamento discriminativos, pois buscam encontrar uma função
-g
 que discrimina bem entre os diferentes valores de saída (ver modelo discriminativo). Para o caso especial em que
-f
-(
-x
-,
-y
-)
-P
-(
-x
-,
-y
-)
 é uma distribuição de probabilidade conjunta e a função de perda é o oposto do logaritmo da função de verossimilhança
-i
 log
-P
-(
-x
-i
-,
-y
-i
-)
-,
 diz-se que um algoritmo de minimização de risco realiza treinamento generativo, porque
-f
 pode ser considerado um modelo gerador que explica como os dados foram gerados. Os algoritmos de treinamento generativo são frequentemente mais simples e mais eficientes do ponto de vista computacional do que os algoritmos de treinamento discriminativo. Em alguns casos, a solução pode ser calculada de forma fechada como em Bayes ingênuo e análise discriminantes lineares.
 Rede neural artificial
 Retropropagação

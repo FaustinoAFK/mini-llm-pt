@@ -7,4 +7,3 @@ Linguagem de descrição de interface
 Programação funcional
 REST, Transferência Representacional de Estado
 SOAP, Protocolo Simples de Acesso a Objetos
-«Como criar uma boa API (how to design a good API)» (PDF) (em inglês)

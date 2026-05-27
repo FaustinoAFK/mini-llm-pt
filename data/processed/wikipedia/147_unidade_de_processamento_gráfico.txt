@@ -11,7 +11,6 @@ Com a OpenGL API e funcionalidade similar no DirectX, GPUs adicionaram sombreame
 Conforme o poder de processamento das GPUs vem aumentando, também vem aumentando sua demanda por energia elétrica. GPUs de alto desempenho comumente consomem mais energia que CPUs atuais.
 Junto com o hardware 3D, as GPUs de hoje incluem capacidades de aceleração 2D e capacidades de framebuffer (geralmente com um modo de compatibilidade VGA).
 A maioria das GPUs feitas desde 1995 têm suporte ao espaço de cor YUV e overlays de hardware, importantes para playback digital de vídeos, e várias GPUs feitas desde 2000 também suportam comandos primitivos do MPEG, tais como compensação de moção e iDCT. Esse processo de decodificação acelerada de vídeo, onde porções do processo de decodificação de vídeo e pós-processamento de vídeo são deixadas para o hardware da GPU, é comumente referido como "Decodificação de vídeo acelerado por GPU", "Decodificação de vídeo auxiliada por GPU", entre demais termos.
-Devido a sua natureza técnica e complexidade, diversos termos em inglês são utilizados para descrever as GPUs, entre as principais se encontram:
 Pixel pipeline Parte de um processador gráfico que transfere informações referentes aos pixels. Quanto maior a sua quantidade, maior a velocidade da placa em processar pixels para exibição na tela.
 Fillrate Quantidade de pixels texturizados que podem ser gerados e exibidos pelo processador gráfico em um segundo.
 Geometry shader Combina uma série de vértices em objetos que serão processados pelos pixel shaders.

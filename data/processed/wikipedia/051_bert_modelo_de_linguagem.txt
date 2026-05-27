@@ -1,5 +1,4 @@
 O BERT é uma arquitetura transformer "apenas com codificador" (encoder-only). Em alto nível, o BERT consiste em 4 módulos:
-Tokenizador: Este módulo converte um trecho de texto em inglês em uma sequência de números inteiros ("tokens").
 Incorporação (Embedding): Este módulo converte a sequência de tokens em uma matriz de vetores de valor real que representam os tokens. Representa a conversão de tipos de tokens discretos num espaço euclidiano de dimensão inferior.
 Codificador: uma pilha de blocos Transformer com autoatenção (self-attention), mas sem mascaramento causal.
 Cabeça de tarefa (Task head): Este módulo converte os vetores de representação finais novamente em tokens codificados one-hot, produzindo uma distribuição de probabilidade prevista sobre os tipos de tokens. Pode ser visto como um decodificador simples, que decodifica a representação latente em tipos de tokens, ou como uma "camada de desincorporação" (un-embedding).
@@ -11,16 +10,9 @@ Posição: As incorporações de posição baseiam-se na posição de um token n
 Tipo de segmento: Usando um vocabulário de apenas 0 ou 1, esta camada de incorporação produz um vetor denso baseado em se o token pertence ao primeiro ou ao segundo segmento de texto nessa entrada. Por outras palavras, os tokens do tipo 1 são todos os tokens que aparecem depois do token especial [SEP]. Todos os tokens anteriores são do tipo 0.
 Os três vetores de incorporação são somados, representando a representação inicial do token como uma função dessas três informações. Após a incorporação, a representação vetorial é normalizada usando uma operação LayerNorm, gerando um vetor de 768 dimensões para cada token de entrada. Depois disso, os vetores de representação são passados adiante por 12 blocos de codificadores Transformer, e são decodificados de volta para o espaço de vocabulário de 30.000 dimensões usando uma camada de transformação afim básica.
 A pilha de codificadores do BERT tem 2 parâmetros livres:
-L
 , o número de camadas, e
-H
 , o tamanho oculto (hidden size). Existem sempre cabeças de autoatenção
-H
-/
-64
 , e o tamanho do feed-forward/filtro é sempre
-4
-H
 . Ao variar esses dois números, obtém-se toda uma família de modelos BERT.
 Para o BERT:
 O tamanho do feed-forward e o tamanho do filtro são sinônimos. Ambos denotam o número de dimensões na camada intermediária da rede feed-forward.
@@ -48,71 +40,15 @@ Conjunto de tarefas GLUE (General Language Understanding Evaluation) (consistind
 SQuAD (Stanford Question Answering Dataset) v1.1 e v2.0;
 SWAG (Situations With Adversarial Generations).
 A base de código original definiu a camada linear final como uma "camada de agrupamento" (pooler layer), em analogia com o agrupamento global na visão computacional, embora ela simplesmente descarte todos os tokens de saída, exceto aquele correspondente a [CLS].
-O BERT foi treinado no BookCorpus (800 milhões de palavras) e em uma versão filtrada da Wikipédia em inglês (2.500 milhões de palavras) sem listas, tabelas e cabeçalhos.
 O treinamento do BERTBASE em 4 TPUs de nuvem (16 chips TPU no total) levou 4 dias, a um custo estimado de 500 dólares americanos. O treinamento do BERTLARGE em 16 TPUs de nuvem (64 chips TPU no total) levou 4 dias.
-Em 25 de outubro de 2019, o Google anunciou que havia começado a aplicar modelos BERT às consultas de pesquisa em idioma inglês na Pesquisa Google nos EUA. Em 9 de dezembro de 2019, foi relatado que o BERT havia sido adotado pela Pesquisa Google para mais de 70 idiomas. Em outubro de 2020, quase todas as consultas baseadas em inglês foram processadas por um modelo BERT.
 Os modelos BERT foram influentes e inspiraram muitas variantes.
 XLM-RoBERTa (2019) foi um modelo RoBERTa multilíngue. Foi um dos primeiros trabalhos de modelagem de linguagem multilíngue em grande escala.
 DistilBERT (2019) destila o BERTBASE para um modelo com apenas 60% de seus parâmetros (66M), enquanto preserva 95% de suas pontuações de referência (benchmark). Da mesma forma, o TinyBERT (2019) é um modelo destilado com apenas 28% de seus parâmetros.
 ELECTRA (2020) aplicou a ideia de redes adversárias generativas à tarefa MLM. Em vez de mascarar tokens, um pequeno modelo de linguagem gera substituições plausíveis aleatórias e uma rede maior identifica esses tokens substituídos. O modelo pequeno visa enganar o modelo grande.
 DeBERTa (2020) é uma variante arquitetônica significativa, com atenção desembaraçada (disentangled attention). A sua ideia principal é tratar as codificações posicionais e de token separadamente através do mecanismo de atenção. Em vez de combinar a codificação posicional (
-x
-p
-o
-s
-i
-t
-i
-o
-n
 ) e a codificação de token (
-x
-t
-o
-k
-e
-n
 ) num único vetor de entrada (
-x
-i
-n
-p
-u
-t
-x
-p
-o
-s
-i
-t
-i
-o
-n
-x
-t
-o
-k
-e
-n
 ), o DeBERTa os mantém separados como uma tupla:
-(
-x
-p
-o
-s
-i
-t
-i
-o
-n
-,
-x
-t
-o
-k
-e
-n
-)
 . Em seguida, em cada camada de autoatenção, o DeBERTa calcula três matrizes de atenção distintas, em vez da matriz de atenção única usada no BERT:
 As três matrizes de atenção são somadas elemento a elemento, em seguida passadas por uma camada softmax e multiplicadas por uma matriz de projeção.
 A codificação de posição absoluta é incluída na camada final de autoatenção como entrada adicional.

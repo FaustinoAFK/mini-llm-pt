@@ -2,9 +2,4 @@ Aplicações típicas do reconhecimento de padrões incluem reconhecimento de fa
 FAN (rede neural)
 Teoria dos Padrões
 C.M. van der Walt e E. Barnard (2006). Data characteristics that determine classifier performance. Proceedings of the Sixteenth Annual Symposium of the Pattern Recognition Association of South Africa: [s.n.] pp. 160 165. ISBN 34523432. Consultado em 17 de maio de 2019. Arquivado do original em 7 de fevereiro de 2012
-Phiroz Bhagat (2005). Pattern Recognition in Industry. [S.l.]: Elsevier. ISBN 0-08-044538-1
-Richard O. Duda, Peter E. Hart, David G. Stork. Pattern classification 2 ed. Nova Iorque: Wiley. ISBN 0-471-05669-3 !CS1 manut: Nomes múltiplos: lista de autores (link)
-Dietrich Paulus e Joachim Hornegger (1998). Applied Pattern Recognition 2 ed. [S.l.]: Vieweg. ISBN 3-528-15558-2
-J. Schuermann (1996). Pattern Classification: A Unified View of Statistical and Neural Approaches. [S.l.]: Wiley Sons. ISBN 0-471-13534-8
-Sholom Weiss e Casimir Kulikowski (1991). Computer Systems That Learn. [S.l.]: Morgan Kaufmann. ISBN 1-55860-065-5
 Sítio da Associação Internacional de Reconhecimento de Padrões - IAPR

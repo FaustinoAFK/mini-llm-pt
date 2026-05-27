@@ -1,10 +1,7 @@
 Ao contrário dos pesos "rígidos" (hard), que são calculados durante a passagem de treinamento para trás (backwards pass), os pesos "suaves" existem apenas na passagem para a frente (forward pass) e, portanto, mudam a cada etapa da entrada. Projetos anteriores implementavam o mecanismo de atenção num sistema serial de tradução de idiomas com rede neural recorrente (RNN), mas um projeto mais recente, nomeadamente o transformer, removeu a RNN sequencial mais lenta e baseou-se mais fortemente no esquema de atenção paralela mais rápido.
 A era moderna da atenção de máquina foi revitalizada ao enxertar um mecanismo de atenção (Fig. 1. laranja) a um Codificador-Decodificador.
-A Figura 2 mostra a operação interna passo a passo do bloco de atenção (A) na Fig 1.
 Na tradução entre idiomas, o alinhamento é o processo de corresponder palavras da frase de origem a palavras da frase traduzida. Redes que realizam tradução literal sem considerar a ordem das palavras mostrariam as pontuações mais altas ao longo da diagonal (dominante) da matriz. A dominância fora da diagonal mostra que o mecanismo de atenção é mais matizado.
-Considere um exemplo de tradução de I love you para o francês. Na primeira passagem pelo decodificador, 94% do peso da atenção está na primeira palavra em inglês I, então a rede oferece a palavra je. Na segunda passagem do decodificador, 88% do peso da atenção está na terceira palavra em inglês you, então ela oferece t'. Na última passagem, 95% do peso da atenção está na segunda palavra em inglês love, então ela oferece aime.
 No exemplo I love you, a segunda palavra love está alinhada com a terceira palavra aime. Empilhar vetores de linha suaves juntos para je, t', e aime produz uma matriz de alinhamento:
-Às vezes, o alinhamento pode ser de múltiplos para múltiplos. Por exemplo, a frase em inglês look it up corresponde a cherchez-le. Assim, pesos de atenção "suaves" funcionam melhor do que pesos de atenção "rígidos" (definindo um peso de atenção para 1 e os outros para 0), pois gostaríamos que o modelo criasse um vetor de contexto consistindo de uma soma ponderada dos vetores ocultos, em vez de "o melhor", pois pode não haver um melhor vetor oculto.
 Muitas variantes de atenção implementam pesos suaves, tais como
 Atenção ao estilo Bahdanau, também referida como atenção aditiva,
 Atenção ao estilo Luong, que é conhecida como atenção multiplicativa,
@@ -16,424 +13,71 @@ FlexAttention é um kernel de atenção desenvolvido pela Meta que permite aos u
 Como os vision transformers são normalmente treinados de forma autossupervisionada, os mapas de atenção geralmente não são sensíveis à classe. Quando uma cabeça de classificação é anexada ao backbone (rede base) do ViT, os mapas de atenção discriminativos de classe (CDAM) combinam mapas de atenção e gradientes em relação ao token de classe [CLS]. Alguns métodos de interpretabilidade sensíveis à classe originalmente desenvolvidos para redes neurais convolucionais também podem ser aplicados ao ViT, como o GradCAM, que retropropaga os gradientes para as saídas da camada de atenção final.
 O uso da atenção como base de explicação para os transformers na linguagem e na visão não ocorre sem debates. Embora alguns artigos pioneiros tenham analisado e estruturado as pontuações de atenção como explicações, pontuações de atenção mais altas nem sempre se correlacionam com um maior impacto no desempenho do modelo.
 Para as matrizes:
-Q
-R
-m
-d
-k
-,
-K
-R
-n
-d
-k
-e
-V
-R
-n
-d
-v
 , o produto escalar escalonado, ou atenção QKV, é definido como:
 Attention
-(
-Q
-,
-K
-,
-V
-)
 softmax
-(
-Q
-K
-T
-d
-k
-)
-V
-R
-m
-d
-v
 onde
-T
-Q
 contém
-m
 consultas (queries), enquanto as matrizes
-K
-,
-V
 contêm conjuntamente um conjunto não ordenado de
-n
 pares chave-valor. Os vetores de valor na matriz
-V
 são ponderados usando os pesos resultantes da operação softmax, de modo que as linhas da matriz de saída de
-m
 por
-d
-v
 fiquem confinadas à envoltória convexa dos pontos em
-R
-d
-v
 dados pelas linhas de
-V
-.
-A
-R
-m
-m
-e
-B
-R
-n
-n
 matrizes de permutação; e
-D
-R
-m
-n
 uma matriz arbitrária. A função softmax é equivariante de permutação no sentido de que:
 softmax
-(
-A
-D
-B
-)
-A
 softmax
-(
-D
-)
-B
 Notando que a transposta de uma matriz de permutação é também a sua inversa, segue-se que:
 Attention
-(
-A
-Q
-,
-B
-K
-,
-B
-V
-)
-A
 Attention
-(
-Q
-,
-K
-,
-V
-)
 o que mostra que a atenção QKV é equivariante em relação ao reordenamento das consultas (linhas de
-Q
 ); e invariante ao reordenamento dos pares chave-valor em
-K
-,
-V
 . Estas propriedades são herdadas ao aplicar transformações lineares às entradas e saídas dos blocos de atenção QKV. Por exemplo, uma função de autoatenção simples definida como:
-X
 Attention
-(
-X
-T
-q
-,
-X
-T
-k
-,
-X
-T
-v
-)
 é equivariante de permutação em relação ao reordenamento das linhas da matriz de entrada
-X
 de uma forma não trivial, porque cada linha da saída é uma função de todas as linhas da entrada. Propriedades semelhantes são válidas para a atenção multicabeça, que é definida abaixo.
 Quando a atenção QKV é usada como um bloco de construção para um decodificador autorregressivo, e quando no momento do treinamento todas as matrizes de entrada e saída têm
-n
 linhas, uma variante de atenção mascarada é usada:
 Attention
-(
-Q
-,
-K
-,
-V
-)
 softmax
-(
-Q
-K
-T
-d
-k
-M
-)
-V
 onde a máscara,
-M
-R
-n
-n
 é uma matriz triangular superior estrita, com zeros na e abaixo da diagonal e
 em todos os elementos acima da diagonal. A saída softmax, também em
-R
-n
-n
 , é então triangular inferior, com zeros em todos os elementos acima da diagonal. O mascaramento garante que para todo
-1
-i
-j
-n
 , a linha
-i
-j
 de qualquer uma das três matrizes de entrada. As propriedades de invariância e equivariância de permutação da atenção QKV padrão não se aplicam à variante mascarada.
 Atenção multicabeça (Multi-head attention)
 MultiHead
-(
-Q
-,
-K
-,
-V
-)
 Concat
-(
 head
-1
-,
-.
-.
-.
-,
 head
-h
-)
-W
-O
 onde cada cabeça é calculada com atenção QKV como:
 head
-i
 Attention
-(
-Q
-W
-i
-Q
-,
-K
-W
-i
-K
-,
-V
-W
-i
-V
-)
-e
-W
-i
-Q
-,
-W
-i
-K
-,
-W
-i
-V
 , e
-W
-O
 são matrizes de parâmetros.
 As propriedades de permutação da atenção QKV (padrão, sem máscara) também se aplicam aqui. Para matrizes de permutação,
-A
-,
-B
-:
 MultiHead
-(
-A
-Q
-,
-B
-K
-,
-B
-V
-)
-A
 MultiHead
-(
-Q
-,
-K
-,
-V
-)
 a partir do qual também vemos que a autoatenção multicabeça:
-X
 MultiHead
-(
-X
-T
-q
-,
-X
-T
-k
-,
-X
-T
-v
-)
 é equivariante em relação ao reordenamento das linhas da matriz de entrada
-X
-.
 Attention
-(
-Q
-,
-K
-,
-V
-)
 softmax
-(
 tanh
-(
-W
-Q
-Q
-W
-K
-K
-)
-)
-V
 onde
-W
-Q
-e
-W
-K
 Attention
-(
-Q
-,
-K
-,
-V
-)
 softmax
-(
-Q
-W
-K
-T
-)
-V
 onde
-W
 A autoatenção (self-attention) é essencialmente o mesmo que a atenção cruzada (cross-attention), exceto que os vetores de consulta, chave e valor vêm todos do mesmo modelo. Tanto o codificador quanto o decodificador podem usar a autoatenção, mas com diferenças sutis.
 Para a autoatenção do codificador, podemos começar com um codificador simples sem autoatenção, como uma "camada de embedding", que simplesmente converte cada palavra de entrada num vetor através de uma tabela de pesquisa fixa. Isto fornece uma sequência de vetores ocultos
-h
-0
-,
-h
-1
-,
-...
 . Estes podem então ser aplicados a um mecanismo de atenção de produto escalar, para obter:
-h
-0
-A
-t
-t
-e
-n
-t
-i
-o
-n
-(
-h
-0
-W
-Q
-,
-H
-W
-K
-,
-H
-W
-V
-)
-h
-1
-A
-t
-t
-e
-n
-t
-i
-o
-n
-(
-h
-1
-W
-Q
-,
-H
-W
-K
-,
-H
-W
-V
-)
 ou mais sucintamente,
-H
-A
-t
-t
-e
-n
-t
-i
-o
-n
-(
-H
-W
-Q
-,
-H
-W
-K
-,
-H
-W
-V
-)
 . Isto pode ser aplicado repetidamente para obter um codificador de múltiplas camadas. Esta é a "autoatenção do codificador", por vezes chamada de "atenção de todos para todos" (all-to-all attention), pois o vetor em cada posição pode prestar atenção a todos os outros.
 Para a autoatenção do decodificador, a atenção de todos para todos é inadequada, porque durante o processo de decodificação autorregressiva, o decodificador não pode prestar atenção a saídas futuras que ainda não foram decodificadas. Isto pode ser resolvido forçando os pesos de atenção
-w
-i
-j
-0
 para todo
-i
-j
 , o que é chamado de "mascaramento causal" (causal masking). Este mecanismo de atenção é a "autoatenção causalmente mascarada".
 ChatGPT
 Gemini

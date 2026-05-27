@@ -2,158 +2,34 @@ Otimização (português brasileiro) ou optimização (português europeu) matem
 Um problema de otimização pode ser representado da seguinte forma:
 Dados: uma função f : A
 R de algum conjunto A de números reais;
-Buscando: um elemento x0 em A tal que f(x0) f(x) para todo x em A ("minimização") ou tal que f(x0) f(x) para todo x em A ("maximização").
 Normalmente, A é algum subconjunto do espaço euclidiano Rn, muitas vezes especificado por um conjunto de restrições, igualdades ou desigualdades que os membros de A devem satisfazer. O domínio A de f é chamado de espaço de busca ou o conjunto de escolha, enquanto os elementos de A são chamados de soluções candidatas ou soluções viáveis.
 A função f é chamada, alternadamente, de função objetivo, função de custo (minimização), função utilidade (maximização), ou, em certos campos, função de energia, ou energia funcional. Uma solução viável que minimiza (ou maximiza, se este é a intenção) a função objetivo é chamada de uma solução ótima.
 Por convenção, a forma padrão de um problema de otimização é definida em termos de minimização. Geralmente, a menos que tanto a função objetivo quanto a região viável sejam convexas em um problema de minimização, pode haver alguns mínimos locais, onde um mínimo local x é definido como um ponto para o qual existe algum 0 de modo que para todo x
-x
-x
-;
 a expressão
-f
-(
-x
-)
-f
-(
-x
-)
 é verdadeira. Ou seja, em alguma região ao redor de x todos os valores de função são maiores ou iguais ao valor naquele ponto. Os máximos locais são definidos de forma similar.
 Um grande número de algoritmos propostos para resolver problemas não-convexos - incluindo a maioria dos programas comercialmente disponíveis - não são capazes de fazer uma distinção entre soluções ótimas locais e soluções ótimas rigorosas, e irão tratar as primeiras como verdadeiras soluções para o problema original. O ramo da matemática aplicada e da análise numérica que se preocupa com o desenvolvimento de algoritmos deterministas que são capazes de garantir convergência em um tempo finito à solução ótima verdadeira de um problema não-convexo é chamada de otimização global.
 Os problemas de otimização são normalmente expressos com uma notação especial. Aqui estão alguns exemplos.
 Considere a seguinte notação:
 min
-x
-R
-(
-x
-2
-1
-)
 Ela denota o valor mínimo de uma função objetivo x2
-1
 , ao escolher x de um conjunto de números reais
-R
 . O valor mínimo neste caso é
-1
-x
-0
-.
 Da mesma forma, a notação
 max
-x
-R
-2
-x
 pede pelo valor máximo de uma função objetivo 2x, onde x pode ser qualquer número real. Neste caso, não há qualquer máximo visto que a função objetivo é irrestrita, então a resposta é "infinito" ou "indefinida".
 Considere a seguinte notação:
-a
-r
-g
-m
-i
-n
-x
-(
-,
-1
-]
-x
-2
-1
-,
 ou de forma equivalente
-a
-r
-g
-m
-i
-n
-x
-x
-2
-1
-,
 subject to:
-x
-(
-,
-1
-]
-.
 Ela representa o valor (ou valores) do argumento x no intervalo
-(
-,
-1
-]
-que minimiza (ou minimizam) a função objetivo x2 1 (o verdadeiro valor mínimo da função pelo qual o problema não perguntou). Neste caso, a resposta é x -1, desde que x 0 é inviável, i.e., não pertence ao conjunto candidato.
 De forma semelhante,
-a
-r
-g
-m
-a
-x
-x
-[
-5
-,
-5
-]
-,
-y
-R
-x
 cos
-(
-y
-)
-,
 ou equivalentemente
-a
-r
-g
-m
-a
-x
-x
-,
-y
-x
 cos
-(
-y
-)
-,
 subject to:
-x
-[
-5
-,
-5
-]
-,
-y
-R
-,
 representa o par (ou pares)
-(
-x
-,
-y
-)
 que maximiza (ou maximizam) o valor da função objetivo
-x
 cos
-(
-y
-)
 , com a restrição adicional de que x está no intervalo
-[
-5
-,
-5
-]
 (novamente, o valor máximo verdadeiro da expressão não importa). Neste caso, as soluções são os pares da forma (5, 2k ) e ( 5,(2k 1) ), onde k varia sobre todos os números inteiros.
 Arg min e arg max algumas vezes são escritos como argmin e argmax, e correspondem a argumento do mínimo e argumento do máximo.
 Outros importantes matemáticos no campo da otimização são:

@@ -19,12 +19,8 @@ move-se o disco Vermelho para a haste A;
 move-se o disco Verde para a haste C;
 move-se o disco Vermelho para a haste C.
 Podemos também representar a solução em forma gráfica, desenhando as hastes e a posição dos discos a cada movimento (ou passo). Com 3 discos, o quebra-cabeça pode ser resolvido em 7 movimentos. O número mínimo de movimentos necessários para resolver um quebra-cabeça da Torre de Hanói é
-2
-n
-1
 , onde n é o número de discos.
 Essa sequência, ou descrição, finita de passos ou tarefas é a quem chamamos de algoritmos.
-A análise de algoritmos é um ramo da ciência da computação que estuda as técnicas de projeto de algoritmos e os algoritmos de forma abstrata, sem estarem implementados em uma linguagem de programação em particular ou implementadas de algum outro modo. Ela preocupa-se com os recursos necessários para a execução do algoritmo tais como o tempo de execução e o espaço de armazenamento de dados. Deve-se perceber que para um dado algoritmo pode-se ter diferentes quantidades de recursos alocados de acordo com os parâmetros passados na entrada. Por exemplo, se definirmos que o fatorial de um número natural é igual ao fatorial de seu antecessor multiplicado pelo próprio número, fica claro que a execução de fatorial(10) consome mais tempo que a execução de fatorial(5).
 Um meio de exibir um algoritmo a fim de analisá-lo é através da implementação por pseudocódigo em português estruturado, também conhecido no Brasil como Portugol. Este código pode ser digitado dentro de algum editor de textos como o Bloco de Notas, anotado num caderno ou ainda poder digitado diretamente dentro de um programa interpretador de algoritmos, como é caso do Visualg, que é um editor, interpretador e executor dos algoritmos.
 Pode-se classificar algoritmos pela maneira pelo qual foram implementados:
 Recursivo ou iterativo - um algoritmo recursivo possui a característica de invocar a si mesmo repetidamente até que certa condição seja satisfeita e ele é terminado, que é um método comum em programação funcional. Algoritmos iterativos usam estruturas de repetição tais como laços, ou ainda estruturas de dados adicionais tais como pilhas, para resolver problemas. Cada algoritmo recursivo possui um algoritmo iterativo equivalente e vice-versa, mas que pode ter mais ou menos complexidade em sua construção;
@@ -41,18 +37,8 @@ Redução - a redução resolve o problema ao transformá-lo em outro problema. 
 Busca e enumeração - vários problemas podem ser modelados através de grafos. Um algoritmo de exploração de grafo pode ser usado para caminhar pela estrutura e retornam informações úteis para a resolução do problema. Esta categoria inclui algoritmos de busca e backtracking;
 Alguns algoritmos são executados em tempo linear, de acordo com a entrada, enquanto outros são executados em tempo exponencial ou até mesmo nunca terminam de serem executados. Alguns ditos problemas tem múltiplos algoritmos enquanto outros não possuem algoritmos para resolução.
 Dasgupta, Sanjoy; Papadimitriou, Christos; Vazirani, Umesh. Algoritmos. Porto Alegre: AMGH, 2010.
-Algoritmos e Programação - Teoria e Prática: para universitários e profissionais de informática: Novatec Editora. ISBN 85-7522-073-X
-Donald E. Knuth (1973) The Art of Computer Programming, Volume 1: Fundamental Algorithms (2a edição). Addison-Wesley, ISBN 0-201-03809-9 (em inglês)
-CHARLES E. LEISERSON, Thomas H. Cormen, RONALD L. RIVEST, CLIFFORD STEIN , Algoritmos: teoria e prática , CAMPUS - RJ, 2002 ISBN 8-535-20926-3
-Donald E. Knuth, Selected Papers on Analysis of Algorithms ISBN 1-57586-212-3 Livro (em inglês)
-T.H. Cormen, C.E. Leiserson, R.L. Rivest, C. Stein, Introduction to Algorithms, 3rd edition, MIT Press, 2009 ISBN 978-026-203-384-8 (em inglês)
 Donald E. Knuth, The Art of Computer Programming
-Jon Kleinberg, Éva Tardos, Algorithm Design, Addison-Wesley, 2005 ISBN 0-321-29535-8 (em inglês) Livro
 Sanjoy Dasgupta, Christos Papadimitriou, Umesh Vazirani, Algorithms
-Richard E. Neapolitan, Kumarss Naimipour , Foundations of Algorithms Using Java Pseudocode , Jones Bartlett Learning, 2004 ISBN 0-763-72129-8 (em inglês)
-Laira Vieira Toscani, Paulo A. S. Veloso, Complexidade de Algoritmos: Série Livros Didáticos Informática UFRGS - Vol. 13 , Bookman ISBN 8-540-70139-1
-RICARDO LINDEN , Algoritmos Genéticos (2a edição) , Brasport ISBN 8-574-52373-9
-Gilberto Farias de Sousa Filho, Eduardo de Santana Medeiros Alexandre, Introdução a Computação - 2a edição. João Pessoa: Editora da UFPB, 2014. ISBN:978-85-237-0892-4
 Ziviani, Nivio. Projeto de algoritmos: com implementações em Java e C . São Paulo: Cengage Learning, 2011.
 Projeto de Algoritmos em C
 A. Broder, J. Stolfi, Pessimal Algorithms and Simplexity Analysis

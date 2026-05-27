@@ -24,12 +24,7 @@ As redes neurais profundas são tipicamente redes feedforward nas quais os dados
 As redes neurais recorrentes, nas quais os dados podem fluir em qualquer direção, são usadas para aplicações como modelagem de linguagem. A memória de curto prazo longa é particularmente eficaz para esse uso.
 As redes neurais convolucionais (CNNs) são usadas em visão computacional. As redes neurais convolucionais também foram aplicadas à modelagem acústica para reconhecimento automático de fala (ASR).
 Assim como com redes neurais artificiais, muitos problemas podem surgir com redes neurais profundas treinadas ingenuamente. Dois problemas comuns são o ajuste excessivo e o tempo de computação.
-l
-2
 ) ou esparsidade (regularização de
-l
-1
-Em 2021, J. Feldmann et al. propuseram um acelerador de hardware fotônico integrado para processamento convolucional paralelo. Os autores identificam duas vantagens principais da fotônica integrada sobre suas contrapartes eletrônicas: (1) transferência de dados massivamente paralela por meio de multiplexação por divisão de comprimento de onda em conjunto com pentes de frequência e (2) velocidades de modulação de dados extremamente altas. Seu sistema pode executar trilhões de operações de multiplicação e acumulação por segundo, indicando o potencial da fotônica integrada em aplicações de IA com muitos dados.
 A estreia das redes neurais profundas para reconhecimento de falantes no final da década de 1990 e do reconhecimento de fala por volta de 2009 a 2011 e da memória de curto prazo longa por volta de 2003 a 2007, acelerou o progresso em oito áreas principais:
 Treinamento e decodificação de rede neural profunda de aceleração e expansão vertical/horizontal
 Treinamento discriminativo de sequência
@@ -48,7 +43,6 @@ Em 2017, redes neurais de grafos foram usadas pela primeira vez para prever vár
 Uma rede neural artificial autocodificadora foi usada em bioinformática para prever relações entre funções genéticas e anotações de ontologia genética.
 Um relógio epigenético é um teste bioquímico que pode ser usado para medir a idade. Galkin et al. usaram redes neurais profundas para treinar um relógio de envelhecimento epigenético de precisão sem precedentes usando mais de 6.000 amostras de sangue. O relógio usa informações de 1000 sítios CpG e prevê pessoas com certas condições mais velhas do que controles saudáveis: doença inflamatória intestinal (DII), demência frontotemporal, câncer ovariano, obesidade. O relógio de envelhecimento foi planejado para ser lançado para uso público em 2021 por uma empresa subproduto da Insilico Medicine, a Deep Longevity.
 O laboratório de IA do Facebook realiza tarefas como marcar automaticamente fotos carregadas com os nomes das pessoas nelas.
-Em referência adicional à ideia de que a sensibilidade artística pode ser inerente a níveis relativamente baixos da hierarquia cognitiva, uma série publicada de representações gráficas dos estados internos de redes neurais profundas (20-30 camadas) tentando discernir dentro de dados essencialmente aleatórios as imagens nas quais foram treinadas demonstra um apelo visual: o aviso de pesquisa original recebeu bem mais de 1.000 comentários e foi o assunto do que foi por um tempo o artigo mais acessado no site do The Guardian.
 Em 2016, pesquisadores usaram uma rede neural artificial para manipular imagens por tentativa e erro, identificar os pontos focais de outra e, assim, gerar imagens que a enganassem. As imagens modificadas não pareciam diferentes aos olhos humanos. Outro grupo mostrou que impressões de imagens manipuladas e depois fotografadas enganaram com sucesso um sistema de classificação de imagens. Uma defesa é a busca reversa de imagens, na qual uma possível imagem falsa é enviada a um site como o TinEye, que pode então encontrar outras instâncias dela. Um refinamento é pesquisar usando apenas partes da imagem, para identificar imagens das quais aquela parte pode ter sido retirada.
 Amostragem compressiva
 Codificação esparsa

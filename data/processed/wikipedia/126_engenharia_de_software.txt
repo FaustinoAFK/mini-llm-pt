@@ -34,7 +34,6 @@ Processos de Engenharia de Software
 Ferramentas e Métodos de Engenharia de Software
 Qualidade de software
 SEE e PSEE são os ambientes voltados ao desenvolvimento e manutenção de processos. O projeto ExPSEE é uma continuação dos estudos de processos, principalmente do ambiente PSEE.
-Devido ao uso da palavra projeto em muitos contextos, por questões de clareza, há vezes em que se prefira usar o original em inglês design.
 Um modelo de processo de desenvolvimento de software, ou simplesmente modelo de processo, pode ser visto como uma representação, ou abstração dos objetos e atividades envolvidas no processo de software. Além disso, oferece uma forma mais abrangente e fácil de representar o gerenciamento de processo de software e consequentemente o progresso do projeto.
 Exemplos de alguns modelos de processo de software;
 Modelo de ciclo de vida
@@ -111,10 +110,6 @@ análise e gestão de risco;
 estimativa de custos.
 A estimativa de dificuldades e custos de desenvolvimentos são muito difíceis, além do surgimento de problemas técnicos. Esses fatores requerem uma análise de riscos cuidadosa.
 As atividades de análise concentram-se na identificação, especificação e descrição dos requisitos do sistema de software. De acordo com a ISO/IEC/IEEE 24765 requisito é:
-(1) condição ou capacidade necessária por um usuário para resolver um problema ou alcançar um objetivo;
-(2) condição ou capacidade que deve ser atingida ou possuída por um sistema ou componente de um sistema para satisfazer um contrato, padrão, especificação ou outro documento formalmente imposto;
-(3) representação documentada de uma condição ou capacidade como em (1) ou (2);
-(4) condição ou capacidade que deve ser alcançada ou possuída por um sistema, produto, serviço, resultado ou componente para satisfazer um contrato, padrão, especificação ou outro documento formalmente imposto. Requisitos incluem as necessidades quantificadas e documentadas, desejos e expectativas do patrocinador, clientes e outras partes
 interessadas.
 Há várias classificações sobre requisitos, o PMBOK e o BABOK utilizam a seguinte classificação hierárquica:
 Requisitos de negócio
@@ -138,10 +133,7 @@ Atualmente existe um destaque todo especial para a Engenharia de Software na Web
 O Brasil atualmente conta com diversos cursos de nível superior em Engenharia de Software nas seguintes instituições reconhecidas pelo MEC: UnB, UFMS, UFRN, Universidade do Estado de Santa Catarina, Universidade Federal do Ceará, Universidade Federal de Goiás, Universidade de Rio Verde, Unipampa, UniCesumar, UTFPR, PUC-PR e PUCRS
 MAGELA, Rogerio. Engenharia de Software Aplicada: Princípios (volume 1). Alta Books. 2006.
 MAGELA, Rogerio. Engenharia de Software Aplicada: Fundamentos (volume 2). Alta Books. 2006.
-MOLINARI, Leonardo (2007). Gerência de Configuração - Técnicas e Práticas no Desenvolvimento do Software. Florianópolis: Visual Books. 85-7502-210-5
 NEYMALA, Roger. Software Engineering: A Practitioner's Approach, 6a edição, Mc Graw Hill, 2005.
-ANÁLISE ECONÔMICA DE SISTEMAS DE INFORMAÇÕES.(ISBN 978-85-909374-7-0) Editora Ixtlan. Autor : Sergio Kaminski. Comentário: Mostra todas as etapas de desenvolvimento do software, relacionando ao lucro,receita e custo.
-Livro: Reengenharia de Software, Técnicas de Manutenção de Programas e Sistemas, Autor: Girish Parikh, 1990, Livros Técnicos e Científicos Editora, ISBN 85-216-0725-3
 PRESSMAN, Roger. Engenharia de Software - 8a Edição. São Paulo: McGraw-Hill, 2016.
 MARTIN, Robert C. Arquitetura Limpa: O guia do artesão para estrutura e design de software. Alta Books, 2019.
 VALENTE, Marco Tulio. Engenharia de Software Moderna: Princípios e Práticas para Desenvolvimento de Software com Produtividade. 2019.

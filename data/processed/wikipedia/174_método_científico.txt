@@ -27,7 +27,6 @@ Ordem dos eventos - As causas precisam preceder no tempo os efeitos observados.
 Na área da saúde a natureza da associação causal foi formulada por Hence e adaptada por Robert Koch em 1877 para demonstração da relação causal entre microrganismos e patologias, fundando-se a proposta de Koch basicamente nos mesmos princípios enunciado acima, ou seja: força da associação, ou conectividade (correlação nem sempre implica causalidade); sequência temporal (assimetria); transitividade (evidência experimental); previsibilidade e estabilidade dos resultados.
 Recolhimento de dados;
 Proposta de uma ou mais hipóteses;
-Realização de uma experiência controlada, para testar a validade da(s) hipótese(s);
 Análise dos resultados;
 Interpretar os dados e tirar conclusões, o que serve para a formulação de novas hipóteses;
 Publicação dos resultados em monografias, dissertações, teses, artigos ou livros aceitos por universidades e ou reconhecidos pela comunidade científica.

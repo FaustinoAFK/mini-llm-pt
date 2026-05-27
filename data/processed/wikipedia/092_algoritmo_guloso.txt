@@ -6,26 +6,8 @@ Uma função de viabilidade, que é usada para determinar se um candidato pode s
 Uma função objetivo, que atribui um valor a uma solução, ou uma solução parcial.
 Uma função de solução, que irá indicar quando tivermos descoberto uma solução completa.
 A avaliação de qualidade da solução obtida por um algoritmo é feita através da comparação com um limite inferior para a solução do problema, o que pode ser expresso pela seguinte fórmula:
-x
-H
-(
-I
-)
-x
-(
-I
-)
 , onde
-x
-H
-(
-I
-)
 é o valor da solução heurística (aproximada) e
-x
-(
-I
-)
 é o valor da solução ótima.
 Não leva em consideração as consequências de suas decisões;
 Podem fazer cálculos repetitivos;
@@ -44,37 +26,9 @@ No problema de bin packing (ou problema do empacotamento), objetos de diferentes
 Podem ser utilizadas heurísticas gulosas para obtenção de uma solução aproximada, tais como: algoritmo first fit, algoritmo best fit, dentre outros.
 Distribuir as n tarefas pelos m processadores minimizando o tempo de término da última tarefa é um problema NP-difícil param 2.
 Alocar as tarefa aleatoriamente aos processadores, sempre que ficarem ociosos. Neste caso a solução terá performance:
-x
-H
-(
-I
-)
-x
-(
-I
-)
-2
-1
-m
 Sempre que um processador ficar ocioso aloca-se a tarefa de maior duração ainda não processada (empates são resolvidos arbitrariamente). Neste caso a solução terá performance:
-x
-H
-(
-I
-)
-x
-(
-I
-)
-4
-3
-1
-3
-m
 Observa-se que a heurística 2 é superior à heurística 1.
 Coloração de grafos
 Árvore de extensão mínima
 Problema do empacotamento
 Divisão e conquista
-Brassard, Gilles; Bratley, Paul. Algorithmics theory practice. New Jersey. Prentice-Hall, 1988. ISBN: 0-13-023243-2.
-Campello, Ruy E.; Maculan, Nelson. Algoritmos e heurísticas: desenvolvimento e avaliação de performance. Niterói. EDUFF, 1994. ISBN: 85-228-0134-7.

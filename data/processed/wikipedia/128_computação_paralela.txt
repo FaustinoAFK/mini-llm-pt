@@ -11,18 +11,6 @@ Ideally, o Speedup da paralelização seria linear dobrar o número de elementos
 O ganho potencial máximo de um sistema é calculado pela Lei de Amdahl. A Lei de Amdahl indica que o melhor desempenho é alcançado equilibrando aprimoramentos em componentes paralelizáveis e não paralelizáveis, e mostra retornos decrescentes ao adicionar processadores.
 A Lei de Amdahl tem limitações: assume carga fixa, ignora sobrecargas de comunicação e sincronização, foca no aspecto computacional e negligencia fatores extrínsecos como persistência de dados, E/S e acesso à memória.
 As leis de Gustafson e Lei de Escalabilidade Universal oferecem avaliações mais realistas do desempenho paralelo.
-I
-j
-O
-i
-I
-i
-O
-j
-O
-i
-O
-j
 Exemplos:
 : 1: function Dep(a, b)
 : 2: c : a b
@@ -46,7 +34,6 @@ MISD (Multiple Instruction, Single Data): raro; arquiteturas como systolic array
 MIMD (Multiple Instruction, Multiple Data): mais comum em programas paralelos.
 A computação paralela pode gerar grande sobrecarga na mesclagem de dados de múltiplos processos. Especificamente, comunicação e sincronização podem ter custos duas ou mais ordens de magnitude superiores ao processamento em thread única. Portanto, a melhoria global deve ser cuidadosamente avaliada.
 Do advento da tecnologia VLSI na década de 1970 até cerca de 1986, o aumento de velocidade era obtido dobrando-se o tamanho da palavra de máquina a quantidade de informação manipulável por ciclo. Aumentar o tamanho da palavra reduz o número de instruções para operações em variáveis maiores. Por exemplo, um processador de 8 bits precisa de duas instruções para somar inteiros de 16 bits, enquanto um de 16 bits faz em uma só.
-Microprocessadores de 4 bits foram substituídos por 8, depois 16, depois 32 bits, padrão por duas décadas. Nos anos 2000, x86-64 introduziu processadores de 64 bits.
 Paralelismo de tarefas significa que cálculos totalmente diferentes podem ocorrer no mesmo ou em diferentes dados. Contrasta com paralelismo de dados, onde o mesmo cálculo é aplicado a diferentes dados. Envolve decompor tarefas em subtarefas, alocando cada uma a um processador, executando-as concorrentemente. Não escala com o tamanho do problema.
 Paralelismo de superpalavra é técnica de vetorização automática baseada em desenrolar laços e vetorização de blocos básicos, explorando paralelismo em código inline, como manipulação de canais de cor ou coordenadas.
 Arquiteturas com latência e largura de banda uniformes são UMA; tipicamente memória compartilhada não distribuída. Arquiteturas não-UMA são NUMA, comum em sistemas distribuídos.
@@ -87,7 +74,6 @@ Simulação de automato finito
 Computação paralela pode ser aplicada a sistemas lockstep, executando operações em paralelo para redundância e detecção/correção de erros se resultados divergem. Útil contra single-event upsets transitórios.
 As raízes do paralelismo MIMD remontam a Luigi Federico Menabrea e seu Sketch of the Analytic Engine Invented by Charles Babbage.
 Em abril de 1958, Stanley Gill (Ferranti) discutiu programação paralela e necessidade de branching e waiting. Também em 1958, John Cocke e Daniel Slotnick (IBM) abordaram paralelismo em cálculos numéricos. A Burroughs introduziu o D825 em 1962, um sistema de quatro processadores e 16 módulos de memória via crossbar. Em 1967, Amdahl e Slotnick debateram o paralelo no AFIPS, cunhando a Lei de Amdahl.
-Em 1969, a Honeywell lançou um sistema Multics SMP com até oito processadores. O C.mmp (CMU, anos 1970) foi um dos primeiros multiprocessadores maiores. O Synapse N 1 (1984) foi o primeiro com cache snooping.
 Computadores SIMD datam dos anos 1970, visando amortizar latência de controle. Em 1964, Slotnick propôs o ILLIAC IV para LLNL, financiado pela Força Aérea dos EUA o primeiro esforço SIMD massivo. Quando rodou sua primeira aplicação real em 1976, já era ultrapassado por supercomputadores como o Cray-1.
 Nos anos 1970, no MIT CSAIL, Marvin Minsky e Seymour Papert desenvolveram a teoria Society of Mind, que vê o cérebro como computação massivamente paralela. Em 1986, Minsky publicou The Society of Mind, afirmando que "a mente é formada por muitos pequenos agentes, cada um sem inteligência por si só".
 Modelos semelhantes foram propostos por:

@@ -8,7 +8,6 @@ Embora o GPT-1 (decoder-only) tenha sido introduzido em 2018, foi o GPT-2 em 201
 Desde 2022, os modelos de pesos abertos (open-weight) vêm ganhando popularidade, especialmente a princípio com o BLOOM e o LLaMA, embora ambos tenham restrições de uso e implantação. Os modelos Mistral 7B e Mixtral 8x7b da Mistral AI possuem uma Licença Apache mais permissiva. Em janeiro de 2025, a DeepSeek lançou o DeepSeek R1, um modelo de pesos abertos de 671 bilhões de parâmetros que tem desempenho comparável ao OpenAI o1, mas a um preço muito menor por token para os usuários.
 Por exemplo, o tokenizador BPE usado pela versão legada do GPT-3 dividiria tokenizer: texts - series of numerical "tokens" como
 Como exemplo, considere um tokenizador baseado na codificação por pares de bytes. Na primeira etapa, todos os caracteres únicos (incluindo espaços e sinais de pontuação) são tratados como um conjunto inicial de n-gramas (ou seja, conjunto inicial de unigramas). Sucessivamente, o par mais frequente de caracteres adjacentes é mesclado em um bigrama e todas as instâncias do par são substituídas por ele. Todas as ocorrências de pares adjacentes de n-gramas (anteriormente mesclados) que ocorrem juntos com mais frequência são, então, novamente mescladas em um n-grama ainda mais longo, até que um vocabulário do tamanho prescrito seja obtido. Depois que um tokenizador é treinado, qualquer texto pode ser tokenizado por ele, desde que não contenha caracteres que não apareçam no conjunto inicial de unigramas.
-Um vocabulário de tokens baseado nas frequências extraídas principalmente de corpora em inglês usa o menor número possível de tokens para uma palavra média em inglês. No entanto, uma palavra média em outro idioma codificada por tal tokenizador otimizado para o inglês é dividida em uma quantidade subideal de tokens. O tokenizador do GPT-2 pode usar até 15 vezes mais tokens por palavra para alguns idiomas, por exemplo, para a língua shan de Mianmar. Mesmo idiomas mais difundidos, como o português e o alemão, têm "um acréscimo de 50%" em comparação com o inglês.
 Com a crescente proporção de conteúdo gerado por LLMs na web, a limpeza de dados no futuro pode incluir a filtragem desse tipo de conteúdo. O conteúdo gerado por LLMs pode representar um problema se for semelhante ao texto humano (dificultando a filtragem), mas de qualidade inferior (degradando o desempenho dos modelos treinados com ele).
 O treinamento dos maiores modelos de linguagem pode precisar de mais dados linguísticos do que os naturalmente disponíveis, ou os dados de ocorrência natural podem ser de qualidade insuficiente. Nesses casos, dados sintéticos podem ser usados. A série Phi de LLMs da Microsoft é treinada em dados que se assemelham a livros didáticos gerados por outro LLM.
 Um LLM é um tipo de modelo fundacional (modelo grande X) treinado em linguagem. Os LLMs podem ser treinados de diferentes maneiras. Em particular, os modelos GPT são primeiramente pré-treinados para prever a próxima palavra usando uma grande quantidade de dados, antes de passarem por um ajuste fino.
@@ -34,67 +33,22 @@ A otimização de inferência refere-se a técnicas que melhoram o desempenho do
 O OptiLLM é um proxy de inferência otimizadora compatível com a API da OpenAI que implementa múltiplas técnicas de otimização de inferência simultaneamente. O sistema atua como um proxy transparente que pode funcionar com qualquer provedor de LLM, implementando técnicas como a Pesquisa de árvore de Monte Carlo (MCTS), mistura de agentes (MoA), amostragem best-of-N (melhor de N) e reflexão de encadeamento de pensamentos (chain-of-thought). O OptiLLM demonstra que a aplicação estratégica de recursos computacionais no tempo de inferência pode melhorar substancialmente o desempenho do modelo em diversas tarefas, alcançando melhorias significativas em benchmarks como a competição de matemática AIME 2024 e vários desafios de programação.
 Essas abordagens de otimização de inferência representam uma categoria crescente de ferramentas que aprimoram os LLMs existentes sem exigir acesso aos pesos do modelo ou retreinamento, tornando as capacidades avançadas de raciocínio mais acessíveis em diferentes provedores de modelos e casos de uso.
 Multimodalidade significa ter múltiplas modalidades, onde uma "modalidade" se refere a um tipo de entrada ou saída, como vídeo, imagem, áudio, texto, propriocepção, etc. Por exemplo, o modelo PaLM do Google foi ajustado para um modelo multimodal e aplicado ao controle robótico. Modelos LLaMA também foram tornados multimodais usando o método de tokenização, para permitir entradas de imagem, e entradas de vídeo. O GPT-4o pode processar e gerar texto, áudio e imagens. Tais modelos são às vezes chamados de grandes modelos multimodais (do inglês large multimodal models - LMMs).
-E
 . Crie um pequeno perceptron de múltiplas camadas
-f
 , de modo que, para qualquer imagem
-y
 , o vetor pós-processado
-f
-(
-E
-(
-y
-)
-)
 tenha as mesmas dimensões de um token codificado. Isso é um "token de imagem". Então, pode-se intercalar tokens de texto e tokens de imagem. O modelo composto é então submetido a um ajuste fino (fine-tuning) em um conjunto de dados de imagem-texto. Essa construção básica pode ser aplicada com mais sofisticação para melhorar o modelo. O codificador de imagens pode ser congelado para melhorar a estabilidade. Esse tipo de método, no qual embeddings de múltiplas modalidades são fundidos e o previsor é treinado com os embeddings combinados, é chamado de fusão inicial (early fusion).
 Os LLMs podem lidar com linguagens de programação de maneira semelhante a como lidam com linguagens naturais. Nenhuma mudança especial no manuseio de tokens é necessária, pois o código, assim como a linguagem humana, é representado como texto simples. LLMs podem gerar código com base em problemas ou instruções escritas em linguagem natural. Eles também podem descrever o código em linguagem natural ou traduzi-lo para outras linguagens de programação. Eles foram originalmente usados como uma ferramenta de preenchimento de código, mas os avanços os moveram em direção à programação automática. Serviços como o GitHub Copilot oferecem LLMs especificamente treinados, ajustados ou induzidos (prompted) para programação.
 Na biologia computacional, arquiteturas baseadas em transformers, como os LLMs de DNA, também se mostraram úteis na análise de sequências biológicas: proteína, DNA e RNA. Com proteínas, eles parecem capazes de capturar um certo grau de "gramática" da sequência de aminoácidos, mapeando essa sequência em um embedding. Em tarefas como previsão de estrutura e previsão de resultados de mutações, um modelo pequeno usando um embedding como entrada pode se aproximar ou superar modelos muito maiores usando alinhamentos múltiplos de sequências (MSA) como entrada. O ESMFold, método baseado em embeddings da Meta Platforms para a previsão de estrutura de proteínas, roda uma ordem de grandeza mais rápido que o AlphaFold2 graças à remoção do requisito de MSA e a uma contagem menor de parâmetros devido ao uso de embeddings. A Meta hospeda o ESM Atlas, um banco de dados com 772 milhões de estruturas de proteínas metagenômicas previstas usando o ESMFold. Um LLM também pode projetar proteínas diferentes de qualquer uma vista na natureza. Modelos de ácidos nucleicos provaram ser úteis na detecção de sequências reguladoras, classificação de sequências, previsão de interação RNA-RNA e previsão de estrutura de RNA.
-C
 : custo do pré-treinamento (a quantidade total de computação usada),
-N
 : tamanho da própria rede neural artificial, como o número de parâmetros (ou seja, quantidade de neurônios em suas camadas, quantidade de pesos entre eles e vieses),
-D
 : tamanho de seu conjunto de dados de pré-treinamento (ou seja, número de tokens no corpus).
-C
-C
-0
-N
-D
-L
-A
-N
-B
-D
-L
-0
 onde as variáveis são
-C
 é o custo de treinamento do modelo, em FLOPs.
-N
 é o número de parâmetros no modelo.
-D
 é o número de tokens no conjunto de treinamento.
-L
 é a perda média de log-verossimilhança negativa por token (nats/token), alcançada pelo LLM treinado no conjunto de dados de teste.
 e os hiperparâmetros estatísticos são
-C
-0
-6
 , o que significa que custa 6 FLOPs por parâmetro para treinar em um token. Observe que o custo de treinamento é muito maior do que o custo de inferência, onde custa de 1 a 2 FLOPs por parâmetro para inferir sobre um token.
-0.34
-,
-0.28
-,
-A
-406.4
-,
-B
-410.7
-,
-L
-0
-1.69
 O desempenho de modelos maiores em várias tarefas, quando traçado em uma escala log-log, aparece como uma extrapolação linear do desempenho alcançado por modelos menores. No entanto, essa linearidade pode ser pontuada por "quebras" (breaks) na lei de escala, onde a inclinação da reta muda abruptamente, e onde modelos maiores adquirem "habilidades emergentes". Elas surgem da interação complexa dos componentes do modelo e não são explicitamente programadas ou projetadas.
 aritmética reportada
 decodificação do Alfabeto Fonético Internacional
@@ -103,61 +57,33 @@ desambiguação de conjuntos de dados de palavras em contexto
 conversão de palavras espaciais
 direções cardeais (por exemplo, responder "nordeste" em resposta a uma grade 3x3 de 8 zeros e um 1 no canto superior direito), termos de cores representados em texto.
 encadeamento de pensamentos (chain-of-thought prompting): Em um artigo de pesquisa de 2022, o encadeamento de pensamentos melhorou o desempenho apenas para modelos que tinham pelo menos 62 bilhões de parâmetros. Modelos menores têm um desempenho melhor quando solicitados a responder imediatamente, sem encadeamento de pensamentos.
-identificar conteúdo ofensivo em parágrafos de Hinglish (uma combinação de hindi e inglês) e gerar um equivalente em inglês semelhante a provérbios em suaíli (Kiswahili).
 Seja
-x
 a contagem do número de parâmetros e
-y
 o desempenho do modelo.
 Esforços para reduzir ou compensar as alucinações têm empregado raciocínio automatizado, geração aumentada por recuperação (RAG), ajuste fino e outros métodos.
 A medida canônica de desempenho de qualquer modelo de linguagem é sua perplexidade em um dado corpus de texto. A perplexidade mede quão bem um modelo prevê o conteúdo de um conjunto de dados; quanto maior a probabilidade que o modelo atribui ao conjunto de dados, menor a perplexidade. Em termos matemáticos, a perplexidade é a exponencial da média da log-verossimilhança negativa por token.
 log
-(
 Perplexidade
-)
-1
-N
-i
-1
-N
 log
-(
 Pr
-(
 token
-i
 contexto para o token
-i
-)
-)
 Aqui,
-N
 é o número de tokens no corpus de texto, e "contexto para o token
-i
-i
 " é o segmento de texto que aparece antes do token
-i
 . Se o LLM for mascarado, então o "contexto para o token
-i
 " é o segmento de texto ao redor do token
-i
-.
 Como os modelos de linguagem podem sofrer sobreajuste (overfit) nos dados de treinamento, os modelos são geralmente avaliados por sua perplexidade em um conjunto de teste. Essa avaliação é potencialmente problemática para modelos maiores que, à medida que são treinados em corpora de texto cada vez maiores, têm probabilidade crescente de incluir inadvertidamente partes de qualquer conjunto de teste fornecido.
 Na teoria da informação, o conceito de entropia está intrinsecamente ligado à perplexidade, uma relação notavelmente estabelecida por Claude Shannon. Essa relação é matematicamente expressa como
 Entropia
 log
-2
-(
 Perplexidade
-)
-.
 Notavelmente, no caso de modelos de linguagem maiores que empregam predominantemente a tokenização de subpalavras, os bits por token (BPT) surgem como uma medida aparentemente mais apropriada. No entanto, devido à variação nos métodos de tokenização entre diferentes LLMs, o BPT não serve como uma métrica confiável para análise comparativa entre modelos diversos. Para converter BPT em BPW, pode-se multiplicá-lo pelo número médio de tokens por palavra.
 Na avaliação e comparação de modelos de linguagem, a entropia cruzada é geralmente a métrica preferida em relação à entropia. O princípio subjacente é que um BPW menor é indicativo da capacidade aprimorada de um modelo para compressão. Isso, por sua vez, reflete a proficiência do modelo em fazer previsões precisas.
 Devido à sua capacidade de prever com precisão o próximo token, os LLMs são altamente capazes na compressão sem perdas. Um estudo de 2023 da DeepMind mostrou que o modelo Chinchilla, apesar de ser treinado principalmente em texto, conseguiu comprimir o ImageNet para 43% de seu tamanho, superando o PNG com 58%.
 Benchmarks são usados para avaliar o desempenho de LLMs em tarefas específicas. Os testes avaliam capacidades como conhecimento geral, viés, raciocínio de senso comum, resposta a perguntas e resolução de problemas matemáticos. Benchmarks compostos examinam múltiplas capacidades. Os resultados costumam ser sensíveis ao método de engenharia de prompt.
 O viés dos LLMs pode ser avaliado por meio de benchmarks como CrowS-Pairs (Crowdsourced Stereotype Pairs), Stereo Set, e o Parity Benchmark.
 Um padrão anterior testava o uso de uma porção do conjunto de dados de avaliação. Tornou-se mais comum avaliar um modelo pré-treinado diretamente por meio de técnicas de prompt. Os pesquisadores variam a forma como formulam prompts para tarefas específicas, especialmente no que diz respeito ao número de exemplos corretos anexados ao prompt (ou seja, o valor de n no n-shot prompting).
-Além dos benchmarks de PLN padrão, os LLMs têm sido avaliados como substitutos de anotadores humanos. Vários estudos descobriram que modelos como GPT-3.5 e GPT-4 podem superar trabalhadores de crowdsourcing ou codificadores estudantes em uma variedade de tarefas de anotação de texto, incluindo moderação e classificação de conteúdo político em notícias em inglês e espanhol.
 A subida de encosta (hill climbing) é uma estratégia de otimização dominante que proporciona rápidos ganhos incrementais de desempenho, mas levanta preocupações de sobreajuste em relação aos benchmarks, em vez de alcançar uma generalização genuína ou melhorias robustas de capacidade.
 Conjuntos de dados típicos consistem em pares de perguntas e respostas corretas, por exemplo, ("Os San Jose Sharks já ganharam a Stanley Cup?", "Não"). Alguns exemplos de conjuntos de dados de perguntas e respostas comumente usados incluem TruthfulQA, Web Questions, TriviaQA e SQuAD.
 Os conjuntos de dados têm qualidades variadas e podem conter perguntas rotuladas incorretamente, ambíguas, sem resposta ou de baixa qualidade por outros motivos.
@@ -170,7 +96,6 @@ O BERT seleciona 2 como a conclusão mais provável, embora a resposta correta s
 Apesar de arquiteturas sofisticadas e escala massiva, os grandes modelos de linguagem exibem limitações persistentes e bem documentadas que restringem sua implantação em aplicações de alto risco.
 As alucinações representam um desafio fundamental, em que os modelos geram texto sintaticamente fluente que parece factualmente sólido, mas é internamente inconsistente com os dados de treinamento ou factualmente incorreto. Essas alucinações surgem em parte através da memorização de dados de treinamento combinada com extrapolação além dos limites factuais,[carece de fontes?] com avaliações demonstrando que os modelos podem produzir passagens literais dos dados de treinamento quando submetidos a sequências específicas de prompts.
 Embora os LLMs tenham demonstrado capacidades notáveis na geração de texto semelhante ao humano, eles são suscetíveis a herdar e amplificar vieses presentes em seus dados de treinamento. Isso pode se manifestar em representações distorcidas ou tratamento injusto de diferentes grupos demográficos, como aqueles baseados em raça, gênero, idioma e grupos culturais.
-O viés de gênero se manifesta por meio de associações ocupacionais estereotipadas, em que os modelos atribuem desproporcionalmente papéis de enfermagem a mulheres e papéis de engenharia a homens, refletindo desequilíbrios sistemáticos na demografia dos dados de treinamento. O viés baseado no idioma emerge da super-representação de textos em inglês nos corpora de treinamento, o que minimiza sistematicamente as perspectivas não inglesas e impõe visões de mundo centradas no inglês por meio de padrões de resposta padrão.
 Modelos de IA podem reforçar uma ampla gama de estereótipos devido à generalização, incluindo aqueles baseados em gênero, etnia, idade, nacionalidade, religião ou ocupação. Ao substituir representantes humanos, isso pode levar a saídas que homogeneízam ou generalizam grupos de pessoas.
 Em 2023, os LLMs atribuíam papéis e características com base nas normas tradicionais de gênero. Por exemplo, os modelos podiam associar enfermeiros ou secretários predominantemente a mulheres e engenheiros ou CEOs a homens devido à frequência dessas associações na realidade documentada. Em 2025, pesquisas adicionais mostraram que os laboratórios treinam para equilibrar o viés, mas que testar isso coloca o modelo em um modo de teste (testmode), alterando a distribuição natural do viés do modelo para prompts que não incluem palavras-chave específicas de gênero.
 A segurança de IA como uma disciplina profissional prioriza a identificação sistemática e a mitigação de riscos operacionais na arquitetura do modelo, nos dados de treinamento e na governança de implantação, e enfatiza intervenções de engenharia e políticas em vez de enquadramentos da mídia que colocam em primeiro plano cenários existenciais especulativos. A partir de 2025, a injeção de prompt representa um risco significativo para consumidores e empresas que usam recursos agênticos com acesso a seus dados privados.
@@ -197,5 +122,4 @@ Alucinação (inteligência artificial)
 Jurafsky, Dan; Martin, James H. (2023). Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition (PDF) 3 ed. [S.l.: s.n.]
 Yin, Shukang; Fu, Chaoyou; Zhao, Sirui; Li, Ke; Sun, Xing; Xu, Tong; Chen, Enhong (2024). «A Survey on Multimodal Large Language Models». National Science Review. 11 (12): nwae403. PMC 11645129. PMID 39679213. arXiv:2306.13549. doi:10.1093/nsr/nwae403
 «AI Index Report 2024 Artificial Intelligence Index». Stanford AI Index. Consultado em 5 de maio de 2024
-Frank, Michael C. (27 de junho de 2023). «Baby steps in evaluating the capacities of large language models». Nature Reviews Psychology. 2 (8): 451 452. ISSN 2731-0574. doi:10.1038/s44159-023-00211-x. Consultado em 2 de julho de 2023
 Raschka, Sebastian (11 de março de 2026). «The Big LLM Architecture Comparison: From DeepSeek V3 to GLM-5: A Look At Modern LLM Architecture Design». Sebastian Raschka’s AI Magazine. Consultado em 25 de março de 2026

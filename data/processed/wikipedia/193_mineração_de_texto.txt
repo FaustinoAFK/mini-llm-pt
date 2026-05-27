@@ -20,15 +20,3 @@ Mineração de dados
 Ciência cognitiva
 Visualização de Informação
 Inteligência artificial
-Este artigo foi inicialmente traduzido, total ou parcialmente, do artigo da Wikipédia em inglês cujo título é «Text mining».
-«Text mining PLOS Collections» (em inglês). Public Library of Science. Consultado em 5 de agosto de 2015
-Ananiadou, S. and McNaught, J. (Editors) (2006). Text Mining for Biology and Biomedicine. Artech House Books. ISBN 978-1-58053-984-5
-Bilisoly, R. (2008). Practical Text Mining with Perl. New York: John Wiley Sons. ISBN 978-0-470-17643-6
-Feldman, R., and Sanger, J. (2006). The Text Mining Handbook. New York: Cambridge University Press. ISBN 978-0-521-83657-9
-Indurkhya, N., and Damerau, F. (2010). Handbook Of Natural Language Processing, 2nd Edition. Boca Raton, FL: CRC Press. ISBN 978-1-4200-8592-1
-Kao, A., and Poteet, S. (Editors). Natural Language Processing and Text Mining. Springer. ISBN 1-84628-175-X
-Konchady, M. Text Mining Application Programming (Programming Series). Charles River Media. ISBN 1-58450-460-9
-Manning, C., and Schutze, H. (1999). Foundations of Statistical Natural Language Processing. Cambridge, MA: MIT Press. ISBN 978-0-262-13360-9
-Miner, G., Elder, J., Hill. T, Nisbet, R., Delen, D. and Fast, A. (2012). Practical Text Mining and Statistical Analysis for Non-structured Text Data Applications. Elsevier Academic Press. ISBN 978-0-12-386979-1
-Srivastava, A., and Sahami. M. (2009). Text Mining: Classification, Clustering, and Applications. Boca Raton, FL: CRC Press. ISBN 978-1-4200-5940-3
-Zanasi, A. (Editor) (2007). Text Mining and its Applications to Intelligence, CRM and Knowledge Management. WIT Press. ISBN 978-1-84564-131-3

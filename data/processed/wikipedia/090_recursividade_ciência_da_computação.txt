@@ -6,13 +6,10 @@ Algumas linguagens desenvolvidas para programação lógica e programação func
 A recursão está profundamente entranhada na Teoria da computação, uma vez que a equivalência teórica entre as funções
 -recursivas e as máquinas de Turing está na base das idéias sobre a universalidade do computador moderno.
 Em geral, uma definição recursiva é definida por casos: um número limitado de casos base e um caso recursivo. Os casos base são geralmente situações triviais e não envolvem recursão.
-Um exemplo comum usando recursão é a função para calcular o fatorial de um natural N. Nesse caso, no caso base o valor de 0! é 1. No caso recursivo, dado um N 0, o valor de N! é calculado multiplicando por N o valor de (N-1)!, e assim por diante, de tal forma que N! tem como valor N (N-1) (N-2) ... (N-N)!, onde (N-N)! representa obviamente o caso base. Em termos recursivos:
 função fatorial(x: inteiro): inteiro
 inicio
-se x 0 então
 fatorial - 1
 senão
-fatorial - x fatorial(x - 1)
 fim se
 fim
 Aqui está a mesma função codificada sem recursão. É importante mencionar que esta solução iterativa requer duas variáveis temporárias; em geral, formulações recursivas de algoritmos são frequentemente consideradas "mais enxutas" ou "mais elegantes" do que formulações iterativas.
@@ -27,174 +24,12 @@ fatorial - aux
 fim
 Existem outros tipos de problemas cujas soluções são inerentemente recursivas, já que elas precisam manter registros de estados anteriores. Um exemplo é o percurso de uma árvore; outros exemplos incluem a função de Ackermann e algoritmos de divisão e conquista, tais como o Quicksort. Todos estes algoritmos podem ser implementados iterativamente com a ajuda de uma pilha, mas o uso de uma pilha, de certa forma, anula as vantagens das soluções iterativas.
 Funções cujos domínios podem ser definidos recursivamente (tal como o domínio dos números naturais) possuem frequentemente definições recursivas que seguem a definição recursiva do domínio (no caso dos naturais, definimos o comportamento da função com entrada 0, e para cada entrada positiva
-s
-u
-c
-e
-s
-s
-o
-r
-(
-n
-)
 definimos o comportamento da função recursiva a partir de seu comportamento com entrada
-n
-).
 O exemplo clássico de uma função definida recursivamente é a seguinte definição da função
-f
-a
-t
-o
-r
-i
-a
-l
-(
-n
-)
-:
-f
-a
-t
-o
-r
-i
-a
-l
-(
-n
-)
-1
 se
-n
-0
-n
-f
-a
-t
-o
-r
-i
-a
-l
-(
-n
-1
-)
 se
-n
-0
 A partir desta definição, também chamada relação de recorrência, calculamos
-f
-a
-t
-o
-r
-i
-a
-l
-(
-3
-)
 da seguinte forma:
-f
-a
-t
-o
-r
-i
-a
-l
-(
-3
-)
-3
-f
-a
-t
-o
-r
-i
-a
-l
-(
-3
-1
-)
-3
-f
-a
-t
-o
-r
-i
-a
-l
-(
-2
-)
-3
-2
-f
-a
-t
-o
-r
-i
-a
-l
-(
-2
-1
-)
-3
-2
-f
-a
-t
-o
-r
-i
-a
-l
-(
-1
-)
-3
-2
-1
-f
-a
-t
-o
-r
-i
-a
-l
-(
-1
-1
-)
-3
-2
-1
-f
-a
-t
-o
-r
-i
-a
-l
-(
-0
-)
-3
-2
-1
-1
-6
 As funções recursivas em cauda formam uma subclasse das funções recursivas, nas quais a chamada recursiva é a última instrução a ser executada. Por exemplo, a função a seguir, para localizar um valor em uma lista ligada é recursiva em cauda, por que a última coisa que ela faz é invocar a si mesma:
 registro noh
 dado: inteiro
@@ -223,16 +58,12 @@ conta impares - conta impares(cabeca- proximo) / recursão em cauda /
 fim
 Um bom compilador pode traduzir código recursivo em cauda para código iterativo. Com tal compilador, há vantagem em usar recursão em cauda para algumas funções. Definições recursivas algumas vezes são muito mais claras do que as iterativas. Contudo, chamadas recursivas são mais custosas do que iterações. Com recursão em cauda podemos ter código recursivo legível e uma implementação iterativa eficiente ao mesmo tempo.
 O mais importante na recursão em cauda é que ao fazer uma chamada da função recursiva, os valores de retorno dela não necessitam ser conservados na pilha de chamada; quando a chamada recursiva retorna, ela vai diretamente para a posição de retorno previamente registrada. Assim, os compiladores que dão suporte à recursão em cauda economizam espaço e tempo.
-Um exemplo é a análise de expressões. Suponha que você tem um analisador sintático para cada tipo de sub-expressão, e tenha uma expressão "3 (2 (4 4))". A função que processa expressões " " chamaria uma segunda função que processaria expressões " ", que, por sua vez, chamaria novamente a primeira.
 Uma chamada recursiva pode receber um argumento que inclui uma outra chamada recursiva. Um exemplo é a função de Ackermann, uma função que cresce de forma incrivelmente rápida.
 função ack(n: inteiro, m: inteiro): inteiro
 inicio
-se n 0 então
 ack - m 1
 senão se n 0 E m 0 então
-ack - ack(n - 1, m)
 senão
-ack - ack(n - 1, ack(n, m - 1))
 fim se
 fim
 Este é um exemplo de uma função que é muito mais fácil de escrever recursivamente: foi demonstrado que não existem definições equivalentes usando operadores aritméticos. Infelizmente uma computação recursiva direta desta função não é nem mesmo O(2n) em tempo ou espaço.
@@ -243,7 +74,6 @@ Função divisaoRec(inteiro num, inteiro den) retorna Inteiro
 Inicio
 Se (num den)
 Então
-Função Retorna(0)
 Senão
 Função Retorna(divisaoRec(num-den, den) 1)
 Fim Se

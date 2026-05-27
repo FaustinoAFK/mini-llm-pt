@@ -40,13 +40,9 @@ No segundo capítulo do Manual de Referência da Linguagem Python é citado que 
 Todo programa é dividido em linhas lógicas que são separadas pelo token NEWLINE ou NOVA LINHA, as linhas físicas são trechos de código divididos pelo caractere ENTER. Linhas lógicas não podem ultrapassar linhas físicas com exceção de junção de linhas, por exemplo:
 ou
 Abaixo um exemplo de permutação, retirado do capítulo 2.1 sobre Estrutura de linhas na Análise léxica do Manual de Referência da linguagem (Language Reference Manual):
-def perm(l): NOVA LINHA
-INDENT if len(l) 1: NOVA LINHA
 INDENT return[1] NOVA LINHA
 DEDENT r [ ] NOVA LINHA
-for i in range(len(l)): NOVA LINHA
 INDENT s l[:i] l[i 1:] NOVA LINHA
-p perm(s) NOVA LINHA
 DEDENT for x in p: NOVA LINHA
 DEDENT return r
 Python foi desenvolvido para ser uma linguagem de fácil leitura, com um visual agradável, frequentemente usando palavras e não pontuações como em outras linguagens. Para a separação de blocos de código, a linguagem usa espaços em branco e indentação ao invés de delimitadores visuais como chaves (C, Java) ou palavras (BASIC, Fortran, Pascal). Diferente de linguagens com delimitadores visuais de blocos, em Python a indentação é obrigatória. O aumento da indentação indica o início de um novo bloco, que termina da diminuição da indentação.
@@ -63,7 +59,6 @@ Na versão 2.2 de Python foi introduzido um novo estilo de classes em que objeto
 Uma classe é definida com class nome:, e o código seguinte é a composição dos atributos. Todos os métodos da classe recebem uma referência a uma instância da própria classe como seu primeiro argumento, e a convenção é que se chame este argumento self. Assim os métodos são chamados objeto.método(argumento1, argumento2, ...) e são definidos iguais a uma função, como método(self, argumento1, argumento2, ...). Veja que o parâmetro self conterá uma referência para a instância da classe definida em objeto quando for efetuada esta chamada. Os atributos da classe podem ser acessados em qualquer lugar da classe, e os atributos de instância (ou variável de instância) devem ser declarados dentro dos métodos utilizando a referência à instância atual (self) (ver código contextualizado em anexo).
 Em Python não existe proteção dos membros duma classe ou instância pelo interpretador, o chamado encapsulamento. Convenciona-se que atributos com o nome começando com um são de uso privado da classe, mas não há um policiamento do interpretador contra acesso a estes atributos. Uma exceção são nomes começando com , no caso em que o interpretador modifica o nome do atributo (ver código contextualizado em anexo).
 Python permite polimorfismo, que condiz com a reutilização de código. É fato que funções semelhantes em várias partes do software sejam utilizadas várias vezes, então definimos esta função como uma biblioteca e todas as outras funções que precisarem desta a chamam sem a necessidade de reescrevê-la (ver código contextualizado em anexo).
-Python não possui overloading; não é possível criar duas funções com o mesmo nome, pois elas são consideradas atributos da classe. Caso o nome da função se repita em outra assinatura, o interpretador considera esta última como override e sobrescreve a função anterior. Algumas operações entre diferentes tipos são realizadas através de coerção (ex.: 3.2 3).
 É possível encapsular abstrações em módulos e pacotes. Quando um arquivo é criado com a extensão .py, ele automaticamente define um módulo. Um diretório com vários módulos é chamado de pacote e deve conter um modulo chamado init , para defini-lo como principal. Estas diferenciações ocorrem apenas no sistema de arquivos. Os objetos criados são sempre módulos. Caso o código não defina qual dos módulos será importado, o padrão é o init .
 Uma das construções funcionais de Python é compreensão de listas, uma forma de construir listas. Por exemplo, pode-se usar a técnica para calcular as cinco primeiras potências de dois. O algoritmo quicksort também pode ser expressado usando a mesma técnica (ver códigos contextualizados para ambos os casos em anexo).
 Em Python, funções são objetos de primeira classe que podem ser criados e armazenados dinamicamente. O suporte a funções anônimas está na construção lambda (cálculo Lambda). Não há disponibilidade de funções anônimas de fato, pois os lambdas contêm somente expressões e não blocos de código.
@@ -88,12 +83,6 @@ Django (framework web)
 Flask (framework web)
 Perl
 Ruby (linguagem de programação)
-Pilgrim, Mark (2004). Dive into Python (em inglês) 2 ed. Nova Iorque: Apress. 413 páginas. ISBN 978-1-5905-9356-1
-Pilgrim, Mark (2009). Dive into Python 3 (em inglês) 2 ed. Nova Iorque: Apress. 360 páginas. ISBN 978-1-4302-2415-0
-Downey, Allen B. (2012). Think Python (em inglês). Sebastopol (Califórnia): O'Reilly. 300 páginas. ISBN 978-1-4493-3072-9
-Lutz, Mark (2013). Learning Python (em inglês) 5 ed. Sebastopol (Califórnia): O'Reilly. 1600 páginas. ISBN 978-1-4493-5573-9
-Lutz, Mark (2010). Programming Python (em inglês) 4 ed. Sebastopol (Califórnia): O'Reilly. 1632 páginas. ISBN 978-0-596-15810-1
-David Beazley e Brian K. Jones (2013). Python Cookbook (em inglês) 3 ed. Sebastopol (Califórnia): O'Reilly. 706 páginas. ISBN 978-1-4493-4037-7
 Sítio oficial
 Python no GitHub
 «Wiki da comunidade brasileira de usuários»

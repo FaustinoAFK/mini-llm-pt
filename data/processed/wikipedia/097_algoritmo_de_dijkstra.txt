@@ -1,13 +1,5 @@
 O algoritmo de Dijkstra, concebido pelo cientista da computação holandês Edsger Dijkstra em 1956 e publicado em 1959, soluciona o problema do caminho mais curto num grafo dirigido ou não dirigido com arestas de peso não negativo, em tempo computacional
-O
-(
-E
-V
 log
-(
-V
-)
-)
 onde V é o número de vértices e E é o número de arestas. O algoritmo que serve para resolver o mesmo problema em um grafo com pesos negativos é o algoritmo de Bellman-Ford, que possui maior tempo de execução que o Dijkstra.
 O algoritmo considera um conjunto S de menores caminhos, iniciado com um vértice inicial I. A cada passo do algoritmo busca-se nas adjacências dos vértices pertencentes a S aquele vértice com menor distância relativa a I e adiciona-o a S e, então, repetindo os passos até que todos os vértices alcançáveis por I estejam em S. Arestas que ligam vértices já pertencentes a S são desconsideradas.
 Um exemplo prático de problema que pode ser resolvido pelo algoritmo de Dijkstra é: alguém precisa se deslocar de uma cidade para outra. Para isso, ela dispõe de várias estradas, que passam por diversas cidades. Qual delas oferece uma trajetória de menor caminho?
@@ -16,7 +8,6 @@ para todo v V[G]
 d[v]
 [v] -1
 d[s] 0
-V[G] é o conjunto de vértices(v) que formam o Grafo G.
 d[v] é o vetor de distâncias de s até cada v.
 Admitindo-se a pior estimativa possível, o caminho infinito.
 [v] identifica o vértice de onde se origina uma conexão até v de maneira a formar um caminho mínimo.
@@ -24,15 +15,11 @@ Admitindo-se a pior estimativa possível, o caminho infinito.
 Q V[G]
 3o passo: realizamos uma série de relaxamentos das arestas, de acordo com o código:
 enquanto Q ø
-u extrair-mín(Q) //Q Q - u
 para cada v adjacente a u
-se d[v] d[u] peso(u, v) //relaxe (u, v)
-então d[v] d[u] peso(u, v)
 [v] u
 peso(u, v) é o peso da aresta que vai de u a v.
 u e v são vértices quaisquer e s é o vértice inicial.
 ffd
-extrair-mín(Q), pode usar um heap de mínimo ou uma lista de vértices onde se extrai o elemento u com menor valor d[u].
 No final do algoritmo teremos o menor caminho entre s e qualquer outro vértice de G. O algoritmo leva tempo O(m n log n) caso seja usado um heap de Fibonacci, O(m log n) caso seja usado um heap binário e O(n2) caso seja usado um vetor para armazenar Q.
 O algoritmo de Dijkstra é um exemplo de algoritmo guloso que gera a solução ótima em tempo polinomial.
 O algoritmo de Dijkstra não consegue encontrar o menor caminho em um grafo com pesos negativos. Para esse propósito, pode-se usar o algoritmo de Floyd-Warshall, que consegue descobrir a menor distância entre todos os pares de vértices de qualquer grafo sem ciclos com peso negativo em uma complexidade de tempo O(V3). Se o problema não exigir o cálculo da distância entre todos os pares de vértices pode-se aplicar o algoritmo de Bellman-Ford, com complexidade de tempo O(V E).
@@ -45,5 +32,3 @@ Busca em profundidade
 Busca em largura
 Artigo explicativo sobre o algoritmo
 Artigo e Implementação do Algoritmo de Dijkstra em C
-(em inglês) Algoritmo de Dijkstra em C
-(em inglês) Simulação do algoritmo de Dijkstra

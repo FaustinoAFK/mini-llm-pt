@@ -1,4 +1,3 @@
-A Máquina de Turing é um dispositivo teórico conhecido como máquina universal, que foi concebido pelo matemático britânico Alan Turing (1912-1954), muitos anos antes de existirem os modernos computadores digitais (o artigo de referência foi publicado em 1936). Num sentido preciso, é um modelo abstrato de um computador, que se restringe apenas aos aspectos lógicos do seu funcionamento (memória, estados e transições), e não a sua implementação física. Numa máquina de Turing pode-se modelar qualquer computador digital.
 Uma máquina de Turing consiste em:
 Uma fita que é dividida em células, uma adjacente à outra. Cada célula contém um símbolo de algum alfabeto finito. O alfabeto contém um símbolo especial branco (aqui escrito como ) e um ou mais símbolos adicionais. Assume-se que a fita é arbitrariamente extensível para a esquerda e para a direita, isto é, a máquina de Turing possui tanta fita quanto é necessário para a computação. Assume-se também que células que ainda não foram escritas estão preenchidas com o símbolo branco.
 Um cabeçote, que pode ler e escrever símbolos na fita e mover-se para a esquerda ou para a direita.
@@ -8,102 +7,30 @@ para esquerda e
 para direita) e qual será seu novo estado, dados o símbolo que ele acabou de ler na fita e o estado em que se encontra. Se não houver entrada alguma na tabela para a combinação atual de símbolo e estado então a máquina para.
 Note que cada parte da máquina é finita e sua quantidade de fita potencialmente ilimitada dá uma quantidade ilimitada de espaço de memória.
 Mais formalmente, uma máquina de Turing (com uma fita) é perfeitamente definida como uma 7-upla
-M
-(
-Q
-,
-,
-,
-s
-,
-b
-,
-F
-,
-)
 , onde
-Q
 é um conjunto finito de estados
 é um alfabeto finito de símbolos
 é o alfabeto da fita (conjunto finito de símbolos)
-s
-Q
 é o estado inicial
-b
 é o símbolo branco (o único símbolo que se permite ocorrer na fita infinitamente em qualquer passo durante a computação)
-F
-Q
 é o conjunto dos estados finais
-:
-Q
-Q
-,
 é uma função parcial chamada função de transição, onde
 é o movimento para a esquerda e
 é o movimento para a direita.
 Definições na literatura às vezes diferem um pouco, para tornar argumentos ou provas mais fáceis ou mais claras, mas isto é sempre feito de maneira que a máquina resultante tem o mesmo poder computacional. Por exemplo, mudar o conjunto
-,
 para
-,
-,
-P
 , onde P permite ao cabeçote permanecer na mesma célula da fita em vez de mover-se para a esquerda ou direita, não aumenta o poder computacional da máquina, pois é possível simular o movimento P com o movimento sequenciado de
-e
 o que mantém o cabeçote no mesmo lugar.
 Uma máquina de Turing com k fitas também pode ser descrita como uma 7-upla
-M
-(
-Q
-,
-,
-1
-,
-2
-,
-.
-.
-.
-,
-k
-,
-s
-,
-b
-,
-F
-,
-)
 , onde
-Q
 é um conjunto finito de estados
 é um alfabeto finito de símbolos
-i
-,
-i
-1
-,
-.
-.
-.
-,
-k
 é o alfabeto da fita
-i
 (conjunto finito de símbolos)
-k
 é o número de fitas
-s
-Q
 é o estado inicial
-b
 é o símbolo branco
-F
-Q
 é o conjunto dos estados finais
-:
-Q
-Q
-,
 é uma função parcial chamada função de transição, onde
 é o movimento para a esquerda e
 é o movimento para a direita.
@@ -112,17 +39,8 @@ Nas palavras de Van Emde Boas (1990) p. 6: "O objeto do conjunto teórico [sua d
 Por exemplo,
 Serão necessárias muitas decisões sobre com o que os símbolos realmente se parecem e uma forma de contraprovar símbolos de escrita e leitura indefinidamente.
 Para tornar as provas e argumentos mais fáceis ou mais claras, encontramos na literatura definições levemente diferentes, mas isso sempre é feito de tal maneira que a máquina resultante tenha o mesmo poder computacional. Por exemplo, modificando o conjunto
-L
-,
-R
 para
-L
-,
-R
-,
-N
 , onde N ("Nada" ou "Sem operação") permitiria a máquina ficar sobre a mesma célula da fita em vez de mover para a esquerda ou para direita, não aumenta o poder computacional das máquinas.
-A convenção mais comum representa cada "instrução de Turing" na "tabela de Turing" por uma de nove 5-uplas, pela convenção de Turing/Davis (Turing (1936) em Undecidable, p. 126-127 e Davis (2000) p. 152):
 (definição 1): (qi, Sj, Sk/E/N, L/R/N, qm)
 ( estado atual qi , símbolo escaneado Sj , símbolo de impressão Sk/apagar E/nada N , move um quadrado da fita esquerda L/ direita R/ nada N , novo estado qm )
 Outros autores (Minsky (1967) p. 119, Hopcroft e Ullman (1979) p. 158, Stone (1972) p. 9) adotam uma convenção diferente, com um novo estado qm listado imediatamente depois do símbolo escaneado Sj:
@@ -134,7 +52,6 @@ Qualquer tabela de Turing (lista de instruções) pode ser construída a partir 
 Menos frequentemente, o uso de 4-tuplas são encontrados: estes representam uma outra atomização das instruções de Turing (cf Post (1947), Boolos Jeffrey (1974, 1999), Davis-Sigal-Weyuker (1994)); também veja mais em Máquina de Post Turing.
 A palavra "estado" utilizada em contexto de máquinas de Turing pode ser uma fonte de confusão, como isso pode significar duas coisas. A maioria dos comentaristas depois de Turing utilizaram "estado" para denotar o nome/designador da instrução atual para ser realizada i.e. , os conteúdos do registro de estado. Mas Turing (1936) fez uma distinção forte entre um registro do que ele chamou de m-configuração da máquina, (seu estado interno) e o "estado de progresso" da máquina (ou pessoa) através da computação - o estado atual do sistema total. O que Turing chamou "a fórmula do estado" inclui ambos a instrução atual e todos os símbolos sobre a fita:
 Assim o estado de progresso da computação em qualquer estágio é completamente determinado pela nota de instruções e os símbolos sobre a fita. Isso é, o estado do sistema pode ser descrito por uma única expressão (sequência de símbolos) consistindo dos símbolos sobre a fita seguida por (os quais supomos não aparecer em outro lugar) e então pelo nota de instruções. Essa expressão é chamada de 'fórmula de estado'.
-Uma variante disto é vista em Kleene (1952), onde Kleene mostra como escrever o número de Gödel de uma "situação" da máquina: ele posiciona o símbolo da "m-configuração" q4 sobre o quadrado escaneado em grosseiramente o centro dos 6 quadrados não-brancos sobre a fita ( veja a imagem da fita de Turing nesse artigo) e coloca isso para a direita do quadrado escaneado. Mas Kleene refere-se ao próprio "q4" como "o estado da máquina" (Kleene, p. 374-375). Hopcroft e Ullman chamam este composto a "descrição instantânea" e segue a convenção de Turing de colocar o "estado atual" (rótulo-instrução, m-configuração) para a esquerda do símbolo escaneado (p. 149).
 Exemplo: estado total do problema do castor ocupado de 3 estados e 2 símbolos após 3 "movimentos" (pegando de exemplo "run" na figura abaixo):
 1A1
 Isso significa: após três movimentos, a fita tem ... 000110000 ... sobre esta, a cabeça está escaneando o 1 mais a direita, e o estado é A. Brancos (nesse caso, representado por "0"s) pode ser parte do estado total como mostrado aqui: B01; a fita possui um único 1 sobre esta, mas a cabeça está escaneando o 0 ("branco") para sua esquerda e o estado é B.
@@ -179,23 +96,15 @@ Como uma máquina de Turing, uma máquina real pode ter seu espaço de armazenam
 Máquinas de Turing simplificam o enunciado de algoritmos. Algoritmos executando em máquinas abstratas equivalentes a Turing são normalmente mais gerais que suas contrapartes executando em máquinas reais, porque elas têm tipos com precisão arbitrária disponíveis e nunca precisam tratar condições inesperadas (incluindo, mas não somente, acabar a memória).
 Uma maneira em que máquinas de Turing são pobres modelos para programas é que muitos programas reais, tais como sistemas operacionais e processadores de texto, são escritos para receber entradas irrestritas através da execução, e portanto não param. Máquinas de Turing não modelam bem tal "computação contínua" (mas ainda podem modelar porções dela, tais como procedimentos individuais).
 Outra limitação de máquinas de Turing é que elas não modelam a organização estrita de um problema específico. Por exemplo, computadores modernos são na verdade instâncias de uma forma mais específica de máquina de computação, conhecido como máquina de acesso aleatório. A principal diferença entre esta máquina e a máquina de Turing é que esta utiliza uma fita infinita, enquanto a máquina de acesso aleatório utiliza uma sequência indexada numericamente (tipicamente um campo inteiro). O resultado desta distinção é que há otimizações computacionais que podem ser executadas baseadas nos índices em memória, o que não é possível numa máquina de Turing geral. Assim, quando máquinas de Turing são utilizadas como base para tempo de execuções restritos, um "falso limite inferior" pode ser provado em determinados tempos de execução de algoritmos (graças à premissa falsa de simplificação da máquina de Turing). Um exemplo disto é uma "ordenação por contagem", o que aparentemente viola o limite inferior
-(
-n
 log
-n
-)
 em algoritmos de ordenação.
 Não é difícil simular uma máquina de Turing num computador moderno (exceptuando pela quantidade de memória limitada existente nos computadores actuais). O site de busca Google, em comemoração aos 100 anos de Alan Turing, publicou um doodle dia 23 de junho de 2012, em forma de uma máquina de Turing.
 É possível construir uma máquina de Turing com base puramente mecânica. O matemático Karl Scherer construiu essa máquina em 1986, usando conjuntos de construção de metal, plástico e alguma madeira. A máquina, com 1,5 m de altura, usa puxões de fios para ler, movimentar e escrever informação, a qual é, por sua vez, representada por rolamentos. A máquina encontra-se atualmente em exibição na entrada do Departamento de Ciência de Computadores da Universidade de Heidelberg, na Alemanha.
-Robin Gandy (1919-1995), um estudante de Alan Turing (1912-1954) e seu amigo ao longo da vida, traça a linhagem da noção de "máquina de calcular" até a Babbage (em cerca de 1834) e, na verdade, propõe a "Tese de Babbage":
 Que o desenvolvimento e análise de operações são agora capazes de serem executados por máquinas.
-A análise de Gandy da Máquina Analítica de Babbage descreve as seguintes cinco operações (cf. p. 52-53):
-As funções aritméticas , -, , onde - indica subtração "apropriada" x - y 0 se y x
 Qualquer sequência de operações é uma operação
 Iteração de uma operação (repetir n vezes uma operação P)
 Iteração condicional (repetir n vezes uma operação P condicional sobre o "sucesso" do teste T)
 Transferência condicional (i.e. condicional "goto").
-Gandy afirma que "as funções que podem ser calculadas por (1), (2), e (4) são precisamente as que são Turing computáveis." (p. 53). Ele cita outras propostas de "máquinas de calcular universais" incluídas as de Percy Ludgate (1909), Leonardo Torres y Quevedo (1914), Maurice d'Ocagne (1922), Louis Couffignal (1933), Vannevar Bush (1936), Howard Aiken ( 1937). No entanto:
 ... A ênfase está na programação de uma sequência fixa iterável de operações aritméticas. A importância fundamental da iteração condicional e transferência condicional para uma teoria geral da máquinas de calcular não é reconhecida...
 Com relação aos problemas de Hilbert propostos pelo famoso matemático David Hilbert em 1900, um aspecto do problema 10 tinha ficado flutuando por quase 30 anos antes de ser enquadrado com precisão. A expressão original de Hilbert para o 10o problema é a seguinte:
 10. Determinação da solubilidade de uma equação Diofantina. Dada uma equação Diofantina com qualquer número de incógnitas e com coeficientes inteiros racionais: Elaborar um processo que com ele pode ser determinado em um número finito de operações se a equação é solúvel por números inteiros racionais. O Entscheidungsproblem [problema de decisão para a lógica de primeira ordem ] é resolvido quando sabemos que um procedimento que permite a qualquer expressão lógica dada decidir por um número finito de operações a sua validade ou satisfazibilidade ... O Entscheidungsproblem deve ser considerado o principal problema da lógica matemática.
@@ -221,10 +130,5 @@ Formiga de Langton, uma representação simples da máquina de Turing em duas di
 Tese de Church-Turing, que diz que máquinas de Turing podem executar qualquer computação que pode ser executada
 brainfuck, é uma linguagem Turing completa, desenhada para desafiar e confundir os programadores
 Vermes de Paterson - família de autômatos celulares criados para modelar o comportamento e os padrões de alimentação de determinados vermes pré-históricos
-Rolf Herken: The Universal Turing Machine - A Half-Century Survey, Springer Verlag, ISBN 3-211-82637-8
-Paul Strathern: Turing and the Computer - The big idea, Anchor Books/Doubleday, ISBN 0-385-49243-X
 «Turing, A., On Computable Numbers, With an Application to the Entscheidungsproblem» , Proceedings of the London Mathematical Society, Series 2, Volume 42, 1936; reimpresso em M. David (ed.), The Undecidable, Hewlett, NY: Raven Press, 1965;
 Boolos, G. and Jeffrey, R., Computability and Logic, 2a ed., Cambridge: Cambridge University Press, 1980.
-«Rogozhin, Yurii, "A Universal Turing Machine with 22 States and 2 Symbols"» , Romanian Journal Of Information Science and Technology, 1(3), 259-265, 1998. (surveys known results about small universal Turing machines)
-«Turing Machines» (em inglês). Enciclopédia de Filosofia de Stanford
-«The Church-Turing Thesis» (em inglês). Enciclopédia de Filosofia de Stanford

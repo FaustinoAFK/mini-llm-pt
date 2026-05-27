@@ -3,4 +3,3 @@ ADAPT (Python)
 TLlib (Python)
 Domain-Adaptation-Toolbox (Matlab)
 Recombinação (computação evolutiva)
-Thrun, Sebastian; Pratt, Lorien (6 de dezembro de 2012). Learning to Learn (em inglês). [S.l.]: Springer Science Business Media. ISBN 978-1-4615-5529-2

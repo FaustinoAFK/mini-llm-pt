@@ -34,48 +34,17 @@ Um conjunto de representações de consulta
 Um arcabouço que modela documentos, consultas e seus relacionamentos, e
 Uma função de ordenação que associa um número real para cada documento dada uma consulta.
 Como um mesmo termo pode aparecer em diferentes documentos, é necessário distinguir a ocorrência de um termo
-k
-i
 em um documento
-d
-j
 da ocorrência deste mesmo termo em outro documento
-d
-l
 . Para isso, a cada par termo-documento
-[
-k
-i
-,
-d
-j
-]
 associa-se um peso
-w
-i
-j
 . A fórmula de calcular esse peso é uma dos principais áreas de estudo dos modelos derivados dos modelos vetorial e probabilístico. Já no modelo booleano, esse valor é 0 ou 1.
 Este peso deve ser utilizado para refletir a importância do termo
-k
-i
 no documento
-d
-j
 , como discutido adiante. Analogamente, a cada par termo-consulta
-[
-k
-i
-,
-q
-]
 associa-se um peso
-w
-i
-,
-q
 . Esses pesos quantificam a importância da palavra chave em relação as outras palavras chaves em um mesmo documento ou consulta e em relação a outras palavras chaves em outros documentos de uma coleção.
 Domínio público - Reúne livros que já podem ser disponibilizados online, ou seja, são de domínio público
 Portal Capes - Disponibiliza artigos de periódicos de varias revistas nacionais e internacionais.
 Google, Bing e todos os mecanismos de busca na Web.
 Data Mining
-Preservação Digital e suas facetas. São Carlos: Pedro João. 2021. ISBN 978-65-5869-327-7

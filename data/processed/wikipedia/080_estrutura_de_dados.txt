@@ -7,7 +7,6 @@ LISTA
 PILHA
 FILA
 ÁRVORE
-(e.g. da memória RAM). A forma como os ponteiros são usados em uma ED, seja explicitamente (como em uma lista ligada) ou implicitamente (como em um vetor homogêneo), evidencia suas propriedades, usos e operações. Por exemplo, em uma estrutura ligada, em que cada elemento possui um (ou mais) ponteiro(s) para outro(s) elemento(s), os valores podem assumir diferentes tipos e estruturas arbitrariamente complexas; já com a omissão dos ponteiros, por exemplo em um vetor (sequência de valores de um mesmo tipo), a representação fica compacta e muitas vezes favorece o processamento massivamente paralelo, como no caso de tensores e outras variantes multidimensionais tão comuns na física, engenharia e matemática aplicada em geral.
 Mesmo quando ponteiros não são usados diretamente, como em linguagens que não utilizam distinção entre ponteiros e outras variáveis (veja o exemplo abaixo), a noção de referenciar a uma outra estrutura de dado arbitrária é usada, noção que é canonicamente abordada pela utilização do ponteiro.
 É usual dizer que linguagens de alto nível, e.g. Python, não utilizam ponteiros. No entanto, pode-se argumentar que mais fiel aos fatos é considerar que, ao menos em Python, os ponteiros são utilizados por padrão:
 Estas variáveis em Python são referências no jargão de linguagens de programação.

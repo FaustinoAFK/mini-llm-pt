@@ -10,7 +10,5 @@ BabelCode Project, um novo sistema de tradução controlado
 Machine Translation, uma guia introdutória ao MT, do D.J.Arnold, entre outros. (1994)
 Disciplina HCE033 Tradução Automática e Intermediada por Computador, do Curso EP101 Especialização em Estudos da Tradução da Universidade Federal do Ceará.
 European Association for Machine Translation, uma organização sem ánimo de lucro
-«Tradutor Online - Babylon». Traduza (em inglês) Espanhol, Alemão, Italiano, Francês, Português e mais com a ferramenta de tradução online Babylon.
-«Tradutor Online - Opentrad». Traduza Português, Galego, Espanhol, (em inglês) Catalão, Basco, Francês, Romanês e mais com a plataforma de tradução online Opentrad.
 TechDico - Tradutor automático 1 bilhão de traduções classificadas por campo de atividade em 28 idiomas
 NLP2CT Tradutor, traduzir entre Chinês e Português (pt-pt)

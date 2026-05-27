@@ -27,10 +27,4 @@ Educação aberta
 Recursos educacionais abertos
 «A identificação da ideologia». Software Livre versus Código Aberto
 «Os líderes Open Source». na Webyes
-«SourceForge» (em inglês). - banco de dados de projetos open source
-«Firefox» (em inglês). projeto livre Firefox
-«Apache HTTP Server» (em inglês). projeto livre HTTP
-«Perl.com» (em inglês). projeto livre Perl
-«Relação de programas open source» (em inglês). por Webi
-«Relação de programas open source» (em inglês). por Maarch
 «Mestrado em Software de Código Aberto». em Instituto Universitário de Lisboa - IUL

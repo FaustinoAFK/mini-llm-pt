@@ -1,7 +1,6 @@
 IDE, do inglês integrated development environment ou ambiente de desenvolvimento integrado, é um programa de computador que reúne características e ferramentas de apoio ao desenvolvimento de software com o objetivo de agilizar este processo.
 Geralmente os IDEs facilitam a técnica de RAD (de Rapid Application Development, ou "Desenvolvimento Rápido de Aplicações"), que visa a maior produtividade dos desenvolvedores.
 As características e ferramentas mais comuns encontradas nos IDEs são:
-Editor - edita o código-fonte do programa escrito na(s) linguagem(ns) suportada(s) pela IDE;
 Compilador (compiler) - compila o código-fonte do programa, editado em uma linguagem específica e a transforma em linguagem de máquina;
 Linker - liga (linka) os vários "pedaços" de código-fonte, compilados em linguagem de máquina, em um programa executável que pode ser executado em um computador ou outro dispositivo computacional;
 Depurador (debugger) - auxilia no processo de encontrar e corrigir defeitos no código-fonte do programa, na tentativa de aprimorar a qualidade de software;

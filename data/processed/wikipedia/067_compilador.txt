@@ -21,13 +21,4 @@ Linguagens formais
 Linguagem de programação
 Interpretador
 Linker
-Appel, Andrew W. (1997). Modern Compiler Implementation in C. Basic Techiques (em inglês). [S.l.]: Cambridge University Press. 398 páginas. ISBN 0-521-58653-4
-Brown, P. J. (1979). Writing Interactive Compilers and Interpreters (em inglês). Chichester: John Wiley Sons. 265 páginas. ISBN 0-471-27609-X
-Kaplan, Randy M. (1994). Constructing Language Processors for Little Languages (em inglês). Nova Iorque: John Wiley Sons. 452 páginas. ISBN 0-471-59754-6
-Lee, John A. N. (1967). The Anatomy of a Compiler (em inglês). Nova Iorque: Reinhold Publishing Company. 275 páginas. Library of Congress Catalog Card Number: 67-29207
-Metsker, Steven John (2001). Building Parsers with Java (em inglês). Boston: Addison-Wesley. 371 páginas. ISBN 0-201-71962-2
-Ricarte, Ivan (2008). Introdução à Compilação. Rio de Janeiro: Campus, Elsevier. 264 páginas. ISBN 978-85-352-3067-3
-Terry, Patrick D. (1986). Programming Language Translation. A Practical Approach (em inglês). Wokingham: Addison-Wesley. 443 páginas. ISBN 0-201-18040-5
-Wirth, Niklaus (1996). Compiler Construction (em inglês). [S.l.]: Addison-Wesley. ISBN 0-201-40353-6. Consultado em 17 de março de 2007. Arquivado do original em 5 de fevereiro de 2007
 «Compilador Educativo Verto»
-«Compiladores livres» (em inglês)

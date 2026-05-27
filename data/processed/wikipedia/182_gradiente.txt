@@ -2,999 +2,144 @@ No cálculo vetorial o gradiente (ou vetor gradiente) é um vetor que indica o s
 O módulo do vetor gradiente indica a taxa de variação da grandeza escalar com relação à distância movida quando desloca-se na direção e sentido do vetor gradiente (deslocamentos infinitesimais).
 O campo vetorial e o operador gradiente possuem diversas aplicações em matemática e ciências naturais, indo desde o cálculo de derivadas direcionais à maximização das mesmas. A exemplo, a partir do gradiente do potencial elétrico determina-se o campo elétrico; e a partir do gradiente da energia potencial determina-se o campo de força associado.
 Por exemplo, o gradiente da topografia H de um terreno, também chamado de declividade, é dado por:
-H
 distância vertical
 distância horizontal
 O símbolo
 , isto é, nabla, é a notação do operador gradiente.
-x
-0
 para a extremidade à esquerda e
-x
-L
 para a extremidade à direita, definimos a temperatura
-T
 em uma posição qualquer (variável
-x
 ) da viga como uma função
-T
-(
-x
-)
-.
 Entre dois pontos muito próximos, distantes de um comprimento
-d
-x
 , teremos uma respectiva variação de temperatura
-d
-T
 . Em uma situação unidimensional, a razão entre essas grandezas fornece o gradiente, denotado por:
-T
-d
-T
-d
-x
-i
 Note que, para apenas uma dimensão, a noção de derivada e gradiente convergem.
 Em condução térmica, o gradiente de temperatura é responsável pelo surgimento de um fluxo de calor, segundo a Lei de Fourier, que, para condução unidimensional, é representada por:
-q
-x
-k
-d
-T
-d
-x
 onde
-q
-x
 corresponde ao fluxo de calor, em
-W
-/
-m
-2
 , e
-k
 corresponde à condutividade térmica do material, em
-W
-/
-m
-.
-K
 . O sinal negativo indica que o calor fluirá do corpo mais quente em direção ao corpo mais frio.
-M
-(
-x
-,
-y
-,
-z
-)
 , teremos, em uma situação mais próxima da realidade, uma função
-T
-(
-x
-,
-y
-,
-z
-)
 que descreve a temperatura nas coordenadas de
-M
-.
 Se nos deslocarmos em apenas um eixo do espaço, podemos escrever a função
-T
 considerando esse deslocamento. Para uma variação da coordenada
-y
 , por exemplo, teremos a relação:
-T
-(
-x
-,
-y
-d
-y
-,
-z
-)
-T
-(
-x
-,
-y
-,
-z
-)
-T
-y
-d
-y
 Seguindo a mesma lógica, para um deslocamento entre um ponto qualquer
-M
 e outro que chamaremos de
-M
 , teremos um vetor
-h
-M
-M
-(
-h
-x
-,
-h
-y
-,
-h
-z
-)
-T
-(
-x
-,
-y
-,
-z
-)
 para
-T
-(
-x
-h
-x
-,
-y
-h
-y
-,
-z
-h
-z
-)
 . Assim, teremos a relação:
-T
-(
-x
-h
-x
-,
-y
-h
-y
-,
-z
-h
-z
-)
-T
-(
-x
-,
-y
-,
-z
-)
-T
-x
-(
-x
-,
-y
-,
-z
-)
-h
-x
-T
-y
-(
-x
-,
-y
-,
-z
-)
-h
-y
-T
-z
-(
-x
-,
-y
-,
-z
-)
-h
-z
 É possível simplificar essa relação definindo um vetor gradiente de temperatura
-T
 , no qual cada componente indica a variação da temperatura em cada coordenada:
-T
-(
-x
-,
-y
-,
-z
-)
-(
-T
-x
-(
-x
-,
-y
-,
-z
-)
-,
-T
-y
-(
-x
-,
-y
-,
-z
-)
-,
-T
-z
-(
-x
-,
-y
-,
-z
-)
-)
 Assim, podemos representar a mudança de temperatura da posição
-M
 para
-M
 por:
-T
-(
-M
-h
-)
-T
-(
-M
-)
-T
-(
-M
-)
-h
-T
-(
-M
-)
-h
 o produto escalar entre o vetor gradiente e o vetor
-h
-.
 Da mesma forma que no caso unidimensional, o vetor gradiente de temperatura terá orientação partindo do mais frio em direção ao mais quente.
 Assim, no contexto de transferência de calor, teremos a Lei de Fourier aplicada ao sistema tridimensional, representada por:
-q
-k
-T
 Novamente,
-q
 corresponde ao fluxo de calor e
-k
 corresponde à condutividade térmica do material. Perceba que, como o calor flui da região de temperatura mais alta para uma de temperatura mais baixa, os vetores fluxo de calor e gradiente de temperatura terão sentidos contrários.
 O vetor gradiente ou simplesmente gradiente de um campo escalar
-f
-(
-x
-1
-,
-x
-2
-,
-,
-x
-n
-)
 é determinado via ênupla ordenada definida por:
 grad
-f
-f
-x
-1
-,
-f
-x
-2
-,
-,
-f
-x
-n
 ou, via notação de soma de Euler, por:
 grad
-f
-i
-f
-x
-i
-e
-i
 onde
-e
-i
 são os vetores unitários ortogonais que definem a base a partir da qual se coordena o espaço e
-x
-i
 representa o respectivo operador derivada parcial.
 Já na notação de soma de Einstein, onde índices repetidos no mesmo fator implicam somatório, para o campo escalar :
 grad
-i
-e
-i
 O símbolo nabla foi introduzido por William Hamilton e rapidamente assimilado pela comunidade científica:
-f
-(
-x
-1
-,
-...
-,
-x
-n
-)
 grad
-f
 No entanto, por abuso de linguagem, é comum não se indicar a "seta" de vector e a notação poderá torna-se em:
-f
 grad
-f
-D
-f
 O gradiente também pode ser generalizado em ordem se fornecemos um campo vectorial obtemos um campo tensorial.
 Para a função escalar
-f
-(
-x
-,
-y
-,
-z
-)
-4
-x
-10
-y
-2
 sin
-z
 tem-se, na base cartesiana
-i
-,
-j
-,
-k
 grad
-f
-(
-4
-x
-10
-y
-2
 sin
-z
-)
-x
-i
-(
-4
-x
-10
-y
-2
 sin
-z
-)
-y
-j
-(
-4
-x
-10
-y
-2
 sin
-z
-)
-z
-k
 que fornece por resposta a ênupla
-f
-4
-;
-20
-y
-;
 cos
-z
 ou explicitamente
-f
-(
-4
-)
-i
-(
-20
-y
-)
-j
-(
 cos
-z
-)
-k
 para qualquer ponto definido pelas coordenadas
-(
-x
-,
-y
-,
-z
-)
 , restando apenas a substituição dos respectivos valores x, y e z na expressão acima.
 Para todo campo escalar
-f
 diferenciável em função do espaço cartesiano
-r
-x
-,
-y
-,
-z
 temos que:
-f
-f
-x
-,
-f
-y
-,
-f
-z
 O gradiente é a derivada de um campo em função do espaço:
-f
-f
-r
-f
-d
-f
-d
-x
 O gradiente é linear:
-(
-f
-g
-)
-f
-g
-(
-,
-F
-2
-)
 Onde
-F
 é um corpo constante.
 O gradiente segue a Lei de Leibniz na multiplicação:
-(
-f
-g
-)
-f
-g
-g
-f
 E na divisão:
-(
-f
-/
-g
-)
-g
-f
-f
-g
-g
-2
-(
-g
-0
-)
 O vetor gradiente sempre será ortogonal às curvas de nível (veja no artigo "Conjunto de nível").
 Seja
-f
-(
-x
-,
-y
-)
 uma função definida em
-D
-R
-2
 e diferenciável em todo seu domínio.
 Seja o conjunto
-C
-:
-(
-x
-,
-y
-)
-D
-f
-(
-x
-,
-y
-)
-k
 onde x e y são funções de um parâmetro t tal que
-x
-(
-0
-)
-x
-0
-,
-y
-(
-0
-)
-y
-0
-.
 Então, temos:
-f
-(
-x
-(
-t
-)
-,
-y
-(
-t
-)
-)
-k
 (diferenciando com relação a t pela regra da cadeia)
-f
-x
-d
-x
-d
-t
-f
-y
-d
-y
-d
-t
-0
 A equação final pode ser interpretada como o produto escalar do gradiente de f por um vector tangente a f em
-(
-x
-0
-,
-y
-0
-)
 O gradiente é revertido pela integral de linha de acordo com o teorema do gradiente, que é análogo ao teorema fundamental do cálculo:
-f
-f
-Q
-f
-P
-P
-Q
-f
-d
 A derivada direcional é um escalar que representa a derivada de um campo escalar ao longo de um versor (no caso abaixo,
-u
 ). Analiticamente, a derivada direcional de dada f(x,y,z) (função escalar), é a taxa de variação instantânea de f em relação à distância na direção e sentido
-u
-.
-u
-D
-u
-f
-u
-f
 Assim, podemos tirar algumas observações a partir do produto escalar entre o gradiente de f e o versor
-u
-:
 1. Se o ângulo entre os vetores
-f
-e
-u
 , denotado por , for igual a zero. então teremos que a derivada direcional é máxima, e será igual ao módulo do gradiente de f(x,y,z), já que:
-D
-u
-f
-u
-f
-c
-o
-s
-(
-0
-)
-D
-u
-f
-m
-a
-x
-f
 2. Se o ângulo for igual a
-180
-o
 , então a derivada direcional terá seu valor mínimo e igual a menos o módulo do gradiente de f(x,y,z):
-D
-u
-f
-u
-f
-c
-o
-s
-(
-180
-)
-D
-u
-f
-m
-i
-n
-f
 3. Se f(x,y,z) representar uma curva de nível em que f(x,y,z) k, onde k é uma constante, e se o vetor
-u
 for tangente à tal curva de nível, então o valor da derivada direcional é nula, pois
-f
-u
 , e normal à curva de nível. Neste caso:
-D
-u
-f
-u
-f
-0
 O gradiente é escrito nos diferentes sistemas de coordenadas tridimensionais nas seguintes formas:
-f
-f
-x
-e
-x
-f
-y
-e
-y
-f
-z
-e
-z
 Para coordenadas espaciais x, y e z.
-f
-f
-e
-1
-f
-e
-f
-z
-e
-z
 Onde
 representa a distância ao eixo z,
 é o ângulo (tomado, em geral sobre o plano z 0 em relação ao eixo x) e z.
-f
-f
-r
-e
-r
-1
-r
-f
-e
-1
-r
-s
-e
-n
-f
-e
 Onde
-r
 representa a distância à origem,
 é o ângulo entre a reta que liga o ponto à origem e o eixo z e
 é o ângulo formado pela projeção da reta que liga o ponto à origem no plano z 0 e o eixo x.
 O conceito de gradiente na física está fortemente relacionado aos conceitos de campo conservativo e de função potencial, de tal forma que também na matemática se define campo vetorial conservativo.
 Na física campos conservativos são campos que conservam a energia do sistema, isto é, campos onde não há dissipação de energia.
 A função vetorial
-F
 é um campo vetorial conservativo se existe uma função escalar
 , chamada função potencial, tal que:
-F
-c
-o
-n
-s
-(
-x
-,
-y
-,
-z
-)
 ou uma função potencial do tipo
-(
-r
-)
 , basta calcular o gradiente para encontrar o campo vetorial conservativo associado a
-.
 Como
 é uma função de x, y, z então:
-F
-c
-o
-n
-s
-(
-x
-,
-y
-,
-z
-)
-x
-i
-y
-j
-z
-k
 Se
 é uma função implícita de x, y, z através de
-r
-x
-2
-y
-2
-z
-2
 , ou seja,
-(
-r
-)
-(
-r
-(
-x
-,
-y
-,
-z
-)
-)
 é necessário usar a regra da cadeia para calcular o respectivo gradiente. Potenciais deste tipo são chamados de potenciais centrais.
 Através da regra da cadeia é possível ver que:
-(
-r
-)
-x
-d
-d
-r
-r
-x
-(
-r
-)
-x
-(
-x
-2
-y
-2
-z
-2
-)
-(
-r
-)
-[
-1
-2
-(
-x
-2
-y
-2
-z
-2
-)
-1
-/
-2
-2
-x
-]
 Levando em conta que
-r
-x
-2
-y
-2
-z
-2
 tem-se que:
-(
-r
-)
-x
-(
-r
-)
-r
-x
 Igualmente para as outras variáveis do gradiente:
-(
-r
-)
-y
-(
-r
-)
-r
-y
-e
-(
-r
-)
-z
-(
-r
-)
-r
-z
-;
 Assim, com a soma das três derivadas, temos que :
-(
-r
-)
-(
-r
-)
-r
 Esta última fórmula é a preferencial para quando se tem potenciais centrais, pois ela nos fornece o campo gradiente com apenas uma derivação.
 São expressas como:
-(
-1
-)
-J
-(
-X
-,
-Y
-,
-Z
-,
-T
-)
-D
-(
-x
-,
-y
-,
-z
-,
-t
-)
-(
-2
-)
-q
-(
-X
-,
-Y
-,
-Z
-,
-T
-)
-k
-T
-(
-x
-,
-y
-,
-z
-,
-t
-)
-(
-3
-)
-J
-(
-X
-,
-Y
-,
-Z
-,
-T
-)
-(
-x
-,
-y
-,
-z
-,
-t
-)
 Ao observar percebe-se que as três leis relacionam um campo vetorial com o gradiente de um campo escalar.
-A (1) é a Lei de Fick que rege a difusão de substâncias em meios contínuos. A função vetorial indicada por
-J
 é chamada de densidade do fluido.
-J
 é um vetor na direção do escoamento e de módulo igual à quantidade de substâncias que atravessam uma unidade de área normal à direção do escoamento, na unidade de tempo.
 Definição matemática:
-J
 , em que
-(
-x
-,
-y
-,
-z
-,
-t
-)
 é o campo escalar que descreve a densidade do fluido,
-(
-x
-,
-y
-,
-z
-,
-t
-)
-A (2) expressão é chamada de Lei de Fourier e rege a condução térmica. A função vetorial indicada por
-q
 é chamada densidade de corrente de calor.
 Definição matemática:
-q
-(
-Q
-V
-)
 , onde Q é a quantidade de calor, V o volume e
-k
 é a condutividade térmica do meio.
-J
 a densidade de corrente elétrica,
 a condutividade elétrica e
 o potencial elétrico. A definição da função vetorial
-J
 é análoga à definição de densidade de corrente usada na Lei de Fick, só que aqui ao invés de ter transporte de massa temos transporte de carga.
 O gradiente é o vetor que aponta para onde a grandeza resultante da função tem seu maior crescimento.
 Os gradientes de tensão em redes elétricas são, depois dos transientes, os maiores causadores de danos em circuitos eletro-eletrônicos.

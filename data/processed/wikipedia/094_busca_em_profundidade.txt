@@ -19,8 +19,5 @@ Resolução de quebra-cabeças como labirinto
 Busca em largura
 Explicação e exemplo da busca em profundidade
 C Boost Graph Library: Depth-First Search
-[1]
-[2]
 QuickGraph, exemplo para .Net
-[3]
 YAGSBPL Um template feito em biblioteca C para procura de gráficos e planejamento

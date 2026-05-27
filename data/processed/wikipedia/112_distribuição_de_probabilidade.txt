@@ -9,2162 +9,397 @@ O uso rigoroso das distribuições de probabilidade começou a partir do século
 A definição formal das medidas de probabilidade surgiu em 1896 com uma publicação de Émile Borel, continuando com outros matemáticos como Henri Léon Lebesgue, Maurice René Fréchet, Paul Lévy e principalmente Andrei Kolmogorov que formulou os axiomas de probabilidade em 1933.
 Em teoria da probabilidade, uma distribuição de probabilidade é uma medida com massa total igual a 1. Essa medida satisfaz os três axiomas de probabilidade.
 Definição Para um espaço mensurável
-(
-,
-A
-)
-,
-P
 é uma distribuição de probabilidade, medida de probabilidade ou simplesmente probabilidade se:
-P
 é uma aplicação de
-A
 em [0,1];
-P
-(
-)
-1
-;
-P
 é
 aditiva. Isto é, para qualquer família finita ou contável de elementos disjuntos
-(
-A
-i
-,
-i
-I
-)
 de
-A
-P
-(
-i
-I
-A
-i
-)
-i
-I
-P
-(
-A
-i
-)
-.
 Uma consequência imediata é:
-P
-(
-)
-0
-.
-(
-,
-A
-,
-P
-)
 é chamado de espaço de probabilidade. Usualmente a palavra distribuição é usada quando tratamos de uma distribuição de probabilidade de uma variável aleatória
-X
 definida em um espaço de probabilidade
-(
-,
-A
-,
-P
-)
-.
 Definição Seja uma variável aleatória real no espaço de probabilidade
-(
-,
-A
-,
-P
-)
 . Isto é, uma função mensurável
-X
-:
-(
-,
-A
-)
-(
-R
-,
-B
-(
-R
-)
-)
 . A distribuição de probabilidade da variável aleatória
-X
 é a medida de probabilidade
-P
-X
 definida sobre o espaço mensurável
-(
-R
-,
-B
-(
-R
-)
-)
 por
-P
-X
-(
-B
-)
-P
-(
-X
-1
-(
-B
-)
-)
-P
-(
-X
-B
-)
-,
 para qualquer álgebra de Borel real
-B
-B
-(
-R
-)
 . Em outras palavras,
-P
-X
 é a medida de imagem de
-P
 para
-X
-.
 Então, para definir a distribuição de uma variável aleatória, transpõe-se a distribuição de probabilidade
-P
 de
 em uma medida
-P
-X
 de
-R
-.
 A representação de uma distribuição por uma variável aleatória não é única. Em outras palavras, duas variáveis aleatórias diferentes ou duas variáveis aleatórias definidas em espaços diferentes podem ter a mesma distribuição. Duas variáveis aleatórias reais
-X
-e
-Y
 têm a mesma distribuição
-P
-X
-P
-Y
 (em termos de igualdade de medidas). Isto é,
-P
-X
-(
-B
-)
-P
-Y
-(
-B
-)
 para todo
-B
-B
-(
-R
-)
 . O seguinte teorema permite uma caracterização adicional.
 Teorema de transferência ou de transporte Seja uma variável aleatória real
-X
-:
-R
 . Logo,
-E
-[
-(
-X
-)
-]
 déf.
-(
-X
-(
-)
-)
-P
-(
-d
-)
-R
-(
-x
-)
-P
-X
-(
-d
-x
-)
-,
 para toda função
-:
-R
-R
 , de tal modo que pelo menos uma das duas integrais existe. A última integral, do ponto de vista da teoria da medida, é uma integral da função
 em relação à medida
-P
-X
 . Essa integral tem forma de soma, no caso das distribuições discretas. Então, duas variáveis aleatórias reais
-X
-e
-Y
 têm a mesma distribuição se
-E
-[
-(
-X
-)
-]
-E
-[
-(
-Y
-)
-]
 para qualquer função
-:
-R
-R
 , tal que existe pelo menos um dos dois termos da igualdade.
 Uma distribuição de probabilidade é chamada de multidimensional ou
-n
 -dimensional quando descreve vários valores (aleatórios) de um fenômeno aleatório, por exemplo, no lançamento de dois dados a distribuição de probabilidade dos dois resultados é uma distribuição bidimensional. Então, a característica multidimensional aparece por meio da transferência por uma variável aleatória de um espaço de probabilidade
-(
-,
-A
-)
 para um espaço numérico
-E
-n
 , de dimensão
-n
 , por exemplo, no lançamento de dois dados a dimensão é
-n
-2
 e o espaço
-E
-2
 é
-1
-,
-...
-,
-6
-1
-,
-...
-,
-6
 . A distribuição multidimensional também é chamada de distribuição conjunta.
 Um exemplo importante da distribuição multidimensional é a probabilidade produto
-P
-P
-1
-P
-2
 , em que
-P
-1
-e
-P
-2
 Definição Seja uma variável aleatória
-X
 no espaço de probabilidade
-(
-,
-A
-,
-P
-)
 , com valores em
-R
-n
 equipada com produtos de algebras de Borel
-B
-(
-R
-)
-n
 . A distribuição da variável aleatória
-X
 é a medida de probabilidade
-P
-X
 definida para todo
-B
-B
-(
-R
-)
-n
-P
-X
-(
-B
-)
-P
-(
-X
-1
-(
-B
-)
-)
-P
-(
-X
-B
-)
-.
 A variável aleatória
-X
 é identificada a um vetor aleatório de dimensões
-n
-:
-X
-(
-X
-1
-,
-X
-2
-,
-...
-,
-X
-n
-)
 . O teorema de Cramer-Wold estabelece que a distribuição (
-n
 -dimensional) do vetor aleatório é completamente determinado pelas distribuições (unidimensionais) de todas as combinações lineares dos componentes:
-i
-1
-n
-a
-i
-X
-i
 para todo
-a
-1
-,
-a
-2
-,
-...
-,
-a
-n
-.
 Uma distribuição bidimensional ou
-n
 -dimensional é chamada de absolutamente contínua em
-R
-2
 quando a distribuição é absolutamente contínua em relação à medida de Lebesgue em
-R
-2
 . Isto é, se a distribuição da variável aleatória correspondente é descrita como
-P
-(
-X
-B
-)
-B
-f
-X
-(
-x
-1
-,
-x
-2
-)
-d
-x
-1
-d
-x
-2
-,
 para todo
-B
-B
-(
-R
-2
-)
-.
 Uma distribuição marginal de um vetor aleatório é a distribuição dos seus componentes. Para obter-la, projeta-se a distribuição em um espaço unidimensional de uma coordenada desejada. A distribuição de probabilidade da
-i
 -ésima coordenada de um vetor aleatório é chamada de
-i
 -ésima distribuição marginal
-P
-i
 . A distribuição marginal
-P
-i
 de
-P
 é obtida pela fórmula
-P
-i
-(
-A
-)
-P
-X
-i
-(
-A
-)
-1
-i
-A
-P
-(
-d
-(
-1
-,
-...
-,
-n
-)
-)
-,
 para todo
-A
-B
-(
-R
-)
-.
 As distribuições marginais de uma distribuição absolutamente contínua são expressas com suas densidades marginais.
 A probabilidade condicional é definida em eventos pela probabilidade
-P
-(
-B
-)
 : a probabilidade de um evento A qualquer condicionado a um evento B. Para quaisquer
-A
-e
-B
 da -álgebra subjacente tal que
-P
-(
-B
-)
-0
-P
-(
-A
-B
-)
-P
-(
-A
-B
-)
-P
-(
-B
-)
-.
-.
 Em probabilidade e em estatística, a distribuição de probabilidade
-P
-(
-B
-)
 comumente usada em distribuição da probabilidade total ou no teorema de Bayes.
 A probabilidade condicional também é definida para as variáveis aleatórias. Seja uma variável X condicional a uma variável Y. Quando
-P
-(
-Y
-y
-)
-0
 , a distribuição de
-X
 dado
-Y
-y
 é definida por
-P
-(
-X
-A
-Y
-y
-)
-P
-(
-X
-A
-,
-Y
-y
-)
-P
-(
-Y
-y
-)
-.
-.
 A definição acima não é válida se a distribuição de Y for absolutamente contínua dado que
-P
-(
-Y
-y
-)
-0
 para todo
-y
 . A definição seguinte é válida para quaisquer das duas variáveis aleatórias.
 Definição Seja
-(
-X
-,
-Y
-)
 um par de variáveis aleatórias reais. Há uma distribuição de probabilidade
-P
-X
-Y
 , chamada de distribuição condicional de
-X
 dado
-Y
 ou dado
-Y
-y
 definida pela e para qualquer função limitada boreliana
-:
-E
-[
-(
-X
-)
-Y
-]
-(
-x
-)
-P
-X
-Y
-(
-d
-x
-)
 quase certamente.
 A distribuição também é denotada como
-L
-(
-X
-Y
-)
 ou
-L
-(
-X
-Y
-y
-)
 . A igualdade anterior é uma igualdade entre variáveis aleatórias.
 De maneira mais geral, a distribuição de probabilidade é definida a partir da esperança condicional de uma variável aleatória
-X
 dada uma -álgebra
-G
 . Essa esperança condicional é a única variável aleatória
-G
 -mensurável denotada como
-E
-[
-X
-G
-]
-E
-[
-Z
-E
-(
-X
-G
-)
-]
-E
-[
-Z
-X
-]
 para todo
-Z
 , variável
-G
 -mensurável. Então, a distribuição condicional é definida por
-P
-(
-A
-G
-)
-E
-(
-1
-A
-G
-)
 , em que
-1
-A
 é a função indicadora.
 No caso das distribuições absolutamente contínuas, existe uma função densidade condicional de uma distribuição em relação a outra e vice-versa. Se
-(
-x
-,
-y
-)
-f
-(
-x
-,
-y
-)
 é a densidade da distribuição bidimensional, as duas densidades condicionais são dadas por
-f
-(
-x
-y
-)
-f
-(
-x
-,
-y
-)
-f
-Y
-(
-y
-)
-f
-(
-x
-,
-y
-)
-f
-(
-x
-,
-y
-)
-d
-x
-e
-f
-(
-y
-x
-)
-f
-(
-x
-,
-y
-)
-f
-X
-(
-x
-)
-f
-(
-x
-,
-y
-)
-f
-(
-x
-,
-y
-)
-d
-y
-.
-f
-X
-e
-f
-Y
 são as duas distribuições marginais de
-X
-e
-Y
 , respectivamente. Em substituição das integrais pelas somas, obtém-se fórmulas semelhantes quando as distribuições marginais são discretas ou quando a distribuição marginal de
-X
 é discreta e de
-Y
 é absolutamente contínua ou vice-versa.
 Porque
-R
 é um espaço de Banach, as distribuições dos valores em um espaço de Banach são generalizações das distribuições dos valores reais. A definição é semelhante.
 Definição Seja
-X
 uma variável aleatória em um espaço de probabilidade
-(
-,
-A
-,
-P
-)
 com valores em um espaço de Banach
-E
 com -álgebra
-B
 gerada pelos conjuntos abertos de
-E
 . A distribuição de probabilidade da variável aleatória
-X
 e a medida de probabilidade
-P
-X
 definida pelo espaço mensurável
-(
-E
-,
-B
-)
 por
-P
-X
-(
-B
-)
-P
-(
-X
-1
-(
-B
-)
-)
-P
-(
-X
-B
-)
-,
 para todo
-B
-B
-.
 Para obter boas propriedades, é comum considerar as medidas de probabilidade tight. Isto é, Intuitivamente, são as medidas concentradas em seu espaço compacto e com a suposição que o espaço de Banach é separável.
 Um possível exemplo do espaço de Banach é o espaço das funções contínuas
-C
-(
-R
-,
-R
-)
 . Um processo estocástico de uma família de variáveis aleatórias
-(
-X
-t
-)
-t
-T
 indexadas por conjunto de índices
-T
 . Uma definição possível da distribuição de probabilidade de tal processo é chamada de distribuição finita-dimensional. Isto é, a distribuição multidimensional dos vetores
-(
-X
-t
-1
-,
-X
-t
-2
-,
-...
-,
-X
-t
-n
-)
 quando
-t
-1
-,
-t
-2
-,
-...
-,
-t
-n
-T
-(
-B
-t
-)
-t
-R
 (trajetórias contínuas), cuja distribuição de probabilidade é a medida de Weiner geralmente denotada por
-W
-(
-A
-)
-P
-(
-(
-B
-t
-)
-t
-0
-A
-)
 para todo subconjunto
-A
 de
-C
-(
-R
-,
-R
-)
-.
 Uma distribuição de probabilidade é uma medida de massa total unitária. O conjunto de distribuições de probabilidade é um subespaço do espaço de medidas finitas. Esse espaço é muitas vezes denominado
-P
-(
-R
-)
 ou
-M
-1
-(
-R
-)
 pelas distribuições de probabilidade reais. No restante da seção, as propriedades desse espaço são detalhadas para as distribuições de probabilidade no conjunto dos números reais. Embora também possam ser detalhadas para distribuições em espaços de Banach.
-(
-P
-n
-,
-n
-1
-,
-2
-,
-...
-)
-P
 se
 lim
-n
-(
-)
-P
-n
-(
-d
-)
-(
-)
-P
-(
-d
-)
 para toda função contínua
 de um conjunto limitado.
 A convergência é denominada
-P
-n
-w
-P
 . Essa convergência é refletida pelo teorema de transferências de variáveis aleatórias
-(
-X
-n
-,
-n
-1
-,
-2
-...
-)
 das respectivas distribuições
-(
-P
-n
-,
-n
-1
-,
-2
-,
-...
-)
-X
-n
-L
-X
 ou
-X
-n
-D
-X
 Certas distribuições são agrupadas por família em relação a certas propriedades da sua densidade ou da sua função massa de acordo com o número de parâmetros que as definem, chamados de família paramétrica de distribuição de probabilidade.
 Os chamados parâmetros de forma são outros parâmetros relacionados a distribuição de probabilidade. A cauda de uma distribuição de probabilidade real faz parte da sua forma. As caudas da esquerda e da direita são dos tipos
-]
-,
-x
-[
-e
-[
-y
-,
-[
 , respectivamente. Uma distribuição de probabilidade é chamada de cauda pesada se a medida de probabilidade da cauda
-P
-(
-[
-y
-,
-[
-)
-y
 vai para infinito, do que a distribuição normal. Especialmente para qualquer distribuição absolutamente contínua e centrada, adefinição pode ser representada em termos de densidade:
 lim
-x
-f
-(
-x
-)
 exp
-(
-1
-2
-x
-2
-)
 é uma distribuição com caudas direita e esquerda pesadas.
 A assimetria (momento de terceira ordem) é um exemplo de parâmetro de forma, que permite tornar a cauda da direita mais ou menos pesada. A curtose (momento de quarta ordem) é usada para apoiar ou opor-se aos valores próximos da média daqueles que estão mais distantes. Uma distribuição de probabilidade é chamada de mesocúrtica, leptocúrtica ou platicúrtica se a curtose é 0, positiva ou negativa.
 da seguinte forma:
-f
-(
-y
-)
-a
-(
-)
-b
-(
-y
-)
-e
-c
-(
-)
-d
-(
-y
-)
 se
-y
-0
 em caso contrário.
 Essa família inclui muitas distribuições clássicas como distribuição normal, distribuição exponencial, distribuição Gamma, distribuição qui-quadrado, distribuição beta, distribuição de Bernoulli, distribuição de Poisson, entre outras.
 Uma distribuição é chamada de família potência a dois parâmetros
-e
 se a densidade:
-f
-(
-y
-)
-y
-1
 se
-0
-y
-0
 em caso contrário.
 Quando uma distribuição de probabilidade multidimensional representa a direção aleatória de um fenômeno, ela é chamada de direcional. É uma distribuição de um vetor aleatório unitário de dimensão
-d
 , em que
-d
-2
 , ou, de maneira equivalente, é uma distribuição de probabilidade na esfera de dimensão
-d
 . Uma distribuição direcional de dimensão d pode ser representada por um vetor (
-d
 -1-dimensional) em coordenadas polares como as distribuições de von Mises e de Bingham.
 Se existir, o
-n
 -ésimo momento de uma distribuição de probabilidade
-P
 é definido como
-m
-n
-n
-P
-(
-d
-)
 . Essa fórmula é descrita simplesmente como
-m
-n
-E
-[
-X
-n
-]
 caso a distribuição seja definida a partir de uma variável aleatória
-X
-.
 O primeiro momento ou momento de ordem 1 também é chamado de esperança da distribuição. Quando o momento é igual a 0, a distribuição é chamada centrada. O segundo momento ou momento de ordem 2 também é chamado de variância da distribuição. Quando o momento é igual a 1, é dito que a distribuição é reduzida.
 De uma maneira geral, a coleção de todos os momentos
-(
-m
-n
-,
-n
-N
-)
 de uma distribuição de probabilidade não é suficiente para caracterizar essa distribuição. Certas distribuições são definidas por um número finito do seu momento: a distribuição de Poisson é completamente definida por sua esperança, a distribuição normal é completamente definida por seus dois primeiros momentos. Certas distribuições não possuem momento como a distribuição de Cauchy.
-P
-1
-i
-n
-p
-i
-x
-i
 e uma distribuição
-P
-2
 de densidade
-f
 , a entropia
-H
 é definida respectivamente como
-H
-(
-P
-1
-)
-i
-1
-n
-p
-i
 log
-2
-(
-p
-i
-)
-e
-H
-(
-P
-2
-)
-R
-f
-(
-x
-)
 ln
-(
-f
-(
-x
-)
-)
-d
-x
-.
 A distribuição normal é a entropia máxima para todas as distribuições possíveis que possuem a mesma média e o mesmo desvio padrão.
 A distribuição geométrica é a entropia máxima para todas as distribuições discretas que possuem a mesma média.
 A distribuição uniforme contínua é a entropia máxima para as distribuições com suporte limitado.
 A distribuição exponencial é a entropia máxima para todas as distribuições em
-R
 que possuem a mesma média.
 As distribuições lei de potência como a lei de Zipf são a entropia máxima entre aqueles que tem a mesma média de logaritmo.
 O estado de entropia máxima é o estado mais desordenado, mais estável e mais provável de um sistema. Essas leis são os menos evitável de todas as leis compatíveis com as observações ou as condições. Portanto, a única forma objetiva de qualifica-las como distribuições de probabilidade a priori. Essa propriedade tem um papel importante na inferência bayeseana.
 Distribuições de probabilidade em aplicações mais comuns são distribuições discretas e distribuições absolutamente contínuas. Entretanto, existem distribuições de probabilidade que não são nem discretas nem absolutamente contínuas.
 Uma distribuição de probabilidade
-P
 é concentrada ou é realizada em um conjunto
-A
-A
 quando
-P
-(
-A
-)
-1
 . Uma distribuição de probabilidade
-P
 é chamada de discreta se um conjunto
-A
 é um conjunto finito ou contável.
 O elemento
 é chamado de átomo de uma distribuição de probabilidade
-P
 quando
-A
-e
-P
-(
-)
-0
 . O conjunto de átomos de uma distribuição discreta é finito ou contável. De modo geral, essa propriedade é válida para toda medida
 -finita. Para uma distribuição de probabilidade real, o conjunto de átomos é exatamente o conjunto de pontos de descontinuidade de sua função de distribuição. Neste caso, a finitude do conjunto de átomos é dada a partir do fato que a função de distribuição é limitada.
 Um critério suficiente para uma distribuição de probabilidade ser discreta é que
 seja finito ou contável.
 Se
-P
 é discreto, então ele se concentra em particular no conjunto (finito ou contável) dos seus átomos
-a
 . Para definir
-P
 é preciso definir o conjunto dos pares:
-(
-,
-p
-(
-)
-)
-a
-]
-0
-,
-1
-]
 , em que
-p
 é a função de massa de
-P
 . Então, obtém-se
-P
-a
-p
-(
-)
-,
 em que
 é a medida de Dirac no ponto
-a
-.
 No caso em que a distribuição de probabilidade é definida a partir de uma variável aleatória, os conceitos anteriores são usados para a variável aleatória: uma variável aleatória
-X
 , concentrada em conjunto
-B
-B
-(
-R
-)
 , é discreta, se a distribuição
-P
-X
 concentrada em
-B
 , é discreta. Os mesmo átomos de
-X
 são os átomos de
-P
-X
-.
 Para uma variável aleatória discreta
-X
 , o teorema de transferência é expresso na forma de somas ou de séries
-E
-[
-(
-X
-)
-]
-x
-a
-(
-x
-)
-p
-X
-(
-x
-)
 , para toda função
-:
-R
-R
-,
-P
-(
-X
-A
-)
-k
-A
-P
-(
-X
-k
-)
 , para todo
-A
-B
-(
-R
-)
-.
 Geralmente a função de distribuição de uma distribuição discreta é constante seccionalmente. Uma distribuição discreta pode ser representada por um gráfico de barras.
 Segue uma lista de distribuições de probabilidade discretas com suportes finitos ou contáveis.
 Medida de Dirac
 A medida de Dirac é o exemplo mais simples das distribuições discretas no sentido que o suporte possui apenas um valor. Se uma variável aleatória é a medida de Dirac
-a
 , então
-X
 é igual a
-a
 com probabilidade igual a 1. Essa lei modela um fenômeno determinista (não aleatório) pois o resultado da experiência é quase certamente igual ao valor conhecido
-a
-.
 Distribuição uniforme discreta
 A distribuição uniforme discreta modela um fenômeno aleatório cujos resultados são igualmente prováveis. É o caso do lançamento de um dado. Se o suporte
-S
 da distribuição é um conjunto de
-n
 elementos
-x
-1
-,
-x
-2
-,
-...
-,
-x
-n
 , a distribuição é definida como
-P
-(
-X
-x
-1
-)
-P
-(
-X
-x
-2
-)
-...
-P
-(
-X
-x
-n
-)
-1
-n
-.
 Distribuição de Bernoulli
-p
-[
-0
-,
-1
-]
-P
-(
-X
-1
-)
-1
-P
-(
-X
-0
-)
-p
-.
 Distribuição binomial
 É a distribuição do número de sucessos obtidos depois de
-n
-p
-[
-0
-,
-1
-]
 , ou seja, é a distribuição da soma de
-n
-P
-(
-X
-k
-)
-(
-n
-k
-)
-p
-k
-(
-1
-p
-)
-n
-k
 para todo
-k
-0
-,
-1
-,
-...
-,
-n
-.
 Distribuição aritmética
 É uma distribuição que concentra-se em um conjunto do tipo
-k
-d
-,
-k
-Z
 , em que
-d
-0
-.
 Distribuição geométrica
-p
-[
-0
-,
-1
-]
 . É a única distribuição discreta que possui a propriedade de falta de memória. Essa probabilidade com suporte infinito contável é definida por
-P
-(
-X
-k
-)
-(
-1
-p
-)
-k
-1
-p
 . para todo
-k
-N
-.
 Distribuição de Poisson
-0
 e é definida por
-P
-(
-X
-k
-)
-k
-k
 !
-e
 para todo
-k
-N
-.
 Distribuição hipergeométrica
 A distribuição hipergeométrica modela uma retirada simultânea de
-n
-p
-N
 de bolas vencedoras e uma proporção
-(
-1
-p
-)
-N
 de bolas perdedoras para um número total
-N
-n
-N
-,
-p
-[
-0
-,
-1
-]
-e
-N
-N
 e é definida por
-P
-(
-X
-k
-)
-(
-p
-N
-k
-)
-(
-(
-1
-p
-)
-N
-n
-k
-)
-(
-N
-n
-)
 para todo
-k
-0
-,
-1
-,
-...
-,
-n
-.
 Em geral fixamos a proporção, por exemplo
-m
-p
-N
-.
 Uma distribuição de probabilidade real
-P
 é chamada de absolutamente contínua ou densidade quando ela é absolutamente contínua em relação a medida de Lebesgue. Se
-P
 é absolutamente contínua, então, de acordo com teorema de Radon-Nikodym, ela possui uma densidade de probabilidade em relação a medida de Lebesgue. Isto é, existe uma única (em relação a medida zero de Lebesgue) função mensurável positiva
-f
-:
-R
-R
 de tal modo que para qualquer
-A
-B
-(
-R
-)
-:
-P
-(
-A
-)
-A
-f
-(
-x
-)
-d
-x
-R
-1
-A
-(
-x
-)
-f
-(
-x
-)
-d
-x
 , em que
-1
-A
 é a função característica de Borel
-A
 . Essa densidade de probabilidade nem sempre tem a expressão analítica (ver os exemplos abaixo).
 Quando uma distribuição de probabilidade absolutamente contínua é definida a partir de uma variável aleatória
-X
 , a variável aleatória é chamada absolutamente contínua ou densidade e a densidade da distribuição
-P
-X
 é igualmente chamada densidade de
-X
 , às vezes denotada
-f
-X
-.
 Para uma variável aleatória absolutamente contínua
-X
 , o teorema da transferência é escrita por meio de uma integral de Lebesgue para toda função
-:
-R
-R
 integral em relação a medida
-P
-X
-(
-d
-x
-)
-f
-X
-(
-x
-)
-d
-x
-:
-E
-[
-(
-X
-)
-]
-R
-(
-x
-)
-f
-X
-(
-x
-)
-d
-x
-.
 A função de distribuição de uma distribuição absolutamente contínua é localmente absolutamente contínua, uma propriedade necessária e suficiente. Uma distribuição absolutamente contínua não possua átomos. Entretanto, essa propriedade que opõe-se as distribuições absolutamente contínuas às distribuições discretas não é característica das distribuições absolutamente contínuas mas as leis contínuas (ver a seção distribuições singulares abaixo).
 As distribuições absolutamente contínuas também são chamadas de distribuições contínuas. Este é um equívoco, porque na maioria das aplicações Estatística as distribuições contínuas são absolutamente contínuas, mas isso não é verdadeiro no caso geral.
 Distribuição uniforme
 Intuitivamente uma distribuição uniforme sobre um intervalo indica que todos os valores do intervalo tem a mesma chance de aparecer. Mais formalmente cada subintervalo
-[
-c
-,
-d
-]
-[
-a
-,
-b
-]
 tem uma probabilidade igual a medida de Lebesgue de
-[
-c
-,
-d
-]
-f
-(
-x
-)
-1
-b
-a
 para
-x
-[
-a
-,
-b
-]
-.
-f
-(
-x
-)
-0
 em caso contrário.
 Distribuição exponencial
 (às vezes chamado de intensidade), em que a densidade é definida como
-f
-(
-x
-)
-e
-x
 para todo
-x
-0
-.
 Distribuição normal
 Uma distribuição normal ou distribuição gaussiana é uma distribuição central na teoria da probabilidade. Ela descreve o comportamento de séries de experiências aleatórias quando o número de tentativas é muito grande. É a distribuição limite do teorema central do limite. Ela é igualmente a única distribuição estável de parâmetro 2. A distribuição normal é caracterizada por sua média (que também é sua mediana) e seu desvio-padrão, com suporte da toda reta real. Sua densidade
-f
-(
-x
-;
-,
-2
-)
 é simétrica e sua forma é comumente chamada de curva de Gauss ou curva em sino.
 Distribuição de Cauchy
 A distribuição de Cauchy é a distribuição estável de parâmetro 1, o que dá as boas propriedades. Entretanto, é um exemplo típico de distribuição que não admite momentos, em particular nem média nem variância. Com suporte da toda reta real a sua densidade
-f
-(
-x
-;
-)
 é simétrica.
 A distribuição da posição de um movimento browniano no plano quando se atinge a reta
-y
-1
-2
 é uma distribuição de Cauchy.
 Distribuição de Tukey-Lambda
 e é definida a partir da função quantil
-Q
-(
-p
-)
-.
 Uma distribuição de probabilidade
-P
 é chamada de contínua ou difusa quando não possui nenhum átomo.
 Em particular, as distribuições absolutamente contínuas são contínuas mesmo que o inverso não seja verdadeiro. A função de distribuição de uma distribuição contínua ser contínua é uma propriedade necessária e suficiente.
 Uma distribuição de probabilidade
-P
 é chamada de singular quanto ela é contínua, mas não absolutamente contínua. Isto é, quando uma distribuição singular não possui nem átomo nem densidade. Esses conceitos também valem para as distribuições de probabilidade definidas a partir de variáveis aleatórias: uma variável aleatória
-X
 é contínua ou difusa, respectivamente singular, quando a distribuição de probabilidade associada
-P
-X
 é contínua ou difusa, respectivamente singular.
 Distribuição de Cantor
 É uma distribuição singular, definida a partir do conjunto de Cantor
-n
-1
-x
-n
-3
-n
-x
-n
-0
-,
-2
 . Quando
-X
-n
-0
-,
-2
 , então
-X
-n
-1
-X
-n
-3
-n
 é uma variável aleatória da distribuição de Cantor. Essa distribuição de probabilidade descrita como
-P
-X
-(
-1
-2
-0
-1
-2
-2
-)
-N
 é a distribuição uniforme do conjunto de Cantor. Sua função de distribuição é a escada de Cantor, diferenciável quase em todos pontos e derivada igual a zero em quase todos pontos.
 Em aplicações, é raro que uma distribuição contínua contenha uma parte singular. Entretanto, o conjunto de Cantor aparece em exemplos conhecidos como o conjunto de zeros do movimento browniano.
 Existem distribuições de probabilidade que não são nem discretas nem absolutamente contínuas nem singulares, às vezes denominadas leis mistas. De um ponto de vista mais geral, toda distribuição de probabilidade
-P
 pode se decompor em uma combinação linear de uma distribuição contínua
-P
-c
 e de uma distribuição discreta
-P
-d
 . O teorema da decomposição de Lebesgue aplicado a
-P
-c
 indica que essa distribuição contínua se decompõe em uma combinação linear de duas distribuições contínua, uma
-P
 ac
 absolutamente contínua com relação à medida de Lebesgue e outra
-P
-s
 singular sem relação à medida de Lebesgue. Então, a decomposição é descrita como
-P
-P
-d
-(
-1
-)
-P
-c
-P
-d
-P
 ac
-P
-s
 , em que
-,
-,
-[
-0
-,
-1
-]
-e
-1
 . A presença de
-(
-,
-,
-)
 garante que
-P
-(
-)
-1
-.
 A seguinte distribuição de probabilidade real de um exemplo de uma distribuição mista obtida com a junção entre a distribuição discreta definida pelos átomos
-x
-k
-,
-k
-N
 com a função de massa
-p
 , e a distribuição absolutamente contínua de densidade
-f
 é descrita como
-P
-(
-d
-x
-)
-f
-(
-x
-)
-d
-x
-(
-1
-)
-k
-N
-p
-(
-x
-k
-)
-x
-k
-(
-d
-x
-)
-]
-0
-,
-1
-[
 . Sua função de distribuição é uma função contínua por partes, mas não constante por partes como as funções de distribuição das distribuições discretas.
 Intuitivamente isso corresponde a um fenômenos aleatório com a distribuição absolutamente contínua. Imagine o aparelho de medida que não pode medir os dados a partir de um certo limiar
-c
 . Todas as medidas não detectadas pelo aparelho serão atribuídas a 0: a distribuição será nula em qualquer parte menor do que
-c
 , em seguida, um salto aparece em singleton
-c
 . As medidas seguem a distribuição absolutamente contínua para os valores maiores que
-c
 . No exemplo, a função de distribuição é descontínua em
-c
-.
 Existem várias funções de variáveis reais ou complexas que determinam exclusivamente as distribuições de probabilidade. Certas propriedades dessas funções permitem deduzir propriedades para as distribuições como o cálculo de momento ou uma expressão da convergência em distribuição.
 De acordo com o sistema de Dynkin, os conjuntos
-]
-,
-x
-]
 chamados paralelepípedos ou retângulos geram algebra de Borel
-B
-(
-R
-)
 que são suficientes para definir uma distribuição de probabilidade dos paralelepípedos. Supõe-se que a distribuição de probabilidade seja real. Isto é,
-(
-,
-A
-)
-(
-R
-,
-B
-(
-R
-)
-)
-.
 A função de distribuição de uma distribuição de probabilidade real
-P
 denotada como
-F
 é a função definida para todo
-x
-R
-F
-(
-x
-)
-P
-(
-]
-,
-x
-]
-)
-.
 Uma distribuição de probabilidade é caracterizada por sua função de distribuição. Isto é, duas distribuições de probabilidade são iguais se e somente se suas funções de distribuição forem iguais.
 Mais genericamente, toda função monótona càdlàg
-F
 é verificável:
 lim
-x
-F
-(
-x
-)
-0
-e
 lim
-x
-F
-(
-x
-)
-1
 são funções de distribuição de uma única distribuição de probabilidade em
-R
 . A distribuição de probabilidade definida a partir de uma função de distribuição é chamada de medida de Lebesgue-Stieltjes.
 Uma das vantagens da função é que ela é bem definida para qualquer distribuição de probabilidade. Entretanto, ela nem sempre tem expressão explícita, por exemplo, a função de distribuição de distribuição normal. A função de distribuição às vezes permite o cálculo de distribuições tais que como a distribuição do máximo ou do mínimo de uma amostra e fornece um critério conveniente de convergência de distribuições de probabilidade pelo teorema de Portmanteau.
 Chamada função característica de uma distribuição de probabilidade
-P
 e denotada como
 é a simetria da transformada de Fourier de
-P
 . Para todo
-t
-R
-:
-(
-t
-)
-F
-(
-P
-)
-(
-t
-)
-e
-i
-t
-P
-(
-d
-)
-.
 Como o nome sugere, a função característica determina exclusivamente a distribuição. Isto é, duas distribuições de probabilidade são iguais se e somente se suas funções características forem iguais.
 Uma das vantagens da distribuição característica é que ela existe para toda distribuição de probabilidade. Usando a fórmula da inversão da transformada de Fourier, a distribuição de probabilidade também é obtida a partir da função característica. A representação das distribuições para as funções características ainda permite caracterizar a convergência das distribuições de probabilidade pelo teorema de Portmanteau.
 Nos casos em que a distribuição de probabilidade é definida a partir de uma variável aleatória
-X
 , de acordo com o teorema da transferência para todo
-t
-R
-X
-(
-t
-)
-R
-e
-i
-t
-x
-P
-X
-(
-d
-x
-)
-e
-i
-t
-X
-(
-)
-P
-(
-d
-)
-E
-[
-e
-i
-t
-X
-]
-.
 A função geradora de momentos de uma distribuição de probabilidade
-P
 denotada como
-M
 é a simetria da transformada de Laplace de
-P
 . Quando a função
-e
-t
 é integrada em relação à medida
-P
 para todo
-t
-R
-:
-M
-(
-t
-)
-L
-(
-P
-)
-(
-t
-)
-e
-t
-P
-(
-d
-)
-.
 A função geradora de momentos determina a distribuição de probabilidade unicamente se essa função existe em um intervalo que contem a origem.
 Uma das vantagens da função geradora de momentos é que ela permite encontrar os momentos da distribuições de probabilidade pelas derivadas. Para todo
-k
-N
 , a
-k
 -ésima derivada da função geradora de momento em 0 é o momento
-k
 da distribuição de probabilidade em que
-M
-(
-k
-)
-(
-0
-)
-k
-P
-(
-d
-)
-.
 A representação das distribuições para a função geradora de momentos também permite caracterizar a convergência das distribuições de probabilidade pelo teorema de Portmanteau.
 Nos casos em que a distribuição de probabilidade é definida a partir de uma variável aleatória
-X
 , de acordo com o teorema da transferência para todo
-t
-R
-:
-M
-X
-(
-t
-)
-R
-e
-t
-x
-P
-X
-(
-d
-x
-)
-e
-t
-X
-(
-)
-P
-(
-d
-)
-E
-[
-e
-t
-X
-]
-.
 Existe um caso particular das distribuições discretas. A função geradora de probabilidades de uma distribuição de probabilidade discreta
-P
-k
-p
-k
-k
 é definida como a esperança da série geradora
-g
-(
-t
-)
-k
-t
-k
-p
-k
 sub a condição da existência desta série. Essa função geradora determina a distribuição de probabilidade unicamente.
 A função quantil de uma distribuição de probabilidade real
-P
 denotada como
-Q
 é a função que fornece o quantil da distribuição. Ela é definida como para todo
-p
-]
-0
-,
-1
-[
-:
-Q
-(
-p
-)
 inf
-u
-R
-F
-(
-u
-)
-p
 , em que
-F
 é a função de distribuição de
-P
-.
 Certas distribuições de probabilidade são mais fáceis de definir pela função quantil. Intuitivamente
-Q
-(
-p
-)
 é o valor tal que uma proporção de valores possíveis menor de que esse valor é igual
-p
-.
-Q
-(
-1
-4
-)
-,
-Q
-(
-1
-2
-)
 , e
-Q
-(
-3
-4
-)
 são, respectivamente, o primeiro quantil, a mediana e o terceiro quantil da distribuição.
 Se
-F
 é bicontínua então
-Q
 é a função recíproca da função de distribuição
-Q
-F
-1
-F
 ou função inversa contínua à direita de
-F
-.
 Essa função quantil determina a distribuição associada a
-P
 no sentido que, se
-U
 é uma variável aleatória da distribuição uniforme contínua de
-[
-0
-,
-1
-]
 , então
-Q
-(
-U
-)
 é uma variável aleatória da distribuição inicial
-P
 Certas distribuições não são funções de distribuição explícitas, mas são definidas a partir de uma função quantil é um caso da distribuição de Tukey-Lambda.
 Frequentemente a distribuição estatística de uma variável em uma população refere-se aos modelos matemáticos da distribuição de probabilidade. Geralmente é interessante estudar o modelo probabilístico por razões práticas e teóricas, de acordo com afirmações acadêmicas. O estudo começa com uma seleção aleatória de diversos valores ou indivíduos. Se o método utilizado for perfeito (se os valores observados são derivados de uma seleção equiprovável), então são variáveis aleatórias e o estudo do fenômeno equivale ao estudo da distribuição de probabilidade.
 Para estudar as distribuições de probabilidade, é importante fazer simulações. Em particular, com o uso de computadores. As distribuições de probabilidade são caracterizadas pela função quantil por meio de uma variável aleatória com distribuição uniforme. Em geral, esse método engloba duas etapas: gerar os referidos valores pseudo aleatórios com distribuição uniforme e inverter a função de distribuição da distribuição estudada. Como a segunda etapa não é óbvia para todas as distribuições, outros métodos são utilizados.
-[
-0
-,
-1
-]
-.
 Simulação das outras distribuições
 Quando a função de distribuição é reversível, usa-se a caracterização pela função quantil. Quando a função de distribuição não é reversível, podem ser usados os seguintes métodos: a transformação de Box-Muller simula a distribuição normal, a técnica de rejeição de von Neumann é baseada em um teste estatístico e é aplicável a várias distribuições, dentre outros métodos específicos.
 Exemplo
 Um exemplo conhecido de utilização de uma simulação de distribuição de probabilidade é o método de Monte Carlo. Por exemplo, para aproximar o valor de
 . O método de Monte Carlos consiste em simular um grande número de valores de acordo com uma distribuição uniforme contínua em
-[
-0
-,
-1
-]
 e computar a proporção dos pares
-(
-x
-,
-y
-)
 em que
-x
-2
-y
-2
-1
 . Essa proporção aproxima-se de
-4
 Várias aproximações de uma distribuição de probabilidade existem usando diferentes métodos descritos acima. Essas são as técnicas usadas geralmente em casos práticos. O primeiro passo é o recolhimento dos dados, que permite construir objetos empíricos como a função de distribuição empírica. Esses objetos empíricos são às vezes chamados de distribuição de probabilidade, mas são realmente leis empíricas chamadas de distribuições estatísticas. Os teoremas limites ou os testes estatísticos permitem finalmente identificar a melhor distribuição de probabilidade que modela o fenômeno aleatório inicial.
 O teste estatístico de Kolmogorov-Smirnov, baseado no teorema de Portmanteau, permite identificar a função de distribuição empírica calculada a partir dos dados de uma função de distribuição de uma distribuição de probabilidade, em função de uma taxa de rejeição. A vantagem da convergência das funções de distribuição é que as funções existem para todas as distribuições de probabilidade. Essa convergência permite particularmente aproximar uma distribuição absoluta contínua de uma série de distribuições discretas.
 Diferentes teoremas de convergência de variáveis aleatórias permitem construir uma sequência de distribuições de probabilidade que converge para uma determinada distribuição ou uma distribuição como o limite das distribuições de probabilidade. O teorema central do limite coloca a distribuição normal como a distribuição limite. O teorema da continuidade de Paul Lévy refere-se a convergência das funções características.

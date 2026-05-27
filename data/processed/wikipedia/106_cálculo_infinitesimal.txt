@@ -2,525 +2,85 @@ O cálculo tem inicialmente três "operações-base", ou seja, possui áreas ini
 O professor de Isaac Newton em Cambridge, Isaac Barrow, descobriu que esses dois problemas estão de fato estritamente relacionados, ao perceber que a derivação e a integração são processos inversos. Foram Leibniz e Newton que exploraram essa relação e a utilizaram para transformar o cálculo em um método matemático sistemático. Particularmente ambos viram que o Teorema Fundamental os capacitou a calcular áreas e integrais muito mais facilmente, sem que fosse necessário calculá-las como limites de soma (método descrito pelo matemático Riemann, pupilo de Gauss). A integral indefinida também pode ser chamada de antiderivada, uma vez que é um processo que inverte a derivada de funções. Já a integral definida, inicialmente definida como Soma de Riemann, estabelece limites de integração, ou seja, é um processo estabelecido entre dois intervalos bem definidos, daí o nome integral definida.
 O cálculo diferencial e o cálculo integral auxiliam em vários conceitos e definições na matemática, química, física clássica, física moderna e economia. O estudante de cálculo deve ter um conhecimento em certas áreas da matemática, como funções (modular, exponencial, logarítmica, par, ímpar, afim e segundo grau, por exemplo), trigonometria, polinômios, geometria plana, espacial e analítica, pois são a base do cálculo.
 A história do cálculo encaixa-se em vários períodos distintos, de forma notável nas eras antiga, medieval e moderna.
-Na Antiguidade, foram introduzidas algumas ideias do cálculo integral, embora não tenha havido um desenvolvimento dessas ideias de forma rigorosa e sistemática. A função básica do cálculo integral, a de calcular volumes e áreas, pode ser remontada ao Papiro Egípcio de Moscou (1850 a.C.), no qual um egípcio trabalhou o volume de um frustum piramidal. O cálculo integral também pode ser utilizado para rastreamento e gravação do movimento do sol, da lua e dos planetas. Os antigos astrônomos babilônios (1800-1600 a.C.) empregaram métodos geométricos sofisticados que prenunciam o desenvolvimento do cálculo para prever as posições dos corpos celestes. Eudoxo de Cnido, ou Eudoxus, (408-355 a.C.) usou o método da exaustão para calcular áreas e volumes. Arquimedes (287-212 a.C.) levou essa ideia além, inventando a heurística, que se aproxima do cálculo integral. O método da exaustão foi redescoberto na China por Liu Hui no século III, que o usou para encontrar a área do círculo. O método também foi usado por Zu Chongzhi século V, para achar o volume de uma esfera.
 Na Idade Média, o matemático indiano Aryabhata usou a noção infinitesimal em 499 d.C. expressando-a em um problema de astronomia na forma de uma equação diferencial básica. Essa equação levou Bh skara II no século XII a desenvolver uma derivada prematura representando uma mudança infinitesimal, e ele desenvolveu também o que seria uma forma primitiva do "Teorema de Rolle".
 No século XII, o matemático persa Sharaf al-Din al-Tusi descobriu a derivada de polinômios cúbicos, um resultado importante no cálculo diferencial. No século XIV, Madhava de Sangamagrama, juntamente com outros matemáticos-astrônomos da Escola Kerala de Astronomia e Matemática, descreveu casos especiais da Série de Taylor, que no texto são tratadas como Yuktibhasa.
 Desde o tempo de Leibniz e Newton, muitos matemáticos contribuíram para o contínuo desenvolvimento do cálculo.
 Na Idade Contemporânea, já no século XIX, o cálculo foi abordado de uma forma muito mais rigorosa. Foi também durante este período que ideias do cálculo foram generalizadas ao espaço euclidiano e ao plano complexo. Lebesgue mais tarde generalizou a noção de integral. Sobressaíram matemáticos como Cauchy, Riemann, Weierstrass e Maria Gaetana Agnesi. Esta foi autora da primeira obra a unir as ideias de Isaac Newton e Gottfried Wilhelm Leibniz; escreveu também um dos primeiros livros sobre cálculo diferencial e integral. É dela também a autoria da chamada "curva de Agnesi".
 No século XIX, infinitesimais foram substituídos pelos limites. Limites descrevem o valor de uma função em um certo ponto
-x
-0
 a partir de valores da função em pontos próximos de
-x
-0
 . Um exemplo tradicional de interesse é o caso em que
-x
-0
 é um número irracional, como
 ou
-2
-f
-(
-x
-)
 em
-x
-x
-0
 , obtém-se uma divisão por zero, que é indefinida. Eles capturam o comportamento numérico em baixa escala, como nas infinitesimais, mas utilizando números ordinários. Deste ponto de vista, calculo é uma coleção de técnicas para a manipulação de certos limites. As infinitesimais foram substituídas por números muito pequenos, e o comportamento infinitamente pequeno da função é encontrado pelo limite de números cada vez menores. Limites são fáceis de serem colocados em fundações rigorosas e, por esse motivo, são a abordagem padrão para o cálculo.
 O cálculo diferencial é o estudo da definição, propriedade e aplicações da derivada ou deslocamento de um gráfico. O processo de encontrar a derivada é chamado "diferenciação". Em linguagem técnica, a derivada é um operador linear, o qual forma uma nova função a partir da função original, em que cada ponto da nova função é o deslocamento da função original.
-f
-(
-x
-)
-x
-2
-f
-(
-x
-)
-2
-x
-.
 Se a função de entrada é o tempo, então a derivada dessa função é a taxa em que a função é alterada.
 Se a função é linear, ou seja, o gráfico da função é uma linha reta, então a função pode ser escrita como y m x b, onde:
-m
 variação em
-y
 variação em
-x
-y
-x
-.
-Isto dá o valor exato para a variação da linha reta. Se a função não é uma linha reta, então a variação em y é dividida pela variação em x, e nós precisamos do cálculo para encontrar o valor exato em cada ponto da função. (Note-se que y e f(x) são duas notações diferentes para a mesma coisa: a saída da função). Uma linha entre dois pontos em uma curva é chamado de reta secante. A variação da reta secante pode ser expressada como:
-m
-f
-(
-x
-h
-)
-f
-(
-x
-)
-(
-x
-h
-)
-x
-onde as coordenadas do primeiro ponto é (x, f(x)) e h é a distância horizontal entre os dois pontos.
 Para determinar o deslocamento da curva, usam-se os limites:
 lim
-h
-0
-f
-(
-x
-h
-)
-f
-(
-x
-)
-h
 Em um caso particular, nós encontramos o deslocamento da função quadrática no ponto em que a entrada é 3 e a saída é 9 (Ex.:
-f
-(
-x
-)
-x
-2
-,
 então
-f
-(
-3
-)
-9
-).
-f
-(
-3
-)
 lim
-h
-0
-(
-3
-h
-)
-2
-9
-h
 lim
-h
-0
-9
-6
-h
-h
-2
-9
-h
 lim
-h
-0
-6
-h
-h
-2
-h
 lim
-h
-0
-h
-(
-6
-h
-)
-h
 lim
-h
-0
-(
-6
-h
-)
-6
 O deslocamento da função quadrática no ponto (3, 9) é 6, isto é, ele cresce seis vezes mais rápido em y do que em x e está indo para a direita.
 O Cálculo Integral é o estudo das definições, propriedades, e aplicações de dois conceitos relacionados, as integrais indefinidas e as integrais definidas. O processo de encontrar o valor de uma integral é chamado integração. Em linguagem técnica, o calculo integral estuda dois operadores lineares relacionados.
 A integral indefinida é a antiderivada, o processo inverso da derivada. F é uma integral indefinida de f quando f é uma derivada de F. (O uso de letras maiúsculas e minúsculas para uma função e sua integral indefinida é comum em cálculo.)
 A integral definida insere uma função e extrai um número, o qual fornece a área entre o gráfico da função e o eixo do x. A definição técnica da integral definida é o limite da soma das áreas dos retângulos, chamada Soma de Riemann.
-Um exemplo motivacional é a distância (D) viajada em um determinado tempo (t).
-D
-V
-t
-Se a velocidade (V) é constante, somente multiplicação é necessária, mas se a velocidade varia, então precisamos de um método mais poderoso para encontrar a distância. Um método é a aproximação da distância viajada pela divisão do tempo em muito mais intervalos de tempo, e então multiplicando o tempo em cada intervalo por uma das velocidades naquele intervalo, e então fazer uma Soma de Riemann das distâncias aproximadas viajadas em cada intervalo. A ideia básica é que se somente um pequeno tempo passar, então a velocidade vai permanecer praticamente a mesma. Entretanto, uma Soma de Riemann somente da uma aproximação da distância viajada. Nós precisamos pegar o limite de todas as Somas de Riemann para encontrar a distância viajada exata.
-Se f(x) no diagrama da esquerda representa a velocidade variando de acordo com o tempo, a distância viajada entre os tempos representados por a e b é a área da região escura s.
 O símbolo da integração é
-,
 um S alongado (que significa "soma"). A integral definida é escrita da forma:
-a
-b
-f
-(
-x
-)
-d
-x
 e lida como "a integral de a até b de f-de-x em relação a x."
 A integral indefinida, ou antiderivada, é escrita da forma:
-f
-(
-x
-)
-d
-x
-.
 Desde que a derivada da função
-y
-x
-2
-C
 é
-y
-2
-x
 (onde C é qualquer constante), então:
-2
-x
-d
-x
-x
-2
-C
-.
 Seja um conjunto de pontos A, cujos membros são os números em
-R
-,
-...
-,
-x
-1
-,
-x
-2
-,
-x
-3
-,
-...
-,
-,
 então tomamos
-x
-R
 e portanto dizemos que:
 A é o domínio da variável
-x
-.
 Da mesma forma, admitamos um conjunto de pontos B, cujos membros são números que são obtidos única e exclusivamente por um conjunto de regras matemáticas
-f
 , quando números arbitrários em A lhe são transferidos; visto que há um único valor assumido para cada valor arbitrário transferido a
-f
 , dizemos que:
 B é função de A.
-f
-:
 A é domínio da função
-f
-.
 Da mesma forma, como B é restrito aos valores definidos por A e às regras definidas por
-f
-,
 os seus elementos espelham estas condições, portanto, podemos dizer que:
 B é imagem da função
-f
-.
 Observe-se a expressão:
-12
-x
 Nota-se que, assim que são atribuídos valores a
-x
-12
-,
 ela assumirá valores inválidos, ou seja, de raízes quadradas de números negativos. Para sanar este problema, pode-se atribuir uma faixa de valores válidos para o domínio de
-x
-,
 o que resultará em:
-12
-x
-,
-x
-12
 Assim, tem-se um domínio restrito a valores iguais ou menores que 12. Portanto, incluindo-o, este extremo ao qual pertence o valor 12 é chamado de extremo fechado.
 Tem-se uma situação semelhante, porém com uma sutil diferença, quando for necessário fazer:
 log
-x
 . Neste caso, é preciso restringir o valor 0 e todos os números abaixo dele, desta forma:
 log
-x
-,
-x
-0
 Pode-se atribuir apenas valores maiores que 0, uma vez que este valor não pertence ao conjunto de números que podem ser atribuídos à variável, o que se denomina de extremo aberto.
 O conjunto de números B
-,
-...
-,
-y
-1
-,
-y
-2
-,
-y
-3
-,
-...
-,
 dos quais
-y
-n
-,
-...
-,
-x
-1
-,
-x
-2
-,
-x
-3
-,
-...
-,
 de onde se obtém
-x
-n
-,
 e se estabelece o par de números
-x
-n
-,
-y
-n
-,
 ou simplesmente:
-(
-x
-,
-y
-)
 Este é chamado de par ordenado.
-f
 a representação dos valores de
-(
-x
-,
-y
-)
-,
 então pode-se afirmar que:
-y
-f
-(
-x
-)
-f
-(
-x
-)
 o valor de
-y
 , quando definido pelas operações em
-f
-.
 Faixas de valores que delimitam os domínios podem ser representados com desigualdades, como nos exemplos abaixo:
-2
-x
-4
-;
-12
-x
-8
 Porém, os extremos podem ser colocados em um par entre delimitadores de forma que, para os extremos fechados usa-se os delimitadores [ ou ]. Para os extremos abertos usa-se ( ou ), habilitando a identificar os extremos mais claramente. Assim, pode-se identificar os domínios do exemplo acima desta forma:
-(
-2
-,
-4
-)
-;
-[
-12
-,
-8
-)
 Também é comum usar colchetes invertidos para extremos abertos:
-]
-2
-,
-4
-[
-;
-[
-12
-,
-8
-[
 Considere-se duas funções f e g; admitindo que as duas são, intuitivamente, expressões que se traduzem em valores, pode-se dizer que:
-(
-f
-g
-)
-(
-x
-)
-f
-(
-x
-)
-g
-(
-x
-)
-(
-f
-g
-)
-(
-x
-)
-f
-(
-x
-)
-g
-(
-x
-)
-(
-f
-g
-)
-(
-x
-)
-f
-(
-x
-)
-g
-(
-x
-)
-(
-f
-:
-g
-)
-(
-x
-)
-f
-(
-x
-)
-:
-g
-(
-x
-)
-D
-(
-f
-)
-D
-(
-g
-)
 O teorema fundamental do cálculo afirma que a diferenciação e a integração são operações inversas. Mais precisamente, o teorema conecta os valores de antiderivadas ao valor de integrais definidas. Por ser usualmente mais fácil computar uma antiderivada do que aplicar a definição de uma integral definida, o teorema fundamental do cálculo provê uma forma prática de computar integrais definidas. Pode também ser interpretado como uma afirmação precisa do fato que a diferenciação é o inverso da integração.
 É afirmado pelo teorema fundamental do cálculo que: Se uma função f é contínua no intervalo [a, b] e se F é uma função cuja derivada é f no intervalo (a, b), então
-a
-b
-f
-(
-x
-)
-d
-x
-F
-(
-b
-)
-F
-(
-a
-)
-.
 Além disso, para cada x no intervalo (a, b) temos que
-d
-d
-x
-a
-x
-f
-(
-t
-)
-d
-t
-f
-(
-x
-)
-.
 E, seu Corolário pode ser transcrito da seguinte forma:
 Considere-se f uma função contínua de valores reais definida em um intervalo fechado [a, b]. Se F é uma função tal que
-f
-(
-x
-)
-F
-(
-x
-)
 para todo x em [a, b]
 então
-F
-(
-x
-)
-a
-x
-f
-(
-t
-)
-d
-t
-F
-(
-a
-)
-e
-f
-(
-x
-)
-d
-d
-x
-a
-x
-f
-(
-t
-)
-d
-t
-.
 Essa descoberta, realizada por Newton e Leibniz, que se basearam nos resultados de um trabalho anterior de Isaac Barrow, exerceu um papel chave na massiva proliferação de resultados analíticos que se seguiram após seus trabalhos ficarem conhecidos. O Teorema fundamental do cálculo provê um método algébrico de computar muitas integrais definidas sem executar processos limite simplesmente por encontrar fórmula para antiderivadas.
 O cálculo é usado em todos os ramos das ciências físicas, na ciência da computação, estatística, engenharia, economia, medicina e em outras áreas sempre que um problema possa ser modelado matematicamente e uma solução ótima é desejada, ele é um estudo mais profundo de funções.
 A Física faz uso intensivo do cálculo. Todos os conceitos na mecânica clássica são inter-relacionados pelo cálculo. A massa de um objeto de densidade conhecida, o momento de inércia dos objetos, assim como a energia total de um objeto dentro de um sistema fechado podem ser encontrados usando o cálculo. Nos sub-campos da eletricidade e magnetismo, o cálculo pode ser usado para encontrar o fluxo total de campos eletromagnéticos. Um exemplo mais histórico do uso do cálculo na física é a segunda lei de Newton que usa a expressão "taxa de variação" que se refere à derivada: A taxa de variação do momento de um corpo é igual à força resultante que age sobre o corpo e na mesma direção. Até a expressão comum da segunda lei de Newton como Força Massa Aceleração envolve o cálculo diferencial porque a aceleração pode ser expressada como a derivada da velocidade. A teoria do Eletromagnetismo de Maxwell e a teoria da relatividade geral de Einstein também são expressas na linguagem do cálculo diferencial. A química também usa o cálculo para determinar as variações na velocidade das reações e no decaimento radioativo.
@@ -560,8 +120,6 @@ Spivak, M. Publish or Perish (2008) Calculus. ISBN 0914098918
 Hellmeister, Ana Catarina Pontone, organizadora. EDUSP, 2a edição (2006) Cálculo Integral Avançado ISBN 8531403707
 Bortolossi, Humberto Jose (2002). Loyola, 1a edição Cálculo a Várias Variáveis: Uma Introdução à Teoria da Otimização ISBN 851502442X
 Spivak, Michael (2003). Ciência Moderna, 1a edição Cálculo em Variedades ISBN 8573932252
-«Differential and Integral Calculus vol 1 - Richard Courant» (em inglês). , cujos direitos autorais expiraram.
-«Differential and Integral Calculus vol 2 - Richard Courant» (em inglês). , cujos direitos autorais expiraram.
 «MATHEMATICA NO ENSINO DE CÁLCULO: Uma Abordagem Computacional pelo prof. Inder Jeet Taneja da UFSC»
 https://web.archive.org/web/20160510021043/http://www.uff.br/webmat/Calc1 LivroOnLine/
 «Cálculo Diferencial a Várias Variáveis:Uma Introdução à Teoria de Otimização»

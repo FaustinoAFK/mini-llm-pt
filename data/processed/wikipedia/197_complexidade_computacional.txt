@@ -8,7 +8,6 @@ Um problema de função é um problema computacional, onde uma única saída (de
 É tentador pensar que a noção de problemas de função é muito mais rica do que a noção de problemas de decisão. No entanto, o caso realmente não é esse, já que problemas de função podem ser reformulados como problemas de decisão. Por exemplo, a multiplicação de dois números inteiros pode ser expressa como o conjunto (a, b, c) tal qual a relação a b c descreve. Decidir se uma dada tripla é membro deste conjunto corresponde a resolver o problema da multiplicação de dois números.
 Muitos tipos de máquinas de Turing são usados para definir as classes de complexidade, tais como máquinas de Turing determinísticas, máquinas de Turing probabilísticas, máquinas de Turing não-determinísticas, máquinas de Turing quânticas, máquinas de Turing simétricas e máquinas de Turing alternadas. Todas elas são igualmente poderosas, em princípio, mas quando os recursos (tais como tempo e espaço) são limitados, algumas destas podem ser mais poderosas do que outras.
 No entanto, alguns problemas computacionais são mais fáceis de analisar em termos de recursos mais incomuns. Por exemplo, uma máquina de Turing não-determinística é um modelo computacional em que é permitido ramificar-se para verificar muitas possibilidades diferentes de uma só vez. A máquina de Turing não-determinística tem muito pouco a ver com a forma como nós queremos fisicamente computar algoritmos, mas a sua ramificação capta exatamente muitos dos modelos matemáticos que queremos analisar, de modo que o tempo não-determinístico é um recurso muito importante na análise de problemas computacionais.
-Para uma definição precisa do que significa resolver um problema utilizando uma determinada quantidade de tempo e espaço, um modelo computacional tal como a máquina de Turing determinística é utilizado. O tempo exigido por uma máquina de Turing determinística M na entrada x é o número total de transições de estado, ou etapas, que a máquina faz antes de parar e responder com a saída ("sim" ou "não"). Diz-se que a máquina de Turing M opera dentro do tempo f(n), se o tempo exigido por M em cada entrada de comprimento n é no máximo f(n). Um problema de decisão A pode ser resolvido em tempo f(n) se existe uma operação da máquina de Turing em tempo f(n) que resolve o problema. Como a teoria da complexidade está interessada em classificar problemas com base na sua dificuldade, definem-se conjuntos de problemas com base em alguns critérios. Por exemplo, o conjunto de problemas solucionáveis no tempo f(n) em uma máquina de Turing determinística é então indicado por DTIME(f(n)).
 Definições análogas podem ser feitas para os requisitos de espaço. Embora o tempo e o espaço sejam os mais conhecidos recursos de complexidade, qualquer medida de complexidade pode ser vista como um recurso computacional. Medidas de complexidade são geralmente definidas pelos axiomas de complexidade de Blum. Outras medidas de complexidade utilizadas na teoria da complexidade incluem a complexidade de comunicação, a complexidade do circuito e a complexidade da árvore de decisão.
 O melhor, o pior e o caso médio de complexidade referem-se a três maneiras diferentes de medir a complexidade de tempo (ou qualquer outra medida de complexidade) de entradas diferentes do mesmo tamanho. Uma vez que algumas entradas de tamanho n podem ser mais rápidas para resolver do que outras, definimos as seguintes complexidades:
 Complexidade no melhor caso: Esta é a complexidade de resolver o problema para a melhor entrada de tamanho n.
@@ -20,66 +19,23 @@ Uma classe de complexidade é um conjunto de problemas de complexidade relaciona
 O tipo de problema computacional: Os problemas mais comumente utilizados são problemas de decisão. No entanto, classes de complexidade podem ser definidas com base em problemas de função, problemas de contagem, problemas de otimização, problemas de promessa, etc.
 O modelo de computação: O modelo mais comum de computação é a máquina de Turing determinística, mas muitas classes de complexidade são baseadas em máquinas de Turing não-determinísticas, circuitos Booleanos, máquinas de Turing quânticas, circuitos monótonos, etc.
 É claro, algumas classes de complexidade têm definições complexas que não se encaixam nesse quadro. Assim, uma classe de complexidade típica tem uma definição como a seguinte:
-O conjunto de problemas de decisão solúveis por uma máquina de Turing determinística dentro do tempo f(n). (Esta classe de complexidade é conhecida como DTIME(f(n))).
 Muitas classes de complexidade importantes podem ser definidas por limitando o tempo ou espaço usado pelo algoritmo. Algumas importantes classes de complexidade de problemas de decisão definidas desta maneira são as seguintes:
 Acontece que PSPACE NPSPACE e EXPSPACE NEXPSPACE pelo teorema de Savitch.
 Outras classes de complexidade importantes incluem BPP, ZPP e RP, que são definidas usando máquinas de Turing probabilística; AC e NC, que são definidas usando circuitos booleanos e BQP e QMA, que são definidas usando máquinas de Turing quânticas. P é uma importante classe complexidade de problemas de contagem (que não são problemas de decisão). Classes como IP e AM são definidas usando sistemas de prova interativa. ALL é a classe de todos os problemas de decisão.
-Para as classes de complexidade definidas desta forma, é desejável provar que relaxar os requisitos em função (digamos) do tempo de computação realmente define um conjunto maior de problemas. Em particular, embora DTIME(n) esteja contido em DTIME(n2), seria interessante saber se a inclusão é estrita. Para requisitos de tempo e de espaço, a resposta a tais perguntas é dada pelo teorema de hierarquia para a complexidade de tempo e pelo teorema de hierarquia para a complexidade de espaço, respectivamente. Eles são chamados teoremas de hierarquia porque induzem uma hierarquia adequada sobre as classes definidas, restringindo os respectivos recursos. Assim, existem pares de classes de complexidade tal que uma está propriamente contida na outra. Depois de ter deduzido assim as relações de pertinência estrita de conjuntos, podemos continuar a fazer declarações quantitativas sobre quanto mais tempo adicional ou espaço é necessário para aumentar o número de problemas que podem ser resolvidos.
 Mais precisamente, o teorema de hierarquia de tempo afirma que:
 DTIME
-(
-f
-(
-n
-)
-)
 DTIME
-(
-f
-(
-n
-)
 log
-2
-(
-f
-(
-n
-)
-)
-)
-.
 O teorema de hierarquia de espaço afirma que:
 DSPACE
-(
-f
-(
-n
-)
-)
 DSPACE
-(
-f
-(
-n
-)
 log
-(
-f
-(
-n
-)
-)
-)
-.
 Os teoremas de hierarquia de tempo e de espaço formam a base para a maioria dos resultados de separação de classes de complexidade. Por exemplo, o teorema da hierarquia de tempo nos diz que P está estritamente contida em EXPTIME, e o teorema hierarquia do espaço nos diz que L está estritamente contida em PSPACE.
 Muitas classes de complexidade são definidas usando o conceito de redução. Uma redução é uma transformação de um problema em outro problema. Ela captura a noção informal de um problema que seja pelo menos tão difícil quanto outro problema. Por exemplo, se um problema X pode ser resolvido usando um algoritmo para Y, X não é mais difícil do que Y, e dizemos que X se reduz a Y. Existem muitos tipos diferentes de redução, com base no método de redução, como reduções de Cook, reduções de Karp e reduções Levin, e no limite da complexidade das reduções, como reduções de tempo polinomial ou reduções log-space.
 A redução mais comumente usada é uma redução em tempo polinomial. Isso significa que o processo de redução leva tempo polinomial. Por exemplo, o problema do quadrado de um inteiro pode ser reduzido para o problema da multiplicação de dois números inteiros. Isso significa que um algoritmo para multiplicar dois inteiros pode ser usado para o quadrado de um inteiro. De fato, isso pode ser feito dando a mesma entrada para ambas as entradas do algoritmo de multiplicação. Assim, vemos que o problema do quadrado de um inteiro não é mais difícil do que o problema da multiplicação, já que o problema do quadrado de um inteiro pode ser reduzido ao problema da multiplicação.
 A classe de complexidade P é muitas vezes vista como uma abstração matemática de modelagem dessas tarefas computacionais que admitem um algoritmo eficiente. Esta hipótese é chamada de tese de Cobham-Edmonds. A classe de complexidade NP, por outro lado, contém muitos problemas que as pessoas gostariam de resolver de forma eficiente, mas para os quais nenhum algoritmo eficiente é conhecido, como o problema da satisfatibilidade booleana, o problema do caminho hamiltoniano e o problema da cobertura de vértices. Como as máquinas de Turing determinística são máquinas de Turing não-determinísticas especiais, é fácil observar que cada problema em P também é membro da classe NP.
 A questão de saber se P é igual a NP é uma das questões mais importantes em aberto na ciência da computação teórica por causa da gama de implicações de uma solução. Se a resposta for sim, para muitos problemas importantes pode ser mostrado que há soluções mais eficientes para eles. Estes incluem vários tipos de problemas de programação inteira em investigação operacional, muitos problemas na área de logística, previsão da estrutura de proteínas na biologia, e capacidade de encontrar provas formais de teoremas da matemática pura. O problema P versus NP é um dos Problemas do Prêmio Millenium (Millenium Prize Problems) proposto pelo Instituto Clay de Matemática (Clay Mathematics Institute). Existe um prêmio de um milhão de dólares para resolver o problema.
 Foi mostrado por Ladner que, se P NP, então existem problemas em NP que não estão nem em P nem em NP-completo. Tais problemas são chamados de problemas NP-intermediário. O problema do isomorfismo de grafos, o problema do logaritmo discreto e o problema de fatoração de inteiros são exemplos de problemas que acredita-se que sejam NP-intermediário. Eles são alguns dos muito poucos problemas NP que não se sabe se estão em P ou em NP-completo.
-O problema do isomorfismo de grafos é o problema computacional para determinar se dois grafos finitos são isomorfos. Um importante problema não resolvido na teoria da complexidade é se o problema do isomorfismo de grafos está em P, NP-completo, ou NP-intermediário. A resposta não é conhecida, mas acredita-se que o problema não seja, pelo menos, NP-completo. Se o isomorfismo de grafos for NP-completo, a hierarquia de tempo polinomial colapsa para seu segundo nível. Uma vez que acredita-se veemente que a hierarquia polinomial não colapse para nenhum nível finito, acredita-se que o isomorfismo de grafos não seja NP-completo. O melhor algoritmo para este problema, de acordo com Laszlo Babai e Eugene Luks tem tempo de execução 2O( (n log(n))) para grafos com n vértices.
-O problema da fatoração de inteiros é o problema computacional para determinar a fatoração prima de um dado inteiro. Formulado como um problema de decisão, é o problema para decidir se a entrada tem um fator menor que k. Nenhum algoritmo de fatoração de inteiro eficiente é conhecido, e este fato é a base de vários sistemas criptográficos modernos, como o algoritmo RSA. O problema da fatoração de inteiros está em NP e em co-NP (e até mesmo em UP e co-UP). Se o problema é NP-completo, a hierarquia de tempo polinomial colapsará para seu primeiro nível (ou seja, NP será igual a co-NP). O melhor algoritmo conhecido para fatoração de inteiros é o GNFS (general number field sieve), que leva tempo O(e(64/9)1/3(n.log 2)1/3(log (n.log 2))2/3) para fatorar um inteiro de n-bit. No entanto, o melhor algoritmo quântico conhecido para este problema, o algoritmo de Shor, é executado em tempo polinomial. Infelizmente, este fato não diz muito sobre onde está o problema com relação a classes de complexidade não-quântica.
 Muitas classes de complexidade conhecidas são suspeitas de não serem iguais, mas isso não foi provado. Por exemplo, P NP PP PSPACE, mas é possível que P PSPACE. Se P não for igual a NP, então P não será igual à PSPACE também. Uma vez que existem muitas classes de complexidade conhecidas entre P e PSPACE, tais como RP, BPP, PP, BQP, MA, PH, etc, é possível que todas estas classes de complexidade colapsem para uma única classe. Provar que qualquer uma destas classes não são iguais seria um grande avanço na teoria da complexidade.
 Na mesma linha, co-NP é a classe que contém os problemas do complemento (ou seja, problemas com as respostas sim / não invertidas) dos problemas NP. Acredita-se que NP não seja igual a co-NP, no entanto, ainda não foi comprovado. Tem sido mostrado que, se essas duas classes de complexidade não são iguais, então P não é igual a NP.
 Da mesma forma, não se sabe se L (o conjunto de todos os problemas que podem ser resolvidos no espaço logarítmico) está contido estritamente em P ou é igual a P. Novamente, existem muitas classes de complexidade entre elas, tais como NL e NC, e não se sabe se elas são classes iguais ou distintas.
@@ -93,16 +49,10 @@ De acordo com Fortnow Homer (2003), trabalhos anteriores que estudaram problemas
 Contudo, [meu] interesse inicial [na teoria dos autômatos] era cada vez mais posto de lado em detrimento à complexidade computacional, uma excitante fusão de métodos combinatoriais, herdada da teoria da comutação, com o arsenal conceitual da teoria de algoritmos. Essas ideias me ocorreram antes, em 1955, quando eu cunhei o termo "função de sinalização", que hoje é comumente conhecido como "medida de complexidade".
 Problemas em aberto da ciência da computação
 Lista de termos relacionados aos algoritmos e estruturas de dados
-Sanjeev Arora, Boaz Barak, Sanjeev; Barak, Boaz (2009), Computational Complexity: A Modern Approach, ISBN 978-0-521-42426-4, Cambridge
 Downey, Rod; Fellows, Michael (1999), Parameterized complexity, Berlin, New York: Springer-Verlag
-Du, Ding-Zhu; Ko, Ker-I (2000), Theory of Computational Complexity, ISBN 978-0-471-34506-0, US: John Wiley Sons
 Goldreich, Oded (2008), Computational Complexity: A Conceptual Perspective, Cambridge University Press
-van Leeuwen, Jan, ed. (1990), Handbook of theoretical computer science (vol. A): algorithms and complexity, ISBN 978-0-444-88071-0, MIT Press
 Papadimitriou, Christos (1994), Computational Complexity, ISBN 0201530821 1st ed. , Addison Wesley
 Sipser, Michael (2006), Introduction to the Theory of Computation, ISBN 0534950973 2nd ed. , USA: Thomson Course Technology
 Predefinição:Garey-Johnson
-Khalil, Hatem; Ulery, Dana (1976), A Review of Current Studies on Complexity of Algorithms for Partial Differential Equations, ACM '76 Proceedings of the 1976 Annual Conference, doi:10.1145/800191.805573
-Cook, Stephen (1983), «An overview of computational complexity», ACM, Commun. ACM, ISSN 0001-0782, 26 (6): 400 408, doi:10.1145/358141.358144
 Fortnow, Lance; Homer, Steven (2003), «A Short History of Computational Complexity» (PDF), Bulletin of the EATCS, 80: 95 133
-Mertens, Stephan (2002), «Computational Complexity for Physicists», Piscataway, NJ, USA: IEEE Educational Activities Department, Computing in Science and Engg., ISSN 1521-9615, 4 (3): 31 47, arXiv:cond-mat/0012185, doi:10.1109/5992.998639
 The Complexity Zoo

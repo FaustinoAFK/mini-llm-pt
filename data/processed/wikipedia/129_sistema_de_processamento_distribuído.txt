@@ -1,7 +1,6 @@
 Um sistema de processamento distribuído ou paralelo é um sistema que interliga vários nós de processamento (computadores individuais, não necessariamente homogéneos) de maneira que um processo de grande consumo seja executado no nó "mais disponível", ou mesmo subdividido por vários nós. Conseguindo-se, portanto, ganhos óbvios nestas soluções: uma tarefa qualquer, se divisível em várias subtarefas pode ser realizada em paralelo.
 A nomenclatura geralmente utilizada neste contexto é HPC (High Performance Computing) e/ou DPC (Distributed/Parallel Computing).
 Este é um assunto muito vasto e, embora com alguma idade, só em 2001 se começou a falar em padrões para estas soluções, que são utilizadas (em larga escala) geralmente nos meios científicos e outros de cálculo intensivo pela sua extensibilidade. São bastante flexíveis, já que permitem a coexistência de sistemas desenhados especificamente para isso (por exemplo, a arquitectura NUMA), de sistemas desktop, e mesmo de sistemas considerados obsoletos, mas não o suficiente para permitir a coexistência de soluções semelhantes.
-Antes de avançar, será necessário distinguir um sistema de multiprocessamento paralelo (SMP) de um sistema distribuído. Para um sistema ser de processamento distribuído, uma ou várias unidades de processamento (CPU) estará separada fisicamente da(s) outra(s), enquanto que num sistema SMP todas as unidades de processamento se encontram na mesma máquina. Ambos sistemas são capazes de processamento paralelo, e qualquer um deles pode ser visto como elemento de um sistema distribuído!
 Com os desenvolvimentos nesta área, surgiram soluções por software que fazem, geralmente (mas não necessariamente), alterações no núcleo do sistema operativo e que, na maioria dos casos, não são compatíveis entre elas, e dificilmente entre versões diferentes da mesma solução. Assentam, no entanto, em arquitecturas de comunicação padrão, como é o caso da Parallel Virtual Machine e Message Passing Interface. Resumidamente, estas arquitecturas conseguem transportar um processo (tarefa) e o seu contexto (ficheiros abertos, etc.) pela rede até outro nó. O nó que originou o processo passa, assim, a ser apenas um receptor dos resultados desse processo.
 Actualmente, a principal barreira destes sistemas é implementar mecanismos de Inter-Process Communication (IPC), os Distributed IPC, dada a sua extrema complexidade.
 A Figura 1 ilustra as várias camadas de interoperabilidade de um sistema distribuído. Através do gateway a rede pública tem acesso a um supercomputador, sem ter conhecimento disso, dado que só conhece o gateway. Qualquer aplicação executada no gateway (preparada para ser paralelizada) pode ser distribuída por vários nós, entregando os resultados mais rápido do que se fosse processada por apenas um nó.
@@ -48,8 +47,6 @@ Sistema de processamento distribuído
 Sockets
 Processamento digital de sinais
 Eletrônica digital
-«Parallel Virtual Machine (PVM)» (em inglês)
-«Message Passing Interface (MPI)» (em inglês)
 «Centro Nacional de Processamento de Alto Desempenho (CENAPAD) - SP»
 «Centro Baiano de Computação de Alto Desempenho (CEBACAD)»
 Falhas em Sistemas Distribuídos

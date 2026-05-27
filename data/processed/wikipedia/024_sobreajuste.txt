@@ -6,4 +6,3 @@ Regularização
 Variância
 Coursera and Stanford University: Machine Learning e-course - Prof. Andrew Ng
 Miguel Cárdenas-Montes. Sobreajuste - Overfitting. Ciemat - Centro de Investigaciones Energéticas Medioambientales y Tecnológicas.
-Nate Silver. O Sinal e o Ruído. Editora Intrinseca, 2013 - 544 pp.

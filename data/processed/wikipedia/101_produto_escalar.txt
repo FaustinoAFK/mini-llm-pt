@@ -3,205 +3,26 @@ Algebricamente, o produto escalar de dois vetores é formado pela multiplicaçã
 O produto vetorial, que é outra operação possível de ser definir para vetores fornece, por outro lado, um novo vetor.
 O produto escalar de dois vetores A e B, que se representa por
 ou ainda por um traço vertical é o resultado do produto do comprimento (também chamado de norma ou módulo) de B pela projeção escalar de A em B.
-A
-B
-A
-B
 cos
 Onde é o ângulo formado pelos vetores e A e B são seus comprimentos.
 Essa expressão somente contém uma definição do comprimento de um vetor como a raiz quadrada do seu produto escalar, mas não fornece meios de se calcular o comprimento do vetor.
-A
-A
-A
-A
 cos
-0
-A
-2
 Entretanto, essa expressão permite o cálculo do ângulo entre os vetores:
 arccos
-A
-B
-A
-B
 Em um sistema de coordenadas ortonormal de n dimensões, onde escrevemos os vetores A e B em termos de componentes como
-A
-(
-a
-1
-,
-a
-2
-,
-,
-a
-n
-)
-e
-B
-(
-b
-1
-,
-b
-2
-,
-,
-b
-n
-)
-,
 o produto escalar entre A e B é:
-A
-B
-i
-1
-n
-a
-i
-b
-i
-a
-1
-b
-1
-a
-2
-b
-2
-a
-n
-b
-n
 Note que a interpretação do produto escalar como a projeção do vetor na direção de outro, neste caso, está longe de ser óbvia. No entanto a expressão acima nos fornece uma forma de obter o comprimento de um vetor qualquer em termos de suas componentes:
-A
-A
-A
-a
-1
-2
-a
-2
-2
-a
-n
-2
 A projeção escalar de um vetor a em direção a um vetor b é dada por:
-a
-b
-a
 cos
-,
 onde
 é o ângulo entre a e b.
 Em termos da definição geométrica do produto escalar, este pode ser reescrito como
-a
-b
-a
-b
-,
 onde
-b
-b
-/
-b
 é o vetor unitário na direção de b.
 O produto escalar é, portanto, caracterizado geometricamente por
-a
-b
-a
-b
-b
-b
-a
-a
-.
 Sejam A e B dois vetores com "n" linhas e 1 coluna, ou seja, de dimensões iguais. O produto escalar de vetores tem as seguintes propriedades:
 Comutativa:
-A
-B
-B
-A
-.
 Distributiva em relação à soma de vetores:
-A
-(
-B
-C
-)
-A
-B
-A
-C
-.
 Multiplicação por escalar:
-(
-n
-1
-A
-)
-(
-n
-2
-B
-)
-(
-n
-1
-n
-2
-)
-(
-A
-B
-)
 Soma de quadrados:
-A
-T
-A
-[
-a
-1
-a
-2
-.
-.
-.
-a
-n
-]
-[
-a
-1
-a
-2
-.
-.
-.
-a
-n
-]
-a
-1
-a
-1
-a
-2
-a
-2
-.
-.
-.
-a
-n
-a
-n
-i
-1
-n
-(
-a
-i
-2
-)
 , ou seja, a multiplicação de um vetor pelo seu transposto é igual à soma de seus elementos ao quadrado. Note que essa soma é um número escalar, ou, o que é equivalente, uma matriz de dimensões 1X1.

@@ -1,2335 +1,342 @@
 No cálculo, a derivada em um ponto de uma função
-y
-f
-(
-x
-)
 representa a taxa de variação instantânea de
-y
 em relação a
-x
 neste ponto. Um exemplo típico é a função velocidade que representa a taxa de variação (derivada) da função espaço. Do mesmo modo, a função aceleração é a derivada da função velocidade. Geometricamente, a derivada no ponto
-x
-a
 de
-y
-f
-(
-x
-)
 representa a inclinação da reta tangente ao gráfico desta função no ponto
-(
-a
-,
-f
-(
-a
-)
-)
 . A função que a cada ponto
-x
 associa a derivada neste ponto de
-f
-(
-x
-)
-é chamada de função derivada de f(x).
 Duas distintas notações são comumente utilizadas para a derivada, o resultante de Leibniz e o outro a partir de Joseph Louis Lagrange.
 Na notação de Leibniz, uma mudança infinitesimal em x é denotada por dx, e a derivada de y em relação a x é escrito
-d
-y
-d
-x
-.
 sugerindo que a razão de duas quantidades infinitesimais (A expressão acima é lido como "a derivada de y em relação a x", "dy por dx", ou "dy sobre dx". A forma oral dydx é usado frequentemente em tom de conversa, embora possa levar à confusão).
-Na notação de Lagrange, a derivada em relação a x de uma função F(x) é denotada f'(x) ou fx'(x), em caso de ambiguidade da variável implicada pela derivação. A notação de Lagrange é por vezes incorretamente atribuída a Newton.
 Seja
-I
 um intervalo aberto não-vazio e seja
-f
-:
-I
-R
-,
-y
-f
-(
-x
-)
 , uma função de
-I
 em
-R
 . Diz-se que função
-f
-(
-x
-)
 é derivável no ponto
-a
-I
 se existir o seguinte limite:
-f
-(
-a
-)
 lim
-x
-a
-f
-(
-x
-)
-f
-(
-a
-)
-x
-a
-.
 Se for esse o caso, o número real
-f
-(
-a
-)
 é chamado de derivada da função
-f
 no ponto
-a
 . Notações equivalentes são:
-f
-(
-a
-)
-d
-f
-d
-x
-(
-a
-)
-d
-f
-d
-x
-x
-a
-.
 Equivalentemente, escrevemos:
-f
-(
-a
-)
 lim
-h
-0
-f
-(
-a
-h
-)
-f
-(
-a
-)
-h
-h
-x
-a
 no limite acima. Desta forma, define-se a função derivada de
-f
-(
-x
-)
 por:
-f
-(
-x
-)
 lim
-h
-0
-f
-(
-x
-h
-)
-f
-(
-x
-)
-h
 para todo
-x
 para o qual este limite existe.
 Uma função é dita derivável (ou diferenciável) quando sua derivada existe em cada ponto do seu domínio.
 Seja f uma função real definida em uma vizinhança aberta de um número real a.
-Na geometria clássica, a linha tangente ao gráfico da função f em a foi a única linha que passou pelo ponto (a, f(a)) que não encontrou o gráfico de f transversalmente, significando que a linha não passou diretamente pelo gráfico.
-O declive da secante ao gráfico de f, na imagem acima, que passa pelos pontos (x,f(x)) e (x h,f(x h)) é dado pelo quociente de Newton:
-f
-(
-x
-h
-)
-f
-(
-x
-)
-h
-.
 Uma definição alternativa é: a função f é derivável em a se existir uma função a de I em R contínua em a tal que
-(
-x
-I
-)
-:
-f
-(
-x
-)
-f
-(
-a
-)
-a
-(
-x
-)
-(
-x
-a
-)
-.
 Funções com valores em R
-n
 Se
-I
 for um intervalo de
-R
 com mais do que um ponto e se
-f
 for uma função de
-I
 em
-R
-n
 , para algum número natural
-n
 , as definições anteriores continuam a fazer sentido. Assim, por exemplo a função
-f
-:
-R
-R
-2
-x
-(
 cos
-(
-x
-)
-,
 sen
-(
-x
-)
-)
 (ou seja: uma função que a cada x do domínio em
-R
 responde com uma coordenada no contradomínio em
-R
-n
 . Esta coordenada é
-(
 cos
-(
-x
-)
-,
 sen
-(
-x
-)
-)
-.
 é derivável e
-(
-x
-R
-)
-:
-f
-(
-x
-)
-(
 sen
-(
-x
-)
-,
 cos
-(
-x
-)
-)
-.
 De fato, as propriedades acima descritas para o caso real continuam válidas, exceto, naturalmente, as que dizem respeito à monotonia de funções.
 Seja
-I
 um intervalo de R com mais do que um ponto, seja
-a
-I
 e seja
-f
 uma função de
-I
 em R derivável em
-a
 . Então
-f
 é contínua em
-a
 . O recíproco não é verdadeiro, como se pode ver pela função módulo.
 Seja
-I
 um intervalo de R com mais do que um ponto, seja
-a
-I
 e sejam
-f
-e
-g
 funções de
-I
 em R deriváveis em
-a
 . Então as funções
-f
-g
-,
-f
-.
-g
 e (caso
-g
-(
-a
-)
-0
-)
-f
-/
-g
 também são deriváveis em
-a
 e:
-(
-f
-g
-)
-(
-a
-)
-f
-(
-a
-)
-g
-(
-a
-)
-(
-f
-.
-g
-)
-(
-a
-)
-f
-(
-a
-)
-g
-(
-a
-)
-f
-(
-a
-)
-g
-(
-a
-)
-(
-f
-/
-g
-)
-(
-a
-)
-f
-(
-a
-)
-g
-(
-a
-)
-f
-(
-a
-)
-g
-(
-a
-)
-g
-(
-a
-)
-2
 Em particular, se
-c
 R, então
-(
-c
-.
-f
-)
-c
-.
-f
 . Resulta daqui e de se ter
-(
-f
-g
-)
-f
-g
 que a derivação é uma aplicação linear.
 Sejam
-I
-e
-J
 intervalos de R com mais do que um ponto, seja
-a
-I
 , seja
-f
 uma função de
-I
 em
-J
 derivável em
-a
 e seja seja
-g
 uma função de
-J
 em R derivável em
-f
-(
-a
-)
 . Então
-g
-o
-f
 é derivável em
-a
-e
-(
-g
-f
-)
-(
-a
-)
-g
-(
-f
-(
-a
-)
-)
-.
-f
-(
-a
-)
-.
 Esta propriedade é conhecida por regra da cadeia.
 Seja
-I
 um intervalo de R com mais do que um ponto, seja
-a
-I
 e seja
-f
 uma função contínua de
-I
 em R derivável em
-a
 com derivada não nula. Então a função inversa
-f
-1
 é derivável em
-f
-(
-a
-)
-e
-(
-f
-1
-)
-(
-f
-(
-a
-)
-)
-1
-f
-(
-a
-)
 Outra maneira de formular este resultado é: se
-a
 está na imagem de
-f
 e se
-f
 for derivável em
-f
-1
-(
-a
-)
 com derivada não nula, então
-(
-f
-1
-)
-(
-a
-)
-1
-f
-(
-f
-1
-(
-a
-)
-)
-Assim, por exemplo, se considerarmos a função f de R em R definida por f(x) x2 x 1, esta é diferenciável em 0. Podem ver-se na imagem abaixo os gráficos das restrições daquela função aos intervalos [ 1,1] e [ 1/10,1/10] e é claro que, enquanto que o primeiro é bastante curvo (e, portanto, f(x) f(0) está aí longe de ser linear), o segundo é praticamente indistinguível de um segmento de reta (de declive 1). De facto, quanto mais se for ampliando o gráfico próximo de (0,f(0)) mais perto estará este de ser linear.
 Em contrapartida, a função módulo de R em R não é derivável em 0, pois, por mais que se amplie o gráfico perto de (0,0), este tem sempre o aspecto da figura abaixo.
 Diz-se que f é derivável ou diferenciável se o for em todos os pontos do domínio.
 Uma função derivável
-f
 de
-I
 em R é constante se e só se a derivada for igual a
-0
 em todos os pontos. Isto é uma consequência do teorema da média.
 Uma função derivável
-f
 de
-I
 em R é crescente se e só se a derivada for maior ou igual a
-0
 em todos os pontos. Isto também é uma consequência do teorema da média.
 Uma função cuja derivada seja sempre maior que
-0
 é estritamente crescente. Uma observação importante é que existem funções estritamente crescentes em que a derivada assume o valor
-0
 em alguns pontos. É o que acontece, por exemplo com a função de R em R definida por
-f
-(
-x
-)
-x
-3
 . Naturalmente, existem enunciados análogos para funções decrescentes.
 Se
-f
 for uma função derivável de
-I
-I
 um intervalo de R com mais do que um ponto, então
-f
-(
-I
-)
 também é um intervalo de R. Outra maneira de formular este resultado é: se
-f
 for uma função derivável de
-[
-a
-,
-b
-]
 em R e se
-y
 for um número real situado entre
-f
-(
-a
-)
-e
-f
-(
-b
-)
 (isto é,
-f
-(
-a
-)
-y
-f
-(
-b
-)
 ou
-f
-(
-a
-)
-y
-f
-(
-b
-)
 ), então existe algum
-c
-[
-a
-,
-b
-]
 tal que
-f
-(
-c
-)
-y
 . Este resultado é conhecido por teorema de Darboux.
 Seja
-I
 um intervalo de R com mais do que um ponto e seja
-f
 uma função de
-I
 em R. Diz-se que
-f
 é continuamente derivável ou de classe
-C
-1
 se
-f
 for derivável e, além disso, a sua derivada for contínua. Todas as funções deriváveis que foram vistas acima são continuamente deriváveis. Um exemplo de uma função derivável que não é continuamente derivável é
-f
-:
-R
-R
-x
-x
-2
-s
-e
-n
-(
-1
-x
-)
 se
-x
-0
-0
 se
-x
-0
-,
 pois o limite
 lim
-x
-0
-f
-(
-x
-)
 não existe; em particular, f' não é contínua em
-0
-.
 Quando obtemos a derivada de uma função o resultado é também uma função de x e como tal também pode ser diferenciada. Calculando-se a derivada novamente obtemos então a segunda derivada da função f. De forma semelhante, a derivada da segunda derivada é chamada de terceira derivada e assim por diante. Podemos nos referir às derivadas subsequentes de f por:
-d
-f
-d
-x
-,
-d
-d
-x
-(
-d
-f
-d
-x
-)
-,
-d
-d
-x
-(
-d
-d
-x
-(
-d
-f
-d
-x
-)
-)
 e assim sucessivamente. No entanto, a notação mais empregada é:
-d
-f
-d
-x
-,
-d
-2
-f
-d
-x
-2
-,
-d
-3
-f
-d
-x
-3
 ou alternativamente,
-f
-(
-x
-)
-,
-f
-(
-x
-)
-,
-f
-(
-x
-)
 ou ainda
-f
-(
-1
-)
-(
-x
-)
-,
-f
-(
-2
-)
-(
-x
-)
-,
-f
-(
-3
-)
-(
-x
-)
-Se, para algum k N, f for k vezes derivável e, além disso, f(k) for uma função contínua, diz-se que f é de classe Ck.
 Se a função f tiver derivadas de todas as ordens, diz-se que f é infinitamente derivável ou indefinidamente derivável ou ainda de classe C .
 Se
-c
 R, a função
-f
 de R em R definida por
-f
-(
-x
-)
-c
 é derivável em todos os pontos de R e a sua derivada é igual a
-0
 em todos os pontos, pois, para cada
-a
 R:
 lim
-x
-a
-c
-c
-x
-a
-0
-.
 Usando a definição alternativa, basta ver que se se definir
-a
 de R em R por
-a
-(
-x
-)
-0
 , então
-a
 é contínua e, para cada
-x
 e cada
-a
 reais, tem-se
-c
-c
-0.
-(
-x
-a
-)
-c
-a
-(
-x
-)
-.
-(
-x
-a
-)
-;
 além disso,
-f
-(
-a
-)
-a
-(
-a
-)
-0
-.
 A função
-f
 de R em R definida por
-f
-(
-x
-)
-x
 é derivável em todos os pontos de R e a sua derivada é igual a
-1
 em todos os pontos, pois, para cada
-a
 R:
 lim
-x
-a
-x
-a
-x
-a
-1
-.
 Usando a definição alternativa, basta ver que se se definir
-a
 de R em R por
-a
-(
-x
-)
-1
 , então
-a
 é contínua e, para cada
-x
 e cada
-a
 reais, tem-se
-x
-a
-1.
-(
-x
-a
-)
-a
-a
-(
-x
-)
-.
-(
-x
-a
-)
-;
 além disso,
-f
-(
-a
-)
-a
-(
-a
-)
-1
-.
 A função
-f
 de R em R definida por
-f
-(
-x
-)
-x
-2
 é derivável em todos os pontos de R e a sua derivada no ponto
-a
 R é igual a
-2
-a
 , pois:
 lim
-x
-a
-x
-2
-a
-2
-x
-a
 lim
-x
-a
-(
-x
-a
-)
-(
-x
-a
-)
-x
-a
 lim
-x
-a
-x
-a
-2
-a
-.
 Usando a definição alternativa, basta ver que se se definir
-a
 de R em R por
-a
-(
-x
-)
-x
-a
 , então
-a
 é contínua e, para cada
-x
 e cada
-a
 reais, tem-se
-x
-2
-a
-2
-(
-x
-2
-a
-2
-)
-a
-2
-a
-(
-x
-)
-.
-(
-x
-a
-)
-;
 além disso,
-f
-(
-a
-)
-a
-(
-a
-)
-2
-a
-.
 A função módulo de R em R não é derivável em
-0
 pois
-(
-x
-R
-)
-:
-x
-0
-x
-0
-1
 se
-x
-0
-1
 se
-x
-0
 No entanto, é derivável em todos os outros pontos de R: a derivada em
-a
 é igual a
-1
 quando
-a
-0
 e é igual a
-1
 quando
-a
-0
-.
-Um ponto em que a segunda derivada de uma função muda de sinal é chamado de um ponto de inflexão. Em um ponto de inflexão, a segunda derivada pode ser zero, como no caso do ponto de inflexão x 0 da função y x3, ou ele pode deixar de existir, como é o caso do ponto de inflexão x 0 da função y
-x
-1
-3
 . Em um ponto de inflexão, uma função convexa passa a ser uma função côncava, ou vice-versa.
 Pontos onde a derivada da função é igual a
-0
 chamam-se normalmente de pontos críticos. Existem cinco tipos de pontos onde isto pode acontecer em uma função. Como a derivada é igual ao declive da tangente em um dado ponto, estes pontos acontecem onde a reta tangente é paralela ao eixo dos
-x
 . Estes pontos podem acontecer:
 onde a função atinge um valor máximo e depois começa a diminuir, chamados máximos locais da função
 onde ela atinge um valor mínimo e começa a aumentar, chamados de mínimos locais da função
 em pontos de inflexão (horizontais) da função, que ocorrem onde a concavidade da função muda. Um exemplo típico é a função
-f
-(
-x
-)
-x
-3
 : no ponto
-x
-0
 a função tem um ponto de inflexão (horizontal).
 em pontos onde a função oscila indefinidamente entre valores acima ou abaixo, um exemplo típico é a função
-f
-(
-x
-)
-x
-2
-s
-i
-n
-(
-1
-/
-x
-)
 Os pontos críticos são ferramentas úteis para examinar e desenhar gráficos de funções.
 A derivada de uma função pode, em princípio, ser calculado a partir da definição, considerando o quociente de diferença, e computar o seu limite. Na prática, uma vez que as derivadas de algumas funções simples são conhecidos, as derivadas de outras funções são mais facilmente calculado usando regras para a obtenção de derivadas de funções mais complicadas das mais simples.
 A maioria dos cálculos de derivadas, eventualmente, exige a tomada da derivada de algumas funções comuns. A seguinte lista incompleta é de algumas das funções mais frequentemente utilizadas de uma única variável real e seus derivados.
 Alguns exemplos de derivadas notáveis são:
-A função exponencial natural y ex exp(x) cuja derivada é igual a si mesma, isto é:
-d
-d
-x
-e
-x
-e
-x
-.
-A função logaritmo natural y ln(x):
-d
-d
-x
 ln
-(
-x
-)
-1
-x
-,
-x
-0.
-d
-d
-x
-e
-x
-e
-x
 e da fórmula para a derivada da inversa que
-(
-x
-0
-)
-:
 log
-(
-x
-)
-(
 exp
-1
-)
-(
-x
-)
-1
 exp
-(
 exp
-1
-(
-x
-)
-)
-1
 exp
-(
 log
-(
-x
-)
-)
-1
-x
 Reciprocamente, supondo-se que, para cada
-x
-0
-,
 log
-(
-x
-)
-1
-/
-x
 , então
 exp
-(
-x
-)
-(
 log
-1
-)
-(
-x
-)
-1
 log
-(
 log
-1
-(
-x
-)
-)
-1
-1
-/
 exp
-(
-x
-)
 exp
-(
-x
-)
-.
 Também são notáveis as derivadas das funções trigonométricas:
-d
-d
-x
 sin
-(
-x
-)
 cos
-(
-x
-)
-.
-d
-d
-x
 cos
-(
-x
-)
 sin
-(
-x
-)
-.
-d
-d
-x
 tan
-(
-x
-)
 sec
-2
-(
-x
-)
-1
 cos
-2
-(
-x
-)
-1
 tan
-2
-(
-x
-)
-.
-d
-d
-x
 csc
-(
-x
-)
 cot
-(
-x
-)
 csc
-(
-x
-)
-d
-d
-x
 sec
-(
-x
-)
 sec
-(
-x
-)
 tan
-(
-x
-)
-d
-d
-x
 cot
-(
-x
-)
 csc
-2
-(
-x
-)
 E funções Funções trigonométricas inversas:
-d
-d
-x
 arcsin
-(
-x
-)
-1
-1
-x
-2
-,
-1
-x
-1.
-d
-d
-x
 arccos
-(
-x
-)
-1
-1
-x
-2
-,
-1
-x
-1.
-d
-d
-x
 arctan
-(
-x
-)
-1
-1
-x
-2
 Neste último caso, as derivadas resultam das fórmulas para as derivadas das funções trigonométricas juntamente com a fórmula para a derivada da inversa e a fórmula fundamental da trigonometria.
 Em muitos casos, a aplicação direta do quociente de diferença de Newton pode ser evitado usando regras de diferenciação, evitando complicados cálculos de limite. Algumas das regras mais básicas são as seguintes:
-Regra da constante: se f(x) é constante, então:
-f
-0.
 Regra da soma:
-(
-f
-g
-)
-f
-g
 para todas as funções f e g e todos os números reais
-e
-b
-e
-t
-a
 Regra do produto:
-(
-f
-g
-)
-f
-g
-f
-g
 para todas as funções f e g. Por conseguinte, isso significa que a derivada de uma constante vezes uma função é a constante vezes a derivada da função
-d
-d
-r
-r
-2
-2
-r
-.
 Regra do quociente:
-(
-f
-g
-)
-f
-g
-f
-g
-g
-2
 para todas as funções f e g, em que g 0.
 Regra da cadeia:
 Se
-f
-(
-x
-)
-h
-(
-g
-(
-x
-)
-)
-,
 então:
-f
-(
-x
-)
-h
-(
-g
-(
-x
-)
-)
-g
-(
-x
-)
-.
 A derivada de
-f
-(
-x
-)
-x
-4
 sin
-(
-x
-2
-)
 ln
-(
-x
-)
-e
-x
-7
 é
-f
-(
-x
-)
-4
-x
-(
-4
-1
-)
-d
-(
-x
-2
-)
-d
-x
 cos
-(
-x
-2
-)
-d
-(
 ln
-x
-)
-d
-x
-e
-x
 ln
-x
-d
-(
-e
-x
-)
-d
-x
-0
-4
-x
-3
-2
-x
 cos
-(
-x
-2
-)
-1
-x
-e
-x
 ln
-(
-x
-)
-e
-x
-.
 As derivadas conhecidas de funções elementares
-x
-2
-,
-x
-4
-,
-sen(x) e
-e
-x
-p
-(
-x
-)
-e
-x
 , assim como a constante 7, também foram usadas.
 Se A for um conjunto de números complexos, se f for uma função de A em C e se a for um ponto não isolado de A (isto é, se tão perto quanto se queira de a houver outros elementos de A), então as duas definições da derivada de f no ponto a continuam a fazer sentido. De facto, as propriedades acima descritas para o caso real continuam válidas, excepto, mais uma vez, as que dizem respeito à monotonia de funções.
 Uma das mais importantes aplicações da Análise à Física (senão a mais importante), é o conceito de derivada temporal a taxa de mudança ao longo do tempo que é necessária para a definição precisa de vários importantes conceitos. Em particular, as derivadas temporais da posição s de um objeto são importantes na física newtoniana:
 Velocidade (velocidade instantânea; o conceito de velocidade média é anterior à Análise) v é a derivada (com respeito ao tempo) da posição do objeto.
 Aceleração a é a derivada (com respeito ao tempo) da velocidade de um objeto.
 Posto de outro modo:
-v
-(
-t
-)
-d
-s
-d
-t
-a
-(
-t
-)
-d
-v
-d
-t
-d
-2
-s
-d
-t
-2
-Por exemplo, se a posição de um objeto é s(t) 16t2 16t 32, então a velocidade do objeto é s (t) 32t 16 e a aceleração do objeto é s (t) 32.
 Em dimensão 1, as derivadas são pensadas como números pois, nesta dimensão, um número e uma transformação linear são a mesma coisa. Entretanto, para dimensões maiores, as derivadas necessitam ser tratadas como transformações lineares.
-Uma função vetorial y(t) de uma variável real de uma variável real envia números reais de vetores em
-R
-n
-algum espaço vetorial. A função vetorial pode ser dividido em suas funções coordenadas y1(t), y2(t),...,yn(t), significando que y(t) (
-y
-1
-(t), ...,
-y
-n
-(t)). Isto inclui, por exemplo, curvas paramétricas em R2 ou R3.
-y
-(
-t
-)
-(
-y
-1
-(
-t
-)
-,
-...
-,
-y
-n
-(
-t
-)
-)
-.
 equivalentemente,
-y
-(
-t
-)
 lim
-h
-0
-y
-(
-t
-h
-)
-y
-(
-t
-)
-h
-,
 se o limite existe.
 A subtração no numerador é a subtração de vetores, não escalares. Se a derivada de y existe para cada valor de t, então y' é outra função vetorial.
 Se
-e
-1
-, ...,
-e
-n
 é a base padrão para
-R
-n
-, então y (t) também pode ser escrito como
-y
-1
-(t)
-e
-1
-...
-y
-n
-(t)
-e
-n
-. Se assumirmos que a derivada de uma função vetorial mantém a propriedade da linearidade, então a derivada de y (t) deve ser
-y
-1
-(
-t
-)
-e
-1
-y
-n
-(
-t
-)
-e
-n
 porque cada um dos vetores de base é uma constante.
-Esta generalização é útil, por exemplo, se y (t) é o vetor de posição de uma partícula no tempo t; em seguida, o derivado y '(t) é o vetor de velocidade da partícula no tempo t.
-f
-(
-x
-,
-y
-)
-x
-2
-x
-y
-y
-2
-.
 f pode ser reinterpretado como uma família de funções de uma variável indexada pelas outras variáveis:
-f
-(
-x
-,
-y
-)
-f
-x
-(
-y
-)
-x
-2
-x
-y
-y
-2
-.
 Em outras palavras, cada valor de x escolhe uma função, denotando
-f
-x
 , que é uma função de um número real. Ou seja,
-x
-f
-x
-,
-f
-x
-(
-y
-)
-x
-2
-x
-y
-y
-2
-.
 Uma vez que um valor de x é escolhido, digamos a, então f(x,y) determina a função
-f
-a
 que envia y a a2 ay y2:
-f
-a
-(
-y
-)
-a
-2
-a
-y
-y
-2
-.
 Nesta expressão, a é uma constante, e não uma variável, de modo que
-f
-a
 é uma função de uma única variável real. Consequentemente, a definição da derivada para uma função de uma variável aplica-se:
-f
-a
-(
-y
-)
-a
-2
-y
-.
 O procedimento acima pode ser realizada por qualquer escolha de a. Montando as derivadas juntas em uma função, dá uma função que descreve a variação de f na direção y:
-f
-y
-(
-x
-,
-y
-)
-x
-2
-y
-.
 Esta é a derivada parcial de f em relação a y. Aqui, é o símbolo derivada parcial.
 Em geral, a derivada parcial de uma função f (
-x
-1
-, ...,
-x
-n
 ) na direção de
-x
-i
 , no ponto (
-a
-1
-...,
-a
-n
-f
-x
-i
-(
-a
-1
-,
-...
-,
-a
-n
-)
 lim
-h
-0
-f
-(
-a
-1
-,
-...
-,
-a
-i
-h
-,
-...
-,
-a
-n
-)
-f
-(
-a
-1
-,
-...
-,
-a
-i
-,
-...
-,
-a
-n
-)
-h
-.
 Na diferença de quociente acima, todas as variáveis, exceto
-x
-i
 , são mantidos fixos. Essa escolha de valores fixos determina uma função de uma variável.
-f
-a
-1
-,
-...
-,
-a
-i
-1
-,
-a
-i
-1
-,
-...
-,
-a
-n
-(
-x
-i
-)
-f
-(
-a
-1
-,
-...
-,
-a
-i
-1
-,
-x
-i
-,
-a
-i
-1
-,
-...
-,
-a
-n
-)
-,
 e por definição,
-d
-f
-a
-1
-,
-...
-,
-a
-i
-1
-,
-a
-i
-1
-,
-...
-,
-a
-n
-d
-x
-i
-(
-a
-i
-)
-f
-x
-i
-(
-a
-1
-,
-...
-,
-a
-n
-)
-.
 Em outras palavras, as diferentes opções de classificar uma família de funções de uma variável tal como no exemplo acima. Esta expressão também mostra que o cálculo das derivadas parciais reduz para o cálculo dos derivados de uma variável.
 Um exemplo importante de uma função de várias variáveis é o caso de uma função de valor escalar f (
-x
-1
-, ...,
-x
-n
 ) em um domínio no espaço Euclidiano
-R
-n
 (por exemplo, em R2 ou R2). Neste caso, f tem uma derivada parcial f / xj em relação a cada variável
-x
-j
 . No ponto a, estas derivadas parciais definem o vetor
-f
-(
-a
-)
-(
-f
-x
-1
-(
-a
-)
-,
-...
-,
-f
-x
-n
-(
-a
-)
-)
-.
-Este vetor é denominado gradiente de f em a. Se f é diferenciável em todos os pontos em algum domínio, então o gradiente é uma função vetorial f que leva o ponto a para o vetor f(a).
 Consequentemente, o gradiente determina um campo vetorial.
 Se f é uma função com valores reais em
-R
-n
 , então a derivada parcial de f mede a sua variação na direção dos eixos das coordenadas. Por exemplo, se f é uma função de x e y, então sua derivada parcial mede a variação em f na direção x e na direção y. Contudo, elas (derivadas parciais) não medem diretamente a variação de f em qualquer outra direção, tal como aquela ao longo da linha diagonal y x. Estas são medidas usando-se as derivadas direcionais. Escolha um vetor:
-v
-(
-v
-1
-,
-...
-,
-v
-n
-)
-.
 A derivada direcional de f na direção de v no ponto x é o limite
-D
-v
-f
-(
-x
-)
 lim
-h
-0
-f
-(
-x
-h
-v
-)
-f
-(
-x
-)
-h
-.
 Em alguns casos pode ser mais fácil computar ou estimar a derivada direcional depois de mudar o comprimento do vetor. Frequentemente isso é feito para transformar o problema numa computação de uma derivada direcional na direção de um vetor unitário. Para ver como isso funciona, suponha v u. Substitua h k/ no quociente da diferença.
 O quociente da diferença torna-se:
-f
-(
-x
-(
-k
-/
-)
-(
-u
-)
-)
-f
-(
-x
-)
-k
-/
-f
-(
-x
-k
-u
-)
-f
-(
-x
-)
-k
-.
-Portanto, Dv(f) Du(f). Devido a essa propriedade de redirecionamento, derivadas direcionais são frequentemente consideradas apenas para vetores unitários.
 Se todas as derivadas parciais de f existem e são contínuas em x, então elas determinam a derivada direcional de f na direção de v pela fórmula:
-D
-v
-f
-(
-x
-)
-j
-1
-n
-v
-j
-f
-x
-j
-.
 Essa é a consequência da definição de derivada total. Diz-se que a derivada direcional é linear em v, significando que D
-V
-W
-(f) D
-V
-(f) D
-W
-(f).
 A mesma definição também é aplicável quando f é a função com valores em
-R
-m
 . . A definição acima é aplicada a cada componente dos vetores. Nesse caso, a derivada direcional é um vetor em
-R
-m
-.
 Sejam
-U
 um aberto de
-R
-m
-,
-z
-0
-U
-e
-f
-:
-U
-R
-n
 uma função. Dizemos que
-f
 é diferenciável quando existem uma transformação linear
-T
-:
-R
-m
-R
-n
 e uma função
-r
-:
-z
-z
-0
-:
-z
-U
-R
-n
 dada por
-r
-(
-h
-)
-f
-(
-z
-0
-h
-)
-f
-(
-z
-0
-)
-T
-.
-h
 tais que
 lim
-h
-0
-r
-(
-h
-)
-h
-0
-.
 Neste caso, a aplicação
-T
 é chamada de derivada da função
-f
 no ponto
-z
-0
 e denotada por
-D
-f
-(
-z
-0
-)
 . Em outras palavras
-D
-f
-(
-z
-0
-)
 lim
-t
-0
-f
-(
-x
-t
-z
-0
-)
-f
-(
-x
-)
-t
-.
 Se
-f
-:
-U
-R
-R
-,
-z
-0
-U
-e
-h
-R
 , então
-D
-f
-(
-z
-0
-)
-h
-h
-.
-f
-(
-z
-0
-)
-.
 Se
-f
-:
-U
-R
-R
-n
-,
-z
-0
-U
-e
-h
-R
-,
 então
-D
-f
-(
-z
-0
-)
-h
-h
-.
-(
-f
-1
-(
-z
-0
-)
-,
-f
-2
-(
-z
-0
-)
-,
-.
-.
-.
-,
-f
-n
-(
-z
-0
-)
-)
-.
 Se
-f
-:
-U
-R
-m
-R
-,
-z
-0
-U
-e
-h
-(
-h
-1
-,
-,
-h
-m
-)
-R
-m
-,
 então
-D
-f
-(
-z
-0
-)
-h
-h
-1
-.
-f
-x
-1
-(
-z
-0
-)
-h
-m
-.
-f
-x
-m
-(
-z
-0
-)
 Se
-f
-:
-U
-R
-m
-R
-n
-,
-z
-0
-U
-e
-h
-R
-n
-,
 então
-D
-f
-(
-z
-0
-)
-h
-(
-h
-.
-f
-1
-(
-z
-0
-)
-,
-,
-h
-.
-f
-n
-(
-z
-0
-)
-)
-f
-x
-j
-(
-x
-)
-D
-f
-(
-x
-)
-e
-j
-.
 Podemos repensar nessa igualdade. Se observarmos que
-e
-j
-x
 corresponde à
-j
 -ésima coordenada de
-x
 e que a
-j
 -ésima coordenada de
-f
-(
-z
-0
-)
 é
-f
-x
-j
-(
-z
-0
-)
 segue que
-f
-x
-j
-(
-z
-0
-)
-(
-f
-1
-x
-j
-(
-z
-0
-)
-,
-,
-f
-n
-x
-j
-(
-z
-0
-)
-)
 Agudo, F. R. Dias, Análise Real (3 volumes), Lisboa: Escolar Editora, 1994
 Lima, Elon Lages (1981). Curso de análise, Volume 2. Instituto de Matemática Pura e Aplicada. Rio de Janeiro: Instituto de Matemática Pura e Aplicada
 Ostrowski, A., Lições de Cálculo Diferencial e Integral (3 volumes), Lisboa: Fundação Calouste Gulbenkian, 1981
@@ -2343,4 +350,3 @@ Técnicas para diferenciação
 «Rei da Derivada - Torneio inventado pelo prof. Ricardo Fragelli para ensino de derivadas»
 «Cálculo diferencial para funções trigonométricas» (PDF)
 «Calculadora de derivadas com soluções detalhadas passo a passo e gráficos»
-«Calcular derivada passo a passo» (em inglês)

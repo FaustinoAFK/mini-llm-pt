@@ -16,74 +16,18 @@ Em fontes contínuas, a codificação da informação gera ruído na mensagem, i
 A entropia desejada de uma informação é a máxima que é dada pelas probabilidades equivalentes de ocorrer todos os símbolos.
 A teoria da informação não estuda uma língua pelo número de símbolos alfabéticos que a compõem, mas sim pela análise à redundância na língua, considerando que o inverso da entropia é a redundância, ou seja, a organização do sistema em questão. Uma língua entrópica dispõe de um vocabulário rico, com palavras diferenciadas, que mostram o poder das combinatórias; uma língua pouco entrópica é pobre e repetitiva.
 A medida da informação (ou surpresa) de um evento
-E
 é uma função que decresce a medida em que a probabilidade
-p
-(
-E
-)
 do evento se eleva. Ela pode ser calculada a partir da fórmula de Hartley (1928):
-I
-(
-E
-)
 log
-2
-(
-p
-(
-E
-)
-)
 Aqui,
-b
 é a unidade da informação (Por exemplo: Informação binária,
-b
-2
 ). Já entropia pode ser explicitamente escrita como
-H
-(
-X
-)
-i
-1
-n
-P
-(
-x
-i
-)
 log
-b
-P
-(
-x
-i
-)
 onde
-P
-(
-x
-i
-)
 é a probabilidade do i-ésimo resultado para a variável
-x
-.
 Uma maneira mais simples de medir a entropia é perceber que há duas possibilidades de ocorrência de um evento, como no caso do lançamento de uma moeda em um jogo de cara-ou-coroa com moeda viciada. Nesse caso temos p e q, onde q 1-p, e a entropia do sistema é calculada como
-H
-(
-X
-)
-(
-p
 log
-2
-p
-q
 log
-2
-q
-)
 Informação
 Sociedade da Informação
 Entropia
@@ -91,4 +35,3 @@ https://www.universoracionalista.org/a-morte-e-a-vitoria-da-entropia/
 http://www.inovacaotecnologica.com.br/noticias/noticia.php?artigo ordem-partir-desordem-entropia-sozinha-cria-cristais-complexos .VyilS4-cHIU
 Livro: Informação, Linguagem e Comunicação. Décio Pignatari - Publicado por Atelie Editorial, 2003.
 Bernardo N. B. Lima, Leandro Martins Cioletti, Marcelo de O. Terra Cunha, Gastãoo A. Braga; Entropia: introdução à Teoria Matemática da (des)Informação; Departamento de Matemática - UFMG.
-Nestor Caticha - Física e Informação; IF USP ; 21/11/2006.

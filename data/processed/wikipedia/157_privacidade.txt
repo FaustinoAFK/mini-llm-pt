@@ -22,7 +22,6 @@ dentro de um prazo razoável;
 por um custo, se houver, que não seja excessivo;
 de maneira razoável; e
 de uma forma que seja inteligível para eles;
-C receber explicações sobre recusas a pedidos feito nos termos das alíneas (a) e (b) e para contestar essa negação; e
 D verificar dados relativos a eles e, se se necessário
 E - que os dados sejam apagados, corrigidos, completados ou alterados.
 Princípio de responsabilização. O responsável pelo tratamento de dados deve ser responsabilizado pelo cumprimento das medidas que implementam os princípios mencionados acima.

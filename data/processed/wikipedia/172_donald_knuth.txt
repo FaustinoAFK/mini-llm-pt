@@ -3,8 +3,6 @@ Nascido no Wisconsin, graduou-se em 1960. Em 1963 obteve o doutorado no Institut
 Em 1976, após produzir o terceiro volume de sua série, ficou tão frustrado com o estado antiquado das ferramentas de publicação que dedicou seu tempo à criação de algo melhor. De seus esforços surgiram as ferramentas TEX e METAFONT.
 Em reconhecimento às suas contribuições à ciência da computação ele foi agraciado em 1990 com o singular título de Professor of the Art of Computer Programming, que depois foi atualizado para Professor Emeritus of the Art of Computer Programming.
 Em 1992 tornou-se um associado da Academia Francesa de Ciências. Neste mesmo ano aposentou-se da universidade para concluir The Art of Computer Programming. Em 2003 foi eleito como Fellow da Royal Society. Em 2004 os primeiros três volumes de seu livro foram reeditados. Atualmente Knuth está trabalhando no quarto volume e trechos são liberados periodicamente em seu site pessoal.
-O'Connor, John J.; Robertson, Edmund F., «Donald Knuth», MacTutor History of Mathematics archive (em inglês), Universidade de St. Andrews
-Donald Knuth (em inglês) no Mathematics Genealogy Project
 The Stanford home page of Donald Knuth
 Long biography of Knuth
 Donald Knuth: Leonard Euler of Computer Science (Softpanorama)

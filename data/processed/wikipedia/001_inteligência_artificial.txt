@@ -31,5 +31,4 @@ Realidade simulada
 Robocode
 Transferência de energia sem fio
 ISO/IEC 42001
-«American Association for Artificial Intelligence» (em inglês)
 História da IA no YouTube

@@ -1,14 +1,6 @@
 A teoria dos grafos ou de grafos é um ramo da matemática que estuda as relações entre os objetos pertencentes a um determinado conjunto (também conhecido por elementos). Para tal são utilizadas estruturas chamadas de grafos,
-G
-(
-V
-,
-E
-)
 , onde
-V
 é um conjunto não vazio de objetos denominados vértices (ou nós) e
-E
 (do inglês edges - arestas) é um subconjunto de pares não ordenados de V.
 Estruturas que podem ser representadas por grafos estão em toda parte e muitos problemas de interesse prático podem ser formulados como questões sobre certos grafos. Por exemplo, a estrutura de ligações da Wikipédia pode ser representada por um dígrafo: os vértices são os artigos da Wikipédia e existe uma aresta do artigo A para o artigo B se e somente se A contém um link para B. Dígrafos são também usados para representar máquinas de estado finito. O desenvolvimento de algoritmos para manipular grafos é um tema importante da ciência da computação.
 Mais de um século após a publicação do artigo de Euler sobre as pontes de Königsberg e enquanto Listing introduzia o conceito de topologia, Cayley foi levado por um interesse em formas analíticas particulares decorrentes do cálculo diferencial para estudar uma classe particular de grafos, as árvores. Esse estudo teve diversas implicações na química teórica. As técnicas usadas por ele eram relacionadas a enumeração de grafos com propriedades particulares.
@@ -18,11 +10,9 @@ Na literatura, as definições básicas da teoria dos grafos variam bastante. Aq
 Um grafo direcionado (também chamado dígrafo ou quiver) consiste de
 um conjunto V de vértices(não vazio),
 um conjunto E de arestas e
-mapas s, t : E V, onde s(e) é a fonte e t(e) é o alvo da aresta direcionada e.
 Um grafo não direcionado (ou simplesmente grafo) é dado por
 um conjunto V de vértices(não vazio),
 um conjunto E de arestas e
-uma função w : E P(V) que associa a cada aresta um subconjunto de dois ou de um elemento de V, interpretado como os pontos terminais da aresta.
 Em um grafo ou dígrafo com pesos, uma função adicional E R associa um valor a cada aresta, o que pode ser considerado seu "custo"; tais grafos surgem em problemas de rota ótima tais como o problema do caixeiro viajante.
 Os grafos são geralmente representados graficamente da seguinte maneira: é desenhado um círculo para cada vértice, e para cada aresta é desenhado um arco conectando suas extremidades. Se o grafo for direcionado, seu sentido é indicado na aresta por uma seta.
 Note que essa representação gráfica não deve ser confundida com o grafo em si (a estrutura abstrata, não-gráfica). Diferentes representações gráficas podem corresponder ao mesmo grafo. O que importa é quais vértices estão conectados entre si por quantas arestas.
@@ -37,136 +27,23 @@ Na computação, um grafo finito direcionado ou não-direcionado (com, digamos, 
 A valência (ou grau) de um vértice é o número de arestas incidentes a ele. Se houver laços, serão contados duas vezes. No grafo de exemplo os vértices 1 e 3 possuem uma valência de 2, os vértices 2, 4 e 5 têm a valência de 3 e o vértice 6 tem a valência de 1. Se E é finito, então a valência total dos vértices é o dobro do número de arestas. Em um dígrafo, distingue-se o grau de saída (o número de arestas saindo de um vértice) e o grau de entrada (o número de arestas entrando em um vértice). O grau de um vértice em um dígrafo é igual à soma dos graus de saída e de entrada. O grau de um vértice é definido somente quando o número de arestas incidentes sobre o vértice é finito.
 Lema do aperto de mão diz que se os convidados de uma festa apertarem as mãos quando se encontrarem pela primeira vez, o número de convidados que apertam a mão um número ímpar de vezes é par. Também em grafos não direcionados a soma dos graus de todos os vértices é igual ao dobro do número de arestas.
 Fórmula: Seja
-G
-(
-V
-,
-E
-)
 um grafo não direcionado com
-m
 arestas. Então,
-2
-m
-v
-V
-d
-e
-g
-(
-v
-)
 Um passeio
-p
 entre dois vértices
-A
-e
-B
 , definido como
-p
-(
-A
-,
-B
-)
 , é uma lista alternada de vértices e arestas
-p
-(
-A
-,
-B
-)
-v
-0
-,
-e
-1
-,
-v
-1
-,
-e
-2
-,
-v
-2
-,
-.
-.
-.
-,
-e
-k
-,
-v
-k
 tal que
-A
-v
-0
-e
-B
-v
-k
 existe no mínimo uma aresta
 para
-1
-i
-k
 a aresta
-e
-i
 incide sobre
-v
-i
-1
-e
-v
-i
 O tamanho de um passeio, definido por
-p
 corresponde ao número de arestas que possui, incluindo as repetições. Na figura ao lado, um passeio do vértice
-a
 até o vértice
-d
 possível é a lista
-p
-(
-a
-,
-d
-)
-a
-,
-e
-9
-,
-c
-,
-e
-2
-,
-b
-,
-e
-1
-,
-a
-,
-e
-9
-,
-c
-,
-e
-8
-,
-d
 de tamanho
-5
 . Note que a aresta
-e
-9
 se repete. É necessário listarmos as arestas em um passeio para distinguirmos entre as diversas arestas existentes quando estamos trabalhando em um grafo que não é simples. Em um grafo simples, basta listarmos os vértices.
 Caminho euleriano em um grafo é o caminho que usa cada aresta exatamente uma vez. Se tal caminho existir, o grafo é chamado traversável. Um ciclo euleriano é um ciclo que usa cada aresta exatamente uma vez.
 Caminho hamiltoniano em um grafo é o caminho que visita cada vértice exatamente uma vez. Um ciclo hamiltoniano é um ciclo que visita cada vértice uma só vez. O grafo do exemplo contém um caminho hamiltoniano. Enquanto determinar se um dado grafo contém um caminho ou ciclo euleriano é trivial, o mesmo problema para caminhos e ciclos hamiltonianos é trabalhoso.
@@ -225,13 +102,4 @@ Teoria espectral de grafos
 Redes de pequeno mundo
 Modelo de Watts e Strogatz
 Uma Introdução Sucinta à Teoria dos Grafos
-«Graph theory tutorial» (em inglês)
 Fundamentos de identificação e sistematização dos grafos (pdf)
-«Graph theory Algorithms» (em inglês). algoritmos em pseudocódigo
-«Algorithm Animations» (em inglês)
-«Graph Theory Software» (em inglês)
-«Lista de algoritmos de grafos» (em inglês). com referências e links para bibliotecas de implementação de grafos
-«Graph Visualization Software» (em inglês). ferramenta para visualizar e interagir com diagramas de grafos
-«Visualization of Compiler Graphs» (em inglês)
-«Data Visualization Software» (em inglês)
-«Planarity Game» (em inglês). jogo sobre Grafos Planares

@@ -1,196 +1,35 @@
-X
 ). Um HMM requer que haja um processo observável
-Y
-X
 de uma maneira conhecida. Como
-X
-X
 observando
-Y
 . Por definição de ser um modelo de Markov, um HMM tem um requisito adicional de que o resultado de
-Y
 no tempo
-t
-t
-0
 deve ser "influenciado" exclusivamente pelo resultado de
-X
 em
-t
-t
-0
 e que os resultados de
-X
-e
-Y
 em
-t
-t
-0
-Y
 em
-t
-t
-0
 dado
-X
 no tempo
-t
-t
-0
 . A estimativa dos parâmetros em um HMM pode ser realizada usando a estimativa de máxima verossimilhança. Para HMMs de cadeia linear, o algoritmo de Baum Welch pode ser usado para estimar os parâmetros.
 Os modelos ocultos de Markov são conhecidos por suas aplicações em termodinâmica, mecânica estatística, física, química, economia, finanças, processamento de sinais, teoria da informação, reconhecimento de padrões como reconhecimento de fala, reconhecimento de caligrafia, reconhecimento de gestos, etiquetagem de classes gramaticais (part-of-speech tagging), acompanhamento de partituras musicais, descargas parciais e bioinformática.
 Sejam
-X
-n
-e
-Y
-n
 processos estocásticos de tempo discreto e
-n
-1
 . O par
-(
-X
-n
-,
-Y
-n
-)
 é um modelo oculto de Markov se
-X
-n
 é um processo de Markov cujo comportamento não é diretamente observável ("oculto");
-P
-(
-Y
-n
-A
-X
-1
-x
-1
-,
-...
-,
-X
-n
-x
-n
-)
-P
-(
-Y
-n
-A
-X
-n
-x
-n
-)
-,
 para todo
-n
-1
-,
-x
-1
-,
-...
-,
-x
-n
 , e todo conjunto de Borel
-A
-.
 Sejam
-X
-t
-e
-Y
-t
 processos estocásticos de tempo contínuo. O par
-(
-X
-t
-,
-Y
-t
-)
 é um modelo oculto de Markov se
-X
-t
 é um processo de Markov cujo comportamento não é diretamente observável ("oculto");
-P
-(
-Y
-t
-0
-A
-X
-t
-B
-t
-t
-t
-0
-)
-P
-(
-Y
-t
-0
-A
-X
-t
-0
-B
-t
-0
-)
-,
 para todo
-t
-0
 , todo conjunto de Borel
-A
 , e toda família de conjuntos de Borel
-B
-t
-t
-t
-0
-.
 Os estados do processo
-X
-n
 (resp.
-X
-t
-)
 são chamados de estados ocultos, e
-P
-(
-Y
-n
-A
-X
-n
-x
-n
-)
 (resp.
-P
-(
-Y
-t
-A
-X
-t
-B
-t
-)
-)
 é chamado de probabilidade de emissão ou probabilidade de saída.
 Em sua forma discreta, um processo de Markov oculto pode ser visualizado como uma generalização do problema da urna com reposição (onde cada item da urna é devolvido à urna original antes do próximo passo).
 O gênio tem um procedimento para escolher as urnas:
@@ -199,167 +38,20 @@ O processo de Markov não pode ser observado, apenas a sequência de bolas rotul
 Um exemplo semelhante é melhor elaborado na página do algoritmo de Viterbi.
 No tipo padrão de modelo oculto de Markov considerado aqui, o espaço de estados das variáveis ocultas é discreto, enquanto as próprias observações podem ser discretas (tipicamente geradas a partir de uma distribuição categórica) ou contínuas (tipicamente a partir de uma distribuição gaussiana). Os parâmetros de um modelo oculto de Markov são de dois tipos: probabilidades de transição e probabilidades de emissão (também conhecidas como probabilidades de saída). As probabilidades de transição controlam a maneira como o estado oculto no tempo t é escolhido dado o estado oculto no tempo t 1.
 Assume-se que o espaço de estados ocultos consiste em um de N valores possíveis, modelados como uma distribuição categórica. (Veja a seção abaixo sobre extensões para outras possibilidades). Isso significa que, para cada um dos N possíveis estados em que uma variável oculta no tempo t pode estar, há uma probabilidade de transição deste estado para cada um dos N possíveis estados da variável oculta no tempo t 1, totalizando
-N
-2
 probabilidades de transição. O conjunto de probabilidades de transição partindo de qualquer estado dado deve somar 1. Assim, a matriz N N de probabilidades de transição é uma matriz estocástica. Como qualquer probabilidade de transição pode ser determinada uma vez que as outras são conhecidas, há um total de N(N 1) parâmetros de transição.
-M
-(
-M
-1
-)
-/
-2
 parâmetros controlando a matriz de covariância, totalizando
-N
-(
-M
-M
-(
-M
-1
-)
-/
-2
-)
-N
-M
-(
-M
-3
-)
-/
-2
-O
-(
-N
-M
-2
-)
 Vários problemas de inferência estão associados aos modelos ocultos de Markov, conforme descrito abaixo.
 A tarefa é computar da melhor maneira, dados os parâmetros do modelo, a probabilidade de uma sequência de saída específica. Isso requer somar sobre todas as sequências de estados possíveis:
 A probabilidade de observar uma sequência
-Y
-y
-(
-0
-)
-,
-y
-(
-1
-)
-,
-...
-,
-y
-(
-L
-1
-)
-,
 de comprimento L é dada por
-P
-(
-Y
-)
-X
-P
-(
-Y
-X
-)
-P
-(
-X
-)
-,
 onde a soma percorre todas as sequências possíveis de nós ocultos
-X
-x
-(
-0
-)
-,
-x
-(
-1
-)
-,
-...
-,
-x
-(
-L
-1
-)
-.
 Aplicando o princípio da programação dinâmica, esse problema também pode ser tratado eficientemente usando o algoritmo forward.
 Uma série de tarefas relacionadas questiona a probabilidade de uma ou mais variáveis latentes, dados os parâmetros do modelo e uma sequência de observações
-y
-(
-1
-)
-,
-...
-,
-y
-(
-t
-)
-.
 A tarefa é computar, dados os parâmetros do modelo e uma sequência de observações, a distribuição sobre os estados ocultos da última variável latente no final da sequência, ou seja, computar
-P
-(
-x
-(
-t
-)
-y
-(
-1
-)
-,
-...
-,
-y
-(
-t
-)
-)
 . Essa tarefa é usada quando a sequência de variáveis latentes é vista como os estados subjacentes pelos quais um processo transita em uma sequência de pontos no tempo, com observações correspondentes a cada ponto. É natural, então, perguntar qual o estado do processo no final.
 Este problema pode ser tratado eficientemente usando o algoritmo forward. Um exemplo é quando o algoritmo é aplicado a uma Rede Oculta de Markov para determinar
-P
-(
-h
-t
-v
-1
-:
-t
-)
-.
 Isso é semelhante à filtragem, mas questiona sobre a distribuição de uma variável latente em algum ponto no meio de uma sequência, ou seja, para computar
-P
-(
-x
-(
-k
-)
-y
-(
-1
-)
-,
-...
-,
-y
-(
-t
-)
-)
 para algum
-k
-t
 . A partir da perspectiva descrita acima, isso pode ser pensado como a distribuição de probabilidade sobre estados ocultos para um ponto no tempo k no passado, em relação ao tempo t.
 O algoritmo forward-backward é um bom método para computar os valores suavizados para todas as variáveis de estado oculto.
 A tarefa, ao contrário das duas anteriores, questiona sobre a probabilidade conjunta da sequência inteira de estados ocultos que gerou uma sequência de observações específica (veja a ilustração à direita). Essa tarefa é geralmente aplicável quando HMMs são aplicados a tipos de problemas diferentes daqueles para os quais as tarefas de filtragem e suavização se aplicam. Um exemplo é a marcação de classes de palavras (part-of-speech tagging), onde os estados ocultos representam as classes gramaticais subjacentes correspondentes a uma sequência observada de palavras. Neste caso, o interesse recai sobre toda a sequência de classes gramaticais, e não simplesmente a classe de uma única palavra, que seria o que a filtragem ou a suavização calculariam.
@@ -394,118 +86,32 @@ Na segunda metade da década de 1980, os HMMs começaram a ser aplicados na aná
 Uma extensão dos modelos ocultos de Markov descritos anteriormente com prioris de Dirichlet usa um processo de Dirichlet no lugar de uma distribuição de Dirichlet. Este tipo de modelo permite um número desconhecido e potencialmente infinito de estados. É comum usar um processo de Dirichlet de dois níveis, semelhante ao modelo anteriormente descrito com dois níveis de distribuições de Dirichlet. Um modelo desse tipo é chamado de modelo oculto de Markov do processo de Dirichlet hierárquico, ou simplesmente HDP-HMM. Foi originalmente descrito sob o nome "Modelo Oculto de Markov Infinito" e foi posteriormente formalizado em "Processos Hierárquicos de Dirichlet".
 Uma variante do modelo discriminativo descrito anteriormente é o campo aleatório condicional de cadeia linear. Ele usa um modelo gráfico não direcionado (também conhecido como campo aleatório de Markov) em vez dos modelos gráficos direcionados do MEMM e modelos semelhantes. A vantagem desse tipo de modelo é que ele não sofre do chamado problema de viés de rótulo dos MEMMs e, portanto, pode fazer previsões mais precisas. A desvantagem é que o treinamento pode ser mais lento do que o dos MEMMs.
 Ainda outra variante é o modelo oculto de Markov fatorial, que permite que uma única observação seja condicionada às variáveis ocultas correspondentes de um conjunto de
-K
-N
-K
 estados (assumindo que existem
-N
-T
 , um algoritmo simples de Viterbi tem complexidade
-O
-(
-N
-2
-K
-T
-)
 . Para encontrar uma solução exata, um algoritmo de árvore de junção poderia ser usado, mas resulta em uma complexidade de
-O
-(
-N
-K
-1
-K
-T
-)
 . Na prática, técnicas aproximadas, como abordagens variacionais, poderiam ser usadas.
-K
 estados adjacentes). A desvantagem desses modelos é que os algoritmos de programação dinâmica para treiná-los têm um tempo de execução de
-O
-(
-N
-K
-T
-)
 para
-K
 estados adjacentes e um total de
-T
 observações (ou seja, uma cadeia de Markov de comprimento
-T
 ). Essa extensão tem sido amplamente usada em bioinformática, na modelagem de sequências de DNA.
 Outra extensão recente é o modelo de Markov em tripleto, no qual um processo auxiliar subjacente é adicionado para modelar algumas especificidades dos dados. Muitas variantes deste modelo foram propostas. Pode-se mencionar também o interessante elo que foi estabelecido entre a teoria da evidência e os modelos de Markov em tripleto e que permite a fusão de dados em um contexto markoviano e modelar dados não estacionários. Estratégias alternativas de fusão de dados em vários fluxos também foram propostas na literatura recente, p. ex.,
 Por fim, uma lógica diferente para lidar com o problema da modelagem de dados não estacionários por meio de modelos ocultos de Markov foi sugerida em 2012. Consiste no emprego de uma pequena rede neural recorrente (RNN), especificamente uma rede de reservatório (reservoir network), para capturar a evolução da dinâmica temporal nos dados observados. Essa informação, codificada na forma de um vetor de alta dimensão, é usada como uma variável de condicionamento para as probabilidades de transição de estado do HMM. Sob tal configuração, obtém-se, por fim, um HMM não estacionário, cujas probabilidades de transição evoluem ao longo do tempo de uma maneira que é inferida dos dados, ao contrário de algum modelo ad hoc irrealista de evolução temporal.
 Dada uma matriz de transição de Markov e uma distribuição invariante sobre os estados, pode-se impor uma medida de probabilidade no conjunto de subdeslocamentos. Por exemplo, considere a cadeia de Markov mostrada à direita nos estados
-A
-,
-B
-1
-,
-B
-2
 , com distribuição invariante
-(
-2
-/
-7
-,
-4
-/
-7
-,
-1
-/
-7
-)
 . Ignorando a distinção entre
-B
-1
-,
-B
-2
 , este espaço de subdeslocamentos é projetado em
-A
-,
-B
-1
-,
-B
-2
 para outro espaço de subdeslocamentos em
-A
-,
-B
 , e essa projeção também projeta a medida de probabilidade para uma medida de probabilidade nos subdeslocamentos em
-A
-,
-B
-.
 O fato curioso é que a medida de probabilidade nos subdeslocamentos em
-A
-,
-B
 não é criada por uma cadeia de Markov em
-A
-,
-B
 , nem mesmo com ordens múltiplas. Intuitivamente, isso ocorre porque se alguém observar uma longa sequência de
-B
-n
 , ficaria cada vez mais certo de que
 Pr
-(
-A
-B
-n
-)
-2
-3
 , indicando que a parte observável do sistema pode ser afetada por algo infinitamente no passado.
 Inversamente, há um espaço de subdeslocamentos em 6 símbolos, projetados em subdeslocamentos em 2 símbolos, tal que qualquer medida de Markov no menor subdeslocamento possui uma medida de pré-imagem que não é de Markov de qualquer ordem (exemplo 2.6).
-Teif, V. B.; Rippe, K. (2010). «Statistical mechanical lattice models for protein DNA binding in chromatin». J. Phys.: Condens. Matter. 22 (41). Bibcode:2010JPCM...22O4105T. PMID 21386588. arXiv:1004.5514. doi:10.1088/0953-8984/22/41/414105
 A Revealing Introduction to Hidden Markov Models por Mark Stamp, San Jose State University.
 Fitting HMM's with expectation-maximization complete derivation
-A step-by-step tutorial on HMMs Arquivado em 2017-08-13 no Wayback Machine (Universidade de Leeds)
 Hidden Markov Models (uma exposição utilizando matemática básica)
 Hidden Markov Models (por Narada Warakagoda)
 Hidden Markov Models: Fundamentals and Applications Parte 1, Parte 2 (por V. Petrushin)

@@ -23,6 +23,5 @@ A execução simultânea de múltiplos processos em diferentes fluxos de dados n
 Os três tipos de paralelismo estão normalmente combinados em um único job.
 O ETL é pode ser usado em algumas ações como por exemplo:
 Dados de diferentes fontes são combinados e amazenados em um único banco de dados para posterior analise coletiva para fins comerciais.
-Este é o processo que coleta todos os dados de marketing (clientes, redes sociais, análise da web) e dados de equipamentos com Internet das Coisas (em inglês IoT, que reunem dados através dos sensores), então utilizando o processo de ETL move-se esses dados para um único banco de dados, preparando-os para análise.
 A réplicação de banco de dados utiliza o processo de ETL para verificar os dados de todos os bancos de dados locais (Oracle, Cloud SQL, MySQL, Microsoft SQL Server, PostgreSQL, MongoDB), em seguida copia-os para um único armazenamento de dados na nuvem, em um processo contínuo de atualização.
 Buscando economizar dinheiro as empresas estão migrando as aplicações e os dados para a nuvem utilizando o processo de ETL, tornando essas aplicações escalonáveis e aumentando a proteção desses dados.

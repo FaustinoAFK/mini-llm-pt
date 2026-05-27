@@ -22,6 +22,3 @@ Por um tempo bibliotecas objeto foram a sensação do mundo da programação, ex
 GNU/Linux, Solaris e variantes BSD: os arquivoslibfoo.a elibfoo.so estão localizados em diretórios como/lib,/usr/lib ou/usr/local/lib. Os nomes dos arquivos sempre começam comlib e terminam com.a (arquivo, ligação estática) ou.so (objeto compartilhado, ligação dinâmica), opcionalmente com o número da versão interface, comlibfoo.so.2.
 Mac OS X e superiores: o sistema herda as convenções de bibliotecas estáticas do BSD, e pode usar o estilo.so (mas com o sufixo.dylib).
 Microsoft Windows: arquivos .LIB são de ligação estática e arquivos .DLL são de ligação dinâmica. Existem ainda usos específicos de DLL, como por exemplo o .OCX para bibliotecas de controle OCX. A versão da interface está codificada no arquivo, ou abstraída usando uma interface COM.
-Como fazer bibliotecas de programas em Linux (em inglês)
-Carregamaneto e ligação dinâmica (em inglês)
-Como criar bibliotecas de programas (em inglês)

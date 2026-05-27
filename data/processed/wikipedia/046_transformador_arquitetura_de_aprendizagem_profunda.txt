@@ -6,7 +6,6 @@ Codificação Posicional: Como o Transformer não processa dados sequencialmente
 Estrutura Codificador-Decodificador: O Transformer original é composto por camadas de autoatenção e redes neurais feed-forward tanto no codificador quanto no decodificador.
 A arquitetura Transformer tem sido aplicada a uma ampla gama de tarefas, incluindo:
 Tradução Automática: A aplicação original do Transformer, onde alcançou resultados de ponta em benchmarks como o WMT
-.
 Geração de Texto: Modelos como o GPT (Generative Pre-trained Transformer) da OpenAI usam Transformers apenas com decodificador para gerar textos coerentes e contextuais.
 Resposta a Perguntas e Sumarização: Modelos como BERT e o T5 (Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer) têm se destacado em tarefas que exigem compreensão semântica.
 Visão Computacional: Os Vision Transformers (ViTs) adaptam a arquitetura para tarefas de imagem como classificação e detecção.

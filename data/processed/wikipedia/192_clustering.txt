@@ -3,100 +3,19 @@ Normalmente o usuário do sistema deve escolher a priori o número de grupos a s
 Os tipos de algoritmos de agrupamento de dados mais comuns são: os particionais e os hierárquicos.
 Quando se tem um conjunto de objetos é natural olhar para eles tentando perceber o quão semelhantes ou diferentes eles são uns dos outros. Uma abordagem comum consiste em definir uma função de distância entre os objetos, com a interpretação de que objetos a uma distância menor são mais semelhantes uns aos outros. Assim, a distância assume um significado mais abstrato. Por exemplo, podemos definir a distância entre pessoas como a diferença do ano em que nasceram.
 Suponha que temos um conjunto
-U
 de n objetos
-p
-1
-,
-p
-2
-,
-.
-.
-.
-,
-p
-n
 . Para cada par,
-p
-i
-e
-p
-j
 , temos uma distância d numérica
-(
-p
-i
-,
-p
-j
-)
 . Exigimos apenas que
-d
-(
-p
-i
-,
-p
-j
-)
-0
 para todo
-i
 j; que
-d
-(
-p
-i
-,
-p
-j
-)
-0
 para
-i
-e
-j
 distintos; e que as distâncias sejam simétricas, ou seja, que
-d
-(
-p
-i
-,
-p
-j
-)
-d
-(
-p
-j
-,
-p
-i
-)
-.
 Suponha que queremos dividir os objetos de
-U
 em k grupos, para um determinado parâmetro k. Denominamos por k-grupo de
-U
 cada elemento duma qualquer partição de
-U
 em k conjuntos não vazios
-C
-1
-,
-C
-2
-,
-.
-.
-.
-,
-C
-k
-U
 . O problema agora se resume em encontrar de forma eficiente a partição de
-U
 que nos conduza ao espaçamento máximo.
 Para a argumentação do funcionamento do algoritmo, necessita-se do conceito de árvore de extensão mínima, também conhecida por minimum spanning tree.
 O problema da árvore de extensão mínima se resume, basicamente, em buscar a forma mais barata de conectar todos os nós de um grafo, uma vez que podemos usar apenas um subconjunto de suas arestas para conectá-los. Isto pode ser útil na construção de uma rede elétrica, na construção do núcleo de uma rede rodoviária ou ferroviária, no estabelecimento de um circuito, ou mesmo na realização de algumas formas de agrupamento.
@@ -104,190 +23,49 @@ Existem diversos algoritmos para encontrar uma árvore de extensão mínima. Aqu
 Tomamos um nó no grafo como inicial e todas as arestas que o tem como extremidade como arestas viáveis. Adicionamos ao novo grafo a aresta viável de menor custo e, consequentemente, o nó recém descoberto de sua outra extremidade. Assim, o conjunto de arestas viáveis passa ser todas as arestas que tem como extremidade ao menos um dos nós já descobertos. Seguimos adicionando as arestas de menor custo desde que um dos nós de suas extremidades ainda não esteja descoberto.
 Ao deletarmos uma aresta de uma árvore, criamos dois componentes conexos que também são árvores, tal fato é usado fortemente neste algoritmo. Encontrar k grupos consiste em deletar arestas de um grafo até obtermos k componentes conexos. No problema que estamos tratando, desejamos, além de encontrar k componentes conexos, que estes componentes sejam o mais distantes possível entre si. Definiremos o espaçamento de um conjunto de grupos de um grafo como a menor distância entre dois nós que pertencem a componentes conexos distintos. Provaremos agora, que ao deletar as k-1 maiores arestas de uma árvore de extensão mínima de um grafo conexo U, obteremos k grupos e o espaçamento entre eles será máximo.
 Tome
-C
 o conjunto de grupos (ou clusters)
-C
-1
-,
-C
-2
-,
-.
-.
-.
-,
-C
-k
 que particiona um grafo conexo
-U
 . O espaçamento
-d
 de
-C
 é o comprimento da (k-1)-ésima aresta mais custosa da árvore de extensão mínima, que é a última aresta deletada pelo algoritmo de agrupamento.
 Para confirmarmos essa afirmação, precisamos provar que o espaçamento de qualquer outro conjunto de k grupos é, no máximo, d .
 Seja
-C
 um outro conjunto de k grupos que também particiona o grafo
-U
 em conjuntos não vazios
-C
-1
-,
-C
-2
-,
-.
-.
-.
-,
-C
-k
 .Como
-C
-e
-C
 são diferentes, existe, necessariamente, um grupo
-C
-r
 que não é subconjunto de nenhum
-C
-s
 pertencente a
-C
 . Logo, existem pontos
-p
-i
-e
-p
-j
 em
-C
-r
 que pertencem a grupos diferentes em
-C
 - digamos
-p
-i
 pertencente a
-C
-s
-e
-p
-j
 pertencente a
-C
-t
 diferente de
-C
-s
-.
 Dado que
-p
-i
-e
-p
-j
 pertencem a um mesmo grupo, nenhuma das arestas do caminho
-P
 entre eles foi deletado pelo algoritmo. Ou seja, cada aresta pertencente a
-P
 tem comprimento menor ou igual a
-d
 . Por outro lado, sabemos que
-p
-i
 pertence a
-C
-s
 , mas
-p
-j
 não; logo, tomemos
-p
 como o primeiro nó em
-P
 que não pertence a
-C
-s
-e
-p
 o nó que vem logo antes de
-p
 no caminho
-P
 . Sabemos que
-d
-(
-p
-,
-p
-)
-d
 em
-C
 e isso completa a prova, pois o
-d
-d
-(
-p
-,
-p
-)
-d
 o espaçamento de
-C
-.
 Implementar este algoritmo consiste em descobrir uma maneira eficiente de encontrar a aresta menos custosa dentro de um subconjunto de arestas do grafo original - para construir a árvore de extensão mínima - e a mais custosa - para deletá-la na segunda etapa do algoritmo. Tais operações são facilmente realizadas com o uso de uma fila de prioridades que pode ser mantida com complexidade
-O
-(
-l
-o
-g
-m
-)
 , onde m é o número de elementos na fila.
 A complexidade de montar a árvore de extensão mínima é
-O
-(
-n
-l
-o
-g
-m
-)
 , onde
-n
 é o número de nós no grafo e
-m
 o número de arestas. Já a complexidade de deletar k-1 arestas é
-O
-(
-(
-k
-1
-)
-l
-o
-g
-(
-n
-1
-)
-)
 . Logo, o tempo de execução é dominado pela construção da árvore de extensão mínima. Conclui-se, então, que encontrar k grupos em um grafo
-U
 com
-n
 nós e
-m
 arestas é uma tarefa que possuí tempo de execução
-O
-(
-n
-l
-o
-g
-m
-)
-.

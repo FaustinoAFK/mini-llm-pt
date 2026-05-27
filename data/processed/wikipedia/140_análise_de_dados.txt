@@ -57,7 +57,6 @@ Para fazer isso, várias decisões sobre as análises de dados principais podem 
 No caso de não normais: deve-se transformar as variáveis; tornar as variáveis categóricas (ordinais/dicotômicas); adaptar o método de análise?
 No caso de dados faltantes: deve-se negligenciar ou imputar os dados faltantes; qual técnica de imputação deve ser usada?
 No caso de outliers: deve-se usar técnicas de análise robustas?
-Caso os itens não se enquadrem na escala: deve-se adaptar o instrumento de medição omitindo itens, ou antes garantir a comparabilidade com outros (usos do(s)) instrumento(s) de medição?
 No caso de subgrupos (muito) pequenos: deve-se abandonar a hipótese sobre diferenças entre os grupos ou usar técnicas de pequenas amostras, como testes exatos ou bootstrapping?
 Caso o procedimento de randomização pareça defeituoso: pode-se e deve-se calcular os escores de propensão e incluí-los como covariáveis nas análises principais?
 Várias análises podem ser usadas durante a fase inicial de análise de dados:
@@ -131,11 +130,5 @@ Adèr, Herman J. (2008a). «Chapter 14: Phases and initial steps in data analysi
 Adèr, Herman J. (2008b). «Chapter 15: The main analysis phase». In: Adèr; Mellenbergh; Hand. Advising on research methods : a consultant's companion. Huizen, Netherlands: Johannes van Kessel Pub. pp. 357 386. ISBN 9789079418015. OCLC 905799857
 Tabachnick, BG Fidell, LS (2007). Capítulo 4: Limpando seu ato. Dados de triagem antes da análise. Em BG Tabachnick LS Fidell (Eds. ), Usando Estatísticas Multivariadas, Quinta Edição (pp. 60 116). Boston: Pearson Education, Inc. / Allyn e Bacon.
 Adèr, HJ Mellenbergh, GJ (com contribuições de DJ Hand) (2008). Aconselhamento sobre métodos de pesquisa: um companheiro do consultor . Huizen, Holanda: Johannes van Kessel Publishing.
-Chambers, John M .; Cleveland, William S .; Kleiner, Beat; Tukey, Paul A. (1983). Graphical Methods for Data Analysis, Wadsworth / Duxbury Press. ISBN 0-534-98052-X
 Fandango, Armando (2008). Análise de dados Python, 2a edição . Packt Publishers.
-Juran, Joseph M .; Godfrey, A. Blanton (1999). Manual de qualidade de Juran, 5a edição. Nova York: McGraw Hill. ISBN 0-07-034003-X
-Lewis-Beck, Michael S. (1995). Análise de dados: uma introdução, Sage Publications Inc,ISBN 0-8039-5772-6
 NIST / SEMATECH (2008) Manual de Métodos Estatísticos ,
-Pyzdek, T, (2003). Manual de Engenharia de Qualidade, ISBN 0-8247-4614-7
-Richard Veryard (1984). Análise de dados pragmática . Oxford : Publicações científicas da Blackwell. ISBN 0-632-01311-7
-Tabachnick, BG; Fidell, LS (2007). Usando Estatísticas Multivariadas, 5a Edição . Boston: Pearson Education, Inc. / Allyn e Bacon, ISBN 978-0-205-45938-4

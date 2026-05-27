@@ -2,104 +2,23 @@ Em estatística ou econometria, regressão linear é uma equação para se estim
 A regressão, em geral, tem como objetivo tratar de um valor que não se consegue estimar inicialmente.
 Modelos de regressão linear são frequentemente ajustados usando a abordagem dos mínimos quadrados, mas que também pode ser montada de outras maneiras, tal como minimizando a "falta de ajuste" em alguma outra norma (com menos desvios absolutos de regressão), ou através da minimização de uma penalização da versão dos mínimos quadrados. Por outro lado, a abordagem de mínimos quadrados pode ser utilizado para ajustar a modelos que não são modelos lineares. Assim, embora os termos "mínimos quadrados" e "modelo linear" estejam intimamente ligados, eles não são sinônimos. [carece de fontes?]
 Para se estimar o valor esperado, usa-se de uma equação, que determina a relação entre ambas as variáveis.
-y
-i
-X
-i
-i
 , onde:
-y
-i
 : É uma constante, que representa a interceptação da reta com o eixo vertical;
 : Representa a inclinação (coeficiente angular) em relação à variável explicativa;
-X
-i
-i
 : Representa todos os factores residuais mais os possíveis erros de medição. O seu comportamento é aleatório, devido à natureza dos factores que encerra. Para que essa fórmula possa ser aplicada, os erros devem satisfazer determinadas hipóteses, que são: terem distribuição normal, com a mesma variância
-2
 A equação acima pode ser reescrita em forma de matriz:
-y
-X
 Onde
-y
 é uma matriz de
-n
-1
 observações,
-X
 é uma matriz de tamanho
-n
-p
-1
 , e
-p
 é a quantidade de variáveis explicativas),
 é uma matriz de
-p
-1
-1
-0
 representa a constante
 ) e
 é uma matriz de
-n
-1
 de resíduos.
-y
-[
-y
-1
-y
-2
-y
-n
-]
-,
-X
-[
-1
-X
-11
-X
-12
-X
-1
-p
-1
-X
-21
-X
-22
-X
-2
-p
-1
-X
-n
-1
-X
-n
-2
-X
-n
-p
-]
-,
-[
-0
-1
-2
-p
-]
-,
-[
-1
-2
-n
-]
-e
 A técnica mais usual para estimativa dos parâmetros
-e
 é o Método dos mínimos quadrados, mas também podem ser usados:
 Mínimos Quadrados Ponderados
 Mínimos quadrados generalizados
@@ -107,140 +26,16 @@ Máxima verossimilhança
 Regularização de Tikhonov
 Mínimo Desvio absoluto
 O chamado intercepto ou coeficiente linear (
-0
-) é utilizado para representar o ponto em que a reta da regressão corta o eixo Y quando X 0. Já o parâmetro representa a inclinação da reta (
-1
 ) é denominado como coeficiente de regressão ou coeficiente angular. A interpretação geométrica dos coeficientes podem ser vistos na imagem abaixo.
 Com base no modelo representado na imagem assim, é possível identificar que :
 A relação matemática entre Y e X é linear
 Os valores de x são fixos (ou controlados), isto é, x não é uma variável aleatória
 A média do erro é nula, ou seja
-E
-(
-i
-)
-0
-.
-E
-(
-Y
-i
-)
-E
-(
-0
-1
-x
-i
-i
-)
-0
-1
-x
-i
-E
-(
-i
-)
-0
-1
-x
-i
 Dado isto, temos que a regressão do modelo acima e dado por:
-E
-[
-Y
-x
-]
-0
-1
-x
-i
 será sempre
-2
 , teremos que:
-V
-a
-r
-(
-i
-)
-E
-(
-i
-2
-)
-[
-E
-(
-i
-)
-2
-]
-E
-(
-i
-2
-)
-2
 Assim temos que :
-V
-a
-r
-(
-Y
-i
-)
-E
-[
-Y
-i
-E
-(
-Y
-i
-x
-i
-)
-2
-]
-E
-(
-i
-2
-)
-2
 Quando deparamos com casos como este, dizemos que o erro é homocedástico, ou seja, a variância é constante.
-C
-o
-v
-(
-i
-,
-j
-)
-E
-(
-i
-j
-)
-E
-(
-i
-)
-E
-(
-j
-)
-E
-(
-i
-,
-j
-)
-0
-i
-j
 Método dos mínimos quadrados
 Regressão não linear
 Regressão

@@ -1,41 +1,10 @@
 A validação cruzada é uma técnica para avaliar a capacidade de generalização de um modelo, a partir de um conjunto de dados. Esta técnica é amplamente empregada em problemas onde o objetivo da modelagem é a predição. Busca-se então estimar o quão preciso é este modelo na prática, ou seja, o seu desempenho para um novo conjunto de dados.
 Para todos os métodos de particionamento, citados acima e apresentados a seguir, a precisão final do modelo estimado é obtido por:
-A
-c
-f
-1
-v
-i
-1
-v
-y
-i
-,
-y
-i
-1
-v
-i
-1
-v
-(
-y
-i
-y
-i
-)
 onde v é o número de dados de validação e
-y
-i
-,
-y
-i
 é o resíduo dado pela diferença entre o valor real da saída i e o valor predito. Com isso, é possível inferir de forma quantitativa a capacidade de generalização do modelo.
-Este método consiste em dividir o conjunto total de dados em dois subconjuntos mutuamente exclusivos, um para treinamento (estimação dos parâmetros) e outro para teste (validação). O conjunto de dados pode ser separado em quantidades iguais ou não. Uma proporção muito comum é considerar 2/3 dos dados para treinamento e o 1/3 restante para teste.
 Após o particionamento, a estimação do modelo é realizada e, posteriormente, os dados de teste são aplicados e o erro de predição calculado.
 Esta abordagem é indicada quando está disponível uma grande quantidade de dados. Caso o conjunto total de dados seja pequeno, o erro calculado na predição pode sofrer muita variação.
 abaixo mostra o esquema realizado pelo k-fold.
 O método leave-one-out é um caso específico do k-fold, com k igual ao número total de dados N. Nesta abordagem são realizados N cálculos de erro, um para cada dado.
 Reamostragem (estatística)
 Bootstrapping (estatística)
-«Validação Cruzada» (PDF) (em inglês)

@@ -12,7 +12,6 @@ A liberdade de redistribuir o programa executável (em formato binário) necessa
 A OSI optou pelo termo Open Source para afastar-se do estigma filosófico e político do termo "software livre". A disponibilidade do código-fonte não é condição suficiente para que o software seja considerado de código aberto. É necessário satisfazer dez critérios, inspirados na Definição Debian de Software Livre:
 Código-fonte: o programa precisa obrigatoriamente incluir código-fonte e permitir a distribuição tanto do código-fonte quanto do programa já compilado;
 Trabalhos derivados: a licença deve permitir modificações e trabalhos derivados e deve permitir que estes sejam distribuídos sob os mesmos termos da licença do software original;
-Integridade do código-fonte do(a) autor(a): a licença pode proibir que se distribua o código-fonte original modificado desde que a licença permita a distribuição de patch files com a finalidade de modificar o programa em tempo de compilação;
 Não à discriminação contra pessoas ou grupos: a licença não pode discriminar contra pessoas ou grupos;
 Não à discriminação contra fins de utilização: a licença não pode restringir o uso do programa para um fim específico, como uso no comércio, ou em pesquisa genética, por exemplo;
 Distribuição de licença: Os direitos atribuídos ao programa através da licença são automaticamente aplicados a todas as pessoas para as quais o programa é redistribuído, sem a necessidade de definição ou aceitação de uma nova licença;

@@ -11,16 +11,9 @@ Inserções em listas duplamente encadeadas são potencialmente mais lentas devi
 A inserção ou remoção de um elemento na lista não implica a mudança de lugar de outros elementos;
 Não é necessário definir, no momento da criação da lista, o número máximo de elementos que esta poderá ter. Ou seja, é possível alocar memória "dinamicamente", apenas para o número de nós necessários.
 A manipulação torna-se mais "perigosa" uma vez que, se o encadeamento (ligação) entre elementos da lista for mal feito, toda a lista pode ser perdida;
-Para aceder ao elemento na posição n da lista, deve-se percorrer todos os elementos (n - 1) anteriores.
 Numa lista com n itens, temos as seguintes complexidades de tempo no pior caso:
 Inserção
-Cabeça: O(1).
-Cauda: O(n) (ou O(1) quando se tem uma referência pro fim da lista).
-Meio: O(n).
 Eliminação
-Cabeça: O(1).
-Cauda: O(n) (ou O(1) quando se tem uma referência pro fim da lista).
-Meio: O(n).
 Exemplo de código feito em linguagem de programação C:
 O tipo de dados seria definido apenas pela chamada ao método struct, mas a inclusão do typedef simplifica a sua utilização. Ele cria um nome alternativo para No st, que pode ser chamado simplesmente de No por outras estruturas de dados.
 Exemplo de inicialização e preenchimento no main:
