@@ -54,6 +54,14 @@ def normalize_text(text):
     return text.strip()
 
 
+def normalize_flat_text(text):
+    """Normaliza texto final para treino como texto corrido."""
+    text = unicodedata.normalize("NFKC", text)
+    text = text.replace("\r\n", "\n").replace("\r", "\n")
+    text = re.sub(r"\s+", " ", text)
+    return text.strip()
+
+
 def is_section_heading(line):
     return bool(re.fullmatch(r"=+\s*[^=]+\s*=+", line.strip()))
 
@@ -171,6 +179,9 @@ def clean_wikipedia_text(text):
     A limpeza remove títulos de seção, linhas com muito ruído simbólico,
     marcações matemáticas, termos comuns de LaTeX/MediaWiki, notas de tradução
     e caracteres incomuns que prejudicam o tokenizer.
+
+    A saída final usa texto corrido, trocando quebras de linha internas por
+    espaços. Isso evita que o BPE aprenda tokens como '.\\n'.
     """
     text = normalize_text(text)
     cleaned_lines = []
@@ -191,8 +202,8 @@ def clean_wikipedia_text(text):
 
         cleaned_lines.append(line)
 
-    cleaned_text = "\n".join(cleaned_lines)
-    cleaned_text = normalize_text(cleaned_text)
+    cleaned_text = " ".join(cleaned_lines)
+    cleaned_text = normalize_flat_text(cleaned_text)
     return cleaned_text
 
 
@@ -228,6 +239,7 @@ def write_manifest(entries, manifest_path):
         "- remoção de linhas curtas com listas/fórmulas;",
         "- remoção de linhas com excesso de parênteses;",
         "- filtragem de caracteres incomuns para reduzir ruído no tokenizer;",
+        "- conversão de quebras de linha internas em espaços para evitar tokens como `.\\n`;",
         "- normalização de espaços.",
         "",
         "| raw | processed | raw chars | processed chars |",
