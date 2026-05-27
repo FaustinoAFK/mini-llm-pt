@@ -21,18 +21,16 @@ EVAL_BATCH_SIZE = 16
 EVAL_NUM_BATCHES = 20
 MAX_ITERS = 10000
 LEARNING_RATE = 1e-3
-N_EMBD = 64
+N_EMBD = 128
 N_HEAD = 4
-N_LAYER = 2
+N_LAYER = 3
 DROPOUT = 0.1
 EVAL_INTERVAL = 1000
 
 
 def build_tensors(ids, block_size):
     if len(ids) < block_size + 1:
-        raise ValueError(
-            "O texto tokenizado é pequeno demais para o BLOCK_SIZE escolhido."
-        )
+        raise ValueError("Texto tokenizado pequeno demais para o BLOCK_SIZE.")
 
     examples = create_training_examples(ids, block_size)
     x = torch.tensor([example_x for example_x, _ in examples], dtype=torch.long)
@@ -55,6 +53,7 @@ def main():
     print(f"Train chars: {len(train_text)} | train tokens: {len(train_ids)}")
     print(f"Val chars: {len(val_text)} | val tokens: {len(val_ids)}")
     print(f"Compressao train chars/tokens: {len(train_text) / len(train_ids):.2f}x")
+    print(f"Config: block_size={BLOCK_SIZE}, batch_size={BATCH_SIZE}, n_embd={N_EMBD}, n_head={N_HEAD}, n_layer={N_LAYER}")
 
     x_train, y_train = build_tensors(train_ids, BLOCK_SIZE)
     x_val, y_val = build_tensors(val_ids, BLOCK_SIZE)
@@ -147,10 +146,7 @@ def main():
         checkpoint_path,
     )
 
-    print(
-        f"\nMelhor checkpoint BPE salvo em: {checkpoint_path} "
-        f"| step {best_step} | val loss {best_val_loss:.4f}"
-    )
+    print(f"\nMelhor checkpoint BPE salvo em: {checkpoint_path} | step {best_step} | val loss {best_val_loss:.4f}")
 
     model.load_state_dict(best_model_state_dict)
     model.eval()
