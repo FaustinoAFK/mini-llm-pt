@@ -1,4 +1,1 @@
-Bengio, Yoshua; Schuurmans, Dale; Lafferty, John; Williams, Chris K. I. and Culotta, Aron (eds.), Advances in Neural Information Processing Systems 22 (NIPS'22), December 7th 10th, 2009, Vancouver, BC, Neural Information Processing Systems (NIPS) Foundation, 2009
-Y. Bengio, Dong-Hyun Lee, Jorg Bornschein, Thomas Mesnard, Zhouhan Lin: Towards Biologically Plausible Deep Learning, arXiv.org, 2016
-«Página oficial»
-List of publications
+Bengio, Yoshua; Schuurmans, Dale; Lafferty, John; Williams, Chris K. I. and Culotta, Aron (eds.), Advances in Neural Information Processing Systems 22 (NIPS'22), December 7th 10th, 2009, Vancouver, BC, Neural Information Processing Systems (NIPS) Foundation, 2009 Y. Bengio, Dong-Hyun Lee, Jorg Bornschein, Thomas Mesnard, Zhouhan Lin: Towards Biologically Plausible Deep Learning, arXiv.org, 2016 «Página oficial» List of publications

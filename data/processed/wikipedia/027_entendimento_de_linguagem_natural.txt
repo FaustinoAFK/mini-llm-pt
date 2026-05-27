@@ -1,17 +1,1 @@
-Há um interesse comercial considerável na área por causa de sua aplicação ao raciocínio automatizado, tradução automática, resposta a perguntas, coleta de notícias, categorização de texto, ativação por voz, arquivamento e análise de conteúdo em larga escala.
-Em 1970, William A. Woods introduziu a rede de transição aumentada (ATN) para representar a entrada de linguagem natural. Em vez de regras de estrutura frasal, os ATNs usaram um conjunto equivalente de autômatos de estado finito que eram chamadas recursivamente. Os ATNs e seu formato mais geral, chamados de "ATNs generalizados", continuaram a ser usados por vários anos.
-John Ball, cientista cognitivo e inventor da Teoria Patom, apoia essa avaliação. O processamento de linguagem natural fez incursões para aplicativos para apoiar a produtividade humana em serviços e comércio eletrônico, mas em grande parte isso foi possível estreitando o escopo do aplicativo. Existem milhares de maneiras de solicitar algo em uma linguagem humana que ainda desafia o processamento de linguagem natural convencional. "Ter uma conversa significativa com as máquinas só é possível quando combinamos cada palavra com o significado correto com base nos significados das outras palavras na frase - assim como uma criança de 3 anos faz sem suposições."
-Semântica computacional
-Linguística computacional
-Teoria da representação do discurso
-Processamento linguístico profundo
-História do processamento de linguagem natural
-Extração de informação
-Mathematica
-Programação em linguagem natural
-Interface de usuário em linguagem natural
-Siri (software)
-WolframAlpha
-Extração de informação aberta
-Marcação de partes da fala
-Reconhecimento de fala
+Há um interesse comercial considerável na área por causa de sua aplicação ao raciocínio automatizado, tradução automática, resposta a perguntas, coleta de notícias, categorização de texto, ativação por voz, arquivamento e análise de conteúdo em larga escala. Em 1970, William A. Woods introduziu a rede de transição aumentada (ATN) para representar a entrada de linguagem natural. Em vez de regras de estrutura frasal, os ATNs usaram um conjunto equivalente de autômatos de estado finito que eram chamadas recursivamente. Os ATNs e seu formato mais geral, chamados de "ATNs generalizados", continuaram a ser usados por vários anos. John Ball, cientista cognitivo e inventor da Teoria Patom, apoia essa avaliação. O processamento de linguagem natural fez incursões para aplicativos para apoiar a produtividade humana em serviços e comércio eletrônico, mas em grande parte isso foi possível estreitando o escopo do aplicativo. Existem milhares de maneiras de solicitar algo em uma linguagem humana que ainda desafia o processamento de linguagem natural convencional. "Ter uma conversa significativa com as máquinas só é possível quando combinamos cada palavra com o significado correto com base nos significados das outras palavras na frase - assim como uma criança de 3 anos faz sem suposições." Semântica computacional Linguística computacional Teoria da representação do discurso Processamento linguístico profundo História do processamento de linguagem natural Extração de informação Mathematica Programação em linguagem natural Interface de usuário em linguagem natural Siri (software) WolframAlpha Extração de informação aberta Marcação de partes da fala Reconhecimento de fala

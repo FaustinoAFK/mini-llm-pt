@@ -13,6 +13,7 @@ Limpeza aplicada:
 - remoção de linhas curtas com listas/fórmulas;
 - remoção de linhas com excesso de parênteses;
 - filtragem de caracteres incomuns para reduzir ruído no tokenizer;
+- conversão de quebras de linha internas em espaços para evitar tokens como `.\n`;
 - normalização de espaços.
 
 | raw | processed | raw chars | processed chars |

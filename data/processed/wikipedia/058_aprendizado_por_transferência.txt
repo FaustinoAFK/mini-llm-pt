@@ -1,5 +1,1 @@
-Em 1992, Lorien Pratt formulou o algoritmo de transferência baseada em discriminabilidade (DBT).
-ADAPT (Python)
-TLlib (Python)
-Domain-Adaptation-Toolbox (Matlab)
-Recombinação (computação evolutiva)
+Em 1992, Lorien Pratt formulou o algoritmo de transferência baseada em discriminabilidade (DBT). ADAPT (Python) TLlib (Python) Domain-Adaptation-Toolbox (Matlab) Recombinação (computação evolutiva)
