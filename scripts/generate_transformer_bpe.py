@@ -9,8 +9,8 @@ from src.tokenizer.bpe_tokenizer import BPETokenizer
 CHECKPOINT_PATH = "checkpoints/transformer_bpe.pt"
 DEFAULT_PROMPT = "A inteligencia artificial "
 DEFAULT_MAX_NEW_TOKENS = 80
-DEFAULT_TEMPERATURE = 0.8
-DEFAULT_TOP_K = 20
+DEFAULT_TEMPERATURE = 0.5
+DEFAULT_TOP_K = 5
 
 
 def generate_text(checkpoint_path, prompt, max_new_tokens, temperature, top_k):
