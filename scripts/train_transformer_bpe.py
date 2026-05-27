@@ -26,6 +26,7 @@ N_HEAD = 4
 N_LAYER = 3
 DROPOUT = 0.2
 EVAL_INTERVAL = 1000
+PATIENCE = 2
 
 
 def build_tensors(ids, block_size):
@@ -53,7 +54,11 @@ def main():
     print(f"Train chars: {len(train_text)} | train tokens: {len(train_ids)}")
     print(f"Val chars: {len(val_text)} | val tokens: {len(val_ids)}")
     print(f"Compressao train chars/tokens: {len(train_text) / len(train_ids):.2f}x")
-    print(f"Config: block_size={BLOCK_SIZE}, batch_size={BATCH_SIZE}, n_embd={N_EMBD}, n_head={N_HEAD}, n_layer={N_LAYER}")
+    print(
+        f"Config: block_size={BLOCK_SIZE}, batch_size={BATCH_SIZE}, "
+        f"n_embd={N_EMBD}, n_head={N_HEAD}, n_layer={N_LAYER}, "
+        f"dropout={DROPOUT}, lr={LEARNING_RATE}, patience={PATIENCE}"
+    )
 
     x_train, y_train = build_tensors(train_ids, BLOCK_SIZE)
     x_val, y_val = build_tensors(val_ids, BLOCK_SIZE)
@@ -71,6 +76,7 @@ def main():
     best_val_loss = float("inf")
     best_step = None
     best_model_state_dict = None
+    evaluations_without_improvement = 0
 
     model.train()
     for step in range(MAX_ITERS):
@@ -101,14 +107,25 @@ def main():
                 best_val_loss = val_loss
                 best_step = step
                 best_model_state_dict = deepcopy(model.state_dict())
+                evaluations_without_improvement = 0
+            else:
+                evaluations_without_improvement += 1
 
             print(
                 f"step {step}: "
                 f"batch loss {loss.item():.4f} | "
                 f"train loss {train_loss:.4f} | "
                 f"val loss {val_loss:.4f} | "
-                f"best val {best_val_loss:.4f} at step {best_step}"
+                f"best val {best_val_loss:.4f} at step {best_step} | "
+                f"sem melhora {evaluations_without_improvement}/{PATIENCE}"
             )
+
+            if evaluations_without_improvement >= PATIENCE:
+                print(
+                    f"\nEarly stopping ativado no step {step}. "
+                    f"Melhor step: {best_step} | best val loss: {best_val_loss:.4f}"
+                )
+                break
 
     checkpoint_path = Path(CHECKPOINT_PATH)
     checkpoint_path.parent.mkdir(parents=True, exist_ok=True)
@@ -136,6 +153,8 @@ def main():
             "eval_num_batches": EVAL_NUM_BATCHES,
             "max_iters": MAX_ITERS,
             "eval_interval": EVAL_INTERVAL,
+            "patience": PATIENCE,
+            "learning_rate": LEARNING_RATE,
             "n_embd": N_EMBD,
             "n_head": N_HEAD,
             "n_layer": N_LAYER,
@@ -146,7 +165,10 @@ def main():
         checkpoint_path,
     )
 
-    print(f"\nMelhor checkpoint BPE salvo em: {checkpoint_path} | step {best_step} | val loss {best_val_loss:.4f}")
+    print(
+        f"\nMelhor checkpoint BPE salvo em: {checkpoint_path} "
+        f"| step {best_step} | val loss {best_val_loss:.4f}"
+    )
 
     model.load_state_dict(best_model_state_dict)
     model.eval()
