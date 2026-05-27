@@ -36,6 +36,8 @@ NOISY_TERMS = {
     "end",
     "align",
     "matrix",
+    "em inglês",
+    "em ingles",
 }
 
 ALLOWED_CHARS_PATTERN = re.compile(
@@ -79,6 +81,44 @@ def has_too_many_numbers(line):
     return numeric_tokens / len(tokens) > 0.35
 
 
+def is_numbered_list_noise(line):
+    stripped = line.strip()
+
+    if re.fullmatch(r"(\d+\s*){2,}", stripped):
+        return True
+
+    if re.fullmatch(r"\(?\s*[A-Za-z0-9]\s*\)?", stripped):
+        return True
+
+    if re.fullmatch(r"[\(\)\[\]\d\s,.;:/%-]+", stripped) and len(stripped) <= 30:
+        return True
+
+    return False
+
+
+def has_too_many_parentheses(line):
+    if len(line) < 12:
+        return False
+
+    parens = sum(char in "()[]" for char in line)
+    return parens / len(line) > 0.20
+
+
+def has_formula_like_pattern(line):
+    stripped = line.strip()
+
+    if re.search(r"\([A-Za-z0-9]\)", stripped):
+        return True
+
+    if re.search(r"\b[xXyYnN]\s*[\+\-\*/=]\s*\d", stripped):
+        return True
+
+    if re.search(r"\d\s*[\+\-\*/=]\s*\d", stripped):
+        return True
+
+    return False
+
+
 def should_drop_line(line):
     stripped = line.strip()
     lowered = stripped.lower()
@@ -101,6 +141,15 @@ def should_drop_line(line):
     if has_noisy_terms(stripped):
         return True
 
+    if is_numbered_list_noise(stripped):
+        return True
+
+    if has_formula_like_pattern(stripped):
+        return True
+
+    if has_too_many_parentheses(stripped):
+        return True
+
     if has_too_much_symbol_noise(stripped):
         return True
 
@@ -120,8 +169,8 @@ def clean_wikipedia_text(text):
     """Limpa um texto raw da Wikipedia para uso como dataset.
 
     A limpeza remove títulos de seção, linhas com muito ruído simbólico,
-    marcações matemáticas, termos comuns de LaTeX/MediaWiki e caracteres
-    incomuns que prejudicam o tokenizer por caractere.
+    marcações matemáticas, termos comuns de LaTeX/MediaWiki, notas de tradução
+    e caracteres incomuns que prejudicam o tokenizer.
     """
     text = normalize_text(text)
     cleaned_lines = []
@@ -174,8 +223,11 @@ def write_manifest(entries, manifest_path):
         "- remoção de títulos de seção no formato `== seção ==`;",
         "- remoção de linhas com excesso de símbolos;",
         "- remoção de linhas com termos LaTeX/MediaWiki como `displaystyle`, `frac` e `sqrt`;",
+        "- remoção de notas como `(em inglês)`;",
         "- remoção de linhas dominadas por números;",
-        "- filtragem de caracteres incomuns para reduzir ruído no CharTokenizer;",
+        "- remoção de linhas curtas com listas/fórmulas;",
+        "- remoção de linhas com excesso de parênteses;",
+        "- filtragem de caracteres incomuns para reduzir ruído no tokenizer;",
         "- normalização de espaços.",
         "",
         "| raw | processed | raw chars | processed chars |",
