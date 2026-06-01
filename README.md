@@ -113,6 +113,18 @@ Treinar o Transformer com BPE:
 python -m scripts.train_transformer_bpe
 ```
 
+Treinar o Transformer com BPE usando parâmetros customizados:
+
+```powershell
+python -m scripts.train_transformer_bpe --device auto --block-size 128 --batch-size 32 --max-iters 20000 --n-embd 256 --n-layer 4
+```
+
+Salvar métricas do treino em um arquivo JSONL:
+
+```powershell
+python -m scripts.train_transformer_bpe --metrics-path artifacts/runs/exp01.jsonl
+```
+
 Gerar texto com o Transformer por caractere:
 
 ```powershell
@@ -124,6 +136,19 @@ Gerar texto com o Transformer BPE:
 
 ```powershell
 python -m scripts.generate_transformer_bpe --prompt "A inteligencia artificial "
+```
+
+Avaliar qualitativamente o checkpoint BPE com prompts fixos:
+
+```powershell
+python -m scripts.evaluate_generation_bpe
+```
+
+Comparar inferência PyTorch CPU com OpenVINO:
+
+```powershell
+python -m scripts.benchmark_openvino --device CPU
+python -m scripts.benchmark_openvino --device GPU
 ```
 
 ## Testes
@@ -144,8 +169,5 @@ docs/wikipedia_sources.md
 
 ## Próximos passos recomendados
 
-1. Expor hiperparâmetros dos scripts de treino via argumentos de linha de comando.
-2. Comparar resultados entre tokenizer por caractere e BPE.
-3. Registrar métricas de treino em arquivo para acompanhar evolução.
-4. Experimentar `BLOCK_SIZE`, `N_EMBD`, `N_LAYER`, `N_HEAD` e tamanho do dataset.
-5. Melhorar a avaliação qualitativa da geração com prompts fixos.
+1. Comparar resultados entre tokenizer por caractere e BPE.
+2. Experimentar `BLOCK_SIZE`, `N_EMBD`, `N_LAYER`, `N_HEAD` e tamanho do dataset.
