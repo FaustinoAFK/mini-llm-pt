@@ -6,12 +6,9 @@ from pathlib import Path
 
 import torch
 
-from src.batching import get_batch
 from src.data_loader import read_text_file
-from src.evaluation import estimate_loss_over_batches
 from src.models.transformer import MiniTransformerLanguageModel
 from src.tokenizer.bpe_tokenizer import BPETokenizer
-from src.training_data import create_training_examples
 
 
 TRAIN_PATH = "data/splits/train.txt"
@@ -106,14 +103,47 @@ def resolve_device(device_name):
     return torch.device(device_name)
 
 
-def build_tensors(ids, block_size):
+def build_token_tensor(ids, block_size, device):
     if len(ids) < block_size + 1:
         raise ValueError("Texto tokenizado pequeno demais para o BLOCK_SIZE.")
 
-    examples = create_training_examples(ids, block_size)
-    x = torch.tensor([example_x for example_x, _ in examples], dtype=torch.long)
-    y = torch.tensor([example_y for _, example_y in examples], dtype=torch.long)
+    return torch.tensor(ids, dtype=torch.long, device=device)
+
+
+def get_sequence_batch(ids, block_size, batch_size):
+    if batch_size <= 0:
+        raise ValueError("batch_size precisa ser maior que zero.")
+
+    max_start = ids.numel() - block_size
+    if max_start <= 0:
+        raise ValueError("Texto tokenizado pequeno demais para o BLOCK_SIZE.")
+
+    starts = torch.randint(0, max_start, (batch_size,), device=ids.device)
+    offsets = torch.arange(block_size, device=ids.device)
+    positions = starts[:, None] + offsets
+    x = ids[positions]
+    y = ids[positions + 1]
     return x, y
+
+
+def estimate_loss_over_token_batches(model, ids, block_size, batch_size, num_batches):
+    if num_batches <= 0:
+        raise ValueError("num_batches precisa ser maior que zero.")
+
+    was_training = model.training
+    model.eval()
+
+    losses = []
+    with torch.no_grad():
+        for _ in range(num_batches):
+            batch_x, batch_y = get_sequence_batch(ids, block_size, batch_size)
+            _, loss = model(batch_x, batch_y)
+            losses.append(loss.item())
+
+    if was_training:
+        model.train()
+
+    return sum(losses) / len(losses)
 
 
 def main():
@@ -176,12 +206,8 @@ def main():
         },
     )
 
-    x_train, y_train = build_tensors(train_ids, args.block_size)
-    x_val, y_val = build_tensors(val_ids, args.block_size)
-    x_train = x_train.to(device)
-    y_train = y_train.to(device)
-    x_val = x_val.to(device)
-    y_val = y_val.to(device)
+    train_tensor = build_token_tensor(train_ids, args.block_size, device)
+    val_tensor = build_token_tensor(val_ids, args.block_size, device)
 
     model = MiniTransformerLanguageModel(
         vocab_size=tokenizer.vocab_size,
@@ -200,7 +226,11 @@ def main():
 
     model.train()
     for step in range(args.max_iters):
-        batch_x, batch_y = get_batch(x_train, y_train, args.batch_size)
+        batch_x, batch_y = get_sequence_batch(
+            train_tensor,
+            block_size=args.block_size,
+            batch_size=args.batch_size,
+        )
         logits, loss = model(batch_x, batch_y)
 
         optimizer.zero_grad(set_to_none=True)
@@ -208,17 +238,17 @@ def main():
         optimizer.step()
 
         if step % args.eval_interval == 0 or step == args.max_iters - 1:
-            train_loss = estimate_loss_over_batches(
+            train_loss = estimate_loss_over_token_batches(
                 model,
-                x_train,
-                y_train,
+                train_tensor,
+                block_size=args.block_size,
                 batch_size=args.eval_batch_size,
                 num_batches=args.eval_num_batches,
             )
-            val_loss = estimate_loss_over_batches(
+            val_loss = estimate_loss_over_token_batches(
                 model,
-                x_val,
-                y_val,
+                val_tensor,
+                block_size=args.block_size,
                 batch_size=args.eval_batch_size,
                 num_batches=args.eval_num_batches,
             )
@@ -267,10 +297,10 @@ def main():
     if best_model_state_dict is None:
         best_model_state_dict = model.state_dict()
         best_step = args.max_iters - 1
-        best_val_loss = estimate_loss_over_batches(
+        best_val_loss = estimate_loss_over_token_batches(
             model,
-            x_val,
-            y_val,
+            val_tensor,
+            block_size=args.block_size,
             batch_size=args.eval_batch_size,
             num_batches=args.eval_num_batches,
         )
