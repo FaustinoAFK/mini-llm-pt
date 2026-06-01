@@ -310,3 +310,30 @@ matemática para IA
 ```
 
 Evite misturar muitos temas distantes no começo. O objetivo é fazer o modelo aprender um domínio técnico coerente em português.
+
+# Expansão Dataset v0.3 - linguagem, ciência e engenharia
+
+Adicionado em 2026-06-01 para ampliar cobertura linguística, científica e de engenharia do dataset.
+
+- [Análise do discurso](https://pt.wikipedia.org/wiki/An%C3%A1lise_do_discurso)
+- [Atenção](https://pt.wikipedia.org/wiki/Aten%C3%A7%C3%A3o)
+- [Análise matemática](https://pt.wikipedia.org/wiki/An%C3%A1lise_matem%C3%A1tica)
+- [Biologia](https://pt.wikipedia.org/wiki/Biologia)
+- [CSS](https://pt.wikipedia.org/wiki/CSS)
+- [Android](https://pt.wikipedia.org/wiki/Android)
+- [Compressão de dados](https://pt.wikipedia.org/wiki/Compress%C3%A3o_de_dados)
+
+# Expansão Dataset v0.4 - páginas por categoria
+
+Adicionado em 2026-06-01 via categorias da Wikipedia em português.
+
+- [Linguística](https://pt.wikipedia.org/wiki/Lingu%C3%ADstica)
+- [Binário multiarquitetura](https://pt.wikipedia.org/wiki/Bin%C3%A1rio_multiarquitetura)
+- [Matemática](https://pt.wikipedia.org/wiki/Matem%C3%A1tica)
+- [Física](https://pt.wikipedia.org/wiki/F%C3%ADsica)
+- [Eficiência](https://pt.wikipedia.org/wiki/Efici%C3%AAncia)
+- [Bioética](https://pt.wikipedia.org/wiki/Bio%C3%A9tica)
+- [Arquitetura de informação](https://pt.wikipedia.org/wiki/Arquitetura_de_informa%C3%A7%C3%A3o)
+- [Internet](https://pt.wikipedia.org/wiki/Internet)
+- [Programa de computador](https://pt.wikipedia.org/wiki/Programa_de_computador)
+- [Adobe Acrobat](https://pt.wikipedia.org/wiki/Adobe_Acrobat)

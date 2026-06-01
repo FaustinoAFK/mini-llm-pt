@@ -1,0 +1,87 @@
+Linguística (FO 1943: lingüística) é o estudo científico da linguagem. Em outras palavras, trata-se do estudo abrangente, objetivo e sistemático de todos os aspectos das línguas humanas. A depender da teoria empregada, a linguística pode estudar as línguas naturais como sistemas autônomos, sociais, cognitivos, biológicos ou sociocognitivos. Consequentemente, a linguística pode ser considerada parte das ciências sociais, das ciências naturais, das ciências cognitivas e das humanidades.
+As áreas tradicionais de análise linguística refletem os diferentes fenômenos que compõem os sistemas linguísticos, como sintaxe (estrutura de orações), morfologia (estrutura de palavras), semântica (significado), fonética (os sons da fala), fonologia (os sistemas de sons de cada língua), pragmática (a relação entre significados e o seu contexto de uso). Outras áreas dizem respeito ao contato com outras disciplinas, como a sociolinguística (contato com a sociologia e a antropologia), a psicolinguística (contato com a psicologia) e a biolinguística (contato com a biologia).
+Há ainda a divisão entre linguística teórica, que tem como objetivos a descrição e a explicação do funcionamento dos sistemas linguísticos, e a linguística aplicada, que se volta ao modo como conceitos e descobertas em linguística podem ser utilizados para fins práticos, como aprimorar o ensino (especialmente de línguas maternas e adicionais), a tradução e o uso de evidências linguísticas em processos judiciais (linguística forense).
+
+
+== Divisões da linguística ==
+Os linguistas dividem o estudo da linguagem em certo número de áreas que são estudadas mais ou menos independentemente. Estas são as divisões mais comuns:
+
+fonética, o estudo dos diferentes sons empregados em linguagem;
+fonologia, o estudo dos padrões dos sons básicos de uma língua;
+morfologia, o estudo da estrutura interna das palavras;
+sintaxe, o estudo de como a linguagem combina palavras para formar frases gramaticais;
+semântica, o estudo dos sentidos das frases e das palavras que a integram, podendo ser, por exemplo, formal ou lexical;
+lexicologia, o estudo do conjunto das palavras de um idioma, ramo de estudo que contribui para a lexicografia, área de atuação dedicada à elaboração de dicionários, enciclopédias e outras obras que descrevem o uso ou o sentido do léxico;
+terminologia, estudo que se dedica ao conhecimento e análise dos léxicos especializados das ciências e das técnicas;
+estilística, o estudo do estilo na linguagem;
+pragmática, o estudo de como as oralizações são usadas (literalmente, figurativamente ou de quaisquer outras maneiras) nos atos comunicativos;
+filologia é o estudo dos textos e das linguagens antigas.
+
+Nem todos os linguistas concordam que todas essas divisões tenham grande significado. A maior parte dos linguistas cognitivos, por exemplo, acham, provavelmente, que as categorias "semântica" e "pragmática" são arbitrárias e quase todos os linguistas concordariam que essas divisões se sobrepõem consideravelmente. Por exemplo, a divisão gramática usualmente cobre fonologia, morfologia e sintaxe.
+Ainda existem campos como os da linguística teórica e da linguística histórica. A linguística teórica procura estudar questões tão diferentes sobre como as pessoas, usando suas particulares linguagens, conseguem realizar comunicação; quais propriedades todas as linguagens têm em comum, qual conhecimento uma pessoa deve possuir para ser capaz de usar uma linguagem e como a habilidade linguística é adquirida pelas crianças.
+
+
+== A linguística histórica ==
+A linguística histórica, dominante no século XIX, tem por objetivo classificar as línguas do mundo de acordo com suas afiliações e descrever o seu desenvolvimento histórico. Na Europa do século XIX, a linguística privilegiava o estudo comparativo histórico das línguas indo-europeias, preocupando-se especialmente em encontrar suas raízes comuns e em traçar seu desenvolvimento.
+A preocupação com a descrição das línguas espalhou-se pelo mundo e milhares dessas foram analisadas em vários graus de profundidade. Quando esse trabalho esteve em desenvolvimento no início do século XX na América do Norte, os linguistas se confrontaram com línguas cujas estruturas diferiam fortemente do paradigma europeu, mais familiar. Percebeu-se, assim, a necessidade de se desenvolver uma teoria e métodos de análise da estrutura das línguas, por mais que na época ninguém pensava na existência de línguas e culturas próprias entre os índios da América e consideravam os índios como uma criatura selvagem que pensava como animal selvagem. O pensamento de pessoas como Franz Boas caracterizou-se uma grande excepção, já que esse foi quem inventou a ideia de que índios tinham cultura própria, o que vai ser extremamente contrário à Visão Normal de Mundo e as noções científicas da época.
+Para a linguística histórico-comparativa ser aplicada a línguas desconhecidas, o trabalho inicial do linguista era fazer sua descrição completa. A linguagem verbal era, geralmente, vista como consistindo em vários níveis, ou camadas, e, supostamente, todas as línguas naturais humanas tinham o mesmo número desses níveis.
+O primeiro nível é a fonética, que se preocupa com os sons da língua sem considerar o sentido. Na descrição de uma língua desconhecida esse era o primeiro aspecto estrutural a ser estudado. A fonética divide-se em três: articulatória, que estuda as posições e os movimentos dos lábios, da língua e dos outros órgãos relacionados com a produção da fala (como as cordas vocais); acústica, que lida com as propriedades das ondas de som; e auditiva, que lida com a percepção da fala.
+O segundo nível é a fonologia, que identifica e estuda os menores elementos distintos (chamados de fonemas) que podem diferenciar o significado das palavras. A fonologia também inclui o estudo de unidades maiores como sílabas, palavras e frases fonológicas e de sua acentuação e entonação.
+O terceiro nível é a morfologia, que analisa as unidades com as quais as palavras são montadas, os morfemas. Esses são as menores unidades da gramática: raízes, prefixos e sufixos. Os falantes nativos reconhecem os morfemas como gramaticalmente significantes ou significativos. Eles podem frequentemente ser determinados por uma série de substituições. Um falante de inglês reconhece que "make" é uma palavra diferente de "makes", pois o sufixo "-s" é um morfema distinto. Em inglês, a palavra "morpheme" consiste de dois morfemas, a raiz "morph-" e o sufixo "-eme", nenhum dos quais tinha ocorrência isolada na língua inglesa por séculos, até "morph" ser adotado em linguística para a realização fonológica de um morfema e o verbo "to morph" ter sido cunhado para descrever um tipo de efeito visual feito em computadores. Um morfema pode ter diferentes realizações (morphs) em diferentes contextos. Por exemplo, o morfema verbal "do" no inglês tem três pronúncias bem distintas nas palavras "do", "does" (com o sufixo "-es") e "don't" (com a aposição do advérbio "not" em forma contracta "-n't"). Tais diferentes formas de um morfema são chamados de alomorfos.
+Os padrões de combinações de palavras de uma linguagem são conhecidos como sintaxe. O termo gramática usualmente cobre sintaxe e morfologia. O estudo dos significados das palavras e das construções sintáticas é chamado de semântica.
+
+
+== Escolas de pensamento ==
+
+
+=== Linguística humanística ===
+O princípio fundamental da linguística humanística é que a linguagem é uma invenção criada por pessoas. Uma tradição semiótica de pesquisa linguística considera a linguagem um sistema de signos que surge da interação de significado e forma. A organização dos níveis linguísticos é considerada computacional. A linguística é essencialmente vista como relacionada aos estudos sociais e culturais porque diferentes línguas são moldadas na interação social pela comunidade da fala. Estruturas que representam a visão humanística da linguagem incluem linguística estrutural, entre outros.
+A análise estrutural significa dissecar cada nível linguístico: fonético, morfológico, sintático e do discurso, nas menores unidades. Estes são coletados em inventários (por exemplo, fonema, morfema, classes lexicais, tipos de frase) para estudar sua interconexão dentro de uma hierarquia de estruturas e camadas. A análise funcional adiciona à análise estrutural a atribuição de funções semânticas e outras funções funcionais que cada unidade pode ter. Por exemplo, um sintagma nominal pode funcionar como sujeito ou objeto da frase; ou o agente ou paciente.
+A linguística funcional, ou gramática funcional, é um ramo da linguística estrutural. No referencial humanístico, os termos estruturalismo e funcionalismo estão relacionados ao seu significado em outras ciências humanas. A diferença entre o estruturalismo formal e o funcional está na maneira como as duas abordagens explicam por que as linguagens têm as propriedades que possuem. A explicação funcional envolve a ideia de que a linguagem é uma ferramenta de comunicação ou que a comunicação é a função primária da linguagem. As formas linguísticas são, consequentemente, explicadas por um apelo ao seu valor funcional, ou utilidade. Outras abordagens estruturalistas assumem a perspectiva de que a forma decorre dos mecanismos internos do sistema de linguagem bilateral e multicamadas.
+
+
+=== Linguística biológica ===
+Abordagens como a linguística cognitiva e a gramática gerativa estudam a cognição linguística com o objetivo de descobrir os fundamentos biológicos da linguagem. Na Gramática Gerativa, esses fundamentos são entendidos como incluindo o conhecimento gramatical específico do domínio inato. Assim, uma das preocupações centrais da abordagem é descobrir quais aspectos do conhecimento linguístico são inatos e quais não são.
+A Linguística Cognitiva, em contraste, rejeita a noção de gramática inata e estuda como a mente humana cria construções linguísticas a partir de esquemas de eventos, e o impacto das restrições cognitivas e preconceitos na linguagem humana. Da mesma forma que a programação neurolinguística, a linguagem é abordada por meio dos sentidos. Linguistas cognitivos estudam a encarnação do conhecimento, buscando expressões que se relacionam com esquemas modais.
+Uma abordagem intimamente relacionada é a linguística evolutiva que inclui o estudo de unidades linguísticas como replicadores culturais. É possível estudar como a linguagem se replica e se adapta à mente do indivíduo ou da comunidade de fala. A gramática de construção é uma estrutura que aplica o conceito de meme ao estudo da sintaxe.
+A abordagem generativa versus evolutiva é às vezes chamada de formalismo e funcionalismo, respectivamente. Esta referência é, no entanto, diferente do uso dos termos em ciências humanas.
+
+
+== Falantes, comunidades linguísticas e universais linguísticos ==
+Os linguistas também diferem em quão grande é o grupo de usuários das linguagens que eles estudam. Alguns analisam detalhadamente a linguagem ou o desenvolvimento da linguagem de um dado indivíduo. Outros estudam a linguagem de toda uma comunidade, como por exemplo a linguagem de todos os que falam o inglês vernáculo afro-americano. Outros ainda tentam encontrar conceitos linguísticos universais que se apliquem, em algum nível abstrato, a todos os usuários de qualquer linguagem humana. Esse último projeto tem sido defendido por Noam Chomsky e interessa a muitas pessoas que trabalham nas áreas de psicolinguística e de Ciência da Cognição. A pressuposição é que existem propriedades universais na linguagem humana que permitiriam a obtenção de importantes e profundos entendimentos sobre a mente humana.
+
+
+== Fala versus escrita ==
+Alguns linguistas contemporâneos acham que a fala é um objeto de estudo mais importante do que a escrita. Talvez porque ela seja uma característica universal dos seres humanos, e a escrita não (pois existem muitas culturas que não possuem a escrita). O fato de as pessoas aprenderem a falar e a processar a linguagem oral mais facilmente e mais precocemente do que a linguagem escrita também é outro fator. Alguns (veja cientistas da cognição) acham que o cérebro tem um "módulo de linguagem" inato e que podemos obter conhecimento sobre ele estudando mais a fala que a escrita.
+A escrita também é muito estudada e novos meios de estudá-la são constantemente criados. Por exemplo, na intersecção do corpus linguístico e da linguística computacional, os modelos computadorizados são usados para estudar milhares de exemplos da língua escrita do Wall Street Journal, por exemplo. Bases de dados semelhantes sobre a fala já existem, um dos destaques é o Child Language Data Exchange System ou, em tradução livre, "Sistema de Intercâmbio de Dados da Linguagem Infantil".
+
+
+== Descrição e prescrição ==
+Provavelmente, a maior parte do trabalho feito atualmente sob o nome de linguística é puramente descritivo. Há, também, alguns profissionais (e mesmo amadores) que procuram estabelecer regras para a linguagem, sustentando um padrão particular que todos devem seguir.
+As pessoas atuantes nesses esforços de descrição e regulamentação têm sérias desavenças sobre como e por que razão a linguagem deve ser estudada. Esses dois grupos podem descrever o mesmo fenômeno de modos diferentes, em linguagens diferentes. Aquilo que, para um grupo é uso incorreto, para o outro é uso idiossincrático, ou apenas simplesmente o uso de um subgrupo particular (geralmente menos poderoso socialmente do que o subgrupo social principal, que usa a mesma linguagem).
+Em alguns contextos, as melhores definições de linguística e linguista podem ser: aquilo estudado em um típico departamento de linguística de uma universidade e a pessoa que ensina em tal departamento. A linguística, nesse sentido estrito, geralmente não se refere à aprendizagem de outras línguas que não a nativa do estudioso (exceto quando ajuda a criar modelos formais de linguagem).
+Especialistas em linguística não realizam análise literária e não se aplicam a esforços para regulamentar como aqueles encontrados em livros como The Elements of Style (Os Elementos de Estilo, em tradução livre), de Strunk e White. Os linguistas procuram estudar o que as pessoas efetivamente fazem, nos seus esforços para comunicar usando a linguagem, e não o que elas deveriam fazer.
+
+
+== Estudos inspirados no cérebro ==
+Psicolinguística e a Neurociência da Linguagem fazem pesquisa linguística centrada no cérebro. Segundo Marr é preciso analisar os neurônios em concomitância seu funcionamento durante o processamento da linguagem para que essa relação faça sentido. Por isso, a Neurociência da Linguagem busca relacionar o processamento cognitivo da linguagem ao funcionamento fisiológico do cérebro. Por intermédio de tecnologias de monitoramento online como a eletroencefalografia (EEG) e magnetoencefalografia (MEG) é possível monitorar online — em tempo real — a atividade cerebral no momento da produção ou compreensão de materiais escritos. Atualmente, a Neurociência da Linguagem mapeia as vias do processamento da linguagem.
+
+
+== Ver também ==
+
+
+== Referências ==
+
+
+== Bibliografia ==
+
+
+== Ligações externas ==
+
+Associação Brasileira de Linguística
+Associação Portuguesa de Linguística
+«Forum on Linguistics» (em inglês) 
+«Applied Linguistics». (em inglês) 
+Fórum Franco-Dousha
+Códigos e nome das línguas
+Sobre língua, linguagem e Linguística: uma entrevista com Mário Perini. ReVEL, vol. 8, n. 14, 2010

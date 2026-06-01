@@ -1,0 +1,52 @@
+O binário multiarquitetura ou binário gordo (em tradução literal) é um programa de computador que possui um conjunto de instruções de diversas arquiteturas de computador, podendo assim rodar em diferentes plataformas de hardware. O método de implementação mais comum deste tipo de tecnologia, é a inclusão de código de máquina de vários conjuntos de instruções, gerando assim um arquivo binário evidentemente maior que aquele voltado a apenas uma plataforma computacional.
+Esta tecnologia não é algo implementado apenas a nível de sistema operacional, pois existem várias maneiras de lidar com esta tecnologia, como por exemplo, um programa instalador, que seleciona a arquitetura adequada na operação de instalação, a distribuição do código-fonte, para que seja compilado no momento da instalação, ou ainda, uma compilação do tipo JIT, com a utilização de uma máquina virtual.
+
+
+== Apple ==
+
+
+=== Binário Multiarquitetura ===
+A implementação do binário multiarquitetura da Apple Inc., veio no período de transição arquitetural do Macintosh 68k, para o PowerPC, no ano de 1994. Muitas aplicações da antiga arquitetura, rodavam de forma transparente em sua nova plataforma envolvendo um esquema de emulação, porém, código emulado de uma forma geral roda em velocidades menores, a código nativo de uma determinada arquitetura. Eles fizeram isto juntando em um mesmo binário, trechos pertencentes a ambas as arquiteturas. Enquanto o código antigo 68k, residia na Resource fork, o código mais atual PowerPC residia na data fork, no formato Preferred Executable Format, criando um binário multiarquitetura.
+
+
+=== Binários multiarquitetura NeXT/Apple ===
+
+
+==== Binários multiarquitetura NeXTSTEP ====
+Binários gordos, foi uma funcionalidade dos sistemas operacionais NeXT e NeXTSTEP/OPENSTEP, começando pelo NeXTSTEP 3.1. No NeXTSTEP, eles eram chamados "Multi-Architecture Binaries". Os binários multiarquitetura eram compilados de forma que pudesser rodar em hadrware Motorola 68k, IA-32 e PC, sendo apenas um arquivo binário, para todas as plataformas. Um tempo depois, permitia aplicações OPENSTEP rodar em PC e várias plataformas RISC que eram suportadas por tal sistema operacional. Binários multiarquitetura eram arquivos com um formato especial, onde um arquivo armazenada um ou mais subarquivos Mach-O, e cada um destes representava uma arquitetura suportada. Cada arquivo binário multiarquitetura possuía uma estrutura (struct fat_header) contendo duas variáveis do tipo "unsigned integers". O primeiro inteiro (magic), servia para identificar o arquivo como um binário multiarquitetura. O segundo inteiro (nfat_arch), definia quantas arquiteturas aquele arquivo possuía(ou, quantas versões compiladas para diferentes arquiteturas, aquele binário possuía). Após este cabeçalho, estruturas do tipo fat_arch(struct fat_arch) existiam no arquivo, que definiam "offset"(ponto de início do arquivo), definindo onde começava determinado arquivo, o alinhamento, o tamanho da CPU e o tipo de arquitetura para o qual aquele subarquivo pertencia.
+A versão da GCC entregue com as ferramentas de desenvolvimento, permitia a compilação cruzada de um código-fonte para diferentes arquiteturas do NeXTStep. Por exemplo, era possível escolher as arquiteturas alvo da compilação, com o parametro '-arch'. Esta era uma forma bastante conveniente de se distribuir um software que rodava em diversas arquiteturas.
+Também era possível a criação de bibliotecas, com diferentes arquivos objeto
+
+
+==== Mach-O e Mac OS X ====
+A Apple adquiriu a NeXT em meados de 1996, e continuaram o trabalho com o OPENSTEP. Mach-O se tornou o arquivo objeto nativo no sistema operacional livre da Apple, o Darwin(2000) e o Apple Mac OS X(2001), e os binários multiarquitetura vindos do NeXT, continuaram a ser suportados pelo sistema operacional. No Mac OS X, os binários multiarquitetura podem ser usados em diversas variantes de uma arquitetura, e binários 32-bit, com código otimizado para as gerações de processadores PowerPC G3, PowerPC G4 e PowerPC 970. Também suporta versões 32-bit e 64-bit do PowerPC.
+
+
+==== Binário universal da Apple ====
+
+Um binário universal é, uma tecnologia da Apple Inc. onde um tipo de arquivo executável ou um pacote de aplicativos que roda nativamente em computadores Macintosh baseados tanto em processadores PowerPC da IBM como em x86 Intel.
+
+
+== Linux ==
+
+
+=== FatELF: Binário Universal para Linux ===
+FatELF, é uma implementação para Linux e outros derivados do Unix. Tecnicamente, o FatELF é uma extensão dos arquivos tipo ELF do Linux. Adicionalmente a abstração de arquitetura de computador e ABI, de acordo com o desenvolvedor Ryan C. Gordon o FatELF proveria as seguintes vantagens ao Linux:
+
+Distribuições Linux não precisariam separar os downloads por plataforma;
+A separação de bibliotecas dentro de /lib, /lib32 e /lib64 não seria mais necessária na estrutura de diretórios;
+Os binários e bibliotecas mais adequadas seriam escolhidas pelo sistema operacional, e não por shell scripts;
+Se a Interface binária de aplicação mudar, software legado será ainda suportado;
+Distribuição de plugins de navegador que funcionam em qualquer arquitetura;
+Distribuição de um binário único sendo compativel entre Linux e BSD(e suas variantes), sem a necessidade de uma camada adicional de abstração;
+O mesmo dispositivo raíz pode ser arrancado(bootado) em diferentes arquiteturas, para fins de desenvolvimento e experimentação;
+Facilidade para aplicações portáteis, que armazenados em um pen-drive podem ser utilizados em vários computadores;
+Uma máquina virtual da distribuição Ubuntu, pode ser encontrada aqui. O projeto FatELF está parado, porém, os patches podem ser encontrados no site do desenvolvedor, pois após uma longa e calorosa discussão, os desenvolvedores mais antigos do kernel Linux, acharam mais prudente e até mesmo pouco vantajoso a inclusão de tais patches a árvore principal de software.
+
+
+== Referências ==
+
+
+== Ligações externas ==
+FatELF: Binários Universais para Linux
+Método e instrumental para executáveis independentes de arquitetura (Google Patentes)

@@ -1,0 +1,60 @@
+Eficiência: quantidade de divisões ordenada de uma tarefa.
+Eficiência é a capacidade de um administrador para conseguir produtos mais elevados em relação aos insumos necessários para obtê-los. A capacidade de “fazer as coisas direito”.  
+
+
+== Física ==
+A eficiência representa uma medida segundo a qual os recursos são convertidos em resultados de forma mais econômica. Na física e engenharia, define-se eficiência como sendo a relação entre a energia fornecida a um sistema (seja em termos de calor ou de trabalho) e a energia produzida pelo sistema (normalmente na forma de trabalho). A eficiência de um processo é definida como:
+
+  
+    
+      
+        η
+        =
+        
+          
+            W
+            
+              e
+              n
+              e
+              r
+              g
+              i
+              a
+            
+          
+        
+      
+    
+    {\displaystyle \eta ={\frac {W}{energia}}}
+  
+
+onde
+W é a quantidade de trabalho útil produzido no processo;
+energia é a quantidade de energia oferecida ao sistema.
+Num sistema fechado, a eficiência è estritamente menor que 100%.
+
+
+== Economia ==
+Eficiência econômica é definida como uma situação em que não há mais nada para melhorar sem piorar alguma outra coisa. Dependendo do contexto, o termo é utilizado para dois conceitos relacionados mas não equivalentes:
+
+Eficiência de alocação ou Eficiência de Pareto: Arranjo já ideal entre duas partes, em que qualquer mudança para assistir uma parte prejudicaria a outra;
+Eficiência produtiva: Arranjo já ideal, em que nenhuma produção adicional pode ser obtida sem aumentar os custos.
+A eficiência econômica é, portanto, um termo genérico dado aos valores determinados para uma dada situação, visando estimar a quantidade de desperdício ou "atrito" (ou outras características econômicas indesejadas) presentes no quadro analisado.
+
+
+== Energia e ambiente ==
+A eficiência energética consiste na ideia de otimização de um determinado projeto elétrico, através de estudos baseados num levantamento pormenorizado de todo o sistema elétrico, a fim de apontar algumas medidas de racionalização da energia elétrica e de segurança para as pessoas ali presentes, consequentemente, reduzindo a demanda de energia e impactos ambientais causados pela criação de novas usinas hidrelétricas ou de outro tipo. Eficiência pressupõe que na produção de qualquer bem se utilizem o mínimo de recursos, aos mais baixos custos.
+Eficiência econômica ou eficiência alocativa tem por objetivo alcançar o mais alto nível de bem-estar social dada uma determinada estrutura de valores (oferta e demanda). O bem-estar social é máximo quando o custo marginal da última unidade produzida for igual a sua utilidade para a sociedade.
+
+
+== Ver também ==
+Eficácia
+Efetividade
+
+
+== Referências ==
+
+
+== Ligações externas ==
+Laboratório de Eficiência Energética - DEL/UFMS

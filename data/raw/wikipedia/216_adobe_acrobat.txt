@@ -1,0 +1,36 @@
+Adobe Acrobat é um software desenvolvido pela Adobe, que permite a conversão de documentos de diversos formatos em um arquivo de formato PDF (Portable Document Format). O Software Adobe Acrobat proporciona a capacidade de converter o documento de maneira fiel ao original independente do seu conteúdo. Para visualizar estes tipos de documentos, a Adobe disponibiliza gratuitamente o software para leitura (Adobe Reader) independente do sistema operacional e dispositivo (hardware).
+Está disponivel em quatro edições:
+
+Adobe Acrobat Elements, para quem apenas pretenda transformar documentos de outros formatos em documentos PDF;
+Adobe Acrobat Standard, para quem faça documentos PDF a partir do scanner;
+Adobe Acrobat Professional, para quem pretenda fazer formulários a partir do programa da suite Adobe Designer;
+Adobe Acrobat 3D, para quem pretenda fazer documentos com imagens em 3D.
+As edições estão ordenadas da mais básica, em cima, para a mais avançada, em baixo. Todas as versões abaixo de uma outra têm as funcionalidades que a acima tem e outras.
+
+
+== Formatos de arquivo suportados ==
+A tabela abaixo contém alguns dos formatos de arquivo suportados que podem ser abertos ou acessados no Adobe Acrobat.
+
+
+== Segurança ==
+Uma lista abrangente de boletins de segurança para a maioria dos produtos da Adobe e suas versões relacionadas é publicada em sua página de Boletins de segurança e avisos e em outros locais relacionados. Em particular, o histórico detalhado de atualizações de segurança para todas as versões do Adobe Acrobat foi tornado público.
+Desde a versão 3.02 em diante, o Acrobat Reader inclui suporte para JavaScript. Essa funcionalidade permite que o criador de um documento PDF inclua código que é executado quando o documento é lido. Arquivos PDF maliciosos que tentam explorar vulnerabilidades de segurança podem ser vinculados a páginas da web ou distribuídos como anexos de e-mail. Embora o JavaScript seja projetado sem acesso direto ao sistema de arquivos para torná-lo "seguro", foram relatadas vulnerabilidades devido a abusos, como a distribuição de código malicioso por meio de programas Acrobat. Aplicações da Adobe já haviam se tornado os alvos mais populares de ataques a software cliente durante o último trimestre de 2009. A McAfee previu que o software da Adobe, especialmente o Reader e o Flash, seria o principal alvo de ataques de software no ano de 2010.
+
+
+=== Aviso de setembro de 2006 ===
+Em 13 de setembro de 2006, David Kierznowski forneceu arquivos PDF de exemplo ilustrando vulnerabilidades de JavaScript. Desde pelo menos a versão 6, o JavaScript pode ser desativado usando o menu de preferências e URLs incorporados que são iniciados são interceptados por uma caixa de diálogo de aviso de segurança para permitir ou bloquear o site de ativação.
+
+
+=== Aviso de fevereiro de 2009 ===
+Em 19 de fevereiro de 2009, a Adobe lançou um Boletim de Segurança anunciando vulnerabilidades de JavaScript nas versões 9 e anteriores do Adobe Reader e Acrobat. Como solução alternativa para esse problema, o US-CERT recomendou desativar o JavaScript nos produtos Adobe afetados, cancelar a integração com o Windows shell e navegadores da web (enquanto realizam uma versão estendida de desintegração para o Internet Explorer), desativar os serviços de indexação da Adobe e evitar todos os arquivos PDF de fontes externas.
+
+
+=== Aviso de fevereiro de 2013 ===
+A Adobe identificou vulnerabilidades críticas no Adobe Reader e Acrobat XI (11.0.01 e anteriores) para Windows e Macintosh, nas versões 9.5.3 e anteriores das versões 9.x. Essas vulnerabilidades podem fazer com que o aplicativo falhe e, potencialmente, permitir que um invasor assuma o controle do sistema afetado. Houve relatos de exploração dessas vulnerabilidades para enganar usuários do Windows a clicar em um arquivo PDF malicioso entregue em uma mensagem de e-mail. A Adobe recomendou que os usuários atualizassem suas instalações do produto.
+
+
+=== Aviso de janeiro de 2016 ===
+A Adobe lançou atualizações de segurança para o Adobe Acrobat e Reader para Windows e Macintosh. Essas atualizações abordam vulnerabilidades críticas que poderiam potencialmente permitir que um invasor assumisse o controle do sistema afetado.
+
+
+== Referências ==

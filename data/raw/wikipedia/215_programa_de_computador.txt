@@ -1,0 +1,46 @@
+Um programa de computador ou programa informático é um conjunto de instruções que descrevem uma tarefa a ser realizada por um computador. O termo pode ser uma referência ao código fonte, escrito em alguma linguagem de programação, ou ao arquivo que contém a forma executável deste código fonte.
+
+
+== História ==
+
+O programa de computador surgiu antes do desenvolvimento do computador eletrônico. Um trabalho publicado em 1843 por Ada Lovelace, sugerindo uma forma para calcular os números de Bernoulli através da máquina analítica de Charles Babbage, é tido como o primeiro programa de computador.
+A primeira aplicação prática da programação surgiu com os dispositivos baseados em cartões perfurados, que eram utilizados desde o século XVIII na indústria da confecção. O empresário estadunidense Hermann Hollerith utilizou o conceito no processamento dos dados do censo dos Estados Unidos em 1890.
+Os primeiros computadores eletrônicos eram programados somente através de linguagens de baixo nível. Essas linguagens não disponibilizavam um nível de abstração sobre o hardware e os comandos eram interpretados diretamente pelos circuitos eletrônicos. No ENIAC, um dos equipamentos mais emblemáticos na história da computação, a programação era realizada através de ligações manuais, que uniam as unidades de processamento do computador, formando uma sequência de execução.
+As linguagens de alto nível surgiram por volta da década de 1940, como a Plankalkül e a Short Code, e tiveram grande impulso com o desenvolvimento dos compiladores, que tornaram a programação uma atividade possível para um grande número de pessoas. Na década de 1950 surgiu a primeira linguagem de grande aceitação, o Fortran.
+
+
+== Terminologia ==
+Um programa de computador é a formalização de um algoritmo em qualquer linguagem capaz de ser transformada em instruções que serão executadas por um computador gerando os resultados esperados.
+O termo software pode ser utilizado quando se quer designar um conjunto de programas ou, mais frequentemente, quando é feita uma referência à parte não física do sistema computacional, em contraposição ao termo hardware, que designa o conjunto de componentes eletrônicos que constituem um computador.
+Os programas de computador utilizados diretamente por pessoas comuns, como os editores de texto, são chamados de software aplicativo, ou de aplicação. Os programas voltados para dar suporte funcional aos computadores, como os sistemas operacionais, são chamados de software de sistema. Esses softwares, assim como aqueles embutidos em outros sistemas (firmware), podem ser genericamente chamados de "programas".
+
+
+==== Software ou Softwares? ====
+Em inglês, a palavra software é um substantivo incontável, portanto, não possui plural, assim como hardware. Entretanto, uma vez importado o termo nos países de língua portuguesa, com o uso cotidiano da palavra software como sinônimo de "programa de computador", ao menos no Brasil, houve uma adaptação da palavra e a aceitação do uso do termo softwares como plural de software.
+
+
+== Execução do programa ==
+
+Um programa de computador é primeiramente carregado na memória do computador (usualmente pelo sistema operacional). O sistema operacional organiza três blocos de memória, também chamados segmentos. O primeiro é o segmento de código, que é estático em tamanho e em conteúdo. Ele recebe todo o código de máquina que define as sub-rotinas do programa, e o endereço de cada subrotina é definido como o menor dos endereços das células de memória que a definem.
+O segundo bloco de memória é o segmento de dados, e recebe as variáveis globais. Assim como no segmento de código, o endereço de cada variável é definido como o menor dos endereços das células de memória que o definem. Ele é estático em tamanho mas dinâmico em conteúdo, o que significa que este segmento não pode criar variáveis em tempo de execução, mas o conteúdo é variável, pode ser modificado.
+O terceiro bloco de memória é o segmento de pilha, uma área de memória na qual armazena-se informação em forma de uma pilha. Ele serve para armazenar informações como variáveis locais, parâmetros de sub-rotinas e endereços de retorno (para onde o fluxo do programa deve ir após a execução de uma função, isto é, o ponto logo após ela foi invocada). Antes da execução do programa propriamente dita, a pilha é esvaziada.
+A partir de então o programa é executado, instrução por instrução, até o seu término. A execução de um programa de computador pode ser abreviada em caso de erro de software ou de hardware.
+
+
+== Programa versus dados ==
+A forma executável de um programa, normalmente um código objeto, é frequentemente tratada como algo separado dos dados utilizados por este programa. Em algumas linguagens, como o LISP, esta distinção não é tão clara pois os programas podem criar ou modificar os dados, que em seguida são executados como parte do mesmo programa.
+
+
+== Programação ==
+
+O ato de programar um computador é um processo iterativo que consiste na criação ou alteração de código fonte, seguido de testes, análise e posterior refinamento do resultado. Uma pessoa que realiza este trabalho é conhecida como programador de computador ou desenvolvedor de software. A criação de programas de computador, quando baseada em metodologias ou processos formalizados, é conhecida como engenharia de software.
+
+
+== Ver também ==
+Software
+Programação
+Código de máquina
+Linguagem de programação
+
+
+== Referências ==
