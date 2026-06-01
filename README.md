@@ -2,95 +2,87 @@
 
 ## Objetivo
 
-Criar uma pequena LLM para fins de aprendizado, estudo e conhecimento prático da área de modelos de linguagem.
+Criar uma pequena LLM para aprendizado prático sobre modelos de linguagem em português.
 
-## Escopo da versão 0
-
-- Dataset inicial em português;
-- Tokenizer próprio;
-- Modelo Transformer decoder-only próprio;
-- Treinamento para prever o próximo token;
-- Avaliação por loss;
-- Geração de texto a partir de checkpoints treinados.
+O projeto é didático: a intenção é entender dataset, tokenização, preparação de dados,
+arquitetura Transformer, treino, avaliação e geração de texto.
 
 ## O que este projeto não é
 
-Este projeto não tem fins comerciais e não pretende competir com modelos como ChatGPT, Gemini, Claude ou Llama.
+Este projeto não tem fins comerciais e não pretende competir com modelos como ChatGPT,
+Gemini, Claude, Llama ou similares.
 
-O objetivo principal é aprendizado técnico e construção gradual de uma mini-LLM do zero.
-
-## Trilha de aprendizado
+Ele é uma mini-LLM de estudo, construída do zero e com escopo pequeno.
 
 ## Módulos
 
-1. Dataset
-2. Tokenizer
+1. Dataset em português
+2. Tokenizers próprios
 3. Preparação dos dados
-4. Embeddings
-5. Transformer
+4. Modelo Bigram
+5. Modelo Transformer decoder-only
 6. Treinamento
-7. Avaliação
+7. Avaliação por loss
 8. Geração de texto
 
 ## Estado atual
 
-Projeto iniciado no dia 25/05/2026.
+O projeto possui um pipeline funcional de modelagem de linguagem:
 
-Em 26/05/2026, o projeto passou a ter um pipeline mínimo funcional de modelo de linguagem.
-
-Em 26/05/2026, o projeto também passou a usar um dataset maior baseado em artigos da Wikipedia em português, com fluxo `raw → processed → splits`, limpeza de ruído, verificação de qualidade e geração com prompt configurável.
-
-### Componentes implementados até 26/05/2026
-
-- Estrutura de dados `raw`, `processed` e `splits`;
-- Manifesto de fontes do dataset;
-- Manifesto de dados processados;
-- Dataset com fontes da Wikipedia em português;
-- Script de ingestão de artigos da Wikipedia;
-- Script de processamento e limpeza dos raws;
-- Script de reconstrução de splits `train`, `val` e `test`;
-- Verificador de qualidade dos splits;
-- `CharTokenizer` funcional com suporte a `<unk>`;
-- Conversão de texto para IDs numéricos;
+- Dataset em português com artigos da Wikipedia;
+- Fluxo de dados `raw -> processed -> splits`;
+- Verificação de qualidade dos splits;
+- `CharTokenizer` com suporte a `<unk>`;
+- `BPETokenizer` simples;
 - Criação de exemplos `x/y` para previsão do próximo token;
 - Mini-batches aleatórios;
 - `BigramLanguageModel`;
 - `MiniTransformerLanguageModel` decoder-only;
-- Causal self-attention;
+- Atenção causal;
 - Multi-head attention;
 - Feed-forward;
 - Residual connections;
 - Layer normalization;
-- Loss de treino;
-- Loss de validação estimada por mini-batches;
-- Salvamento do melhor checkpoint por `val loss`;
-- Treino do Transformer com `MAX_ITERS = 5000`;
-- Contexto do Transformer configurado com `BLOCK_SIZE = 64`;
-- Geração de texto com prompt customizável;
-- Geração com `temperature` e `top_k` pela linha de comando;
+- Treino com salvamento do melhor checkpoint por `val loss`;
+- Geração com prompt customizável;
+- Controle de geração por `temperature` e `top_k`;
 - Testes automatizados com `pytest`.
 
-### Scripts principais
+## Estrutura principal
 
 ```txt
-scripts/train_bigram.py
-scripts/generate_bigram.py
-scripts/train_transformer.py
-scripts/generate_transformer.py
-scripts/ingest_wikipedia_raws.py
-scripts/process_wikipedia_raws.py
-scripts/build_splits.py
-scripts/check_dataset_quality.py
+src/
+  batching.py
+  data_loader.py
+  evaluation.py
+  training_data.py
+  models/
+    bigram.py
+    transformer.py
+  tokenizer/
+    char_tokenizer.py
+    bpe_tokenizer.py
+
+scripts/
+  train_bigram.py
+  generate_bigram.py
+  train_bpe_tokenizer.py
+  train_transformer.py
+  train_transformer_bpe.py
+  generate_transformer.py
+  generate_transformer_bpe.py
+  ingest_wikipedia_raws.py
+  process_wikipedia_raws.py
+  build_splits.py
+  check_dataset_quality.py
 ```
 
-### Documentação importante
+## Instalação
 
-```txt
-docs/dataset_v0.md
-docs/tokenizer.md
-docs/bpe.md
-docs/training_pipeline.md
-docs/wikipedia_sources.md
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
 ```
 
 ## Uso básico
@@ -103,25 +95,57 @@ python -m scripts.build_splits
 python -m scripts.check_dataset_quality
 ```
 
-Treinar o Transformer:
+Treinar o tokenizer BPE:
+
+```powershell
+python -m scripts.train_bpe_tokenizer
+```
+
+Treinar o Transformer por caractere:
 
 ```powershell
 python -m scripts.train_transformer
 ```
 
-Gerar texto com prompt:
+Treinar o Transformer com BPE:
+
+```powershell
+python -m scripts.train_transformer_bpe
+```
+
+Gerar texto com o Transformer por caractere:
 
 ```powershell
 python -m scripts.generate_transformer --prompt "A inteligencia artificial"
 python -m scripts.generate_transformer --prompt "Python e uma linguagem" --temperature 0.7 --top-k 5
 ```
 
-## Próximo passo
+Gerar texto com o Transformer BPE:
 
-Os próximos avanços técnicos prováveis são:
+```powershell
+python -m scripts.generate_transformer_bpe --prompt "A inteligencia artificial "
+```
+
+## Testes
+
+```powershell
+python -m pytest -q
+```
+
+## Documentação
 
 ```txt
-1. comparar o impacto do BLOCK_SIZE = 64 na val loss e na geração;
-2. testar treino mais longo se a val loss continuar caindo;
-3. implementar um tokenizer BPE simples para sair do nível de caractere.
+docs/dataset_v0.md
+docs/tokenizer.md
+docs/bpe.md
+docs/training_pipeline.md
+docs/wikipedia_sources.md
 ```
+
+## Próximos passos recomendados
+
+1. Expor hiperparâmetros dos scripts de treino via argumentos de linha de comando.
+2. Comparar resultados entre tokenizer por caractere e BPE.
+3. Registrar métricas de treino em arquivo para acompanhar evolução.
+4. Experimentar `BLOCK_SIZE`, `N_EMBD`, `N_LAYER`, `N_HEAD` e tamanho do dataset.
+5. Melhorar a avaliação qualitativa da geração com prompts fixos.
