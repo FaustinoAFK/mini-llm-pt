@@ -26,7 +26,7 @@ class LogitsOnlyModel(nn.Module):
 
 
 def load_model_and_context(checkpoint_path, prompt):
-    checkpoint = torch.load(checkpoint_path, map_location="cpu")
+    checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=True)
     tokenizer = BPETokenizer.load(checkpoint["tokenizer_path"])
 
     model = MiniTransformerLanguageModel(

@@ -14,7 +14,7 @@ DEFAULT_TOP_K = 5
 
 
 def generate_text(checkpoint_path, prompt, max_new_tokens, temperature, top_k):
-    checkpoint = torch.load(checkpoint_path, map_location="cpu")
+    checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=True)
     tokenizer = BPETokenizer.load(checkpoint["tokenizer_path"])
 
     model = MiniTransformerLanguageModel(

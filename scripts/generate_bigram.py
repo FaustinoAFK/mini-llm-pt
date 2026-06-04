@@ -8,7 +8,7 @@ MAX_NEW_TOKENS = 200
 
 
 def main():
-    checkpoint = torch.load(CHECKPOINT_PATH, map_location="cpu")
+    checkpoint = torch.load(CHECKPOINT_PATH, map_location="cpu", weights_only=True)
 
     model = BigramLanguageModel(vocab_size=checkpoint["vocab_size"])
     model.load_state_dict(checkpoint["model_state_dict"])

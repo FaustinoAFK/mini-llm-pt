@@ -18,7 +18,7 @@ def encode_prompt(prompt, stoi, unk_token):
 
 
 def generate_text(checkpoint_path, prompt, max_new_tokens, temperature, top_k):
-    checkpoint = torch.load(checkpoint_path, map_location="cpu")
+    checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=True)
 
     model = MiniTransformerLanguageModel(
         vocab_size=checkpoint["vocab_size"],
