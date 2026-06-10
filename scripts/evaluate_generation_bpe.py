@@ -4,8 +4,11 @@ from pathlib import Path
 
 from scripts.generate_transformer_bpe import (
     CHECKPOINT_PATH,
+    DEFAULT_NO_REPEAT_NGRAM_SIZE,
+    DEFAULT_REPETITION_PENALTY,
     DEFAULT_TEMPERATURE,
     DEFAULT_TOP_K,
+    DEFAULT_TOP_P,
     generate_text,
 )
 
@@ -25,7 +28,15 @@ def utc_now_iso():
     return datetime.now(timezone.utc).isoformat()
 
 
-def build_report(checkpoint_path, max_new_tokens, temperature, top_k):
+def build_report(
+    checkpoint_path,
+    max_new_tokens,
+    temperature,
+    top_k,
+    top_p,
+    repetition_penalty,
+    no_repeat_ngram_size,
+):
     lines = [
         "# Avaliacao qualitativa do Transformer BPE",
         "",
@@ -34,6 +45,9 @@ def build_report(checkpoint_path, max_new_tokens, temperature, top_k):
         f"max_new_tokens: {max_new_tokens}",
         f"temperature: {temperature}",
         f"top_k: {top_k}",
+        f"top_p: {top_p}",
+        f"repetition_penalty: {repetition_penalty}",
+        f"no_repeat_ngram_size: {no_repeat_ngram_size}",
         "",
     ]
 
@@ -44,6 +58,9 @@ def build_report(checkpoint_path, max_new_tokens, temperature, top_k):
             max_new_tokens=max_new_tokens,
             temperature=temperature,
             top_k=top_k,
+            top_p=top_p,
+            repetition_penalty=repetition_penalty,
+            no_repeat_ngram_size=no_repeat_ngram_size,
         )
         lines.extend(
             [
@@ -68,6 +85,17 @@ def main():
     parser.add_argument("--max-new-tokens", type=int, default=DEFAULT_MAX_NEW_TOKENS)
     parser.add_argument("--temperature", type=float, default=DEFAULT_TEMPERATURE)
     parser.add_argument("--top-k", type=int, default=DEFAULT_TOP_K)
+    parser.add_argument("--top-p", type=float, default=DEFAULT_TOP_P)
+    parser.add_argument(
+        "--repetition-penalty",
+        type=float,
+        default=DEFAULT_REPETITION_PENALTY,
+    )
+    parser.add_argument(
+        "--no-repeat-ngram-size",
+        type=int,
+        default=DEFAULT_NO_REPEAT_NGRAM_SIZE,
+    )
     args = parser.parse_args()
 
     report = build_report(
@@ -75,6 +103,9 @@ def main():
         max_new_tokens=args.max_new_tokens,
         temperature=args.temperature,
         top_k=args.top_k,
+        top_p=args.top_p,
+        repetition_penalty=args.repetition_penalty,
+        no_repeat_ngram_size=args.no_repeat_ngram_size,
     )
 
     output_path = Path(args.output_path)

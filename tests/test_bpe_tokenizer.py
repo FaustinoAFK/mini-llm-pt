@@ -21,13 +21,14 @@ def test_bpe_encode_decode_roundtrip_for_training_text():
     assert decoded == text
 
 
-def test_bpe_unknown_character_uses_unk_token():
+def test_bpe_byte_level_tokenizer_encodes_unseen_characters():
     tokenizer = BPETokenizer()
     tokenizer.train("porta", num_merges=10)
 
     ids = tokenizer.encode("portaria")
 
-    assert tokenizer.stoi[tokenizer.unk_token] in ids
+    assert ids
+    assert tokenizer.decode(ids) == "portaria"
 
 
 def test_bpe_save_and_load_roundtrip(tmp_path):

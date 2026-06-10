@@ -1,24 +1,36 @@
 # Pipeline de treinamento
 
-Este documento registra o estado atual do pipeline de treinamento do projeto `mini-llm-pt`.
+Este documento registra o estado atual do pipeline de treinamento do projeto
+`mini-llm-pt`.
 
-## Visão geral
+## Visao geral
 
-O fluxo atual do projeto é:
+O fluxo de dados principal e:
 
 ```txt
 data/raw/wikipedia/
-→ data/processed/wikipedia/
-→ data/splits/train.txt
-→ CharTokenizer
-→ IDs numéricos
-→ exemplos x/y
-→ mini-batches aleatórios
-→ MiniTransformerLanguageModel
-→ loss de treino
-→ loss de validação
-→ melhor checkpoint
-→ geração de texto com prompt
+-> data/processed/wikipedia/
+-> data/splits/train.txt
+-> data/splits/val.txt
+-> data/splits/test.txt
+```
+
+A partir dos splits, existem dois caminhos de modelagem com Transformer:
+
+```txt
+train.txt -> CharTokenizer -> train_transformer.py -> checkpoints/transformer.pt
+train.txt -> BPETokenizer -> train_transformer_bpe.py -> checkpoints/transformer_bpe.pt
+```
+
+O caminho BPE tambem pode salvar metricas em JSONL e gerar um relatorio
+qualitativo com prompts fixos:
+
+```txt
+train_transformer_bpe.py
+-> artifacts/runs/*.jsonl
+-> checkpoints/*.pt
+-> evaluate_generation_bpe.py
+-> artifacts/evaluations/*.txt
 ```
 
 ## Dataset
@@ -38,7 +50,7 @@ data/raw/wikipedia/
 data/processed/wikipedia/
 ```
 
-Os arquivos principais de treino são:
+Os arquivos finais de treino sao:
 
 ```txt
 data/splits/train.txt
@@ -46,59 +58,19 @@ data/splits/val.txt
 data/splits/test.txt
 ```
 
-## Ingestão de dados
+## Ingestao e processamento
 
-O script abaixo baixa artigos listados em arquivos markdown de fontes:
+O script `scripts/ingest_wikipedia_raws.py` baixa artigos listados nos arquivos
+de fontes da Wikipedia, salva textos puros em `data/raw/wikipedia/` e atualiza o
+manifesto de fontes.
 
-```txt
-scripts/ingest_wikipedia_raws.py
-```
+O script `scripts/process_wikipedia_raws.py` limpa os textos raw e salva a saida
+em `data/processed/wikipedia/`. A limpeza atual aplica normalizacao Unicode,
+remocao de titulos de secao, filtragem de linhas ruidosas, remocao de trechos
+com padroes de LaTeX/MediaWiki e normalizacao de espacos.
 
-Ele lê links da Wikipedia, baixa o texto puro via API pública da Wikipedia, salva arquivos em `data/raw/wikipedia/` e cria manifesto de fontes.
-
-## Processamento dos raws
-
-O script abaixo limpa os textos raw:
-
-```txt
-scripts/process_wikipedia_raws.py
-```
-
-A limpeza atual aplica:
-
-```txt
-normalização Unicode NFKC
-remoção de títulos de seção
-remoção de linhas com muito ruído simbólico
-remoção de linhas com termos LaTeX/MediaWiki
-remoção de linhas dominadas por números
-filtragem de caracteres incomuns
-normalização de espaços
-```
-
-A saída fica em:
-
-```txt
-data/processed/wikipedia/
-```
-
-## Splits
-
-O script abaixo reconstrói os splits:
-
-```txt
-scripts/build_splits.py
-```
-
-Ele junta os textos processados e gera:
-
-```txt
-data/splits/train.txt
-data/splits/val.txt
-data/splits/test.txt
-```
-
-A proporção padrão é:
+O script `scripts/build_splits.py` cria `train.txt`, `val.txt` e `test.txt` a
+partir dos textos processados. A proporcao padrao e:
 
 ```txt
 train: 80%
@@ -106,35 +78,34 @@ val: 10%
 test: 10%
 ```
 
-## Verificação de qualidade
+O script `scripts/check_dataset_quality.py` verifica caracteres suspeitos nos
+splits antes do treino.
 
-O script abaixo verifica caracteres suspeitos nos splits:
+## Tokenizers
 
-```txt
-scripts/check_dataset_quality.py
+O projeto possui dois tokenizers proprios:
+
+- `CharTokenizer`: transforma cada caractere em um ID e usa `<unk>` para
+  caracteres desconhecidos.
+- `BPETokenizer`: usa Hugging Face Tokenizers com BPE byte-level, suporta
+  `<unk>` e persiste vocabulario/merges em JSON.
+
+O tokenizer BPE e treinado com:
+
+```powershell
+python -m scripts.train_bpe_tokenizer
 ```
 
-Ele ajuda a detectar ruído antes do treino.
-
-## Tokenizer
-
-O tokenizer atual é o `CharTokenizer`.
-
-Ele transforma texto em caracteres, converte cada caractere para um ID numérico e também consegue fazer o caminho inverso.
-
-Também existe suporte ao token especial:
+Por padrao, ele le `data/splits/train.txt` e salva:
 
 ```txt
-<unk>
+artifacts/tokenizers/bpe.json
+artifacts/tokenizers/bpe.preview.txt
 ```
 
-Esse token é usado quando aparece um caractere desconhecido.
+## Exemplos e mini-batches
 
-## Exemplos de treino
-
-O projeto cria pares `x` e `y` para previsão do próximo token.
-
-Exemplo:
+O treino cria pares `x` e `y` para previsao do proximo token:
 
 ```txt
 ids = [1, 2, 3, 4]
@@ -143,34 +114,21 @@ x = [1, 2, 3]
 y = [2, 3, 4]
 ```
 
-O `x` é o contexto recebido pelo modelo.
-O `y` é o alvo deslocado uma posição à frente.
+No caminho por caractere, `train_transformer.py` materializa janelas deslizantes
+com `create_training_examples` e sorteia mini-batches com `get_batch`.
 
-## Mini-batches
+No caminho BPE, `train_transformer_bpe.py` trabalha diretamente sobre o tensor
+de IDs tokenizados e sorteia posicoes iniciais a cada batch. Esse fluxo evita
+materializar todas as janelas e facilita treinos com textos maiores.
 
-O treino do Transformer usa mini-batches aleatórios.
+## Modelos
 
-Isso significa que, a cada step, o modelo vê apenas uma amostra aleatória dos exemplos de treino, em vez de usar todos os exemplos ao mesmo tempo.
+O projeto possui:
 
-Esse comportamento deixa o treino mais parecido com projetos reais de machine learning.
+- `BigramLanguageModel`, usado para validar o ciclo basico de linguagem;
+- `MiniTransformerLanguageModel`, um Transformer decoder-only pequeno.
 
-## Modelo Bigram
-
-O projeto possui um `BigramLanguageModel`.
-
-Ele foi usado como primeiro modelo de linguagem para validar o ciclo básico:
-
-```txt
-IDs → logits → loss → treino → checkpoint → geração
-```
-
-O Bigram olha apenas para o token atual para tentar prever o próximo token.
-
-## Mini Transformer decoder-only
-
-O projeto possui um `MiniTransformerLanguageModel`.
-
-Ele contém:
+O Transformer contem:
 
 ```txt
 token embeddings
@@ -183,11 +141,16 @@ layer normalization
 lm head
 ```
 
-Esse é o primeiro modelo do projeto com estrutura parecida com uma LLM moderna, em escala pequena.
+## Treino por caractere
 
-## Configuração atual de treino
+O script `scripts/train_transformer.py` treina o Transformer com `CharTokenizer`.
+Ele usa constantes internas para configuracao e salva o melhor checkpoint em:
 
-A configuração atual do Transformer é:
+```txt
+checkpoints/transformer.pt
+```
+
+Configuracao atual:
 
 ```txt
 BLOCK_SIZE = 64
@@ -202,80 +165,129 @@ N_LAYER = 2
 DROPOUT = 0.1
 ```
 
-O `BLOCK_SIZE = 64` permite que o modelo veja mais contexto do que a configuração anterior de 32 caracteres.
+## Treino com BPE
 
-## Avaliação
+O script `scripts/train_transformer_bpe.py` treina o Transformer com
+`BPETokenizer`. Ele aceita parametros por CLI para caminhos, hiperparametros,
+device, early stopping, seed, metricas, scheduler, gradient clipping,
+gradient accumulation e retomada de checkpoint.
 
-O treino do Transformer calcula:
+Comando basico:
 
-```txt
-batch loss
-train loss
-val loss
-best val loss
+```powershell
+python -m scripts.train_transformer_bpe
 ```
 
-A `train loss` mede o desempenho no texto de treino.
-A `val loss` mede o desempenho em texto separado de validação.
+Exemplo com parametros customizados:
 
-Para evitar uso excessivo de memória, `train loss` e `val loss` são estimadas por mini-batches, não pelo dataset inteiro de uma vez.
-
-Quando a `train loss` cai, mas a `val loss` começa a subir, isso indica overfitting.
-
-## Checkpoint
-
-O script `scripts/train_transformer.py` salva o melhor checkpoint com base na menor `val loss`.
-
-O checkpoint fica em:
-
-```txt
-checkpoints/transformer.pt
+```powershell
+python -m scripts.train_transformer_bpe --device auto --block-size 128 --batch-size 32 --max-iters 20000 --n-embd 256 --n-layer 4
 ```
 
-Esse arquivo não deve ser enviado para o GitHub.
-
-## Geração
-
-O script `scripts/generate_transformer.py` carrega o checkpoint treinado e gera texto.
-
-A geração suporta:
+Configuracao padrao atual:
 
 ```txt
-prompt
-temperature
-top_k
-max_new_tokens
+BLOCK_SIZE = 64
+BATCH_SIZE = 16
+EVAL_BATCH_SIZE = 16
+EVAL_NUM_BATCHES = 20
+MAX_ITERS = 10000
+EVAL_INTERVAL = 1000
+PATIENCE = 2
+N_EMBD = 128
+N_HEAD = 4
+N_LAYER = 3
+DROPOUT = 0.1
+DEVICE = auto
 ```
 
-Exemplos:
+Por padrao, o treino BPE usa:
+
+```txt
+artifacts/tokenizers/bpe.json
+checkpoints/transformer_bpe.pt
+artifacts/runs/transformer_bpe_metrics.jsonl
+```
+
+Cada linha do JSONL registra eventos de inicio, avaliacao e fim do treino.
+Os eventos de avaliacao tambem registram learning rate real, norma do gradiente,
+tokens por step, tokens por segundo e tempo decorrido.
+
+Controles adicionais uteis:
+
+```powershell
+python -m scripts.train_transformer_bpe --grad-clip 1.0 --warmup-iters 100 --min-learning-rate 1e-4
+python -m scripts.train_transformer_bpe --disable-lr-schedule
+python -m scripts.train_transformer_bpe --resume-from checkpoints/transformer_bpe.pt
+python -m scripts.train_transformer_bpe --gradient-accumulation-steps 2
+```
+
+## Avaliacao e geracao
+
+Durante o treino, os scripts acompanham `batch loss`, `train loss`, `val loss` e
+`best val loss`. A `val loss` e usada para escolher o melhor checkpoint.
+
+Geracao por caractere:
 
 ```powershell
 python -m scripts.generate_transformer --prompt "A inteligencia artificial"
-python -m scripts.generate_transformer --prompt "Python e uma linguagem" --temperature 0.7 --top-k 5
 ```
 
-`temperature` controla o nível de aleatoriedade.
-`top_k` limita a escolha aos tokens mais prováveis.
+Geracao BPE:
 
-## Estado em 26/05/2026
+```powershell
+python -m scripts.generate_transformer_bpe --prompt "A inteligencia artificial "
+```
 
-Até esta data, o projeto já possui:
+Avaliacao qualitativa BPE com prompts fixos:
+
+```powershell
+python -m scripts.evaluate_generation_bpe
+```
+
+O relatorio padrao fica em:
 
 ```txt
-pipeline de dados estruturado
-ingestão de artigos da Wikipedia
-processamento e limpeza dos raws
-reconstrução de splits
-verificação de qualidade do dataset
-CharTokenizer funcional
-modelo Bigram funcional
-Mini Transformer decoder-only funcional
-loss de treino
-loss de validação estimada por mini-batches
-salvamento do melhor checkpoint
-mini-batches aleatórios
-geração com prompt, temperature e top_k
-testes automatizados com pytest
+artifacts/evaluations/transformer_bpe_generation.txt
 ```
 
-Os próximos passos prováveis são comparar o impacto de `BLOCK_SIZE = 64`, testar treino mais longo se a `val loss` continuar caindo e implementar um tokenizer BPE simples.
+## Benchmark OpenVINO
+
+O script `scripts.benchmark_openvino` compara o forward do modelo BPE em PyTorch
+CPU com OpenVINO:
+
+```powershell
+python -m scripts.benchmark_openvino --device CPU
+```
+
+O uso de GPU depende dos dispositivos disponiveis no OpenVINO local:
+
+```powershell
+python -m scripts.benchmark_openvino --device GPU
+```
+
+## Artefatos
+
+Checkpoints, metricas e relatorios de avaliacao nao devem ser versionados. Os
+caminhos atuais ja estao cobertos por `.gitignore`:
+
+```txt
+checkpoints/
+artifacts/runs/
+artifacts/evaluations/
+*.pt
+```
+
+O tokenizer BPE em `artifacts/tokenizers/bpe.json` e mantido no repositorio como
+artefato pequeno e util para reproduzir geracao/treino BPE.
+
+## Experimentos
+
+A matriz inicial de experimentos esta em:
+
+```txt
+docs/training_experiments.md
+```
+
+Ela prioriza comparacoes simples entre baseline BPE, contexto maior, modelo
+maior e uma comparacao conservadora entre caractere e BPE.

@@ -81,6 +81,31 @@ def test_transformer_generate_accepts_temperature_and_top_k():
     assert generated.shape == (1, 6)
 
 
+def test_transformer_generate_accepts_top_p_and_repetition_controls():
+    vocab_size = 10
+    block_size = 4
+    model = MiniTransformerLanguageModel(
+        vocab_size=vocab_size,
+        block_size=block_size,
+        n_embd=16,
+        n_head=4,
+        n_layer=2,
+    )
+    idx = torch.tensor([[1, 2, 1]])
+
+    generated = model.generate(
+        idx,
+        max_new_tokens=3,
+        temperature=0.8,
+        top_k=5,
+        top_p=0.9,
+        repetition_penalty=1.2,
+        no_repeat_ngram_size=3,
+    )
+
+    assert generated.shape == (1, 6)
+
+
 def test_transformer_generate_rejects_invalid_temperature():
     model = MiniTransformerLanguageModel(
         vocab_size=10,
@@ -107,6 +132,77 @@ def test_transformer_generate_rejects_invalid_top_k():
 
     with pytest.raises(ValueError):
         model.generate(idx, max_new_tokens=1, top_k=0)
+
+
+def test_transformer_generate_rejects_invalid_top_p():
+    model = MiniTransformerLanguageModel(
+        vocab_size=10,
+        block_size=4,
+        n_embd=16,
+        n_head=4,
+        n_layer=2,
+    )
+    idx = torch.tensor([[1]])
+
+    with pytest.raises(ValueError):
+        model.generate(idx, max_new_tokens=1, top_p=1.1)
+
+
+def test_transformer_generate_rejects_invalid_repetition_penalty():
+    model = MiniTransformerLanguageModel(
+        vocab_size=10,
+        block_size=4,
+        n_embd=16,
+        n_head=4,
+        n_layer=2,
+    )
+    idx = torch.tensor([[1]])
+
+    with pytest.raises(ValueError):
+        model.generate(idx, max_new_tokens=1, repetition_penalty=0.9)
+
+
+def test_transformer_generate_rejects_invalid_no_repeat_ngram_size():
+    model = MiniTransformerLanguageModel(
+        vocab_size=10,
+        block_size=4,
+        n_embd=16,
+        n_head=4,
+        n_layer=2,
+    )
+    idx = torch.tensor([[1]])
+
+    with pytest.raises(ValueError):
+        model.generate(idx, max_new_tokens=1, no_repeat_ngram_size=-1)
+
+
+def test_apply_no_repeat_ngram_bans_repeated_continuation():
+    logits = torch.zeros((1, 5))
+    idx = torch.tensor([[1, 2, 3, 1, 2]])
+
+    filtered = MiniTransformerLanguageModel._apply_no_repeat_ngram(
+        logits,
+        idx,
+        no_repeat_ngram_size=3,
+    )
+
+    assert filtered[0, 3] == float("-inf")
+    assert filtered[0, 4] == 0
+
+
+def test_apply_repetition_penalty_penalizes_seen_tokens():
+    logits = torch.tensor([[2.0, -2.0, 1.0]])
+    idx = torch.tensor([[0, 1]])
+
+    filtered = MiniTransformerLanguageModel._apply_repetition_penalty(
+        logits,
+        idx,
+        repetition_penalty=2.0,
+    )
+
+    assert filtered[0, 0] == pytest.approx(1.0)
+    assert filtered[0, 1] == pytest.approx(-4.0)
+    assert filtered[0, 2] == pytest.approx(1.0)
 
 
 def test_transformer_rejects_sequence_longer_than_block_size():

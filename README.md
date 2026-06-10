@@ -2,51 +2,55 @@
 
 ## Objetivo
 
-Criar uma pequena LLM para aprendizado prático sobre modelos de linguagem em português.
+Criar uma pequena LLM para aprendizado pratico sobre modelos de linguagem em
+portugues.
 
-O projeto é didático: a intenção é entender dataset, tokenização, preparação de dados,
-arquitetura Transformer, treino, avaliação e geração de texto.
+O projeto e didatico: a intencao e entender dataset, tokenizacao, preparacao de
+dados, arquitetura Transformer, treino, avaliacao e geracao de texto.
 
-## O que este projeto não é
+## O que este projeto nao e
 
-Este projeto não tem fins comerciais e não pretende competir com modelos como ChatGPT,
-Gemini, Claude, Llama ou similares.
+Este projeto nao tem fins comerciais e nao pretende competir com modelos como
+ChatGPT, Gemini, Claude, Llama ou similares.
 
-Ele é uma mini-LLM de estudo, construída do zero e com escopo pequeno.
+Ele e uma mini-LLM de estudo, construida do zero e com escopo pequeno.
 
-## Módulos
+## Modulos
 
-1. Dataset em português
-2. Tokenizers próprios
-3. Preparação dos dados
+1. Dataset em portugues
+2. Tokenizers proprios
+3. Preparacao dos dados
 4. Modelo Bigram
 5. Modelo Transformer decoder-only
 6. Treinamento
-7. Avaliação por loss
-8. Geração de texto
+7. Avaliacao por loss
+8. Geracao de texto
+9. Benchmark opcional de inferencia com OpenVINO
 
 ## Estado atual
 
 O projeto possui um pipeline funcional de modelagem de linguagem:
 
-- Dataset em português com artigos da Wikipedia;
+- Dataset em portugues com artigos da Wikipedia;
 - Fluxo de dados `raw -> processed -> splits`;
-- Verificação de qualidade dos splits;
+- Verificacao de qualidade dos splits;
 - `CharTokenizer` com suporte a `<unk>`;
-- `BPETokenizer` simples;
-- Criação de exemplos `x/y` para previsão do próximo token;
-- Mini-batches aleatórios;
-- `BigramLanguageModel`;
-- `MiniTransformerLanguageModel` decoder-only;
-- Atenção causal;
-- Multi-head attention;
-- Feed-forward;
-- Residual connections;
-- Layer normalization;
+- `BPETokenizer` otimizado com Hugging Face Tokenizers e `save/load`;
+- Modelo `BigramLanguageModel`;
+- Modelo `MiniTransformerLanguageModel` decoder-only;
+- Dois caminhos de treino do Transformer:
+  - por caractere, usando `CharTokenizer`;
+  - por BPE, usando `BPETokenizer`;
+- Atencao causal, multi-head attention, feed-forward, residual connections e
+  layer normalization;
 - Treino com salvamento do melhor checkpoint por `val loss`;
-- Geração com prompt customizável;
-- Controle de geração por `temperature` e `top_k`;
-- Testes automatizados com `pytest`.
+- Treino BPE com argumentos por CLI, early stopping e metricas JSONL;
+- Geracao com prompt customizavel, `temperature` e `top_k`;
+- Avaliacao qualitativa do checkpoint BPE com prompts fixos;
+- Benchmark opcional PyTorch CPU vs OpenVINO;
+- Testes automatizados com `pytest`;
+- Configuracao de testes em `pyproject.toml`;
+- Instrucoes especificas do projeto em `AGENTS.md`.
 
 ## Estrutura principal
 
@@ -71,13 +75,15 @@ scripts/
   train_transformer_bpe.py
   generate_transformer.py
   generate_transformer_bpe.py
+  evaluate_generation_bpe.py
+  benchmark_openvino.py
   ingest_wikipedia_raws.py
   process_wikipedia_raws.py
   build_splits.py
   check_dataset_quality.py
 ```
 
-## Instalação
+## Instalacao
 
 ```powershell
 python -m venv .venv
@@ -85,7 +91,7 @@ python -m venv .venv
 python -m pip install -r requirements.txt
 ```
 
-## Uso básico
+## Uso basico
 
 Processar dados e reconstruir splits:
 
@@ -113,13 +119,13 @@ Treinar o Transformer com BPE:
 python -m scripts.train_transformer_bpe
 ```
 
-Treinar o Transformer com BPE usando parâmetros customizados:
+Treinar o Transformer com BPE usando parametros customizados:
 
 ```powershell
 python -m scripts.train_transformer_bpe --device auto --block-size 128 --batch-size 32 --max-iters 20000 --n-embd 256 --n-layer 4
 ```
 
-Salvar métricas do treino em um arquivo JSONL:
+Salvar metricas do treino BPE em JSONL:
 
 ```powershell
 python -m scripts.train_transformer_bpe --metrics-path artifacts/runs/exp01.jsonl
@@ -138,13 +144,19 @@ Gerar texto com o Transformer BPE:
 python -m scripts.generate_transformer_bpe --prompt "A inteligencia artificial "
 ```
 
+Gerar texto com controles contra repeticao:
+
+```powershell
+python -m scripts.generate_transformer_bpe --checkpoint-path checkpoints/transformer_bpe_block128_dropout02.pt --prompt "A inteligencia artificial e " --temperature 0.7 --top-k 20 --top-p 0.9 --repetition-penalty 1.15 --no-repeat-ngram-size 3
+```
+
 Avaliar qualitativamente o checkpoint BPE com prompts fixos:
 
 ```powershell
 python -m scripts.evaluate_generation_bpe
 ```
 
-Comparar inferência PyTorch CPU com OpenVINO:
+Comparar inferencia PyTorch CPU com OpenVINO:
 
 ```powershell
 python -m scripts.benchmark_openvino --device CPU
@@ -154,20 +166,24 @@ python -m scripts.benchmark_openvino --device GPU
 ## Testes
 
 ```powershell
-python -m pytest -q
+python -m pytest
 ```
 
-## Documentação
+## Documentacao
 
 ```txt
 docs/dataset_v0.md
 docs/tokenizer.md
 docs/bpe.md
 docs/training_pipeline.md
+docs/training_experiments.md
 docs/wikipedia_sources.md
 ```
 
-## Próximos passos recomendados
+## Proximos passos recomendados
 
-1. Comparar resultados entre tokenizer por caractere e BPE.
-2. Experimentar `BLOCK_SIZE`, `N_EMBD`, `N_LAYER`, `N_HEAD` e tamanho do dataset.
+1. Rodar experimentos comparaveis em `docs/training_experiments.md`.
+2. Comparar geracoes e `val loss` entre configuracoes BPE.
+3. Comparar o caminho por caractere com BPE de forma qualitativa, lembrando que
+   as losses nao sao diretamente equivalentes porque as unidades de tokenizacao
+   sao diferentes.
