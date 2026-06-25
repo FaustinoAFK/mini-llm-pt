@@ -19,22 +19,22 @@ VAL_PATH = "data/splits/val.txt"
 TOKENIZER_PATH = "artifacts/tokenizers/bpe.json"
 CHECKPOINT_PATH = "checkpoints/transformer_bpe.pt"
 METRICS_PATH = "artifacts/runs/transformer_bpe_metrics.jsonl"
-BLOCK_SIZE = 64
-BATCH_SIZE = 16
-EVAL_BATCH_SIZE = 16
+BLOCK_SIZE = 128
+BATCH_SIZE = 12
+EVAL_BATCH_SIZE = 12
 EVAL_NUM_BATCHES = 20
-MAX_ITERS = 10000
-LEARNING_RATE = 1e-3
-MIN_LEARNING_RATE = 1e-4
-WARMUP_ITERS = 100
-N_EMBD = 128
-N_HEAD = 4
-N_LAYER = 3
+MAX_ITERS = 15000
+LEARNING_RATE = 8e-4
+MIN_LEARNING_RATE = 8e-5
+WARMUP_ITERS = 200
+N_EMBD = 256
+N_HEAD = 8
+N_LAYER = 4
 DROPOUT = 0.1
-EVAL_INTERVAL = 1000
-PATIENCE = 2
+EVAL_INTERVAL = 500
+PATIENCE = 6
 GRAD_CLIP = 1.0
-GRADIENT_ACCUMULATION_STEPS = 1
+GRADIENT_ACCUMULATION_STEPS = 2
 DEVICE = "auto"
 
 
@@ -270,8 +270,8 @@ def main():
     train_text = read_text_file(args.train_path)
     val_text = read_text_file(args.val_path)
 
-    train_ids = tokenizer.encode(train_text)
-    val_ids = tokenizer.encode(val_text)
+    train_ids = tokenizer.encode(train_text, add_bos=True, add_eos=True)
+    val_ids = tokenizer.encode(val_text, add_bos=True, add_eos=True)
 
     print(f"Tokenizer BPE: {args.tokenizer_path}")
     print(f"Vocab size: {tokenizer.vocab_size}")
@@ -570,10 +570,14 @@ def main():
 
     model.load_state_dict(best_model_state_dict)
     model.eval()
-    start = torch.tensor([[train_ids[0]]], dtype=torch.long, device=device)
+    start = torch.tensor(
+        [[tokenizer.stoi[tokenizer.bos_token]]],
+        dtype=torch.long,
+        device=device,
+    )
     with torch.no_grad():
         generated_ids = model.generate(start, max_new_tokens=80)[0].cpu().tolist()
-    generated_text = tokenizer.decode(generated_ids)
+    generated_text = tokenizer.decode_for_display(generated_ids)
 
     print("\n--- Texto gerado pelo melhor checkpoint BPE ---")
     print_text_safely(generated_text)

@@ -70,7 +70,7 @@ class FeedForward(nn.Module):
         super().__init__()
         self.net = nn.Sequential(
             nn.Linear(n_embd, 4 * n_embd),
-            nn.ReLU(),
+            nn.GELU(),  # GELU em vez de ReLU, como no GPT-2 e modelos modernos
             nn.Linear(4 * n_embd, n_embd),
             nn.Dropout(dropout),
         )
@@ -170,6 +170,9 @@ class MiniTransformerLanguageModel(nn.Module):
         if temperature <= 0:
             raise ValueError("temperature precisa ser maior que zero.")
 
+        if top_k is not None and top_k <= 0:
+            raise ValueError("top_k precisa ser maior que zero.")
+
         if top_p is not None and not 0 < top_p <= 1:
             raise ValueError("top_p precisa estar entre 0 e 1.")
 
@@ -192,8 +195,6 @@ class MiniTransformerLanguageModel(nn.Module):
             )
 
             if top_k is not None:
-                if top_k <= 0:
-                    raise ValueError("top_k precisa ser maior que zero.")
                 top_k = min(top_k, logits.size(-1))
                 values, _ = torch.topk(logits, top_k)
                 min_value = values[:, -1].unsqueeze(-1)

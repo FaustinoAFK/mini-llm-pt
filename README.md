@@ -36,6 +36,7 @@ O projeto possui um pipeline funcional de modelagem de linguagem:
 - Verificacao de qualidade dos splits;
 - `CharTokenizer` com suporte a `<unk>`;
 - `BPETokenizer` otimizado com Hugging Face Tokenizers e `save/load`;
+- `BPETokenizer` com tokens especiais `<bos>`, `<eos>` e `<par>`;
 - Modelo `BigramLanguageModel`;
 - Modelo `MiniTransformerLanguageModel` decoder-only;
 - Dois caminhos de treino do Transformer:
@@ -45,6 +46,7 @@ O projeto possui um pipeline funcional de modelagem de linguagem:
   layer normalization;
 - Treino com salvamento do melhor checkpoint por `val loss`;
 - Treino BPE com argumentos por CLI, early stopping e metricas JSONL;
+- Preservacao de fronteiras de paragrafo no corpus processado;
 - Geracao com prompt customizavel, `temperature` e `top_k`;
 - Avaliacao qualitativa do checkpoint BPE com prompts fixos;
 - Benchmark opcional PyTorch CPU vs OpenVINO;
@@ -105,6 +107,7 @@ Treinar o tokenizer BPE:
 
 ```powershell
 python -m scripts.train_bpe_tokenizer
+python -m scripts.train_bpe_tokenizer --vocab-size 3000 --min-frequency 2
 ```
 
 Treinar o Transformer por caractere:
@@ -118,6 +121,16 @@ Treinar o Transformer com BPE:
 ```powershell
 python -m scripts.train_transformer_bpe
 ```
+
+Defaults atuais do caminho BPE:
+
+- `block_size=128`
+- `n_embd=256`
+- `n_head=8`
+- `n_layer=4`
+- `gradient_accumulation_steps=2`
+- `eval_interval=500`
+- `patience=6`
 
 Treinar o Transformer com BPE usando parametros customizados:
 
@@ -178,6 +191,7 @@ docs/bpe.md
 docs/training_pipeline.md
 docs/training_experiments.md
 docs/wikipedia_sources.md
+docs/google_colab.md
 ```
 
 ## Proximos passos recomendados

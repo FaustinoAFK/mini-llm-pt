@@ -40,7 +40,7 @@ def generate_text(
     model.load_state_dict(checkpoint["model_state_dict"])
     model.eval()
 
-    prompt_ids = tokenizer.encode(prompt)
+    prompt_ids = tokenizer.encode(prompt, add_bos=True)
     context = torch.tensor([prompt_ids], dtype=torch.long)
 
     with torch.no_grad():
@@ -54,7 +54,7 @@ def generate_text(
             no_repeat_ngram_size=no_repeat_ngram_size,
         )[0].tolist()
 
-    return tokenizer.decode(generated_ids)
+    return tokenizer.decode_for_display(generated_ids)
 
 
 def main():

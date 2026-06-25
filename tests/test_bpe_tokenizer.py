@@ -1,3 +1,5 @@
+import pytest
+
 from src.tokenizer.bpe_tokenizer import BPETokenizer
 
 
@@ -44,12 +46,61 @@ def test_bpe_save_and_load_roundtrip(tmp_path):
     assert loaded.decode(loaded.encode(text)) == text
 
 
+def test_bpe_encode_supports_bos_and_eos_tokens():
+    tokenizer = BPETokenizer()
+    tokenizer.train("texto de treino", num_merges=10)
+
+    ids = tokenizer.encode("texto", add_bos=True, add_eos=True)
+
+    assert ids[0] == tokenizer.stoi[tokenizer.bos_token]
+    assert ids[-1] == tokenizer.stoi[tokenizer.eos_token]
+
+
+def test_bpe_decode_for_display_formats_paragraph_token():
+    tokenizer = BPETokenizer()
+    tokenizer.train("linha um <par> linha dois", num_merges=10)
+
+    ids = tokenizer.encode(
+        "linha um <par> linha dois",
+        add_bos=True,
+        add_eos=True,
+    )
+    rendered = tokenizer.decode_for_display(ids)
+
+    assert tokenizer.bos_token not in rendered
+    assert tokenizer.eos_token not in rendered
+    assert "\n\n" in rendered
+
+
+def test_bpe_train_accepts_vocab_size_and_min_frequency():
+    tokenizer = BPETokenizer()
+    tokenizer.train(
+        "dados dados dados para tokenizer",
+        num_merges=5,
+        vocab_size=300,
+        min_frequency=1,
+    )
+
+    assert tokenizer.vocab_size <= 300
+    assert tokenizer.stoi[tokenizer.paragraph_token] >= 0
+
+
 def test_bpe_rejects_empty_training_text():
     tokenizer = BPETokenizer()
 
-    try:
+    with pytest.raises(ValueError, match="vazio"):
         tokenizer.train("")
-    except ValueError as error:
-        assert "vazio" in str(error)
-    else:
-        raise AssertionError("Era esperado ValueError para texto vazio.")
+
+
+def test_bpe_rejects_invalid_vocab_size():
+    tokenizer = BPETokenizer()
+
+    with pytest.raises(ValueError, match="special tokens"):
+        tokenizer.train("texto valido", vocab_size=2)
+
+
+def test_bpe_rejects_invalid_min_frequency():
+    tokenizer = BPETokenizer()
+
+    with pytest.raises(ValueError, match="min_frequency"):
+        tokenizer.train("texto valido", min_frequency=0)

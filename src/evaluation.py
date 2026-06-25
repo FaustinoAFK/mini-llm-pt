@@ -43,4 +43,4 @@ def estimate_loss_over_batches(model, x, y, batch_size, num_batches):
     if was_training:
         model.train()
 
-    return sum(losses) / len(losses)
+    return torch.tensor(losses).mean().item()

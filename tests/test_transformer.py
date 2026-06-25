@@ -1,7 +1,8 @@
 import pytest
 import torch
+import torch.nn as nn
 
-from src.models.transformer import MiniTransformerLanguageModel
+from src.models.transformer import FeedForward, MiniTransformerLanguageModel
 
 
 def test_transformer_forward_without_targets():
@@ -219,3 +220,25 @@ def test_transformer_rejects_sequence_longer_than_block_size():
 
     with pytest.raises(ValueError):
         model(idx)
+
+
+def test_feedforward_usa_gelu():
+    ffwd = FeedForward(n_embd=16)
+
+    tem_gelu = any(isinstance(m, nn.GELU) for m in ffwd.net)
+
+    assert tem_gelu, "FeedForward deve usar GELU como ativação"
+
+
+def test_transformer_generate_rejects_top_k_antes_do_loop():
+    model = MiniTransformerLanguageModel(
+        vocab_size=10,
+        block_size=4,
+        n_embd=16,
+        n_head=4,
+        n_layer=2,
+    )
+    idx = torch.tensor([[1]])
+
+    with pytest.raises(ValueError, match="top_k"):
+        model.generate(idx, max_new_tokens=5, top_k=-1)

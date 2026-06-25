@@ -7,14 +7,13 @@ from pathlib import Path
 RAW_DIR = Path("data/raw/wikipedia")
 PROCESSED_DIR = Path("data/processed/wikipedia")
 MANIFEST_PATH = Path("data/processed/wikipedia/MANIFEST.md")
+PARAGRAPH_TOKEN = "<par>"
 
 
 SECTION_TITLES_TO_DROP = {
-    "ver também",
-    "referências",
+    "ver tambem",
     "referencias",
     "bibliografia",
-    "ligações externas",
     "ligacoes externas",
     "notas",
     "fontes",
@@ -36,7 +35,6 @@ NOISY_TERMS = {
     "end",
     "align",
     "matrix",
-    "em inglês",
     "em ingles",
 }
 
@@ -46,7 +44,7 @@ ALLOWED_CHARS_PATTERN = re.compile(
 
 
 def normalize_text(text):
-    """Normaliza espaços e quebras de linha sem destruir parágrafos."""
+    """Normaliza espacos e quebras de linha sem destruir paragrafos."""
     text = unicodedata.normalize("NFKC", text)
     text = text.replace("\r\n", "\n").replace("\r", "\n")
     text = re.sub(r"[ \t]+", " ", text)
@@ -55,11 +53,16 @@ def normalize_text(text):
 
 
 def normalize_flat_text(text):
-    """Normaliza texto final para treino como texto corrido."""
+    """Normaliza o texto final preservando o marcador de paragrafos."""
     text = unicodedata.normalize("NFKC", text)
     text = text.replace("\r\n", "\n").replace("\r", "\n")
     text = re.sub(r"\s+", " ", text)
     return text.strip()
+
+
+def strip_accents(text):
+    normalized = unicodedata.normalize("NFKD", text)
+    return "".join(char for char in normalized if not unicodedata.combining(char))
 
 
 def is_section_heading(line):
@@ -67,7 +70,7 @@ def is_section_heading(line):
 
 
 def has_noisy_terms(line):
-    lowered = line.lower()
+    lowered = strip_accents(line.lower())
     return any(term in lowered for term in NOISY_TERMS)
 
 
@@ -129,7 +132,7 @@ def has_formula_like_pattern(line):
 
 def should_drop_line(line):
     stripped = line.strip()
-    lowered = stripped.lower()
+    lowered = strip_accents(stripped.lower())
 
     if not stripped:
         return False
@@ -140,10 +143,10 @@ def should_drop_line(line):
     if lowered in SECTION_TITLES_TO_DROP:
         return True
 
-    if stripped.startswith("Categoria:"):
+    if strip_accents(stripped).startswith("Categoria:"):
         return True
 
-    if stripped.startswith("Portal:"):
+    if strip_accents(stripped).startswith("Portal:"):
         return True
 
     if has_noisy_terms(stripped):
@@ -176,18 +179,25 @@ def clean_line(line):
 def clean_wikipedia_text(text):
     """Limpa um texto raw da Wikipedia para uso como dataset.
 
-    A limpeza remove títulos de seção, linhas com muito ruído simbólico,
-    marcações matemáticas, termos comuns de LaTeX/MediaWiki, notas de tradução
+    A limpeza remove titulos de secao, linhas com muito ruido simbolico,
+    marcacoes matematicas, termos comuns de LaTeX/MediaWiki, notas de traducao
     e caracteres incomuns que prejudicam o tokenizer.
 
-    A saída final usa texto corrido, trocando quebras de linha internas por
-    espaços. Isso evita que o BPE aprenda tokens como '.\\n'.
+    Em vez de achatar todo o documento em um unico bloco, a saida final
+    preserva fronteiras de paragrafo com o marcador `<par>`.
     """
     text = normalize_text(text)
-    cleaned_lines = []
+    paragraphs = []
+    current_paragraph = []
 
     for line in text.split("\n"):
         line = line.strip()
+
+        if not line:
+            if current_paragraph:
+                paragraphs.append(" ".join(current_paragraph))
+                current_paragraph = []
+            continue
 
         if should_drop_line(line):
             continue
@@ -200,9 +210,12 @@ def clean_wikipedia_text(text):
         if should_drop_line(line):
             continue
 
-        cleaned_lines.append(line)
+        current_paragraph.append(line)
 
-    cleaned_text = " ".join(cleaned_lines)
+    if current_paragraph:
+        paragraphs.append(" ".join(current_paragraph))
+
+    cleaned_text = f" {PARAGRAPH_TOKEN} ".join(paragraphs)
     cleaned_text = normalize_flat_text(cleaned_text)
     return cleaned_text
 
@@ -230,17 +243,17 @@ def write_manifest(entries, manifest_path):
         "",
         "Limpeza aplicada:",
         "",
-        "- normalização Unicode NFKC;",
-        "- remoção de títulos de seção no formato `== seção ==`;",
-        "- remoção de linhas com excesso de símbolos;",
-        "- remoção de linhas com termos LaTeX/MediaWiki como `displaystyle`, `frac` e `sqrt`;",
-        "- remoção de notas como `(em inglês)`;",
-        "- remoção de linhas dominadas por números;",
-        "- remoção de linhas curtas com listas/fórmulas;",
-        "- remoção de linhas com excesso de parênteses;",
-        "- filtragem de caracteres incomuns para reduzir ruído no tokenizer;",
-        "- conversão de quebras de linha internas em espaços para evitar tokens como `.\\n`;",
-        "- normalização de espaços.",
+        "- normalizacao Unicode NFKC;",
+        "- remocao de titulos de secao no formato `== secao ==`;",
+        "- remocao de linhas com excesso de simbolos;",
+        "- remocao de linhas com termos LaTeX/MediaWiki como `displaystyle`, `frac` e `sqrt`;",
+        "- remocao de notas como `(em ingles)`;",
+        "- remocao de linhas dominadas por numeros;",
+        "- remocao de linhas curtas com listas/formulas;",
+        "- remocao de linhas com excesso de parenteses;",
+        "- filtragem de caracteres incomuns para reduzir ruido no tokenizer;",
+        f"- preservacao de fronteiras de paragrafo com o marcador `{PARAGRAPH_TOKEN}`;",
+        "- normalizacao de espacos.",
         "",
         "| raw | processed | raw chars | processed chars |",
         "|---|---|---:|---:|",
@@ -261,7 +274,7 @@ def process_all(raw_dir=RAW_DIR, processed_dir=PROCESSED_DIR, manifest_path=MANI
     manifest_path = Path(manifest_path)
 
     if not raw_dir.exists():
-        raise FileNotFoundError(f"Diretório raw não encontrado: {raw_dir}")
+        raise FileNotFoundError(f"Diretorio raw nao encontrado: {raw_dir}")
 
     processed_dir.mkdir(parents=True, exist_ok=True)
     manifest_path.parent.mkdir(parents=True, exist_ok=True)

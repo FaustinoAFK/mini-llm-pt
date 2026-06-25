@@ -9,46 +9,94 @@ from tokenizers.trainers import BpeTrainer
 
 
 class BPETokenizer:
-    def __init__(self, unk_token="<unk>"):
+    def __init__(
+        self,
+        unk_token="<unk>",
+        bos_token="<bos>",
+        eos_token="<eos>",
+        paragraph_token="<par>",
+    ):
         self.unk_token = unk_token
-        self._tokenizer = Tokenizer(BPE(unk_token=self.unk_token))
-        self._tokenizer.pre_tokenizer = ByteLevel(add_prefix_space=False)
-        self._tokenizer.decoder = ByteLevelDecoder()
-        self.stoi = {self.unk_token: 0}
-        self.itos = {0: self.unk_token}
+        self.bos_token = bos_token
+        self.eos_token = eos_token
+        self.paragraph_token = paragraph_token
+        self.special_tokens = [
+            self.unk_token,
+            self.bos_token,
+            self.eos_token,
+            self.paragraph_token,
+        ]
+
+        self._tokenizer = self._build_tokenizer()
+        self.stoi = {token: index for index, token in enumerate(self.special_tokens)}
+        self.itos = {index: token for index, token in enumerate(self.special_tokens)}
         self.merges = []
 
     @property
     def vocab_size(self):
         return self._tokenizer.get_vocab_size()
 
-    def train(self, text, num_merges=100):
+    def _build_tokenizer(self):
+        tokenizer = Tokenizer(BPE(unk_token=self.unk_token))
+        tokenizer.pre_tokenizer = ByteLevel(add_prefix_space=False)
+        tokenizer.decoder = ByteLevelDecoder()
+        tokenizer.add_special_tokens(self.special_tokens)
+        return tokenizer
+
+    def train(self, text, num_merges=100, vocab_size=None, min_frequency=2):
         if not text:
             raise ValueError("O texto de treino nao pode ser vazio.")
 
         if num_merges < 0:
             raise ValueError("num_merges precisa ser maior ou igual a zero.")
 
+        if vocab_size is not None and vocab_size <= len(self.special_tokens):
+            raise ValueError(
+                "vocab_size precisa ser maior que a quantidade de special tokens."
+            )
+
+        if min_frequency <= 0:
+            raise ValueError("min_frequency precisa ser maior que zero.")
+
         alphabet = ByteLevel.alphabet()
-        vocab_size = max(len(alphabet) + 1, len(alphabet) + 1 + num_merges)
+        if vocab_size is None:
+            vocab_size = max(
+                len(alphabet) + len(self.special_tokens),
+                len(alphabet) + len(self.special_tokens) + num_merges,
+            )
+
         trainer = BpeTrainer(
             vocab_size=vocab_size,
-            min_frequency=2,
-            special_tokens=[self.unk_token],
+            min_frequency=min_frequency,
+            special_tokens=self.special_tokens,
             initial_alphabet=alphabet,
         )
-        self._tokenizer = Tokenizer(BPE(unk_token=self.unk_token))
-        self._tokenizer.pre_tokenizer = ByteLevel(add_prefix_space=False)
-        self._tokenizer.decoder = ByteLevelDecoder()
+        self._tokenizer = self._build_tokenizer()
         self._tokenizer.train_from_iterator([text], trainer=trainer)
         self._sync_vocab()
         return self
 
-    def encode(self, text):
-        return self._tokenizer.encode(text).ids
+    def encode(self, text, add_bos=False, add_eos=False):
+        ids = self._tokenizer.encode(text).ids
+        if add_bos:
+            ids = [self.stoi[self.bos_token]] + ids
+        if add_eos:
+            ids = ids + [self.stoi[self.eos_token]]
+        return ids
 
     def decode(self, ids):
-        return self._tokenizer.decode(ids)
+        return self._tokenizer.decode(ids, skip_special_tokens=False)
+
+    def decode_for_display(self, ids):
+        text = self.decode(ids)
+        text = text.replace(self.bos_token, "")
+        text = text.replace(self.eos_token, "")
+        text = text.replace(self.paragraph_token, "\n\n")
+
+        normalized_lines = [" ".join(line.split()) for line in text.split("\n")]
+        text = "\n".join(normalized_lines)
+        text = text.replace("\n \n", "\n\n")
+        return text.strip()
 
     def save(self, path):
         path = Path(path)
@@ -61,7 +109,17 @@ class BPETokenizer:
         data = json.loads(path.read_text(encoding="utf-8"))
 
         if data.get("model", {}).get("type") == "BPE":
-            tokenizer = cls(unk_token=data["model"].get("unk_token", "<unk>"))
+            added_tokens = {
+                token["content"]
+                for token in data.get("added_tokens", [])
+                if isinstance(token, dict) and "content" in token
+            }
+            tokenizer = cls(
+                unk_token=data["model"].get("unk_token", "<unk>"),
+                bos_token="<bos>",
+                eos_token="<eos>",
+                paragraph_token="<par>",
+            )
             tokenizer._tokenizer = Tokenizer.from_str(json.dumps(data))
             tokenizer._sync_vocab()
             return tokenizer
@@ -70,7 +128,12 @@ class BPETokenizer:
 
     @classmethod
     def _load_legacy(cls, data):
-        tokenizer = cls(unk_token=data["unk_token"])
+        tokenizer = cls(
+            unk_token=data.get("unk_token", "<unk>"),
+            bos_token=data.get("bos_token", "<bos>"),
+            eos_token=data.get("eos_token", "<eos>"),
+            paragraph_token=data.get("paragraph_token", "<par>"),
+        )
         tokenizer.stoi = {token: int(token_id) for token, token_id in data["stoi"].items()}
         tokenizer.itos = {token_id: token for token, token_id in tokenizer.stoi.items()}
         tokenizer.merges = [tuple(pair) for pair in data["merges"]]
@@ -98,13 +161,16 @@ class _LegacyTokenizerAdapter:
     def encode(self, text):
         return _LegacyEncoding(self.tokenizer._legacy_encode(text))
 
-    def decode(self, ids):
+    def decode(self, ids, skip_special_tokens=False):
         return self.tokenizer._legacy_decode(ids)
 
     def to_str(self, pretty=False):
         return json.dumps(
             {
                 "unk_token": self.tokenizer.unk_token,
+                "bos_token": self.tokenizer.bos_token,
+                "eos_token": self.tokenizer.eos_token,
+                "paragraph_token": self.tokenizer.paragraph_token,
                 "merges": [list(pair) for pair in self.tokenizer.merges],
                 "stoi": self.tokenizer.stoi,
             },

@@ -5,9 +5,9 @@ Proporções: train=0.8, val=0.1, test=0.1
 
 | split | arquivos | caracteres |
 |---|---:|---:|
-| train | 207 | 17686627 |
-| val | 25 | 3128668 |
-| test | 27 | 882052 |
+| train | 207 | 17708181 |
+| val | 25 | 3133893 |
+| test | 27 | 882307 |
 
 ## Arquivos por split
 

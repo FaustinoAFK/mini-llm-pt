@@ -19,18 +19,9 @@ class CharTokenizer:
 
     def encode(self, text):
         # Transforma texto em IDs
-        ids = []
-
-        for ch in text:
-            ids.append(self.stoi.get(ch, self.stoi[self.unk_token]))
-
-        return ids
+        unk_id = self.stoi[self.unk_token]
+        return [self.stoi.get(ch, unk_id) for ch in text]
 
     def decode(self, ids):
         # Transforma IDs de volta em texto
-        chars = []
-
-        for i in ids:
-            chars.append(self.itos[i])
-
-        return "".join(chars)
+        return "".join(self.itos[i] for i in ids)
